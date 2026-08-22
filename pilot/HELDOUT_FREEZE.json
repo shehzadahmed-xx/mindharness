@@ -1,0 +1,53 @@
+{
+  "schema": "springfish.heldout_freeze/v1",
+  "frozen_at": "2026-08-23",
+  "timezone": "Asia/Dhaka",
+  "protocol": "pilot/01_participant_governance_protocol.md",
+  "protocol_version_at_freeze": "0.2-draft",
+  "selected_scenario": {
+    "case_id": "C3",
+    "case_name": "Venezuela-PDVSA sanctions, oil cash flow and creditor realisation",
+    "source_engine_root": "SPRINGFISH_COMPLETE_RESEARCH_AND_HANDOFF_LOCAL_PC_2026_08_04/01_WORKSPACE_SNAPSHOT/restored_beta3_engine",
+    "selection_rationale": [
+      "Farthest from pilot participants' lived context, minimising topical contamination during fieldwork.",
+      "The programme's only instability case (37.5% pure-Nash share, positive maximum regret 0.11, seed-sensitive strategy selection in Study 009V) - gives the A1-A4 comparison ladder its strongest discriminating power.",
+      "Scoring restricted to directional mechanism class and equilibrium status per programme volatility-marker discipline; point magnitudes are never scored."
+    ]
+  },
+  "frozen_files": [
+    {
+      "path": "config/cases/C3_venezuela_claims.yaml",
+      "sha256": "28644acb889a4decd9258786f0822545c1212986e3f3bf2821c5d68782c7a662"
+    },
+    {
+      "path": "data/case_subgraphs/C3_nodes.csv",
+      "sha256": "ab9703139e5dea22442710c16b414c17d9ad3077a4876c67546e45f9be94e275"
+    },
+    {
+      "path": "data/case_subgraphs/C3_edges.csv",
+      "sha256": "ed7dbf8b1df3cbb044050103979472fa6179392297eb093d818772553e587bf5"
+    },
+    {
+      "path": "data/case_subgraphs/C3_manifest.json",
+      "sha256": "b838ff8d475b0ef7252770e194fb5158a140226da269f89c7910adae9df54c3b"
+    }
+  ],
+  "freeze_root_sha256": "dce951b069241326f0e444229b2e03c9a73d450e54fbc89f982cd9edec066623",
+  "freeze_root_definition": "sha256 of sort(ascii)-ordered lines '<relpath>  <sha256>' over frozen_files, newline-terminated, LF endings.",
+  "binding_ordering": [
+    "1. This freeze is published before the first consent is taken.",
+    "2. Participants never see C3 during fieldwork (no battery item, no interview prompt).",
+    "3. After fieldwork closes, agent configurations A1-A4 are frozen and their C3 predictions are produced, hashed and locked (prediction_lock_sha256 recorded here later).",
+    "4. Only after prediction lock does a final reveal session show participants C3; participant-majority becomes the human reference target.",
+    "5. Exactly one scoring pass against participant-majority and (if available) realised outcomes; every attempt including nulls and conflicts is retained."
+  ],
+  "prediction_lock": {
+    "status": "NOT_YET_LOCKED",
+    "note": "Populate prediction_lock_sha256 after step 3 of binding_ordering. Do not substitute synthetic values."
+  },
+  "authority_boundaries": [
+    "This freeze creates no canonical V34.0 ledger rows and grants no forecasting permission beyond this pilot's own scoring pass.",
+    "All agent outputs on C3 remain SIM-classified regardless of score.",
+    "No revision of RQ-621 frozen formulas or holdout handling is authorised by this document."
+  ]
+}

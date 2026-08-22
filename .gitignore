@@ -1,0 +1,20 @@
+# Large archives & extracted trees - verified externally, not version-controlled
+SPRINGFISH_*
+THE_SPRING_LOADED_DOOR_*
+SPRING_LOADED_DOOR_V33*
+SPRING_LOADED_DOOR_LONG*
+SPRING_LOADED_DOOR_NETWORK_LEDGER_V2*
+SPRING_LOADED_DOOR_PROGRAMME*
+SPRING_LOADED_DOOR_ESC*
+the_spring_loaded_door*.pdf
+THE_SPRING_LOADED_DOOR_*.pdf
+THE_SPRING_LOADED_SYSTEM*
+03_THE_SPRING_LOADED_DOOR_*
+*_BACKUP.md
+The_Spring_Loaded_Door*.md
+HAMBA_full/
+runtime/
+__pycache__/
+.pytest_cache/
+*.pyc
+.DS_Store
