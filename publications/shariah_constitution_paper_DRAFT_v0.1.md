@@ -131,10 +131,15 @@ al-ghunm bil-ghurm?
 
 **(ii) Structures rank by achieved risk redistribution.** Because A1 constrains payoff
 fixity, we can define a *fidelity index*: the share of venture states in which each party's
-realized payoff moves with realized outcome. Prediction: loan < murābaḥa ≈ near-debt (fixed
-installments; title window aside) < salam-type milestone finance (contingency enters via
-delivery verification) < mushāraka (full symmetry). This ordering is a hypothesis the
-engine can falsify.
+realized payoff moves with realized outcome. The index has a measured ancestor: the retired
+κ-corpus decomposed priced intensity into realized hazard versus risk premium, with closed
+structural form **Π = \|λ\|/α** (corpus P17) and domain measurements (P16: ~18% premium share
+in takaful — loss ratio 0.82 on $1.25T of real liability; ~81–91% in corporate credit at
+measured recovery δ≈0.10; ≥75% in sovereign credit). Applying that decomposition across
+financing structures yields the prediction: loan < murābaḥa ≈ near-debt (fixed installments;
+title window aside) < salam-type milestone finance (contingency enters via delivery
+verification) < mushāraka (full symmetry). This ordering is a hypothesis the engine can
+falsify — and the decomposition method behind it carries an 81-analysis track record.
 
 **(iii) Compliance requires published exhaustion rules.** A3 forbids silent migration of
 loss onto unprotected parties; ESC P3 Prop.5 shows declared-exhaustion architectures are
@@ -201,8 +206,11 @@ comparison before reality runs the test for you.
 
 ### References — status
 
-ESC series Papers 1–7 (canonical seven, latest drafts v5) cited throughout; classical
-doctrinal sources (al-Shāṭibī's maqāṣid treatment, madhhab muʿāmalāt primers, AAOIFI
-governance standards) and modern finance anchors (Hart; Tirole; Duffie–Singleton via ESC
-restoration appendices) to be completed with exact editions by author before circulation.
+ESC series Papers 1–7 (canonical seven, latest drafts v5) cited throughout. Retired
+κ-corpus cited only per its retirement notice — as prior conjecture and as the measured
+ground for Π: corpus Papers 15–17, Zenodo DOI 10.5281/zenodo.21290557, corpus volume *The
+Rate That Wasn't There* (370 pp). Classical doctrinal sources (al-Shāṭibī's maqāṣid
+treatment, madhhab muʿāmalāt primers, AAOIFI governance standards) and modern finance
+anchors (Hart; Tirole; Duffie–Singleton via ESC restoration appendices; Ackerer–Hugonnier–
+Jermann 2025 via ESC P1) to be completed with exact editions by author before circulation.
 Placeholders deliberately not fabricated.

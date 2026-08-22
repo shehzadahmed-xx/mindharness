@@ -26,7 +26,7 @@ Status labels: `[MODEL]` derivation/theory only · `[PILOT]` estimable from live
 | **P1·P1** finite-state state-price representation: Aᵀψ=q; no traded bond required | SLD Ch.4–5: money measures and moves wealth but *is not* wealth; a discount factor is not a debt contract | **Riba** = *al-ziyāda al-mashrūṭa*, the stipulated increment; pricing time is not contracting a loan | `[MODEL]` proven; `[EXT]` replication packages frozen |
 | **P1·P2** incomplete-market valuation set 𝒟(A,q); untraded claims get valuation bands | SpringFish payoff-calibration: payoffs derived from state values, never face value; scenario overrides vary states explicitly | **Gharar**: contracts must specify contingencies — an unspanned state is precisely where gharar lives | `[PILOT]` battery T5 (guarantee design): do humans price the certainty gap? |
 | **P1·P3** physical expectation ≠ price (ψ≠p generally) | SLD Ch.13 collateral hierarchy: market value embeds scarcity and marginal utility, not raw probability | Prohibiting *qimār* presupposes prices ≠ pure odds | `[MODEL]`; 130-country L8 falsification guards misuse |
-| **κ-corpus survivor**: ι=0 removes the stipulated floor; wedge tracks UST (ρ=0.93) ⇒ only orderings survive (rank-corr .84–.94) | Same conclusion reached independently: shadow certainty price exists without a traded bond | The Shariah-board **one question**: is fully contingent, loss-bearing premium permissible under **al-ghunm bil-ghurm**? | `[EXT]` Shariah board — SBR Track-B brief (June 2026) already reduces it |
+| **κ-corpus survivor**: ι=0 removes the stipulated floor; separation theorem — pole at ι=−κ so the riba-free point is regular; risk-premium share has closed form **Π = \|λ\|/α** (P17); measured Π by domain: takaful ~18% (loss ratio 0.82, $1.25T USDA liability), corporate credit ~81–91% at δ≈0.10, sovereign ≥75% (floor ~45%); perpetual bases mean-revert, median half-life ~3.5h over 41 markets | Same conclusion reached independently: shadow certainty price exists without a traded bond | The Shariah-board **one question**: is fully contingent, loss-bearing premium permissible under **al-ghunm bil-ghurm**? — asked at located basis points, not in the abstract | `[EXT]` Shariah board — SBR Track-B brief (June 2026) already reduces it; `[MODEL]` P16/P17 supply the decomposition method the fidelity index inherits |
 
 ## Section B — Protection and its limits
 
@@ -71,7 +71,7 @@ Status labels: `[MODEL]` derivation/theory only · `[PILOT]` estimable from live
 |---|---|---|---|
 | Claim bounding | trust hierarchy; retired κ-corpus quarantine notice | four-level claim ladder (Ch.19); NOT_AVAILABLE objects | Neither programme lets rhetoric outrun its ledger |
 | Preregistration | frozen inputs, one controlled rerun per paper | RQ-621 freeze root; prediction locks | The Shariah-board brief inherits this: one decidable question |
-| Negative controls | agri-takaful drought caveat (index pays least when struck) | NC-1..NC-5 matrix | Both allow the answer "not extraction / not superior" |
+| Negative controls | agri-takaful drought caveat (index pays least when struck); oracle-manipulation frontier + depth rule (P13) | NC-1..NC-5 matrix; SpringFish adversarial gates | Both allow the answer "not extraction / not superior" |
 | Real-analogue anchoring | Brazil tokenized-livestock CPR (plausibility, not validation) | HAMBA three-cow (observation, not simulation) | Direct bridge: Brazil de-risks HAMBA plausibility; HAMBA fieldwork upgrades Brazil from analogue to observation |
 
 ---
