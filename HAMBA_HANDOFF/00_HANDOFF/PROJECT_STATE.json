@@ -1,0 +1,52 @@
+{
+  "schema": "springfish.project-state/v1",
+  "as_of": "2026-08-21",
+  "timezone": "Asia/Dhaka",
+  "canonical": {
+    "ledger": "V34.0",
+    "actors": 2974,
+    "relationships": 3575,
+    "missing_endpoints": 0,
+    "engine": "SpringFish V3.0 Beta3"
+  },
+  "candidate_foundation": {
+    "release": "V34.2.6 AEQ-001 qualification candidate",
+    "archive_sha256": "65f3aa4b1c378c81198a5ff175442e52d4fef510310f80f1e00ffddfb4ce8366",
+    "canonical_promotion": false
+  },
+  "hamba": {
+    "study_id": "HAMBA-PILOT-001-RECOVERY-1",
+    "branch": "hamba/pilot-001",
+    "stage": "PRE_PILOT_PROSPECTIVE_MODEL_COMPLETE",
+    "evidence_class": "SIM",
+    "source_plan_sha256": "d4dc6063440100a2d9dd57e0747d2a8d8abd35a71a42453990da5931b16af319",
+    "contract_sha256": "9c56975c0d0d8522ec26df8cf5a89f3f2683c62fc6a7a560b22e7b2dba44a8e1",
+    "run_result_sha256": "c7be1ec299e4fb1eb94bbcf8cace7052cb0af2276f65fe9870147ccc90b768ee",
+    "code_tests": "8/8 PASS",
+    "deterministic_gates": "12/12 PASS",
+    "local_llm_validation": "PASS",
+    "portfolio_paths": 58368,
+    "identity_paths": 768,
+    "portfolio_summary_rows": 228,
+    "payoff_profiles": 216,
+    "pure_nash_profiles": 36,
+    "scale_cells": 1620,
+    "local_llm_cells": 32,
+    "local_llm_primary_calls": 64,
+    "local_llm_replay_calls": 2,
+    "local_llm_fallbacks": 0,
+    "canonical_mutations": 0,
+    "rq621_opened": false,
+    "pilot_baseline": "C10 Balanced claims-control-integrity",
+    "full_cost_reference": "C12 Full-cost portable evidence",
+    "prohibited_red_team": "C11 Evil HAMBA"
+  },
+  "local_runtime": {
+    "package": "node-llama-cpp 3.20.0",
+    "llama_cpp_build": "b10361",
+    "model": "Qwen3.5-0.8B-Q3_K_S.gguf",
+    "model_bytes": 440750336,
+    "model_sha256": "4649ee78ff7cbad4e9fe4c0bab3b73a7c70096b51e36ef299469b08989a93c39"
+  },
+  "next_action": "Run the physical three-cow protocol and replace frozen identity, cost, evidence-use and behavior assumptions with observed pilot data."
+}

@@ -1,0 +1,37 @@
+{
+  "archive_id": "SPRINGFISH_COMPLETE_RESEARCH_MIGRATION_HAMBA_FULL_2026_08_21",
+  "built_at": "2026-08-21T00:00:00+06:00",
+  "local_llm": {
+    "model": "Qwen3.5-0.8B-Q3_K_S.gguf",
+    "model_bytes": 440750336,
+    "model_sha256": "4649ee78ff7cbad4e9fe4c0bab3b73a7c70096b51e36ef299469b08989a93c39",
+    "runtime": "node-llama-cpp 3.20.0 / llama.cpp b10361"
+  },
+  "schema": "springfish.complete-migration/v1",
+  "scientific_state": {
+    "authoritative_engine": "SpringFish V3.0 Beta3",
+    "candidate_foundation": "V34.2.6 AEQ-001 qualification candidate",
+    "canonical_ledger": "V34.0: 2,974 actors / 3,575 relationships / zero missing endpoints",
+    "canonical_mutations": 0,
+    "hamba_branch": "hamba/pilot-001",
+    "hamba_evidence_class": "SIM",
+    "hamba_status": "prospective model complete",
+    "rq621_opened": false
+  },
+  "scope": {
+    "excluded": [
+      ".git (workspace version-control metadata, not a research artifact)",
+      ".agents and .codex (host control metadata, not user research)",
+      "work/npm_cache (volatile rebuild/download cache; installed node_modules, package lock and exact model are included)",
+      "the outer ZIP and its sidecars (created after the frozen stage to avoid self-reference)"
+    ],
+    "historical_limit": "Previously referenced full migration containers that were absent from both the resumed filesystem and persistent Library cannot be recreated byte-for-byte. Surviving deltas, extracted successors, hashes and all currently recoverable research files are included.",
+    "included": "Every regular file and symbolic link under the four current research directories, plus a top-level handoff.",
+    "included_workspace_directories": [
+      "outputs",
+      "recovered",
+      "recovery",
+      "work"
+    ]
+  }
+}

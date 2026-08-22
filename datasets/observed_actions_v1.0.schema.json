@@ -1,0 +1,28 @@
+{
+  "schema": "springfish.dataset/observed_actions",
+  "version": "1.0",
+  "status": "SCHEMA_ONLY_NO_DATA_YET",
+  "immutability": "v1.0 is append-only once first row lands; corrections create 1.1+; never mutate released versions",
+  "consumers": [
+    "pilot empirical-frequency policy (only via versioned-dataset rule, protocol section 9)",
+    "A4 interview-grounded agent grounding audit",
+    "held-out scoring participant-majority reference"
+  ],
+  "row_fields": {
+    "participant_pseudonym": "string, stable per participant, no direct identifiers",
+    "scenario_id": "enum: T1|T2|T3|T4|T5|T6|C3_REVEAL",
+    "task_order_presented": "integer, rotation position",
+    "chosen_action": "string from pre-listed option set of that scenario",
+    "confidence_1_5": "integer",
+    "one_line_reason": "string <=30 words verbatim",
+    "time_to_answer_seconds": "number or null",
+    "consent_layers": "array subset of [L1,L2,L3,L4]",
+    "session_timestamp": "ISO-8601 Asia/Dhaka",
+    "evidence_grade": "constant OBSERVED-PART"
+  },
+  "prohibited_columns": [
+    "direct identifiers (name, phone, NID, address)",
+    "district finer than division level",
+    "any agent-output column - agent outputs live in separate SIM-classified stores"
+  ]
+}
