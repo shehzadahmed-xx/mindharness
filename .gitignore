@@ -18,3 +18,8 @@ __pycache__/
 .pytest_cache/
 *.pyc
 .DS_Store
+lab_runs/C1_run.json/
+lab_runs/C3_run.json/
+lab_runs/C3_s1.json/
+lab_runs/C3_s2.json/
+lab_runs/C1_calib.json/
