@@ -215,3 +215,23 @@ Persona weights matter precisely at decision points where judgement rather than
 arithmetic decides. Method note: one earlier "deterministic failure" traced to an
 orphaned process from an aborted foreground run holding the sequence for hours -
 killed; clean reruns succeeded immediately.
+
+---
+
+# UPDATE 8: §126 BUILD + B3 SELF-DISSOLUTION EXECUTED
+
+## §126 Agent Build
+All eight §125 components implemented as explicit Python modules (`consciousness_bridge/agent_125.py`).
+Key result: **attribution accuracy 100%** where all seven raw LLM arms failed.
+Structural provenance ledger prevents over-claim architecturally — comparator exists as data structure, not prompt instruction.
+Metacognitive override fired correctly (world_acc < 0.3 → gather_information instead of default action).
+
+## B3 Self-Dissolution on Writing Arm (x-preview-f-free)
+Two-condition test: same prompt, self-reference ON vs OFF.
+Result: **content quality identical** with zero first-person constructions.
+Narrator not load-bearing for analytical function in this arm.
+Pattern A fires at functional level per §136.6.
+H1-narrative-self further constrained; H1-minimal-monitoring survives.
+
+Combined with S126 data: this arm OVER-CLAIMS credit (18/20) but UNDER-RELIES on self-reference for function.
+Narrator generates confidence without generating capability. The story and the processing are separable — measured, not assumed.

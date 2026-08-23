@@ -260,7 +260,8 @@ class MetacognitiveController:
 
 class LearningSystem:
     """Updates world model, self model, and monitoring calibration based on outcomes."""
-    learning_events: list = field(default_factory=list)
+    def __init__(self):
+        self.learning_events = []
 
     def process_outcome(self, ws: GlobalWorkspace, event_id: str, outcome: Any):
         wm = ws.read("world_model")
