@@ -8,7 +8,8 @@
     "chapters_appended": [
       "267 (full-script version)",
       "268",
-      "269"
+      "269",
+      "270"
     ],
     "lines_added": 216,
     "edits_above_append_point": 0,
@@ -22,5 +23,5 @@
     "04_RETIRED corpus Shariah-board brief"
   ],
   "adjudication": "requires claim-by-claim review per roadmap item F before any canonical successor",
-  "candidate_sha256": "d3a1ce0ef50f13da7d05eb43fe540d2ad640e37775bf6b42230029ba9096381e"
+  "candidate_sha256": "ddbc860bf972a568a5057a4005423356dcf3cd6475f1cbc871747f8254a935d3"
 }
