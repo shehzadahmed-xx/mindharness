@@ -14,7 +14,8 @@
     "lines_added": 216,
     "edits_above_append_point": 0,
     "machine_ledger_rows": 0,
-    "runtime_mappings": 0
+    "runtime_mappings": 0,
+    "negative_controls_executed": "research/audit_negative_controls_C270.md"
   },
   "evidence_sources": [
     "lab_runs/FINDINGS.md",
@@ -23,5 +24,5 @@
     "04_RETIRED corpus Shariah-board brief"
   ],
   "adjudication": "requires claim-by-claim review per roadmap item F before any canonical successor",
-  "candidate_sha256": "ddbc860bf972a568a5057a4005423356dcf3cd6475f1cbc871747f8254a935d3"
+  "candidate_sha256": "b7070cea8ebe58d65b4c9c79d93b092791deb8911060571b1b99921125fd0686"
 }
