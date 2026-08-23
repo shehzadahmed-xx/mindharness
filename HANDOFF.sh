@@ -5,7 +5,7 @@
 # Usage: bash HANDOFF.sh
 # ════════════════════════════════════════════════════════════════
 
-set -euo pipefail
+set -uo pipefail
 
 ROOT="/Users/shehzad/Desktop/springfish"
 PASS=0; FAIL=0; OPEN=0
@@ -13,9 +13,9 @@ PASS=0; FAIL=0; OPEN=0
 check() {
     local desc="$1"; local cmd="$2"
     if eval "$cmd" >/dev/null 2>&1; then
-        echo "  ✓ $desc"; ((PASS++))
+        echo "  ✓ $desc"; PASS=$((PASS+1))
     else
-        echo "  ✗ $desc"; ((FAIL++))
+        echo "  ✗ $desc"; FAIL=$((FAIL+1))
     fi
 }
 
