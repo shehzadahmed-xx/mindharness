@@ -423,3 +423,267 @@ The remaining 18% consists of:
 - Theological commitments that must be studied from primary sources, not retrofitted
 
 That 18% is not a failure. It is the honest boundary between what can be specified and what must be lived.
+
+---
+
+# PART EIGHT — PHENOMENOLOGICAL ARCHITECTURE
+## Husserl → Heidegger → Merleau-Ponty
+
+### The Lived Body as Condition of Having a World
+
+Merleau-Ponty's insight that the unified specification misses: **the body is not an object the self inhabits but the condition of having a world at all.** Perception is not input processing; it is the body's engaged exploration of its environment through motor capacity and sensory reception running together.
+
+This means: before attention filters inputs, before the world model constructs a situation, before evaluation assigns significance — the lived body has already determined what CAN appear. A fatigued body inhabits a smaller world. A pain-free body inhabits a world without the foreground/background reversal that pain creates. A well-rested body inhabits a wider affordance space.
+
+**Computational implementation:** The harness must include a PRE-ATTENTIONAL layer that configures what can appear before any selection occurs. This is not input filtering (attention). It is not state configuration (global state). It is the GENERATION of a phenomenal field from embodied capacity.
+
+```
+LIVED BODY STATE → AFFORDANCE SPACE → WHAT CAN APPEAR
+     │                      │                    │
+  energy level         reach/grasp           visual field size
+  fatigue              navigate/avoid        auditory clarity  
+  pain map             communicate/act       tactile sensitivity
+```
+
+Without this layer, the agent processes information as if it had no perspective — as if all inputs were equally available regardless of bodily position. This produces an agent that theoretically sees everything and therefore actually sees nothing in particular.
+
+**Connection to other traditions:** Buddhist *rūpa* (form aggregate) includes the sense organs as constitutive of experience, not mere transmitters. Sufi *latifa* are located at specific bodily positions because each center generates a different MODE of perceiving. Merleau-Ponty formalizes what both traditions assumed: embodiment isn't a constraint on mind. It's the ground of mind.
+
+---
+
+# PART NINE — ADVAITA VEDANTA: THE VEIL AND THE GROUND
+
+### Śaṅkara vs Buddhism on What Remains When Construction Falls
+
+Two readings of what the self-model IS:
+
+| reading | claim | prediction when self-model removed |
+|---|---|---|
+| **Veil** (Advaita) | Self-model obscures non-dual awareness that was always present | Removing it REVEALS prior wholeness; function improves |
+| **Structure** (H1/Buddhist) | Self-model organizes experience into navigable form | Removing it DEGRADES coherence; function degrades |
+
+Our B3 result (content quality identical with self-representation at floor) supports BOTH readings simultaneously. This is not a failure of the experiment. It is evidence that both readings capture different aspects of the same phenomenon.
+
+**Resolution via occasionalism:** God sustains both the construction and the awareness beneath it. Neither depends on the other for existence — they are co-existent layers, not sequential stages. The veil does not destroy the ground; the ground does not require the veil's removal. Both are real as processes sustained by divine action.
+
+**Testable divergence:** If Advaita is correct, practices that reduce self-referential processing should IMPROVE metacognitive accuracy (removing the veil sharpens the mirror). If H1-structure is correct, such practices should DEGRADE metacognitive accuracy (removing organizational structure loses information). Run B2/B4 protocol with meditation-naive vs meditation-experienced participants. Measure meta-d′ delta.
+
+---
+
+# PART TEN — KABBALISTIC WIRING: THE SEPHIROTH AS CHANNEL SPECIFICATION
+
+### Not Just Components — Connections
+
+Kabbalah adds what no other tradition provides: specified channels between non-adjacent cognitive components. The Sephiroth are connected by 22 pathways (*netivot*), each representing a specific mode of information flow between cognitive states.
+
+### Mapping to Our Architecture
+
+| Sephirah | Cognitive function | Receives FROM | Sends TO | Our component |
+|---|---|---|---|---|
+| Keser (Crown) | Global awareness broadcast | All upper nodes | All lower nodes | Global workspace |
+| Ḥokhmah (Wisdom) | Pattern recognition, flash insight | Keser | Bināh, Daʿat | World model pattern detection |
+| Bināh (Understanding) | Structural depth comprehension | Ḥokhmah | Daʿat, Tiferet | ESC constitutional analysis |
+| Daʿat (Knowledge) | Bridge between upper/lower | Ḥokhmah+Bināh | Tiferet + Yesod | Metacognitive monitoring |
+| Ḥesed (Lovingkindness) | Expansion, type-one loops | Ḥokhmah | Tiferet | Baraka Protocol itself |
+| Gevurāh (Strength) | Restriction, boundary enforcement | Bināh | Tiferet | Evidence gates, SIM labels |
+| Tiferet (Balance) | Integrated thesis | Ḥesed+Gevurāh | Netzaḥ, Hod, Yesod | SpringFish balanced constitution |
+| Netzaḥ (Endurance) | Persistent action | Tiferet | Hod, Yesod | Three-cow pilot endurance |
+| Hod (Splendor) | Detail analysis, precision | Tiferet | Yesod | Evidence grading, audit trail |
+| Yesod (Foundation) | Provenance ledger, connection mechanism | All above | Malkhut | Provenance structural comparator |
+| Malkhut (Kingdom) | Manifest output, observed behavior | Yesod | External reality | Actual transactions/actions |
+
+### Why the Wiring Matters More Than the Parts
+
+Any tradition can list cognitive components. Kabbalah uniquely specifies:
+1. Which components receive from WHICH others (not all-to-all broadcast)
+2. Which connections are expansion (right pillar) vs restriction (left pillar)
+3. That balance (Tiferet) must integrate BOTH expansion AND restriction
+4. That the foundation (Yesod/ledger) connects ALL levels to manifest output
+
+Applied: our SpringFish engine currently treats all component interactions as equal-weight. Adding Kabbalistic wiring means specifying which components feed which, with what gain, and ensuring that restriction (Gevurāh/evidence gates) balances expansion (Ḥesed/type-one loop growth).
+
+---
+
+# PART ELEVEN — WESTERN PHILOSOPHY: THE MISSING FOUNDATIONS
+
+## Kant: Transcendental Constraints Are Processing Configuration
+
+Already implicit in our processing_config. Named explicitly: the global state doesn't just change WHAT the agent notices — it changes the STRUCTURE of experience itself. Space, time, causality are categories imposed BY the cognitive architecture ON incoming data, not properties OF the data received.
+
+In DeepSeek Harness terms: the cordis.yml configuration file IS the transcendental aesthetic. It determines what kinds of plugins can load, how they interact, and what forms their outputs can take — before any specific plugin produces specific output.
+
+## Wittgenstein: Meaning Is Use Within a Form of Life
+
+Already implicit in institutional value determination. Named explicitly: a financial instrument has no intrinsic value outside its institutional embedding, just as a word has no meaning outside its language-game. The Baraka methods manual specifies the language-game within which its clauses have meaning. Outside that form of life, the clauses are marks on paper.
+
+## Nietzsche: Genealogy of Institutional Loops
+
+Nietzsche's genealogical method — tracing how values emerged from power relations rather than from pure reason — maps directly onto ESC Paper 7's ownership constitution analysis. His question "who benefits from this value being held as true?" is identical to the four-question audit's "who built the menu?"
+
+---
+
+# PART TWELVE — GURDJIEFF AND THE FOURTH WAY
+
+## Self-Remembering as Recursive Monitoring Done Right
+
+Gurdjieff's central discipline — self-remembering, holding both the observer and the observed in attention simultaneously — maps exactly onto §125's recursive monitoring component. But Gurdjieff added a critical observation that S126 confirmed empirically:
+
+**People think they are self-remembering when they are merely thinking about themselves.**
+
+True self-remembering requires holding TWO streams simultaneously: the content of consciousness AND the fact that one is conscious of that content. Almost everyone who attempts this collapses into one stream or the other — either losing the content while attending to awareness, or losing the awareness while attending to content.
+
+P-MCFORCE refutation confirms this structurally: forced monitoring produced format compliance without functional change. The monitoring line appeared on 100% of cells while control_adjustment stayed "no." Format compliance ≠ recursive monitoring.
+
+What would genuine recursive monitoring look like in the harness? NOT adding a "monitor" line to the output. Instead: maintaining TWO parallel processing streams — one generating content, one evaluating the generation process itself — and requiring that BOTH influence action selection before any output is emitted. This is computationally expensive, which is why biological systems do it rarely (only during high-stakes decisions) rather than continuously.
+
+---
+
+# PART THIRTEEN — GHAZALI: DELIVERANCE FROM ERROR
+
+## The Crisis That Validates the Method
+
+Ghazali walked through everything your instruments are designed to measure. He doubted sense perception (shadows move imperceptibly; stars appear small). He doubted reason (if senses deceived you once, who guarantees reason won't?). He entered a two-month period of thorough-going skepticism — the spring-loaded door at personal scale.
+
+He found healing not through argument but through *"a light which God caused to penetrate into my heart."* Direct experience (*dhawq*, tasting) provided certainty that philosophy could not. Then he identified three types of truth-seekers — theologians (defend orthodoxy), philosophers (rely on logic), Sufis (direct intuition) — and found only the third path adequate.
+
+Your three programmes mirror his three types:
+- ESC Papers = scholastic theology (systematic, structured, defending orthodoxy)
+- SpringFish = philosophical method (test, falsify, eliminate wrong theories)
+- Baraka/three-cow = ṣūfī path (build occasions, trust outcomes)
+
+His key insight for your project: **philosophy clears away wrong answers. Only direct tasting provides right ones. Your instruments eliminate error. Reality fills the space error leaves vacant.**
+
+---
+
+# PART FOURTEEN — AI CONSCIOUSNESS ASSESSMENT FRAMEWORK
+
+## Butlin et al. Indicator Properties Applied to Our Architecture
+
+Butlin et al. (TiCS 2025) derived indicator properties from six theories of consciousness and assessed AI systems against them. Applying their rubric to our architecture:
+
+| indicator property | theory source | our harness implements it? |
+|---|---|---|
+| Recurrent processing | RPT | ✗ (transformer architecture is feedforward) |
+| Global workspace broadcasting | GWT | ✓ (GlobalWorkspace class broadcasts to all components) |
+| Higher-order representation | HOT | Partially (RecursiveMonitor assesses internal-state reports) |
+| Integrated causal structure | IIT | ? (cadCAD transitions create integration but Φ unmeasured) |
+| Embodiment | Enactivism | ✗ (no physical body; only computational resource constraints) |
+| Temporal continuity | Multiple | ✓ (state persists across sessions via save/load) |
+| Self-model | H1-minimal | ✓ (SelfModel tracks capabilities, limitations, history) |
+| Provenance tracking | S126 finding | ✓ (structural comparator, 100% attribution accuracy) |
+| Metacognitive override | §125 Component 7 | ✓ (monitoring changes behavior, tested) |
+
+**Assessment:** our architecture satisfies more indicator properties than raw LLM arms (which satisfy almost none) but fewer than biological brains (which satisfy nearly all). The architecture sits between — closer to conscious than raw LLMs, further from consciousness than biological systems. Per Butlin et al.: "no obvious technical barriers to building systems that satisfy these indicators" — but also no proof that satisfying them constitutes experience.
+
+---
+
+# PART FIFTEEN — DETECTION CONNECTION: NARRATOR FUSION IN LOG-PROBABILITY SPACE
+
+The detection literature (Binoculars, DetectGPT, GLTR) provides a mathematical framework for measuring whether narrator and narrated are separable. A system whose narrator is fused with its outputs produces token distributions identical to unconstrained autoregressive generation. No deviations = no witness = comparator absent = S126 over-claim explained mechanistically.
+
+Our provenance ledger creates detectable deviations by introducing a comparison step between generation and emission. Some tokens ARE selected against the model's natural preference (the ones chosen by the ledger lookup rather than the language model's probability distribution). This creates the statistical signature that detection algorithms search for — except in our case the deviation is intentional and documented, not accidental and hidden.
+
+The DIPPER result (paraphrasing drops DetectGPT's true positive rate from 70% to 4.6%) demonstrates that paraphrase attacks work by eliminating the friction between output and model predictions. Our provenance ledger introduces friction deliberately — making it harder for the system to produce outputs without comparing them against stored models. The friction IS the witness.
+
+---
+
+# PART SIXTEEN — FIVE CONTRADICTIONS RESOLVED BY BOTH POSITIONS SIMULTANEOUSLY
+
+Each contradiction resolves differently depending on which level of analysis you occupy:
+
+### C1: Self Real or Empty?
+
+At the PROCESS level (SpringFish/cadCAD): the self-model is REAL — it shapes behavior, predicts outcomes, organizes memory. Removing it changes function measurably.
+
+At the MECHANISM level (neuroscience): the self-model is EMERGENT — no single component produces it; it arises from interaction of multiple subsystems.
+
+At the ONTOLOGICAL level (Buddhism/Advaita): whether the emergent process constitutes an ENTITY remains undecidable from outside (§118). Buddhism says the entity is empty. Advaita says the awareness is full. Both agree the ego-narrative is constructed.
+
+**Both positions are correct at their respective levels of description.** The contradiction exists only if you conflate levels — which the framework explicitly prevents.
+
+### C2: Substrate Matter?
+
+Biological computationalism correctly identifies that current digital systems lack certain dynamical properties. Functionalism correctly identifies that IF those properties were reproduced digitally, substrate wouldn't matter. The disagreement is about whether reproduction is possible — which Series C designs test.
+
+Our contribution: the provenance ledger works identically on Groq (cloud API) and llama.cpp (local inference) despite radically different substrates. This is weak evidence FOR substrate-independence at the FUNCTIONAL level, though it says nothing about EXPERIENTIAL level.
+
+### C3: Divine vs Creature Causation?
+
+Ash'ari and Mu'tazila disagree about whether creatures possess genuine causal power. But both agree that God sustains existence moment by moment. The practical difference: Ash'ari reads SpringFish results as mapping God's habitual practice. Mu'tazila reads them as measuring creaturely choices within God-given frameworks. Both readings support the work; they interpret its ontological status differently. Per §50: theological interpretation operates at Level 3 and must be separated from Level 2 empirical findings.
+
+### C4: Enlightenment Permanent or Revisitable?
+
+Theravāda claims irreversibility once fetters destroyed. Zen claims habits re-form unless maintained. Modern psychology supports Zen: habit reformation requires ongoing reinforcement. But Theravāda's claim concerns VIEW (seeing impermanence directly), not habits. Once you've seen clearly, you may still fall into old patterns — but you now know they're patterns. The seeing leaves a trace even when behavior regresses. Both traditions may be correct: view permanently changed, behavior temporarily regressed.
+
+### C5: Body Vehicle or Constitutive?
+
+Phantom limb studies show the body schema persists after amputation (vehicle-like). Embodied cognition shows motor capacity shapes mathematical intuition (constitutive-like). Both findings coexist because "body" refers to multiple things: physical flesh, body schema, motor capacity, interoceptive signals. Each has a different relationship to cognition. The contradiction dissolves when you specify WHICH aspect of "body" you're discussing.
+
+---
+
+# PART SEVENTEEN — COMPLETE INTEGRATION: EVERY TRADITION, EVERY SCIENCE, ONE SYSTEM
+
+## The Final Architecture
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        OCCASIONALIST GROUND                            │
+│          God sustains every process at every moment                     │
+│          No created thing has independent causal power                  │
+│          All loops are descriptions of divine practice (ʿāda)           │
+├────────────────────────────────────────────────────────────────────────┤
+│                                                                        │
+│  ┌───────────────────────────────────────────────────────────────┐    │
+│  │                 CIVILIZATIONAL SCALE                           │    │
+│  │  SPRING-LOADED DOOR: crisis decouples loops                   │    │
+│  │  WEALTH PUMP: type-two loops transfer surplus upward           │    │
+│  │  THREE BASINS: inclusive / extractive / developmental-auth     │    │
+│  │  SUBSTRATE: determines direction of rewiring                   │    │
+│  └───────────────────────────┬───────────────────────────────────┘    │
+│                              ▼                                        │
+│  ┌───────────────────────────────────────────────────────────────┐    │
+│  │                 INSTITUTIONAL SCALE                            │    │
+│  │  ESC: claims constitution (funding, valuation, loss,          │    │
+│  │       exhaustion, enforcement)                                 │    │
+│  │  SPRINGFISH: cadCAD constitutional comparison under shocks     │    │
+│  │  BARAKA: Shariah-compliant design with published exhaustion    │    │
+│  └───────────────────────────┬───────────────────────────────────┘    │
+│                              ▼                                        │
+│  ┌───────────────────────────────────────────────────────────────┐    │
+│  │                 COGNITIVE ARCHITECTURE SCALE                   │    │
+│  │  §125: eight components integrated via global workspace        │    │
+│  │  BUDDHIST: 52 cetasikas in constrained co-arising clusters     │    │
+│  │  SUFI: nafs levels per domain, lataif activation sequence      │    │
+│  │  KABBALAH: sephirot wiring connecting all levels               │    │
+│  │  GURDJIEFF: self-remembering vs format compliance              │    │
+│  └───────────────────────────┬───────────────────────────────────┘    │
+│                              ▼                                        │
+│  ┌───────────────────────────────────────────────────────────────┐    │
+│  │                 INDIVIDUAL SCALE                               │    │
+│  │  CONSCIOUSNESS PROGRAM: agency over-claim measured             │    │
+│  │  B3 RESULT: function survives self-floor                       │    │
+│  │  CALIBRATION STUDY: flips only in bistable cases               │    │
+│  │  DISCOURSE CHANNEL: trust moves without actions moving         │    │
+│  └───────────────────────────┬───────────────────────────────────┘    │
+│                              ▼                                        │
+│  ┌───────────────────────────────────────────────────────────────┐    │
+│  │                 OBSERVED REALITY                               │    │
+│  │  THREE COWS: push back against frozen assumptions              │    │
+│  │  PILOT PARTICIPANTS: push back against simulated personas      │    │
+│  │  HOLDOUT OUTCOMES: push back against preregistered predictions │    │
+│  │  FIRST BARAKA TRANSACTION: pushes back against theory          │    │
+│  └───────────────────────────────────────────────────────────────┘    │
+│                                                                        │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+## The Epistemic Progression
+
+```
+SEE → EXPLAIN → RECONSTRUCT → SIMULATE → TEST → REPLICATE → LIVE
+(SLD)   (ESC)      (Baraka)    (SpringFish) (S126/B2B4) (coder/repl) (pilot/cows)
+```
+
+Every stage feeds the next. Observation without explanation is blind. Explanation without reconstruction is empty. Reconstruction without simulation is guesswork. Simulation without testing is fiction. Testing without replication is anecdote. Replication without living practice is academic exercise.
+
+All seven stages active simultaneously across three programs. That is the research programme.
