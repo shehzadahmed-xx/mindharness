@@ -16,7 +16,9 @@
     "edits_above_append_point": 0,
     "machine_ledger_rows": 0,
     "runtime_mappings": 0,
-    "negative_controls_executed": "research/audit_negative_controls_C270.md"
+    "negative_controls_executed": "research/audit_negative_controls_C270.md",
+    "ch271_epigraph": "authors verbatim formulation",
+    "ch271_loop_ledger": "sec 271.7 computable specification (R, Sigma, Gamma)"
   },
   "evidence_sources": [
     "lab_runs/FINDINGS.md",
@@ -25,5 +27,5 @@
     "04_RETIRED corpus Shariah-board brief"
   ],
   "adjudication": "requires claim-by-claim review per roadmap item F before any canonical successor",
-  "candidate_sha256": "bdda1afa2b71fd0e4be444351e7987f3b0642a19aad50adbdbdf565d211a09f3"
+  "candidate_sha256": "6b92621c8f60a35834b65448bb963722f2765492edc280f7c3ea292090e83f0a"
 }
