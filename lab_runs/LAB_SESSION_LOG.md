@@ -151,3 +151,29 @@ C4 seed 8: deterministic failure, excluded per programme practice of recording f
   equilibria therefore yield identical macro. Magnitude-level constitutional deltas
   require Study 009V long-horizon machinery. Scope boundary documented in FINDINGS.md F4.
 - Distilled session findings written to lab_runs/FINDINGS.md (F1-F5).
+
+---
+
+# UPDATE 7: Calibration-isolation experiment (frozen identity)
+
+Question: does the RQ-613/614/620 calibration layer itself change C3 strategy selection,
+or was the earlier calibrated-vs-uncalibrated contrast confounded by model identity
+(calibrated runs had used gpt-oss-120b)?
+
+Design: same frozen Qwen3.5 weights, same seeds, --calibrated-personas on/off.
+Two divergent seeds chosen: seed 1 (uncalibrated -> selective_payment) and
+seed 3 (uncalibrated -> transparent_restructuring). Zero fallbacks both runs.
+
+| seed | uncalibrated | calibrated | trust |
+|---|---|---|---|
+| 1 | selective_payment | selective_payment (stable) | 0.450 -> 0.450 |
+| 3 | transparent_restructuring | **selective_payment (FLIPPED)** | 0.425 -> 0.462 |
+
+Findings: (1) calibration does NOT remove the C3 instability - rules out the defence
+"instability is an uncalibrated artifact". (2) calibration IS causally active: it flipped
+seed 3 into the unstable basin while leaving seed 1 - persona influence weights shift
+individual outcomes without changing the distribution-level phenomenon. (3) Earlier
+8/8-stable calibrated grid ran on gpt-oss-120b, so model policy remains the dominant
+determinant of which basin a run lands in; calibration redistributes within it.
+(4) Selective-payment runs continue to show higher trust - consistent with UPDATE 4's
+flagged pattern, now n=10 across grids.
