@@ -178,12 +178,19 @@ class ArtificialHumanAgent:
         # Initialize endorsed values
         self.self_model.set_values(["pursue excellence","serve humanity","seek knowledge","act justly"])
         self.self_model.update_narrative(f"{name} initiated.")
+        
+        # === WORLD MODEL — load everything we know ===
+        wm_path=os.path.join(os.path.dirname(__file__),'WORLD_MODEL.md')
+        if os.path.exists(wm_path):
+            self.world_knowledge=open(wm_path,encoding='utf-8').read()
+        else:
+            self.world_knowledge=
 
     def _call_llm(self,user_msg,system_prompt):
         import urllib.request
         if self.backend=="groq":
             url='https://api.groq.com/openai/v1/chat/completions'
-            headers={'Authorization':f'Bearer {self.api_key}','Content-Type':'application/json'}
+            headers={'Authorization':f'Bearer {self.api_key}','Content-Type':'application/json','User-Agent':'springfish-agent/1.0'}
         elif self.backend=="llama":
             url=self.base_url.rstrip('/')+'/chat/completions'
             headers={'Content-Type':'application/json','Authorization':'Bearer local'}
