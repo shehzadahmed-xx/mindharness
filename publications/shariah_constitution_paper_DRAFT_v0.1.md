@@ -186,6 +186,14 @@ near-debt structures:** if murābaḥa simulates ≈ debt, we print that; indust
 findings from within the framework are features, not embarrassments. **(iv) Evidence
 classes:** all simulation outputs are conditional, decision-support artifacts; no forecasting
 claim attaches to them, and prospective scoring follows preregistered holdout discipline.
+**(v) Correspondence is not provenance:** we claim a *structural correspondence* between
+the classical axioms and the ESC constitutional parameters. Fiqh al-muʿāmalāt is treated as
+an independent, historically developed jurisprudential machinery for reasoning about many of
+the same underlying objects — ownership, exchange, liability, risk, contract, payment,
+resolution — not as a draft, precursor, or implicit formalization of ESC. Classical fiqh
+does not prove the modern constructive theory; it motivates it, constrains it, and supplies
+centuries of adversarial edge cases. Whether the modern architecture works is established
+by simulation and pilots, never by antiquity.
 
 ## 7. Implications and conclusion
 

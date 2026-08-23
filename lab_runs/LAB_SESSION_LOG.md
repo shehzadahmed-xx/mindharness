@@ -48,3 +48,22 @@ All numbers are conditional simulation diagnostics under heuristic/fallback poli
 Decisions carry real model reasoning (belief/claim/rationale with case-specific content, confidence 0.90–0.95). vs heuristic runs: trust dropped C1 0.425→0.350, C3 0.500→0.425 — LLM policy is measurably *not* identical to deterministic heuristic, answering the "is the agent layer decorative" question for this backend.
 
 **Label:** alternative-backend exploratory SIM — gpt-oss-20b ≠ frozen Qwen3.5 identity; not comparable to Study 009V frozen outputs. Frozen-model reruns require serving the verified gguf via llama-server.
+
+---
+
+# UPDATE 2: gpt-oss-120b evaluation + three-way comparison
+
+## 120b vs 20b (per-call)
+- 120b cleaner JSON out-of-box, FEWER completion tokens (106 vs 191), same latency, same 8K TPM bucket label — but its free-tier bucket proved much tighter in sustained runs (429s mid-case).
+
+## Shim v2 (`tools/llm_proxy.py` rewritten)
+- honours Retry-After on 429 (3 waits, cap 45s); optional PROXY_ALT_MODEL escape hatch; full attempt logging to /tmp/shim_hits.log.
+
+## Three-way results (identical shocks, seed 20260731)
+| policy | C1 legit / trust | C3 legit / trust | C1 actions | C3 actions |
+|---|---|---|---|---|
+| heuristic | 0.540 / 0.425 | 0.600 / 0.500 | accept×senior ×3 | transparent×participate ×3 |
+| gpt-oss-20b | 0.480 / 0.350 | 0.540 / 0.425 | identical | identical |
+| gpt-oss-120b | 0.480 / 0.350 | 0.540 / 0.425 | identical | identical |
+
+**Findings:** (1) Action equilibria are ROBUST across all three behavioural policies. (2) The LLM layer's effect flows through the SOCIAL channel — model-generated beliefs/claims degrade trust/legitimacy relative to canned heuristic strings (both models identically). (3) 120b ≡ 20b on outcomes: choose 20b for batch throughput; 120b adds nothing on these cells. Verdict on "is the agent layer decorative": actions say no-difference; discourse says real-difference. Both facts now measured locally.

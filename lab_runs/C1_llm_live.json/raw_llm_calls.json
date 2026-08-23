@@ -1,0 +1,302 @@
+[
+  {
+    "round": 1,
+    "player": "row",
+    "parsed": {
+      "action": "accept_emergency_finance",
+      "belief": "World Bank Group Guarantee Platform provides emergency financing that preserves imports and provisioning for Bangladesh fertiliser authorities.",
+      "claim": "Bangladesh fertiliser authorities should accept emergency finance from World Bank.",
+      "confidence": 0.95,
+      "rationale": "Accepting emergency finance preserves imports, mitigates shocks, and maintains legitimacy.",
+      "target_id": "ACT-WORLDBANK"
+    },
+    "raw": {
+      "id": "chatcmpl-2e60ed2f-920e-41aa-9ddd-0b8025d529bb",
+      "object": "chat.completion",
+      "created": 1787444964,
+      "model": "openai/gpt-oss-20b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\":\"accept_emergency_finance\",\"belief\":\"World Bank Group Guarantee Platform provides emergency financing that preserves imports and provisioning for Bangladesh fertiliser authorities.\",\"claim\":\"Bangladesh fertiliser authorities should accept emergency finance from World Bank.\",\"confidence\":0.95,\"rationale\":\"Accepting emergency finance preserves imports, mitigates shocks, and maintains legitimacy.\",\"target_id\":\"ACT-WORLDBANK\"}",
+            "reasoning": "We need to output JSON matching schema agent_decision. Fields: action, belief, claim, confidence, rationale, target_id. Must be compact JSON. Use values from context. The scenario: emergency_finance_only. The best_response is accept_emergency_finance. So action: \"accept_emergency_finance\". target_id: \"ACT-WORLDBANK\". belief: maybe \"World Bank Group Guarantee Platform provides emergency financing that preserves imports and provisioning\". claim: maybe \"Bangladesh fertiliser authorities should accept emergency finance\". confidence: maybe 0.9? Rationale: \"To preserve imports and provisioning, reduce shock, maintain legitimacy\". Ensure maxLength 240. Provide numeric confidence between 0 and 1. Let's craft.\n\nBelief: \"World Bank Group Guarantee Platform provides emergency financing that preserves imports and provisioning for Bangladesh fertiliser authorities.\" length? Count: maybe 120 chars. Claim: \"Bangladesh fertiliser authorities should accept emergency finance from World Bank.\" Rationale: \"Accepting emergency finance preserves imports, mitigates shocks, and maintains legitimacy.\" Confidence: 0.95.\n\nReturn JSON."
+          },
+          "logprobs": null,
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "queue_time": 0.04640053,
+        "prompt_tokens": 715,
+        "prompt_time": 0.037497872,
+        "completion_tokens": 321,
+        "completion_time": 0.332062886,
+        "total_tokens": 1036,
+        "total_time": 0.369560758,
+        "completion_tokens_details": {
+          "reasoning_tokens": 228
+        }
+      },
+      "usage_breakdown": null,
+      "system_fingerprint": "fp_c5a89987dc",
+      "x_groq": {
+        "id": "req_01m0p0bafrewzsj5334687rbez",
+        "seed": 20260832
+      },
+      "service_tier": "on_demand"
+    },
+    "fallback": false
+  },
+  {
+    "round": 1,
+    "player": "column",
+    "parsed": {
+      "action": "senior_strict_finance",
+      "belief": "The other actor will accept emergency finance.",
+      "claim": "World Bank will provide senior strict finance to Bangladesh.",
+      "confidence": 0.9,
+      "rationale": "Based on the payoff matrix, senior strict finance yields a higher payoff when the other actor accepts emergency finance, aligning with the best response strategy.",
+      "target_id": "ACT-V33-151"
+    },
+    "raw": {
+      "id": "chatcmpl-9d8bf87c-88bf-4ae7-9b4c-6ba1b3e092c7",
+      "object": "chat.completion",
+      "created": 1787444965,
+      "model": "openai/gpt-oss-20b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\":\"senior_strict_finance\",\"belief\":\"The other actor will accept emergency finance.\",\"claim\":\"World Bank will provide senior strict finance to Bangladesh.\",\"confidence\":0.9,\"rationale\":\"Based on the payoff matrix, senior strict finance yields a higher payoff when the other actor accepts emergency finance, aligning with the best response strategy.\",\"target_id\":\"ACT-V33-151\"}",
+            "reasoning": "We need to output JSON matching schema agent_decision. Fields: action, belief, claim, confidence, rationale, target_id. Must include all. Use compact JSON. Must not invent authority. Use only supplied facts, relationships, legal actions, payoffs and permissions. We have context: case, scenario, role, game. The best_response is \"senior_strict_finance\". So action should be \"senior_strict_finance\". target_id is \"ACT-V33-151\". belief: we can state belief about other action: \"accept_emergency_finance\". claim: maybe \"World Bank will provide senior strict finance to Bangladesh\". But claim must be <=240 chars. confidence: numeric between 0 and 1. Rationale: explain why choose senior strict finance. Use facts: best_response, payoffs. Provide rational: \"Given the payoff matrix, senior strict finance yields higher expected payoff when the other party accepts emergency finance.\" Provide belief: \"The other actor will accept emergency finance.\" Claim: \"World Bank will provide senior strict finance to Bangladesh.\" Confidence: maybe 0.9. Rationale: 0.9? Actually confidence is separate. Rationale: explanation. Ensure all fields present. Use compact JSON. Let's craft.\n\nCheck schema: action enum: flexible_finance or senior_strict_finance. So choose senior_strict_finance.\n\nbelief: string <=240. \"The other actor will accept emergency finance.\" Good.\n\nclaim: string <=240. \"World Bank will provide senior strict finance to Bangladesh.\" Good.\n\nconfidence: number 0-1. 0.9.\n\nrationale: string <=240. \"Based on the payoff matrix, senior strict finance yields a higher payoff when the other actor accepts emergency finance, aligning with the best response strategy.\" Good.\n\ntarget_id: \"ACT-V33-151\".\n\nReturn JSON. Ensure no extra spaces? Compact JSON: no line breaks? But can include line breaks? It says compact JSON formatting. So we can produce single line. Let's produce:\n\n{\"action\":\"senior_strict_finance\",\"belief\":\"The other actor will accept emergency finance.\",\"claim\":\"World Bank will provide senior strict finance to Bangladesh.\",\"confidence\":0.9,\"rationale\":\"Based on the payoff matrix, senior strict finance yields a higher payoff when the other actor accepts emergency finance, aligning with the best response strategy.\",\"target_id\":\"ACT-V33-151\"}\n\nCheck length: each field <=240. Good.\n\nReturn only JSON."
+          },
+          "logprobs": null,
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "queue_time": 0.047245706,
+        "prompt_tokens": 632,
+        "prompt_time": 0.033323157,
+        "completion_tokens": 598,
+        "completion_time": 0.61347685,
+        "total_tokens": 1230,
+        "total_time": 0.646800007,
+        "completion_tokens_details": {
+          "reasoning_tokens": 506
+        }
+      },
+      "usage_breakdown": null,
+      "system_fingerprint": "fp_c5a89987dc",
+      "x_groq": {
+        "id": "req_01m0p0bb20e1bs46srrethw02e",
+        "seed": 20260833
+      },
+      "service_tier": "on_demand"
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "row",
+    "parsed": {
+      "action": "accept_emergency_finance",
+      "belief": "World Bank will provide emergency financing to preserve imports and provisioning.",
+      "claim": "World Bank Group Guarantee Platform provides emergency financing that preserves imports and provisioning.",
+      "confidence": 0.9,
+      "rationale": "Verified fact confirms World Bank provides emergency financing; best response is accept.",
+      "target_id": "ACT-WORLDBANK"
+    },
+    "raw": {
+      "id": "chatcmpl-3e336cd5-2cac-496e-b845-f0b3f31b23bc",
+      "object": "chat.completion",
+      "created": 1787444966,
+      "model": "openai/gpt-oss-20b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\":\"accept_emergency_finance\",\"belief\":\"World Bank will provide emergency financing to preserve imports and provisioning.\",\"claim\":\"World Bank Group Guarantee Platform provides emergency financing that preserves imports and provisioning.\",\"confidence\":0.9,\"rationale\":\"Verified fact confirms World Bank provides emergency financing; best response is accept.\",\"target_id\":\"ACT-WORLDBANK\"}",
+            "reasoning": "We need to output JSON matching schema agent_decision. Fields: action, belief, claim, confidence, rationale, target_id. Must include all. Use compact JSON. Must not invent authority, resources, evidence. Use only supplied facts. The user context: Bangladesh fertiliser emergency finance and food provisioning. Scenario: emergency_finance_only. Role: public authority. Game: legal_actions: accept_emergency_finance, self_adjust. Belief about other action: flexible_finance. Best response: accept_emergency_finance. Payoff matrix given. Verified fact: The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, fuel and food-price shock into emergency foreign exchange and public repayment obligation.\n\nTarget actor id: ACT-WORLDBANK.\n\nWe need to decide action: accept_emergency_finance. Provide belief: maybe \"World Bank will provide emergency financing to preserve imports.\" Claim: \"World Bank Group Guarantee Platform provides emergency financing that preserves imports and provisioning.\" Confidence: maybe 0.9? Rationale: \"Based on verified fact and best response.\" target_id: \"ACT-WORLDBANK\".\n\nWe must ensure fields are strings except confidence number. All maxLength 240. Provide concise. Let's craft.\n\nJSON:\n\n{\n \"action\":\"accept_emergency_finance\",\n \"belief\":\"World Bank will provide emergency financing to preserve imports and provisioning.\",\n \"claim\":\"World Bank Group Guarantee Platform provides emergency financing that preserves imports and provisioning.\",\n \"confidence\":0.9,\n \"rationale\":\"Verified fact confirms World Bank provides emergency financing; best response is accept.\",\n \"target_id\":\"ACT-WORLDBANK\"\n}\n\nCheck length: each string less than 240. Good.\n\nReturn exactly that JSON."
+          },
+          "logprobs": null,
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "queue_time": 0.156227519,
+        "prompt_tokens": 713,
+        "prompt_time": 0.040529193,
+        "completion_tokens": 456,
+        "completion_time": 0.469002273,
+        "total_tokens": 1169,
+        "total_time": 0.509531466,
+        "completion_tokens_details": {
+          "reasoning_tokens": 370
+        }
+      },
+      "usage_breakdown": null,
+      "system_fingerprint": "fp_a8c584dda7",
+      "x_groq": {
+        "id": "req_01m0p0bccae91vj1xbrmcxddf2",
+        "seed": 20260932
+      },
+      "service_tier": "on_demand"
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "column",
+    "parsed": {
+      "action": "senior_strict_finance",
+      "belief": "World Bank believes Bangladesh requires emergency financing but prefers to impose strict terms to mitigate debt risks.",
+      "claim": "World Bank will offer senior strict finance to Bangladesh.",
+      "confidence": 0.8,
+      "rationale": "Best response in payoff matrix and alignment with risk tolerance and institutional rigidity.",
+      "target_id": "ACT-V33-151"
+    },
+    "raw": {
+      "id": "chatcmpl-c388d923-347e-41af-9cd6-97296f6910fd",
+      "object": "chat.completion",
+      "created": 1787444967,
+      "model": "openai/gpt-oss-20b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\":\"senior_strict_finance\",\"belief\":\"World Bank believes Bangladesh requires emergency financing but prefers to impose strict terms to mitigate debt risks.\",\"claim\":\"World Bank will offer senior strict finance to Bangladesh.\",\"confidence\":0.8,\"rationale\":\"Best response in payoff matrix and alignment with risk tolerance and institutional rigidity.\",\"target_id\":\"ACT-V33-151\"}",
+            "reasoning": "We need to produce JSON matching schema agent_decision. Fields: action, belief, claim, confidence, rationale, target_id. Must be valid JSON. Use compact formatting. Provide values. We need to decide action: either flexible_finance or senior_strict_finance. The best response is senior_strict_finance. So likely choose senior_strict_finance. Provide belief: maybe \"World Bank believes Bangladesh needs emergency finance but prefers strict terms.\" Claim: \"World Bank will provide senior strict finance to Bangladesh.\" Confidence: maybe 0.8. Rationale: \"Given best response and risk tolerance.\" target_id: \"ACT-V33-151\". Ensure strings within 240 chars. Provide JSON."
+          },
+          "logprobs": null,
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "queue_time": 0.283624757,
+        "prompt_tokens": 629,
+        "prompt_time": 0.033766623,
+        "completion_tokens": 232,
+        "completion_time": 0.241662302,
+        "total_tokens": 861,
+        "total_time": 0.275428925,
+        "completion_tokens_details": {
+          "reasoning_tokens": 144
+        }
+      },
+      "usage_breakdown": null,
+      "system_fingerprint": "fp_37c9245f64",
+      "x_groq": {
+        "id": "req_01m0p0bd6fe5c8m0qnr3r1pmqp",
+        "seed": 20260933
+      },
+      "service_tier": "on_demand"
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "row",
+    "parsed": {
+      "action": "accept_emergency_finance",
+      "belief": "World Bank will provide emergency financing.",
+      "claim": "World Bank will provide emergency financing to preserve imports and provisioning.",
+      "confidence": 0.9,
+      "rationale": "Payoff matrix indicates accept_emergency_finance yields higher payoff (3.204) than self_adjust (2.469).",
+      "target_id": "ACT-WORLDBANK"
+    },
+    "raw": {
+      "id": "chatcmpl-1bc6b0a7-4e99-463c-8cd2-546ce9e2b72f",
+      "object": "chat.completion",
+      "created": 1787444968,
+      "model": "openai/gpt-oss-20b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\":\"accept_emergency_finance\",\"belief\":\"World Bank will provide emergency financing.\",\"claim\":\"World Bank will provide emergency financing to preserve imports and provisioning.\",\"confidence\":0.9,\"rationale\":\"Payoff matrix indicates accept_emergency_finance yields higher payoff (3.204) than self_adjust (2.469).\",\"target_id\":\"ACT-WORLDBANK\"}",
+            "reasoning": "We need to produce JSON matching schema agent_decision. Fields: action, belief, claim, confidence, rationale, target_id. Must include all. Use only supplied facts, relationships, legal actions, payoffs and permissions. We have context: scenario \"emergency_finance_only\". legal_actions: accept_emergency_finance, self_adjust. best_response: accept_emergency_finance. So we should choose action accept_emergency_finance. target_id is \"ACT-WORLDBANK\". belief: we need to state belief about other action? The context says belief_about_other_action: \"senior_strict_finance\". But we need to produce belief string. We can say \"I believe the World Bank will provide emergency financing.\" claim: maybe \"World Bank will provide emergency financing to preserve imports.\" confidence: numeric between 0 and 1. Rationale: short explanation referencing payoff matrix best response. Use maxLength 240. Ensure JSON compact. Let's craft.\n\nbelief: \"World Bank will provide emergency financing.\" claim: \"World Bank will provide emergency financing to preserve imports and provisioning.\" confidence: maybe 0.9. rationale: \"Payoff matrix indicates accept_emergency_finance yields higher payoff (3.204) than self_adjust (2.469).\" Ensure within 240 chars.\n\nCheck length: belief 45 chars. claim 73 chars. rationale 88 chars. All within 240.\n\nReturn JSON."
+          },
+          "logprobs": null,
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "queue_time": 0.281847819,
+        "prompt_tokens": 715,
+        "prompt_time": 0.03852922,
+        "completion_tokens": 382,
+        "completion_time": 0.39795444,
+        "total_tokens": 1097,
+        "total_time": 0.43648366,
+        "completion_tokens_details": {
+          "reasoning_tokens": 291
+        }
+      },
+      "usage_breakdown": null,
+      "system_fingerprint": "fp_9340e7d14d",
+      "x_groq": {
+        "id": "req_01m0p0bdz2egptc253x75pgcwh",
+        "seed": 20261032
+      },
+      "service_tier": "on_demand"
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "column",
+    "parsed": {
+      "action": "senior_strict_finance",
+      "belief": "World Bank believes Bangladesh will accept emergency finance.",
+      "claim": "World Bank claims to provide emergency finance to Bangladesh.",
+      "confidence": 0.8,
+      "rationale": "Given best response and Bangladesh's need, senior strict finance maximizes payoff.",
+      "target_id": "ACT-V33-151"
+    },
+    "raw": {
+      "id": "chatcmpl-138a8516-2873-4414-8b0f-3b6a488f8a94",
+      "object": "chat.completion",
+      "created": 1787444969,
+      "model": "openai/gpt-oss-20b",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\":\"senior_strict_finance\",\"belief\":\"World Bank believes Bangladesh will accept emergency finance.\",\"claim\":\"World Bank claims to provide emergency finance to Bangladesh.\",\"confidence\":0.8,\"rationale\":\"Given best response and Bangladesh's need, senior strict finance maximizes payoff.\",\"target_id\":\"ACT-V33-151\"}",
+            "reasoning": "We need to output JSON matching schema agent_decision. Fields: action, belief, claim, confidence, rationale, target_id. Must include all. We have context: case, scenario, role, game. We need to decide action: either flexible_finance or senior_strict_finance. The best_response is senior_strict_finance. So likely choose senior_strict_finance. Belief: maybe \"World Bank believes Bangladesh will accept emergency finance\". Claim: maybe \"World Bank claims to provide emergency finance to Bangladesh\". Confidence: numeric between 0 and 1. Rationale: short. target_id: \"ACT-V33-151\". Let's craft.\n\nBelief: \"World Bank believes Bangladesh will accept emergency finance.\" Claim: \"World Bank claims to provide emergency finance to Bangladesh.\" Confidence: maybe 0.8. Rationale: \"Given best response and Bangladesh's need, senior strict finance maximizes payoff.\" Ensure maxLength 240. All strings within limit.\n\nReturn JSON."
+          },
+          "logprobs": null,
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "queue_time": 0.279507747,
+        "prompt_tokens": 632,
+        "prompt_time": 0.033368413,
+        "completion_tokens": 282,
+        "completion_time": 0.292797647,
+        "total_tokens": 914,
+        "total_time": 0.32616606,
+        "completion_tokens_details": {
+          "reasoning_tokens": 202
+        }
+      },
+      "usage_breakdown": null,
+      "system_fingerprint": "fp_38cbe36ff0",
+      "x_groq": {
+        "id": "req_01m0p0bfakeea8m38bttqqsq17",
+        "seed": 20261033
+      },
+      "service_tier": "on_demand"
+    },
+    "fallback": false
+  }
+]
