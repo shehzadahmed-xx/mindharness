@@ -64,3 +64,18 @@ bug; a scope boundary between diagnostic surfaces, now documented.
 2. Extend calibrated-personas axis across the seed grid.
 3. Author gates unchanged: protocol v1.0 freeze, coder/replicator selection,
    first Baraka transaction, three-cow launch, Oct 1 holdout protocol.
+
+## F6 — Calibration is causally active; instability survives it
+
+Controlled isolation under frozen identity (seeds 1 & 3, --calibrated-personas on/off):
+
+| seed | uncalibrated | calibrated |
+|---|---|---|
+| 1 | selective_payment | selective_payment |
+| 3 | transparent_restructuring | **selective_payment (flip)** |
+
+(1) The C3 instability is not an uncalibrated artifact. (2) Persona-influence weights
+causally redistribute individual seeds between basins without changing the distributional
+phenomenon. (3) Model policy remains dominant: calibrated gpt-oss-120b ran 8/8 stable
+while calibrated frozen-Qwen produces mixed basins. (4) Selective-payment trust premium
+persists (n=10). Full 8-seed calibrated-frozen grid in progress at time of writing.

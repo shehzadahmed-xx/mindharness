@@ -173,3 +173,24 @@ External   : V34.2.7 retrieval from producing machine (or adopt V34.2.6 formally
 
 Still requiring the author personally: protocol v1.0 freeze approval; coder & replication
 team selection; V34.2.7 retrieval decision; three-cow launch.
+
+---
+
+## 6. Session addendum — lab brought online (2026-08-23)
+
+The laboratory is no longer "runnable in principle" but running:
+
+- Frozen Qwen3.5 identity executes locally via llama-server (`/opt/homebrew/bin/llama-server`,
+  port 18555); SHA-verified gguf from Downloads.
+- Cloud backends via `tools/llm_proxy.py` (Groq primary; Zen keys authenticate listing only).
+- Four-case × eight-seed frozen grid reproduced every Study-009V stability signature,
+  including C3's instability (6/2 split) and C1's financing-varied-once detail.
+- Three-way policy comparison (heuristic/20b/120b): equilibria robust; LLM effect is in
+  the discourse channel (trust/legitimacy), not action selection.
+- Calibration-isolation experiment: persona layer causally flips individual seeds
+  (seed 3 -> selective) without removing C3 instability; model policy dominant.
+- Synthesis expanded to V34.2.5 candidate: Chapters 267-271 (Day transcript, replication
+  record, constitutional bridge, applied audit + negative controls, loop constitution).
+
+New open items: full calibrated-frozen grid (running), Study-009V long-horizon replay,
+author gates unchanged (protocol v1.0, coder, replicators, Baraka tx, three cows, Oct 1).
