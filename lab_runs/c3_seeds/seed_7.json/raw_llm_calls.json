@@ -1,0 +1,296 @@
+[
+  {
+    "round": 1,
+    "player": "row",
+    "parsed": {
+      "action": "selective_payment",
+      "target_id": "ACT-V33-159",
+      "belief": "litigate_or_holdout",
+      "claim": "Venezuela oil export and payment-account chain",
+      "confidence": 0.5110579913996791,
+      "rationale": "Venezuela oil export and payment-account chain"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"selective_payment\", \"target_id\": \"ACT-V33-159\", \"belief\": \"litigate_or_holdout\", \"claim\": \"Venezuela oil export and payment-account chain\", \"confidence\": 0.5110579913996791, \"rationale\": \"Venezuela oil export and payment-account chain\"}"
+          }
+        }
+      ],
+      "created": 1787448796,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 93,
+        "prompt_tokens": 549,
+        "total_tokens": 642,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-Ccwy6VzpDCbvlj1zaWzE8FuuhPg12Iv6",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 475,
+        "prompt_ms": 4613.112,
+        "prompt_per_token_ms": 9.711814736842106,
+        "prompt_per_second": 102.96736779857068,
+        "predicted_n": 93,
+        "predicted_ms": 8774.49,
+        "predicted_per_token_ms": 95.37489130434783,
+        "predicted_per_second": 10.48493986545087
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 1,
+    "player": "column",
+    "parsed": {
+      "action": "participate",
+      "target_id": "ACT-V33-160",
+      "belief": "transparent_restructuring",
+      "claim": "Venezuela and PDVSA creditor groups",
+      "confidence": 0.5250928482518933,
+      "rationale": "0.5304803348949501"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"participate\", \"target_id\": \"ACT-V33-160\", \"belief\": \"transparent_restructuring\", \"claim\": \"Venezuela and PDVSA creditor groups\", \"confidence\": 0.5250928482518933, \"rationale\": \"0.5304803348949501\"}"
+          }
+        }
+      ],
+      "created": 1787448812,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 100,
+        "prompt_tokens": 531,
+        "total_tokens": 631,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-L6RqEwwMDXvai0MXOUdTWuqqu6ONIWFo",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 457,
+        "prompt_ms": 1946.923,
+        "prompt_per_token_ms": 4.260225382932166,
+        "prompt_per_second": 234.72936525995124,
+        "predicted_n": 100,
+        "predicted_ms": 10158.937,
+        "predicted_per_token_ms": 102.61552525252525,
+        "predicted_per_second": 9.745114080341281
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "row",
+    "parsed": {
+      "action": "selective_payment",
+      "target_id": "Venezuela oil export and payment-account chain",
+      "belief": "Venezuela depends on export licences, buyers and accessible payment accounts to activate",
+      "claim": "Venezuela oil export and payment-account chain",
+      "confidence": 0.99,
+      "rationale": "Venezuela oil export and payment-account chain"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"selective_payment\", \"target_id\": \"Venezuela oil export and payment-account chain\", \"belief\": \"Venezuela depends on export licences, buyers and accessible payment accounts to activate\", \"claim\": \"Venezuela oil export and payment-account chain\", \"confidence\": 0.99, \"rationale\": \"Venezuela oil export and payment-account chain\"}"
+          }
+        }
+      ],
+      "created": 1787448828,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 90,
+        "prompt_tokens": 547,
+        "total_tokens": 637,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-eMpWWF5ac107i7OUD1WschtsOkqqPyRE",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 473,
+        "prompt_ms": 1832.023,
+        "prompt_per_token_ms": 3.873198731501057,
+        "prompt_per_second": 258.184531526078,
+        "predicted_n": 90,
+        "predicted_ms": 9756.329,
+        "predicted_per_token_ms": 109.62167415730337,
+        "predicted_per_second": 9.12228359662738
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "column",
+    "parsed": {
+      "action": "participate",
+      "target_id": "ACT-V33-160",
+      "belief": "selective_payment",
+      "claim": "Venezuela and PDVSA creditor groups",
+      "confidence": 0.5250928482518933,
+      "rationale": "0.4387085037332987"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"participate\", \"target_id\": \"ACT-V33-160\", \"belief\": \"selective_payment\", \"claim\": \"Venezuela and PDVSA creditor groups\", \"confidence\": 0.5250928482518933, \"rationale\": \"0.4387085037332987\"}"
+          }
+        }
+      ],
+      "created": 1787448847,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 98,
+        "prompt_tokens": 531,
+        "total_tokens": 629,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-QsL3AiaLEqZzYi1rzkRH6kdpHCqa64a4",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 457,
+        "prompt_ms": 1927.273,
+        "prompt_per_token_ms": 4.2172275711159735,
+        "prompt_per_second": 237.12260795434796,
+        "predicted_n": 98,
+        "predicted_ms": 10201.458,
+        "predicted_per_token_ms": 105.16967010309278,
+        "predicted_per_second": 9.508444773286328
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "row",
+    "parsed": {
+      "action": "selective_payment",
+      "target_id": "ACT-V33-159",
+      "belief": "litigate_or_holdout",
+      "claim": "Venezuela oil export and payment-account chain",
+      "confidence": 0.99,
+      "rationale": "Venezuela oil export and payment-account chain"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"selective_payment\", \"target_id\": \"ACT-V33-159\", \"belief\": \"litigate_or_holdout\", \"claim\": \"Venezuela oil export and payment-account chain\", \"confidence\": 0.99, \"rationale\": \"Venezuela oil export and payment-account chain\"}"
+          }
+        }
+      ],
+      "created": 1787448864,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 79,
+        "prompt_tokens": 549,
+        "total_tokens": 628,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-PBxyuWZ44PeWGKZHlJnHrr9Ml3VGIqrL",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 475,
+        "prompt_ms": 3065.171,
+        "prompt_per_token_ms": 6.452991578947368,
+        "prompt_per_second": 154.96688439242052,
+        "predicted_n": 79,
+        "predicted_ms": 9220.022,
+        "predicted_per_token_ms": 118.20541025641026,
+        "predicted_per_second": 8.45984966196393
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "column",
+    "parsed": {
+      "action": "participate",
+      "target_id": "ACT-V33-160",
+      "belief": "transparent_restructuring",
+      "claim": "Venezuela and PDVSA creditor groups",
+      "confidence": 0.53,
+      "rationale": "0.44"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"participate\", \"target_id\": \"ACT-V33-160\", \"belief\": \"transparent_restructuring\", \"claim\": \"Venezuela and PDVSA creditor groups\", \"confidence\": 0.53, \"rationale\": \"0.44\"}"
+          }
+        }
+      ],
+      "created": 1787448873,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 70,
+        "prompt_tokens": 531,
+        "total_tokens": 601,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-rybs8pxzHItCsdjFFAvU5LzXS2dMuqTN",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 457,
+        "prompt_ms": 1504.789,
+        "prompt_per_token_ms": 3.292754923413567,
+        "prompt_per_second": 303.69706317629914,
+        "predicted_n": 70,
+        "predicted_ms": 5881.649,
+        "predicted_per_token_ms": 85.24128985507247,
+        "predicted_per_second": 11.731403897104366
+      }
+    },
+    "fallback": false
+  }
+]

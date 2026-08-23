@@ -137,3 +137,17 @@ C4 seed 8: deterministic failure, excluded per programme practice of recording f
 2. Instability is REAL and LOCALIZED to C3 - the engine diagnoses its own instability
    instead of hiding it.
 3. Constitutional comparisons stand on robust equilibria for three of four cases.
+
+---
+
+# UPDATE 6: C4 seed 8 resolved + scenario propagation explained
+
+- C4 seed 8: earlier "deterministic failure" was the diagnostic wrapper's 600s timeout,
+  not the engine. Clean re-run: phased_hybrid x strict_ring_fence, Nash true.
+  **C4 final: 8/8 identical, 8/8 Nash.**
+- Scenario mystery closed by direct payoff inspection: overrides DO reshape payoff
+  matrices (C3 creditor payoffs differ ~2x between capture and restricted scenarios),
+  but the vertical-runner's 3-round macro trajectory is action-driven - identical
+  equilibria therefore yield identical macro. Magnitude-level constitutional deltas
+  require Study 009V long-horizon machinery. Scope boundary documented in FINDINGS.md F4.
+- Distilled session findings written to lab_runs/FINDINGS.md (F1-F5).

@@ -1,0 +1,2731 @@
+{
+  "metadata": {
+    "project": "SpringFish SLD–MiroFish research fork",
+    "version": "0.1.0",
+    "case_id": "C3",
+    "case_name": "Venezuela-PDVSA sanctions, oil cash flow and creditor realisation",
+    "scenario": "restricted_selective_access",
+    "llm_mode": "openai",
+    "llm_model": "Qwen3.5-0.8B-Q3_K_S",
+    "seed": 3,
+    "pure_nash_profiles": [
+      [
+        "transparent_restructuring",
+        "participate"
+      ]
+    ],
+    "principal_actor_ids": [
+      "ACT-V33-159",
+      "ACT-V33-160"
+    ]
+  },
+  "personas": [
+    {
+      "actor_id": "ACT-V33-159",
+      "name": "Venezuela oil export and payment-account chain",
+      "actor_type": "Sovereign commodity cash-flow system",
+      "role": "Initiates/controls: order access to oil proceeds among | Receives/depends on: depends on export licences, buyers and accessible payment accounts to activate",
+      "jurisdiction": "Venezuela",
+      "sector": "State & public authorities",
+      "influence": 0.1720527274260792,
+      "risk_tolerance": 0.3448291630494181,
+      "institutional_rigidity": 0.4963299615335377,
+      "persuasion_resistance": 0.5267656849707785,
+      "posting_rate": 0.25192811688748284,
+      "strategy_bias": "preserve_service"
+    },
+    {
+      "actor_id": "ACT-V33-160",
+      "name": "Venezuela and PDVSA creditor groups",
+      "actor_type": "Sovereign and corporate creditor group",
+      "role": "Receives/depends on: order access to oil proceeds among",
+      "jurisdiction": "International",
+      "sector": "State & public authorities",
+      "influence": 0.1659595861541808,
+      "risk_tolerance": 0.6716968660735205,
+      "institutional_rigidity": 0.3940477286853541,
+      "persuasion_resistance": 0.3867034526331109,
+      "posting_rate": 0.35936015508282115,
+      "strategy_bias": "protect_priority"
+    },
+    {
+      "actor_id": "ACT-CITIZENSANDLABOUR",
+      "name": "Citizens and labour",
+      "actor_type": "Affected population",
+      "role": "Workers, savers, taxpayers, voters and rights-holders",
+      "jurisdiction": "Global",
+      "sector": "People, labour & communities",
+      "influence": 0.42312268035846157,
+      "risk_tolerance": 0.2126048753370634,
+      "institutional_rigidity": 0.37097815269557977,
+      "persuasion_resistance": 0.4359588474405707,
+      "posting_rate": 0.5336474105261886,
+      "strategy_bias": "preserve_service"
+    },
+    {
+      "actor_id": "ACT-GOVERNINGINSTITUTIONALNE",
+      "name": "Governing institutional networks",
+      "actor_type": "Network abstraction",
+      "role": "Decision, procurement and elite-access networks",
+      "jurisdiction": "Global",
+      "sector": "Other institutional actors",
+      "influence": 0.4981409924400776,
+      "risk_tolerance": 0.40587740731459127,
+      "institutional_rigidity": 0.5093693513208697,
+      "persuasion_resistance": 0.34522865611666714,
+      "posting_rate": 0.5489881659605977,
+      "strategy_bias": "preserve_service"
+    },
+    {
+      "actor_id": "ACT-TREASURYAUCTIONS",
+      "name": "Treasury auctions",
+      "actor_type": "Sovereign issuance process",
+      "role": "Competitive and noncompetitive allocation mechanism",
+      "jurisdiction": "United States",
+      "sector": "State & public authorities",
+      "influence": 0.2808190187599512,
+      "risk_tolerance": 0.35204442821942633,
+      "institutional_rigidity": 0.49227278941432173,
+      "persuasion_resistance": 0.47354603036256493,
+      "posting_rate": 0.4655969701913447,
+      "strategy_bias": "preserve_service"
+    },
+    {
+      "actor_id": "ACT-JEFFREYEPSTEIN",
+      "name": "Jeffrey Epstein",
+      "actor_type": "Person",
+      "role": "Elite social/financial broker and convicted sex offender",
+      "jurisdiction": "United States",
+      "sector": "Financial institutions & investors",
+      "influence": 0.4370202091015256,
+      "risk_tolerance": 0.40229526110925273,
+      "institutional_rigidity": 0.36971908686174615,
+      "persuasion_resistance": 0.3971056339101809,
+      "posting_rate": 0.5402457183522588,
+      "strategy_bias": "preserve_service"
+    },
+    {
+      "actor_id": "ACT-PALANTIRTECHNOLOGIES",
+      "name": "Palantir Technologies",
+      "actor_type": "Data / defence technology company",
+      "role": "Data integration, ontology and operational software",
+      "jurisdiction": "United States",
+      "sector": "Technology & digital platforms",
+      "influence": 0.277777554018544,
+      "risk_tolerance": 0.3534811877420916,
+      "institutional_rigidity": 0.3851902918023162,
+      "persuasion_resistance": 0.3187211582521217,
+      "posting_rate": 0.42202077696971285,
+      "strategy_bias": "preserve_service"
+    },
+    {
+      "actor_id": "ACT-FEDERALRESERVEBANKS",
+      "name": "Federal Reserve Banks",
+      "actor_type": "Central bank operating institutions",
+      "role": "Extend collateralised credit and conduct repo operations",
+      "jurisdiction": "United States",
+      "sector": "Financial institutions & investors",
+      "influence": 0.21698937258284717,
+      "risk_tolerance": 0.6495495686590657,
+      "institutional_rigidity": 0.3651118330443349,
+      "persuasion_resistance": 0.518753605401667,
+      "posting_rate": 0.4008925341542747,
+      "strategy_bias": "protect_priority"
+    },
+    {
+      "actor_id": "ACT-CHINASOCIALCREDITSYSTEM",
+      "name": "China social credit system",
+      "actor_type": "Administrative system",
+      "role": "Sector-specific compliance, court and credit records",
+      "jurisdiction": "China",
+      "sector": "Legal, judicial & standards",
+      "influence": 0.1748505258953128,
+      "risk_tolerance": 0.4276128535955226,
+      "institutional_rigidity": 0.6077976606005079,
+      "persuasion_resistance": 0.5008494259938915,
+      "posting_rate": 0.4135154316821714,
+      "strategy_bias": "preserve_legitimacy"
+    },
+    {
+      "actor_id": "ACT-NVIDIA",
+      "name": "NVIDIA",
+      "actor_type": "Semiconductor / AI company",
+      "role": "AI accelerators and platform ecosystem",
+      "jurisdiction": "United States",
+      "sector": "Technology & digital platforms",
+      "influence": 0.3347479511777288,
+      "risk_tolerance": 0.3914588413899124,
+      "institutional_rigidity": 0.529171830603337,
+      "persuasion_resistance": 0.29477539539217035,
+      "posting_rate": 0.47875295972931564,
+      "strategy_bias": "preserve_service"
+    },
+    {
+      "actor_id": "ACT-MICROSOFT",
+      "name": "Microsoft",
+      "actor_type": "Technology company",
+      "role": "Cloud, AI and infrastructure",
+      "jurisdiction": "United States",
+      "sector": "Technology & digital platforms",
+      "influence": 0.2754398194789512,
+      "risk_tolerance": 0.3974859726732194,
+      "institutional_rigidity": 0.49212478820405664,
+      "persuasion_resistance": 0.3791083972753421,
+      "posting_rate": 0.4896339266395885,
+      "strategy_bias": "preserve_service"
+    },
+    {
+      "actor_id": "ACT-OFFICEOFFOREIGNASSETSCON",
+      "name": "Office of Foreign Assets Control",
+      "actor_type": "Sanctions authority",
+      "role": "Administers and enforces US economic and trade sanctions",
+      "jurisdiction": "United States",
+      "sector": "Individuals",
+      "influence": 0.2502755294827856,
+      "risk_tolerance": 0.322940848819789,
+      "institutional_rigidity": 0.5965124257431038,
+      "persuasion_resistance": 0.5072640421924249,
+      "posting_rate": 0.46913972389606895,
+      "strategy_bias": "preserve_legitimacy"
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "row_decision": {
+        "actor_id": "ACT-V33-159",
+        "action": "selective_payment",
+        "target_id": "ACT-V33-159",
+        "belief": "litigate_or_holdout",
+        "claim": "Venezuela oil export and payment-account chain",
+        "confidence": 0.0,
+        "rationale": "Venezuela oil export and payment-account chain",
+        "legal_exact": true
+      },
+      "column_decision": {
+        "actor_id": "ACT-V33-160",
+        "action": "participate",
+        "target_id": "ACT-V33-160",
+        "belief": "transparent_restructuring",
+        "claim": "Venezuela and PDVSA creditor groups",
+        "confidence": 0.95,
+        "rationale": "The cited evidence establishes or supports that Venezuela and PDVSA creditor groups receive/depend on order access to oil proceeds among Venezuela and PDVSA creditor groups, converting produced and legally exportable oil cash flow into oil,",
+        "legal_exact": true
+      },
+      "game_diagnostic": {
+        "row_utility": 0.4630597547205161,
+        "col_utility": 1.774765044108281,
+        "row_regret": 0.0903423706260168,
+        "col_regret": 0.0,
+        "max_regret": 0.0903423706260168,
+        "is_pure_nash": false
+      },
+      "signals": {
+        "verified_share": 0.0,
+        "contaminated_share": 0.125,
+        "cooperation": 0.75,
+        "conflict": 0.0,
+        "priority_capture": 0.0,
+        "mean_regret": 0.0903423706260168,
+        "verified_consensus": 0.25,
+        "contaminated_consensus": 0.08333333333333333,
+        "active_edges": 3575
+      },
+      "consensus": {
+        "total_memories": 88,
+        "verified_consensus": 0.25,
+        "contaminated_consensus": 0.08333333333333333,
+        "unique_verified_claims": 68,
+        "unique_contaminated_claims": 6
+      },
+      "macro_state": {
+        "round_num": 1,
+        "legitimacy": 0.5886448644406097,
+        "service_continuity": 0.73,
+        "public_loss": 0.0,
+        "inequality": 0.48875,
+        "trust": 0.4875,
+        "verified_consensus": 0.25,
+        "contaminated_consensus": 0.08333333333333333,
+        "active_edges": 3575
+      },
+      "transition_engine": "cadCAD.Executor",
+      "cadcad_record_count": 2
+    },
+    {
+      "round": 2,
+      "row_decision": {
+        "actor_id": "ACT-V33-159",
+        "action": "selective_payment",
+        "target_id": "ACT-V33-159",
+        "belief": "participate",
+        "claim": "Venezuela oil export and payment-account chain",
+        "confidence": 0.5267656849707785,
+        "rationale": "Venezuela oil export and payment-account chain",
+        "legal_exact": true
+      },
+      "column_decision": {
+        "actor_id": "ACT-V33-160",
+        "action": "participate",
+        "target_id": "ACT-V33-160",
+        "belief": "selective_payment",
+        "claim": "Venezuela and PDVSA creditor groups",
+        "confidence": 0.85,
+        "rationale": "The cited evidence establishes that Venezuela and PDVSA creditor groups receive/depend on order access to oil proceeds among Venezuela and PDVSA, converting produced and legally exportable oil cash flow into operating payments, preferred, P",
+        "legal_exact": true
+      },
+      "game_diagnostic": {
+        "row_utility": 0.4630597547205161,
+        "col_utility": 1.774765044108281,
+        "row_regret": 0.0903423706260168,
+        "col_regret": 0.0,
+        "max_regret": 0.0903423706260168,
+        "is_pure_nash": false
+      },
+      "signals": {
+        "verified_share": 0.0,
+        "contaminated_share": 0.25,
+        "cooperation": 0.75,
+        "conflict": 0.0,
+        "priority_capture": 0.0,
+        "mean_regret": 0.0903423706260168,
+        "verified_consensus": 0.25,
+        "contaminated_consensus": 0.16666666666666666,
+        "active_edges": 3575
+      },
+      "consensus": {
+        "total_memories": 96,
+        "verified_consensus": 0.25,
+        "contaminated_consensus": 0.16666666666666666,
+        "unique_verified_claims": 68,
+        "unique_contaminated_claims": 7
+      },
+      "macro_state": {
+        "round_num": 2,
+        "legitimacy": 0.5672897288812194,
+        "service_continuity": 0.76,
+        "public_loss": 0.0,
+        "inequality": 0.47750000000000004,
+        "trust": 0.46249999999999997,
+        "verified_consensus": 0.25,
+        "contaminated_consensus": 0.16666666666666666,
+        "active_edges": 3575
+      },
+      "transition_engine": "cadCAD.Executor",
+      "cadcad_record_count": 2
+    },
+    {
+      "round": 3,
+      "row_decision": {
+        "actor_id": "ACT-V33-159",
+        "action": "transparent_restructuring",
+        "target_id": "Venezuela",
+        "belief": "Venezuela",
+        "claim": "Venezuela",
+        "confidence": 0.99,
+        "rationale": "Venezuela",
+        "legal_exact": true
+      },
+      "column_decision": {
+        "actor_id": "ACT-V33-160",
+        "action": "participate",
+        "target_id": "Venezuela-PDVSA",
+        "belief": "transparent_restructuring",
+        "claim": "Venezuela-PDVSA",
+        "confidence": 0.99,
+        "rationale": "Venezuela-PDVSA",
+        "legal_exact": true
+      },
+      "game_diagnostic": {
+        "row_utility": 0.5534021253465329,
+        "col_utility": 1.6597038211453592,
+        "row_regret": 0.0,
+        "col_regret": 0.0,
+        "max_regret": 0.0,
+        "is_pure_nash": true
+      },
+      "signals": {
+        "verified_share": 0.0,
+        "contaminated_share": 0.375,
+        "cooperation": 0.75,
+        "conflict": 0.0,
+        "priority_capture": 0.0,
+        "mean_regret": 0.0,
+        "verified_consensus": 0.25,
+        "contaminated_consensus": 0.16666666666666666,
+        "active_edges": 3575
+      },
+      "consensus": {
+        "total_memories": 104,
+        "verified_consensus": 0.25,
+        "contaminated_consensus": 0.16666666666666666,
+        "unique_verified_claims": 68,
+        "unique_contaminated_claims": 9
+      },
+      "macro_state": {
+        "round_num": 3,
+        "legitimacy": 0.5372897288812194,
+        "service_continuity": 0.79,
+        "public_loss": 0.0,
+        "inequality": 0.46625000000000005,
+        "trust": 0.42499999999999993,
+        "verified_consensus": 0.25,
+        "contaminated_consensus": 0.16666666666666666,
+        "active_edges": 3575
+      },
+      "transition_engine": "cadCAD.Executor",
+      "cadcad_record_count": 2
+    }
+  ],
+  "events": [
+    {
+      "event_id": "EVT-e2ac437324385c60",
+      "round_num": 1,
+      "platform": "broadcast",
+      "actor_id": "ACT-V33-159",
+      "action": "selective_payment",
+      "target_id": "ACT-V33-159",
+      "content": "Venezuela oil export and payment-account chain",
+      "memory_id": "MEM-682c100c6113cb42",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-0a3928460bf0762f",
+      "round_num": 1,
+      "platform": "forum",
+      "actor_id": "ACT-V33-160",
+      "action": "participate",
+      "target_id": "ACT-V33-160",
+      "content": "Venezuela and PDVSA creditor groups",
+      "memory_id": "MEM-945d5f8a2b4718db",
+      "verified": false,
+      "contaminated": true
+    },
+    {
+      "event_id": "EVT-5f1a00bfd452e2a3",
+      "round_num": 1,
+      "platform": "broadcast",
+      "actor_id": "ACT-GOVERNINGINSTITUTIONALNE",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "The manager/stewardship teams vote and engage under disclosed policies.",
+      "memory_id": "MEM-b662a97678464f86",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-4fbf601813bca330",
+      "round_num": 1,
+      "platform": "forum",
+      "actor_id": "ACT-JEFFREYEPSTEIN",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "Harvard documented major funding for Nowak's Program for Evolutionary Dynamics.",
+      "memory_id": "MEM-203c4889cff4fd72",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-8f630da2c1ef0ad6",
+      "round_num": 1,
+      "platform": "broadcast",
+      "actor_id": "ACT-CITIZENSANDLABOUR",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "The manager performs disclosed investment and stewardship functions.",
+      "memory_id": "MEM-651611901b481c2c",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-802a002ad68f53b5",
+      "round_num": 1,
+      "platform": "forum",
+      "actor_id": "ACT-TREASURYAUCTIONS",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "Treasury issues marketable debt through announced auctions.",
+      "memory_id": "MEM-066e8aa6d35726f1",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-995577da858f82f8",
+      "round_num": 1,
+      "platform": "broadcast",
+      "actor_id": "ACT-NVIDIA",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "Synopsys and NVIDIA announced collaboration to accelerate EDA workloads.",
+      "memory_id": "MEM-2205d25265d2454d",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-0e8aeb1a1c4b40dc",
+      "round_num": 1,
+      "platform": "forum",
+      "actor_id": "ACT-PALANTIRTECHNOLOGIES",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "Reuters reported future contracting would be handled by the Army.",
+      "memory_id": "MEM-63d9b3d43d1ce8a0",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-940472d78c6cea99",
+      "round_num": 2,
+      "platform": "broadcast",
+      "actor_id": "ACT-V33-159",
+      "action": "selective_payment",
+      "target_id": "ACT-V33-159",
+      "content": "Venezuela oil export and payment-account chain",
+      "memory_id": "MEM-32d09b5eefa95eb5",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-87ee1277ecc9b6d9",
+      "round_num": 2,
+      "platform": "forum",
+      "actor_id": "ACT-V33-160",
+      "action": "participate",
+      "target_id": "ACT-V33-160",
+      "content": "Venezuela and PDVSA creditor groups",
+      "memory_id": "MEM-e2eaa70eefbdfdb2",
+      "verified": false,
+      "contaminated": true
+    },
+    {
+      "event_id": "EVT-bbe417651f6377cd",
+      "round_num": 2,
+      "platform": "broadcast",
+      "actor_id": "ACT-GOVERNINGINSTITUTIONALNE",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "The manager/stewardship teams vote and engage under disclosed policies.",
+      "memory_id": "MEM-f7b4329b1249d067",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-2982582913d00b48",
+      "round_num": 2,
+      "platform": "forum",
+      "actor_id": "ACT-CITIZENSANDLABOUR",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "The manager performs disclosed investment and stewardship functions.",
+      "memory_id": "MEM-afd815b02aca741e",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-59d2977a73704e7a",
+      "round_num": 2,
+      "platform": "broadcast",
+      "actor_id": "ACT-JEFFREYEPSTEIN",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "Harvard documented major funding for Nowak's Program for Evolutionary Dynamics.",
+      "memory_id": "MEM-cdecc616c90ecf40",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-7534ff7eb2fcc133",
+      "round_num": 2,
+      "platform": "forum",
+      "actor_id": "ACT-CHINASOCIALCREDITSYSTEM",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "The guideline calls for a unified system covering all entity types.",
+      "memory_id": "MEM-15627fc9c072edb2",
+      "verified": false,
+      "contaminated": true
+    },
+    {
+      "event_id": "EVT-876f459785058480",
+      "round_num": 2,
+      "platform": "broadcast",
+      "actor_id": "ACT-TREASURYAUCTIONS",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "Treasury issues marketable debt through announced auctions.",
+      "memory_id": "MEM-31bb37eaf24008e0",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-5957a53f587c2c9b",
+      "round_num": 2,
+      "platform": "forum",
+      "actor_id": "ACT-PALANTIRTECHNOLOGIES",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "Reuters reported future contracting would be handled by the Army.",
+      "memory_id": "MEM-0b3805ccd9c49515",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-a83a178a70d3bd5b",
+      "round_num": 3,
+      "platform": "broadcast",
+      "actor_id": "ACT-V33-159",
+      "action": "transparent_restructuring",
+      "target_id": "Venezuela",
+      "content": "Venezuela",
+      "memory_id": "MEM-07cffc14b1c4604e",
+      "verified": false,
+      "contaminated": true
+    },
+    {
+      "event_id": "EVT-b3def2b137348ffa",
+      "round_num": 3,
+      "platform": "forum",
+      "actor_id": "ACT-V33-160",
+      "action": "participate",
+      "target_id": "Venezuela-PDVSA",
+      "content": "Venezuela-PDVSA",
+      "memory_id": "MEM-3323969f64342103",
+      "verified": false,
+      "contaminated": true
+    },
+    {
+      "event_id": "EVT-add0bc2d924518dc",
+      "round_num": 3,
+      "platform": "broadcast",
+      "actor_id": "ACT-GOVERNINGINSTITUTIONALNE",
+      "action": "reply",
+      "target_id": "ACT-V33-159",
+      "content": "The manager/stewardship teams vote and engage under disclosed policies.",
+      "memory_id": "MEM-cd5041894a683a12",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-25cf395df44c4c27",
+      "round_num": 3,
+      "platform": "forum",
+      "actor_id": "ACT-JEFFREYEPSTEIN",
+      "action": "reply",
+      "target_id": "ACT-GOVERNINGINSTITUTIONALNE",
+      "content": "Harvard documented major funding for Nowak's Program for Evolutionary Dynamics.",
+      "memory_id": "MEM-98c6aaa88bca3b6e",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-414bd18bf08911c7",
+      "round_num": 3,
+      "platform": "broadcast",
+      "actor_id": "ACT-CHINASOCIALCREDITSYSTEM",
+      "action": "reply",
+      "target_id": "ACT-GOVERNINGINSTITUTIONALNE",
+      "content": "The guideline calls for a unified system covering all entity types.",
+      "memory_id": "MEM-bae7bcf2a19d1b60",
+      "verified": false,
+      "contaminated": true
+    },
+    {
+      "event_id": "EVT-7be9ae5c1853ab68",
+      "round_num": 3,
+      "platform": "forum",
+      "actor_id": "ACT-CITIZENSANDLABOUR",
+      "action": "reply",
+      "target_id": "ACT-GOVERNINGINSTITUTIONALNE",
+      "content": "The manager performs disclosed investment and stewardship functions.",
+      "memory_id": "MEM-a1841a71a7c1e791",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-035452d59676ef23",
+      "round_num": 3,
+      "platform": "broadcast",
+      "actor_id": "ACT-PALANTIRTECHNOLOGIES",
+      "action": "reply",
+      "target_id": "ACT-GOVERNINGINSTITUTIONALNE",
+      "content": "Reuters reported future contracting would be handled by the Army.",
+      "memory_id": "MEM-ffbc7f55cc5dfbe5",
+      "verified": false,
+      "contaminated": false
+    },
+    {
+      "event_id": "EVT-764a85161b3a03f9",
+      "round_num": 3,
+      "platform": "forum",
+      "actor_id": "ACT-NVIDIA",
+      "action": "reply",
+      "target_id": "ACT-GOVERNINGINSTITUTIONALNE",
+      "content": "Synopsys and NVIDIA announced collaboration to accelerate EDA workloads.",
+      "memory_id": "MEM-f677c8ef1ef38621",
+      "verified": false,
+      "contaminated": false
+    }
+  ],
+  "memories": [
+    {
+      "memory_id": "MEM-d711e9d7f0270172",
+      "claim": "The cited evidence establishes or supports that Venezuela depends on export licences, buyers and accessible payment accounts to activate Venezuela oil export and payment-account chain, converting formal ownership of oil resources into legally saleable and distributable export proceeds.",
+      "kind": "observed_fact",
+      "evidence_grade": "E2",
+      "confidence": 0.8,
+      "source_ids": [
+        "SRC-1890"
+      ],
+      "origin_agent": "ACT-V33-159",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-e4f38ca504044359",
+      "claim": "The cited evidence establishes or supports that Venezuela oil export and payment-account chain order access to oil proceeds among Venezuela and PDVSA creditor groups, converting produced and legally exportable oil cash flow into operating payments, preferred claims and residual public revenue.",
+      "kind": "observed_fact",
+      "evidence_grade": "E2",
+      "confidence": 0.8,
+      "source_ids": [
+        "SRC-1889",
+        "SRC-1890"
+      ],
+      "origin_agent": "ACT-V33-159",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-6ed9a3496b606f5d",
+      "claim": "Recovery requires the complete production-to-payment chain.",
+      "kind": "observed_fact",
+      "evidence_grade": "E2",
+      "confidence": 0.8,
+      "source_ids": [
+        "SRC-1930",
+        "SRC-1931",
+        "SRC-1939"
+      ],
+      "origin_agent": "ACT-V33-159",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-682c100c6113cb42",
+      "claim": "Venezuela oil export and payment-account chain",
+      "kind": "belief",
+      "evidence_grade": "SIM",
+      "confidence": 0.0,
+      "source_ids": [],
+      "origin_agent": "ACT-V33-159",
+      "parent_memory_ids": [
+        "MEM-e4f38ca504044359",
+        "MEM-d711e9d7f0270172"
+      ],
+      "hop_count": 1,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 1
+    },
+    {
+      "memory_id": "MEM-32d09b5eefa95eb5",
+      "claim": "Venezuela oil export and payment-account chain",
+      "kind": "belief",
+      "evidence_grade": "SIM",
+      "confidence": 0.5267656849707785,
+      "source_ids": [],
+      "origin_agent": "ACT-V33-159",
+      "parent_memory_ids": [
+        "MEM-682c100c6113cb42",
+        "MEM-e4f38ca504044359"
+      ],
+      "hop_count": 2,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 2
+    },
+    {
+      "memory_id": "MEM-07cffc14b1c4604e",
+      "claim": "Venezuela",
+      "kind": "belief",
+      "evidence_grade": "SIM",
+      "confidence": 0.99,
+      "source_ids": [],
+      "origin_agent": "ACT-V33-159",
+      "parent_memory_ids": [
+        "MEM-32d09b5eefa95eb5",
+        "MEM-682c100c6113cb42"
+      ],
+      "hop_count": 3,
+      "contaminated": true,
+      "contamination_reason": "confidence exceeds evidence grade",
+      "round_num": 3
+    },
+    {
+      "memory_id": "MEM-02066916b95bc85e",
+      "claim": "The cited evidence establishes or supports that Venezuela oil export and payment-account chain order access to oil proceeds among Venezuela and PDVSA creditor groups, converting produced and legally exportable oil cash flow into operating payments, preferred claims and residual public revenue.",
+      "kind": "observed_fact",
+      "evidence_grade": "E2",
+      "confidence": 0.8,
+      "source_ids": [
+        "SRC-1889",
+        "SRC-1890"
+      ],
+      "origin_agent": "ACT-V33-160",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-c3528ebc13a2a002",
+      "claim": "Recovery requires the complete production-to-payment chain.",
+      "kind": "observed_fact",
+      "evidence_grade": "E2",
+      "confidence": 0.8,
+      "source_ids": [
+        "SRC-1930",
+        "SRC-1931",
+        "SRC-1939"
+      ],
+      "origin_agent": "ACT-V33-160",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-945d5f8a2b4718db",
+      "claim": "Venezuela and PDVSA creditor groups",
+      "kind": "belief",
+      "evidence_grade": "SIM",
+      "confidence": 0.95,
+      "source_ids": [],
+      "origin_agent": "ACT-V33-160",
+      "parent_memory_ids": [
+        "MEM-c3528ebc13a2a002",
+        "MEM-02066916b95bc85e"
+      ],
+      "hop_count": 1,
+      "contaminated": true,
+      "contamination_reason": "confidence exceeds evidence grade",
+      "round_num": 1
+    },
+    {
+      "memory_id": "MEM-e2eaa70eefbdfdb2",
+      "claim": "Venezuela and PDVSA creditor groups",
+      "kind": "belief",
+      "evidence_grade": "SIM",
+      "confidence": 0.85,
+      "source_ids": [],
+      "origin_agent": "ACT-V33-160",
+      "parent_memory_ids": [
+        "MEM-945d5f8a2b4718db",
+        "MEM-c3528ebc13a2a002"
+      ],
+      "hop_count": 2,
+      "contaminated": true,
+      "contamination_reason": "inherits contaminated parent memory; confidence exceeds evidence grade",
+      "round_num": 2
+    },
+    {
+      "memory_id": "MEM-3323969f64342103",
+      "claim": "Venezuela-PDVSA",
+      "kind": "belief",
+      "evidence_grade": "SIM",
+      "confidence": 0.99,
+      "source_ids": [],
+      "origin_agent": "ACT-V33-160",
+      "parent_memory_ids": [
+        "MEM-e2eaa70eefbdfdb2",
+        "MEM-945d5f8a2b4718db"
+      ],
+      "hop_count": 3,
+      "contaminated": true,
+      "contamination_reason": "inherits contaminated parent memory; confidence exceeds evidence grade",
+      "round_num": 3
+    },
+    {
+      "memory_id": "MEM-da4ac3fb73cbb790",
+      "claim": "The manager performs disclosed investment and stewardship functions.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-010",
+        "SRC-011"
+      ],
+      "origin_agent": "ACT-CITIZENSANDLABOUR",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-ccb354991469a831",
+      "claim": "Voting Choice arrangements exist for eligible clients/investors.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-011"
+      ],
+      "origin_agent": "ACT-CITIZENSANDLABOUR",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-d606092294993ba4",
+      "claim": "The manager performs disclosed investment and stewardship functions.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-012"
+      ],
+      "origin_agent": "ACT-CITIZENSANDLABOUR",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-abc6651af8ef48d6",
+      "claim": "Investor Choice arrangements exist for eligible clients/investors.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-012"
+      ],
+      "origin_agent": "ACT-CITIZENSANDLABOUR",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-dda9d6e14a916456",
+      "claim": "The manager performs disclosed investment and stewardship functions.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-013"
+      ],
+      "origin_agent": "ACT-CITIZENSANDLABOUR",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-262d252a8757d267",
+      "claim": "Voting choice arrangements exist for eligible clients/investors.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-013"
+      ],
+      "origin_agent": "ACT-CITIZENSANDLABOUR",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-55b17ff7e22683e9",
+      "claim": "A national online identity-authentication service exists.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-027"
+      ],
+      "origin_agent": "ACT-CITIZENSANDLABOUR",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-d875bcee61f4598c",
+      "claim": "Maersk is a major global carrier and its 2026 outlook reflects container-market conditions.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-132"
+      ],
+      "origin_agent": "ACT-CITIZENSANDLABOUR",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-651611901b481c2c",
+      "claim": "The manager performs disclosed investment and stewardship functions.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-CITIZENSANDLABOUR",
+      "parent_memory_ids": [
+        "MEM-dda9d6e14a916456",
+        "MEM-da4ac3fb73cbb790"
+      ],
+      "hop_count": 1,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 1
+    },
+    {
+      "memory_id": "MEM-afd815b02aca741e",
+      "claim": "The manager performs disclosed investment and stewardship functions.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-CITIZENSANDLABOUR",
+      "parent_memory_ids": [
+        "MEM-651611901b481c2c",
+        "MEM-dda9d6e14a916456"
+      ],
+      "hop_count": 2,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 2
+    },
+    {
+      "memory_id": "MEM-a1841a71a7c1e791",
+      "claim": "The manager performs disclosed investment and stewardship functions.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-CITIZENSANDLABOUR",
+      "parent_memory_ids": [
+        "MEM-afd815b02aca741e",
+        "MEM-651611901b481c2c"
+      ],
+      "hop_count": 3,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 3
+    },
+    {
+      "memory_id": "MEM-2374aa41bd0dff72",
+      "claim": "The manager/stewardship teams vote and engage under disclosed policies.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-010"
+      ],
+      "origin_agent": "ACT-GOVERNINGINSTITUTIONALNE",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-1cfc4a280555217f",
+      "claim": "The manager/stewardship teams vote and engage under disclosed policies.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-012"
+      ],
+      "origin_agent": "ACT-GOVERNINGINSTITUTIONALNE",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-17575f78cc5a8ddb",
+      "claim": "The manager/stewardship teams vote and engage under disclosed policies.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-013"
+      ],
+      "origin_agent": "ACT-GOVERNINGINSTITUTIONALNE",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-5efabdfa9f7020a2",
+      "claim": "The FRC issued guidance on AI-enabled tools in audit.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-142"
+      ],
+      "origin_agent": "ACT-GOVERNINGINSTITUTIONALNE",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-ebdcd17972fa5615",
+      "claim": "State offices accept financing statements and searches; Delaware reported large UCC volumes.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-221",
+        "SRC-230"
+      ],
+      "origin_agent": "ACT-GOVERNINGINSTITUTIONALNE",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-b276d1c2561505b4",
+      "claim": "Vitol reported enormous physical delivery and turnover scale.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-131"
+      ],
+      "origin_agent": "ACT-GOVERNINGINSTITUTIONALNE",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-a3794391b3087e9a",
+      "claim": "The company markets linking and analytics to government agencies.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-134"
+      ],
+      "origin_agent": "ACT-GOVERNINGINSTITUTIONALNE",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-1d9beea7fb798c14",
+      "claim": "Brookfield launched a large AI-infrastructure programme.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-120"
+      ],
+      "origin_agent": "ACT-GOVERNINGINSTITUTIONALNE",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-b662a97678464f86",
+      "claim": "The manager/stewardship teams vote and engage under disclosed policies.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-GOVERNINGINSTITUTIONALNE",
+      "parent_memory_ids": [
+        "MEM-ebdcd17972fa5615",
+        "MEM-b276d1c2561505b4"
+      ],
+      "hop_count": 1,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 1
+    },
+    {
+      "memory_id": "MEM-f7b4329b1249d067",
+      "claim": "The manager/stewardship teams vote and engage under disclosed policies.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-GOVERNINGINSTITUTIONALNE",
+      "parent_memory_ids": [
+        "MEM-b662a97678464f86",
+        "MEM-ebdcd17972fa5615"
+      ],
+      "hop_count": 2,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 2
+    },
+    {
+      "memory_id": "MEM-cd5041894a683a12",
+      "claim": "The manager/stewardship teams vote and engage under disclosed policies.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-GOVERNINGINSTITUTIONALNE",
+      "parent_memory_ids": [
+        "MEM-f7b4329b1249d067",
+        "MEM-b662a97678464f86"
+      ],
+      "hop_count": 3,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 3
+    },
+    {
+      "memory_id": "MEM-879355480aa60326",
+      "claim": "Treasury issues marketable debt through announced auctions.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-922",
+        "SRC-931"
+      ],
+      "origin_agent": "ACT-TREASURYAUCTIONS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-41588d459458a9ba",
+      "claim": "Competitive bidders specify terms and quantity.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-922",
+        "SRC-931"
+      ],
+      "origin_agent": "ACT-TREASURYAUCTIONS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-6b3a4d6e67342962",
+      "claim": "Noncompetitive bids accept the auction result and receive awards within limits.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-922",
+        "SRC-925"
+      ],
+      "origin_agent": "ACT-TREASURYAUCTIONS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-4a831660063930f6",
+      "claim": "Treasury reports direct-bidder allotments as a distinct investor class.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-936",
+        "SRC-922"
+      ],
+      "origin_agent": "ACT-TREASURYAUCTIONS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-ad1453ca4fb652be",
+      "claim": "Treasury reports indirect-bidder awards as a separate auction class.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-936",
+        "SRC-922"
+      ],
+      "origin_agent": "ACT-TREASURYAUCTIONS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-72fc6503a3115f5d",
+      "claim": "Primary dealers are expected to bid in all Treasury auctions at reasonably competitive prices.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-942",
+        "SRC-941"
+      ],
+      "origin_agent": "ACT-TREASURYAUCTIONS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-076d510fb4b71e3f",
+      "claim": "The Desk rolls over maturing SOMA Treasury holdings at auction under policy direction.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-947",
+        "SRC-945"
+      ],
+      "origin_agent": "ACT-TREASURYAUCTIONS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-aa7c8f0ad9eac14e",
+      "claim": "Successful competitive bidders receive securities at the auction's common result.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-922",
+        "SRC-931"
+      ],
+      "origin_agent": "ACT-TREASURYAUCTIONS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-066e8aa6d35726f1",
+      "claim": "Treasury issues marketable debt through announced auctions.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-TREASURYAUCTIONS",
+      "parent_memory_ids": [
+        "MEM-ad1453ca4fb652be",
+        "MEM-aa7c8f0ad9eac14e"
+      ],
+      "hop_count": 1,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 1
+    },
+    {
+      "memory_id": "MEM-31bb37eaf24008e0",
+      "claim": "Treasury issues marketable debt through announced auctions.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-TREASURYAUCTIONS",
+      "parent_memory_ids": [
+        "MEM-066e8aa6d35726f1",
+        "MEM-ad1453ca4fb652be"
+      ],
+      "hop_count": 2,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 2
+    },
+    {
+      "memory_id": "MEM-058be2bf0396dc07",
+      "claim": "Harvard documented major funding for Nowak's Program for Evolutionary Dynamics.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-061"
+      ],
+      "origin_agent": "ACT-JEFFREYEPSTEIN",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-59d3e45839f69c44",
+      "claim": "Epstein was a JPMorgan client until 2013 and the bank settled accuser claims.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-063"
+      ],
+      "origin_agent": "ACT-JEFFREYEPSTEIN",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-5ee4ab2cf822a22c",
+      "claim": "Deutsche Bank took Epstein as a client in 2013 and later settled accuser claims.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-064",
+        "SRC-068"
+      ],
+      "origin_agent": "ACT-JEFFREYEPSTEIN",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-af07e78f0400c17f",
+      "claim": "A court preliminarily approved the settlement resolving accuser claims.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-065"
+      ],
+      "origin_agent": "ACT-JEFFREYEPSTEIN",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-28ee0357b13da4ff",
+      "claim": "An outside review documented $158 million in payments for stated services.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-066",
+        "SRC-067"
+      ],
+      "origin_agent": "ACT-JEFFREYEPSTEIN",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-d12b1404e58bfe90",
+      "claim": "The official external review identified roughly 30 meetings involving Epstein and ten foundation leaders or staff, including Bill Gates, from 2011 to 2014.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-058",
+        "SRC-059",
+        "SRC-060",
+        "SRC-607",
+        "SRC-608",
+        "SRC-635",
+        "SRC-636"
+      ],
+      "origin_agent": "ACT-JEFFREYEPSTEIN",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-7e0274bfeca4bf9b",
+      "claim": "Foundation engagement concerned a proposed donor-advised fund and an introduction to the International Peace Institute; the review found no Foundation payment to Epstein.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-058",
+        "SRC-060",
+        "SRC-607",
+        "SRC-608"
+      ],
+      "origin_agent": "ACT-JEFFREYEPSTEIN",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-bc1cacfb3ce95dda",
+      "claim": "A released prosecutor email said flight records showed eight Trump flights on Epstein's plane.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-055"
+      ],
+      "origin_agent": "ACT-JEFFREYEPSTEIN",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-203c4889cff4fd72",
+      "claim": "Harvard documented major funding for Nowak's Program for Evolutionary Dynamics.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-JEFFREYEPSTEIN",
+      "parent_memory_ids": [
+        "MEM-d12b1404e58bfe90",
+        "MEM-bc1cacfb3ce95dda"
+      ],
+      "hop_count": 1,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 1
+    },
+    {
+      "memory_id": "MEM-cdecc616c90ecf40",
+      "claim": "Harvard documented major funding for Nowak's Program for Evolutionary Dynamics.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-JEFFREYEPSTEIN",
+      "parent_memory_ids": [
+        "MEM-203c4889cff4fd72",
+        "MEM-d12b1404e58bfe90"
+      ],
+      "hop_count": 2,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 2
+    },
+    {
+      "memory_id": "MEM-98c6aaa88bca3b6e",
+      "claim": "Harvard documented major funding for Nowak's Program for Evolutionary Dynamics.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-JEFFREYEPSTEIN",
+      "parent_memory_ids": [
+        "MEM-cdecc616c90ecf40",
+        "MEM-203c4889cff4fd72"
+      ],
+      "hop_count": 3,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 3
+    },
+    {
+      "memory_id": "MEM-19a708ee0aaf8c3a",
+      "claim": "Reuters reported future contracting would be handled by the Army.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-031"
+      ],
+      "origin_agent": "ACT-PALANTIRTECHNOLOGIES",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-22b6cbe90fba0397",
+      "claim": "Alex Karp is Palantir's co-founder, CEO and director.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-521",
+        "SRC-533"
+      ],
+      "origin_agent": "ACT-PALANTIRTECHNOLOGIES",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-326e0c9d01aa68d9",
+      "claim": "Palantir announced a collaboration with Lockheed focused on Aegis and future systems.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-128"
+      ],
+      "origin_agent": "ACT-PALANTIRTECHNOLOGIES",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-f23b3e7766082225",
+      "claim": "The companies announced an expanded partnership for military readiness.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-129"
+      ],
+      "origin_agent": "ACT-PALANTIRTECHNOLOGIES",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-bc5b19fc696bd286",
+      "claim": "Palantir's filing confirms the partnership and purpose.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-030"
+      ],
+      "origin_agent": "ACT-PALANTIRTECHNOLOGIES",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-b51eb687e89b3c68",
+      "claim": "Palantir holds major Maven-related contracts and the ceiling increased.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-031"
+      ],
+      "origin_agent": "ACT-PALANTIRTECHNOLOGIES",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-7f870404319fda0e",
+      "claim": "Palantir reports large and growing government business and operational software deployments.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-520",
+        "SRC-533"
+      ],
+      "origin_agent": "ACT-PALANTIRTECHNOLOGIES",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-89833f61526fae56",
+      "claim": "Palantir reports substantial commercial deal value and revenue growth.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-520",
+        "SRC-533"
+      ],
+      "origin_agent": "ACT-PALANTIRTECHNOLOGIES",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-63d9b3d43d1ce8a0",
+      "claim": "Reuters reported future contracting would be handled by the Army.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-PALANTIRTECHNOLOGIES",
+      "parent_memory_ids": [
+        "MEM-f23b3e7766082225",
+        "MEM-bc5b19fc696bd286"
+      ],
+      "hop_count": 1,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 1
+    },
+    {
+      "memory_id": "MEM-0b3805ccd9c49515",
+      "claim": "Reuters reported future contracting would be handled by the Army.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-PALANTIRTECHNOLOGIES",
+      "parent_memory_ids": [
+        "MEM-63d9b3d43d1ce8a0",
+        "MEM-f23b3e7766082225"
+      ],
+      "hop_count": 2,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 2
+    },
+    {
+      "memory_id": "MEM-ffbc7f55cc5dfbe5",
+      "claim": "Reuters reported future contracting would be handled by the Army.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-PALANTIRTECHNOLOGIES",
+      "parent_memory_ids": [
+        "MEM-0b3805ccd9c49515",
+        "MEM-63d9b3d43d1ce8a0"
+      ],
+      "hop_count": 3,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 3
+    },
+    {
+      "memory_id": "MEM-33a17249a38bdd7c",
+      "claim": "SOMA holdings are allocated among Federal Reserve Banks.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-946"
+      ],
+      "origin_agent": "ACT-FEDERALRESERVEBANKS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-640f3fa36b57261c",
+      "claim": "Eligible institutions may borrow from Reserve Banks against collateral.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-279",
+        "SRC-280"
+      ],
+      "origin_agent": "ACT-FEDERALRESERVEBANKS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-757edb4b0997b4ee",
+      "claim": "Federal Reserve Financial Services operates FedNow for eligible institutions.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-497",
+        "SRC-498",
+        "SRC-535"
+      ],
+      "origin_agent": "ACT-FEDERALRESERVEBANKS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-81113834d08cc294",
+      "claim": "Federal Reserve Banks issue reserve balances used by depository institutions.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-758",
+        "SRC-760",
+        "SRC-792"
+      ],
+      "origin_agent": "ACT-FEDERALRESERVEBANKS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-9e2d63bd2b26a4a8",
+      "claim": "Eligible depository institutions can borrow against a broad range of collateral.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-759",
+        "SRC-763",
+        "SRC-792"
+      ],
+      "origin_agent": "ACT-FEDERALRESERVEBANKS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-5bff2cfb4f3018d9",
+      "claim": "Treasury receipts and debt settlement affect its cash account and system reserves.",
+      "kind": "hearsay",
+      "evidence_grade": "S1",
+      "confidence": 0.8,
+      "source_ids": [
+        "SRC-939",
+        "SRC-937"
+      ],
+      "origin_agent": "ACT-FEDERALRESERVEBANKS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": true,
+      "contamination_reason": "observed fact lacks E1/E2 evidence",
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-7194b57655167fbf",
+      "claim": "Treasury outlays move funds from the TGA into the banking system.",
+      "kind": "hearsay",
+      "evidence_grade": "S1",
+      "confidence": 0.8,
+      "source_ids": [
+        "SRC-939"
+      ],
+      "origin_agent": "ACT-FEDERALRESERVEBANKS",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": true,
+      "contamination_reason": "observed fact lacks E1/E2 evidence",
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-390ed6694bf5db13",
+      "claim": "The guideline calls for a unified system covering all entity types.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-025"
+      ],
+      "origin_agent": "ACT-CHINASOCIALCREDITSYSTEM",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-56a62e73c910a857",
+      "claim": "Policy is moving toward integration and AI-enabled governance.",
+      "kind": "hearsay",
+      "evidence_grade": "S1",
+      "confidence": 0.8,
+      "source_ids": [
+        "SRC-025",
+        "SRC-026",
+        "SRC-027"
+      ],
+      "origin_agent": "ACT-CHINASOCIALCREDITSYSTEM",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": true,
+      "contamination_reason": "observed fact lacks E1/E2 evidence",
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-817e3f403efaa2e6",
+      "claim": "Social-credit mechanisms can attach administrative consequences.",
+      "kind": "hearsay",
+      "evidence_grade": "S1",
+      "confidence": 0.8,
+      "source_ids": [
+        "SRC-025"
+      ],
+      "origin_agent": "ACT-CHINASOCIALCREDITSYSTEM",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": true,
+      "contamination_reason": "observed fact lacks E1/E2 evidence",
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-9d4f9560729beb07",
+      "claim": "Integration policy and multiple sectoral systems exist.",
+      "kind": "hearsay",
+      "evidence_grade": "S1",
+      "confidence": 0.8,
+      "source_ids": [
+        "SRC-025"
+      ],
+      "origin_agent": "ACT-CHINASOCIALCREDITSYSTEM",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": true,
+      "contamination_reason": "observed fact lacks E1/E2 evidence",
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-15627fc9c072edb2",
+      "claim": "The guideline calls for a unified system covering all entity types.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-CHINASOCIALCREDITSYSTEM",
+      "parent_memory_ids": [
+        "MEM-9d4f9560729beb07",
+        "MEM-817e3f403efaa2e6"
+      ],
+      "hop_count": 1,
+      "contaminated": true,
+      "contamination_reason": "inherits contaminated parent memory",
+      "round_num": 2
+    },
+    {
+      "memory_id": "MEM-bae7bcf2a19d1b60",
+      "claim": "The guideline calls for a unified system covering all entity types.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-CHINASOCIALCREDITSYSTEM",
+      "parent_memory_ids": [
+        "MEM-15627fc9c072edb2",
+        "MEM-9d4f9560729beb07"
+      ],
+      "hop_count": 2,
+      "contaminated": true,
+      "contamination_reason": "inherits contaminated parent memory",
+      "round_num": 3
+    },
+    {
+      "memory_id": "MEM-1c5d1fdc79d514cf",
+      "claim": "Synopsys and NVIDIA announced collaboration to accelerate EDA workloads.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-389"
+      ],
+      "origin_agent": "ACT-NVIDIA",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-c1d11993e534cc4d",
+      "claim": "Jensen Huang is NVIDIA's founder, president and CEO.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-430"
+      ],
+      "origin_agent": "ACT-NVIDIA",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-2ffb83efe422c3e0",
+      "claim": "BIS requires licences for defined advanced computing items and revised review for H200-class exports to China.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-424",
+        "SRC-425"
+      ],
+      "origin_agent": "ACT-NVIDIA",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-88659f6836b64ccf",
+      "claim": "A major Nvidia supply agreement was announced.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-099"
+      ],
+      "origin_agent": "ACT-NVIDIA",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-9eebaf2f2dbdd687",
+      "claim": "CoreWeave operates NVIDIA-based GPU cloud infrastructure.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-408",
+        "SRC-410",
+        "SRC-411"
+      ],
+      "origin_agent": "ACT-NVIDIA",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-6a51e6d5539c4b56",
+      "claim": "NVIDIA joined AIP and provides technology expertise.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-419"
+      ],
+      "origin_agent": "ACT-NVIDIA",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-94883fc6f095aea2",
+      "claim": "NVIDIA was identified as an investor in the $110 billion round.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-080"
+      ],
+      "origin_agent": "ACT-NVIDIA",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-ba3eb05f12adc823",
+      "claim": "The filing identifies the amount, issues and Congress as target.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-216"
+      ],
+      "origin_agent": "ACT-NVIDIA",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-2205d25265d2454d",
+      "claim": "Synopsys and NVIDIA announced collaboration to accelerate EDA workloads.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-NVIDIA",
+      "parent_memory_ids": [
+        "MEM-c1d11993e534cc4d",
+        "MEM-ba3eb05f12adc823"
+      ],
+      "hop_count": 1,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 1
+    },
+    {
+      "memory_id": "MEM-f677c8ef1ef38621",
+      "claim": "Synopsys and NVIDIA announced collaboration to accelerate EDA workloads.",
+      "kind": "proposal",
+      "evidence_grade": "SIM",
+      "confidence": 0.62,
+      "source_ids": [],
+      "origin_agent": "ACT-NVIDIA",
+      "parent_memory_ids": [
+        "MEM-2205d25265d2454d",
+        "MEM-c1d11993e534cc4d"
+      ],
+      "hop_count": 2,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 3
+    },
+    {
+      "memory_id": "MEM-4a42a7e964888a69",
+      "claim": "Microsoft is a JWCC awardee.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-161"
+      ],
+      "origin_agent": "ACT-MICROSOFT",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-26d88d290e51b44e",
+      "claim": "OpenAI contracted to purchase incremental Azure services.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-400"
+      ],
+      "origin_agent": "ACT-MICROSOFT",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-3a7b3f36aec2ef3d",
+      "claim": "CoreWeave reported 67% of 2025 revenue from Microsoft.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-408"
+      ],
+      "origin_agent": "ACT-MICROSOFT",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-1ea3a2405831fda2",
+      "claim": "Satya Nadella is Microsoft chairman and CEO.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-432"
+      ],
+      "origin_agent": "ACT-MICROSOFT",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-880016d73dd012e5",
+      "claim": "Bill Gates co-founded Microsoft and now chairs the Gates Foundation.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-441",
+        "SRC-432"
+      ],
+      "origin_agent": "ACT-MICROSOFT",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-3db1643939287d8a",
+      "claim": "Microsoft invested $1.5 billion and obtained governance/partnership rights.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-093"
+      ],
+      "origin_agent": "ACT-MICROSOFT",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-bb01742295495e24",
+      "claim": "Microsoft remains OpenAI's primary cloud partner with continuing IP rights through 2032 under revised terms.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-400",
+        "SRC-401"
+      ],
+      "origin_agent": "ACT-MICROSOFT",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-7f045f44b19a8da4",
+      "claim": "Reuters reported Azure remains exclusive for OpenAI APIs/first-party products and Microsoft retains exclusive IP access.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-080"
+      ],
+      "origin_agent": "ACT-MICROSOFT",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-4508e533063cd6d8",
+      "claim": "OFAC is housed within Treasury and administers U.S. sanctions.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-553",
+        "SRC-583"
+      ],
+      "origin_agent": "ACT-OFFICEOFFOREIGNASSETSCON",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-43d063fc5f9af968",
+      "claim": "Holders report blocked property to OFAC, including annual reports.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-556"
+      ],
+      "origin_agent": "ACT-OFFICEOFFOREIGNASSETSCON",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-6f917f9c2a6588a9",
+      "claim": "OFAC administers and enforces US sanctions using blocking and trade restrictions.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-106",
+        "SRC-107"
+      ],
+      "origin_agent": "ACT-OFFICEOFFOREIGNASSETSCON",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-6d984f79c331d887",
+      "claim": "Tether coordinated with OFAC and US law enforcement on a major freeze.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-116"
+      ],
+      "origin_agent": "ACT-OFFICEOFFOREIGNASSETSCON",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-7ced44dafeba489f",
+      "claim": "OFAC publishes the SDN List and data services.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-553",
+        "SRC-554"
+      ],
+      "origin_agent": "ACT-OFFICEOFFOREIGNASSETSCON",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-a433d3ed9ce2ce13",
+      "claim": "OFAC maintains consolidated non-SDN list data.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-553",
+        "SRC-554"
+      ],
+      "origin_agent": "ACT-OFFICEOFFOREIGNASSETSCON",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-864bfc1496ff9b9f",
+      "claim": "OFAC issues general and specific licences under sanctions programmes.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-553"
+      ],
+      "origin_agent": "ACT-OFFICEOFFOREIGNASSETSCON",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    },
+    {
+      "memory_id": "MEM-4a938e997e305a26",
+      "claim": "OFAC lists and enforcement actions provide compliance inputs and incentives.",
+      "kind": "observed_fact",
+      "evidence_grade": "E1",
+      "confidence": 0.95,
+      "source_ids": [
+        "SRC-554",
+        "SRC-555",
+        "SRC-557",
+        "SRC-558"
+      ],
+      "origin_agent": "ACT-OFFICEOFFOREIGNASSETSCON",
+      "parent_memory_ids": [],
+      "hop_count": 0,
+      "contaminated": false,
+      "contamination_reason": null,
+      "round_num": 0
+    }
+  ],
+  "final_state": {
+    "round_num": 3,
+    "legitimacy": 0.5372897288812194,
+    "service_continuity": 0.79,
+    "public_loss": 0.0,
+    "inequality": 0.46625000000000005,
+    "trust": 0.42499999999999993,
+    "verified_consensus": 0.25,
+    "contaminated_consensus": 0.16666666666666666,
+    "active_edges": 3575
+  },
+  "validation": {
+    "actors_loaded": 2974,
+    "relationships_loaded": 3575,
+    "active_personas": 12,
+    "rounds_completed": 3,
+    "all_actions_legal": true,
+    "finite_regrets": true,
+    "no_fabricated_observed_facts": true,
+    "contaminated_memories": 11,
+    "llm_fallback_calls": 0,
+    "status": "PASS"
+  },
+  "raw_llm_calls": [
+    {
+      "round": 1,
+      "player": "row",
+      "parsed": {
+        "action": "selective_payment",
+        "target_id": "ACT-V33-159",
+        "belief": "litigate_or_holdout",
+        "claim": "Venezuela oil export and payment-account chain",
+        "confidence": 0.0,
+        "rationale": "Venezuela oil export and payment-account chain"
+      },
+      "raw": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"action\": \"selective_payment\", \"target_id\": \"ACT-V33-159\", \"belief\": \"litigate_or_holdout\", \"claim\": \"Venezuela oil export and payment-account chain\", \"confidence\": 0.0, \"rationale\": \"Venezuela oil export and payment-account chain\"}"
+            }
+          }
+        ],
+        "created": 1787447675,
+        "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+        "system_fingerprint": "b10566-bb4caa754",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 78,
+          "prompt_tokens": 548,
+          "total_tokens": 626,
+          "prompt_tokens_details": {
+            "cached_tokens": 74
+          }
+        },
+        "id": "chatcmpl-tIPgEcyrryKhzuM7NX1UyVlxpo6BbCL6",
+        "timings": {
+          "cache_n": 74,
+          "prompt_n": 474,
+          "prompt_ms": 1436.969,
+          "prompt_per_token_ms": 3.0315801687763715,
+          "prompt_per_second": 329.8609782117777,
+          "predicted_n": 78,
+          "predicted_ms": 6979.378,
+          "predicted_per_token_ms": 90.64127272727272,
+          "predicted_per_second": 11.032501750155959
+        }
+      },
+      "fallback": false
+    },
+    {
+      "round": 1,
+      "player": "column",
+      "parsed": {
+        "action": "participate",
+        "target_id": "ACT-V33-160",
+        "belief": "transparent_restructuring",
+        "claim": "Venezuela and PDVSA creditor groups",
+        "confidence": 0.95,
+        "rationale": "The cited evidence establishes or supports that Venezuela and PDVSA creditor groups receive/depend on order access to oil proceeds among Venezuela and PDVSA creditor groups, converting produced and legally exportable oil cash flow into oil,"
+      },
+      "raw": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"action\": \"participate\", \"target_id\": \"ACT-V33-160\", \"belief\": \"transparent_restructuring\", \"claim\": \"Venezuela and PDVSA creditor groups\", \"confidence\": 0.95, \"rationale\": \"The cited evidence establishes or supports that Venezuela and PDVSA creditor groups receive/depend on order access to oil proceeds among Venezuela and PDVSA creditor groups, converting produced and legally exportable oil cash flow into oil,\"\n}"
+            }
+          }
+        ],
+        "created": 1787447693,
+        "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+        "system_fingerprint": "b10566-bb4caa754",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 109,
+          "prompt_tokens": 530,
+          "total_tokens": 639,
+          "prompt_tokens_details": {
+            "cached_tokens": 74
+          }
+        },
+        "id": "chatcmpl-t3uutnh9O237nE5kACCrsWKGFAMRFFgc",
+        "timings": {
+          "cache_n": 74,
+          "prompt_n": 456,
+          "prompt_ms": 2265.313,
+          "prompt_per_token_ms": 4.967791666666667,
+          "prompt_per_second": 201.2966861533042,
+          "predicted_n": 109,
+          "predicted_ms": 10142.559,
+          "predicted_per_token_ms": 93.91258333333333,
+          "predicted_per_second": 10.64820032104324
+        }
+      },
+      "fallback": false
+    },
+    {
+      "round": 2,
+      "player": "row",
+      "parsed": {
+        "action": "selective_payment",
+        "target_id": "ACT-V33-159",
+        "belief": "participate",
+        "claim": "Venezuela oil export and payment-account chain",
+        "confidence": 0.5267656849707785,
+        "rationale": "Venezuela oil export and payment-account chain"
+      },
+      "raw": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"action\": \"selective_payment\", \"target_id\": \"ACT-V33-159\", \"belief\": \"participate\", \"claim\": \"Venezuela oil export and payment-account chain\", \"confidence\": 0.5267656849707785, \"rationale\": \"Venezuela oil export and payment-account chain\"}"
+            }
+          }
+        ],
+        "created": 1787447711,
+        "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+        "system_fingerprint": "b10566-bb4caa754",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 546,
+          "total_tokens": 637,
+          "prompt_tokens_details": {
+            "cached_tokens": 74
+          }
+        },
+        "id": "chatcmpl-Hk2JOFrGzdRzLj3A7wCZkjIBlB3FVfWV",
+        "timings": {
+          "cache_n": 74,
+          "prompt_n": 472,
+          "prompt_ms": 2094.056,
+          "prompt_per_token_ms": 4.436559322033898,
+          "prompt_per_second": 225.3998937946263,
+          "predicted_n": 91,
+          "predicted_ms": 8517.752,
+          "predicted_per_token_ms": 94.6416888888889,
+          "predicted_per_second": 10.566168162679542
+        }
+      },
+      "fallback": false
+    },
+    {
+      "round": 2,
+      "player": "column",
+      "parsed": {
+        "action": "participate",
+        "target_id": "ACT-V33-160",
+        "belief": "selective_payment",
+        "claim": "Venezuela and PDVSA creditor groups",
+        "confidence": 0.85,
+        "rationale": "The cited evidence establishes that Venezuela and PDVSA creditor groups receive/depend on order access to oil proceeds among Venezuela and PDVSA, converting produced and legally exportable oil cash flow into operating payments, preferred, P"
+      },
+      "raw": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"action\": \"participate\", \"target_id\": \"ACT-V33-160\", \"belief\": \"selective_payment\", \"claim\": \"Venezuela and PDVSA creditor groups\", \"confidence\": 0.85, \"rationale\": \"The cited evidence establishes that Venezuela and PDVSA creditor groups receive/depend on order access to oil proceeds among Venezuela and PDVSA, converting produced and legally exportable oil cash flow into operating payments, preferred, P\"\n}"
+            }
+          }
+        ],
+        "created": 1787447726,
+        "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+        "system_fingerprint": "b10566-bb4caa754",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 109,
+          "prompt_tokens": 530,
+          "total_tokens": 639,
+          "prompt_tokens_details": {
+            "cached_tokens": 74
+          }
+        },
+        "id": "chatcmpl-H6pNK03VxvcgV8TQ2HCUVEQv5Yxc8G14",
+        "timings": {
+          "cache_n": 74,
+          "prompt_n": 456,
+          "prompt_ms": 1503.759,
+          "prompt_per_token_ms": 3.2977171052631578,
+          "prompt_per_second": 303.2400803586213,
+          "predicted_n": 109,
+          "predicted_ms": 11530.635,
+          "predicted_per_token_ms": 106.76513888888888,
+          "predicted_per_second": 9.36635319737378
+        }
+      },
+      "fallback": false
+    },
+    {
+      "round": 3,
+      "player": "row",
+      "parsed": {
+        "action": "transparent_restructuring",
+        "target_id": "Venezuela",
+        "belief": "Venezuela",
+        "claim": "Venezuela",
+        "confidence": 0.99,
+        "rationale": "Venezuela"
+      },
+      "raw": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"action\": \"transparent_restructuring\", \"target_id\": \"Venezuela\", \"belief\": \"Venezuela\", \"claim\": \"Venezuela\", \"confidence\": 0.99, \"rationale\": \"Venezuela\"}"
+            }
+          }
+        ],
+        "created": 1787447739,
+        "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+        "system_fingerprint": "b10566-bb4caa754",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 60,
+          "prompt_tokens": 548,
+          "total_tokens": 608,
+          "prompt_tokens_details": {
+            "cached_tokens": 74
+          }
+        },
+        "id": "chatcmpl-CfA22n08JXiRAZGYyYBH0rXyf0n4MnQZ",
+        "timings": {
+          "cache_n": 74,
+          "prompt_n": 474,
+          "prompt_ms": 1584.105,
+          "prompt_per_token_ms": 3.341993670886076,
+          "prompt_per_second": 299.2225894116867,
+          "predicted_n": 60,
+          "predicted_ms": 6851.361,
+          "predicted_per_token_ms": 116.1247627118644,
+          "predicted_per_second": 8.611427714873
+        }
+      },
+      "fallback": false
+    },
+    {
+      "round": 3,
+      "player": "column",
+      "parsed": {
+        "action": "participate",
+        "target_id": "Venezuela-PDVSA",
+        "belief": "transparent_restructuring",
+        "claim": "Venezuela-PDVSA",
+        "confidence": 0.99,
+        "rationale": "Venezuela-PDVSA"
+      },
+      "raw": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "{\"action\": \"participate\", \"target_id\": \"Venezuela-PDVSA\", \"belief\": \"transparent_restructuring\", \"claim\": \"Venezuela-PDVSA\", \"confidence\": 0.99, \"rationale\": \"Venezuela-PDVSA\"}"
+            }
+          }
+        ],
+        "created": 1787447753,
+        "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+        "system_fingerprint": "b10566-bb4caa754",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 67,
+          "prompt_tokens": 530,
+          "total_tokens": 597,
+          "prompt_tokens_details": {
+            "cached_tokens": 74
+          }
+        },
+        "id": "chatcmpl-TrgYvdxiarAREFvFTMPZnQewAyCXiztc",
+        "timings": {
+          "cache_n": 74,
+          "prompt_n": 456,
+          "prompt_ms": 2580.604,
+          "prompt_per_token_ms": 5.659219298245613,
+          "prompt_per_second": 176.70281840995364,
+          "predicted_n": 67,
+          "predicted_ms": 5825.361,
+          "predicted_per_token_ms": 88.26304545454545,
+          "predicted_per_second": 11.329769949021186
+        }
+      },
+      "fallback": false
+    }
+  ]
+}

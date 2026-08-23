@@ -1,0 +1,296 @@
+[
+  {
+    "round": 1,
+    "player": "row",
+    "parsed": {
+      "action": "accept_emergency_finance",
+      "target_id": "ACT-WORLDBANK",
+      "belief": "senior_strict_finance",
+      "claim": "The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, ",
+      "confidence": 0.9999999999999999,
+      "rationale": "The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, "
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"accept_emergency_finance\", \"target_id\": \"ACT-WORLDBANK\", \"belief\": \"senior_strict_finance\", \"claim\": \"The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, \",\"confidence\": 0.9999999999999999, \"rationale\": \"The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, \"}"
+          }
+        }
+      ],
+      "created": 1787450957,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 145,
+        "prompt_tokens": 558,
+        "total_tokens": 703,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-UAPDkttbOrKO5TjEAIzEsnnz2WGx4QzX",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 484,
+        "prompt_ms": 2199.779,
+        "prompt_per_token_ms": 4.544997933884297,
+        "prompt_per_second": 220.0221022202685,
+        "predicted_n": 145,
+        "predicted_ms": 6692.143,
+        "predicted_per_token_ms": 46.473215277777776,
+        "predicted_per_second": 21.517770914339398
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 1,
+    "player": "column",
+    "parsed": {
+      "action": "senior_strict_finance",
+      "target_id": "ACT-V33-151",
+      "belief": "accept_emergency_finance",
+      "claim": "LMIC external debt and severe net outflows are documented.",
+      "confidence": 0.99,
+      "rationale": "The evidence supports the belief that the external debt and severe net outflows are documented, making the belief in the action 'accept_emergency_finance' highly probable."
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"senior_strict_finance\", \"target_id\": \"ACT-V33-151\", \"belief\": \"accept_emergency_finance\", \"claim\": \"LMIC external debt and severe net outflows are documented.\", \"confidence\": 0.99, \"rationale\": \"The evidence supports the belief that the external debt and severe net outflows are documented, making the belief in the action 'accept_emergency_finance' highly probable.\"}"
+          }
+        }
+      ],
+      "created": 1787450973,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 108,
+        "prompt_tokens": 474,
+        "total_tokens": 582,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-FYSFnqOcsHMO4qie9S6APCObFrkcHrzA",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 400,
+        "prompt_ms": 1453.273,
+        "prompt_per_token_ms": 3.6331824999999998,
+        "prompt_per_second": 275.24078407842165,
+        "predicted_n": 108,
+        "predicted_ms": 9110.797,
+        "predicted_per_token_ms": 85.1476355140187,
+        "predicted_per_second": 11.744307331180796
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "row",
+    "parsed": {
+      "action": "accept_emergency_finance",
+      "target_id": "ACT-WORLDBANK",
+      "belief": "flexible_finance",
+      "claim": "The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, ",
+      "confidence": 0.9999999999999999,
+      "rationale": "The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, "
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"accept_emergency_finance\", \"target_id\": \"ACT-WORLDBANK\", \"belief\": \"flexible_finance\", \"claim\": \"The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, \", \"confidence\": 0.9999999999999999, \"rationale\": \"The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, \"}"
+          }
+        }
+      ],
+      "created": 1787450996,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 144,
+        "prompt_tokens": 556,
+        "total_tokens": 700,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-UmYdwv2hfjVWTUsWUiEWNvItXe5PNuWe",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 482,
+        "prompt_ms": 1956.086,
+        "prompt_per_token_ms": 4.058269709543569,
+        "prompt_per_second": 246.41043389707815,
+        "predicted_n": 144,
+        "predicted_ms": 12078.225,
+        "predicted_per_token_ms": 84.4631118881119,
+        "predicted_per_second": 11.839488004239033
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "column",
+    "parsed": {
+      "action": "senior_strict_finance",
+      "target_id": "ACT-V33-151",
+      "belief": "self_adjust",
+      "claim": "A1",
+      "confidence": 0.99,
+      "rationale": "A1"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"senior_strict_finance\", \"target_id\": \"ACT-V33-151\", \"belief\": \"self_adjust\", \"claim\": \"A1\", \"confidence\": 0.99, \"rationale\": \"A1\"}"
+          }
+        }
+      ],
+      "created": 1787451009,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 65,
+        "prompt_tokens": 471,
+        "total_tokens": 536,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-4l878Q6cwfvfW5cSzJevRjF6TTtTeyyO",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 397,
+        "prompt_ms": 1477.994,
+        "prompt_per_token_ms": 3.7229068010075563,
+        "prompt_per_second": 268.6073150499934,
+        "predicted_n": 65,
+        "predicted_ms": 7293.003,
+        "predicted_per_token_ms": 113.953171875,
+        "predicted_per_second": 8.775534577457325
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "row",
+    "parsed": {
+      "action": "accept_emergency_finance",
+      "target_id": "ACT-WORLDBANK",
+      "belief": "senior_strict_finance",
+      "claim": "Bangladesh fertiliser and food-provisioning authorities, ",
+      "confidence": 0.9999999999999999,
+      "rationale": "The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, "
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"accept_emergency_finance\", \"target_id\": \"ACT-WORLDBANK\", \"belief\": \"senior_strict_finance\", \"claim\": \"Bangladesh fertiliser and food-provisioning authorities, \",\"confidence\": 0.9999999999999999, \"rationale\": \"The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, \"}"
+          }
+        }
+      ],
+      "created": 1787451024,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 118,
+        "prompt_tokens": 558,
+        "total_tokens": 676,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-6t2NxWSoQrJO6fWLeZ7ajUPbquzMzRUP",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 484,
+        "prompt_ms": 1477.058,
+        "prompt_per_token_ms": 3.051772727272727,
+        "prompt_per_second": 327.6783985462995,
+        "predicted_n": 118,
+        "predicted_ms": 9382.261,
+        "predicted_per_token_ms": 80.19026495726496,
+        "predicted_per_second": 12.470341637266326
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "column",
+    "parsed": {
+      "action": "senior_strict_finance",
+      "target_id": "ACT-V33-151",
+      "belief": "accept_emergency_finance",
+      "claim": "LMIC external debt and severe net outflows are documented.",
+      "confidence": 0.9999999999999999,
+      "rationale": "The evidence supports the claim of severe net outflows, which aligns with the actor's belief in emergency finance. The actor's belief is supported by the verified fact. The action is consistent with the belief. The action is supported by a "
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"senior_strict_finance\", \"target_id\": \"ACT-V33-151\", \"belief\": \"accept_emergency_finance\", \"claim\": \"LMIC external debt and severe net outflows are documented.\", \"confidence\": 0.9999999999999999, \"rationale\": \"The evidence supports the claim of severe net outflows, which aligns with the actor's belief in emergency finance. The actor's belief is supported by the verified fact. The action is consistent with the belief. The action is supported by a \"}"
+          }
+        }
+      ],
+      "created": 1787451043,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 136,
+        "prompt_tokens": 474,
+        "total_tokens": 610,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-txnqQ5LzWjThfxxf4pEIe7u7iCaoMNKV",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 400,
+        "prompt_ms": 2526.924,
+        "prompt_per_token_ms": 6.31731,
+        "prompt_per_second": 158.29522375821355,
+        "predicted_n": 136,
+        "predicted_ms": 10484.363,
+        "predicted_per_token_ms": 77.66194814814814,
+        "predicted_per_second": 12.876318761569015
+      }
+    },
+    "fallback": false
+  }
+]

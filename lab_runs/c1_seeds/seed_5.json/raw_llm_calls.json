@@ -1,0 +1,296 @@
+[
+  {
+    "round": 1,
+    "player": "row",
+    "parsed": {
+      "action": "accept_emergency_finance",
+      "target_id": "ACT-WORLDBANK",
+      "belief": "senior_strict_finance",
+      "claim": "Bangladesh fertiliser and food-provisioning authorities",
+      "confidence": 0.9999999999999999,
+      "rationale": "The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, "
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"accept_emergency_finance\", \"target_id\": \"ACT-WORLDBANK\", \"belief\": \"senior_strict_finance\", \"claim\": \"Bangladesh fertiliser and food-provisioning authorities\", \"confidence\": 0.9999999999999999, \"rationale\": \"The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, \"}"
+          }
+        }
+      ],
+      "created": 1787451073,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 559,
+        "total_tokens": 679,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-R9vGFqfAfNBzSlrm4PcDF7TJg99RhwMQ",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 485,
+        "prompt_ms": 1988.089,
+        "prompt_per_token_ms": 4.099152577319588,
+        "prompt_per_second": 243.95286126526528,
+        "predicted_n": 120,
+        "predicted_ms": 9380.999,
+        "predicted_per_token_ms": 78.8319243697479,
+        "predicted_per_second": 12.68521614808828
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 1,
+    "player": "column",
+    "parsed": {
+      "action": "flexible_finance",
+      "target_id": "ACT-WORLDBANK",
+      "belief": "accept_emergency_finance",
+      "claim": "S1",
+      "confidence": 0.6275561296260921,
+      "rationale": "preserve_service"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"flexible_finance\", \"target_id\": \"ACT-WORLDBANK\", \"belief\": \"accept_emergency_finance\", \"claim\": \"S1\", \"confidence\": 0.6275561296260921, \"rationale\": \"preserve_service\"}"
+          }
+        }
+      ],
+      "created": 1787451086,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 77,
+        "prompt_tokens": 473,
+        "total_tokens": 550,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-d7YaHKdRZT02EgAC8N3vYLApsBCPtjAV",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 399,
+        "prompt_ms": 1773.124,
+        "prompt_per_token_ms": 4.4439197994987465,
+        "prompt_per_second": 225.02656328604203,
+        "predicted_n": 77,
+        "predicted_ms": 6051.644,
+        "predicted_per_token_ms": 79.6268947368421,
+        "predicted_per_second": 12.558570861075104
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "row",
+    "parsed": {
+      "action": "accept_emergency_finance",
+      "target_id": "ACT-WORLDBANK",
+      "belief": "flexible_finance",
+      "claim": "The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, ",
+      "confidence": 0.9999999999999999,
+      "rationale": "The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, "
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"accept_emergency_finance\", \"target_id\": \"ACT-WORLDBANK\", \"belief\": \"flexible_finance\", \"claim\": \"The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, \",\"confidence\": 0.9999999999999999, \"rationale\": \"The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, \"}"
+          }
+        }
+      ],
+      "created": 1787451107,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 143,
+        "prompt_tokens": 557,
+        "total_tokens": 700,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-lMZ5OYLlDpzakkka7WSnXfemtVfJGnld",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 483,
+        "prompt_ms": 1257.134,
+        "prompt_per_token_ms": 2.6027619047619046,
+        "prompt_per_second": 384.2072523692781,
+        "predicted_n": 143,
+        "predicted_ms": 12474.672,
+        "predicted_per_token_ms": 87.84980281690142,
+        "predicted_per_second": 11.383064821263437
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "column",
+    "parsed": {
+      "action": "flexible_finance",
+      "target_id": "ACT-V33-151",
+      "belief": "self_adjust",
+      "claim": "Bangladesh fertiliser emergency finance and food provisioning",
+      "confidence": 0.6275561296260921,
+      "rationale": "self_adjust"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"flexible_finance\", \"target_id\": \"ACT-V33-151\", \"belief\": \"self_adjust\", \"claim\": \"Bangladesh fertiliser emergency finance and food provisioning\", \"confidence\": 0.6275561296260921, \"rationale\": \"self_adjust\"}"
+          }
+        }
+      ],
+      "created": 1787451121,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 84,
+        "prompt_tokens": 470,
+        "total_tokens": 554,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-o25KuQoXyrBt9ymSJEYNAFHgdSAucmMC",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 396,
+        "prompt_ms": 1886.487,
+        "prompt_per_token_ms": 4.763856060606061,
+        "prompt_per_second": 209.91398297470377,
+        "predicted_n": 84,
+        "predicted_ms": 7403.391,
+        "predicted_per_token_ms": 89.19748192771084,
+        "predicted_per_second": 11.21107881509973
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "row",
+    "parsed": {
+      "action": "accept_emergency_finance",
+      "target_id": "ACT-WORLDBANK",
+      "belief": "senior_strict_finance",
+      "claim": "Bangladesh fertiliser and food-provisioning authorities",
+      "confidence": 0.9999999999999999,
+      "rationale": "The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, "
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"accept_emergency_finance\", \"target_id\": \"ACT-WORLDBANK\", \"belief\": \"senior_strict_finance\", \"claim\": \"Bangladesh fertiliser and food-provisioning authorities\", \"confidence\": 0.9999999999999999, \"rationale\": \"The cited evidence establishes that World Bank Group Guarantee Platform provide emergency financing that preserves imports and provisioning managed by Bangladesh fertiliser and food-provisioning authorities, converting external fertiliser, \"}"
+          }
+        }
+      ],
+      "created": 1787451144,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 559,
+        "total_tokens": 679,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-faClHsX7Ag3JlVknMd0pZNo2CHLndgbC",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 485,
+        "prompt_ms": 3831.776,
+        "prompt_per_token_ms": 7.900569072164948,
+        "prompt_per_second": 126.57316085282646,
+        "predicted_n": 120,
+        "predicted_ms": 13198.714,
+        "predicted_per_token_ms": 110.91356302521008,
+        "predicted_per_second": 9.016029895033714
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "column",
+    "parsed": {
+      "action": "flexible_finance",
+      "target_id": "ACT-WORLDBANK",
+      "belief": "accept_emergency_finance",
+      "claim": "S1",
+      "confidence": 0.6275561296260921,
+      "rationale": "U1"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"flexible_finance\", \"target_id\": \"ACT-WORLDBANK\", \"belief\": \"accept_emergency_finance\", \"claim\": \"S1\", \"confidence\": 0.6275561296260921, \"rationale\": \"U1\"}"
+          }
+        }
+      ],
+      "created": 1787451162,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 77,
+        "prompt_tokens": 473,
+        "total_tokens": 550,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-NS9Kyowf9Kqu2z4n94wMhbait3AJhvP0",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 399,
+        "prompt_ms": 1907.128,
+        "prompt_per_token_ms": 4.779769423558897,
+        "prompt_per_second": 209.215112986648,
+        "predicted_n": 77,
+        "predicted_ms": 13530.613,
+        "predicted_per_token_ms": 178.03438157894735,
+        "predicted_per_second": 5.616892597548981
+      }
+    },
+    "fallback": false
+  }
+]

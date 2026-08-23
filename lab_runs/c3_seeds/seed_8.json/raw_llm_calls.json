@@ -1,0 +1,296 @@
+[
+  {
+    "round": 1,
+    "player": "row",
+    "parsed": {
+      "action": "transparent_restructuring",
+      "target_id": "ACT-V33-159",
+      "belief": "litigate_or_holdout",
+      "claim": "Venezuela oil export and payment-account chain",
+      "confidence": 0.8634358950250559,
+      "rationale": "Venezuela oil export and payment-account chain"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"transparent_restructuring\", \"target_id\": \"ACT-V33-159\", \"belief\": \"litigate_or_holdout\", \"claim\": \"Venezuela oil export and payment-account chain\", \"confidence\": 0.8634358950250559, \"rationale\": \"Venezuela oil export and payment-account chain\"}"
+          }
+        }
+      ],
+      "created": 1787449201,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 93,
+        "prompt_tokens": 547,
+        "total_tokens": 640,
+        "prompt_tokens_details": {
+          "cached_tokens": 543
+        }
+      },
+      "id": "chatcmpl-2fKvIO9UstyWWUhzXDmpI74HLPTyuRYW",
+      "timings": {
+        "cache_n": 543,
+        "prompt_n": 4,
+        "prompt_ms": 1909.728,
+        "prompt_per_token_ms": 477.432,
+        "prompt_per_second": 2.0945391176125603,
+        "predicted_n": 93,
+        "predicted_ms": 8429.131,
+        "predicted_per_token_ms": 91.62098913043478,
+        "predicted_per_second": 10.914529623516351
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 1,
+    "player": "column",
+    "parsed": {
+      "action": "participate",
+      "target_id": "ACT-V33-160",
+      "belief": "transparent_restructuring",
+      "claim": "Venezuela and PDVSA creditor groups",
+      "confidence": 0.99,
+      "rationale": "The cited evidence establishes or supports that Venezuela oil export and payment-account chain order access to oil proceeds among Venezuela and PDVSA creditor groups, converting produced and legally exportable oil cash flow into operating, "
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"participate\", \"target_id\": \"ACT-V33-160\", \"belief\": \"transparent_restructuring\", \"claim\": \"Venezuela and PDVSA creditor groups\", \"confidence\": 0.99, \"rationale\": \"The cited evidence establishes or supports that Venezuela oil export and payment-account chain order access to oil proceeds among Venezuela and PDVSA creditor groups, converting produced and legally exportable oil cash flow into operating, \"}"
+          }
+        }
+      ],
+      "created": 1787449214,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 104,
+        "prompt_tokens": 532,
+        "total_tokens": 636,
+        "prompt_tokens_details": {
+          "cached_tokens": 528
+        }
+      },
+      "id": "chatcmpl-r9iHuAWP2pZ0QPStbeWB1lUAMqYRhNDM",
+      "timings": {
+        "cache_n": 528,
+        "prompt_n": 4,
+        "prompt_ms": 1572.811,
+        "prompt_per_token_ms": 393.20275,
+        "prompt_per_second": 2.5432172079162725,
+        "predicted_n": 104,
+        "predicted_ms": 7864.061,
+        "predicted_per_token_ms": 76.3501067961165,
+        "predicted_per_second": 13.097558627787857
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "row",
+    "parsed": {
+      "action": "selective_payment",
+      "target_id": "ACT-V33-159",
+      "belief": "participate",
+      "claim": "Venezuela oil export and payment-account chain",
+      "confidence": 0.6212577959909882,
+      "rationale": "Venezuela oil export and payment-account chain"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"selective_payment\", \"target_id\": \"ACT-V33-159\", \"belief\": \"participate\", \"claim\": \"Venezuela oil export and payment-account chain\", \"confidence\": 0.6212577959909882, \"rationale\": \"Venezuela oil export and payment-account chain\"}"
+          }
+        }
+      ],
+      "created": 1787449240,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 91,
+        "prompt_tokens": 545,
+        "total_tokens": 636,
+        "prompt_tokens_details": {
+          "cached_tokens": 41
+        }
+      },
+      "id": "chatcmpl-WLoYV7E4mAb7gJPbTK5RK710dCv13G6C",
+      "timings": {
+        "cache_n": 41,
+        "prompt_n": 504,
+        "prompt_ms": 6897.527,
+        "prompt_per_token_ms": 13.685569444444445,
+        "prompt_per_second": 73.06966685306197,
+        "predicted_n": 91,
+        "predicted_ms": 9871.451,
+        "predicted_per_token_ms": 109.68278888888888,
+        "predicted_per_second": 9.117200703321124
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "column",
+    "parsed": {
+      "action": "participate",
+      "target_id": "ACT-V33-160",
+      "belief": "selective_payment",
+      "claim": "Venezuela and PDVSA creditor groups",
+      "confidence": 0.99,
+      "rationale": "The cited evidence establishes or supports that Venezuela oil export and payment-account chain order access to oil proceeds among Venezuela and PDVSA creditor groups, converting produced and legally exportable oil cash flow into operating, "
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"participate\", \"target_id\": \"ACT-V33-160\", \"belief\": \"selective_payment\", \"claim\": \"Venezuela and PDVSA creditor groups\", \"confidence\": 0.99, \"rationale\": \"The cited evidence establishes or supports that Venezuela oil export and payment-account chain order access to oil proceeds among Venezuela and PDVSA creditor groups, converting produced and legally exportable oil cash flow into operating, \"\n}"
+          }
+        }
+      ],
+      "created": 1787449259,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 108,
+        "prompt_tokens": 532,
+        "total_tokens": 640,
+        "prompt_tokens_details": {
+          "cached_tokens": 41
+        }
+      },
+      "id": "chatcmpl-jYKGwvkbNuU5RjVIKmLLHpRqua3RvsK6",
+      "timings": {
+        "cache_n": 41,
+        "prompt_n": 491,
+        "prompt_ms": 3823.715,
+        "prompt_per_token_ms": 7.787606924643585,
+        "prompt_per_second": 128.4091518327072,
+        "predicted_n": 108,
+        "predicted_ms": 11932.035,
+        "predicted_per_token_ms": 111.51434579439253,
+        "predicted_per_second": 8.96745609613113
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "row",
+    "parsed": {
+      "action": "selective_payment",
+      "target_id": "ACT-V33-159",
+      "belief": "Venezuela oil export and payment-account chain",
+      "claim": "Venezuela-PDVSA sanctions, oil cash flow and creditor realisation",
+      "confidence": 0.6212577959909882,
+      "rationale": "Venezuela-PDVSA sanctions, oil cash flow and creditor realisation"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"selective_payment\", \"target_id\": \"ACT-V33-159\", \"belief\": \"Venezuela oil export and payment-account chain\", \"claim\": \"Venezuela-PDVSA sanctions, oil cash flow and creditor realisation\", \"confidence\": 0.6212577959909882, \"rationale\": \"Venezuela-PDVSA sanctions, oil cash flow and creditor realisation\"}"
+          }
+        }
+      ],
+      "created": 1787449276,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 109,
+        "prompt_tokens": 547,
+        "total_tokens": 656,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-mis738cfeqHYOrhCioXo11Llu89TV5U8",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 473,
+        "prompt_ms": 1817.078,
+        "prompt_per_token_ms": 3.8416025369978857,
+        "prompt_per_second": 260.30803300683846,
+        "predicted_n": 109,
+        "predicted_ms": 11047.177,
+        "predicted_per_token_ms": 102.28867592592593,
+        "predicted_per_second": 9.776253245512406
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "column",
+    "parsed": {
+      "action": "participate",
+      "target_id": "ACT-V33-160",
+      "belief": "transparent_restructuring",
+      "claim": "Venezuela-PDVSA sanctions, oil cash flow and creditor realisation",
+      "confidence": 0.99,
+      "rationale": "The cited evidence establishes or supports that Venezuela oil export and payment-account chain order access to oil proceeds among Venezuela and PDVSA creditor groups, converting produced and legally exportable oil cash flow into operating, "
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"participate\", \"target_id\": \"ACT-V33-160\", \"belief\": \"transparent_restructuring\", \"claim\": \"Venezuela-PDVSA sanctions, oil cash flow and creditor realisation\", \"confidence\": 0.99, \"rationale\": \"The cited evidence establishes or supports that Venezuela oil export and payment-account chain order access to oil proceeds among Venezuela and PDVSA creditor groups, converting produced and legally exportable oil cash flow into operating, \"\n}"
+          }
+        }
+      ],
+      "created": 1787449293,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 114,
+        "prompt_tokens": 532,
+        "total_tokens": 646,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-bKtAjcwfVMt77l7HX76X316kAPf8pq75",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 458,
+        "prompt_ms": 1898.498,
+        "prompt_per_token_ms": 4.145192139737992,
+        "prompt_per_second": 241.24334078834954,
+        "predicted_n": 114,
+        "predicted_ms": 11763.175,
+        "predicted_per_token_ms": 104.09889380530973,
+        "predicted_per_second": 9.60625001328298
+      }
+    },
+    "fallback": false
+  }
+]

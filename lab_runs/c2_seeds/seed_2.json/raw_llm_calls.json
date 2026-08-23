@@ -1,0 +1,296 @@
+[
+  {
+    "round": 1,
+    "player": "row",
+    "parsed": {
+      "action": "exchange_and_cap",
+      "target_id": "Ukraine Ministry of Finance",
+      "belief": "Ukraine Ministry of Finance",
+      "claim": "Ukraine Ministry of Finance",
+      "confidence": 0.589561136714843,
+      "rationale": "Ukraine Ministry of Finance"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"exchange_and_cap\", \"target_id\": \"Ukraine Ministry of Finance\", \"belief\": \"Ukraine Ministry of Finance\", \"claim\": \"Ukraine Ministry of Finance\", \"confidence\": 0.589561136714843, \"rationale\": \"Ukraine Ministry of Finance\"}"
+          }
+        }
+      ],
+      "created": 1787452166,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 77,
+        "prompt_tokens": 487,
+        "total_tokens": 564,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-d4WEmf82MfqzS59IPf9RsRZo60Nc3N9W",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 413,
+        "prompt_ms": 1226.523,
+        "prompt_per_token_ms": 2.9697893462469733,
+        "prompt_per_second": 336.72421960289375,
+        "predicted_n": 77,
+        "predicted_ms": 5752.083,
+        "predicted_per_token_ms": 75.68530263157895,
+        "predicted_per_second": 13.212604894609486
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 1,
+    "player": "column",
+    "parsed": {
+      "action": "accept_exchange",
+      "target_id": "ACT-V332-006",
+      "belief": "exchange_and_cap",
+      "claim": "Ukraine wartime railway repair and GDP-linked recovery claims",
+      "confidence": 0.9999999999999999,
+      "rationale": "Ukraine's warrants link payments to GDP conditions."
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"accept_exchange\", \"target_id\": \"ACT-V332-006\", \"belief\": \"exchange_and_cap\", \"claim\": \"Ukraine wartime railway repair and GDP-linked recovery claims\", \"confidence\": 0.9999999999999999, \"rationale\": \"Ukraine's warrants link payments to GDP conditions.\"}"
+          }
+        }
+      ],
+      "created": 1787452177,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 93,
+        "prompt_tokens": 479,
+        "total_tokens": 572,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-QoNCxVTC6hMHWk0q6VDGFeHMqnayNbJZ",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 405,
+        "prompt_ms": 1556.916,
+        "prompt_per_token_ms": 3.8442370370370367,
+        "prompt_per_second": 260.12964090548235,
+        "predicted_n": 93,
+        "predicted_ms": 8822.63,
+        "predicted_per_token_ms": 95.89815217391303,
+        "predicted_per_second": 10.427729599903884
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "row",
+    "parsed": {
+      "action": "exchange_and_cap",
+      "target_id": "ACT-V332-005",
+      "belief": "accept_exchange",
+      "claim": "Ukraine wartime railway repair and GDP-linked recovery claims",
+      "confidence": 0.999999999999999,
+      "rationale": "Ukraine's warrants link payments to GDP conditions."
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"exchange_and_cap\", \"target_id\": \"ACT-V332-005\", \"belief\": \"accept_exchange\", \"claim\": \"Ukraine wartime railway repair and GDP-linked recovery claims\", \"confidence\": 0.999999999999999, \"rationale\": \"Ukraine's warrants link payments to GDP conditions.\"}"
+          }
+        }
+      ],
+      "created": 1787452188,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 90,
+        "prompt_tokens": 487,
+        "total_tokens": 577,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-zuMKPHmIQwcPi6ERA4zzl4XLXEYvXhWU",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 413,
+        "prompt_ms": 1091.354,
+        "prompt_per_token_ms": 2.6425036319612594,
+        "prompt_per_second": 378.42899737390434,
+        "predicted_n": 90,
+        "predicted_ms": 7770.165,
+        "predicted_per_token_ms": 87.30522471910112,
+        "predicted_per_second": 11.45406822120251
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "column",
+    "parsed": {
+      "action": "accept_exchange",
+      "target_id": "Ukraine-GDP-linked-warrant-holders",
+      "belief": "honour_existing_claim",
+      "claim": "Ukraine wartime railway repair and GDP-linked recovery claims",
+      "confidence": 0.9999999999999999,
+      "rationale": "Ukraine's warrants link payments to GDP conditions."
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"accept_exchange\", \"target_id\": \"Ukraine-GDP-linked-warrant-holders\", \"belief\": \"honour_existing_claim\", \"claim\": \"Ukraine wartime railway repair and GDP-linked recovery claims\", \"confidence\": 0.9999999999999999, \"rationale\": \"Ukraine's warrants link payments to GDP conditions.\"}"
+          }
+        }
+      ],
+      "created": 1787452198,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 94,
+        "prompt_tokens": 480,
+        "total_tokens": 574,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-kLqOA3aHibOfMgvh8GeKUjknaHexWNE5",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 406,
+        "prompt_ms": 1533.778,
+        "prompt_per_token_ms": 3.777778325123153,
+        "prompt_per_second": 264.70584400089194,
+        "predicted_n": 94,
+        "predicted_ms": 6666.435,
+        "predicted_per_token_ms": 71.68209677419355,
+        "predicted_per_second": 13.950484779346082
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "row",
+    "parsed": {
+      "action": "exchange_and_cap",
+      "target_id": "ACT-V332-006",
+      "belief": "holdout",
+      "claim": "honour_warrants_high_tariff",
+      "confidence": 0.99,
+      "rationale": "Ukraine's wartime railway repair and GDP-linked recovery claims are supported by verified facts and S1. The target actor's claim of honouring existing warrants is supported by A1. The action is to exchange and cap the claim."
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"exchange_and_cap\", \"target_id\": \"ACT-V332-006\", \"belief\": \"holdout\", \"claim\": \"honour_warrants_high_tariff\", \"confidence\": 0.99, \"rationale\": \"Ukraine's wartime railway repair and GDP-linked recovery claims are supported by verified facts and S1. The target actor's claim of honouring existing warrants is supported by A1. The action is to exchange and cap the claim.\"}"
+          }
+        }
+      ],
+      "created": 1787452207,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 110,
+        "prompt_tokens": 487,
+        "total_tokens": 597,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-1pgPRafgqEK5ZvV9Ofqm29xhRmo36zNg",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 413,
+        "prompt_ms": 946.685,
+        "prompt_per_token_ms": 2.292215496368039,
+        "prompt_per_second": 436.25915695294634,
+        "predicted_n": 110,
+        "predicted_ms": 5878.78,
+        "predicted_per_token_ms": 53.93376146788991,
+        "predicted_per_second": 18.541261962516035
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "column",
+    "parsed": {
+      "action": "accept_exchange",
+      "target_id": "ACT-V332-006",
+      "belief": "exchange_and_cap",
+      "claim": "Ukraine wartime railway repair and GDP-linked recovery claims",
+      "confidence": 0.9999999999999998,
+      "rationale": "Ukraine's warrants link payments to GDP conditions."
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"accept_exchange\", \"target_id\": \"ACT-V332-006\", \"belief\": \"exchange_and_cap\", \"claim\": \"Ukraine wartime railway repair and GDP-linked recovery claims\", \"confidence\": 0.9999999999999998, \"rationale\": \"Ukraine's warrants link payments to GDP conditions.\"}"
+          }
+        }
+      ],
+      "created": 1787452214,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 93,
+        "prompt_tokens": 479,
+        "total_tokens": 572,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-fdhU9EtwRKFb2uT5AgTYQNVADWS41XOu",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 405,
+        "prompt_ms": 880.859,
+        "prompt_per_token_ms": 2.1749604938271605,
+        "prompt_per_second": 459.7784662471519,
+        "predicted_n": 93,
+        "predicted_ms": 4981.407,
+        "predicted_per_token_ms": 54.14572826086957,
+        "predicted_per_second": 18.468677624614894
+      }
+    },
+    "fallback": false
+  }
+]

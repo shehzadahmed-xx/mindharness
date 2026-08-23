@@ -1,0 +1,296 @@
+[
+  {
+    "round": 1,
+    "player": "row",
+    "parsed": {
+      "action": "phased_hybrid_finance",
+      "target_id": "ACT-V33-106",
+      "belief": "strict_ring_fence",
+      "claim": "phased_hybrid_finance",
+      "confidence": 0.9999999999999999,
+      "rationale": "phased_hybrid_finance"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"phased_hybrid_finance\", \"target_id\": \"ACT-V33-106\", \"belief\": \"strict_ring_fence\", \"claim\": \"phased_hybrid_finance\", \"confidence\": 0.9999999999999999, \"rationale\": \"phased_hybrid_finance\"}"
+          }
+        }
+      ],
+      "created": 1787453078,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 86,
+        "prompt_tokens": 508,
+        "total_tokens": 594,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-2FP3l1rrpHTIcyhWL6NXcQtNov8VE2uF",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 434,
+        "prompt_ms": 3745.428,
+        "prompt_per_token_ms": 8.630018433179723,
+        "prompt_per_second": 115.8746076549863,
+        "predicted_n": 86,
+        "predicted_ms": 10538.087,
+        "predicted_per_token_ms": 123.97749411764705,
+        "predicted_per_second": 8.06598009676709
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 1,
+    "player": "column",
+    "parsed": {
+      "action": "strict_ring_fence",
+      "target_id": "ACT-V33-106",
+      "belief": "full_securitisation",
+      "claim": "A1",
+      "confidence": 0.99,
+      "rationale": "S1"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"strict_ring_fence\", \"target_id\": \"ACT-V33-106\", \"belief\": \"full_securitisation\", \"claim\": \"A1\", \"confidence\": 0.99, \"rationale\": \"S1\"}"
+          }
+        }
+      ],
+      "created": 1787453097,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 62,
+        "prompt_tokens": 508,
+        "total_tokens": 570,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-cxMC9mNPU8OzcXpBn3HxM0anjkXevDpN",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 434,
+        "prompt_ms": 4905.278,
+        "prompt_per_token_ms": 11.302483870967743,
+        "prompt_per_second": 88.47612714304877,
+        "predicted_n": 62,
+        "predicted_ms": 7407.242,
+        "predicted_per_token_ms": 121.43019672131148,
+        "predicted_per_second": 8.2351838916563
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "row",
+    "parsed": {
+      "action": "phased_hybrid_finance",
+      "target_id": "ACT-V33-106",
+      "belief": "flexible_covenants",
+      "claim": "S1",
+      "confidence": 0.85,
+      "rationale": "A1"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"phased_hybrid_finance\", \"target_id\": \"ACT-V33-106\", \"belief\": \"flexible_covenants\", \"claim\": \"S1\", \"confidence\": 0.85, \"rationale\": \"A1\"}"
+          }
+        }
+      ],
+      "created": 1787453116,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 66,
+        "prompt_tokens": 510,
+        "total_tokens": 576,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-sb0MMWokJNxzdFRbqeuNEN6REoR2DDI7",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 436,
+        "prompt_ms": 3647.427,
+        "prompt_per_token_ms": 8.365658256880733,
+        "prompt_per_second": 119.5363197124987,
+        "predicted_n": 66,
+        "predicted_ms": 6237.656,
+        "predicted_per_token_ms": 95.96393846153846,
+        "predicted_per_second": 10.420581064425482
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 2,
+    "player": "column",
+    "parsed": {
+      "action": "strict_ring_fence",
+      "target_id": "ACT-V33-115",
+      "belief": "phased_hybrid_finance",
+      "claim": "U1",
+      "confidence": 0.5005618702994455,
+      "rationale": "0.5737844995534052"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"strict_ring_fence\", \"target_id\": \"ACT-V33-115\", \"belief\": \"phased_hybrid_finance\", \"claim\": \"U1\", \"confidence\": 0.5005618702994455, \"rationale\": \"0.5737844995534052\"}"
+          }
+        }
+      ],
+      "created": 1787453135,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 98,
+        "prompt_tokens": 509,
+        "total_tokens": 607,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-q6el7xmxeUk98F35R8KDl69z807AbhHz",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 435,
+        "prompt_ms": 2542.372,
+        "prompt_per_token_ms": 5.844533333333333,
+        "prompt_per_second": 171.10005931468723,
+        "predicted_n": 98,
+        "predicted_ms": 9728.626,
+        "predicted_per_token_ms": 100.29511340206186,
+        "predicted_per_second": 9.970575495450232
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "row",
+    "parsed": {
+      "action": "phased_hybrid_finance",
+      "target_id": "ACT-V33-106",
+      "belief": "strict_ring_fence",
+      "claim": "S1",
+      "confidence": 0.6085666526893312,
+      "rationale": "U1"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"phased_hybrid_finance\", \"target_id\": \"ACT-V33-106\", \"belief\": \"strict_ring_fence\", \"claim\": \"S1\", \"confidence\": 0.6085666526893312, \"rationale\": \"U1\"}"
+          }
+        }
+      ],
+      "created": 1787453155,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 78,
+        "prompt_tokens": 508,
+        "total_tokens": 586,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-pHP2O9y56tZeTA0axXDwox9cmNTvInXR",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 434,
+        "prompt_ms": 5409.728,
+        "prompt_per_token_ms": 12.464811059907834,
+        "prompt_per_second": 80.22584499627338,
+        "predicted_n": 78,
+        "predicted_ms": 7025.289,
+        "predicted_per_token_ms": 91.23751948051948,
+        "predicted_per_second": 10.960403194800955
+      }
+    },
+    "fallback": false
+  },
+  {
+    "round": 3,
+    "player": "column",
+    "parsed": {
+      "action": "strict_ring_fence",
+      "target_id": "ACT-V33-115",
+      "belief": "full_securitisation",
+      "claim": "A1",
+      "confidence": 0.0,
+      "rationale": "A1"
+    },
+    "raw": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\"action\": \"strict_ring_fence\", \"target_id\": \"ACT-V33-115\", \"belief\": \"full_securitisation\", \"claim\": \"A1\", \"confidence\": 0.0, \"rationale\": \"A1\"}"
+          }
+        }
+      ],
+      "created": 1787453170,
+      "model": "/Users/shehzad/Downloads/Qwen3.5-0.8B-Q3_K_S.gguf",
+      "system_fingerprint": "b10566-bb4caa754",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 66,
+        "prompt_tokens": 508,
+        "total_tokens": 574,
+        "prompt_tokens_details": {
+          "cached_tokens": 74
+        }
+      },
+      "id": "chatcmpl-6p6TVIIbzvBl0XrNS6r1LAUD7AKohS0M",
+      "timings": {
+        "cache_n": 74,
+        "prompt_n": 434,
+        "prompt_ms": 2829.34,
+        "prompt_per_token_ms": 6.519216589861752,
+        "prompt_per_second": 153.3926640135155,
+        "predicted_n": 66,
+        "predicted_ms": 5539.585,
+        "predicted_per_token_ms": 85.22438461538462,
+        "predicted_per_second": 11.733730956380306
+      }
+    },
+    "fallback": false
+  }
+]
