@@ -10,7 +10,8 @@
       "268",
       "269",
       "270",
-      "271"
+      "271",
+      "272"
     ],
     "lines_added": 216,
     "edits_above_append_point": 0,
@@ -27,5 +28,5 @@
     "04_RETIRED corpus Shariah-board brief"
   ],
   "adjudication": "requires claim-by-claim review per roadmap item F before any canonical successor",
-  "candidate_sha256": "6b92621c8f60a35834b65448bb963722f2765492edc280f7c3ea292090e83f0a"
+  "candidate_sha256": "1511f10638e04690537dd553e0da52008af04dc04799564deed7d14f0e27db71"
 }
