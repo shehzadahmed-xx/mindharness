@@ -177,3 +177,20 @@ individual outcomes without changing the distribution-level phenomenon. (3) Earl
 determinant of which basin a run lands in; calibration redistributes within it.
 (4) Selective-payment runs continue to show higher trust - consistent with UPDATE 4's
 flagged pattern, now n=10 across grids.
+
+## UPDATE 7 addendum — full 8-seed calibrated-frozen grid complete
+
+| seed | uncalibrated | calibrated-frozen |
+|---|---|---|
+| 1 | selective / trust .450 | selective / .450 |
+| 2 | selective / .450 | selective / **.500** |
+| 3 | transparent / .425 | **selective** / .462 ← FLIP |
+| 4 | transparent / .412 | transparent / .437 |
+| 5 | selective / .450 | selective / **.475** |
+| 6 | selective / .425 | selective / .425 |
+| 7 | selective / .475 | selective / **.500** |
+| 8 | selective / .412 | selective / **.450** |
+
+Distribution: 6/2 -> **7/1** (one flip toward selective). Mean trust: 0.437 -> **0.462**
+(calibration raises social residue on average). Instability persists - still mixed basins.
+F6/F2 conclusions stand with full-n support.
