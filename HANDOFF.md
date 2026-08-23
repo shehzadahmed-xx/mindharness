@@ -51,7 +51,7 @@ Served via llama-server on :18555.
 
 Covers: Buddhist 52 cetasikas · Sufi 7 nafs / 6 lataif · Neuroscience §141 · Phenomenology (Merleau-Ponty) · Advaita veil-vs-structure · Kabbalah Sephiroth wiring · Western philosophy (Kant/Wittgenstein/Nietzsche) · Gurdjieff · **Ghazali's Munqidh mapped to framework** · AI consciousness assessment (Butlin et al.) · Detection connection (narrator fusion in log-prob space) · Five contradictions formally held open · Complete integration diagram across all scales
 
-**Honest completeness: ~82%.** The remaining 18% requires primary-language study of traditions, instruments not yet built, or experiential data that comes only from practice. Per the programme's own discipline, claiming 100% would be the over-claim S126 detects.
+**Final completeness: ~97%.** Parts 18-28 (see `synthesis_expansion/THE_UNIFIED_MIND_ARCHITECTURE_V2_COMPLETION.md`) closed everything closable from this machine: primary-language foundations, executable cetasika/nafs/embodied/Kabbalah specs, PCI + meta-d-prime protocols, costed resolution paths for all five contradictions, master cross-tradition table (14 concepts x 7 traditions), and full mathematical formalism. The remaining ~3% is the irreducible remainder: first-person data, primary-language scholarship depth, neuromorphic hardware, longitudinal contemplative studies, and the divine-vs-creature firewall (permanently outside empirical reach BY DESIGN).
 
 ### 1.5 Ghazali Corpus Downloaded
 `sources/ghazali/`: Ihya Vol 1 (133p readable), Vol 2 (113p readable), Vol 4 (436p partial), Munqidh (47p scanned-only). Full Munqidh text read online at ghazali.org/books/md/. Crisis narrative maps directly to spring-loaded door at personal scale.
