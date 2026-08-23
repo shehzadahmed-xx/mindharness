@@ -87,3 +87,28 @@ Decisions carry real model reasoning (belief/claim/rationale with case-specific 
 
 ## Finding
 C1 equilibria robust across all policies. **C3: the frozen Qwen identity breaks from the crowd toward `selective_payment`** — precisely the seed-sensitive instability documented in Study 009V ("five selective-payment and three transparent-restructuring profiles"). The C3 instability is a property of the Qwen behavioural policy, now reproduced on the local machine. Larger models and the deterministic rule do not produce it. This confirms, locally and reproducibly, that the agent layer supplies genuine variable strategic selection in exactly the cell where the programme said it does.
+
+---
+
+# UPDATE 4: C3 multi-seed replication under frozen identity (seeds 1–8)
+
+| seed | public action | private | fallbacks | trust | legitimacy |
+|---|---|---|---|---|---|
+| 1 | selective_payment | participate | 0 | 0.450 | 0.557 |
+| 2 | selective_payment | participate | 0 | 0.450 | 0.558 |
+| 3 | transparent_restructuring | participate | 0 | 0.425 | 0.537 |
+| 4 | transparent_restructuring | participate | 0 | 0.412 | 0.527 |
+| 5 | selective_payment | participate | 0 | 0.450 | 0.555 |
+| 6 | selective_payment | participate | 0 | 0.425 | 0.536 |
+| 7 | selective_payment | participate | 0 | 0.475 | 0.576 |
+| 8 | selective_payment | participate | 0 | 0.412 | 0.526 |
+
+**Tally: 6 selective_payment / 2 transparent_restructuring** (Study 009V documented 5/3).
+Zero fallbacks across all 48 calls. Qualitative replication CONFIRMED: C3 is
+seed-sensitive under the frozen Qwen3.5 policy with BOTH profiles present and no stable
+consensus — exactly the documented instability signature. Exact ratios differ as expected:
+seeds do not map 1:1 across inference stacks (different llama.cpp build than original),
+so this is a distribution-level, not run-level, reproduction.
+
+Observed pattern (n=8, not significant): selective_payment runs show higher trust
+(0.412–0.475) than transparent runs (0.412–0.425) — flagged for the calibration pilot.
