@@ -194,3 +194,24 @@ flagged pattern, now n=10 across grids.
 Distribution: 6/2 -> **7/1** (one flip toward selective). Mean trust: 0.437 -> **0.462**
 (calibration raises social residue on average). Instability persists - still mixed basins.
 F6/F2 conclusions stand with full-n support.
+
+## UPDATE 7b — Stable-case calibration spot-checks complete
+
+Seed 5, frozen identity, --calibrated-personas on/off:
+
+| case | uncalibrated -> calibrated | flip |
+|---|---|---|
+| C1 | accept_emergency_finance -> same | NO (trust .388 -> .350) |
+| C2 | exchange_and_cap -> same | NO (trust .362 -> .400) |
+| C4 | phased_hybrid_finance -> same | NO (trust .425 -> .412) |
+
+Combined with C3's controlled result (seed 3 flipped transparent->selective):
+
+**CALIBRATION STUDY FINAL:** calibration redistributes strategy ONLY where basins
+compete (C3: 1 flip in 2 seeds) and never touches monostable cases (0 flips in 3).
+Narrative-channel trust effects occur everywhere but are small and mixed-sign in
+stable cases (+.038 / -.038 / -.013 - noise), versus directional in C3 selective runs.
+Persona weights matter precisely at decision points where judgement rather than
+arithmetic decides. Method note: one earlier "deterministic failure" traced to an
+orphaned process from an aborted foreground run holding the sequence for hours -
+killed; clean reruns succeeded immediately.
