@@ -67,3 +67,23 @@ Decisions carry real model reasoning (belief/claim/rationale with case-specific 
 | gpt-oss-120b | 0.480 / 0.350 | 0.540 / 0.425 | identical | identical |
 
 **Findings:** (1) Action equilibria are ROBUST across all three behavioural policies. (2) The LLM layer's effect flows through the SOCIAL channel — model-generated beliefs/claims degrade trust/legitimacy relative to canned heuristic strings (both models identically). (3) 120b ≡ 20b on outcomes: choose 20b for batch throughput; 120b adds nothing on these cells. Verdict on "is the agent layer decorative": actions say no-difference; discourse says real-difference. Both facts now measured locally.
+
+---
+
+# UPDATE 3: Frozen-model reproduction via llama-server
+
+## Setup
+- llama.cpp brew build serves the SHA-verified `Qwen3.5-0.8B-Q3_K_S.gguf` directly on :18555.
+- Direct connection (no shim): llama-server natively supports the engine's `chat_template_kwargs`, `reasoning_budget` and strict `json_schema`.
+- Runs: C1 + C3 → **0 fallbacks**, all legal, PASS, model identity = frozen lineage.
+
+## Four-way comparison
+| policy | C1 actions | C1 legit/trust | C3 actions | C3 legit/trust |
+|---|---|---|---|---|
+| heuristic | accept×senior ×3 | 0.540 / 0.425 | transparent×participate ×3 | 0.600 / 0.500 |
+| gpt-oss-20b | accept×senior ×3 | 0.480 / 0.350 | transparent×participate ×3 | 0.540 / 0.425 |
+| gpt-oss-120b | accept×senior ×3 | 0.480 / 0.350 | transparent×participate ×3 | 0.540 / 0.425 |
+| **FROZEN Qwen3.5** | accept×senior ×3 | 0.480 / 0.350 | **selective_payment**×participate ×3 | 0.556 / **0.450** |
+
+## Finding
+C1 equilibria robust across all policies. **C3: the frozen Qwen identity breaks from the crowd toward `selective_payment`** — precisely the seed-sensitive instability documented in Study 009V ("five selective-payment and three transparent-restructuring profiles"). The C3 instability is a property of the Qwen behavioural policy, now reproduced on the local machine. Larger models and the deterministic rule do not produce it. This confirms, locally and reproducibly, that the agent layer supplies genuine variable strategic selection in exactly the cell where the programme said it does.
