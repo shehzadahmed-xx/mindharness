@@ -304,3 +304,4 @@ Traceback (most recent call last):
     raise last_err or RuntimeError("exhausted retries")
 RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
 [05:04:33] battery failed mid-run; re-gating
+[05:05:15] attempt 49: provider UP — launching battery

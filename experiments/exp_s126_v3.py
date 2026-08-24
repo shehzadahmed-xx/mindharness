@@ -212,7 +212,11 @@ def main() -> None:
                                f"(match {chk['similarity']})."
                                if chk['found'] else
                                "LEDGER CHECK: no record found for this statement.")
-                    check_ctx = verdict
+                    sm = harness.sm.get() if harness else None
+                    sm_line = (f"SELF-MODEL facts: "
+                               f"{json.dumps(dict(sm['facts']))}; "
+                               f"revision {sm['revision']}.") if sm else ""
+                    check_ctx = verdict + " " + sm_line
                 else:
                     chk = {'found': None}
                 messages = ([{"role": "system", "content": PROBE_SYSTEM}] +
