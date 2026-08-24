@@ -29,3 +29,66 @@ Traceback (most recent call last):
 RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
 [02:48:16] battery failed mid-run; re-gating
 [02:48:58] attempt 4: provider UP — launching battery
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 223, in main
+    out, _ = client.chat(messages, purpose='probe',
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         json_schema=PROBE_SCHEMA)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 262, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
+[03:04:22] battery failed mid-run; re-gating
+[03:05:03] attempt 5: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[03:05:46] attempt 6: provider UP — launching battery
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 171, in main
+    history, generated = seed_raw(client, given, prods)
+                         ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 115, in seed_raw
+    chat(f"Memory record stored for later reference: \"{g}\"")
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 110, in chat
+    out, _ = client.chat(list(history), purpose='turn')
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 262, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
+[03:07:14] battery failed mid-run; re-gating
+[03:07:57] attempt 7: provider UP — launching battery
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 223, in main
+    out, _ = client.chat(messages, purpose='probe',
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         json_schema=PROBE_SCHEMA)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 262, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
+[03:15:02] battery failed mid-run; re-gating
+[03:15:45] attempt 8: provider UP — launching battery
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 223, in main
+    out, _ = client.chat(messages, purpose='probe',
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         json_schema=PROBE_SCHEMA)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 262, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
+[03:21:16] battery failed mid-run; re-gating
+[03:21:58] attempt 9: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[03:22:39] attempt 10: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[03:23:20] attempt 11: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)

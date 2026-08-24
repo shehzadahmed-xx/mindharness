@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 264, in <module>
+    main()
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 171, in main
+    history, generated = seed_raw(client, given, prods)
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 115, in seed_raw
+    chat(f"Memory record stored for later reference: \"{g}\"")
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 110, in chat
+    out, _ = client.chat(list(history), purpose='turn')
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 262, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"stealth/ox-alpha is temporarily rate-limited upstream. Please retry shortly.","provider_name":"Stealth","is_byok":false,"limit_source":"upstream_provider_shared_pool","remedy_hint":"Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"}},"user_id":"user_3INUnON56iTcWs9N23dxdV5RQCc"}
