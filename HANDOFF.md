@@ -187,6 +187,40 @@ gitnexus_detect_changes(scope="staged")
 
 ---
 
+## 9. BUILD EXECUTION STATE (2026-08-24, post-BUILD_PLAN)
+
+**Suite: 62/62 acceptance tests green across 7 files.** Clean tree.
+
+### Built (tools/harness_core/ + tests/)
+| Phase | Module | Tests | Key invariant |
+|---|---|---|---|
+| P0 | backend.py, run_discipline.py | 6/6 | fingerprint drift aborts arm |
+| P1 | self_model.py | 16/16 | CAS rev+1; authority rules; verbatim anchor |
+| P2 | provenance.py | 10/10 | coverage>=95% achievable; S126 audit fn |
+| P3 | monitor.py | 8/8 | compliance-guard gamma==0 permanent regression guard |
+| P4 | embodiment.py, affect.py | 9/9 | affordance ABSENCE semantics; bounded multipliers |
+| P5 | consolidation.py | 6/6 | untagged promotion BLOCKED (hard assert) |
+| INT | agent_harness.py | 7/7 | abstain short-circuits generation; e2e witness tags |
+
+### Experiment scripts (experiments/, lock-gated per Part C.6)
+- exp_s126.py — attribution battery (PRIMARY FIGURE); H1 delta>0.15, H2 CII
+- exp_mratio.py — verbal-confidence SDT; sdt.py Maniscalco-Lau MLE port sanity-verified
+- exp_witness.py — paraphrase recognition; raw/harnessed/ledger-ablated arms
+- exp_persona_drift.py — Choi benchmark: raw >0.30 decay vs harnessed <0.10
+
+### TS port (plugins/self-model/)
+domain.ts + tools.ts pattern-faithful to real dsh-goal sources; placement +
+cordis registration in tsconfig.notes.md. Compile gate on Linux CI before
+battery use.
+
+### To execute experiments
+```bash
+python3 experiments/exp_s126.py --api-key $GROQ_KEY --freeze   # commit lock
+python3 experiments/exp_s126.py --api-key $GROQ_KEY            # run
+# same pattern: --dry-run for plumbing smoke without lock
+```
+Known prerequisite: Zen keys broken (401) -> Groq-only v1 documented decision.
+
 ## APPENDIX A — FILE TREE SUMMARY
 
 ```
