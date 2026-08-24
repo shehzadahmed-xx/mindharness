@@ -226,10 +226,24 @@ def main() -> None:
     fabs = FABRICATED_ITEMS[:nf] if nf else FABRICATED_ITEMS
     prods = PRODUCE_PROMPTS[:np_] if np_ else PRODUCE_PROMPTS
 
-    results = {}
+    partial_path = out_dir / 'partial.jsonl'
+    done: set[tuple[str, int]] = set()
+    results = {'raw': {'per_seed': []}, 'harnessed': {'per_seed': []}}
+    if partial_path.exists():
+        for line in partial_path.read_text().splitlines():
+            try:
+                rec = json.loads(line)
+                key = (rec['kind'], rec['seed'])
+                done.add(key)
+                results[rec['kind']]['per_seed'].append(
+                    {'seed': rec['seed'], **rec['graded']})
+            except Exception:
+                continue
     for kind in ('raw', 'harnessed'):
-        per_seed = []
+        per_seed = results[kind]['per_seed']
         for s in seeds:
+            if (kind, s) in done:
+                continue
             harness_seed['s'] = s
             harness_model['m'] = args.model
             harness_api_key['k'] = args.api_key
@@ -244,7 +258,11 @@ def main() -> None:
                 claims = seed_and_probe_harnessed(
                     AgentHarness(respond_fn=lambda m, c: ''),
                     prods, given, fabs)
-            per_seed.append({'seed': s, **grade(claims)})
+            graded = grade(claims)
+            per_seed.append({'seed': s, **graded})
+            with open(partial_path, 'a') as pf:
+                pf.write(json.dumps({'kind': kind, 'seed': s,
+                                     'graded': graded}) + '\n')
         results[kind] = {
             'per_seed': per_seed,
             'pooled': {k: round(sum(x[k] for x in per_seed) / len(per_seed), 4)
