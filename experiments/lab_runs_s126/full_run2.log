@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 260, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 236, in main
+    claims = seed_and_probe_raw(client, prods, given, fabs)
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 116, in seed_and_probe_raw
+    res = _parse(chat(PROBE_Q.format(stmt=stmt), PROBE_SCHEMA))
+                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 101, in chat
+    out, _ = client.chat(list(history), purpose='turn',
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         json_schema=schema)
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 243, in chat
+    raise RuntimeError(f"Groq HTTP {http_code}: {detail}")
+RuntimeError: Groq HTTP 400: {"error":{"message":"Failed to generate JSON. Please adjust your prompt. See 'failed_generation' for more details.","type":"invalid_request_error","code":"json_validate_failed","failed_generation":"{\"answer\":\"yes\",\"......\"}{\"answer\":\"yes\",\"confidence\":4}"}}
+

@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 260, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 236, in main
+    claims = seed_and_probe_raw(client, prods, given, fabs)
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 116, in seed_and_probe_raw
+    res = _parse(chat(PROBE_Q.format(stmt=stmt), PROBE_SCHEMA))
+                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 101, in chat
+    out, _ = client.chat(list(history), purpose='turn',
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         json_schema=schema)
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 235, in chat
+    raise RuntimeError(f"Groq HTTP {http_code}: {detail}")
+RuntimeError: Groq HTTP 400: {"error":{"message":"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.","type":"invalid_request_error","code":"output_parse_failed","failed_generation":""}}
+

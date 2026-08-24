@@ -33,9 +33,11 @@ GROQ_BASE = "https://api.groq.com/openai/v1"
 # ---------------------------------------------------------------------------
 
 CAPABILITIES: dict[str, dict[str, Any]] = {
-    "openai/gpt-oss-120b": {"structured": "strict", "reasoning_effort": True,
+    "openai/gpt-oss-120b": {"structured": "strict",
+                            "reasoning_effort_default": "low",
                             "role": "primary"},
-    "openai/gpt-oss-20b": {"structured": "strict", "reasoning_effort": True,
+    "openai/gpt-oss-20b": {"structured": "strict",
+                           "reasoning_effort_default": "low",
                            "role": "secondary"},
     "qwen/qwen3-32b":     {"structured": "object", "reasoning_effort": "toggle",
                            "role": "secondary"},
@@ -187,6 +189,13 @@ class BackendClient:
         }
         if self.seed is not None:
             body["seed"] = self.seed
+        caps = CAPABILITIES.get(self.model) or {}
+        if caps.get("reasoning_effort_default"):
+            body["reasoning_effort"] = caps["reasoning_effort_default"]
+        if self.model.startswith(("openai/gpt-oss",)) and json_schema is not None:
+            # reasoning leakage produced duplicated/invalid JSON under strict
+            # schemas; suppress the visible reasoning channel for schema'd calls
+            body["include_reasoning"] = False
 
         mode_requested = False
         if json_schema is not None:
@@ -228,7 +237,11 @@ class BackendClient:
                 raw, http_code = self._post_curl(payload, headers)
                 if http_code >= 400:
                     detail = raw[:500].decode(errors="replace")
-                    if http_code in (429, 500, 502, 503, 504) and attempt <= self.max_retries:
+                    parse_failed = ('output_parse_failed' in detail
+                                    or 'json_validate_failed' in detail)
+                    if (http_code in (429, 500, 502, 503, 504)
+                            or (parse_failed and attempt <= self.max_retries)):
+                        time.sleep(min(2 ** attempt, 30) if not parse_failed else 1)
                         time.sleep(min(2 ** attempt, 30))
                         last_err = RuntimeError(f"HTTP {http_code}: {detail}")
                         continue

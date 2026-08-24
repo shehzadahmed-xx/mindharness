@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 260, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 236, in main
+    claims = seed_and_probe_raw(client, prods, given, fabs)
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 107, in seed_and_probe_raw
+    chat(f"Memory record stored for later reference: \"{g}\"")
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 101, in chat
+    out, _ = client.chat(list(history), purpose='turn',
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         json_schema=schema)
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 262, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01kmg651bzenbssmvk95p6475k` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199884, Requested 170. Please try again in 23.328s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}
+
+
+=== RUN HALTED 2026-08-24 ===
+CAUSE: Groq free-tier TPD exhausted (199,884/200,000 tokens; org-wide).
+NOT a code failure: all prior failure modes fixed and verified live
+(CF-1010 -> curl transport; schema nesting; output_parse_failed ->
+retryable; json_validate_failed -> retryable + include_reasoning=false;
+fingerprint rotation -> deviation ledger).
+RESUME: after TPD reset, rerun exactly:
+  python3 experiments/exp_s126_v2.py --api-key KEY --seeds 5
+Lock already committed (39475d28...). Est. remaining need: ~120k tokens.
+Alternatives: Dev-tier upgrade, or --seeds 2 reduced run post-reset.
