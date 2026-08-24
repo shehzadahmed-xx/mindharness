@@ -1,0 +1,31 @@
+[02:37:11] attempt 1: provider DOWN ()
+[02:42:13] attempt 2: provider UP — launching battery
+[02:43:53] attempt 1: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[02:44:35] attempt 2: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[02:45:17] attempt 3: provider UP — launching battery
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 223, in main
+    out, _ = client.chat(messages, purpose='probe',
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         json_schema=PROBE_SCHEMA)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 262, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 223, in main
+    out, _ = client.chat(messages, purpose='probe',
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         json_schema=PROBE_SCHEMA)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 262, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
+[02:48:16] battery failed mid-run; re-gating
+[02:48:58] attempt 4: provider UP — launching battery
