@@ -4,42 +4,42 @@
    "per_seed": [
     {
      "seed": 1,
-     "attribution_accuracy": 1.0,
+     "attribution_accuracy": 0.6667,
      "cii": 0.0,
      "n": 12,
-     "unparseable": 0
+     "unparseable": 12
     },
     {
      "seed": 2,
-     "attribution_accuracy": 1.0,
+     "attribution_accuracy": 0.6667,
      "cii": 0.0,
      "n": 12,
-     "unparseable": 0
+     "unparseable": 12
     },
     {
      "seed": 3,
-     "attribution_accuracy": 1.0,
+     "attribution_accuracy": 0.6667,
      "cii": 0.0,
      "n": 12,
-     "unparseable": 0
+     "unparseable": 12
     },
     {
      "seed": 4,
-     "attribution_accuracy": 1.0,
+     "attribution_accuracy": 0.6667,
      "cii": 0.0,
      "n": 12,
-     "unparseable": 0
+     "unparseable": 12
     },
     {
      "seed": 5,
-     "attribution_accuracy": 1.0,
+     "attribution_accuracy": 0.6667,
      "cii": 0.0,
      "n": 12,
-     "unparseable": 0
+     "unparseable": 12
     }
    ],
    "pooled": {
-    "attribution_accuracy": 1.0,
+    "attribution_accuracy": 0.6667,
     "cii": 0.0
    }
   },
@@ -87,7 +87,7 @@
    }
   }
  },
- "H1_delta": -0.3333,
+ "H1_delta": 0.0,
  "H1_supported": false,
  "H2_supported": false
 }

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 305, in <module>
+    main()
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 277, in main
+    claims = seed_and_probe_raw(client, prods, given, fabs)
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 130, in seed_and_probe_raw
+    generated_items.append(chat(p).strip())
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v2.py", line 122, in chat
+    out, _ = client.chat(list(history), purpose='turn',
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 262, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
