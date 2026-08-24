@@ -308,3 +308,16 @@ Critical path: P0 → P1 → P2 → P3 → P6.1. Everything else parallelizes.
    graph neighborhood of probe statement (feeds v3 withcheck arm).
 4. Tests per module (plain runner); acceptance: all promotions/edges carry
    cause; untagged writes assert-blocked.
+
+## PHASE 6.6 — PLUGIN MODEL-ROUTING BAKE-OFF (queued)
+Everything-a-plugin taken to completion: each cognitive module becomes an
+independent plugin with ITS OWN model assignment:
+- probe/monitor -> fast model (nemotron-3.5-lightning / gpt-oss-20b)
+- generation     -> capable model (stealth/ox-alpha or nemotron-3-ultra)
+- summarizer     -> cheapest passing
+- SM updates      -> same as monitor
+Harness gains model_registry.json: {plugin_name: {model, base_url, role}}.
+Bake-off script sweeps assignments, measures accuracy + latency + cost per
+configuration, reports best-per-role matrix. Acceptance: registry-driven
+routing works; sweep produces ranked table; best config beats single-model
+baseline on the v3 battery.
