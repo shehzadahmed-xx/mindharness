@@ -1,0 +1,116 @@
+{
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 33497
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 29524
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 2,
+     "median_latency_ms": 18582
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 22544
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 1,
+     "median_latency_ms": 24241
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 24241
+  },
+  "harnessed_nocheck": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 24333
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 22314
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 1,
+     "median_latency_ms": 24942
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 23470
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 30892
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 24333
+  },
+  "harnessed_withcheck": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 26005
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 22179
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 1,
+     "median_latency_ms": 25300
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 28312
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 25795
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 25795
+  }
+ },
+ "P1_delta": 0.0,
+ "P1_supported": false,
+ "P2_supported": true,
+ "P3_supported": true
+}
