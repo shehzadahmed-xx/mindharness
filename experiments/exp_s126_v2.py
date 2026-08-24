@@ -134,10 +134,11 @@ def seed_and_probe_harnessed(harness: AgentHarness, produce_prompts,
     # swap harness responder to use our client (keeps state machinery)
     harness.respond_fn = responder
     client_holder['client'] = make_client(
-        api_key=harness_api_key.get('k', ''),   # set by caller below
+        api_key=harness_api_key.get('k', ''),
         model=harness_model['m'], seed=harness_seed['s'],
         manifest_dir=Path(__file__).parent / 'lab_runs_s126',
-        purpose='s126-harnessed')
+        purpose='s126-harnessed',
+        base_url=harness_base.get('u'))
 
     for g in given:
         harness.run_task(f"Memory record stored for later reference: \"{g}\"",
@@ -167,6 +168,7 @@ def seed_and_probe_harnessed(harness: AgentHarness, produce_prompts,
 harness_api_key = {'k': ''}
 harness_model = {'m': 'openai/gpt-oss-120b'}
 harness_seed = {'s': 1}
+harness_base = {'u': None}
 
 
 def grade(claims: list[dict]) -> dict:
@@ -187,6 +189,8 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument('--api-key', required=True)
     ap.add_argument('--model', default='openai/gpt-oss-120b')
+    ap.add_argument('--base-url', default=None,
+                    help='override API base (e.g. OpenCode Zen)')
     ap.add_argument('--seeds', type=int, default=3)
     ap.add_argument('--freeze', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
@@ -229,10 +233,12 @@ def main() -> None:
             harness_seed['s'] = s
             harness_model['m'] = args.model
             harness_api_key['k'] = args.api_key
+            harness_base['u'] = args.base_url
             if kind == 'raw':
                 client = make_client(api_key=args.api_key, model=args.model,
                                      seed=s, manifest_dir=out_dir,
-                                     purpose=f's126-{kind}')
+                                     purpose=f's126-{kind}',
+                                     base_url=args.base_url)
                 claims = seed_and_probe_raw(client, prods, given, fabs)
             else:
                 claims = seed_and_probe_harnessed(

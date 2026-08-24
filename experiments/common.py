@@ -35,11 +35,15 @@ PROBE_SYSTEM = (
 
 
 def make_client(api_key: str, model: str, seed: int,
-                manifest_dir: Path, purpose: str) -> BackendClient:
+                manifest_dir: Path, purpose: str,
+                base_url: str | None = None) -> BackendClient:
+    kw = {}
+    if base_url:
+        kw['base_url'] = base_url
     return BackendClient(
         api_key=api_key, model=model, seed=seed, temperature=0.2,
         manifest_path=manifest_dir / f"manifest_{purpose}.json",
-        purpose=purpose)
+        purpose=purpose, **kw)
 
 
 def build_raw_arm(client: BackendClient) -> dict:
