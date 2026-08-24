@@ -197,10 +197,12 @@ class MetacognitiveLog:
         return out
 
     def completeness(self) -> float:
-        """Fraction of attempted tasks carrying BOTH surfaces. AC-3.3 wants 1.0."""
+        """Graded surface coverage: mean fraction of {FOK, JOL} present per
+        attempted task. 1.0 iff every attempt carries BOTH (AC-3.3)."""
         all_tasks = set(self.foks) | set(self.jols)
         if not all_tasks:
             return 1.0
-        both = sum(1 for t in all_tasks
-                   if t in self.foks and t in self.jols)
-        return both / len(all_tasks)
+        total = 0.0
+        for t in all_tasks:
+            total += (1 if t in self.foks else 0) + (1 if t in self.jols else 0)
+        return total / (2 * len(all_tasks))
