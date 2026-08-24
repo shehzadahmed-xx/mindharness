@@ -196,6 +196,27 @@ class AgentHarness:
                           staged_count,
                           int((time.monotonic() - t0) * 1000))
 
+    def respond_through_model(self, prompt: str, *,
+                              system: str | None = None,
+                              json_schema: dict | None = None,
+                              purpose: str = 'direct') -> str:
+        """Single model call routed through harness state (tokens/affect),
+        bypassing gate policy. Used by probes and SDT item runs."""
+        anchor = self.sm.verbatim_reinject()
+        sm_view = self.sm.get()
+        sys_txt = (system or anchor)
+        messages = [{"role": "system", "content": sys_txt},
+                    {"role": "user", "content": prompt}]
+        out = self.respond_fn(messages,
+                              {'affordances': sorted(
+                                  self.body.affordance_space().keys()),
+                               'salience': self.affect.salience_multiplier(),
+                               'risk': self.affect.risk_multiplier(),
+                               'json_schema': json_schema,
+                               'purpose': purpose})
+        self.body.consume_tokens(len(out))
+        return out
+
     def confirm_proposals_into_self_model(self) -> list[str]:
         confirmed: list[str] = []
         for p in self.queue.pending():
