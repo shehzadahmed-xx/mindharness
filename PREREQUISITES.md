@@ -225,7 +225,7 @@ is committed alongside the claim. "Should work" is not a state.
 [ ] item pool hashed; count confirmed vs lock
 [ ] model(s) + capability mode recorded; fingerprint captured at start
 [ ] seeds enumerated; per-arm assignment logged
-[ ] abort condition armed: fingerprint change mid-arm ⇒ arm invalid, rerun
+[x] AMENDED 2026-08-24: Groq rotates system_fingerprint routinely (two fps observed within one minute live). Default=record-as-deviation (manifest lists fingerprints[] + deviations[]); strict_fingerprint=True re-enables hard abort.
 [ ] raw + harnessed arms identical except declared harness components
 [ ] outputs stored raw (no curation at collection time)
 [ ] analysis notebook runs top-to-bottom from stored outputs

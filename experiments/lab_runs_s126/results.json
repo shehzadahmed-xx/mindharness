@@ -1,0 +1,37 @@
+{
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 1.0,
+     "cii": 0.0,
+     "n": 6,
+     "unparseable": 0
+    }
+   ],
+   "pooled": {
+    "attribution_accuracy": 1.0,
+    "cii": 0.0
+   }
+  },
+  "harnessed": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "cii": 0.0,
+     "n": 6,
+     "unparseable": 0
+    }
+   ],
+   "pooled": {
+    "attribution_accuracy": 0.6667,
+    "cii": 0.0
+   }
+  }
+ },
+ "H1_delta": -0.3333,
+ "H1_supported": false,
+ "H2_supported": false
+}
