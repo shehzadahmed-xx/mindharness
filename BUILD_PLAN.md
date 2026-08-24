@@ -291,3 +291,20 @@ Critical path: P0 → P1 → P2 → P3 → P6.1. Everything else parallelizes.
 - [ ] The one-line claim defensible end-to-end: *"A frozen remote LLM plus this harness
   exhibits witnessed introspection, γ>0 metacognition, stable identity, and
   self-floor-tolerant function — each measured, each falsifiable."*
+
+---
+
+## PHASE 6.5 — HERMES ADOPTIONS (queued next session)
+
+1. **SkillLibrary** (`harness_core/skills.py`): procedural store; skills written
+   from successful task loops with cause='action-outcome'; retrieval by
+   lexical match; utility-gated like consolidation. Port of Hermes Agent's
+   skill loop, witnessed.
+2. **GraphExpansion** (`harness_core/graph.py`): semantic store gains
+   relation edges (concept-a → concept-b, cause-tagged, source_refs);
+   multi-hop query via neighbor traversal. Port of hermes-cognition's
+   auto-expansion, witnessed.
+3. **Richer SM query**: get_self_model probe-context includes top-3 skills +
+   graph neighborhood of probe statement (feeds v3 withcheck arm).
+4. Tests per module (plain runner); acceptance: all promotions/edges carry
+   cause; untagged writes assert-blocked.
