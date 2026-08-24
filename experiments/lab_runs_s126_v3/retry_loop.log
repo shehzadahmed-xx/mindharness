@@ -92,3 +92,4 @@ RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from pr
 [03:21:58] attempt 9: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
 [03:22:39] attempt 10: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
 [03:23:20] attempt 11: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[03:24:18] attempt 12: provider UP — launching battery

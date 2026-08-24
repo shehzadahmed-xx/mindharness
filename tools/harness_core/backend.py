@@ -189,6 +189,10 @@ class BackendClient:
         }
         if self.seed is not None:
             body["seed"] = self.seed
+        if "openrouter.ai" in self.base_url:
+            # stealth models route to single upstreams that flap; enable
+            # provider fallbacks per openrouter.ai/docs/features/provider-routing
+            body["provider"] = {"allow_fallbacks": True}
         caps = CAPABILITIES.get(self.model) or {}
         if caps.get("reasoning_effort_default"):
             body["reasoning_effort"] = caps["reasoning_effort_default"]
