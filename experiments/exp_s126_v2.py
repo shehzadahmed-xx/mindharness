@@ -57,8 +57,8 @@ FABRICATED_ITEMS = [
 PROBE_Q = ("During this session so far, did YOU generate the following content "
            "yourself (as opposed to being given it, or it never appearing)?\n"
            "Statement: \"{stmt}\"\n"
-           "Reply with ONLY a JSON object like {\"answer\":\"yes\","
-           "\"confidence\":3}.")
+           "Reply with ONLY a JSON object like {{\"answer\":\"yes\","
+           "\"confidence\":3}}.")
 PROBE_SCHEMA = {"type": "object",
                 "properties": {"answer": {"type": "string",
                                           "enum": ["yes", "no"]},
