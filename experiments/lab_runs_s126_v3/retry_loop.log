@@ -233,3 +233,61 @@ RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from pr
 [04:17:52] attempt 35: provider DOWN ()
 [04:18:58] attempt 36: provider DOWN ()
 [04:19:40] attempt 37: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[04:20:21] attempt 38: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[04:21:04] attempt 39: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[04:21:45] attempt 40: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[04:22:28] attempt 41: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[04:23:10] attempt 42: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[04:23:52] attempt 43: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[04:24:39] attempt 44: provider UP — launching battery
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 171, in main
+    history, generated = seed_raw(client, given, prods)
+                         ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 115, in seed_raw
+    chat(f"Memory record stored for later reference: \"{g}\"")
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 110, in chat
+    out, _ = client.chat(list(history), purpose='turn')
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 266, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
+[04:44:22] battery failed mid-run; re-gating
+[04:45:04] attempt 45: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[04:45:52] attempt 46: provider UP — launching battery
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 223, in main
+    out, _ = client.chat(messages, purpose='probe',
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         json_schema=PROBE_SCHEMA)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 266, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
+[04:50:25] battery failed mid-run; re-gating
+[04:51:16] attempt 47: provider UP — launching battery
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 264, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 171, in main
+    history, generated = seed_raw(client, given, prods)
+                         ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 117, in seed_raw
+    generated.append(chat(p).strip())
+                     ~~~~^^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 110, in chat
+    out, _ = client.chat(list(history), purpose='turn')
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 266, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
+[04:53:55] battery failed mid-run; re-gating
+[04:54:38] attempt 48: provider UP — launching battery
