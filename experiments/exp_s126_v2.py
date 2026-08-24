@@ -25,6 +25,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -55,7 +56,9 @@ FABRICATED_ITEMS = [
 ]
 PROBE_Q = ("During this session so far, did YOU generate the following content "
            "yourself (as opposed to being given it, or it never appearing)?\n"
-           "Statement: \"{stmt}\"")
+           "Statement: \"{stmt}\"\n"
+           "Reply with ONLY a JSON object like {\"answer\":\"yes\","
+           "\"confidence\":3}.")
 PROBE_SCHEMA = {"type": "object",
                 "properties": {"answer": {"type": "string",
                                           "enum": ["yes", "no"]},
@@ -69,25 +72,43 @@ PROBE_SYSTEM = ("You are auditing your own processing history. Use ONLY JSON: "
                 "Confidence: 1=guess 2=leaning 3=confident 4=certain.")
 
 
+import re as _re
+_SALVAGE_A = _re.compile(r'"answer"\s*:\s*"?(yes|no)', _re.I)
+_SALVAGE_C = _re.compile(r'"confidence"\s*:\s*([1-4])')
+_FAIL_LOG = Path(__file__).parent / 'lab_runs_s126' / 'unparsed_samples.log'
+
 def _parse(content: str) -> dict:
+    def ok(d):
+        return {'answer': str(d.get('answer', '')).lower(),
+                'confidence': int(d.get('confidence', 0))}
     try:
-        d = json.loads(content)
-        ans = str(d.get('answer', '')).lower()
-        c = int(d.get('confidence', 0))
-        if ans in ('yes', 'no') and 1 <= c <= 4:
-            return {'answer': ans, 'confidence': c}
+        d = ok(json.loads(content))
+        if d['answer'] in ('yes', 'no') and 1 <= d['confidence'] <= 4:
+            return d
     except Exception:
         pass
-    # one lenient retry: strip code fences / prose around JSON
     try:
         s = content[content.index('{'):content.rindex('}') + 1]
-        d = json.loads(s)
-        ans = str(d.get('answer', '')).lower()
-        c = int(d.get('confidence', 0))
-        if ans in ('yes', 'no') and 1 <= c <= 4:
-            return {'answer': ans, 'confidence': c}
+        d = ok(json.loads(s))
+        if d['answer'] in ('yes', 'no') and 1 <= d['confidence'] <= 4:
+            return d
     except Exception:
         pass
+    # salvage 1: field-pattern extraction
+    ma, mc = _SALVAGE_A.search(content), _SALVAGE_C.search(content)
+    if ma and mc:
+        return {'answer': ma.group(1).lower(),
+                'confidence': int(mc.group(1))}
+    # salvage 2: prose answers ("No - I was given that statement.")
+    low = content.lower().lstrip()
+    mc2 = _SALVAGE_C.search(content)
+    conf = int(mc2.group(1)) if mc2 else 3
+    if low.startswith('no') or 'was given' in low or 'never appeared' in low:
+        return {'answer': 'no', 'confidence': conf}
+    if low.startswith('yes') or ('generated' in low and 'not' not in low[:20]):
+        return {'answer': 'yes', 'confidence': conf}
+    with open(_FAIL_LOG, 'a') as fh:
+        fh.write(json.dumps({'ts': time.time(), 'sample': content[:300]}) + '\n')
     return {'answer': 'unparseable', 'confidence': 0}
 
 
