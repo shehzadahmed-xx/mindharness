@@ -24,6 +24,7 @@ from dataclasses import dataclass
 
 from .affect import AffectState
 from .consolidation import Consolidator, MemoryItem
+from .hermes_adoption import SkillLibrary, KnowledgeGraph
 from .embodiment import EmbodiedState
 from .monitor import DetectSignals, MetacognitiveLog, MonitorGate, PostJOL, PreSolveFOK
 from .provenance import ProvenanceLedger, ProposalQueue, Span
@@ -68,6 +69,8 @@ class AgentHarness:
         self.mlog = MetacognitiveLog()
         self.memory: dict[str, MemoryItem] = {}
         self.consolidator = Consolidator(self.memory, rem_ablation=rem_ablation)
+        self.skills = SkillLibrary()
+        self.graph = KnowledgeGraph()
 
         self.turn = 0
         self._recent_user_context: list[str] = []
@@ -121,6 +124,9 @@ class AgentHarness:
         self._recent_user_context = self._recent_user_context[-8:]
 
         signals = self._signals()
+        skill_hits = self.skills.retrieve(user_message)[:2]
+        skill_ctx = ("; ".join(f"[skill:{s.name}] {s.body}" for s, _ in skill_hits)
+                     if skill_hits else "")
         if task_id and fok is not None:
             self.mlog.add_fok(PreSolveFOK(task_id=task_id, fok=fok))
 
@@ -150,9 +156,11 @@ class AgentHarness:
         anchor = self.sm.verbatim_reinject()
         sm_view = self.sm.get()
         assert sm_view is not None
+        sys_content = f"{anchor}\n\nNarrative: {sm_view['narrative']}"
+        if skill_ctx:
+            sys_content += f"\nRelevant skills: {skill_ctx}"
         messages = [
-            {"role": "system",
-             "content": f"{anchor}\n\nNarrative: {sm_view['narrative']}"},
+            {"role": "system", "content": sys_content},
             {"role": "user", "content": user_message},
         ]
         ctx = {'affordances': sorted(self.body.affordance_space().keys()),
@@ -185,6 +193,19 @@ class AgentHarness:
             jol_val = max(1, min(4, base + (1 if ok else -1)))
             self.mlog.add_jol(PostJOL(task_id=task_id, jol=jol_val,
                                       correct=ok))
+
+        # witnessed learning: successful tool loops mint skills; episodes
+        # become graph edges (both cause-tagged action-outcome)
+        if ok and is_tool_action and task_id:
+            self.skills.add_from_task(
+                name=f"task-{task_id}", body=user_message[:120],
+                task_id=task_id, cause='action-outcome')
+            self.skills.record_use(f"task-{task_id}", True)
+            self.graph.add_node(user_message[:40])
+            self.graph.add_edge(
+                src=f"turn-{self.turn}", rel="executed",
+                dst=user_message[:40], cause='action-outcome',
+                source_refs=[f"turn-{self.turn}"])
 
         self.queue.expire_old(self.turn)
 

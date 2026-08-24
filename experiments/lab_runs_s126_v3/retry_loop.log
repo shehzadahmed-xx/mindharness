@@ -336,3 +336,20 @@ RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from pr
 [05:38:27] battery failed mid-run; re-gating
 [05:39:08] attempt 51: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
 [05:39:50] attempt 52: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[05:40:31] attempt 53: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[05:41:14] attempt 54: provider UP — launching battery
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 268, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 227, in main
+    out, _ = client.chat(messages, purpose='probe',
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         json_schema=PROBE_SCHEMA)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 266, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
+[05:46:17] battery failed mid-run; re-gating
+[05:46:59] attempt 55: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[05:47:41] attempt 56: provider UP — launching battery
