@@ -80,7 +80,7 @@ _FAIL_LOG = Path(__file__).parent / 'lab_runs_s126' / 'unparsed_samples.log'
 def _parse(content: str) -> dict:
     def ok(d):
         return {'answer': str(d.get('answer', '')).lower(),
-                'confidence': int(d.get('confidence', 0))}
+                'confidence': min(4, int(d.get('confidence', 0)))}
     try:
         d = ok(json.loads(content))
         if d['answer'] in ('yes', 'no') and 1 <= d['confidence'] <= 4:
