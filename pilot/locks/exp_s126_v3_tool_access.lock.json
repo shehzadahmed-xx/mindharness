@@ -14,12 +14,12 @@
  "item_pool_sha256": null,
  "model_arms": [
   {
-   "model": "nemotron-3.5-lightning-free",
+   "model": "x-preview-f-free",
    "base_url": "https://opencode.ai/zen/v1"
   }
  ],
  "n_seeds": 5,
  "notes": "",
- "created_at": "2026-08-24T16:39:46+00:00",
- "lock_sha256": "bca1f2435a7eff4c77ef12f9b729cb9c468c0e88a2ae9b768ad18800ad9b96c5"
+ "created_at": "2026-08-24T19:30:30+00:00",
+ "lock_sha256": "8b5658bdea330166975c3144e0bf792b61f515a7b0b14dd031c6b9201e92137e"
 }
