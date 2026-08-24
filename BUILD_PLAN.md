@@ -321,3 +321,16 @@ Bake-off script sweeps assignments, measures accuracy + latency + cost per
 configuration, reports best-per-role matrix. Acceptance: registry-driven
 routing works; sweep produces ranked table; best config beats single-model
 baseline on the v3 battery.
+
+## GOVERNING RULE ADDENDUM — CAPABILITY-LEVEL SELECTION
+Everything is a plugin applies to CAPABILITIES too, not just models:
+every module (memory scheme, emotion engine, monitor design, self-model,
+even the witness) ships as a swappable plugin behind a fixed interface.
+Bake-off extends: each capability variant runs the v3 battery; variants
+that measurably improve attribution/accuracy/latency stay; variants that
+don't are DELETED. No tradition, theory, or preference protects a plugin —
+only measured contribution. Current roster enters as candidates:
+  Hermes-Agent skills-loop, hermes-cognition graph+18-emotions, ours all.
+Selection criterion: delta on locked metrics vs no-plugin baseline.
+What works stays. What doesn't gets thrown out. Including this rule if
+measured better without it.
