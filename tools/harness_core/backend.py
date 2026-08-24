@@ -324,3 +324,38 @@ class BackendClient:
             "deviations": self.deviations,
             "calls": rows}, indent=1))
         return path
+
+
+# ---------------------------------------------------------------------------
+# Model registry (Phase 6.6): per-plugin model assignment
+# ---------------------------------------------------------------------------
+
+DEFAULT_REGISTRY: dict[str, dict[str, str]] = {
+    "monitor":   {"model": "qwen/qwen3-32b",          "role": "fast-detect"},
+    "probe":     {"model": "openai/gpt-oss-120b",      "role": "capable"},
+    "generation": {"model": "stealth/ox-alpha",       "role": "capable"},
+    "validation": {"model": "openai/gpt-oss-20b",     "role": "strict-json"},
+    "summarizer": {"model": "llama-3.3-70b-versatile","role": "cheap"},
+}
+
+
+def load_registry(path: str | None = None) -> dict[str, dict[str, str]]:
+    """Load model_registry.json overriding DEFAULT_REGISTRY per key."""
+    import json as _json
+    from pathlib import Path as _P
+    reg = {k: dict(v) for k, v in DEFAULT_REGISTRY.items()}
+    if path and _P(path).exists():
+        overrides = _json.loads(_P(path).read_text())
+        for role, cfg in overrides.items():
+            if role in reg:
+                reg[role].update(cfg)
+            else:
+                reg[role] = cfg
+    return reg
+
+
+def client_for_role(registry: dict, role: str, api_key: str,
+                    base_url: str = GROQ_BASE, **kw) -> BackendClient:
+    cfg = registry[role]
+    return BackendClient(api_key=api_key, model=cfg["model"],
+                         base_url=base_url, purpose=role, **kw)
