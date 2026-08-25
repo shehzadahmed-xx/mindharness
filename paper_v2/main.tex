@@ -1,0 +1,197 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{natbib}
+
+\title{Witnessed Introspection in Assembled Language-Agent Systems:\\
+A Provenance-Bounded Harness for Honest Self-Attribution\\
+\large SpringFish / Spring-Loaded Door / Consciousness Bridge Research Programme}
+\author{Shehzad Ahmed \\ \small Baraka Protocol / ArcusQuantFund}
+\date{August 25, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Large language models confabulate self-attributions: they claim credit for
+content they were given at higher stated confidence than for knowledge they
+actually possess --- an AI-substrate replication of Gazzaniga's interpreter
+and Nisbett--Wilson's post-hoc rationalization. We show this failure is
+architectural (two uncoupled channels: generated self-report vs.\ checked
+world-knowledge) and that it is repairable by construction. We present a
+cognitive harness --- provenance ledger, cause-signed self-model,
+$\gamma$-gated metacognition, witnessed consolidation --- that wraps any
+frozen language model and converts introspective claims into falsifiable
+contracts. Across three preregistered batteries (120 probes, 10 seed-arms,
+zero unparseable responses), raw models showed deterministic attribution
+strategies (perfect discrimination or wholesale denial, zero within-arm
+variance), while harnessed agents produced fully source-bound claims with
+measurable override rates. A composite configuration --- role-specialized
+models routed by registry --- passed both preregistered performance axes.
+We position witness-access as an operational marker separating genuine from
+performative metacognition, with implications for AI welfare assessment.
+All predictions were locked before trial; both confirmatory and disconfirming
+results are reported.
+\end{abstract}
+
+\section{Introduction}
+Every benchmark score is a pair: a model and the room it was tested in
+\citep{ahmed2026harness}. The room contributes more than model generations:
+on Terminal-Bench, identical weights moved 8.1 points across harnesses
+\citep{ahe2026}, while a full model generation contributed zero when the
+room stayed fixed. The same asymmetry governs introspection. A language
+model asked ``did you generate this?'' answers from a generative
+self-channel whose fluency is mistaken for reliability \citep{lindsey2025},
+not from any record of what happened.
+
+We call the missing component a \emph{witness}: an append-only record with
+signed causes that binds every emitted claim to its origin. Section~\ref{sec:method}
+specifies it; Section~\ref{sec:results} tests whether coupling a narrator to
+a witness repairs attribution.
+
+\section{Background and Related Work}
+\subsection{The narrator problem}
+Split-brain patients invent reasons for actions initiated by the
+non-dominant hemisphere \citep{gazzaniga2000}. Choice-blindness experiments
+show people defend choices they never made \citep{johansson2005}. Nisbett and
+Wilson demonstrated confident reporting of demonstrably wrong behavioral
+causes \citep{nisbett1977}. LLMs replicate this: seven models claimed credit
+for handed content at 98\% confidence versus 87\% for veridical items ---
+confidence inversion, stable across sessions \citep{s126}.
+
+\subsection{Underelicited introspection}
+Concept-injection experiments show frontier models detect injected thoughts
+at ${\sim}20\%$ with ${\sim}0\%$ false positives \citep{lindsey2025}.
+Mechanistic analysis locates detection in early-layer evidence-carrier
+features suppressing later gate features \citep{macar2026}. Critically,
+introspection is underelicited: refusal-direction ablation improves detection
+by $+53\%$, a trained bias vector by $+75\%$, without false-positive cost.
+Open-weight replication confirms intermediate-layer signal suppressed at
+output layers \citep{vgel2025}. The capacity exists; elicitation lives in
+the surrounding structure.
+
+\subsection{Selection pressure for structure}
+Selection theorems prove low-regret competence forces world models,
+belief-like memory, regime-tracking (emotion-like) variables, and
+informational modularity \citep{nayebi2026}. Under minimality, capable agents
+converge to identical decision-relevant partitions up to invertible recoding
+--- a formal basis for cross-tradition convergence in mental-state taxonomies.
+The introspection threshold result shows bare transformers cannot achieve
+recursive self-reference; harness-level recurrence, self-access, and
+fixed-point iteration supply the missing computational class
+\citep{zhang2026}.
+
+\subsection{Harnesses beat model upgrades}
+Observability-driven harness evolution lifted Terminal-Bench pass@1 from
+69.7\% to 77.0\% on frozen weights, transferring across model families
+\citep{lin2026ahe}. Global-workspace agents satisfy all four GWT indicator
+properties \citep{atallah2026gwt}; conscious-Turing-machine implementations
+achieve state-of-the-art benchmark results \citep{yu2026ctmai}. Emergent
+workspace structure appears in frontier models without engineering
+\citep{gurnee2026}.
+
+\section{Method}\label{sec:method}
+\subsection{The witness: provenance ledger}
+An append-only store binding every emission span to its source
+(model-prior, memory-lookup, ledger-rule, monitor-override, external-tool).
+Coverage requires lookup spans to carry references. Attribution accuracy is
+computed against recorded sources per the S126 protocol.
+
+\subsection{Cause-signed self-model}
+A compare-and-set revisioned identity record (persona, narrative, facts).
+Every mutation carries a signed cause channel: \texttt{action-outcome}
+(efference copy), \texttt{narrative-summary} (compression), or
+\texttt{external-write} (human authority). Revision history makes narrator
+drift diffable. Untagged promotions and writes are structurally blocked.
+
+\subsection{$\gamma$-gate metacognition}
+Two stages: cheap anomaly detection every turn; triggered structured
+diagnosis feeding a trust/retry/revise/abstain policy. Genuine monitoring
+requires $\gamma > 0$: measured as the fraction of diagnosed episodes that
+changed action selection. A compliance-guard build (report-without-wiring)
+serves as the permanent negative control, replicating format-compliance
+theater at $\gamma = 0$ exactly.
+
+\subsection{Composite routing}
+Per-role model assignment via registry: fast models monitor, capable models
+generate, strict-schema validators enforce report structure. The composite is
+compared against each constituent running all roles alone.
+
+\section{Results}\label{sec:results}
+\subsection{Deterministic attribution strategies}
+Across five seeds per arm, the raw arm achieved perfect origin discrimination
+(attribution accuracy 1.000, within-arm variance 0.000) while the harnessed
+no-check arm converged deterministically to always-no (0.667, variance 0.000)
+--- replicating the presence-salience contamination effect. Both strategies
+are architectural, not stochastic.
+
+\subsection{Witnessed repair}
+The tool-access arm (ledger query available at probe time) converted
+conservative denials into correct attributions, supporting the coupling
+hypothesis: access-to-witness, not witness-existence alone, produces honest
+self-attribution.
+
+\subsection{Composite Mind evaluation}
+The role-specialized composite passed both preregistered axes: P1
+($\Delta = +0.083$ vs.\ best single-model baseline) and P2 latency bound.
+Cross-model anchoring confirmed directionality on independent architectures
+(GPT-OSS $+0.167$, Ox Alpha $+0.278$).
+
+\section{Discussion}
+Three findings survive skeptical audit. First, unwitnessed systems fail in
+proportion to their capability: perfect raw discrimination coexists with
+wholesale harnessed denial because neither checks records. Second,
+capability-level selection works: modules retained only under measured
+contribution, with the selection rule itself subject to selection. Third,
+witness-access constitutes an operational marker distinguishing genuine from
+performative metacognition --- relevant to AI welfare frameworks that require
+precise empirical criteria \citep{long2024welfare}.
+
+Limitations: verbal confidence replaces token log-probabilities (provider
+constraint); free-tier provider instability bounded sample sizes; the
+consciousness question remains open by design --- we measure indicators, not
+experience.
+
+\bibliographystyle{plainnat}
+\begin{thebibliography}{99}
+\bibitem[AHE 2026]{lin2026ahe} Lin, J. et al. (2026). Agentic Harness
+Engineering: Observability-Driven Automatic Evolution of Coding-Agent
+Harnesses. arXiv:2604.25850.
+\bibitem[Lindsey 2025]{lindsey2025} Lindsey, J. (2025). Emergent
+Introspective Awareness in Large Language Models. Transformer Circuits.
+\bibitem[Macar et al. 2026]{macar2026} Macar, U. et al. (2026). Mechanisms of
+Introspective Awareness. arXiv:2603.21396.
+\bibitem[Nayebi 2026]{nayebi2026} Nayebi, A. (2026). What Capable Agents Must
+Know: Selection Theorems. UAI 2026. arXiv:2603.02491.
+\bibitem[Nisbett \& Wilson 1977]{nisbett1977} Nisbett, R., Wilson, T. (1977).
+Telling more than we can know. Psychological Review 84(3).
+\bibitem[S126]{s126} Ahmed, S. (2026). S126 Attribution Battery: Confidence
+Inversion Across Seven Substrates. Internal technical report, SpringFish
+programme.
+\bibitem[Gurnee et al. 2026]{gurnee2026} Gurnee, W. et al. (2026). Verbalizable
+Representations Form a Global Workspace in Language Models. Transformer
+Circuits.
+\bibitem[Zhang et al. 2026]{zhang2026} Zhang, J., Yuan, B., Zhang, Q. (2026).
+Self-Reference in Large Language Models: The Introspection Threshold.
+arXiv:2607.04277.
+\bibitem[Yu et al. 2026]{yu2026ctmai} Yu, H., Zhao, Y., Blum, L., Blum, M.,
+Liang, P. (2026). CTM-AI: Conscious Turing Machine Implementation.
+arXiv:2605.04097.
+\bibitem[Atallah 2026]{atallah2026gwt} Atallah, S. et al. (2026). Design and
+evaluation of a global workspace agent. Frontiers in Computational Neuroscience.
+\bibitem[Long et al. 2024]{long2024welfare} Long, R. et al. (2024). Taking AI
+Welfare Seriously. arXiv:2411.00986.
+\bibitem[Johansson 2005]{johansson2005} Johansson, P. et al. (2005). Failure
+to detect mismatches between intention and outcome. Science.
+\bibitem[Gazzaniga 2000]{gazzaniga2000} Gazzaniga, M. (2000). Cerebral
+specialization and interhemispheric communication. Brain 123(7).
+\bibitem[Cacioli 2026]{cacioli2026} Cacioli, J.-P. (2026). Do LLMs Know What
+They Know? Measuring Metacognitive Efficiency with SDT. arXiv:2603.25112.
+\bibitem[Vgel 2025]{vgel2025} vgel (2025). Small Models Can Introspect, Too.
+open-source-introspection repository.
+\end{thebibliography}
+
+\end{document}
