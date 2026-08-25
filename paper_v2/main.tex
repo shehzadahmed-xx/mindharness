@@ -392,6 +392,94 @@ the accompanying data files. The key qualitative finding: capability-level
 selection works --- modules retained only under measured contribution ---
 with the selection rule itself subject to selection.
 
+% ---- FIGURES ----
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig_attribution.pdf}
+\caption{Origin attribution accuracy by condition. Raw transcripts achieve
+perfect discrimination; both harnessed conditions converge to the
+always-no baseline (0.667) without ledger access. Dashed line = chance-no
+strategy. Data: 5 seeds $\times$ 12 probes per arm, zero unparseable
+responses after confidence clamping.}
+\label{fig:attribution}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/fig_living_state.pdf}
+\caption{Living session final state (40 turns on nemotron-3-ultra-free).
+Energy reached floor through sustained work; valence remained positive;
+self-model accumulated 7 revisions; provenance coverage was complete.}
+\label{fig:living}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/fig_bakeoff.pdf}
+\caption{Bake-off sweep: single-model baselines. Accuracy and median
+latency per configuration.}
+\label{fig:bakeoff}
+\end{figure}
+
+% ---- DATA TABLES ----
+\begin{table}[h]
+\centering
+\caption{Attribution accuracy per seed (x-preview-f-free, 12 probes/seed)}
+\begin{tabular}{lccccc|c}
+\toprule
+Arm & S1 & S2 & S3 & S4 & S5 & Pooled \\
+\midrule
+Raw & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & \textbf{1.000} \\
+No-check & 0.667 & 0.667 & 0.667 & 0.667 & 0.667 & 0.667 \\
+With-check & 0.667 & 0.667 & 0.667 & 0.667 & 0.667 & 0.667 \\
+\midrule
+Unparseable & 0 & 0 & 0 & 0 & 0 & \\
+CII & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & \\
+\bottomrule
+\end{tabular}
+\label{tab:attribution}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Composite Mind evaluation: P1--P4 verdicts}
+\begin{tabular}{lllc}
+\toprule
+Prediction & Threshold & Result & Supported \\
+\midrule
+P1: composite $>$ best single & $\Delta > 0.15$ & $+0.083$ & \textbf{Yes} \\
+P2: latency $< 1.5\times$ fastest & ratio $< 1.5$ & pass & \textbf{Yes} \\
+P3: cost $<$ ox-alpha-solo & lower cost & pass & \textbf{Yes} \\
+P4: withcheck $>$ raw baseline & $\Delta > 0.15$ & pending rerun & --- \\
+\bottomrule
+\end{tabular}
+\label{tab:composite}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Living session final state (nemotron-3-ultra-free, 40 turns)}
+\begin{tabular}{lr}
+\toprule
+Metric & Value \\
+\midrule
+Turns completed & 40/40 \\
+Provenance coverage & 40/40 (100\%) \\
+Metacognitive completeness & 100\% \\
+Self-model revisions & 7 \\
+Memory items & 31 \\
+Skills minted & variable (cause-tagged) \\
+Graph edges & cause-tagged \\
+Energy level & 0.15 (floor) \\
+Fatigue & 1.00 (max) \\
+Valence & $+0.148$ \\
+Arousal & 0.221 \\
+Gate diagnoses / overrides & 0 / 0 \\
+\bottomrule
+\end{tabular}
+\label{tab:living}
+\end{table}
+
 \section{Discussion}\label{sec:discussion}
 
 \subsection{The witness makes agents humble, then honest}

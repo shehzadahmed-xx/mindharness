@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.18)  26 AUG 2026 05:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.18)  26 AUG 2026 05:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -503,32 +503,74 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [5]
 
 [6]
+<figures/fig_attribution.pdf, id=213, 433.62pt x 289.08pt>
+File: figures/fig_attribution.pdf Graphic file (type pdf)
+<use figures/fig_attribution.pdf>
+Package pdftex.def Info: figures/fig_attribution.pdf  used on input line 398.
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+<figures/fig_living_state.pdf, id=214, 722.7pt x 505.89pt>
+File: figures/fig_living_state.pdf Graphic file (type pdf)
+<use figures/fig_living_state.pdf>
+Package pdftex.def Info: figures/fig_living_state.pdf  used on input line 409.
+(pdftex.def)             Requested size: 399.29463pt x 279.5063pt.
 
-[7]
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 541--544
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/fig_bakeoff.pdf, id=215, 578.16pt x 289.08pt>
+File: figures/fig_bakeoff.pdf Graphic file (type pdf)
+<use figures/fig_bakeoff.pdf>
+Package pdftex.def Info: figures/fig_bakeoff.pdf  used on input line 418.
+(pdftex.def)             Requested size: 422.77664pt x 211.38834pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[7 <./figures/fig_attribution.pdf>]
+
+[8 <./figures/fig_living_state.pdf>]
+
+[9 <./figures/fig_bakeoff.pdf>]
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 629--632
 []\OT1/cmr/m/n/10.95 vgel (2025). Small Mod-els Can In-tro-spect, Too.
  []
 
 
 
-[9] (./main.aux)
+[11]
+
+[12] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2B1CF99FC16BF69C59ABC26AF8BBE5F6;5791.
  ) 
 Here is how much of TeX's memory you used:
- 11292 strings out of 474662
- 171288 string characters out of 5751109
+ 11330 strings out of 474662
+ 172258 string characters out of 5751109
  583661 words of memory out of 5000000
- 34120 multiletter control sequences out of 15000+600000
+ 34149 multiletter control sequences out of 15000+600000
  569771 words of font info for 78 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 75i,11n,79p,385b,565s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,455b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 0.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/
@@ -542,10 +584,10 @@ ype1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025basic/texmf-dist/font
 s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025basic/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (9 pages, 191222 bytes).
+Output written on main.pdf (12 pages, 229704 bytes).
 PDF statistics:
- 308 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
- 74 named destinations out of 1000 (max. 500000)
- 273 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 457 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
+ 83 named destinations out of 1000 (max. 500000)
+ 288 words of extra memory for PDF output out of 10000 (max. 10000000)
 
