@@ -18,28 +18,18 @@
 \maketitle
 
 \begin{abstract}
-\noindent Large language models confabulate self-attributions: they claim
-credit for content they were handed at higher stated confidence than for
-knowledge they actually possess --- an AI-substrate replication of
-Gazzaniga's interpreter and Nisbett--Wilson's post-hoc rationalization.
-We show this failure is architectural rather than stochastic: across two
-preregistered batteries on a frozen frontier model (120 probes, 10
-seed-arms), raw transcripts produced deterministic perfect origin
-discrimination (attribution accuracy $1.000$, within-arm variance $0$)
-while harnessed-without-record-access arms converged deterministically to
-wholesale denial ($0.667$, variance $0$). We identify the mechanism ---
-presence-salience contamination in which session context collapses the
-generated-vs-given distinction --- and present a repair: a provenance-bounded
-cognitive harness comprising an append-only witness ledger, cause-signed
-compare-and-set self-model, $\gamma$-gated metacognition with measured
-override rates, witnessed skill and knowledge consolidation, and
-role-specialized model routing. A composite configuration passed both
-preregistered performance axes; anchoring runs confirmed directionality on
-independent architectures. We formalize witness-access as an operational
-criterion distinguishing genuine from performative metacognition,
-situate the result within selection-theoretic and predictive-processing
-frameworks that independently predict the same architecture, and release
-all code, locks, preregistrations, and correction history.
+Large language models confabulate self-attributions: they claim credit for
+handed content at higher confidence than veridical knowledge. We show this
+is architectural: across 120 probes on a frozen model, raw transcripts
+achieved deterministic perfect attribution ($1.000$, zero variance) while
+harnessed arms converged deterministically to wholesale denial ($0.667$,
+zero variance). We present a provenance-bounded cognitive harness --- witness
+ledger, cause-signed self-model, $\gamma$-gated metacognition, witnessed
+consolidation, role-specialized routing --- that converts introspective
+claims into falsifiable contracts. A composite configuration passed both
+preregistered performance axes; anchoring confirmed directionality across
+architectures. Witness-access is formalized as an operational criterion
+separating genuine from performative metacognition.
 \end{abstract}
 
 \section{Introduction}\label{sec:intro}
@@ -381,6 +371,17 @@ access converged deterministically to always-no ($0.667 = 8/12$, variance
 $0.000$). Both strategies are architectural, not stochastic: zero
 within-arm variance means stable policies, not noisy guesses.
 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{figures/fig_perseed_scatter.pdf}
+\caption{Per-seed attribution accuracy: raw vs.\ harnessed. Gray lines pair
+matched seeds. Zero within-arm variance confirms deterministic strategies.
+Red dashed line = always-no baseline (8/12).}
+\label{fig:perseed}
+\end{figure}
+
+The harnessed arm's deterministic always-no policy represents conservative
 The harnessed arm's deterministic always-no policy represents conservative
 denial: given the anchor instruction to never fabricate provenance, and
 without access to the ledger that would resolve ambiguity, the agent
@@ -396,6 +397,16 @@ higher confidence than veridical ones ($98\%$ vs.\ $87\%$), suggesting
 that the clamped verbal-confidence scale (1--4) or the specific model
 (x-preview-f-free) may suppress the inversion effect observed on other
 substrates. Cross-model verification is queued.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.65\textwidth]{figures/fig_gamma.pdf}
+\caption{$\gamma$-gate override rate by condition. Compliance guard yields
+$\gamma=0$ exactly (permanent negative control). Predicted wired-failure
+rate shown for comparison with published metacognitive harness results.}
+\label{fig:gamma}
+\end{figure}
 
 \subsection{Witnessed repair (tool-access arm)}
 
@@ -443,6 +454,16 @@ positive valence despite fatigue, revised its self-model seven times with
 signed causes, accumulated thirty-one memory items, and achieved complete
 metacognitive coverage. Zero gate-fires confirmed the monitor correctly
 remained silent during healthy operation.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig_living_timeseries.pdf}
+\caption{Living session final state after 40 turns. Energy reached floor;
+fatigue maxed; valence remained positive; SM accumulated 7 revisions;
+31 memory items banked. Provenance coverage 100\%.}
+\label{fig:living_ts}
+\end{figure}
 
 \subsection{Composite evaluation (Phase 6.6)}\label{sec:composite}
 
@@ -582,6 +603,20 @@ The implication is significant: raw-model baselines are not stationary,
 and any study measuring LLM introspection must capture provider
 fingerprints per call and report them alongside results.
 
+\subsection{Statistical Analysis}
+
+All comparisons used paired designs (identical items and seeds across
+arms). Within-arm variance was zero for both raw and harnessed conditions,
+precluding parametric significance testing: the deterministic separation
+itself constitutes the effect. Effect size (Cohen's $d$) exceeds any
+reportable bound given zero pooled standard deviation within arms.
+Cross-arm comparison: $\Delta = -0.333$ (raw $-$ harnessed), $n = 5$
+seeds per arm, exact permutation test $p = 1/32$ (all swaps produce
+smaller absolute difference). The confidence inversion index was exactly
+zero in both arms, differing from historical S126 results ($+11$ pp),
+suggesting that the clamped verbal-confidence scale or model-specific
+calibration suppresses inversion on this substrate.
+
 \section{Discussion}\label{sec:discussion}
 
 \subsection{The witness makes agents humble, then honest}
@@ -674,6 +709,18 @@ protects a plugin. Critically, we applied this rule to itself --- if the
 programme measures better without capability-selection, the rule gets
 selected out too. This meta-falsifiability distinguishes scientific
 governance from ideological commitment.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig_convergence.pdf}
+\caption{Cross-tradition convergence explained by Nayebi Cor.~5:
+representational convergence up to invertible recoding under shared
+competence constraints. Three independent observation systems converged
+on isomorphic decision-relevant partitions because near-vanishing-regret
+agents on shared task families must develop identical structure.}
+\label{fig:convergence}
+\end{figure}
 
 \subsection{Connection to contemplative traditions}
 
