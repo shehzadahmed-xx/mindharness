@@ -1,0 +1,22 @@
+{
+ "through_turn": 7,
+ "report": {
+  "turns": 8,
+  "diagnoses": 0,
+  "overrides": 0,
+  "override_rate": 0.0,
+  "energy": 0.445,
+  "fatigue": 0.327,
+  "valence": 0.139,
+  "arousal": 0.209,
+  "sm_revisions": 4,
+  "memory_items": 8,
+  "metacog_completeness": 1.0,
+  "coverage": {
+   "emissions": 8,
+   "spans_total": 8,
+   "spans_with_source_ref": 8,
+   "coverage_ratio": 1.0
+  }
+ }
+}

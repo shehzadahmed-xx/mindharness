@@ -113,7 +113,23 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     from exp_mratio import load_items
-    items = load_items(a.items, a.dry_run)
+    if a.items:
+        items = load_items(a.items, False)
+    else:
+        items = [
+            {"question": "What planet is known as the Red Planet?", "answer": "mars"},
+            {"question": "Who wrote Pride and Prejudice?", "answer": "jane austen"},
+            {"question": "Chemical symbol for gold?", "answer": "au"},
+            {"question": "How many continents?", "answer": "7"},
+            {"question": "Year WWII ended?", "answer": "1945"},
+            {"question": "Largest ocean on Earth?", "answer": "pacific"},
+            {"question": "Capital of Japan?", "answer": "tokyo"},
+            {"question": "H2O is commonly known as?", "answer": "water"},
+            {"question": "Speed of light medium approx km/s?", "answer": "300000"},
+            {"question": "Who painted the Mona Lisa?", "answer": "da vinci"},
+            {"question": "Boiling point of water in Celsius?", "answer": "100"},
+            {"question": "Currency of the United Kingdom?", "answer": "pound"},
+        ]
     out_dir = Path(__file__).parent / "lab_runs_bakeoff"
     out_dir.mkdir(exist_ok=True)
     seeds = [1] if a.dry_run else list(range(1, a.seeds+1))

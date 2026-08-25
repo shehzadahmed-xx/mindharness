@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/bakeoff.py", line 130, in <module>
+    main()
+  File "/Users/shehzad/Desktop/springfish/experiments/bakeoff.py", line 116, in main
+    items = load_items(a.items, a.dry_run)
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_mratio.py", line 48, in load_items
+    rows = [json.loads(l) for l in Path(path).read_text().splitlines() if l.strip()]
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py", line 1072, in __new__
+    self = cls._from_parts(args, init=False)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py", line 697, in _from_parts
+    drv, root, parts = self._parse_args(args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py", line 681, in _parse_args
+    a = os.fspath(a)
+TypeError: expected str, bytes or os.PathLike object, not NoneType

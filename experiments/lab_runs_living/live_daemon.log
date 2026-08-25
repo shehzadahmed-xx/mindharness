@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/living_session.py", line 121, in <module>
+    main()
+  File "/Users/shehzad/Desktop/springfish/experiments/living_session.py", line 90, in main
+    r = harness.run_task(task_text, task_id=f"live-{t}", fok=3,
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/agent_harness.py", line 169, in run_task
+    resp = self.respond_fn(messages, ctx)
+  File "/Users/shehzad/Desktop/springfish/experiments/living_session.py", line 55, in respond
+    out, _ = client.chat(messages, purpose=ctx.get("purpose", "turn"),
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 252, in chat
+    raise RuntimeError(f"Groq HTTP {http_code}: {detail}")
+RuntimeError: Groq HTTP 401: {"type":"error","error":{"type":"AuthError","message":"Invalid API key."}}
