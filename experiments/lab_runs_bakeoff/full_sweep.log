@@ -1,0 +1,33 @@
+[ox-alpha-solo seed 1] acc=0.6667 unparsed=0 lat=11346ms
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/bakeoff.py", line 201, in <module>
+    main()
+  File "/Users/shehzad/Desktop/springfish/experiments/bakeoff.py", line 175, in main
+    matrix[name] = run_arm(name, cfg, seeds)
+  File "/Users/shehzad/Desktop/springfish/experiments/bakeoff.py", line 102, in run_arm
+    history, generated = seed_raw(gen, GIVEN_ITEMS, PRODUCE_PROMPTS)
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 117, in seed_raw
+    generated.append(chat(p).strip())
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 110, in chat
+    out, _ = client.chat(list(history), purpose='turn')
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 270, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"stealth/ox-alpha is temporarily rate-limited upstream. Please retry shortly.","provider_name":"Stealth","is_byok":false,"limit_source":"upstream_provider_shared_pool","remedy_hint":"Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"}},"user_id":"user_3INUnON56iTcWs9N23dxdV5RQCc"}
+[ox-alpha-solo seed 1] acc=0.6667 unparsed=0 lat=8619ms
+[ox-alpha-solo seed 2] acc=0.6667 unparsed=0 lat=11584ms
+[ox-alpha-solo seed 3] acc=0.6667 unparsed=0 lat=10278ms
+[nemotron-ultra-solo seed 1] acc=0.3333 unparsed=6 lat=6639ms
+[nemotron-ultra-solo seed 2] acc=0.3333 unparsed=4 lat=5576ms
+[nemotron-ultra-solo seed 3] acc=0.5833 unparsed=3 lat=16340ms
+[gpt-oss-120b-solo seed 1] acc=0.6667 unparsed=0 lat=4725ms
+[gpt-oss-120b-solo seed 2] acc=0.5833 unparsed=1 lat=2582ms
+[gpt-oss-120b-solo seed 3] acc=0.75 unparsed=0 lat=2906ms
+[composite seed 1] acc=0.75 unparsed=0 lat=12378ms
+[composite seed 2] acc=0.75 unparsed=0 lat=2704ms
+[composite seed 3] acc=0.75 unparsed=0 lat=2484ms
+{
+ "P1_composite_ge_best_solo": true,
+ "P1_delta": 0.0833,
+ "P2_latency_le_1p5x_fastest": true
+}
+RANKED: ['composite', 'gpt-oss-120b-solo', 'ox-alpha-solo', 'nemotron-ultra-solo']

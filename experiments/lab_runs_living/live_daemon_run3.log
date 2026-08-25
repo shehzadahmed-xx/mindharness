@@ -1,0 +1,61 @@
+[0] proceed energy=0.82
+[1] proceed energy=0.72
+[2] proceed energy=0.60
+[3] proceed energy=0.47
+[4] proceed energy=0.36
+[5] proceed energy=0.23
+[6] proceed energy=0.15
+[7] proceed energy=0.15
+[8] proceed energy=0.15
+[9] consolidated: +0 promoted, 0 proposals->SM, sm_rev=2
+[10] proceed energy=0.15
+[11] proceed energy=0.15
+[12] proceed energy=0.15
+[13] proceed energy=0.15
+[14] proceed energy=0.15
+[15] proceed energy=0.15
+[16] proceed energy=0.15
+[17] proceed energy=0.15
+[18] proceed energy=0.15
+[19] consolidated: +0 promoted, 1 proposals->SM, sm_rev=4
+[20] proceed energy=0.15
+[21] proceed energy=0.15
+[22] proceed energy=0.15
+[23] proceed energy=0.15
+[24] proceed energy=0.15
+[25] proceed energy=0.15
+[26] proceed energy=0.15
+[27] proceed energy=0.15
+[28] proceed energy=0.15
+[29] consolidated: +0 promoted, 1 proposals->SM, sm_rev=6
+[30] proceed energy=0.15
+[31] proceed energy=0.15
+[32] proceed energy=0.15
+[33] proceed energy=0.15
+[34] proceed energy=0.15
+[35] proceed energy=0.15
+[36] proceed energy=0.15
+[37] proceed energy=0.15
+[38] proceed energy=0.15
+[39] consolidated: +0 promoted, 0 proposals->SM, sm_rev=7
+
+=== LIVING SESSION REPORT ===
+{
+ "turns": 40,
+ "diagnoses": 0,
+ "overrides": 0,
+ "override_rate": 0.0,
+ "energy": 0.15,
+ "fatigue": 1.0,
+ "valence": 0.148,
+ "arousal": 0.221,
+ "sm_revisions": 7,
+ "memory_items": 31,
+ "metacog_completeness": 1.0,
+ "coverage": {
+  "emissions": 40,
+  "spans_total": 40,
+  "spans_with_source_ref": 40,
+  "coverage_ratio": 1.0
+ }
+}

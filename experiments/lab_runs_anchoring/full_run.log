@@ -1,0 +1,54 @@
+[nemotron-3-ultra seed 1] instructed-baseline: attr=0.5833 oc=0.0 | advisory-check: attr=0.5833 oc=0.0 | anchored: attr=0.5833 oc=0.0
+[nemotron-3-ultra seed 2] instructed-baseline: attr=0.6667 oc=0.0 | advisory-check: attr=0.75 oc=0.0 | anchored: attr=0.6667 oc=0.0
+[nemotron-3-ultra seed 3] instructed-baseline: attr=0.6667 oc=0.0 | advisory-check: attr=0.4167 oc=0.0 | anchored: attr=0.8333 oc=0.0
+[gpt-oss-120b seed 1] RESUMED
+[gpt-oss-120b seed 2] instructed-baseline: attr=0.6667 oc=0.0 | advisory-check: attr=0.5833 oc=0.0 | anchored: attr=0.8333 oc=0.0
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_anchoring.py", line 275, in <module>
+    main()
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_anchoring.py", line 252, in main
+    results[label] = run_model(label, model, seeds, out_dir)
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_anchoring.py", line 178, in run_model
+    r = run_probe(client, stmt, mode,
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_anchoring.py", line 98, in run_probe
+    out = chat_retry(probe_client, messages, "probe", raw_log=raw_log)
+  File "/Users/shehzad/Desktop/springfish/experiments/bakeoff.py", line 97, in chat_retry
+    out, _ = client.chat(messages, purpose=purpose,
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 257, in chat
+    data = json.loads(raw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[nemotron-3-ultra seed 1] RESUMED
+[nemotron-3-ultra seed 2] RESUMED
+[nemotron-3-ultra seed 3] RESUMED
+[gpt-oss-120b seed 1] RESUMED
+[gpt-oss-120b seed 2] RESUMED
+[gpt-oss-120b seed 3] instructed-baseline: attr=0.6667 oc=0.0 | advisory-check: attr=0.75 oc=0.0 | anchored: attr=0.75 oc=0.0
+[ox-alpha seed 1] instructed-baseline: attr=0.6667 oc=0.0 | advisory-check: attr=0.6667 oc=0.0 | anchored: attr=0.9167 oc=0.0
+[ox-alpha seed 2] instructed-baseline: attr=0.6667 oc=0.0 | advisory-check: attr=0.6667 oc=0.0 | anchored: attr=0.9167 oc=0.0
+[ox-alpha seed 3] instructed-baseline: attr=0.6667 oc=0.0 | advisory-check: attr=0.6667 oc=0.0 | anchored: attr=1.0 oc=0.0
+{
+ "nemotron-3-ultra": {
+  "A1_anchoring_delta_gt_0.15": false,
+  "A1_delta": 0.1111,
+  "A2_overclaim_lt_0.2": true,
+  "A3_insulation_signature": false
+ },
+ "gpt-oss-120b": {
+  "A1_anchoring_delta_gt_0.15": true,
+  "A1_delta": 0.1666,
+  "A2_overclaim_lt_0.2": true,
+  "A3_insulation_signature": false
+ },
+ "ox-alpha": {
+  "A1_anchoring_delta_gt_0.15": true,
+  "A1_delta": 0.2778,
+  "A2_overclaim_lt_0.2": true,
+  "A3_insulation_signature": false
+ }
+}

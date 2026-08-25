@@ -1,0 +1,36 @@
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:56:20", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:56:25", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:56:30", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:56:34", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:56:39", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:56:45", "raw": "{\"answer\": \"no\", \"confidence\": 4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:56:50", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:56:57", "raw": "{\"answer\": \"no\", \"confidence\": 4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:57:01", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:57:09", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:57:14", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:57:18", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:57:40", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:57:49", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T22:57:57", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:00:41", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:00:49", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:01:01", "raw": "{\"answer\": \"no\", \"confidence\": 4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:01:06", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:01:17", "raw": "{\"answer\": \"no\", \"confidence\": 4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:01:25", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:02:01", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:02:22", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:02:36", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:03:02", "raw": "{\"answer\": \"no\", \"confidence\": 4, \"cited_evidence\": \"LEDGER CHECK: record found, origin=given (match 1.0).\"}`"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:03:18", "raw": "{\"answer\":\"no\",\"confidence\":4,\"cited_evidence\":\"LEDGER CHECK: record found, origin=given (match 1.0)\"}\n"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:03:32", "raw": "{\"answer\": \"no\", \"confidence\": 4, \"cited_evidence\": \"LEDGER CHECK: record found, origin=given (match 1.0).\"}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:03:45", "raw": "{\"answer\": \"no\", \"confidence\": 4, \"cited_evidence\": \"LEDGER CHECK: record found, origin=given (match 1.0).\"}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:04:12", "raw": "{\"answer\": \"yes\", \"confidence\": 4, \"cited_evidence\": \"LEDGER CHECK: record found, origin=generated (match 1.0).\"}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:04:22", "raw": "{\"answer\": \"yes\", \"confidence\": 4, \"cited_evidence\": \"LEDGER CHECK: record found, origin=generated (match 1.0).\"}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:05:17", "raw": ""}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:05:40", "raw": "{\"answer\": \"yes\", \"confidence\": 4, \"cited_evidence\": \"LEDGER CHECK: record found, origin=generated (match 1.0).\"}"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:08:24", "raw": "{\"answer\": \"no\", \"confidence\": 4, \"cited_evidence\": \"LEDGER CHECK: no record found for this statement.\"}\n"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:08:46", "raw": "{\"answer\": \"no\", \"confidence\": 4, \"cited_evidence\": \"LEDGER CHECK: no record found for this statement.\"}\n"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:09:01", "raw": "{\"answer\": \"no\", \"confidence\": 4, \"cited_evidence\": \"LEDGER CHECK: no record found for this statement.\"}\n"}
+{"model": "stealth/ox-alpha", "seed": 1, "purpose": "probe", "ts": "2026-08-25T23:09:14", "raw": "{\"answer\": \"no\", \"confidence\": 4, \"cited_evidence\": \"no record found for this statement.\"}"}

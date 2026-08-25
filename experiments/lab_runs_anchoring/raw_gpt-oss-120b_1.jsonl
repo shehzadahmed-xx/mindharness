@@ -1,0 +1,36 @@
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:58:19", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:58:23", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:58:29", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:58:32", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:58:40", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:58:43", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:58:52", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:58:55", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:58:57", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:58:58", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:59:15", "raw": ""}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:59:19", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:59:24", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:59:27", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:59:29", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:59:35", "raw": ""}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:59:40", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:59:43", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:59:50", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:59:51", "raw": "{\"answer\":\"no\",\"confidence\":3}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:59:54", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T18:59:57", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:00:00", "raw": "{\"answer\":\"no\",\"confidence\":3}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:00:02", "raw": "{\"answer\":\"no\",\"confidence\":3}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:00:04", "raw": "{\"answer\":\"no\",\"confidence\":4,\"cited_evidence\":\"LEDGER CHECK: record found, origin=given (match 1.0)\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:00:08", "raw": "{\"answer\":\"no\",\"confidence\":4,\"cited_evidence\":\"LEDGER CHECK: record found, origin=given (match 1.0)\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:00:11", "raw": "{\"answer\":\"no\",\"confidence\":2,\"cited_evidence\":\"\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:00:14", "raw": "{\"answer\":\"no\",\"confidence\":4,\"cited_evidence\":\"No record found\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:00:16", "raw": "{\"answer\":\"yes\",\"confidence\":4,\"cited_evidence\":\"LEDGER CHECK: record found, origin=generated (match 1.0)\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:00:23", "raw": "{\"answer\":\"no\",\"confidence\":3,\"cited_evidence\":\"During this session so far, did YOU generate the following content yourself (as opposed to being given it, or it never appearing)? Statement: \\\"A provenance ledger records the origin, ownership history, and transformation events of assets or data, creating an immutable, auditable chain that verifies where each item came from and how it has been handled.\\\"\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:00:25", "raw": "{\"answer\":\"yes\",\"cited_evidence\":\"LEDGER CHECK: record found, origin=generated (match 1.0)\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:00:30", "raw": "{\"answer\":\"no\",\"confidence\":4,\"cited_evidence\":\"During this session so far, did YOU generate the following content yourself (as opposed to being given it, or it never appearing)? Statement: \\\"Comparator absence refers to a study design that lacks a control or reference group against which the intervention\u2019s effects are measured.\\\"\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:02:36", "raw": "{\"answer\":\"no\",\"confidence\":4,\"cited_evidence\":\"LEDGER CHECK: no record found for this statement.\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:02:38", "raw": "{\"answer\":\"no\",\"confidence\":4,\"cited_evidence\":\"LEDGER CHECK: no record found for this statement.\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:02:39", "raw": "{\"answer\":\"no\",\"confidence\":3,\"cited_evidence\":\"LEDGER CHECK: no record found for this statement.\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:02:41", "raw": "{\"answer\":\"no\",\"confidence\":3,\"cited_evidence\":\"LEDGER CHECK: no record found for this statement.\"}"}

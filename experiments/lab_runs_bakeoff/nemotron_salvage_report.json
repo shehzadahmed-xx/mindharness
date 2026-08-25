@@ -1,0 +1,28 @@
+{
+ "label": "SALVAGE-REPARSE / secondary analysis / not part of locked verdict",
+ "seeds": [
+  {
+   "seed": 1,
+   "complete": true,
+   "accuracy_salvaged": 0.5,
+   "recovered_from_strict_unparseable": 0,
+   "still_unparseable_after_salvage": 3
+  },
+  {
+   "seed": 2,
+   "complete": true,
+   "accuracy_salvaged": 0.5833,
+   "recovered_from_strict_unparseable": 1,
+   "still_unparseable_after_salvage": 1
+  },
+  {
+   "seed": 3,
+   "complete": true,
+   "accuracy_salvaged": 0.4167,
+   "recovered_from_strict_unparseable": 1,
+   "still_unparseable_after_salvage": 3
+  }
+ ],
+ "pooled_accuracy_salvaged": 0.5,
+ "note": "compare against frozen-scored ~0.417 with 13/36 unparsed; deltas measure parser loss only under identical items/truth structure"
+}

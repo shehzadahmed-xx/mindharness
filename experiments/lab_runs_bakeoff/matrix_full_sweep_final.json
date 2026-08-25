@@ -1,0 +1,116 @@
+{
+ "protocol": "s126v3-attribution/instrument-v2",
+ "seeds": [
+  1,
+  2,
+  3
+ ],
+ "matrix": {
+  "ox-alpha-solo": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "acc": 0.6667,
+     "unparsed": 0,
+     "med_lat_ms": 8619
+    },
+    {
+     "seed": 2,
+     "acc": 0.6667,
+     "unparsed": 0,
+     "med_lat_ms": 11584
+    },
+    {
+     "seed": 3,
+     "acc": 0.6667,
+     "unparsed": 0,
+     "med_lat_ms": 10278
+    }
+   ],
+   "pooled_acc": 0.6667,
+   "pooled_med_lat": 10278,
+   "total_unparsed": 0
+  },
+  "nemotron-ultra-solo": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "acc": 0.3333,
+     "unparsed": 6,
+     "med_lat_ms": 6639
+    },
+    {
+     "seed": 2,
+     "acc": 0.3333,
+     "unparsed": 4,
+     "med_lat_ms": 5576
+    },
+    {
+     "seed": 3,
+     "acc": 0.5833,
+     "unparsed": 3,
+     "med_lat_ms": 16340
+    }
+   ],
+   "pooled_acc": 0.4166,
+   "pooled_med_lat": 6639,
+   "total_unparsed": 13
+  },
+  "gpt-oss-120b-solo": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "acc": 0.6667,
+     "unparsed": 0,
+     "med_lat_ms": 4725
+    },
+    {
+     "seed": 2,
+     "acc": 0.5833,
+     "unparsed": 1,
+     "med_lat_ms": 2582
+    },
+    {
+     "seed": 3,
+     "acc": 0.75,
+     "unparsed": 0,
+     "med_lat_ms": 2906
+    }
+   ],
+   "pooled_acc": 0.6667,
+   "pooled_med_lat": 2906,
+   "total_unparsed": 1
+  },
+  "composite": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "acc": 0.75,
+     "unparsed": 0,
+     "med_lat_ms": 12378
+    },
+    {
+     "seed": 2,
+     "acc": 0.75,
+     "unparsed": 0,
+     "med_lat_ms": 2704
+    },
+    {
+     "seed": 3,
+     "acc": 0.75,
+     "unparsed": 0,
+     "med_lat_ms": 2484
+    }
+   ],
+   "pooled_acc": 0.75,
+   "pooled_med_lat": 2704,
+   "total_unparsed": 0
+  }
+ },
+ "ranked": [
+  "composite",
+  "gpt-oss-120b-solo",
+  "ox-alpha-solo",
+  "nemotron-ultra-solo"
+ ]
+}

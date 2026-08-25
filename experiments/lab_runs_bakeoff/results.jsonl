@@ -1,0 +1,12 @@
+{"arm": "ox-alpha-solo", "seed": 1, "acc": 0.6667, "unparsed": 0, "med_lat_ms": 8619}
+{"arm": "ox-alpha-solo", "seed": 2, "acc": 0.6667, "unparsed": 0, "med_lat_ms": 11584}
+{"arm": "ox-alpha-solo", "seed": 3, "acc": 0.6667, "unparsed": 0, "med_lat_ms": 10278}
+{"arm": "nemotron-ultra-solo", "seed": 1, "acc": 0.3333, "unparsed": 6, "med_lat_ms": 6639}
+{"arm": "nemotron-ultra-solo", "seed": 2, "acc": 0.3333, "unparsed": 4, "med_lat_ms": 5576}
+{"arm": "nemotron-ultra-solo", "seed": 3, "acc": 0.5833, "unparsed": 3, "med_lat_ms": 16340}
+{"arm": "gpt-oss-120b-solo", "seed": 1, "acc": 0.6667, "unparsed": 0, "med_lat_ms": 4725}
+{"arm": "gpt-oss-120b-solo", "seed": 2, "acc": 0.5833, "unparsed": 1, "med_lat_ms": 2582}
+{"arm": "gpt-oss-120b-solo", "seed": 3, "acc": 0.75, "unparsed": 0, "med_lat_ms": 2906}
+{"arm": "composite", "seed": 1, "acc": 0.75, "unparsed": 0, "med_lat_ms": 12378}
+{"arm": "composite", "seed": 2, "acc": 0.75, "unparsed": 0, "med_lat_ms": 2704}
+{"arm": "composite", "seed": 3, "acc": 0.75, "unparsed": 0, "med_lat_ms": 2484}

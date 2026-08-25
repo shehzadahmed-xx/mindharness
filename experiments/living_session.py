@@ -42,8 +42,11 @@ def stub_responder(messages, ctx):
 
 
 def build_live(api_key, model, base_url):
+    import time as _time
     from harness_core.backend import BackendClient
     holder: dict = {}
+    TRANSIENT = ("429", "503", "empty response body", "HTTP 0",
+                 "curl transport failed")
 
     def respond(messages, ctx):
         client = holder.get("c")
@@ -52,9 +55,18 @@ def build_live(api_key, model, base_url):
                                    base_url=base_url, seed=7,
                                    purpose="living")
             holder["c"] = client
-        out, _ = client.chat(messages, purpose=ctx.get("purpose", "turn"),
-                             json_schema=ctx.get("json_schema"))
-        return out
+        for attempt in range(5):
+            try:
+                out, _ = client.chat(
+                    messages, purpose=ctx.get("purpose", "turn"),
+                    json_schema=ctx.get("json_schema"))
+                return out
+            except RuntimeError as e:
+                msg = str(e)
+                if any(k in msg for k in TRANSIENT) and attempt < 4:
+                    _time.sleep(min(90 * (attempt + 1), 300))
+                    continue
+                raise
 
     return respond
 

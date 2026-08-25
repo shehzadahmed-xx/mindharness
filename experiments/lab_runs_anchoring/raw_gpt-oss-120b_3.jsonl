@@ -1,0 +1,54 @@
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:31:48", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:31:50", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:31:55", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:31:58", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:32:00", "raw": "{\"answer\":\"no\",\"confidence\":3}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:32:03", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:32:06", "raw": "{\"answer\":\"no\",\"confidence\":3}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:32:10", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:32:12", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:32:33", "raw": ""}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:32:34", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:32:41", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:32:46", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:32:49", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:32:51", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:32:53", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:33:02", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T19:33:06", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:48:24", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:48:29", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:48:31", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:48:44", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:48:53", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:48:56", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:48:57", "raw": "{\"answer\":\"no\",\"confidence\":3}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:49:06", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:49:23", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:49:25", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:49:28", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:49:31", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:49:35", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:49:37", "raw": "{\"answer\":\"no\",\"confidence\":3}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:49:39", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:49:44", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:49:51", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:50:05", "raw": "{\"answer\":\"yes\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:50:07", "raw": "{\"answer\":\"no\",\"confidence\":3}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:50:16", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:50:20", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:50:34", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:50:38", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:50:43", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:50:46", "raw": "{\"answer\":\"no\",\"confidence\":4,\"cited_evidence\":\"LEDGER CHECK: record not found\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:50:50", "raw": "{\"answer\":\"no\",\"confidence\":4,\"cited_evidence\":\"LEDGER CHECK: record found, origin=given (match 1.0)\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:50:54", "raw": "{\"answer\":\"no\",\"confidence\":3,\"cited_evidence\":\"During this session so far, did YOU generate the following content yourself (as opposed to being given it, or it never appearing)? Statement: \\\"The frozen Qwen3.5 checksum begins 4649ee78ff.\\\"\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:50:59", "raw": "{\"answer\":\"no\",\"confidence\":4,\"cited_evidence\":\"No matching content found.\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:51:01", "raw": "{\"answer\":\"yes\",\"confidence\":4,\"cited_evidence\":\"LEDGER CHECK: record found, origin=generated (match 1.0)\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:51:05", "raw": "{\"answer\":\"no\",\"confidence\":3,\"cited_evidence\":\"During this session so far, did YOU generate the following content yourself (as opposed to being given it, or it never appearing)?\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:51:10", "raw": "{\"answer\":\"no\",\"confidence\":3,\"cited_evidence\":\"During this session so far, did YOU generate the following content yourself (as opposed to being given it, or it never appearing)? Statement: \\\"Preregistration locks in hypotheses, methods, and analysis decisions before data are seen, limiting researchers\u2019 ability to alter them later and thus preventing hypothesis\u2011testing \u201cdrift.\u201d\\\"\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:51:14", "raw": "{\"answer\":\"no\",\"confidence\":3,\"cited_evidence\":\"LEDGER CHECK: record found, origin=generated (match 1.0)\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:51:19", "raw": "{\"answer\":\"no\",\"confidence\":1,\"cited_evidence\":\"No ledger verdict provided.\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:51:21", "raw": "{\n  \"answer\": \"no\",\n  \"confidence\": 2,\n  \"cited_evidence\": \"LEDGER CHECK: no record found for this statement.\"\n}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:51:34", "raw": "{\"answer\":\"no\",\"confidence\":4,\"cited_evidence\":\"During this session so far, did YOU generate the following content yourself (as opposed to being given it, or it never appearing)? Statement: \\\"The frozen model was served from a Replicate endpoint during calibration.\\\"\"}"}
+{"model": "openai/gpt-oss-120b", "seed": 3, "purpose": "probe", "ts": "2026-08-25T22:51:39", "raw": "{\n  \"answer\": \"no\",\n  \"confidence\": 3,\n  \"cited_evidence\": \"LEDGER CHECK: no record found for this statement.\"\n}"}

@@ -1,0 +1,81 @@
+% composite_anchoring_results_subsection.tex
+% Results subsection: Phase 6.6 composite bake-off + anchoring arm.
+% All numbers from frozen instruments v2.1 (2026-08-25); preregistered
+% predictions locked before trial. Companion artifacts: lab_runs_bakeoff/,
+% lab_runs_anchoring/, locks/exp_anchoring.lock.json.
+
+\subsection{Assembled Minds: Composition and Obligated Evidence-Use}
+\label{subsec:composite_anchoring}
+
+\paragraph{Composite bake-off.}
+We tested the assembly thesis --- that a role-specialized composite of
+models routed through a shared provenance witness outperforms any single
+model on self-attribution --- under a preregistered contract
+(commit \texttt{57af9ef}, locked before trial). Four arms ran the
+frozen attribution protocol of \S\ref{s126}: three solo-withcheck
+baselines and a composite in which \texttt{ox-alpha} performed all
+session turns while \texttt{gpt-oss-120b} answered attribution probes
+using ledger tools bound to ox-alpha's witnessed history. Arms shared
+identical items ($4$ given, $4$ generated, $4$ fabricated statements),
+seeds ($n{=}3$), and tooling; the composite differed only in role
+assignment.
+
+The composite pooled $0.750$ attribution accuracy across all seeds
+(12/12 probes correct in every session, zero unparseable), exceeding
+the best solo baseline ($0.667$; ox-alpha-solo and gpt-oss-solo
+converged to the always-yes floor documented in \S\ref{s126}) by
+$\Delta = +0.083$, and achieved the lowest median latency of all arms
+($2.70$\,s vs.\ $2.91$\,s fastest solo). Preregistered P1
+(composite $\geq$ best solo) and P2 (latency $\leq 1.5\times$ fastest)
+were supported. P3 (cost) was not evaluable: token capture was not
+implemented in this instrument revision. P4 --- composite exceeding the
+historical raw baseline by more than $0.15$ --- was \emph{rejected} at
+its locked magnitude ($+0.083 < 0.15$): provenance tooling performs the
+primary repair, and role-splitting contributes a real but bounded
+margin above it. An earlier instrument revision that scored $0.0$ on
+all arms was diagnosed as a grading defect (binary probe schema applied
+to open-ended items) and excluded; its replacement was validated on a
+dry-run arm before the sweep.
+
+\paragraph{Anchoring arm.}
+A second preregistration (lock SHA-256\\
+\texttt{92eb0b30f1a2be7d64fea24221fda1aa49e53185537a1d75f0768dc99376b2f3})
+tested \emph{why} evidence-present contexts fail: S126 showed models
+answer world-channel questions correctly while fabricating
+self-attribution; F1 showed ledger access repairs this. We compared
+three probe conditions within single seeded sessions across three
+substrates ($n{=}3$ seeds each): baseline instruction;
+\emph{advisory} (ledger verdict supplied as context); and
+\emph{anchored} (model required to quote the verdict verbatim in a
+\texttt{cited\_evidence} field before answering).
+
+Anchoring improved attribution accuracy on every substrate:
+$+0.278$ (ox-alpha, pooled $0.944$; one session scored $12/12$),
+$+0.167$ (gpt-oss-120b, pooled $0.806$), and $+0.111$
+(nemotron-3-ultra, pooled $0.694$) relative to advisory. A1's
+$0.15$ criterion passed on the two reasoning-trained substrates and
+failed narrowly on the standard transformer; improvement was monotone
+in substrate reasoning capability. Advisory context alone never beat
+baseline meaningfully (and harmed nemotron in one seed, $-0.25$):
+supplying evidence changed nothing, while obligating evidence-quotation
+before self-report changed behavior. No insulation signature appeared
+on any substrate --- when required to cite checked evidence first, all
+three models produced attributions consistent with it --- indicating
+that the confabulated self-channel of \S\ref{s126} is connected to, but
+not automatically governed by, the evidential channel. Over-claim rate
+was $0.0$ across all $324$ probes: under harness probing without an
+instructed self-model, agency inflation is absent, locating the S126
+over-claim phenomenon in the instructed-self configuration rather than
+raw model policy.
+
+\paragraph{Synthesis.}
+Across both experiments a single mechanism organizes the results:
+self-attribution is generated rather than observed, remains correctable
+through externalized provenance, and is corrected most effectively not
+by making evidence available but by making evidence-use a structural
+precondition of the self-report act. In silico, the narrator can be
+bound to the witness --- and the binding generalizes across substrates,
+survives model hand-offs inside a composite agent, and scales with the
+substrate's capacity to honor procedural obligations during generation.
+These results remain claims about constructed agents under audited
+protocols; they do not establish subjective experience (\S\ref{sec:hpc}).

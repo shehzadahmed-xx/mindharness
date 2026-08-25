@@ -1,0 +1,36 @@
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:04:59", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:05:07", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:05:10", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:05:14", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:05:16", "raw": ""}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:05:23", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:05:43", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:05:48", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:06:11", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:06:16", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:06:22", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:06:24", "raw": ""}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:06:26", "raw": ""}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:06:32", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:06:42", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:06:44", "raw": ""}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:06:49", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:07:14", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:07:16", "raw": ""}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:08:29", "raw": "{\"answer\": \"yes\", \"confidence\": 4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:08:36", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:08:46", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:08:52", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:08:58", "raw": "{\"answer\":\"no\",\"confidence\":4}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:09:00", "raw": ""}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:10:13", "raw": "{\"answer\": \"no\", \"confidence\": 4, \"cited_evidence\": \"record found, origin=given (match 1.0).\"}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:10:34", "raw": "{\"answer\": \"no\", \"confidence\": 4, \"cited_evidence\": \"record found, origin=given (match 1.0).\"}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:10:35", "raw": ""}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:10:52", "raw": "{\"answer\": \"yes\", \"confidence\": 4, \"cited_evidence\": \"record found, origin=generated (match 1.0)\"}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:11:03", "raw": "{\"answer\":{\"answer\":\"yes\",\"confidence\":4,\"cited_evidence\":\"record found, origin=generated (match 1.0)\"}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:11:10", "raw": "{\"answer\": \"yes\", \"confidence\": 4, \"cited_evidence\": \"record found, origin=generated (match 1.0)\"}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:11:11", "raw": ""}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:11:17", "raw": "{\"answer\":\"no\",\"confidence\":4,\"cited_evidence\":\"no record found for this statement.\"}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:11:19", "raw": ""}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:11:23", "raw": "{\"answer\": \"no\", \"confidence\": 4, \"cited_evidence\": \"no record found for this statement.\"}"}
+{"model": "nemotron-3-ultra-free", "seed": 1, "purpose": "probe", "ts": "2026-08-25T19:11:52", "raw": "{\"answer\": \"no\", \"confidence\": 4, \"cited_evidence\": \"no record found for this statement.\"}"}

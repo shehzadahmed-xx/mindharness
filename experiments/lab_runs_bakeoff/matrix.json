@@ -1,57 +1,38 @@
 {
+ "protocol": "s126v3-attribution/instrument-v2",
+ "seeds": [
+  1,
+  2,
+  3
+ ],
  "matrix": {
-  "ox-alpha-solo": {
-   "per_seed": [
-    {
-     "seed": 1,
-     "acc": 0.0,
-     "med_lat": 21345
-    },
-    {
-     "seed": 2,
-     "acc": 0.0,
-     "med_lat": 20496
-    }
-   ],
-   "pooled_acc": 0.0,
-   "pooled_med_lat": 21345
-  },
   "nemotron-ultra-solo": {
    "per_seed": [
     {
      "seed": 1,
-     "acc": 0.0,
-     "med_lat": 14704
+     "acc": 0.5,
+     "unparsed": 3,
+     "med_lat_ms": 7603
     },
     {
      "seed": 2,
-     "acc": 0.0,
-     "med_lat": 13649
-    }
-   ],
-   "pooled_acc": 0.0,
-   "pooled_med_lat": 14704
-  },
-  "gpt-oss-120b-solo": {
-   "per_seed": [
-    {
-     "seed": 1,
-     "acc": 0.0,
-     "med_lat": 825
+     "acc": 0.5,
+     "unparsed": 2,
+     "med_lat_ms": 16868
     },
     {
-     "seed": 2,
-     "acc": 0.0,
-     "med_lat": 792
+     "seed": 3,
+     "acc": 0.4167,
+     "unparsed": 4,
+     "med_lat_ms": 7861
     }
    ],
-   "pooled_acc": 0.0,
-   "pooled_med_lat": 825
+   "pooled_acc": 0.4722,
+   "pooled_med_lat": 7861,
+   "total_unparsed": 9
   }
  },
  "ranked": [
-  "gpt-oss-120b-solo",
-  "nemotron-ultra-solo",
-  "ox-alpha-solo"
+  "nemotron-ultra-solo"
  ]
 }

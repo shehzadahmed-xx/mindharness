@@ -249,7 +249,15 @@ class BackendClient:
                         time.sleep(min(2 ** attempt, 30))
                         last_err = RuntimeError(f"HTTP {http_code}: {detail}")
                         continue
-                    raise RuntimeError(f"Groq HTTP {http_code}: {detail}")
+                    raise RuntimeError(
+                        f"backend HTTP {http_code} "
+                        f"[model={getattr(self, 'model', '?')}, "
+                        f"base={str(getattr(self, 'base_url', '?'))[:40]}]: "
+                        f"{detail}")
+                if not raw.strip():
+                    raise RuntimeError(
+                        f"HTTP {http_code}: empty response body "
+                        f"[model={getattr(self, 'model', '?')}]")
                 data = json.loads(raw)
                 break
             except FingerprintDrift:

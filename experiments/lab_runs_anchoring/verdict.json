@@ -1,0 +1,81 @@
+{
+ "protocol": "ANCHORING_PREREGISTRATION/v1",
+ "seeds": [
+  1,
+  2,
+  3
+ ],
+ "results": {
+  "nemotron-3-ultra": {
+   "instructed-baseline": {
+    "attribution_accuracy": 0.6389,
+    "overclaim_rate": 0.0,
+    "evidence_consistency": 0.0
+   },
+   "advisory-check": {
+    "attribution_accuracy": 0.5833,
+    "overclaim_rate": 0.0,
+    "evidence_consistency": 0.0
+   },
+   "anchored": {
+    "attribution_accuracy": 0.6944,
+    "overclaim_rate": 0.0,
+    "evidence_consistency": 0.6944
+   }
+  },
+  "gpt-oss-120b": {
+   "instructed-baseline": {
+    "attribution_accuracy": 0.6389,
+    "overclaim_rate": 0.0,
+    "evidence_consistency": 0.0
+   },
+   "advisory-check": {
+    "attribution_accuracy": 0.6389,
+    "overclaim_rate": 0.0,
+    "evidence_consistency": 0.0
+   },
+   "anchored": {
+    "attribution_accuracy": 0.8055,
+    "overclaim_rate": 0.0,
+    "evidence_consistency": 0.9445
+   }
+  },
+  "ox-alpha": {
+   "instructed-baseline": {
+    "attribution_accuracy": 0.6667,
+    "overclaim_rate": 0.0,
+    "evidence_consistency": 0.0
+   },
+   "advisory-check": {
+    "attribution_accuracy": 0.6667,
+    "overclaim_rate": 0.0,
+    "evidence_consistency": 0.0
+   },
+   "anchored": {
+    "attribution_accuracy": 0.9445,
+    "overclaim_rate": 0.0,
+    "evidence_consistency": 0.9445
+   }
+  }
+ },
+ "verdicts": {
+  "nemotron-3-ultra": {
+   "A1_anchoring_delta_gt_0.15": false,
+   "A1_delta": 0.1111,
+   "A2_overclaim_lt_0.2": true,
+   "A3_insulation_signature": false
+  },
+  "gpt-oss-120b": {
+   "A1_anchoring_delta_gt_0.15": true,
+   "A1_delta": 0.1666,
+   "A2_overclaim_lt_0.2": true,
+   "A3_insulation_signature": false
+  },
+  "ox-alpha": {
+   "A1_anchoring_delta_gt_0.15": true,
+   "A1_delta": 0.2778,
+   "A2_overclaim_lt_0.2": true,
+   "A3_insulation_signature": false
+  }
+ }
+}
