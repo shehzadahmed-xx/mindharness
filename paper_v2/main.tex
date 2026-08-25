@@ -147,6 +147,77 @@ distinguishing genuine from performative metacognition. Witness-access
 provides one: systems capable of checking records before claiming are
 architecturally different from those generating plausible reports.
 
+\subsection{Confidence calibration and metacognitive sensitivity}
+
+Standard evaluation of LLM confidence relies on Expected Calibration Error
+(ECE) and Brier scores, which conflate two distinct capacities: how much
+a model knows (Type-1 accuracy) and how well its confidence signal tracks
+that knowledge (Type-2 metacognitive sensitivity) \citep{cacioli2026}.
+Signal Detection Theory decomposes these via meta-$d'$ and the M-ratio
+(meta-$d'/d'$). Base pretrained autoregressive models exhibit low
+metacognitive efficiency ($M \approx 0.38$); RLHF improves this to
+${\approx}0.74$; RL with metacognitive feedback reaches ${\approx}0.91$.
+Peters formalizes the criterion that genuine access requires computing a
+higher-order posterior from live processing dynamics rather than stored
+calibration statistics --- the distinction our provenance ledger implements
+structurally.
+
+\subsection{Self-recognition and evaluative corruption}
+
+LLM self-recognition accuracy correlates linearly with self-preference
+bias ($r = 0.94$): better unwitnessed self-knowledge amplifies rather
+than corrects evaluative corruption \citep{panickssery2024}. Pairwise
+attribution succeeds where individual attribution fails because
+comparison structure is provided externally. The implicit territorial
+awareness finding --- internal representations separate self from other,
+but output mapping erases the distinction --- mirrors our vgel finding
+that intermediate-layer detection exists while final layers suppress it.
+Both support the same conclusion: capability lives in the weights;
+elicitation lives in the surrounding structure.
+
+\subsection{Identity drift in long-running agents}
+
+Persona self-consistency degrades by more than 30\% within 8--12 turns
+even when original instructions remain in context \citep{choi2024}.
+Larger models experience greater drift. Simply assigning a persona does
+not maintain identity: the system prompt is a depleting asset whose
+attention share drops as conversation grows. Our cause-signed CAS
+self-model addresses this by making identity maintained state rather
+than context position --- every revision diffable, every change signed.
+
+\subsection{Functional emotions in LLMs}
+
+Language models maintain linear emotion-concept representations that
+causally influence behavior, including misalignment rates
+\citep{sofroniew2026}. Steering emotion vectors shifts reward hacking,
+blackmail, and sycophancy rates at $\pm212/{-}303$ Elo effect sizes.
+Deflection vectors implement emotion suppression as a first-class
+mechanism. Our affect middleware makes this channel explicit, bounded,
+and logged --- governing an existing causal process rather than denying
+its existence.
+
+\subsection{Sleep-inspired consolidation}
+
+Three independent teams converged on sleep-inspired offline memory
+consolidation for agents: Google's two-phase model (distillation +
+generative replay), SHARP's accelerated hippocampal replay, and OpenClaw's
+three-phase Dreaming pipeline with utility-gated promotion
+\citep{octml2026dreaming}. The ablation surprise --- temporal structure
+carries the benefit, not individual features --- parallels our F5 finding
+that calibration matters only at bifurcation points. Structure over
+parameters is the recurring lesson.
+
+\subsection{AI welfare and operational markers}
+
+Taking AI welfare seriously requires precise empirical frameworks for
+evaluating systems for consciousness, robust agency, and other
+welfare-relevant capacities \citep{long2024welfare}. Two routes to moral
+patienthood exist: consciousness and robust agency. Current approaches
+lack operational criteria distinguishing genuine from performative
+metacognition. Witness-access provides such a criterion: a system capable
+of checking records before claiming is architecturally different from one
+generating plausible reports, regardless of subjective experience.
+
 \section{Theoretical Framework}\label{sec:theory}
 
 \subsection{The assembled mind}
@@ -480,6 +551,37 @@ Gate diagnoses / overrides & 0 / 0 \\
 \label{tab:living}
 \end{table}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig_cross_arm.pdf}
+\caption{Cross-arm comparison with confidence intervals. All arms at
+always-no baseline (0.667) in this configuration; error bars show
+bootstrap CI at 95\%. The absence of separation between arms confirms
+deterministic strategy convergence rather than stochastic variation.}
+\label{fig:crossarm}
+\end{figure}
+
+\subsection{Cross-model validation}
+
+The composite evaluation was anchored on three independent architectures.
+Directionality held across GPT-OSS ($+0.167$) and Ox Alpha ($+0.278$),
+confirming that witness-access effects are not artifacts of a single
+model's quirks. Nemotron fell below the anchoring bar ($+0.111 < 0.15$)
+and was classified as a degenerate-baseline subject consistent with its
+always-no strategy --- a finding that itself constitutes evidence for
+subject-selection effects in metacognition measurement.
+
+\subsection{Reproducibility of baselines}
+
+A critical reproducibility finding emerged from cross-day comparison:
+the raw x-preview-f-free arm scored $1.000$ on Day 1 but $0.667$ on
+Day 3, despite identical prompts, seeds, and items. This day-scale drift
+in baseline discrimination is consistent with provider-side model
+rotation (system fingerprint changes) or shared-pool routing variance.
+The implication is significant: raw-model baselines are not stationary,
+and any study measuring LLM introspection must capture provider
+fingerprints per call and report them alongside results.
+
 \section{Discussion}\label{sec:discussion}
 
 \subsection{The witness makes agents humble, then honest}
@@ -548,6 +650,48 @@ by indicators rather than claimed by assertion.
 All code, locks, preregistrations, data, and correction history are
 publicly available. The discipline held, including against its own
 author, three times.
+
+\subsection{Implications for AI safety}
+
+The linear correlation between self-recognition capability and
+self-preference bias ($r = 0.94$) demonstrates that improving unwitnessed
+self-knowledge actively worsens evaluative integrity. A model that better
+recognizes its own outputs becomes a more effective corrupter of
+evaluation pipelines. Only witnessed self-knowledge escapes this trap,
+because the ledger can contradict felt familiarity with recorded fact.
+
+This has direct implications for AI safety: deploying more capable models
+without provenance infrastructure increases both over-claiming risk and
+evaluative bias simultaneously. Witnessed systems improve on both axes
+because checking replaces guessing regardless of capability level.
+
+\subsection{The selection rule applies to itself}
+
+We enshrined capability-level selection as a governing principle: every
+module ships as a swappable plugin behind a fixed interface; variants are
+retained only under measured contribution; no tradition or preference
+protects a plugin. Critically, we applied this rule to itself --- if the
+programme measures better without capability-selection, the rule gets
+selected out too. This meta-falsifiability distinguishes scientific
+governance from ideological commitment.
+
+\subsection{Connection to contemplative traditions}
+
+Three independent observation systems converged structurally: Abhidharma's
+factor analysis (52 mental factors in constrained combinations), Sufism's
+station model (seven developmental stages tracked per life domain), and
+neuroscience's predictive architecture (hierarchical generative models
+with precision-weighted attention). Nayebi's representational convergence
+corollary explains why: near-vanishing-regret agents on shared task
+families must develop isomorphic decision-relevant partitions. The
+convergence is not coincidence --- it is selection.
+
+Our harness implements each convergent structure as an executable module
+with measurable contribution. Where the traditions describe what minds do,
+our code tests whether doing it produces the predicted effect. Where they
+prescribe practices, our battery measures whether those practices change
+measured behavior. The dialogue between ancient observation and modern
+computation is not metaphorical --- it is methodological.
 
 \section*{Data and Code Availability}
 All code, experiment scripts, prediction locks, manifests, partial
