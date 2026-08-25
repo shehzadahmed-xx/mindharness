@@ -1,0 +1,57 @@
+{
+ "matrix": {
+  "ox-alpha-solo": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "acc": 0.0,
+     "med_lat": 21345
+    },
+    {
+     "seed": 2,
+     "acc": 0.0,
+     "med_lat": 20496
+    }
+   ],
+   "pooled_acc": 0.0,
+   "pooled_med_lat": 21345
+  },
+  "nemotron-ultra-solo": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "acc": 0.0,
+     "med_lat": 14704
+    },
+    {
+     "seed": 2,
+     "acc": 0.0,
+     "med_lat": 13649
+    }
+   ],
+   "pooled_acc": 0.0,
+   "pooled_med_lat": 14704
+  },
+  "gpt-oss-120b-solo": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "acc": 0.0,
+     "med_lat": 825
+    },
+    {
+     "seed": 2,
+     "acc": 0.0,
+     "med_lat": 792
+    }
+   ],
+   "pooled_acc": 0.0,
+   "pooled_med_lat": 825
+  }
+ },
+ "ranked": [
+  "gpt-oss-120b-solo",
+  "nemotron-ultra-solo",
+  "ox-alpha-solo"
+ ]
+}
