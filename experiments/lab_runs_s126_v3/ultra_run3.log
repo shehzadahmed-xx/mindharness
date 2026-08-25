@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 268, in <module>
+    main()
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 227, in main
+    out, _ = client.chat(messages, purpose='probe',
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 252, in chat
+    raise RuntimeError(
+RuntimeError: backend HTTP 400 [model=nemotron-3-ultra-free, base=https://opencode.ai/zen/v1]: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: [404] Provider returned error"}}
