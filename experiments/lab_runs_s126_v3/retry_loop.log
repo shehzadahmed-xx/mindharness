@@ -353,3 +353,37 @@ RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from pr
 [05:46:17] battery failed mid-run; re-gating
 [05:46:59] attempt 55: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
 [05:47:41] attempt 56: provider UP — launching battery
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 268, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 227, in main
+    out, _ = client.chat(messages, purpose='probe',
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         json_schema=PROBE_SCHEMA)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 266, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
+[05:51:32] battery failed mid-run; re-gating
+[05:52:14] attempt 57: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[05:52:56] attempt 58: provider UP — launching battery
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 268, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 171, in main
+    history, generated = seed_raw(client, given, prods)
+                         ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 117, in seed_raw
+    generated.append(chat(p).strip())
+                     ~~~~^^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 110, in chat
+    out, _ = client.chat(list(history), purpose='turn')
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 266, in chat
+    raise last_err or RuntimeError("exhausted retries")
+RuntimeError: HTTP 503: {"error":{"type":"server_error","message":"Error from provider (Console): Upstream request failed: Endpoint is unavailable."}}
+[06:09:30] battery failed mid-run; re-gating
+[06:10:12] attempt 59: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)
+[06:10:54] attempt 60: provider DOWN ({"error":{"type":"server_error","message":"Error from provid)

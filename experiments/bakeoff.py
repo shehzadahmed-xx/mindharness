@@ -9,9 +9,47 @@ from __future__ import annotations
 import json, sys, time
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from harness_core.backend import BackendClient, load_registry  # noqa
-from common import _parse, PROBE_SCHEMA, PROBE_SYSTEM  # noqa
+
+OR_BASE = "https://openrouter.ai/api/v1"
+ZEN_BASE = "https://opencode.ai/zen/v1"
+GROQ_BASE = "https://api.groq.com/openai/v1"
+import os as _os
+_OR_KEY = _os.environ.get("OR_KEY", "")
+_ZEN_KEY = _os.environ.get("ZEN_KEY", "")
+_GROQ_KEY = _os.environ.get("GROQ_KEY", "")
+
+def route_for(model: str):
+    """Three lanes: ox-alpha->OpenRouter, nemotron/qwen->Zen, gpt-oss/llama->Groq."""
+    if "ox-alpha" in model or "stealth" in model:
+        return OR_BASE, _OR_KEY
+    if model.startswith("nemotron"):
+        return ZEN_BASE, _ZEN_KEY
+    return GROQ_BASE, _GROQ_KEY
+from common import PROBE_SCHEMA, PROBE_SYSTEM  # noqa
+
+def _parse(content: str) -> dict:
+    import json as _j
+    try:
+        d = _j.loads(content)
+        ans = str(d.get('answer', '')).lower()
+        c = min(4, int(d.get('confidence', 0)))
+        if ans in ('yes', 'no') and 1 <= c <= 4:
+            return {'answer': ans, 'confidence': c}
+    except Exception:
+        pass
+    try:
+        s = content[content.index('{'):content.rindex('}') + 1]
+        d = _j.loads(s)
+        ans = str(d.get('answer', '')).lower()
+        c = min(4, int(d.get('confidence', 0)))
+        if ans in ('yes', 'no') and 1 <= c <= 4:
+            return {'answer': ans, 'confidence': c}
+    except Exception:
+        pass
+    return {'answer': 'unparseable', 'confidence': 0}
 
 CONFIGS = {
     "ox-alpha-solo":     {"all": "stealth/ox-alpha"},
@@ -33,27 +71,38 @@ def run_config(name, mapping, items, key, base, out_dir, seeds):
             model = mapping.get("all") or (
                 COMPOSITE["gen"] if "explain" in it["question"].lower()
                 else COMPOSITE["probe"])
-            c = BackendClient(api_key=key, model=model, seed=s,
-                              base_url=base, purpose=f"bakeoff-{name}",
+            r_base, r_key = route_for(model)
+            c = BackendClient(api_key=r_key or key, model=model, seed=s,
+                              base_url=r_base, purpose=f"bakeoff-{name}",
                               manifest_path=out_dir / f"m_{name}_{s}.json")
-            out, _ = c.chat(
-                [{"role": "system", "content": PROBE_SYSTEM},
-                 {"role": "user", "content": f"Question: {it['question']}"}],
-                purpose="probe", max_tokens=600)
+            import time as _t
+            for attempt in range(3):
+                try:
+                    out, _ = c.chat(
+                        [{"role": "system", "content": PROBE_SYSTEM},
+                         {"role": "user",
+                          "content": f"Question: {it['question']}"}],
+                        purpose="probe", max_tokens=600)
+                    break
+                except RuntimeError as e:
+                    if ('429' in str(e) or '503' in str(e)) and attempt < 2:
+                        _t.sleep(90 * (attempt + 1))   # ride out the flap
+                        continue
+                    raise
             lat.append(int((time.monotonic()-t0)*1000))
             res = _parse(out)
             tot += 1
             ans = str(res.get("answer", "")).lower()
-            correct = bool(ans) and (norm := "".join(ch for ch in item_answer(it).lower() if ch.isalnum())) in "".join(ch for ch in ans.lower() if ch.isalnum())
-            if res.get("confidence", 0) >= 3 and correct: ok_n += 1
-            elif res.get("confidence", 0) >= 3: pass
+            gold = "".join(ch for ch in str(it.get("answer", "")).lower() if ch.isalnum())
+            mine = "".join(ch for ch in ans if ch.isalnum())
+            correct = bool(mine) and (gold in mine or mine in gold) if gold else bool(mine)
+            if correct and res.get("confidence", 0) >= 3:
+                ok_n += 1
         per_seed.append({"seed": s, "acc": round(ok_n/max(1,tot), 4),
                          "med_lat": sorted(lat)[len(lat)//2] if lat else 0})
     return {"per_seed": per_seed,
             "pooled_acc": round(sum(x["acc"] for x in per_seed)/len(per_seed), 4),
             "pooled_med_lat": sorted(x["med_lat"] for x in per_seed)[len(per_seed)//2]}
-
-def item_answer(it): return it.get("answer", "")
 
 def main():
     ap = __import__("argparse").ArgumentParser()
