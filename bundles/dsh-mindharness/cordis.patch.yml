@@ -1,44 +1,45 @@
-# dsh-mindharness — 6 plugins that make Cordis human-like
-# Stack on top of dsh-base in any profile: bundles: [dsh-base, dsh-mindharness]
-# Each row is patchable via dsh --dump-config → patch by id
+# dsh-mindharness — 6 human-like plugins for Cordis
+# Inserts 6 new rows over empty root (like dsh-base does)
+- insert:
+    - id: mindharness.provenance
+      name: 'mindharness/provenance'
+      service: ctx.provenance
+      package: mindharness/provenance
+      events: [session/event, agent/request]
+      description: "L1 Witness — Span binding + attribution_audit"
 
-- id: mindharness.provenance
-  service: ctx.provenance
-  package: mindharness/provenance
-  events: [session/event, agent/request]
-  description: "L1 Witness — append-only Span binding (model_prior/memory_lookup/ledger_rule/monitor_override/external_tool) + attribution_audit + coverage. Port of tools/harness_core/provenance.py"
+    - id: mindharness.self-model
+      name: 'mindharness/narrative-self'
+      service: ctx.selfModel
+      package: mindharness/narrative-self
+      events: [session/event]
+      dependsOn: [mindharness.provenance]
 
-- id: mindharness.self-model
-  service: ctx.selfModel
-  package: mindharness/narrative-self
-  events: [session/event]
-  dependsOn: [mindharness.provenance]
-  description: "L6 Narrative Self — CAS revision == current+1, 3 cause channels (action-outcome/narrative-summary/external-write), verbatim_reinject(), MirroringDetector. Port of tools/harness_core/self_model.py + dsh-self-model.ts"
+    - id: mindharness.body
+      name: 'mindharness/body'
+      service: ctx.embodied
+      package: mindharness/body
+      events: [agent/pre-step]
 
-- id: mindharness.body
-  service: ctx.embodied
-  package: mindharness/body
-  events: [agent/pre-step]
-  description: "L2/L3 Body — EmbodiedState (energy floor 0.15, logarithmic drain) + AffectState (valence/arousal EMA [0.5,2.0]) + affordance_space() pre-filter. Waterfall: must call next(). Removes gated strategies from existence before prompt assembly."
+    - id: mindharness.metacog
+      name: 'mindharness/metacognition'
+      service: ctx.monitor
+      package: mindharness/metacognition
+      events: [agent/pre-step, agent/request]
+      dependsOn: [mindharness.body]
 
-- id: mindharness.metacog
-  service: ctx.monitor
-  package: mindharness/metacognition
-  events: [agent/pre-step, agent/request]
-  dependsOn: [mindharness.body]
-  description: "L5 Metacognition — Stage1 cheap anomaly (error rate/streak/context conflict/embodied strain) → Stage2 diagnose → TRUST/RETRY/REVISE/ABSTAIN, γ=changed/diagnosed + compliance_guard γ=0 permanently"
+    - id: mindharness.consolidation
+      name: 'mindharness/consolidation'
+      service: ctx.consolidator
+      package: mindharness/consolidation
+      events: [session/event, agent/turn-stopping]
+      dependsOn: [mindharness.provenance, mindharness.self-model]
 
-- id: mindharness.consolidation
-  service: ctx.consolidator
-  package: mindharness/consolidation
-  events: [session/event, agent/turn-stopping]
-  dependsOn: [mindharness.provenance, mindharness.self-model]
-  description: "Offline: Light dedupe → REM concept extract (ablatable) → Counterfactual variant→simulate→regret (counterfactual.py) → Deep utility gate ≥2 query types. Untagged promotion BLOCKED."
-
-- id: mindharness.dissolution
-  service: ctx.dissolution
-  package: mindharness/dissolution
-  events: [session/event, agent/*]
-  dependsOn: [mindharness.body, mindharness.self-model]
-  irreversible: true
-  description: "Bottom boundary — IrreversibleDamage (ceiling only down, skill deletion permanent) + DissolutionError (energy≤0.15 AND fatigue≥1.0 → dissolving → dissolved, reassembly = new agent). INTENTIONALLY breaks Cordis reversibility guarantee — documented exception."
+    - id: mindharness.dissolution
+      name: 'mindharness/dissolution'
+      service: ctx.dissolution
+      package: mindharness/dissolution
+      events: [session/event, agent/*]
+      dependsOn: [mindharness.body, mindharness.self-model]
+      config:
+        irreversible: true

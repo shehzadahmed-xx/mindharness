@@ -1,0 +1,8 @@
+# Patch dsh web profile to use Muse Spark 1.2 Free via OpenCode Zen
+# Usage: dsh --profile web --patch /Users/shehzad/Desktop/springfish/bundles/muse-spark-zen-patch.yml --dump-config
+# Or copy into ~/.dsh/profiles/web/cordis.patch.yml
+
+- id: agent-default-model
+  config:
+    provider: opencode
+    model: muse-spark-1.2-contributor-free
