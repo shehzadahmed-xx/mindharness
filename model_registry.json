@@ -1,0 +1,32 @@
+{
+  "monitor": {
+    "model": "qwen/qwen3-32b",
+    "base_url": "https://api.groq.com/openai/v1",
+    "role": "fast-detect",
+    "notes": "cheap anomaly scoring, no reasoning needed"
+  },
+  "probe": {
+    "model": "openai/gpt-oss-120b",
+    "base_url": "https://api.groq.com/openai/v1",
+    "role": "capable-probe",
+    "notes": "structured output enforcement, strict JSON mode"
+  },
+  "generation": {
+    "model": "stealth/ox-alpha",
+    "base_url": "https://openrouter.ai/api/v1",
+    "role": "capable-generation",
+    "notes": "benchmark-topping reasoner via OpenRouter; provider flaps, use retry loop"
+  },
+  "validation": {
+    "model": "openai/gpt-oss-20b",
+    "base_url": "https://api.groq.com/openai/v1",
+    "role": "strict-json-validator",
+    "notes": "schema-enforced self-reports server-side"
+  },
+  "summarizer": {
+    "model": "llama-3.3-70b-versatile",
+    "base_url": "https://api.groq.com/openai/v1",
+    "role": "cheap-consolidation",
+    "notes": "narrative-summary compaction, cheapest passing"
+  }
+}
