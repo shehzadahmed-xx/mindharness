@@ -467,3 +467,42 @@ def wire_allostatic_dissolution(harness, damage):
 def check_allostatic_viability(harness):
     """Return True if agent is viable, False if approaching dissolution."""
     return harness.body.energy > 0.15 or harness.body.fatigue < 1.0
+
+
+def load_model_registry(path: str | None = None) -> dict:
+    import json
+    import pathlib
+    p = pathlib.Path(path) if path else pathlib.Path(__file__).parent.parent.parent / "model_registry.json"
+    alt = pathlib.Path(__file__).parent.parent.parent.parent / "springfish" / "model_registry.json"
+    target = p if p.exists() else alt if alt.exists() else None
+    if target is None or not target.exists():
+        return {}
+    try:
+        return json.loads(target.read_text())
+    except Exception:
+        return {}
+
+
+def create_composite_respond_fn(registry: dict, api_keys: dict | None = None) -> dict[str, Callable]:
+    api_keys = api_keys or {}
+    fns: dict[str, Callable] = {}
+    for role, cfg in registry.items():
+        model = cfg.get("model", "")
+        base_url = cfg.get("base_url", "https://api.groq.com/openai/v1")
+        key_hint = "groq" if "groq" in base_url else "openrouter" if "openrouter" in base_url else role
+        api_key = api_keys.get(key_hint) or api_keys.get(role) or api_keys.get("default") or ""
+        if not api_key:
+            continue
+        try:
+            from .backend import BackendClient
+            client = BackendClient(model=model, api_key=api_key, base_url=base_url)
+
+            def _make_fn(c=client):
+                def _fn(messages, **kwargs):
+                    return c.chat(messages, **kwargs)[0]
+                return _fn
+
+            fns[role] = _make_fn()
+        except Exception:
+            continue
+    return fns
