@@ -69,6 +69,7 @@ class AgentHarness:
         self.mlog = MetacognitiveLog()
         self.memory: dict[str, MemoryItem] = {}
         self.consolidator = Consolidator(self.memory, rem_ablation=rem_ablation)
+        self.counterfactual_replay = None
         self.skills = SkillLibrary()
         self.graph = KnowledgeGraph()
 
@@ -100,11 +101,16 @@ class AgentHarness:
 
     def consolidate(self, dry_run: bool = False) -> dict:
         causes = {i: 'action-outcome' for i in self.memory}
-        rep = self.consolidator.run(current_turn=self.turn,
-                                    cause_by_id=None if dry_run else causes,
-                                    dry_run=dry_run)
+        rep = self.consolidator.run(
+            current_turn=self.turn,
+            cause_by_id=None if dry_run else causes,
+            dry_run=dry_run,
+            counterfactual_replay=self.counterfactual_replay,
+        )
         return {'deduped': rep.deduped_removed, 'promoted': rep.promoted,
-                'skipped': rep.skipped, 'rem_ran': rep.rem_ran}
+                'skipped': rep.skipped, 'rem_ran': rep.rem_ran,
+                'counterfactuals': rep.counterfactuals_generated,
+                'high_regret': rep.counterfactual_high_regret}
 
     def sm_ref(self) -> dict:
         cur = self.sm.get()

@@ -43,6 +43,8 @@ class ConsolidationReport:
     candidates: list[dict]
     promoted: list[dict]
     skipped: list[dict]
+    counterfactuals_generated: int = 0
+    counterfactual_high_regret: int = 0
 
 
 class Consolidator:
@@ -152,17 +154,25 @@ class Consolidator:
 
     def run(self, current_turn: int,
             cause_by_id: dict[str, Cause] | None = None,
-            dry_run: bool = False) -> ConsolidationReport:
+            dry_run: bool = False,
+            counterfactual_replay=None) -> ConsolidationReport:
         cause_map = cause_by_id or {}
         deduped = self.light_pass()
         candidates_items = self.rem_pass(current_turn)
+
+        cf_generated = 0
+        cf_high = 0
+        if counterfactual_replay is not None and candidates_items and not dry_run:
+            cf_report = counterfactual_replay.run(candidates_items)
+            cf_generated = len(cf_report.generated)
+            cf_high = len(cf_report.high_regret)
 
         preview_promoted, preview_skipped = [], []
         for it in candidates_items:
             ok, why = self._utility_ok(it)
             rec = {'id': it.id, 'content': it.content[:80],
-                   'query_types': len(it.query_hits),
-                   'endorsed': it.human_endorsed}
+                    'query_types': len(it.query_hits),
+                    'endorsed': it.human_endorsed}
             (preview_promoted if ok else preview_skipped).append(
                 {**rec, **({} if ok else {'reason': why})})
 
@@ -170,10 +180,12 @@ class Consolidator:
         if not dry_run:
             promoted, skipped = self.deep_pass(candidates_items, cause_map)
             report = ConsolidationReport(deduped, not self.rem_ablation,
-                                         [], promoted, skipped)
+                                         [], promoted, skipped,
+                                         cf_generated, cf_high)
         else:
             report = ConsolidationReport(deduped, not self.rem_ablation,
-                                         preview_promoted, [], preview_skipped)
+                                         preview_promoted, [], preview_skipped,
+                                         cf_generated, cf_high)
         return report
 
 

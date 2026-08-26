@@ -23,6 +23,8 @@ from .monitor import (DetectSignals, MetacognitiveLog, MonitorGate, PostJOL,
 from .embodiment import EmbodiedState
 from .affect import AffectState
 from .consolidation import Consolidator, MemoryItem
+from .counterfactual import (CounterfactualReplay, CounterfactualReport,
+                              CounterfactualTrace)
 from .agent_harness import AgentHarness, TurnResult
 
 __all__ += [
@@ -32,5 +34,6 @@ __all__ += [
     "MonitorGate", "DetectSignals", "MetacognitiveLog", "PreSolveFOK", "PostJOL",
     "EmbodiedState", "AffectState",
     "Consolidator", "MemoryItem",
+    "CounterfactualReplay", "CounterfactualReport", "CounterfactualTrace",
     "AgentHarness", "TurnResult",
 ]
