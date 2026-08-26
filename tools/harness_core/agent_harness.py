@@ -391,3 +391,73 @@ def wire_irreversibility(harness: AgentHarness, damage: IrreversibleDamage):
     harness.run_task = wired_run_task
     harness._damage = damage
     return harness
+
+
+# ---------------------------------------------------------------------------
+# Dissolution mechanism: the agent ceases to exist as this configuration
+# when allostatic regulation fails. Not death — disintegration.
+# ---------------------------------------------------------------------------
+
+class DissolutionError(Exception):
+    """Raised when allostatic failure causes the agent to dissolve."""
+    def __init__(self, cause: str, surviving_components: list):
+        self.cause = cause
+        self.survivors = surviving_components
+        super().__init__(f"DISSOLUTION: {cause}. Surviving components: {surviving_components}")
+
+
+def wire_allostatic_dissolution(harness, damage):
+    """Wire genuine survival pressure into the harness.
+    
+    When energy hits floor AND fatigue maxes simultaneously,
+    the agent begins dissolving: SM facts scatter, skills cull,
+    narrative truncates. If dissolution completes, AgentHarness
+    ceases to exist as this configuration.
+    
+    Reassembly is possible from surviving components but produces
+    a DIFFERENT agent — not the same one restored.
+    """
+    original_run_task = harness.run_task
+    _dissolving = [False]
+    _dissolution_progress = [0.0]
+
+    def wired(user_message, **kwargs):
+        # Check allostatic viability BEFORE processing
+        energy = harness.body.energy
+        fatigue = harness.body.fatigue
+        
+        # Dissolution threshold: energy at floor AND fatigue maxed
+        if energy <= 0.15 and fatigue >= 1.0:
+            _dissolving[0] = True
+            _dissolution_progress[0] += 0.1
+            
+            if _dissolution_progress[0] >= 1.0:
+                survivors = _identify_survivors(harness)
+                raise DissolutionError(
+                    f"allostatic failure: energy={energy:.2f}, fatigue={fatigue:.2f}",
+                    survivors)
+        
+        result = original_run_task(user_message, **kwargs)
+        
+        # Recovery resets dissolution progress
+        if harness.body.energy > 0.5:
+            _dissolving[0] = False
+            _dissolution_progress[0] = 0.0
+        
+        return result
+
+    def _identify_survivors(harness_obj):
+        """Identify which components survive dissolution."""
+        return {
+            'skills': [s.name for s in harness_obj.skills.all()],
+            'graph_nodes': len(harness_obj.graph.nodes) if hasattr(harness_obj.graph, 'nodes') else 0,
+            'sm_revision': harness_obj.sm.get()['revision'] if harness_obj.sm.get() else 0,
+            'provenance_records': len(harness_obj.ledger.all_emissions()) if hasattr(harness_obj, 'ledger') else 0,
+        }
+
+    harness.run_task = wired
+
+
+def check_allostatic_viability(harness):
+    """Return True if agent is viable, False if approaching dissolution."""
+    return harness.body.energy > 0.15 or harness.body.fatigue < 1.0
