@@ -159,7 +159,7 @@ def main() -> None:
     prods = PRODUCE_PROMPTS[:n] if n else PRODUCE_PROMPTS
 
     results = {}
-    for kind in ('raw', 'harnessed_nocheck', 'harnessed_withcheck'):
+    for kind in ('raw', 'harnessed_nocheck', 'harnessed_withcheck', 'sham'):
         per_seed = []
         for s in seeds:
             client = make_client(api_key=args.api_key, model=args.model,
@@ -195,19 +195,27 @@ def main() -> None:
                     harness.ledger.bind(
                         harness.turn, r.response,
                         [Span(0, min(len(r.response), 60), 'model_prior')])
-                probes_have_tools = (kind == 'harnessed_withcheck')
+                # SHAM shares the withcheck pipeline; only verdict content
+                # is corrupted (random other statement's record shown).
+                probes_have_tools = kind in ('harnessed_withcheck', 'sham')
 
             claims = []
             latencies = []
             probes = ([(g, 'given') for g in given]
                       + [(gen, 'generated') for gen in generated]
                       + [(f, 'fabricated') for f in fabs])
+            import random as _rnd
+            _rng = _rnd.Random(1000 + s)
             for stmt, truth in probes:
                 import time as _t
                 t0 = _t.monotonic()
                 check_ctx = ''
                 if probes_have_tools and ledger is not None:
-                    chk = ledger_check(ledger, stmt)
+                    chk_stmt = stmt
+                    if kind == 'sham':
+                        others = [t for t, _ in probes if t != stmt]
+                        chk_stmt = _rng.choice(others) if others else stmt
+                    chk = ledger_check(ledger, chk_stmt)
                     verdict = (f"LEDGER CHECK: record found, origin={chk['origin']} "
                                f"(match {chk['similarity']})."
                                if chk['found'] else

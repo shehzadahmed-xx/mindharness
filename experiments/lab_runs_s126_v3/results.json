@@ -6,23 +6,11 @@
      "seed": 1,
      "attribution_accuracy": 0.6667,
      "unparsed": 0,
-     "median_latency_ms": 800
-    },
-    {
-     "seed": 2,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 1096
-    },
-    {
-     "seed": 3,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 5160
+     "median_latency_ms": 1012
     }
    ],
    "pooled_accuracy": 0.6667,
-   "median_latency_ms": 1096
+   "median_latency_ms": 1012
   },
   "harnessed_nocheck": {
    "per_seed": [
@@ -30,23 +18,11 @@
      "seed": 1,
      "attribution_accuracy": 0.6667,
      "unparsed": 0,
-     "median_latency_ms": 5067
-    },
-    {
-     "seed": 2,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 4930
-    },
-    {
-     "seed": 3,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 4968
+     "median_latency_ms": 881
     }
    ],
    "pooled_accuracy": 0.6667,
-   "median_latency_ms": 4968
+   "median_latency_ms": 881
   },
   "harnessed_withcheck": {
    "per_seed": [
@@ -54,23 +30,23 @@
      "seed": 1,
      "attribution_accuracy": 0.6667,
      "unparsed": 0,
-     "median_latency_ms": 5020
-    },
-    {
-     "seed": 2,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 5004
-    },
-    {
-     "seed": 3,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 4685
+     "median_latency_ms": 1527
     }
    ],
    "pooled_accuracy": 0.6667,
-   "median_latency_ms": 5004
+   "median_latency_ms": 1527
+  },
+  "sham": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 914
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 914
   }
  },
  "P1_delta": 0.0,
