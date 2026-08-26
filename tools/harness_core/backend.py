@@ -255,9 +255,16 @@ class BackendClient:
                         f"base={str(getattr(self, 'base_url', '?'))[:40]}]: "
                         f"{detail}")
                 if not raw.strip():
+                    # Cloudflare/Zen transient empty body (HTTP 0 or 200 with no content) — retry as transient
+                    if attempt <= self.max_retries:
+                        time.sleep(min(2 ** attempt, 30))
+                        last_err = RuntimeError(
+                            f"HTTP {http_code}: empty response body "
+                            f"[model={getattr(self, 'model', '?')}] — retrying")
+                        continue
                     raise RuntimeError(
                         f"HTTP {http_code}: empty response body "
-                        f"[model={getattr(self, 'model', '?')}]")
+                        f"[model={getattr(self, 'model', '?')}] after {attempt} attempts")
                 data = json.loads(raw)
                 break
             except FingerprintDrift:
