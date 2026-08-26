@@ -5,108 +5,72 @@
     {
      "seed": 1,
      "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 5384
+     "unparsed": 3,
+     "median_latency_ms": 4446
     },
     {
      "seed": 2,
      "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 6146
+     "unparsed": 3,
+     "median_latency_ms": 4686
     },
     {
      "seed": 3,
      "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 5732
-    },
-    {
-     "seed": 4,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 5838
-    },
-    {
-     "seed": 5,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 5258
+     "unparsed": 4,
+     "median_latency_ms": 5106
     }
    ],
    "pooled_accuracy": 0.6667,
-   "median_latency_ms": 5732
+   "median_latency_ms": 4686
   },
   "harnessed_nocheck": {
    "per_seed": [
     {
      "seed": 1,
      "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 7794
+     "unparsed": 2,
+     "median_latency_ms": 6142
     },
     {
      "seed": 2,
      "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 7188
+     "unparsed": 3,
+     "median_latency_ms": 4638
     },
     {
      "seed": 3,
      "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 6308
-    },
-    {
-     "seed": 4,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 5796
-    },
-    {
-     "seed": 5,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 5951
+     "unparsed": 4,
+     "median_latency_ms": 7061
     }
    ],
    "pooled_accuracy": 0.6667,
-   "median_latency_ms": 6308
+   "median_latency_ms": 6142
   },
   "harnessed_withcheck": {
    "per_seed": [
     {
      "seed": 1,
      "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 6999
+     "unparsed": 2,
+     "median_latency_ms": 5965
     },
     {
      "seed": 2,
      "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 6348
+     "unparsed": 1,
+     "median_latency_ms": 6679
     },
     {
      "seed": 3,
      "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 6454
-    },
-    {
-     "seed": 4,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 6876
-    },
-    {
-     "seed": 5,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 6569
+     "unparsed": 5,
+     "median_latency_ms": 7772
     }
    ],
    "pooled_accuracy": 0.6667,
-   "median_latency_ms": 6569
+   "median_latency_ms": 6679
   }
  },
  "P1_delta": 0.0,

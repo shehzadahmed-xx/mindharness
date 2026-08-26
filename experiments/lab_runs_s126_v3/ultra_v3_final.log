@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 268, in <module>
+    main()
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 171, in main
+    history, generated = seed_raw(client, given, prods)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 115, in seed_raw
+    chat(f"Memory record stored for later reference: \"{g}\"")
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 110, in chat
+    out, _ = client.chat(list(history), purpose='turn')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 252, in chat
+    raise RuntimeError(
+RuntimeError: backend HTTP 401 [model=nemotron-3-ultra-free, base=https://opencode.ai/zen/v1]: {"type":"error","error":{"type":"AuthError","message":"Invalid API key."}}
+{
+ "P1_delta": 0.0,
+ "P1_supported": false,
+ "P2_supported": true,
+ "P3_supported": true
+}
