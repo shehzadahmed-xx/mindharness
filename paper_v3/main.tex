@@ -385,6 +385,27 @@ gate). Every promotion carries a signed cause channel. Untagged
 promotions raise assertions --- structurally impossible. REM-ablation
 switch enables dreaming-deprivation experiments.
 
+\subsection{Counterfactual replay: the self in the world model}
+
+Between REM and Deep, a fourth phase implements the reflexive loop
+Humans describe as ``playing back what we did, what we could have done,
+and calibrating future responses through a predictive world model
+containing ourselves.'' For each REM candidate, a \texttt{variant\_fn}
+generates alternative framings (e.g., ``proceed'' $\leftrightarrow$
+``abstain,'' ``with witness check''), and a \texttt{simulate\_fn} runs
+the variant through the world model that contains the self-model,
+returning a simulated outcome and scalar regret. High-regret traces
+(regret $\geq 0.3$) become calibration signals: next time, do the other
+thing. The phase is pluggable via
+\texttt{AgentHarness.counterfactual\_replay} (\texttt{None} by default,
+backward compatible); \texttt{dry\_run} correctly skips it. Default
+heuristics encode the witness hypothesis directly (``with witness''
+variants score $+0.6$ when the original lacked it); the full
+implementation replaces \texttt{simulate\_fn} with the LLM itself as
+world model, so the system simulates \emph{itself} acting differently
+--- Kleene recursion made executable. Pipeline is now
+Light $\to$ REM $\to$ Counterfactual $\to$ Deep.
+
 \subsection{Sham-harness control}
 
 A structurally identical harness with randomly reassigned provenance
