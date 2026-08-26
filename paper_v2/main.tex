@@ -366,8 +366,16 @@ bindings serves as the critical control for R1 \#8. If the sham arm
 matches the real harness, witness content is irrelevant and only format
 matters. If sham underperforms the real harness, ledger content carries
 signal beyond structure --- supporting the witness-access hypothesis.
-This control has been implemented but not yet executed pending a stable
-provider window.
+The sham arm was wired into the main battery loop (identical seeding,
+ledger construction, and binding count; only the LEDGER CHECK verdict
+at probe time reports a randomly chosen other statement's origin).
+A 1-seed pilot on \texttt{gpt-oss-120b} via Groq yielded
+raw$=$nocheck$=$withcheck$=$sham$=0.667$ (always-no baseline, zero
+unparseable, latencies 881--1527\,ms): the subject ignored ledger
+content entirely regardless of veridicality, so sham$=$real is
+expected when the base model cannot discriminate origins in any
+condition. The critical test remains a discriminating subject
+(x-preview-f-free Day~1 at 1.000), pending provider availability.
 
 \subsection{Composite routing}
 
@@ -839,7 +847,12 @@ for internal states.
 \subsection{Sham-harness control experiment}
 Structurally identical harness with randomly reassigned provenance
 bindings. Isolates whether witness content matters beyond its format.
-Implemented but pending stable provider execution.
+Wired into the main battery; 1-seed pilot on \texttt{gpt-oss-120b}
+showed sham$=$real at the always-no floor (subject ignores ledger
+content). Full 3-seed sham comparison requires a discriminating
+subject and is queued for the next stable provider window; OpenRouter
+free-tier exhausted (50/day) and Groq returning 403 at time of writing,
+with reset at 2026-08-27 00:00 UTC.
 
 \subsection{Cross-model replication on capable subjects}
 Origin discrimination above baseline was observed only once
