@@ -1068,24 +1068,48 @@ computation is not metaphorical --- it is methodological.
 \section{Limitations}\label{sec:limitations}
 
 \subsection{Single decoding configuration}
-Temperature 0.3, no top-p/top-k sampling, seed fixed per arm. Results may
-not generalize to other sampling regimes.
+Temperature 0.3, no top-p/top-k sampling, seed fixed per arm, max
+completion 2000 tokens, fingerprint captured per call. Results may not
+generalize to other sampling regimes. Deterministic decoding (temperature
+near zero) produces zero within-arm variance by construction, precluding
+parametric significance testing; we report exact permutation tests
+instead. Stochastic regimes would introduce variance but also confound
+attribution strategy with sampling noise.
 
 \subsection{Verbal confidence replaces token log-probabilities}
-Groq does not support logprobs (verified). Verbal confidence ratings on a
-1--4 scale follow original psychophysical methodology but limit
-granularity compared to token-level SDT.
+Groq does not support logprobs (verified across all tested models;
+\texttt{logprobs} field null regardless of request). Verbal confidence
+ratings on a 1--4 scale follow the psychophysical methodology of our
+S126 replication \citep{s126} but limit granularity compared to token-
+level SDT (meta-$d'$ requires continuous confidence). This was a
+provider constraint, not a design choice; local inference with
+logprob support would enable finer-grained calibration analysis.
 
 \subsection{Free-tier provider instability}
 x-preview-f-free's upstream provider flapped intermittently, causing two
-complete run failures and one day-scale baseline drift. Nemotron ultra
-via Zen also experienced upstream failures. Only the Groq lane proved
-stable enough for full battery execution.
+complete run failures and one day-scale baseline drift (raw $1.000$ Day~1
+$\to$ $0.667$ Day~3 on identical weights---room matters more than model).
+Nemotron ultra via Zen also experienced upstream failures (503). Only
+the Groq lane proved stable enough for full battery execution. OpenRouter
+free tier (50/day) and Groq 403 blocked multi-seed sham replication at
+time of writing. The program's provider strategy---three independent
+lanes (Zen, Groq, OpenRouter) with per-call fingerprint discipline and
+mid-run drift abort---mitigated but did not eliminate this constraint.
+Future work should budget for paid-tier stability or local inference.
 
 \subsection{Single-author design}
 Confirmation bias risk mitigated by preregistration discipline, SHA-256
-prediction locks, and live peer review from the target model itself, but
-not eliminated.
+prediction locks, live peer review from the target model itself, and
+three documented self-corrections (96c1010, 09ddc8b, 8780272), but not
+eliminated. Independent replication by a second lab would strengthen all
+claims.
+
+\subsection{Task scope}
+S126 probes a narrow slice of provenance reasoning: origin attribution
+for short declarative statements. Real deployment involves longer
+documents, multi-source synthesis, and claims that blend memory and
+generation. Whether witness-access scales to these settings is an open
+empirical question, not an assumed generalization.
 
 \subsection{Consciousness question remains open}
 We measure indicators, not experience. The witness improves consistency
