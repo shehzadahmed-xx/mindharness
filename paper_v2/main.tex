@@ -368,6 +368,8 @@ and credential set. Composite configurations are compared against single-model b
 
 \subsection{Experimental protocol}
 
+Decoding configuration: temperature 0.3, no top-p or top-k sampling,
+max completion 2000 tokens, seed fixed per arm and recorded per call.
 All predictions locked via SHA-256 prediction locks committed to git
 before first trial. Arms run on identical items with identical seeds.
 Provider fingerprints captured per call; mid-run drift aborts the arm.
