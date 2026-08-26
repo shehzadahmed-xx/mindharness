@@ -555,6 +555,31 @@ before first trial. Arms run on identical items with identical seeds.
 Provider fingerprints captured per call; mid-run drift aborts the arm.
 Both confirmatory and disconfirming outcomes reported identically.
 
+\subsection{Operating the harness: what to measure}
+
+For replication, four numbers tell you whether the harness is working:
+
+\begin{center}
+\small
+\begin{tabular}{p{3.4cm}p{3.8cm}p{5.4cm}}
+\toprule
+Metric & How to compute & What it means \\
+\midrule
+Coverage & spans with refs / total spans & Is the witness bound? ($1.000$ in both livings) \\
+$\gamma$ (gamma) & changed / diagnosed & Does watching steer? ($0$ $=$ inert, $>0$ $=$ genuine) \\
+Attribution $\Delta$ & withcheck $-$ nocheck & Does ledger content matter beyond format? (sham test) \\
+Regret & counterfactual $-$ actual & Does simulating otherwise calibrate? \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Coverage without $\gamma$ is a ledger no one checks.
+$\gamma$ without sham is steering that might be format compliance.
+Sham without counterfactual is honesty without learning.
+Counterfactual without dissolution is learning without stakes.
+All four together are the minimal set that makes a reflexive system
+answerable, steerable, honest, and mortal.
+
 \section{Results}\label{sec:results}
 
 \subsection{Deterministic attribution strategies (Experiment 6.1)}
