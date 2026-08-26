@@ -359,6 +359,16 @@ gate). Every promotion carries a signed cause channel. Untagged
 promotions raise assertions --- structurally impossible. REM-ablation
 switch enables dreaming-deprivation experiments.
 
+\subsection{Sham-harness control}
+
+A structurally identical harness with randomly reassigned provenance
+bindings serves as the critical control for R1 \#8. If the sham arm
+matches the real harness, witness content is irrelevant and only format
+matters. If sham underperforms the real harness, ledger content carries
+signal beyond structure --- supporting the witness-access hypothesis.
+This control has been implemented but not yet executed pending a stable
+provider window.
+
 \subsection{Composite routing}
 
 A JSON registry assigns per-plugin models: fast models monitor, capable
@@ -431,6 +441,35 @@ correct attributions. Full quantitative results are reported in the
 accompanying data files; the preregistered P1 threshold ($>0.15$
 improvement) tests whether record-access closes the gap between
 deterministic strategies.
+
+\subsection{Bootstrap confidence intervals}
+
+Probe-level resampling (10{,}000 iterations) produced the following
+95\% percentile confidence intervals:
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\toprule
+Arm & Mean & 95\% CI \\
+\midrule
+Raw & 1.000 & [1.000, 1.000] \\
+Harnessed (no-check) & 0.667 & [0.667, 0.667] \\
+\bottomrule
+\end{tabular}
+\caption{Zero-width intervals reflect deterministic policies under
+greedy decoding on frozen weights, not population-level certainty.
+The finding is the \emph{direction} of the stable strategy (discrimination
+vs.\ denial), not its statistical significance.}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{figures/fig_perseed_scatter.pdf}
+\caption{Per-seed attribution accuracy with paired-seed lines. Zero
+within-arm variance confirms deterministic strategies; between-arm gap
+confirms systematic effect of the witness.}
+\label{fig:perseed}
+\end{figure}
 
 \subsection{Living session (40 turns)}\label{sec:living}
 

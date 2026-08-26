@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.18)  26 AUG 2026 06:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.18)  26 AUG 2026 07:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -337,7 +337,11 @@ ef
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count302
 \l__pdf_internal_box=\box54
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `fig:perseed' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -520,56 +524,72 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 [6]
-<figures/fig_perseed_scatter.pdf, id=273, 433.62pt x 325.215pt>
+<figures/fig_perseed_scatter.pdf, id=281, 433.62pt x 325.215pt>
 File: figures/fig_perseed_scatter.pdf Graphic file (type pdf)
 <use figures/fig_perseed_scatter.pdf>
-Package pdftex.def Info: figures/fig_perseed_scatter.pdf  used on input line 39
+Package pdftex.def Info: figures/fig_perseed_scatter.pdf  used on input line 40
 2.
 (pdftex.def)             Requested size: 352.31625pt x 264.25142pt.
-<figures/fig_gamma.pdf, id=274, 433.62pt x 289.08pt>
-File: figures/fig_gamma.pdf Graphic file (type pdf)
-<use figures/fig_gamma.pdf>
-Package pdftex.def Info: figures/fig_gamma.pdf  used on input line 419.
-(pdftex.def)             Requested size: 305.33789pt x 203.56763pt.
 
 
 [7 <./figures/fig_perseed_scatter.pdf>]
+<figures/fig_gamma.pdf, id=330, 433.62pt x 289.08pt>
+File: figures/fig_gamma.pdf Graphic file (type pdf)
+<use figures/fig_gamma.pdf>
+Package pdftex.def Info: figures/fig_gamma.pdf  used on input line 429.
+(pdftex.def)             Requested size: 305.33789pt x 203.56763pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/fig_living_timeseries.pdf, id=323, 867.24pt x 433.62pt>
-File: figures/fig_living_timeseries.pdf Graphic file (type pdf)
-<use figures/fig_living_timeseries.pdf>
-Package pdftex.def Info: figures/fig_living_timeseries.pdf  used on input line 
-476.
-(pdftex.def)             Requested size: 446.26582pt x 223.13484pt.
+File: figures/fig_perseed_scatter.pdf Graphic file (type pdf)
+<use figures/fig_perseed_scatter.pdf>
+Package pdftex.def Info: figures/fig_perseed_scatter.pdf  used on input line 46
+7.
+(pdftex.def)             Requested size: 352.31625pt x 264.25142pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
 [8 <./figures/fig_gamma.pdf>]
-<figures/fig_attribution.pdf, id=378, 433.62pt x 289.08pt>
+<figures/fig_living_timeseries.pdf, id=385, 867.24pt x 433.62pt>
+File: figures/fig_living_timeseries.pdf Graphic file (type pdf)
+<use figures/fig_living_timeseries.pdf>
+Package pdftex.def Info: figures/fig_living_timeseries.pdf  used on input line 
+515.
+(pdftex.def)             Requested size: 446.26582pt x 223.13484pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[9]
+<figures/fig_attribution.pdf, id=393, 433.62pt x 289.08pt>
 File: figures/fig_attribution.pdf Graphic file (type pdf)
 <use figures/fig_attribution.pdf>
-Package pdftex.def Info: figures/fig_attribution.pdf  used on input line 505.
+Package pdftex.def Info: figures/fig_attribution.pdf  used on input line 544.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/fig_living_state.pdf, id=379, 722.7pt x 505.89pt>
+<figures/fig_living_state.pdf, id=394, 722.7pt x 505.89pt>
 File: figures/fig_living_state.pdf Graphic file (type pdf)
 <use figures/fig_living_state.pdf>
-Package pdftex.def Info: figures/fig_living_state.pdf  used on input line 516.
+Package pdftex.def Info: figures/fig_living_state.pdf  used on input line 555.
 (pdftex.def)             Requested size: 399.29463pt x 279.5063pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/fig_bakeoff.pdf, id=380, 578.16pt x 289.08pt>
+<figures/fig_bakeoff.pdf, id=395, 578.16pt x 289.08pt>
 File: figures/fig_bakeoff.pdf Graphic file (type pdf)
 <use figures/fig_bakeoff.pdf>
-Package pdftex.def Info: figures/fig_bakeoff.pdf  used on input line 525.
+Package pdftex.def Info: figures/fig_bakeoff.pdf  used on input line 564.
 (pdftex.def)             Requested size: 422.77664pt x 211.38834pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -577,27 +597,27 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/fig_cross_arm.pdf, id=381, 433.62pt x 289.08pt>
+<figures/fig_cross_arm.pdf, id=396, 433.62pt x 289.08pt>
 File: figures/fig_cross_arm.pdf Graphic file (type pdf)
 <use figures/fig_cross_arm.pdf>
-Package pdftex.def Info: figures/fig_cross_arm.pdf  used on input line 592.
+Package pdftex.def Info: figures/fig_cross_arm.pdf  used on input line 631.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[9]
+[10]
 
-[10 <./figures/fig_living_timeseries.pdf>]
+[11 <./figures/fig_living_timeseries.pdf>]
 
-[11 <./figures/fig_attribution.pdf>]
+[12 <./figures/fig_attribution.pdf>]
 
-[12 <./figures/fig_living_state.pdf>]
-<figures/fig_convergence.pdf, id=538, 578.16pt x 361.35pt>
+[13 <./figures/fig_living_state.pdf>]
+<figures/fig_convergence.pdf, id=553, 578.16pt x 361.35pt>
 File: figures/fig_convergence.pdf Graphic file (type pdf)
 <use figures/fig_convergence.pdf>
-Package pdftex.def Info: figures/fig_convergence.pdf  used on input line 731.
+Package pdftex.def Info: figures/fig_convergence.pdf  used on input line 770.
 (pdftex.def)             Requested size: 375.80544pt x 234.87471pt.
 
 
@@ -605,34 +625,38 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[13 <./figures/fig_bakeoff.pdf>]
+[14 <./figures/fig_bakeoff.pdf>]
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 835--838
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 874--877
 []\OT1/cmr/m/n/10.95 vgel (2025). Small Mod-els Can In-tro-spect, Too.
  []
 
 
 
-[15 <./figures/fig_cross_arm.pdf>]
+[16 <./figures/fig_cross_arm.pdf>]
 
 Package natbib Warning: There were undefined citations.
 
 
 
-[16 <./figures/fig_convergence.pdf>] (./main.aux)
+[17 <./figures/fig_convergence.pdf>] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DA91DCD0B11B2A1A63D4263E59FCD235;8789.
+(rerunfilecheck)             Checksum: 2285FED311FC5E968616FA453A5C0EA2;9165.
  ) 
 Here is how much of TeX's memory you used:
- 11405 strings out of 474662
- 174111 string characters out of 5751109
- 589840 words of memory out of 5000000
- 34202 multiletter control sequences out of 15000+600000
+ 11412 strings out of 474662
+ 174195 string characters out of 5751109
+ 589870 words of memory out of 5000000
+ 34204 multiletter control sequences out of 15000+600000
  569771 words of font info for 78 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  75i,11n,79p,477b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -650,10 +674,10 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025basic/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025basic/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (16 pages, 317634 bytes).
+Output written on main.pdf (17 pages, 319526 bytes).
 PDF statistics:
- 798 PDF objects out of 1000 (max. 8388607)
- 416 compressed objects within 5 object streams
- 105 named destinations out of 1000 (max. 500000)
- 417 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 814 PDF objects out of 1000 (max. 8388607)
+ 431 compressed objects within 5 object streams
+ 110 named destinations out of 1000 (max. 500000)
+ 433 words of extra memory for PDF output out of 10000 (max. 10000000)
 
