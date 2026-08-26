@@ -1106,8 +1106,20 @@ with reset at 2026-08-27 00:00 UTC.
 
 \subsection{Cross-model replication on capable subjects}
 Origin discrimination above baseline was observed only once
-(x-preview-f-free, Day 1). Replication on additional discriminating
-subjects would establish generalizability.
+(x-preview-f-free, Day 1, $1.000$). Every other subject (nemotron
+ultra, gpt-oss-120b, stealth/ox-alpha) sat at the always-no floor
+($0.667$) across all arms. The asymmetry itself is informative: models
+that cannot discriminate do not benefit from the witness because they
+lack the base capability the witness would make checkable. The sham
+result confirms this: sham$=$real when the subject ignores ledger
+content. Replication therefore requires screening for discriminating
+subjects first, then testing whether witness-access shifts the
+discriminating subject's strategy. Candidates include larger reasoning
+models and models post-trained with introspection-relevant objectives
+\citep{macar2026}. A positive sham result on such a subject---sham
+underperforming real harness---would be the first direct evidence that
+ledger content, not just ledger format, carries signal for honest
+attribution.
 
 \subsection{Longer living sessions: 200-turn irreversible life}
 
