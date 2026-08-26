@@ -1,0 +1,7 @@
+{
+  "name": "dsh-mindharness-parliament",
+  "version": "0.1.0",
+  "description": "Parliament of Models — many tongues, one workspace, witness as arbiter. Each subsystem is a different LLM competing for broadcast.",
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "license": "MIT"
+}

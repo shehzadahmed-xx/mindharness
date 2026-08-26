@@ -1,0 +1,6 @@
+{
+  "name": "mindharness-parliament-habit",
+  "version": "0.1.0",
+  "description": "Parliament habit — Cordis plugin for many-model competition",
+  "main": "./src/index.ts"
+}

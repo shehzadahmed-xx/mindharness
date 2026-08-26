@@ -1,0 +1,6 @@
+{
+  "name": "mindharness-parliament-memory",
+  "version": "0.1.0",
+  "description": "Parliament memory — Cordis plugin for many-model competition",
+  "main": "./src/index.ts"
+}

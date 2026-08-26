@@ -1,0 +1,73 @@
+# dsh-mindharness-parliament — Many models, one workspace, witness as arbiter
+# Stack on dsh-base + dsh-mindharness: bundles: [dsh-base, dsh-mindharness, dsh-mindharness-parliament]
+- insert:
+    - id: mh.perception
+      name: mindharness/parliament-perception
+      service: ctx.perception
+      package: mindharness/parliament-perception
+      events: [session/event, agent/request]
+      config:
+        llm: { provider: opencode, model: qwen3-vl, temperature: 0.2 }
+
+    - id: mh.memory
+      name: mindharness/parliament-memory
+      service: ctx.memory
+      package: mindharness/parliament-memory
+      events: [session/event, agent/request]
+      config:
+        llm: { provider: opencode, model: gpt-oss-120b, temperature: 0.1 }
+
+    - id: mh.affect
+      name: mindharness/parliament-affect
+      service: ctx.affect
+      package: mindharness/parliament-affect
+      events: [agent/pre-step]
+      config:
+        llm: { provider: opencode, model: claude-haiku-4-5, temperature: 0.7 }
+
+    - id: mh.planner
+      name: mindharness/parliament-planner
+      service: ctx.planner
+      package: mindharness/parliament-planner
+      events: [agent/pre-step, agent/request]
+      config:
+        llm: { provider: opencode, model: deepseek-v4-reasoner, temperature: 0.6 }
+
+    - id: mh.habit
+      name: mindharness/parliament-habit
+      service: ctx.habit
+      package: mindharness/parliament-habit
+      events: [agent/request]
+      config:
+        llm: { provider: opencode, model: minimax-m3, temperature: 0.3 }
+
+    - id: mh.narrator
+      name: mindharness/parliament-narrator
+      service: ctx.narrator
+      package: mindharness/parliament-narrator
+      events: [agent/turn-stopping]
+      config:
+        llm: { provider: opencode, model: muse-spark-1.2-contributor-free, temperature: 0.8 }
+
+    - id: mh.workspace
+      name: mindharness/parliament-workspace
+      service: ctx.workspace
+      package: mindharness/parliament-workspace
+      events: [agent/pre-step]
+      dependsOn: [mh.perception, mh.memory, mh.affect, mh.planner, mh.habit]
+      config:
+        competition: "salience × utility"
+        broadcast: "winner content + provenance spans to all subsystems"
+        timeoutMs: 1500
+
+    - id: mh.witness
+      name: mindharness/parliament-witness
+      service: ctx.provenance
+      package: mindharness/provenance
+      events: [session/event, agent/request, agent/pre-step]
+
+    - id: mh.body-gate
+      name: mindharness/parliament-body
+      service: ctx.embodied
+      package: mindharness/body
+      events: [agent/pre-step]

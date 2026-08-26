@@ -1,0 +1,6 @@
+{
+  "name": "mindharness-parliament-narrator",
+  "version": "0.1.0",
+  "description": "Parliament narrator — Cordis plugin for many-model competition",
+  "main": "./src/index.ts"
+}
