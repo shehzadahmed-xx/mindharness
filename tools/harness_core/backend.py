@@ -187,7 +187,7 @@ class BackendClient:
             "max_tokens": max_tokens,
             "temperature": self.temperature,
         }
-        if self.seed is not None:
+        if self.seed is not None and "gemini" not in self.model.lower():
             body["seed"] = self.seed
         if "openrouter.ai" in self.base_url:
             # stealth models route to single upstreams that flap; enable
