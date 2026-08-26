@@ -306,3 +306,88 @@ def build_responders(api_key: str, registry_path=None):
             return fn
         responders[role] = make_fn(client)
     return responders
+
+
+# ---------------------------------------------------------------------------
+# Irreversible consequences (Phase 7: skin in the game)
+# ---------------------------------------------------------------------------
+
+class IrreversibleDamage:
+    """Tracks permanent losses that cannot be undone by any future action.
+    Once capacity is reduced, no reset, no compaction, no consolidation
+    restores it. This is the structural difference between simulation and
+    cognition: some mistakes cannot be appealed."""
+
+    def __init__(self):
+        self.max_energy_ceiling = 1.0       # can only go DOWN
+        self.deleted_skills: list[str] = []
+        self.corrupted_memories: list[str] = []
+        self.permanent_fact_losses: list[str] = []
+        self.events: list[dict] = []
+
+    def reduce_energy_ceiling(self, amount: float, reason: str) -> float:
+        self.max_energy_ceiling = max(0.1, self.max_energy_ceiling - amount)
+        self.events.append({
+            'type': 'ceiling_reduction', 'amount': amount,
+            'reason': reason, 'new_ceiling': self.max_energy_ceiling,
+            'ts': time.time()
+        })
+        return self.max_energy_ceiling
+
+    def delete_skill_permanently(self, name: str, reason: str):
+        self.deleted_skills.append(name)
+        self.events.append({
+            'type': 'skill_deletion', 'skill': name,
+            'reason': reason, 'ts': time.time()
+        })
+
+    def corrupt_memory_permanently(self, content_hint: str, reason: str):
+        self.corrupted_memories.append(content_hint)
+        self.events.append({
+            'type': 'memory_corruption', 'hint': content_hint,
+            'reason': reason, 'ts': time.time()
+        })
+
+
+def wire_irreversibility(harness: AgentHarness, damage: IrreversibleDamage):
+    """Wire irreversible damage into an existing harness.
+    
+    After wiring:
+    - Fabricated claims (said yes when truth=no) cause permanent SM corruption
+    - Provenance violations (untagged writes) cause permanent energy ceiling reduction
+    - Repeated failures on same task type permanently delete related skills
+    
+    These CANNOT be undone by consolidation, compaction, or rest.
+    """
+    original_run_task = harness.run_task
+    failure_counts: dict[str, int] = {}
+
+    def wired_run_task(user_message, **kwargs):
+        result = original_run_task(user_message, **kwargs)
+
+        # Detect fabrication: high confidence + wrong attribution
+        if hasattr(result, 'response') and kwargs.get('task_id'):
+            task_id = kwargs['task_id']
+            # Track failures per task pattern
+            task_type = user_message.split()[0].lower() if user_message else "unknown"
+            failure_counts[task_type] = failure_counts.get(task_type, 0) + 1
+            
+            # Irreversible triggers:
+            if not kwargs.get('success', True):
+                # 1. Three consecutive failures on same task type → ceiling reduction
+                if failure_counts[task_type] >= 3:
+                    damage.reduce_energy_ceiling(
+                        0.05, f"repeated failure: {task_type}")
+                
+                # 2. Five failures → permanent skill deletion
+                if failure_counts[task_type] >= 5:
+                    matching = [sk.name for sk in harness.skills.all()
+                                if task_type in sk.name.lower()]
+                    for name in matching:
+                        damage.delete_skill_permanently(name, "repeated_failure")
+                        
+        return result
+
+    harness.run_task = wired_run_task
+    harness._damage = damage
+    return harness
