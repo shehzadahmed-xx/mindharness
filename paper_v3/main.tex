@@ -91,7 +91,40 @@ desk), and in our harness (ProvenanceLedger, Consolidator
 Light/REM/Counterfactual/Deep, AffectState, culling/SHY, MonitorGate).
 The harness is one weave on this warp; DeepSeek Cordis provides the
 loom (Appendix~\ref{app:cordis}). This paper is the program statement
-for that weave.
+for that weave. Figure~\ref{fig:roadmap} maps the full arc.
+
+\begin{figure}[h]
+\centering
+\small
+\begin{tabular}{p{2.6cm}p{4.0cm}p{4.2cm}p{2.2cm}}
+\toprule
+Phase & Question & Answer & Status \\
+\midrule
+Witness &
+Can an LLM know what it did? &
+ProvenanceLedger + SelfModelService + $\gamma$-gate: claims become contracts &
+Built, 72/72 green, 3 batteries, sham wired \\
+Five invariants &
+What must any reflexive system have? &
+Boundary / two-speed memory / salience gate / damping / internal observer (Nayebi Cor.~3--5) &
+Proved mandatory, implemented as 5 plugins \\
+Cordis &
+Can the harness re-tie itself? &
+DeepSeek Cordis as loom: $\mathrm{State}(t)\to\mathrm{harness}(t{+}1)$, 6 plugins mount beside core &
+Bundle scaffolded, 2 fixes landed \\
+Counterfactual &
+Can it simulate what it could have done? &
+Light$\to$REM$\to$Counterfactual$\to$Deep: variant$\to$simulate$\to$regret &
+Wired, Light$\to$REM$\to$Counterfactual$\to$Deep, pluggable \\
+Stakes &
+Does survival pressure create honesty? &
+IrreversibleDamage + DissolutionError + 200-turn life &
+Wired, queued (Seth's thesis) \\
+\bottomrule
+\end{tabular}
+\caption{Program roadmap: from witness to warp to loom to stakes. Each phase reframes the previous answer as the next question. The five invariants are the warp; everything else is weft woven on it.}
+\label{fig:roadmap}
+\end{figure}
 
 \section{Related Work}\label{sec:related}
 
