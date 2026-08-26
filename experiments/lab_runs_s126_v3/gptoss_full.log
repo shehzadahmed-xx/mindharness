@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 268, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 193, in main
+    r = harness.run_task(p, success=True)
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/agent_harness.py", line 169, in run_task
+    resp = self.respond_fn(messages, ctx)
+  File "/Users/shehzad/Desktop/springfish/experiments/exp_s126_v3.py", line 179, in responder
+    out, _ = client.chat(messages, purpose='turn',
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         json_schema=ctx.get('json_schema'))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shehzad/Desktop/springfish/tools/harness_core/backend.py", line 258, in chat
+    raise RuntimeError(
+        f"HTTP {http_code}: empty response body "
+        f"[model={getattr(self, 'model', '?')}]")
+RuntimeError: HTTP 0: empty response body [model=openai/gpt-oss-120b]
