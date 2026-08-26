@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.18)  26 AUG 2026 07:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.18)  26 AUG 2026 16:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -628,19 +628,23 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [14 <./figures/fig_bakeoff.pdf>]
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 874--877
+
+[16 <./figures/fig_cross_arm.pdf>]
+
+[17 <./figures/fig_convergence.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 949--952
 []\OT1/cmr/m/n/10.95 vgel (2025). Small Mod-els Can In-tro-spect, Too.
  []
 
 
 
-[16 <./figures/fig_cross_arm.pdf>]
+[18]
 
 Package natbib Warning: There were undefined citations.
 
 
 
-[17 <./figures/fig_convergence.pdf>] (./main.aux)
+[19] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -649,17 +653,23 @@ L3 programming layer <2025-01-18>
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2285FED311FC5E968616FA453A5C0EA2;9165.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 2285FED311FC5E968616FA453A5C0EA2;9165
+(rerunfilecheck)             After:  CA281EBE87C644915BB80FC00598B989;12075.
  ) 
 Here is how much of TeX's memory you used:
- 11412 strings out of 474662
- 174195 string characters out of 5751109
+ 11432 strings out of 474662
+ 174455 string characters out of 5751109
  589870 words of memory out of 5000000
- 34204 multiletter control sequences out of 15000+600000
+ 34207 multiletter control sequences out of 15000+600000
  569771 words of font info for 78 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 75i,11n,79p,477b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,477b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 0.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/
@@ -674,10 +684,10 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025basic/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025basic/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (17 pages, 319526 bytes).
+Output written on main.pdf (19 pages, 323507 bytes).
 PDF statistics:
- 814 PDF objects out of 1000 (max. 8388607)
- 431 compressed objects within 5 object streams
- 110 named destinations out of 1000 (max. 500000)
+ 841 PDF objects out of 1000 (max. 8388607)
+ 456 compressed objects within 5 object streams
+ 127 named destinations out of 1000 (max. 500000)
  433 words of extra memory for PDF output out of 10000 (max. 10000000)
 

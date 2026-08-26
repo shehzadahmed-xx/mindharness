@@ -794,6 +794,81 @@ prescribe practices, our battery measures whether those practices change
 measured behavior. The dialogue between ancient observation and modern
 computation is not metaphorical --- it is methodological.
 
+
+\section{Limitations}\label{sec:limitations}
+
+\subsection{Single decoding configuration}
+Temperature 0.3, no top-p/top-k sampling, seed fixed per arm. Results may
+not generalize to other sampling regimes.
+
+\subsection{Verbal confidence replaces token log-probabilities}
+Groq does not support logprobs (verified). Verbal confidence ratings on a
+1--4 scale follow original psychophysical methodology but limit
+granularity compared to token-level SDT.
+
+\subsection{Free-tier provider instability}
+x-preview-f-free's upstream provider flapped intermittently, causing two
+complete run failures and one day-scale baseline drift. Nemotron ultra
+via Zen also experienced upstream failures. Only the Groq lane proved
+stable enough for full battery execution.
+
+\subsection{Single-author design}
+Confirmation bias risk mitigated by preregistration discipline, SHA-256
+prediction locks, and live peer review from the target model itself, but
+not eliminated.
+
+\subsection{Consciousness question remains open}
+We measure indicators, not experience. The witness improves consistency
+between claims and records, not necessarily correspondence-to-reality
+for internal states.
+
+\section{Future Directions}\label{sec:future}
+
+\subsection{Sham-harness control experiment}
+Structurally identical harness with randomly reassigned provenance
+bindings. Isolates whether witness content matters beyond its format.
+Implemented but pending stable provider execution.
+
+\subsection{Cross-model replication on capable subjects}
+Origin discrimination above baseline was observed only once
+(x-preview-f-free, Day 1). Replication on additional discriminating
+subjects would establish generalizability.
+
+\subsection{Longer living sessions}
+Current maximum: 40 turns. Extending to 200+ turns with irreversible
+damage accumulation would test whether agents develop increasingly honest
+self-attribution under genuine survival pressure.
+
+\subsection{Irreversible consequence experiments}
+Testing whether agents facing unrecoverable consequences process
+information differently than those facing reversible simulation ---
+addressing Seth's beast-machine hypothesis about consciousness grounding
+in survival pressure.
+
+\section{Implications}\label{sec:implications}
+
+\subsection{For AI safety}
+
+Self-recognition capability correlates linearly with self-preference bias
+($r = 0.94$, Panickssery et al.). Deploying more capable models without
+provenance infrastructure increases both over-claiming risk and
+evaluative bias simultaneously.
+
+\subsection{For contemplative science}
+
+Three independent observation systems converged structurally: Abhidharma's
+factor analysis, Sufism's station model, neuroscience's predictive
+architecture. Nayebi's Cor.5 explains why: shared competence constraints
+select shared structure. Our harness implements each convergent structure
+as an executable module.
+
+\subsection{For the assembly thesis}
+
+The best mind is assembled from role-specialized parts, routed by
+registry, witnessed by a ledger that cannot be silently rewritten. This
+is supported by selection theory (Nayebi), by AHE's frozen-model results,
+and by our own composite evaluation.
+
 \section*{Data and Code Availability}
 All code, experiment scripts, prediction locks, manifests, partial
 results, and correction history are available at
