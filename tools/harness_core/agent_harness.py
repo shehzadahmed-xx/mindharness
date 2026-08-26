@@ -79,48 +79,6 @@ class AgentHarness:
         self.session_overrides = 0
         self.session_diagnoses = 0
 
-    @classmethod
-    def from_registry(cls, api_key: str, registry_path=None, **kwargs):
-        """Construct AgentHarness with role-specific models from registry.
-        
-        Each plugin (monitor/probe/generation/validation/summarizer) gets
-        its own BackendClient from model_registry.json. Falls back to
-        default Groq endpoint for unlisted roles.
-        """
-        from harness_core.backend import load_model_registry as _lmr
-        import os as _os
-        
-        reg = _lmr(registry_path)
-        
-        # Build per-role responder functions
-        def make_role_fn(model, base_url):
-            from harness_core.backend import BackendClient as _BC
-            client = _BC(api_key=api_key, model=model,
-                         base_url=base_url, purpose=f"registry-{model}")
-            def fn(messages, ctx=None):
-                out, _ = client.chat(messages, purpose=ctx.get("purpose", "registry"))
-                return out
-            return fn
-        
-        # Assign models: probe->probe, gen->generation, monitor->monitor
-        probe_cfg = reg.get("probe", {"model": kwargs.get("default_model", "openai/gpt-oss-120b"),
-                                       "base_url": "https://api.groq.com/openai/v1"})
-        gen_cfg = reg.get("generation", probe_cfg)
-        mon_cfg = reg.get("monitor", probe_cfg)
-        
-        respond_fn = make_role_fn(gen_cfg)
-        
-        harness = cls(respond_fn, **kwargs)
-        harness._registry = {
-            'probe': probe_cfg, 'gen': gen_cfg, 'mon': mon_cfg,
-            'responders': {'probe': make_role_fn(probe_cfg),
-                          'gen': make_role_fn(gen_cfg),
-                          'monitor': make_role_fn(mon_cfg)}
-        }
-        return harness
-
-    @classmethod
-
     # -- helpers -----------------------------------------------------------------
 
     def _signals(self) -> DetectSignals:
