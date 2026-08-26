@@ -271,3 +271,38 @@ class AgentHarness:
             'metacog_completeness': round(self.mlog.completeness(), 3),
             'coverage': self.ledger.coverage_stats(),
         }
+
+
+# ---------------------------------------------------------------------------
+# Registry-driven construction (Phase 6.6)
+# ---------------------------------------------------------------------------
+
+import json as _json
+from pathlib import Path as _Path
+
+def load_model_registry(path=None):
+    """Load per-plugin model assignments from model_registry.json."""
+    p = _Path(path) if path else _Path(__file__).parent.parent / "model_registry.json"
+    if not p.exists():
+        return {}
+    return _json.loads(p.read_text())
+
+
+def build_responders(api_key: str, registry_path=None):
+    """Construct role-specific BackendClients from the registry."""
+    reg = load_model_registry(registry_path)
+    responders = {}
+    for role, cfg in reg.items():
+        client = BackendClient(
+            api_key=api_key,
+            model=cfg["model"],
+            base_url=cfg.get("base_url", "https://api.groq.com/openai/v1"),
+            purpose=f"registry-{role}",
+        )
+        def make_fn(c):
+            def fn(messages, ctx=None):
+                out, _ = c.chat(messages, purpose="registry-call")
+                return out
+            return fn
+        responders[role] = make_fn(client)
+    return responders
