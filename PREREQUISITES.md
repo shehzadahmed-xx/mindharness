@@ -15,7 +15,7 @@ Date: 2026-08-24 · Rule: no component starts until its prerequisites row is gre
 | pymc ≥5 | meta-d′ Bayesian fitting | `python3 -c "import pymc"` | Experiment 6.2 |
 | sentence-transformers | embedding similarity (persona/mirroring) | `python3 -c "import sentence_transformers"` | P1.3, P1.4 |
 | llama.cpp | NOT REQUIRED — removed by backend constraint | — | n/a |
-| git | clean-tree discipline | `git -C ~/Desktop/springfish status` | every commit |
+| git | clean-tree discipline | `git -C ~/Desktop/mindharness status` | every commit |
 
 ### A.2 Credentials & access
 
@@ -29,7 +29,7 @@ Date: 2026-08-24 · Rule: no component starts until its prerequisites row is gre
 ### A.3 Repository state gates
 
 ```
-[ ] ~/Desktop/springfish        clean tree, latest ≥ c6265a0 (BUILD_PLAN committed)
+[ ] ~/Desktop/mindharness        clean tree, latest ≥ c6265a0 (BUILD_PLAN committed)
 [ ] tools/deepseek-harness      deps installed (pnpm install done previously)
 [ ] plugins/self-model          dsh-self-model.ts present (committed 75d9fba)
 [ ] plugins/cognitive-architecture  cordis.yml + index.ts present
