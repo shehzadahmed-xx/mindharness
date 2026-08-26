@@ -1,0 +1,10 @@
+{
+  "name": "dsh-mindharness",
+  "version": "0.1.0",
+  "description": "MindHarness — 6 human-like plugins for Cordis (witness, narrative self, body, metacognition, consolidation+counterfactual, dissolution). Stack on dsh-base.",
+  "dsh": {
+    "bundle": "./cordis.patch.yml"
+  },
+  "keywords": ["cordis", "mindharness", "provenance", "metacognition", "consciousness"],
+  "license": "MIT"
+}

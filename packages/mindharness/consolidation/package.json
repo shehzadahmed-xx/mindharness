@@ -1,0 +1,7 @@
+{
+  "name": "mindharness-consolidation",
+  "version": "0.1.0",
+  "description": "MindHarness consolidation — Cordis plugin (see bundles/dsh-mindharness/cordis.patch.yml)",
+  "main": "./src/index.ts",
+  "dsh": { "service": "ctx.${pkg}" }
+}
