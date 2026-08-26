@@ -894,6 +894,85 @@ registry, witnessed by a ledger that cannot be silently rewritten. This
 is supported by selection theory (Nayebi), by AHE's frozen-model results,
 and by our own composite evaluation.
 
+\appendix
+\section{Cordis Mapping: Eight Layers onto a Programmable Harness}
+\label{app:cordis}
+
+DeepSeek Harness (Cordis) provides the loom: a kernel that mounts and
+unmounts plugins as reversible effects on a shared context \texttt{ctx}.
+Every capability---model, tool, session, loop, UI---is a plugin; a
+profile composes bundles and a \texttt{cordis.patch.yml} overlay at boot.
+MindHarness is one opinionated weave on that loom. Table~\ref{tab:cordis}
+maps Cordis's declared modules onto our eight layers, marking exact
+overlap and the three gaps Cordis is still missing for a witnessed mind.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{p{2.6cm}p{2.4cm}p{2.4cm}p{4.2cm}}
+\toprule
+Cordis module & Our layer & Overlap & Gap: what Cordis still lacks \\
+\midrule
+\texttt{core/session} (append-only \texttt{SessionEvent} log, \texttt{ctx.sessions}, \texttt{deriveMessages()} invariant) &
+L1 Provenance Ledger &
+Both make log = source of truth; fork/resume/replay from it &
+Session log is durable facts. Ledger is source-bound facts: every span carries source $\in\{$memory\_lookup, model\_prior, monitor\_override, external-tool$\}$ + ref. Cordis logs \emph{that} something happened; we log \emph{where it came from} so \texttt{attribution\_audit} can check claims. No coverage rule, no audit. \\[6pt]
+\texttt{core/system-prompt} (prompt-section + tool-schema assembly) &
+L7 Constitution + L2 State Validation &
+Both assemble prompt &
+Cordis assembles sections. L7 decides what claims are \emph{allowed} and L2 pre-filters affordances before assembly. System-prompt is permissive; constitution is normative. \\[6pt]
+\texttt{core/tools} (scoped registry, guarded pre/post-execute pipeline) &
+L3 Specialist Modules + L2 affordance pre-filter &
+Both have tool registry &
+Cordis tools are capabilities (filesystem, shell, sandbox). L3 organs are cognitive modules forced by selection theorems (Nayebi Cor.~3--5): regime-trackers (Affect), belief-memory, world-model. Cordis lets you omit them; theorems prove you cannot under mixed tasks. \\[6pt]
+\texttt{core/agent} + \texttt{core/agent-loop} (turn = model request + tools) &
+L4 Global Workspace + L5 Metacognition &
+Both have agent loop &
+Cordis loop is driver + events (\texttt{agent/pre-step}, \texttt{agent/request}, \texttt{llm/stream}, \texttt{tools/*}). Ours is competition + metacognition: specialists bid, winner broadcasts, then $\gamma$-gate may steer. Cordis has \texttt{agent/pre-step} interception; we measure $\gamma=$ changed/diagnosed plus compliance\_guard ($\gamma=0$ permanently) as negative control proving inert monitoring. \\[6pt]
+\texttt{llm/llm} (message/stream vocabulary + adapter seam \texttt{ctx.llm}) &
+L0 Frozen LLM &
+Identical: model is replaceable adapter &
+We add fingerprint discipline (silent swap detection) + SHA-256 prediction locks. Cordis adapters are swappable; ours are auditable. \\[6pt]
+Events: \texttt{session/event} (durable) vs \texttt{agent/*} (live) &
+Same split + \texttt{monitor/*}, \texttt{consolidation/*} &
+Both separate durable vs live &
+Cordis events are extension points. Ours are also measurement points: every \texttt{agent/*} carries $\gamma$ ledger, every provenance event carries source spans. \\[6pt]
+Profiles/bundles (\texttt{dsh-base} + \texttt{cordis.patch.yml}) &
+Selection rule (BUILD\_PLAN): every module is swappable but only retained under measured contribution &
+Both make everything patchable &
+Cordis: everything is a plugin, all optional. We: everything is a plugin, but five invariants are mandatory (selection theorems). You may swap \emph{how} Affect is implemented, not \emph{whether} it exists. \\[6pt]
+Session log $\to$ derived messages, fork, transcripts &
+Consolidator + CounterfactualReplay (Light $\to$ REM $\to$ Counterfactual $\to$ Deep) &
+Cordis log is replayable &
+Cordis has no offline consolidation, no REM ablation, no counterfactual replay where world-model contains self-model and regret calibrates policy. \\[6pt]
+--- &
+L6 Narrative Self (CAS-revisioned persona, cause-signed, \texttt{verbatim\_reinject()}) &
+\multicolumn{2}{p{6.6cm}}{Missing in Cordis. No persona as maintained state; Choi $>$30\% drift in 12 turns applies. Self is revisioned story, re-injected every turn or it drifts.} \\[6pt]
+--- &
+L2/L3 EmbodiedState / AffectState + \texttt{affordance\_space()} &
+\multicolumn{2}{p{6.6cm}}{Missing/stubbed. No energy (floor 0.15), fatigue, valence/arousal EMA [0.5,2.0]. Cordis considers all tools always; we remove gated strategies from existence pre-consciously.} \\[6pt]
+--- &
+Dissolution boundary (IrreversibleDamage + DissolutionError) &
+\multicolumn{2}{p{6.6cm}}{Missing entirely. Cordis guarantees effects unwind on unload (reversibility). Dissolution intentionally breaks it: some effects never unwind (energy ceiling only down, skill deletion permanent). Allostatic gap (Seth).} \\
+\bottomrule
+\end{tabular}
+\caption{Cordis $\to$ MindHarness mapping. Cordis is the loom (reversible plugins, durable log, turn/step model, profile composition); MindHarness is one weave that is opinionated about what must be woven. Last three rows are gaps Cordis has not yet closed for a witnessed, embodied, mortal agent.}
+\label{tab:cordis}
+\end{table}
+
+\noindent\textbf{One-line verdict:} Cordis provides the perfect loom for a dynamic
+reflexive harness---reversible plugins, durable session log, turn/step model,
+live interception, profile composition. MindHarness is one specific weave that
+is opinionated about what must be woven: a witness that binds source, a body
+that gates affordances, a parliament that competes for broadcast, a
+metacognition measured by whether it steers ($\gamma$), a narrative self that is
+maintained not stored, a consolidation cycle that simulates untaken branches
+through a self-containing world model, and a dissolution boundary where some
+mistakes cannot be undone. To make Cordis ``like human,'' mount those six as
+plugins beside Cordis's core---do not replace Cordis, extend it. Every row in
+\texttt{dsh --dump-config} that Cordis makes patchable is a place to insert a
+witness-checked, cause-signed, $\gamma$-measured, irreversibility-aware plugin.
+
 \section*{Data and Code Availability}
 All code, experiment scripts, prediction locks, manifests, partial
 results, and correction history are available at
