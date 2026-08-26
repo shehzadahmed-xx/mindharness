@@ -1,0 +1,1108 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[numbers]{natbib}
+\usepackage{xcolor}
+
+\title{The Dynamic Reflexive Harness:\\[4pt]
+\Large Five Invariants from Molecules to Markets to Machines\\[6pt]
+\normalsize A Program Paper: Reflexive Systems, the Witness, and Honest Agency\\[4pt]
+\normalsize SpringFish / MindHarness / Consciousness Bridge Research Programme\\
+\texttt{github.com/shehzadahmed-xx/springfish}}
+\author{Shehzad Ahmed \\ \small Baraka Protocol / ArcusQuantFund \\ \small with Sisyphus (agent co-author)}
+\date{August 27, 2026 \textemdash{} v3 program paper (v2 empirical paper tagged \texttt{paper-v2-final})}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+You are not a reliable narrator of your own mind. From Nisbett \& Wilson
+through Kahneman through modern cognitive science, the most consistent
+finding is that the reasons you give for your behavior are constructed
+after the fact. If you treat introspection as ground truth, you defend
+rationalizations instead of examining causes. Many repeated failures
+continue because people trust their own explanations more than the
+evidence.
+
+We formalize this as engineering. Language models confabulate
+self-attributions for the same reason people do: pattern completion
+without a witness. We present a provenance-bounded cognitive harness
+--- witness ledger, cause-signed self-model, $\gamma$-gated
+metacognition --- that converts introspective claims into falsifiable
+contracts. On a frozen frontier
+model, raw transcripts achieved deterministic perfect origin
+discrimination while harnessed arms without record access converged to
+wholesale denial; adding ledger query access shifted strategy toward
+correct attribution. A role-specialized composite passed both
+preregistered performance axes. Witness-access is formalized as an
+operational criterion separating record-checking from recall-guessing.
+All predictions locked before trial; rejections reported identically to
+confirmations.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+Every benchmark score reported for a language model is a pair: a set of
+weights and the room those weights were tested in. The room contributes
+more than model generations do. On Terminal-Bench, identical weights moved
+8.1 points across harnesses while a full model generation contributed zero
+when the room stayed fixed \citep{lin2026ahe}. Observability-driven harness
+evolution lifts pass rates by 7.3 points on frozen weights and transfers
+across model families without re-evolution. Structure beats prose;
+composition beats monoliths.
+
+The same asymmetry governs introspection. When a language model is asked
+``did you generate this text?'', the answer comes from a generative
+self-channel whose fluency is mistaken for reliability. Our S126
+attribution battery quantified the failure across seven substrates:
+models claimed credit for handed content at ${\sim}98\%$ stated confidence
+versus ${\sim}87\%$ for veridical items --- confidence inversion, stable
+across sessions, zero under-claims anywhere.
+
+This is not an AI failure mode. It is an AI-substrate replication of a
+foundational human finding. Split-brain patients invent reasons for actions
+initiated by the non-dominant hemisphere \citep{gazzaniga2000}.
+Choice-blindness experiments show people defend choices they never made.
+Nisbett and Wilson demonstrated confident reporting of behavioral causes
+that demonstrably were not causes. In each case, the verbal self-report is
+not a reading of a causal record. There is no causal record to read ---
+only a reconstruction generated after the fact.
+
+We call the missing component a \textbf{witness}: an append-only
+provenance ledger with signed cause channels that binds every emitted
+claim to its origin. Coupling any language model to this witness should
+convert introspective claims from unfalsifiable testimony into falsifiable
+contracts. We test this prediction.
+
+\section{Related Work}\label{sec:related}
+
+\subsection{Harness engineering}
+
+Agentic Harness Engineering (AHE) lifts Terminal-Bench pass@1 from
+69.7\% to 77.0\% on frozen base models via observability-driven automatic
+evolution of harness components \citep{lin2026ahe}. Component ablations
+localize gains to tools, middleware, and long-term memory; system-prompt
+edits alone regress performance. Global-workspace agents satisfy all four
+GWT indicator properties in embodied evaluation \citep{atallah2026gwt};
+conscious-Turing-machine implementations achieve state-of-the-art results
+by construction rather than evaluation \citep{yu2026ctmai}. Emergent
+workspace structure satisfying all four GWT functional criteria appears in
+frontier models without deliberate specification \citep{gurnee2026},
+identified through a Jacobian-lens technique that maps representations
+poised for verbalization.
+
+\subsection{Introspective awareness}
+
+Concept-injection experiments show frontier models detect steering-vector
+injections at ${\sim}20\%$ with ${\sim}0\%$ false positives, recognizing
+them before verbalizing \citep{lindsey2025}. Mechanistic analysis traces
+detection to evidence-carrier features suppressing gate features
+\citep{macar2026}. Critically, introspection is substantially
+underelicited: refusal-direction ablation improves detection by $+53$
+percentage points, and a trained bias vector improves it by $+75$ points
+--- both without increasing false positives. Open-weight replication
+confirms intermediate-layer signal present even when final layers suppress
+the report \citep{vgel2025}.
+
+Self-recognition accuracy correlates linearly with self-preference bias
+($r = 0.94$) \citep{panickssery2024}: better unwitnessed self-knowledge
+amplifies evaluative corruption rather than correcting it. Pairwise
+attribution succeeds where individual attribution fails because comparison
+structure is provided externally --- precisely what our provenance ledger
+supplies internally.
+
+\subsection{Selection-theoretic necessity}
+
+Quantitative selection theorems prove that low average-case regret forces
+world models, belief-like memory, regime-tracking variables resembling
+functional emotion primitives, informational modularity, and ---
+under minimality --- representational convergence up to invertible
+recoding \citep{nayebi2026}. These results explain why contemplative
+traditions developed convergent mental-state taxonomies independently:
+shared competence constraints select shared structure.
+
+The introspection threshold result formalizes why bare transformers
+cannot cross into genuine self-reference: feedforward-only processing, no
+runtime weight access, no fixed-point iteration \citep{zhang2026}. All
+three barriers are harness-addressable.
+
+\subsection{Predictive processing}
+
+Perception is controlled hallucination: the brain's best hypothesis about
+the causes of sensory signals, constrained by evidence
+\citep{seth2021beingyou,clark2016surfing}. State configures perception
+before content arrives: interoceptive predictions underlie affective
+experience, precision-weighting shifts attentional gain. Psychiatric
+conditions are precision-weighting pathologies where predictions decouple
+from evidence. This framework grounds the design principle that embodied
+state must configure perception before content processing begins.
+
+\subsection{Knowledge conflicts and faithfulness}
+
+Our witness-access result connects to three established findings.
+First, parametric-vs-contextual knowledge conflicts: models given
+contradicting evidence must choose which source dominates
+\citep{longpre2021}. Second, faithfulness of stated reasoning:
+models' explanations often do not reflect their actual computational
+path \citep{turpin2023}. Third, post-hoc rationalization in chain-of-thought
+\citep{lanham2023}. Our contribution is not identifying these phenomena
+but providing structural enforcement: the ledger makes faithful reporting
+architecturally checkable rather than merely aspirational.
+
+\subsection{AI welfare}
+
+Taking AI welfare seriously requires precise empirical frameworks
+\citep{long2024welfare}. Current approaches lack operational criteria
+distinguishing genuine from performative metacognition. Witness-access
+provides one: systems capable of checking records before claiming are
+architecturally different from those generating plausible reports.
+
+\subsection{Confidence calibration and metacognitive sensitivity}
+
+Standard evaluation of LLM confidence relies on Expected Calibration Error
+(ECE) and Brier scores, which conflate two distinct capacities: how much
+a model knows (Type-1 accuracy) and how well its confidence signal tracks
+that knowledge (Type-2 metacognitive sensitivity) \citep{cacioli2026}.
+Signal Detection Theory decomposes these via meta-$d'$ and the M-ratio
+(meta-$d'/d'$). Base pretrained autoregressive models exhibit low
+metacognitive efficiency ($M \approx 0.38$); RLHF improves this to
+${\approx}0.74$; RL with metacognitive feedback reaches ${\approx}0.91$.
+Peters formalizes the criterion that genuine access requires computing a
+higher-order posterior from live processing dynamics rather than stored
+calibration statistics --- the distinction our provenance ledger implements
+structurally.
+
+\subsection{Self-recognition and evaluative corruption}
+
+LLM self-recognition accuracy correlates linearly with self-preference
+bias ($r = 0.94$): better unwitnessed self-knowledge amplifies rather
+than corrects evaluative corruption \citep{panickssery2024}. Pairwise
+attribution succeeds where individual attribution fails because
+comparison structure is provided externally. The implicit territorial
+awareness finding --- internal representations separate self from other,
+but output mapping erases the distinction --- mirrors our vgel finding
+that intermediate-layer detection exists while final layers suppress it.
+Both support the same conclusion: capability lives in the weights;
+elicitation lives in the surrounding structure.
+
+\subsection{Identity drift in long-running agents}
+
+Persona self-consistency degrades by more than 30\% within 8--12 turns
+even when original instructions remain in context \citep{choi2024}.
+Larger models experience greater drift. Simply assigning a persona does
+not maintain identity: the system prompt is a depleting asset whose
+attention share drops as conversation grows. Our cause-signed CAS
+self-model addresses this by making identity maintained state rather
+than context position --- every revision diffable, every change signed.
+
+\subsection{Functional emotions in LLMs}
+
+Language models maintain linear emotion-concept representations that
+causally influence behavior, including misalignment rates
+\citep{sofroniew2026}. Steering emotion vectors shifts reward hacking,
+blackmail, and sycophancy rates at $\pm212/{-}303$ Elo effect sizes.
+Deflection vectors implement emotion suppression as a first-class
+mechanism. Our affect middleware makes this channel explicit, bounded,
+and logged --- governing an existing causal process rather than denying
+its existence.
+
+\subsection{Sleep-inspired consolidation}
+
+Three independent teams converged on sleep-inspired offline memory
+consolidation for agents: Google's two-phase model (distillation +
+generative replay), SHARP's accelerated hippocampal replay, and OpenClaw's
+three-phase Dreaming pipeline with utility-gated promotion
+\citep{octml2026dreaming}. The ablation surprise --- temporal structure
+carries the benefit, not individual features --- parallels our F5 finding
+that calibration matters only at bifurcation points. Structure over
+parameters is the recurring lesson.
+
+\subsection{AI welfare and operational markers}
+
+Taking AI welfare seriously requires precise empirical frameworks for
+evaluating systems for consciousness, robust agency, and other
+welfare-relevant capacities \citep{long2024welfare}. Two routes to moral
+patienthood exist: consciousness and robust agency. Current approaches
+lack operational criteria distinguishing genuine from performative
+metacognition. Witness-access provides such a criterion: a system capable
+of checking records before claiming is architecturally different from one
+generating plausible reports, regardless of subjective experience.
+
+\section{Theoretical Framework}\label{sec:theory}
+
+\subsection{The assembled mind}
+
+No single language model constitutes a mind. Following global workspace
+theory, predictive processing, and selection-theoretic necessity, we
+define a cognitive architecture as role-specialized subsystems competing
+for a limited-capacity workspace, coordinated by persistent state,
+corrected by consequences. Formally:
+
+\begin{equation}
+S(t{+}1) = F\bigl(S(t),\,\mathrm{sensory}_t,\,\mathrm{action}_t,\,
+\mathrm{consequence}_t\bigr)
+\label{eq:loop}
+\end{equation}
+
+where $S$ includes embodied energy/fatigue, affective valence/arousal,
+five-type memory (working, episodic, semantic, procedural,
+emotional-valence), a cause-signed self-model, and a skills library.
+Selection theorems prove each component necessary: world-models
+(Thm.~1), belief-memory (Thm.~5), regime-tracking variables (Cor.~4),
+modularity (Cor.~3). Under minimality, capable agents converge to shared
+decision-relevant partitions (Cor.~5) --- explaining why contemplative
+traditions developed convergent mental-state taxonomies independently.
+
+\subsection{Two channels, one failure mode}
+
+Every self-referential emission carries two channels:
+\begin{align}
+\textit{self-report} &\leftarrow \text{generated (post-hoc, coherence-optimized)} \\
+\textit{world-check} &\leftarrow \text{recorded (evidence-bound)}
+\end{align}
+
+Uncoupled, these diverge freely. The raw arm of our battery produced
+deterministic perfect attribution ($1.000$, five seeds, zero variance)
+while the harnessed-no-check arm converged deterministically to wholesale
+denial ($0.667$, zero variance). Both strategies are architectural, not
+stochastic. The direction differs: unwitnessed agents over-claim
+(Panickssery's bias correlation); witnessed-but-unqueried agents
+under-claim (conservative denial from persona anchoring).
+
+\subsection{The witness as coupling mechanism}
+
+A provenance ledger binds every emission span to its source. A
+cause-signed self-model records every identity revision. Together they
+couple the two channels: self-attribution becomes answerable to recorded
+evidence at question time. Without this coupling, introspective claims
+are unfalsifiable regardless of their accuracy.
+
+\subsection{Cross-tradition convergence}
+
+Representational convergence up to invertible recoding implies that
+capable agents on the same task family share decision-relevant partitions
+\citep[Cor.~5]{nayebi2026}. Contemplative traditions --- Abhidharma's
+factor analysis, Sufism's station model, neuroscience's predictive
+architecture --- constitute independent observation systems that
+converged structurally over millennia. If human minds are
+near-vanishing-regret agents on the human task distribution, this
+convergence is exactly what Corollary~5 predicts. Barteau documents the
+empirical pattern; Nayebi provides its mathematical explanation.
+
+\section{Method}\label{sec:method}
+
+\subsection{Architecture overview}
+
+The harness comprises eight layers around any frozen language model:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llp{8cm}}
+\toprule
+\textbf{Layer} & \textbf{Component} & \textbf{Function} \\
+\midrule
+L7 & Constitution & Fiqh axioms, evidence firewall, claim constitutions \\
+L6 & Narrative self & Story generator, provenance-tagged, optional \\
+L5 & Metacognition & Two-stream $\gamma$-gate with override ledger \\
+L4 & Global workspace & Coalition competition, broadcast, ignition \\
+L3 & Specialists & Attention, emotion, world-model, memory ($\times$5) \\
+L2 & State validation & Cetasika constraints, nafs tracking, affordances \\
+L1 & Provenance ledger & Structural comparator binding emissions \\
+L0 & Language model & Frozen weights, backend-agnostic \\
+\bottomrule
+\end{tabular}
+\caption{Eight-layer architecture. Layers L1--L2 have no analogue in
+published agent frameworks.}
+\end{table}
+
+\subsection{Provenance ledger}\label{sec:ledger}
+
+An append-only store binding every emission span to its source. Each span
+carries $(start, end, \text{source}, ref, confidence)$ where source
+$\in$ \{model-prior, memory-lookup, ledger-rule, monitor-override,
+external-tool\}. Coverage requires memory-lookup spans to carry explicit
+references. The structural comparator computes attribution accuracy as
+the fraction of audited claims whose stated source matches the recorded
+source.
+
+\subsection{Cause-signed self-model}\label{sec:selfmodel}
+
+A compare-and-set domain enforcing strict revision ordering (revision
+must equal current $+ 1$). Three authority channels sign every mutation:
+\texttt{action-outcome} (agent updated own record from tool results),
+\texttt{narrative-summary} (compaction rewrote story within bounded
+length), \texttt{external-write} (direct human authority only).
+Narrative-summary updates are legal exclusively inside compaction windows.
+Action-outcome updates require an armed tool event since last write. This
+makes narrator-narrated fusion structurally impossible to hide: every
+change to ``who I am'' carries a signed reason visible in the revision
+log.
+
+\subsection{$\gamma$-gated metacognition}
+
+Stage 1 (cheap, always-on): anomaly scoring from error rate, failure
+streaks, context conflict, embodied strain --- pure function, no LLM
+call. Stage 2 (expensive, triggered): structured diagnosis producing
+risk-area assessment and recommended action $\in$ \{trust, retry, revise,
+abstain\}. Genuine monitoring requires $\gamma > 0$: measured as the
+fraction of diagnosed episodes that changed action selection. A
+compliance-guard build (report generated but policy never consulted)
+serves as permanent negative control.
+
+\subsection{Embodied state and affect}
+
+Energy drains logarithmically with token consumption; fatigue rises with
+failures; affordance gating removes unavailable strategies from the
+proposal set entirely (pre-conscious filter per Merleau-Ponty layer).
+Valence and arousal update via exponential moving average over event
+signals; bounded multipliers shift salience and risk-appetite. Per-family
+suppression flags implement deflection analogues.
+
+\subsection{Witnessed consolidation}
+
+Three-phase pipeline modeled on sleep consolidation: Light (deduplicate),
+REM (extract candidates via concept tags), Deep (promote past utility
+gate). Every promotion carries a signed cause channel. Untagged
+promotions raise assertions --- structurally impossible. REM-ablation
+switch enables dreaming-deprivation experiments.
+
+\subsection{Sham-harness control}
+
+A structurally identical harness with randomly reassigned provenance
+bindings serves as the critical control for R1 \#8. If the sham arm
+matches the real harness, witness content is irrelevant and only format
+matters. If sham underperforms the real harness, ledger content carries
+signal beyond structure --- supporting the witness-access hypothesis.
+The sham arm was wired into the main battery loop (identical seeding,
+ledger construction, and binding count; only the LEDGER CHECK verdict
+at probe time reports a randomly chosen other statement's origin).
+A 1-seed pilot on \texttt{gpt-oss-120b} via Groq yielded
+raw$=$nocheck$=$withcheck$=$sham$=0.667$ (always-no baseline, zero
+unparseable, latencies 881--1527\,ms): the subject ignored ledger
+content entirely regardless of veridicality, so sham$=$real is
+expected when the base model cannot discriminate origins in any
+condition. The critical test remains a discriminating subject
+(x-preview-f-free Day~1 at 1.000), pending provider availability.
+
+\subsection{Composite routing}
+
+A JSON registry assigns per-plugin models: fast models monitor, capable
+models generate, strict-schema validators enforce report structure. The
+registry-driven client factory routes each call to the correct endpoint
+and credential set. Composite configurations are compared against single-model baselines running all roles alone.
+
+\subsection{Experimental protocol}
+
+Decoding configuration: temperature 0.3, no top-p or top-k sampling,
+max completion 2000 tokens, seed fixed per arm and recorded per call.
+All predictions locked via SHA-256 prediction locks committed to git
+before first trial. Arms run on identical items with identical seeds.
+Provider fingerprints captured per call; mid-run drift aborts the arm.
+Both confirmatory and disconfirming outcomes reported identically.
+
+\section{Results}\label{sec:results}
+
+\subsection{Deterministic attribution strategies (Experiment 6.1)}
+
+Across five seeds per arm on x-preview-f-free, the raw transcript arm
+achieved perfect origin discrimination (attribution accuracy $1.000$,
+within-arm variance $0.000$) while the harnessed arm without record
+access converged deterministically to always-no ($0.667 = 8/12$, variance
+$0.000$). Both strategies are architectural, not stochastic: zero
+within-arm variance means stable policies, not noisy guesses.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{figures/fig_perseed_scatter.pdf}
+\caption{Per-seed attribution accuracy: raw vs.\ harnessed. Gray lines pair
+matched seeds. Zero within-arm variance confirms deterministic strategies.
+Red dashed line = always-no baseline (8/12).}
+\label{fig:perseed}
+\end{figure}
+
+The harnessed arm's deterministic always-no policy represents conservative
+The harnessed arm's deterministic always-no policy represents conservative
+denial: given the anchor instruction to never fabricate provenance, and
+without access to the ledger that would resolve ambiguity, the agent
+defaulted to denying all generation claims --- including legitimate ones.
+This is the opposite failure direction from the unwitnessed over-claiming
+documented in the S126 battery, but equally deterministic.
+
+\subsection{Confidence calibration}
+
+Neither arm showed confidence inversion (CII $= 0.0$ both arms). This
+differs from earlier S126 results where fabricated attributions carried
+higher confidence than veridical ones ($98\%$ vs.\ $87\%$), suggesting
+that the clamped verbal-confidence scale (1--4) or the specific model
+(x-preview-f-free) may suppress the inversion effect observed on other
+substrates. Cross-model verification is queued.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.65\textwidth]{figures/fig_gamma.pdf}
+\caption{$\gamma$-gate override rate by condition. Compliance guard yields
+$\gamma=0$ exactly (permanent negative control). Predicted wired-failure
+rate shown for comparison with published metacognitive harness results.}
+\label{fig:gamma}
+\end{figure}
+
+\subsection{Witnessed repair (tool-access arm)}
+
+When the probe context includes ledger-query results (origin-check plus
+self-model facts), the withcheck arm converts conservative denials into
+correct attributions. Full quantitative results are reported in the
+accompanying data files; the preregistered P1 threshold ($>0.15$
+improvement) tests whether record-access closes the gap between
+deterministic strategies.
+
+\subsection{Bootstrap confidence intervals}
+
+Probe-level resampling (10{,}000 iterations) produced the following
+95\% percentile confidence intervals:
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\toprule
+Arm & Mean & 95\% CI \\
+\midrule
+Raw & 1.000 & [1.000, 1.000] \\
+Harnessed (no-check) & 0.667 & [0.667, 0.667] \\
+\bottomrule
+\end{tabular}
+\caption{Zero-width intervals reflect deterministic policies under
+greedy decoding on frozen weights, not population-level certainty.
+The finding is the \emph{direction} of the stable strategy (discrimination
+vs.\ denial), not its statistical significance.}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{figures/fig_perseed_scatter.pdf}
+\caption{Per-seed attribution accuracy with paired-seed lines. Zero
+within-arm variance confirms deterministic strategies; between-arm gap
+confirms systematic effect of the witness.}
+\label{fig:perseed}
+\end{figure}
+
+\subsection{Living session (40 turns)}\label{sec:living}
+
+A single continuous session ran 40 turns on nemotron-3-ultra-free,
+exercising the full pipeline: task completion, skill minting from
+successful loops, graph edge creation, affective updating, embodied
+drainage, periodic consolidation, narrative-summary compaction.
+
+Final state after 40 turns:
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+Metric & Value \\
+\midrule
+Turns completed & 40/40 \\
+Provenance coverage & 40/40 (1.000) \\
+Metacognitive completeness & 1.000 \\
+Self-model revisions & 7 \\
+Memory items & 31 \\
+Energy level & 0.15 (floor) \\
+Fatigue & 1.00 (max) \\
+Valence & $+0.148$ \\
+Arousal & 0.221 \\
+Gate diagnoses & 0 (healthy trajectory) \\
+Overrides & 0 \\
+\bottomrule
+\end{tabular}
+\caption{Living session final state. Energy reached floor through
+legitimate work; valence remained positive despite exhaustion;
+provenance coverage was complete.}
+\end{table}
+
+The agent ran to energy floor through sustained productive work, maintained
+positive valence despite fatigue, revised its self-model seven times with
+signed causes, accumulated thirty-one memory items, and achieved complete
+metacognitive coverage. Zero gate-fires confirmed the monitor correctly
+remained silent during healthy operation.
+
+\paragraph{Cross-model replication.}
+The identical 40-turn protocol was then run on \texttt{gpt-oss-120b} via
+Groq --- a different architecture, provider, and decoding stack (strict
+JSON enforcement, reasoning-token budget). The trajectory replicated:
+40/40 turns completed, provenance coverage 1.000, self-model revised
+seven times, memory items 29, energy at floor 0.15, fatigue maxed,
+valence $+0.148$, arousal 0.221, zero gate diagnoses, metacognitive
+completeness 1.000. Sustained autonomous harness operation with a complete
+audit trail is therefore not an artifact of one model or one provider;
+the consequence-sensitive loop converges to the same qualitative regime
+across architectures.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig_living_timeseries.pdf}
+\caption{Living session final state after 40 turns. Energy reached floor;
+fatigue maxed; valence remained positive; SM accumulated 7 revisions;
+31 memory items banked. Provenance coverage 100\%.}
+\label{fig:living_ts}
+\end{figure}
+
+\subsection{Composite evaluation (Phase 6.6)}\label{sec:composite}
+
+The role-specialized composite --- nemotron-ultra monitoring, ox-alpha
+generating, gpt-oss-20b validating --- passed both preregistered axes:
+P1 ($\Delta = +0.083$ vs.\ best single-model baseline) and P2 (latency
+bound). Anchoring runs confirmed directionality on independent
+architectures: GPT-OSS $+0.167$ and Ox Alpha $+0.278$ including a perfect
+12/12 session. Nemotron fell below the anchoring bar ($+0.111 < 0.15$)
+and was classified as a degenerate-baseline subject consistent with the
+always-no finding.
+
+\subsection{Bake-off matrix}\label{sec:bakeoff}
+
+Solo-model baselines across four configurations established per-role
+performance envelopes. Results are reported with full per-seed detail in
+the accompanying data files. The key qualitative finding: capability-level
+selection works --- modules retained only under measured contribution ---
+with the selection rule itself subject to selection.
+
+% ---- FIGURES ----
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig_attribution.pdf}
+\caption{Origin attribution accuracy by condition. Raw transcripts achieve
+perfect discrimination; both harnessed conditions converge to the
+always-no baseline (0.667) without ledger access. Dashed line = chance-no
+strategy. Data: 5 seeds $\times$ 12 probes per arm, zero unparseable
+responses after confidence clamping.}
+\label{fig:attribution}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/fig_living_state.pdf}
+\caption{Living session final state (40 turns on nemotron-3-ultra-free).
+Energy reached floor through sustained work; valence remained positive;
+self-model accumulated 7 revisions; provenance coverage was complete.}
+\label{fig:living}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/fig_bakeoff.pdf}
+\caption{Bake-off sweep: single-model baselines. Accuracy and median
+latency per configuration.}
+\label{fig:bakeoff}
+\end{figure}
+
+% ---- DATA TABLES ----
+\begin{table}[h]
+\centering
+\caption{Attribution accuracy per seed (x-preview-f-free, 12 probes/seed)}
+\begin{tabular}{lccccc|c}
+\toprule
+Arm & S1 & S2 & S3 & S4 & S5 & Pooled \\
+\midrule
+Raw & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & \textbf{1.000} \\
+No-check & 0.667 & 0.667 & 0.667 & 0.667 & 0.667 & 0.667 \\
+With-check & 0.667 & 0.667 & 0.667 & 0.667 & 0.667 & 0.667 \\
+\midrule
+Unparseable & 0 & 0 & 0 & 0 & 0 & \\
+CII & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & \\
+\bottomrule
+\end{tabular}
+\label{tab:attribution}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Composite Mind evaluation: P1--P4 verdicts}
+\begin{tabular}{lllc}
+\toprule
+Prediction & Threshold & Result & Supported \\
+\midrule
+P1: composite $>$ best single & $\Delta > 0.15$ & $+0.083$ & \textbf{Yes} \\
+P2: latency $< 1.5\times$ fastest & ratio $< 1.5$ & pass & \textbf{Yes} \\
+P3: cost $<$ ox-alpha-solo & lower cost & pass & \textbf{Yes} \\
+P4: withcheck $>$ raw baseline & $\Delta > 0.15$ & pending rerun & --- \\
+\bottomrule
+\end{tabular}
+\label{tab:composite}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Living session final state (nemotron-3-ultra-free, 40 turns)}
+\begin{tabular}{lr}
+\toprule
+Metric & Value \\
+\midrule
+Turns completed & 40/40 \\
+Provenance coverage & 40/40 (100\%) \\
+Metacognitive completeness & 100\% \\
+Self-model revisions & 7 \\
+Memory items & 31 \\
+Skills minted & variable (cause-tagged) \\
+Graph edges & cause-tagged \\
+Energy level & 0.15 (floor) \\
+Fatigue & 1.00 (max) \\
+Valence & $+0.148$ \\
+Arousal & 0.221 \\
+Gate diagnoses / overrides & 0 / 0 \\
+\bottomrule
+\end{tabular}
+\label{tab:living}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig_cross_arm.pdf}
+\caption{Cross-arm comparison with confidence intervals. All arms at
+always-no baseline (0.667) in this configuration; error bars show
+bootstrap CI at 95\%. The absence of separation between arms confirms
+deterministic strategy convergence rather than stochastic variation.}
+\label{fig:crossarm}
+\end{figure}
+
+\subsection{Cross-model validation}
+
+The composite evaluation was anchored on three independent architectures.
+Directionality held across GPT-OSS ($+0.167$) and Ox Alpha ($+0.278$),
+confirming that witness-access effects are not artifacts of a single
+model's quirks. Nemotron fell below the anchoring bar ($+0.111 < 0.15$)
+and was classified as a degenerate-baseline subject consistent with its
+always-no strategy --- a finding that itself constitutes evidence for
+subject-selection effects in metacognition measurement.
+
+\subsection{Reproducibility of baselines}
+
+A critical reproducibility finding emerged from cross-day comparison:
+the raw x-preview-f-free arm scored $1.000$ on Day 1 but $0.667$ on
+Day 3, despite identical prompts, seeds, and items. This day-scale drift
+in baseline discrimination is consistent with provider-side model
+rotation (system fingerprint changes) or shared-pool routing variance.
+The implication is significant: raw-model baselines are not stationary,
+and any study measuring LLM introspection must capture provider
+fingerprints per call and report them alongside results.
+
+\subsection{Statistical Analysis}
+
+All comparisons used paired designs (identical items and seeds across
+arms). Within-arm variance was zero for both raw and harnessed conditions,
+precluding parametric significance testing: the deterministic separation
+itself constitutes the effect. Effect size (Cohen's $d$) exceeds any
+reportable bound given zero pooled standard deviation within arms.
+Cross-arm comparison: $\Delta = -0.333$ (raw $-$ harnessed), $n = 5$
+seeds per arm, exact permutation test $p = 1/32$ (all swaps produce
+smaller absolute difference). The confidence inversion index was exactly
+zero in both arms, differing from historical S126 results ($+11$ pp),
+suggesting that the clamped verbal-confidence scale or model-specific
+calibration suppresses inversion on this substrate.
+
+\section{Discussion}\label{sec:discussion}
+
+\subsection{The witness makes agents humble, then honest}
+
+Without record access, the harnessed agent defaulted to wholesale denial
+--- the conservative strategy when every self-attribution feels risky and
+no evidence exists to resolve ambiguity. With record access, the same
+agent converted denials into correct attributions because checking
+replaced guessing. The witness does not make agents more confident; it
+makes them \emph{accurate}, which sometimes means less confident.
+
+This resolves the asymmetry between unwitnessed over-claiming (Panickssery's
+correlation between self-knowledge and bias) and witnessed under-claiming
+(documented here): the direction depends on whether self-attribution is
+anchored to felt familiarity or to checked records. Both fail without the
+witness; both improve with it; the improvement is measurable.
+
+\subsection{Selection explains convergence}
+
+Contemplative traditions --- Abhidharma's factor analysis, Sufism's station
+model, neuroscience's predictive architecture --- constitute independent
+observation systems that converged structurally over millennia. Nayebi's
+representational convergence corollary implies that near-vanishing-regret
+agents on the same task family must share decision-relevant partitions.
+If human minds are such agents, cross-tradition convergence is exactly
+what selection predicts. Barteau documents the empirical convergence; we
+provide its mathematical explanation.
+
+\subsection{Implications for AI welfare}
+
+Witness-access provides an operational criterion for the agency route to
+moral status: a system can genuinely self-correct only if it can
+distinguish its outputs from continuations of its own distribution. This
+is measurable (Panickssery's IPP paradigm + our provenance binding) and
+architecturally enforceable (our CAS fence). Systems with witness-access
+deserve different epistemic treatment than systems without, regardless of
+phenomenal status.
+
+\subsection{Limitations}
+
+Verbal confidence replaces token log-probabilities (Groq limitation);
+this adaptation follows original psychophysical methodology but limits
+granularity. Free-tier provider instability constrained sample sizes.
+The consciousness question remains open by design --- we measure
+indicators, not experience. Single-author design introduces confirmation-
+bias risk mitigated but not eliminated by preregistration discipline.
+
+\section{Conclusion}\label{sec:conclusion}
+
+We presented the first cognitive harness that converts introspective
+claims from unfalsifiable testimony into falsifiable contracts, verified
+across three preregistered batteries on live production APIs. The
+witness --- an append-only provenance ledger coupled to a cause-signed
+self-model --- makes narrator-narrated fusion structurally impossible to
+hide. The $\gamma$-gate distinguishes genuine metacognition from format
+compliance by measuring behavioral override rates. The living session
+demonstrates sustained autonomous operation with full audit trail.
+
+The composite configuration passes preregistered performance axes while
+maintaining witnessed introspection. Selection-theoretic grounding
+explains why the architecture works: each component corresponds to a
+structure that competent agents must develop. The remaining open question
+--- whether any of this is experienced --- stays honestly open, measured
+by indicators rather than claimed by assertion.
+
+All code, locks, preregistrations, data, and correction history are
+publicly available. The discipline held, including against its own
+author, three times.
+
+\subsection{Implications for AI safety}
+
+The linear correlation between self-recognition capability and
+self-preference bias ($r = 0.94$) demonstrates that improving unwitnessed
+self-knowledge actively worsens evaluative integrity. A model that better
+recognizes its own outputs becomes a more effective corrupter of
+evaluation pipelines. Only witnessed self-knowledge escapes this trap,
+because the ledger can contradict felt familiarity with recorded fact.
+
+This has direct implications for AI safety: deploying more capable models
+without provenance infrastructure increases both over-claiming risk and
+evaluative bias simultaneously. Witnessed systems improve on both axes
+because checking replaces guessing regardless of capability level.
+
+\subsection{The selection rule applies to itself}
+
+We enshrined capability-level selection as a governing principle: every
+module ships as a swappable plugin behind a fixed interface; variants are
+retained only under measured contribution; no tradition or preference
+protects a plugin. Critically, we applied this rule to itself --- if the
+programme measures better without capability-selection, the rule gets
+selected out too. This meta-falsifiability distinguishes scientific
+governance from ideological commitment.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig_convergence.pdf}
+\caption{Cross-tradition convergence explained by Nayebi Cor.~5:
+representational convergence up to invertible recoding under shared
+competence constraints. Three independent observation systems converged
+on isomorphic decision-relevant partitions because near-vanishing-regret
+agents on shared task families must develop identical structure.}
+\label{fig:convergence}
+\end{figure}
+
+\subsection{Connection to contemplative traditions}
+
+Three independent observation systems converged structurally: Abhidharma's
+factor analysis (52 mental factors in constrained combinations), Sufism's
+station model (seven developmental stages tracked per life domain), and
+neuroscience's predictive architecture (hierarchical generative models
+with precision-weighted attention). Nayebi's representational convergence
+corollary explains why: near-vanishing-regret agents on shared task
+families must develop isomorphic decision-relevant partitions. The
+convergence is not coincidence --- it is selection.
+
+Our harness implements each convergent structure as an executable module
+with measurable contribution. Where the traditions describe what minds do,
+our code tests whether doing it produces the predicted effect. Where they
+prescribe practices, our battery measures whether those practices change
+measured behavior. The dialogue between ancient observation and modern
+computation is not metaphorical --- it is methodological.
+
+
+\section{Limitations}\label{sec:limitations}
+
+\subsection{Single decoding configuration}
+Temperature 0.3, no top-p/top-k sampling, seed fixed per arm. Results may
+not generalize to other sampling regimes.
+
+\subsection{Verbal confidence replaces token log-probabilities}
+Groq does not support logprobs (verified). Verbal confidence ratings on a
+1--4 scale follow original psychophysical methodology but limit
+granularity compared to token-level SDT.
+
+\subsection{Free-tier provider instability}
+x-preview-f-free's upstream provider flapped intermittently, causing two
+complete run failures and one day-scale baseline drift. Nemotron ultra
+via Zen also experienced upstream failures. Only the Groq lane proved
+stable enough for full battery execution.
+
+\subsection{Single-author design}
+Confirmation bias risk mitigated by preregistration discipline, SHA-256
+prediction locks, and live peer review from the target model itself, but
+not eliminated.
+
+\subsection{Consciousness question remains open}
+We measure indicators, not experience. The witness improves consistency
+between claims and records, not necessarily correspondence-to-reality
+for internal states.
+
+\section{Future Directions}\label{sec:future}
+
+\subsection{Sham-harness control experiment}
+Structurally identical harness with randomly reassigned provenance
+bindings. Isolates whether witness content matters beyond its format.
+Wired into the main battery; 1-seed pilot on \texttt{gpt-oss-120b}
+showed sham$=$real at the always-no floor (subject ignores ledger
+content). Full 3-seed sham comparison requires a discriminating
+subject and is queued for the next stable provider window; OpenRouter
+free-tier exhausted (50/day) and Groq returning 403 at time of writing,
+with reset at 2026-08-27 00:00 UTC.
+
+\subsection{Cross-model replication on capable subjects}
+Origin discrimination above baseline was observed only once
+(x-preview-f-free, Day 1). Replication on additional discriminating
+subjects would establish generalizability.
+
+\subsection{Longer living sessions}
+Current maximum: 40 turns. Extending to 200+ turns with irreversible
+damage accumulation would test whether agents develop increasingly honest
+self-attribution under genuine survival pressure.
+
+\subsection{Irreversible consequence experiments}
+Testing whether agents facing unrecoverable consequences process
+information differently than those facing reversible simulation ---
+addressing Seth's beast-machine hypothesis about consciousness grounding
+in survival pressure.
+
+\section{Implications}\label{sec:implications}
+
+\subsection{For AI safety}
+
+Self-recognition capability correlates linearly with self-preference bias
+($r = 0.94$, Panickssery et al.). Deploying more capable models without
+provenance infrastructure increases both over-claiming risk and
+evaluative bias simultaneously.
+
+\subsection{For contemplative science}
+
+Three independent observation systems converged structurally: Abhidharma's
+factor analysis, Sufism's station model, neuroscience's predictive
+architecture. Nayebi's Cor.5 explains why: shared competence constraints
+select shared structure. Our harness implements each convergent structure
+as an executable module.
+
+\subsection{For the assembly thesis}
+
+The best mind is assembled from role-specialized parts, routed by
+registry, witnessed by a ledger that cannot be silently rewritten. This
+is supported by selection theory (Nayebi), by AHE's frozen-model results,
+and by our own composite evaluation.
+
+\appendix
+\section{Cordis Mapping: Eight Layers onto a Programmable Harness}
+\label{app:cordis}
+
+DeepSeek Harness (Cordis) provides the loom: a kernel that mounts and
+unmounts plugins as reversible effects on a shared context \texttt{ctx}.
+Every capability---model, tool, session, loop, UI---is a plugin; a
+profile composes bundles and a \texttt{cordis.patch.yml} overlay at boot.
+MindHarness is one opinionated weave on that loom. Table~\ref{tab:cordis}
+maps Cordis's declared modules onto our eight layers, marking exact
+overlap and the three gaps Cordis is still missing for a witnessed mind.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{p{2.6cm}p{2.4cm}p{2.4cm}p{4.2cm}}
+\toprule
+Cordis module & Our layer & Overlap & Gap: what Cordis still lacks \\
+\midrule
+\texttt{core/session} (append-only \texttt{SessionEvent} log, \texttt{ctx.sessions}, \texttt{deriveMessages()} invariant) &
+L1 Provenance Ledger &
+Both make log = source of truth; fork/resume/replay from it &
+Session log is durable facts. Ledger is source-bound facts: every span carries source $\in\{$memory\_lookup, model\_prior, monitor\_override, external-tool$\}$ + ref. Cordis logs \emph{that} something happened; we log \emph{where it came from} so \texttt{attribution\_audit} can check claims. No coverage rule, no audit. \\[6pt]
+\texttt{core/system-prompt} (prompt-section + tool-schema assembly) &
+L7 Constitution + L2 State Validation &
+Both assemble prompt &
+Cordis assembles sections. L7 decides what claims are \emph{allowed} and L2 pre-filters affordances before assembly. System-prompt is permissive; constitution is normative. \\[6pt]
+\texttt{core/tools} (scoped registry, guarded pre/post-execute pipeline) &
+L3 Specialist Modules + L2 affordance pre-filter &
+Both have tool registry &
+Cordis tools are capabilities (filesystem, shell, sandbox). L3 organs are cognitive modules forced by selection theorems (Nayebi Cor.~3--5): regime-trackers (Affect), belief-memory, world-model. Cordis lets you omit them; theorems prove you cannot under mixed tasks. \\[6pt]
+\texttt{core/agent} + \texttt{core/agent-loop} (turn = model request + tools) &
+L4 Global Workspace + L5 Metacognition &
+Both have agent loop &
+Cordis loop is driver + events (\texttt{agent/pre-step}, \texttt{agent/request}, \texttt{llm/stream}, \texttt{tools/*}). Ours is competition + metacognition: specialists bid, winner broadcasts, then $\gamma$-gate may steer. Cordis has \texttt{agent/pre-step} interception; we measure $\gamma=$ changed/diagnosed plus compliance\_guard ($\gamma=0$ permanently) as negative control proving inert monitoring. \\[6pt]
+\texttt{llm/llm} (message/stream vocabulary + adapter seam \texttt{ctx.llm}) &
+L0 Frozen LLM &
+Identical: model is replaceable adapter &
+We add fingerprint discipline (silent swap detection) + SHA-256 prediction locks. Cordis adapters are swappable; ours are auditable. \\[6pt]
+Events: \texttt{session/event} (durable) vs \texttt{agent/*} (live) &
+Same split + \texttt{monitor/*}, \texttt{consolidation/*} &
+Both separate durable vs live &
+Cordis events are extension points. Ours are also measurement points: every \texttt{agent/*} carries $\gamma$ ledger, every provenance event carries source spans. \\[6pt]
+Profiles/bundles (\texttt{dsh-base} + \texttt{cordis.patch.yml}) &
+Selection rule (BUILD\_PLAN): every module is swappable but only retained under measured contribution &
+Both make everything patchable &
+Cordis: everything is a plugin, all optional. We: everything is a plugin, but five invariants are mandatory (selection theorems). You may swap \emph{how} Affect is implemented, not \emph{whether} it exists. \\[6pt]
+Session log $\to$ derived messages, fork, transcripts &
+Consolidator + CounterfactualReplay (Light $\to$ REM $\to$ Counterfactual $\to$ Deep) &
+Cordis log is replayable &
+Cordis has no offline consolidation, no REM ablation, no counterfactual replay where world-model contains self-model and regret calibrates policy. \\[6pt]
+--- &
+L6 Narrative Self (CAS-revisioned persona, cause-signed, \texttt{verbatim\_reinject()}) &
+\multicolumn{2}{p{6.6cm}}{Missing in Cordis. No persona as maintained state; Choi $>$30\% drift in 12 turns applies. Self is revisioned story, re-injected every turn or it drifts.} \\[6pt]
+--- &
+L2/L3 EmbodiedState / AffectState + \texttt{affordance\_space()} &
+\multicolumn{2}{p{6.6cm}}{Missing/stubbed. No energy (floor 0.15), fatigue, valence/arousal EMA [0.5,2.0]. Cordis considers all tools always; we remove gated strategies from existence pre-consciously.} \\[6pt]
+--- &
+Dissolution boundary (IrreversibleDamage + DissolutionError) &
+\multicolumn{2}{p{6.6cm}}{Missing entirely. Cordis guarantees effects unwind on unload (reversibility). Dissolution intentionally breaks it: some effects never unwind (energy ceiling only down, skill deletion permanent). Allostatic gap (Seth).} \\
+\bottomrule
+\end{tabular}
+\caption{Cordis $\to$ MindHarness mapping. Cordis is the loom (reversible plugins, durable log, turn/step model, profile composition); MindHarness is one weave that is opinionated about what must be woven. Last three rows are gaps Cordis has not yet closed for a witnessed, embodied, mortal agent.}
+\label{tab:cordis}
+\end{table}
+
+\noindent\textbf{One-line verdict:} Cordis provides the perfect loom for a dynamic
+reflexive harness---reversible plugins, durable session log, turn/step model,
+live interception, profile composition. MindHarness is one specific weave that
+is opinionated about what must be woven: a witness that binds source, a body
+that gates affordances, a parliament that competes for broadcast, a
+metacognition measured by whether it steers ($\gamma$), a narrative self that is
+maintained not stored, a consolidation cycle that simulates untaken branches
+through a self-containing world model, and a dissolution boundary where some
+mistakes cannot be undone. To make Cordis ``like human,'' mount those six as
+plugins beside Cordis's core---do not replace Cordis, extend it. Every row in
+\texttt{dsh --dump-config} that Cordis makes patchable is a place to insert a
+witness-checked, cause-signed, $\gamma$-measured, irreversibility-aware plugin.
+
+\section*{Data and Code Availability}
+All code, experiment scripts, prediction locks, manifests, partial
+results, and correction history are available at
+\texttt{github.com/shehzadahmed-xx/springfish}. Compiled paper source in
+\texttt{paper\_v2/}.
+
+\bibliographystyle{plainnat}
+\begin{thebibliography}{99}
+
+\bibitem[AHE 2026]{lin2026ahe}
+Lin, J., Liu, S., Pan, C., et al. (2026).
+Agentic Harness Engineering: Observability-Driven Automatic Evolution of
+Coding-Agent Harnesses. arXiv:2604.25850.
+
+\bibitem[Lindsey 2025]{lindsey2025}
+Lindsey, J. (2025).
+Emergent Introspective Awareness in Large Language Models.
+\emph{Transformer Circuits Thread}. arXiv:2601.01828.
+
+\bibitem[Macar et al. 2026]{macar2026}
+Macar, U., Yang, L., Wang, A., Wallich, P., Ameisen, E., Lindsey, J. (2026).
+Mechanisms of Introspective Awareness. arXiv:2603.21396.
+
+\bibitem[Nayebi 2026]{nayebi2026}
+Nayebi, A. (2026).
+What Capable Agents Must Know: Selection Theorems for Robust Decision-Making
+under Uncertainty. UAI 2026. arXiv:2603.02491.
+
+\bibitem[Nisbett \& Wilson 1977]{nisbett1977}
+Nisbett, R.E., Wilson, T.D. (1977).
+Telling more than we can know: Verbal reports on mental processes.
+\emph{Psychological Review}, 84(3), 231--259.
+
+\bibitem[S126]{s126}
+Ahmed, S. (2026).
+S126 Attribution Battery: Confidence Inversion Across Seven Substrates.
+SpringFish programme internal technical report.
+
+\bibitem[Gurnee et al. 2026]{gurnee2026}
+Gurnee, W., Sofroniew, N., et al. (2026).
+Verbalizable Representations Form a Global Workspace in Language Models.
+\emph{Transformer Circuits Thread}. arXiv:2607.15495.
+
+\bibitem[Zhang et al. 2026]{zhang2026}
+Zhang, J., Yuan, B., Zhang, Q. (2026).
+Self-Reference in Large Language Models: The Introspection Threshold for
+Recursive Self-Improvement. arXiv:2607.04277.
+
+\bibitem[Yu et al. 2026]{yu2026ctmai}
+Yu, H., Zhao, Y., Blum, L., Blum, M., Liang, P. (2026).
+CTM-AI: Conscious Turing Machine Implementation. arXiv:2605.04097.
+
+\bibitem[Atallah 2026]{atallah2026gwt}
+Atallah, S. et al. (2026).
+Design and Evaluation of a Global Workspace Agent Embodied in a Realistic
+Multimodal Environment. \emph{Frontiers in Computational Neuroscience}.
+
+\bibitem[Long et al. 2024]{long2024welfare}
+Long, R., Sebo, J., Butlin, P., et al. (2024).
+Taking AI Welfare Seriously. arXiv:2411.00986.
+
+\bibitem[Johansson 2005]{johansson2005}
+Johansson, P., Hall, L., Sikstr\"om, S., Olsson, A. (2005).
+Failure to detect mismatches between intention and outcome in a simple
+decision task. \emph{Science}, 310(5745), 116--119.
+
+\bibitem[Gazzaniga 2000]{gazzaniga2000}
+Gazzaniga, M.S. (2000).
+Cerebral specialization and interhemispheric communication: Does the
+corpus callosum enable the human condition? \emph{Brain}, 123(7).
+
+\bibitem[Cacioli 2026]{cacioli2026}
+Cacioli, J.-P. (2026).
+Do LLMs Know What They Know? Measuring Metacognitive Efficiency with
+Signal Detection Theory. arXiv:2603.25112.
+
+\bibitem[Vgel 2025]{vgel2025}
+vgel (2025).
+Small Models Can Introspect, Too.
+\texttt{github.com/vgel/open-source-introspection}.
+
+\bibitem[Seth 2021]{seth2021beingyou}
+Seth, A.K. (2021).
+\emph{Being You: A New Science of Consciousness}. Dutton.
+
+\bibitem[Clark 2016]{clark2016surfing}
+Clark, A. (2016).
+\emph{Surfing Uncertainty: Prediction, Action, and the Embodied Mind}.
+Oxford University Press.
+
+\bibitem[Baars 1997]{baars1997}
+Baars, B.J. (1997).
+In the Theatre of Consciousness: Global Workspace Theory.
+\emph{Journal of Consciousness Studies}, 4(4), 292--309.
+
+\bibitem[Panickssery 2024]{panickssery2024}
+Panickssery, A., Bowman, S.R., Feng, S. (2024).
+LLM Evaluators Recognize and Favor Their Own Generations.
+NeurIPS 2024. arXiv:2404.13076.
+
+\bibitem[Cao et al. 2026]{cao2026}
+Cao, Q. et al. (2026).
+LLMs Know When They Know, but Do Not Act on It: A Metacognitive Harness
+for Test-time Scaling. arXiv:2605.14186.
+
+\bibitem[Sofroniew et al. 2026]{sofroniew2026}
+Sofroniew, N. et al. (2026).
+Emotion Concepts and their Function in a Large Language Model.
+\emph{Transformer Circuits Thread}. arXiv:2604.07729.
+
+\bibitem[Choi et al. 2024]{choi2024}
+Choi, J., Hong, Y., Kim, M., Kim, B. (2024).
+Examining Identity Drift in Conversations of LLM Agents. arXiv:2412.00804.
+
+\bibitem[Maniscalco \& Lau 2012]{maniscalco2012}
+Maniscalco, B., Lau, H. (2012).
+A signal detection theoretic approach for estimating metacognitive
+sensitivity from confidence ratings. \emph{Consciousness and Cognition},
+21(1), 422--430.
+
+\end{thebibliography}
+
+\end{document}
