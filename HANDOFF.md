@@ -1,7 +1,7 @@
 # MindHarness — Handoff
 
 **Verified:** 2026-08-27 · **HEAD:** `4575e99` · **210 commits** on `master`, **0 unpushed** · **Remote:** `github.com/shehzadahmed-xx/mindharness`
-**Tests:** 78/78 green (offline, no API keys) · **Papers:** v2 19pp · v3 21pp · 5organs 36pp · **Research:** ~3,450 lines
+**Tests:** 78/78 green (offline, no API keys) · **Papers:** v2 21pp · v3 29pp · 5organs 36pp · **Research:** ~3,450 lines
 **Companion:** `~/Desktop/springfish` (SpringFish / Spring-Loaded Door + ESC — separate work, no git)
 
 > Every number above was re-derived from disk on 2026-08-27, not carried over from a previous handoff. See §9 for why that matters.
@@ -80,7 +80,7 @@ counterfactual 6 · integration 7 · irreversibility 4 · phase0 6 · phase1_sel
 | **v3 program** | `paper_v3/` | **21** | 25 | 388K | Full program: five invariants, reflexive dynamics, 8 levels, Cordis App. A + Research Mirror App. B, agency |
 | **5organs theory** | `paper_5organs/` | **36** | 38 | 404K | One loop at every scale, five organs at every level, traditions, universe, falsifiability matrix. **The live paper.** 0 errors, 3 minor overfulls. |
 
-Page counts are from each `main.log` (`Output written on main.pdf (N pages`). **The previous handoff said v3 was "~35pp" — it is 21pp**; that number came from confusing file size with page count.
+Page counts are from `pdfinfo` on the built PDFs, not from `main.log`. **Read them this way, not from the log**: v2's and v3's logs were left behind by an incomplete build and reported 19 and 21 pages for PDFs that are actually 21 and 29. A `main.log` can be older than, or from a different pass than, the PDF beside it.
 
 `paper_5organs/figures_gallery.pdf` — 10-figure gallery, pick by number; 6 TikZ figures are wired into the paper.
 
@@ -187,4 +187,4 @@ Four things that have already cost time. Check them before trusting any status c
 
 ---
 
-*Handoff verified against disk 2026-08-27 · HEAD `4575e99` · 210 commits · 0 unpushed · 78/78 green · 19pp + 21pp + 36pp · ~3,450 research lines · 9 queued (0 running)*
+*Handoff verified against disk 2026-08-27 · HEAD `4575e99` · 210 commits · 0 unpushed · 78/78 green · 21pp + 29pp + 36pp · ~3,450 research lines · 9 queued (0 running)*

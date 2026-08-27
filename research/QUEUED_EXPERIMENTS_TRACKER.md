@@ -56,7 +56,7 @@ cat research/QUEUED_EXPERIMENTS_TRACKER.md                # 2. See the 9 queued,
 
 ---
 
-*Tracker: single source of truth for queued experiments · Verified against disk 2026-08-27 · 9 items (0 running) · MindHarness at `~/Desktop/mindharness` (HEAD `4575e99`, 210 commits, 0 unpushed, 78/78 green) + SpringFish at `~/Desktop/springfish` (86 items, separate, no git) · Papers v2 19pp + v3 21pp + 5organs 36pp · Research ~3,450 lines*
+*Tracker: single source of truth for queued experiments · Verified against disk 2026-08-27 · 9 items (0 running) · MindHarness at `~/Desktop/mindharness` (HEAD `4575e99`, 210 commits, 0 unpushed, 78/78 green) + SpringFish at `~/Desktop/springfish` (86 items, separate, no git) · Papers v2 21pp + v3 29pp + 5organs 36pp · Research ~3,450 lines*
 
 > **Two corrections applied on 2026-08-27** — both claims below came from a handoff written by a failing session (see `HANDOFF.md` §9):
 > 1. Item 5 was listed as running. It is not, and had already been dead for two days.

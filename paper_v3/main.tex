@@ -12,7 +12,7 @@
 \normalsize A Program Paper: Reflexive Systems, the Witness, and Honest Agency\\[4pt]
 \normalsize SpringFish / MindHarness / Consciousness Bridge Research Programme\\
 \texttt{github.com/shehzadahmed-xx/mindharness}}
-\author{Shehzad Ahmed \\ \small Baraka Protocol / ArcusQuantFund \\ \small with Sisyphus (agent co-author)}
+\author{Shehzad Ahmed \\ \small Independent University, Bangladesh}
 \date{August 27, 2026 \textemdash{} v3 program paper (v2 empirical paper tagged \texttt{paper-v2-final})}
 
 \begin{document}
@@ -34,9 +34,11 @@ without a witness. We present a provenance-bounded cognitive harness
 metacognition --- that converts introspective claims into falsifiable
 contracts. On a frozen frontier
 model, raw transcripts achieved deterministic perfect origin
-discrimination while harnessed arms without record access converged to
-wholesale denial; adding ledger query access shifted strategy toward
-correct attribution. A role-specialized composite passed both
+discrimination ($1.000$) while every harnessed arm --- with and without
+ledger query access --- converged to the same wholesale-denial policy
+($0.667$, the always-no baseline). Ledger access did not recover the gap
+on this subject: the harness cost $0.333$ of attribution accuracy and the
+witness did not buy it back. A role-specialized composite passed both
 preregistered performance axes. Witness-access is formalized as an
 operational criterion separating record-checking from recall-guessing.
 All predictions locked before trial; rejections reported identically to
@@ -602,7 +604,6 @@ Red dashed line = always-no baseline (8/12).}
 \end{figure}
 
 The harnessed arm's deterministic always-no policy represents conservative
-The harnessed arm's deterministic always-no policy represents conservative
 denial: given the anchor instruction to never fabricate provenance, and
 without access to the ledger that would resolve ambiguity, the agent
 defaulted to denying all generation claims --- including legitimate ones.
@@ -628,43 +629,52 @@ rate shown for comparison with published metacognitive harness results.}
 \label{fig:gamma}
 \end{figure}
 
-\subsection{Witnessed repair (tool-access arm)}
+\subsection{Witnessed repair (tool-access arm): a null result}
 
 When the probe context includes ledger-query results (origin-check plus
-self-model facts), the withcheck arm converts conservative denials into
-correct attributions. Full quantitative results are reported in the
-accompanying data files; the preregistered P1 threshold ($>0.15$
-improvement) tests whether record-access closes the gap between
-deterministic strategies.
+self-model facts), the withcheck arm did \emph{not} convert conservative
+denials into correct attributions on this subject. It scored $0.667$ on
+all five seeds --- identical to the no-check arm (Table~\ref{tab:attribution})
+--- so the preregistered threshold ($>0.15$ improvement) was not met and
+the witnessed-repair prediction is \textbf{not supported here}. The sham
+arm scored $0.667$ as well. The consistent reading is that
+\texttt{gpt-oss-120b} ignores ledger content entirely: when a subject
+cannot discriminate origins in any condition, neither veridical nor
+shuffled ledgers change its policy, and the witness has nothing to make
+checkable. Whether record-access repairs attribution therefore remains
+open, and is testable only on a discriminating subject (\S\ref{sec:future});
+the one such observation we have (x-preview-f-free, Day~1, $1.000$ raw)
+did not replicate on Day~3.
 
 \subsection{Bootstrap confidence intervals}
 
-Probe-level resampling (10{,}000 iterations) produced the following
-95\% percentile confidence intervals:
+We report two resampling levels because under deterministic decoding they
+answer different questions (\texttt{experiments/bootstrap\_ci.py},
+10{,}000 iterations each). \emph{Seed-level} resampling of the per-seed
+accuracies is zero-width by construction --- every seed returns the same
+value, so the interval measures policy stability, not estimate
+uncertainty. \emph{Probe-level} resampling of the $n=60$ pooled probes is
+the interval that bounds the estimate:
+
 \begin{table}[h]
 \centering
-\begin{tabular}{lcc}
+\begin{tabular}{lccc}
 \toprule
-Arm & Mean & 95\% CI \\
+Arm & Mean & 95\% CI (probe-level) & 95\% CI (seed-level) \\
 \midrule
-Raw & 1.000 & [1.000, 1.000] \\
-Harnessed (no-check) & 0.667 & [0.667, 0.667] \\
+Raw & 1.000 & [1.000, 1.000] & [1.000, 1.000] \\
+Harnessed (no-check) & 0.667 & [0.550, 0.783] & [0.667, 0.667] \\
 \bottomrule
 \end{tabular}
-\caption{Zero-width intervals reflect deterministic policies under
-greedy decoding on frozen weights, not population-level certainty.
-The finding is the \emph{direction} of the stable strategy (discrimination
-vs.\ denial), not its statistical significance.}
+\caption{Probe-level intervals ($n=60$ probes, 5 seeds $\times$ 12) are the
+estimate's uncertainty; seed-level intervals are zero-width by construction
+under deterministic decoding and are reported only as evidence that each arm
+is a stable policy rather than a noisy one. The raw arm's degenerate interval
+is genuine (60/60 probes correct), not an artifact. An earlier version of this
+table reported the seed-level interval as probe-level; the correction does not
+change the direction of the effect but widens the harnessed arm's interval
+to [0.550, 0.783].}
 \end{table}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.75\textwidth]{figures/fig_perseed_scatter.pdf}
-\caption{Per-seed attribution accuracy with paired-seed lines. Zero
-within-arm variance confirms deterministic strategies; between-arm gap
-confirms systematic effect of the witness.}
-\label{fig:perseed}
-\end{figure}
 
 \subsection{Living session (40 turns)}\label{sec:living}
 
@@ -795,12 +805,15 @@ CII & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & \\
 
 \begin{table}[h]
 \centering
-\caption{Composite Mind evaluation: P1--P4 verdicts}
+\caption{Composite Mind evaluation: P1--P4 verdicts against the
+preregistered thresholds. P1's $+0.083$ is below its locked $0.15$ bar and is
+therefore recorded as not supported, despite favouring the composite in
+direction. P4 was never run to completion.}
 \begin{tabular}{lllc}
 \toprule
 Prediction & Threshold & Result & Supported \\
 \midrule
-P1: composite $>$ best single & $\Delta > 0.15$ & $+0.083$ & \textbf{Yes} \\
+P1: composite $>$ best single & $\Delta > 0.15$ & $+0.083$ & \textbf{No} \\
 P2: latency $< 1.5\times$ fastest & ratio $< 1.5$ & pass & \textbf{Yes} \\
 P3: cost $<$ ox-alpha-solo & lower cost & pass & \textbf{Yes} \\
 P4: withcheck $>$ raw baseline & $\Delta > 0.15$ & pending rerun & --- \\
@@ -961,7 +974,7 @@ The unreliable narrator raises a deeper question: if the now is a
 200--500\,ms window stitched after the fact and backdated
 \citep{libet1983,wegner2002}, the self is a pattern performed every
 turn or it drifts $>$30\% in 12 turns, and world models are controlled
-hallucinations constrained by prediction error \citep{seth2021}, where
+hallucinations constrained by prediction error \citep{seth2021beingyou}, where
 does agency lie? Our answer is not in the moment of ``I decided''---that
 moment arrives $\sim$200\,ms after the parliament already voted and the
 action already started (readiness potential at $-350$\,ms, competition
@@ -1040,7 +1053,7 @@ Energy hits 0.15 and nothing dies. This is the deepest gap in both the
 harness and the science it mirrors. Seth's beast-machine theory locates
 consciousness precisely here: organisms whose essential variables must
 stay viable develop experience \emph{because} failure means
-dissolution---ceasing to exist as organized systems \citep{seth2021}.
+dissolution---ceasing to exist as organized systems \citep{seth2021beingyou}.
 Interoceptive inference is not an add-on to cognition but its
 foundation: pleasure, pain, and desire are free-energy gradients that
 annihilate themselves through action. Without stakes, there is no
@@ -1463,7 +1476,6 @@ plugins beside Cordis's core---do not replace Cordis, extend it. Every row in
 \texttt{dsh --dump-config} that Cordis makes patchable is a place to insert a
 witness-checked, cause-signed, $\gamma$-measured, irreversibility-aware plugin.
 
-\appendix
 \section{Research Mirror: Twelve Frontiers That Reflect the Program}
 \label{app:mirror}
 
@@ -1525,7 +1537,7 @@ Energy hits 0.15 and nothing dies is the gap. 200-turn irreversible life is the 
 All code, experiment scripts, prediction locks, manifests, partial
 results, and correction history are available at
 \texttt{github.com/shehzadahmed-xx/mindharness}. Compiled paper sources
-in \texttt{paper\_v2/} (empirical, 19pp, tagged \texttt{paper-v2-final})
+in \texttt{paper\_v2/} (empirical, 21pp, tagged \texttt{paper-v2-final})
 and \texttt{paper\_v3/} (program paper).
 
 \bibliographystyle{plainnat}
@@ -1650,6 +1662,37 @@ Maniscalco, B., Lau, H. (2012).
 A signal detection theoretic approach for estimating metacognitive
 sensitivity from confidence ratings. \emph{Consciousness and Cognition},
 21(1), 422--430.
+
+\bibitem[Longpre et al. 2021]{longpre2021}
+Longpre, S., Perisetla, K., Chen, A., Ramesh, N., DuBois, C., Singh, S. (2021).
+Entity-Based Knowledge Conflicts in Question Answering. EMNLP 2021.
+arXiv:2109.05052.
+
+\bibitem[Turpin et al. 2023]{turpin2023}
+Turpin, M., Michael, J., Perez, E., Bowman, S.R. (2023).
+Language Models Don't Always Say What They Think: Unfaithful Explanations in
+Chain-of-Thought Prompting. NeurIPS 2023. arXiv:2305.04388.
+
+\bibitem[Lanham et al. 2023]{lanham2023}
+Lanham, T., Chen, A., Radhakrishnan, A., et al. (2023).
+Measuring Faithfulness in Chain-of-Thought Reasoning. Anthropic.
+arXiv:2307.13702.
+
+\bibitem[Dreaming 2026]{octml2026dreaming}
+OpenClaw (2026). Three-phase Dreaming pipeline with utility-gated promotion.
+Sleep-inspired offline consolidation for agents.
+\emph{Reference metadata unverified at time of writing --- see
+\texttt{research/CITATION\_AUDIT\_2026-08-26\_VERIFIED.md}.}
+
+\bibitem[Maturana \& Varela 1980]{maturana1980}
+Maturana, H.R., Varela, F.J. (1980).
+\emph{Autopoiesis and Cognition: The Realization of the Living}. Reidel.
+
+\bibitem[Barteau 2025]{barteau2025}
+Barteau, J. (2025). Cross-tradition convergence in contemplative
+phenomenologies.
+\emph{Reference metadata unverified at time of writing --- see
+\texttt{research/CITATION\_AUDIT\_2026-08-26\_VERIFIED.md}.}
 
 \end{thebibliography}
 
