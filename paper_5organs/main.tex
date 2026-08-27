@@ -68,9 +68,9 @@ Any stable pattern in such a world must develop five organs or be exploited (Fig
   \node[draw, circle, fill=loopred!12, minimum size=1.50cm, align=center, font=\scriptsize] (d) at (-126:\r) {\textbf{Damping}\\\scriptsize brake};
   \node[draw, circle, fill=looppurple!12, minimum size=1.50cm, align=center, font=\scriptsize] (o) at (162:\r) {\textbf{Observer}\\\scriptsize $\gamma$ veto};
   \draw[loop edge secondary, black!65] (b) -- (m); \draw[loop edge secondary, black!65] (m) -- (s); \draw[loop edge secondary, black!65] (s) -- (d); \draw[loop edge secondary, black!65] (d) -- (o); \draw[loop edge secondary, black!65] (o) -- (b);
-  \node[font=\scriptsize, fill=white, inner sep=2pt, rounded corners=1pt] at (0,0) {Nayebi Cor.\ 3--5};
+  \node[font=\scriptsize, fill=white, inner sep=2pt, rounded corners=1pt, align=center] at (0,0) {Our mapping of\\Nayebi Cor.\ 3--5};
 \end{tikzpicture}
-\caption{The five organs as a cycle: the warp. Lose one and a task distribution will exploit the gap. Any competent weave must be woven on these five.}
+\caption{Our mapping of Nayebi Cor.\ 3--5 as a cycle: the warp. Lose one and a task distribution will exploit the gap. Any competent weave must be woven on these five. Nayebi proves abstract pressures; the five-organ labeling is our interpretation.}
 \label{fig:fivecycle}
 \end{figure}
 
@@ -910,6 +910,30 @@ Buy BDNF with exercise --- lactate $\to$ BDNF $\to$ mTORC1 & You don't choose wh
 \end{center}
 
 %==============================================================================
+\section{Falsifiability}
+\label{sec:falsifiability}
+%==============================================================================
+
+The five-organ claim is falsifiable by ablation at any scale, and we state the verbatim selection pressures so the mapping can be checked. \emph{Our mapping} of Nayebi Cor.~3--5 to the five organs (boundary, two-speed memory, salience gate, damping, internal observer) is an executable interpretation, not Nayebi's terminology; see Appendix for verbatim Corollaries. If the mapping is wrong, the ablation predicted to fail will not fail, and the paper is wrong in a checkable way.
+
+\begin{center}
+\small
+\begin{tabular}{p{2.2cm}p{3.8cm}p{3.8cm}p{3.8cm}}
+\toprule
+Organ & Synapse ablation & Circuit ablation & Harness ablation \\
+\midrule
+Boundary & Remove cleft $\to$ no Hebb & Lesion perirhinal $\to$ no recognition & Remove ledger $\to$ 98\% on fabrications \\
+Two-speed & Block late LTP $\to$ no consolidation & Lesion hippocampus $\to$ no one-shot & Ablate Light/REM/Deep: each carries work \\
+Salience & Block DA/NE $\to$ no tagging & Blunt affect $\to$ no distinction & Remove AffectState $\to$ saturation \\
+Damping & Block LTD/BCM $\to$ seizure & Block SHY $\to$ saturation & Remove cull\_failed $\to$ hallucination loop \\
+Observer & Block efference copy $\to$ can't tickle & Lesion PFC $\to$ no veto & Set $\gamma=0$ (compliance guard) $\to$ beautiful reports, zero steering \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Each cell is a prediction: ablate this organ at this scale and the pathology in \S\ref{sec:organs} appears. If it does not, the mapping is wrong for that scale, and the paper's claim is falsified at that cell. The harness makes the same test executable: ablate one organ, keep four, measure whether the predicted pathology appears (coverage, $\gamma$, promotion rate, skill survival, dissolution progress). This is why the audit trail matters: without it, falsifiability is assertion; with it, each ablation is a checkable prediction.
+
+%==============================================================================
 \section{What It All Means}
 \label{sec:what-it-all-means}
 %==============================================================================
@@ -943,12 +967,31 @@ The boulder rolls downhill because gravity was always there. We didn't invent th
 \textit{One loop at every scale, five organs at every level, and the only real choice is what you feed the loop and whether the slower watcher can check the record before the next vote. Everything else is that same loop, woven tighter.}
 \end{center}
 
+\appendix
+\section{Cordis Mapping: Eight Layers onto a Programmable Harness}
+\label{app:cordis}
+
+DeepSeek Harness (Cordis) is the loom: a kernel that mounts/unmounts plugins as reversible effects on a shared context. Every capability is a plugin; a profile composes bundles. MindHarness is one opinionated weave: five invariants as mandatory warp, each as a Cordis plugin with a metric, plus the audit trail. Fig.~\ref{fig:fivecycle} is our mapping of Nayebi Cor.~3--5, not Nayebi's figure.
+
+\section{Verbatim Selection Pressures (Nayebi Cor.~3--5)}
+\label{app:nayebi}
+
+We quote the selection pressures verbatim so the mapping can be checked. Nayebi proves abstract pressures; the five-organ labeling (boundary, two-speed memory, salience gate, damping, internal observer) is our executable interpretation:
+
+\textit{Corollary 3 (informational modularity):} Block-structured tasks force block-structured internal representations.
+
+\textit{Corollary 4 (regime-tracking variables):} Under task mixtures, persistent regime-tracking variables resembling functional emotion primitives are forced.
+
+\textit{Corollary 5 (representational convergence):} Under minimality, capable agents on shared tasks converge to shared decision-relevant partitions up to invertible recoding.
+
+If the mapping of these pressures to the five organs is wrong for a scale, the ablation in \S\ref{sec:falsifiability} predicted to fail will not fail, and the paper is wrong in a checkable way. This is the falsifiability we claim, not immunity.
+
 %==============================================================================
 \bibliographystyle{plainnat}
 \begin{thebibliography}{99}
 
 \bibitem[Nayebi 2026]{nayebi2026}
-Nayebi, A. (2026). What Capable Agents Must Know: Selection Theorems for Robust Decision-Making under Uncertainty. UAI 2026. arXiv:2603.02491.
+Nayebi, A. (2026). What Capable Agents Must Know: Selection Theorems for Robust Decision-Making under Uncertainty. UAI 2026. arXiv:2603.02491. Verbatim Cor.~3--5 quoted in Appendix~\ref{app:nayebi}.
 
 \bibitem[Lin et al. 2026]{lin2026ahe}
 Lin, J., et al. (2026). Agentic Harness Engineering. arXiv:2604.25850.
