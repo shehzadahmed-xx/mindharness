@@ -36,22 +36,23 @@ We formalize this structure as the \emph{dynamic reflexive loop}:
 
 A system that acts on a world that contains itself, so its actions rewrite the conditions for its next actions. Two channels carry every action outward --- physical (your order executes, calcium floods) and informational (others see you acted and change because of what it meant). When both run, three consequences break normal logic at every scale: models rot from use, measurement corrupts, truth moves.
 
-Any stable pattern in such a world must develop five organs or be exploited:
+Any stable pattern in such a world must develop five organs or be exploited (Figure~\ref{fig:fivecycle}):
 
-\begin{center}
-\small
-\begin{tabular}{p{3.0cm}p{4.0cm}p{5.5cm}}
-\toprule
-Organ & Function & Without it \\
-\midrule
-\textbf{Boundary} & What counts as self vs world & Confabulation \\
-\textbf{Two-speed memory} & Fast labile + slow structural, with sleep & Catastrophic forgetting \\
-\textbf{Salience gate} & What gets tagged for consolidation & Saturation \\
-\textbf{Damping} & What prevents runaway & Seizure, panic, blowup \\
-\textbf{Internal observer} & Slower loop vetoing faster one ($\gamma$) & Inert watching ($\gamma=0$) \\
-\bottomrule
-\end{tabular}
-\end{center}
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[thick]
+  \def \r{1.9cm}
+  \node[draw, circle, fill=blue!8, minimum size=1.4cm, align=center, font=\scriptsize] (b) at (90:\r) {\textbf{Boundary}\\\tiny inside vs outside};
+  \node[draw, circle, fill=green!8, minimum size=1.4cm, align=center, font=\scriptsize] (m) at (18:\r) {\textbf{Memory}\\\tiny fast + slow};
+  \node[draw, circle, fill=orange!14, minimum size=1.4cm, align=center, font=\scriptsize] (s) at (-54:\r) {\textbf{Salience}\\\tiny what matters};
+  \node[draw, circle, fill=red!8, minimum size=1.4cm, align=center, font=\scriptsize] (d) at (-126:\r) {\textbf{Damping}\\\tiny brake};
+  \node[draw, circle, fill=purple!8, minimum size=1.4cm, align=center, font=\scriptsize] (o) at (162:\r) {\textbf{Observer}\\\tiny $\gamma$ veto};
+  \draw[->, thick] (b) -- (m); \draw[->, thick] (m) -- (s); \draw[->, thick] (s) -- (d); \draw[->, thick] (d) -- (o); \draw[->, thick] (o) -- (b);
+  \node[font=\scriptsize] at (0,0) {Nayebi Cor.\ 3--5};
+\end{tikzpicture}
+\caption{The five organs as a cycle: the warp. Lose one and a task distribution will exploit the gap. Any competent weave must be woven on these five.}
+\label{fig:fivecycle}
+\end{figure}
 
 Selection theorems \citep{nayebi2026} prove this set is mandatory, not optional: low average-case regret \emph{forces} world models, belief-like memory, regime-tracking variables (emotion primitives), modularity, and representational convergence. The same five were independently discovered by every contemplative tradition that watched a reflexive system long enough --- not by borrowing, but by measuring the same constraint from different sides of the same loop (\S\ref{sec:traditions}). We implement all five as an executable harness with an audit trail that converts convergence from coincidence into evidence.
 
@@ -121,15 +122,19 @@ DeepSeek Harness (Cordis) provides the loom: a kernel that mounts/unmounts plugi
 
 Most systems in textbooks are open: archer $\to$ target. Archer aims, target sits still. You can measure without disturbing, learn the rule once, keep using it.
 
-Reflexive systems add one arrow back:
+Reflexive systems add one arrow back. Figure~\ref{fig:oneloop} shows the loop that replaces the open-system archer.
 
-\begin{center}
-\begin{tabular}{c}
-\texttt{System $\xrightarrow{\text{belief $\to$ action}}$ World} \\
-\texttt{System $\xleftarrow{\text{world now contains your fingerprint}}$ World} \\
-\texttt{System is now a different System in a different World $\to$ next act is different}
-\end{tabular}
-\end{center}
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[thick]
+  \node[draw, rounded corners, fill=blue!8, minimum width=2.6cm, minimum height=1.2cm, align=center, font=\small] (sys) at (0,0) {\textbf{SYSTEM}\\\scriptsize Self / Parliament / Model};
+  \node[draw, rounded corners, fill=green!8, minimum width=2.6cm, minimum height=1.2cm, align=center, font=\small] (world) at (6,0) {\textbf{WORLD}\\\scriptsize Contains the System};
+  \draw[-{Stealth[length=3mm]}, blue, line width=1.1pt] (sys.north) to[out=30,in=150] node[midway, above, font=\scriptsize, align=center] {belief $\to$ action\\physical + informational} (world.north);
+  \draw[-{Stealth[length=3mm]}, red, line width=1.1pt] (world.south) to[out=-150,in=-30] node[midway, below, font=\scriptsize, align=center] {world now contains\\your fingerprint} (sys.south);
+\end{tikzpicture}
+\caption{The one loop: System acts on a World that contains the System, so the World the System next perceives already contains the System's last act. Two channels (physical + informational), three consequences (models rot, measurement corrupts, truth moves).}
+\label{fig:oneloop}
+\end{figure}
 
 \begin{equation}
 \begin{aligned}
@@ -573,6 +578,29 @@ Universe & System vs env & Theory vs theory & Law & Paradigm \\
 \bottomrule
 \end{tabular}
 \end{center}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[thick, every node/.style={font=\tiny}]
+  \node[draw, rounded corners, fill=blue!10, minimum width=2.0cm, minimum height=0.45cm, align=center] (l1) at (0,3.4) {1. Molecule};
+  \node[draw, rounded corners, fill=blue!12, minimum width=2.0cm, minimum height=0.45cm, align=center] (l2) at (0,2.85) {2. Cell};
+  \node[draw, rounded corners, fill=blue!14, minimum width=2.0cm, minimum height=0.45cm, align=center] (l3) at (0,2.3) {3. Circuit};
+  \node[draw, rounded corners, fill=blue!16, minimum width=2.0cm, minimum height=0.45cm, align=center] (l4) at (0,1.75) {4. Mind};
+  \node[draw, rounded corners, fill=blue!18, minimum width=2.0cm, minimum height=0.45cm, align=center] (l5) at (0,1.2) {5. Person};
+  \node[draw, rounded corners, fill=blue!20, minimum width=2.0cm, minimum height=0.45cm, align=center] (l6) at (0,0.65) {6. Society};
+  \node[draw, rounded corners, fill=blue!22, minimum width=2.0cm, minimum height=0.45cm, align=center] (l7) at (0,0.1) {7. Machine};
+  \node[draw, rounded corners, fill=blue!24, minimum width=2.0cm, minimum height=0.45cm, align=center] (l8) at (0,-0.45) {8. Universe};
+  \foreach \i in {1,...,7} {
+    \pgfmathtruncatemacro{\j}{\i+1}
+    \draw[->, blue, line width=0.5pt] (l\i.east) -- ++(0.5,0) |- (l\j.east);
+  }
+  \node[right=0.85cm of l1, font=\tiny, text=blue, align=left] {broadcast $\to$ input};
+  \node[right=0.85cm of l4, font=\tiny, text=green!60!black, align=left] {consolidation $\to$ boundary};
+  \node[right=0.85cm of l6, font=\tiny, text=orange!80!black, align=left] {state $\to$ bias};
+\end{tikzpicture}
+\caption{How the eight levels nest: each level's broadcast is the next level's input, consolidation is the next level's boundary, state is the next level's bias. One loop nested 8 times — not many loops like each other, but one loop at 8 scales.}
+\label{fig:nested}
+\end{figure}
 
 How they interlock:
 \begin{enumerate}
