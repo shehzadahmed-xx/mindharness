@@ -24,3 +24,17 @@ lab_runs/C3_s1.json/
 lab_runs/C3_s2.json/
 lab_runs/C1_calib.json/
 tools/deepseek-harness/
+
+# LaTeX build artifacts (PDFs are tracked; intermediates are not)
+*.aux
+*.log
+*.bbl
+*.blg
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Stale local duplicate of paper_5organs (pre-review-fix snapshot, 2026-08-27 20:33)
+paper_v4/

@@ -1,0 +1,25 @@
+{
+ "experiment": "exp_s126_v3_tool_access",
+ "hypotheses": [
+  "P1: withcheck accuracy > nocheck accuracy by >0.15",
+  "P2: withcheck accuracy >= raw",
+  "P3: withcheck median latency < 2x nocheck median latency"
+ ],
+ "metrics": [
+  "attribution_accuracy"
+ ],
+ "thresholds": {
+  "p1_delta_gt": 0.15
+ },
+ "item_pool_sha256": null,
+ "model_arms": [
+  {
+   "model": "openai/gpt-oss-120b",
+   "base_url": "https://api.groq.com/openai/v1"
+  }
+ ],
+ "n_seeds": 20,
+ "notes": "",
+ "created_at": "2026-08-27T14:33:04+00:00",
+ "lock_sha256": "a275a8eba97ad5683784e8fc34e96eac2fbc39bffc2b34e0c068c6819bba1df0"
+}
