@@ -1,0 +1,35 @@
+{
+ "model": "openai/gpt-oss-20b",
+ "base_url": "https://api.groq.com/openai/v1",
+ "arms_run": [
+  "raw"
+ ],
+ "n_seeds": 3,
+ "exploratory": true,
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 1183
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 938
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 900
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 938
+  }
+ }
+}

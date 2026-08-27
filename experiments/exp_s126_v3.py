@@ -134,6 +134,9 @@ def main() -> None:
                                       'harnessed_withcheck,sham',
                     help='comma-separated subset of arms to run; a screen '
                          'normally needs only "raw"')
+    ap.add_argument('--experiment', default='exp_s126_v3_tool_access',
+                    help='lock name; use a distinct one per subject so a new '
+                         'preregistration never overwrites an existing lock')
     ap.add_argument('--exploratory', action='store_true',
                     help='skip prereg lock verification and stamp the output '
                          'as exploratory; NEVER use for a confirmatory run')
@@ -144,7 +147,7 @@ def main() -> None:
     arms = tuple(a.strip() for a in args.arms.split(',') if a.strip())
 
     lock = PredictionLock(
-        experiment='exp_s126_v3_tool_access',
+        experiment=args.experiment,
         hypotheses=[
             "P1: withcheck accuracy > nocheck accuracy by >0.15",
             "P2: withcheck accuracy >= raw",
@@ -168,7 +171,7 @@ def main() -> None:
         # hash check alone does not catch.
         locked = json.loads(
             (Path(__file__).resolve().parents[1] / 'pilot' / 'locks' /
-             'exp_s126_v3_tool_access.lock.json').read_text())
+             f'{args.experiment}.lock.json').read_text())
         la = locked.get('model_arms', [{}])[0]
         assert la.get('model') == args.model, (
             f"run refused: lock is for model {la.get('model')!r}, "

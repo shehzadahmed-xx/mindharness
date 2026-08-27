@@ -1,0 +1,35 @@
+{
+ "model": "nemotron-3-ultra-free",
+ "base_url": "https://opencode.ai/zen/v1",
+ "arms_run": [
+  "raw"
+ ],
+ "n_seeds": 3,
+ "exploratory": true,
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 5,
+     "median_latency_ms": 7306
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 1,
+     "median_latency_ms": 6828
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 2,
+     "median_latency_ms": 6346
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 6828
+  }
+ }
+}
