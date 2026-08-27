@@ -236,11 +236,26 @@ Harness & Episodic (query\_hits) & Semantic ($\geq$2 types) & Light$\to$REM$\to$
 
 \textbf{At the molecule, fully:} NMDA is Hebb's law in protein --- coincidence detector needing glutamate (pre) \emph{and} depolarization (post, Mg$^{2+}$ ejected, plus glycine). Only when pre \emph{and} post fire together does the channel open. High Ca$^{2+}$ spike (big, brief) $\to$ CaMKII Thr286 bistable switch $\to$ AMPA in (LTP). Low Ca$^{2+}$ trickle (small, prolonged) $\to$ calcineurin$\to$PP1 $\to$ AMPA out (LTD). BCM $\theta_m$ slides with history, Oja $\Delta w \propto y(x - yw)$ gives PCA, STDP gives causation. Tag-and-capture: salience decides what gets the proteins. No neutral --- you always myelinate whatever you rehearse. Perineuronal nets as write-protect; chondroitinase reopens critical periods.
 
-\textbf{Sleep:} Day = net potentiation + tagging. Night = SHY global downscaling (multiply all by $<1$, keep relatives, delete noise) + 10--20$\times$ compressed replay (ripples in spindles in slow waves). Adenosine is the receipt. Chronic stress biases toward LTD (hippocampus shrinks, amygdala grows); ketamine reverses via mTORC1 in 24h.
+\textbf{Without it, at each scale:}
 
-\textbf{Traditions:} Abhidharma's sa\~n\~n\=a (fast recognition) vs pa\~n\~n\=a (slow wisdom), plus bhavanga as background keep-alive (\texttt{verbatim\_reinject()} in Pali). Sufism's maq\=am (station, kept) vs \d{h}\=al (state, given and lost). Advaita's five sheaths.
+\begin{center}
+\small
+\begin{tabular}{p{2.6cm}p{6.2cm}}
+\toprule
+Only fast, no slow & New overwrites old --- catastrophic forgetting, no accumulation \\
+Only slow, no fast & Can't capture one-shot episodes --- amnesia for this time \\
+No save (no sleep) & Net potentiation saturates --- everything strong, nothing distinct \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-\textbf{Harness:} \texttt{Consolidator}: \texttt{MemoryItem} with \texttt{query\_hits} + \texttt{concept\_tags} $\to$ \texttt{light\_pass()} $\to$ \texttt{rem\_pass()} (ablatable) $\to$ \texttt{counterfactual\_replay.run()} $\to$ \texttt{deep\_pass()} (utility gate, \texttt{assert item\_cause in CAUSES}). 12/12 tests for two-speed memory alone.
+\textbf{Sleep, fully:} Day = net potentiation + tagging (salience decides which synapses get tagged). Night = two operations: SHY global downscaling \citep{tononi2014} (multiply all synapses by $<1$, keep relative strengths, delete noise --- prevents saturation where every synapse strong and nothing distinct) + 10--20$\times$ compressed replay (hippocampal ripples nested in spindles in slow waves, writing cortex) \citep{tononi2014}. Adenosine is the receipt (caffeine shreds it). Perineuronal nets as write-protect flag --- chondroitinase removes them and critical periods reopen \citep{tononi2014}. Chronic stress biases toward LTD (hippocampus shrinks, amygdala grows, trauma = context lost, affect over-grown); ketamine reverses via glutamate burst $\to$ mTORC1 $\to$ new spines in 24h; psychedelics reopen via BDNF-TrkB. No neutral --- plasticity always on, you always myelinate whatever you rehearse, whether you chose to or not.
+
+\textbf{Traditions:} Abhidharma's sa\~n\~n\=a (fast recognition: ``this is a chair'') vs pa\~n\~n\=a (slow wisdom: what a chair is \emph{for}) \citep{ghazali1106ihya}, plus bhavanga as background keep-alive between active moments --- \texttt{verbatim\_reinject()} in Pali, must be re-injected or the pattern scatters \citep{maturana1980}. Sufism's maq\=am (station, structural, kept: you don't fall back) vs \d{h}\=al (state, episodic, given and lost: visits and leaves) \citep{ibnarabi1238futuhat} --- exactly Light$\to$Deep, no skipping. Advaita's five sheaths (pa\~nca-ko\'sa: food, breath, mind, wisdom, bliss) as two-speed memory at five depths.
+
+\textbf{Harness:} \texttt{Consolidator}: \texttt{MemoryItem} with \texttt{query\_hits} (distinct query types) + \texttt{concept\_tags} + \texttt{human\_endorsed} $\to$ \texttt{light\_pass()} (dedupe near-identical traces, merge signal) $\to$ \texttt{rem\_pass()} (concept extract, ablatable --- dreaming can be deprived) $\to$ \texttt{counterfactual\_replay.run()} (variant$\to$simulate$\to$regret, world model containing self) $\to$ \texttt{deep\_pass()} (utility gate $\geq$2 query types or endorsement, cause-tagged, \texttt{assert item\_cause in CAUSES} --- untagged BLOCKED). 12/12 tests for two-speed memory alone (6 consolidation + 6 counterfactual).
+
+\textbf{What it tells you to do:} Protect sleep like infrastructure. Not rest --- \emph{save}. Day tags, night writes. Without the save, the day's tagging is wasted. And never let a fast loop overwrite a slow one without the gate: $\geq$2 query types or human endorsement --- salience decides what gets the proteins, not recency.
 
 %------------------------------------------------------------------------------
 \subsection{Salience Gate --- What Gets Tagged}
