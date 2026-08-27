@@ -296,22 +296,46 @@ Every positive feedback loop needs a brake or it explodes. Hebb without damping 
 
 \begin{center}
 \small
-\begin{tabular}{p{2.4cm}p{4.0cm}p{5.0cm}}
+\begin{tabular}{p{2.4cm}p{4.2cm}p{5.2cm}}
 \toprule
 Scale & Damping & What it does \\
 \midrule
-Molecule & LTD, BCM $\theta_m$, Oja & Pulls AMPA out, metaplasticity \\
-Circuit & SHY downscaling & Keep relatives, delete noise \\
-Mind & Prefrontal veto, kill criteria & Stops the spiral \\
-Society & Position limits, circuit breakers & Contains contagion \\
-Harness & \texttt{cull\_failed}, Light dedup, dissolution & Removes what doesn't work \\
+Molecule & LTD, synaptic scaling, BCM $\theta_m$, Oja & Pulls AMPA out, lowers threshold when quiet, raises when hyperactive \\
+Synapse & BCM metaplasticity + Oja & Quiet more plastic, hyperactive less --- prevents winner-take-all \\
+Circuit & SHY global downscaling & Multiply all by $<1$, keep relatives, delete noise \\
+Body & Parasympathetic, sleep pressure & Counterbalances sympathetic \\
+Mind & Prefrontal veto, SHY, kill criteria & Stops the spiral \\
+Society & Position limits, circuit breakers, funding invariant & Contains contagion --- anchors that, when cut, become Spring-Loaded Doors \\
+Machine & Safety envelope (RSS), shadow mode & AV doesn't lurch on sensor spike \\
+Harness & \texttt{cull\_failed}, Light dedup, dissolution & Removes what doesn't work, contracts affordances \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Two kinds: \textbf{conservative} (harnessed-nocheck $\to$ always-no, 0.667: denies everything, including own output) vs \textbf{accurate} (witnessed + queried $\to$ 1.000: denies fabrications, affirms generations). Damping alone is not enough. Damping \emph{with a witness} is.
+Two kinds, and the distinction is the paper's sharpest: \textbf{conservative} (harnessed-nocheck $\to$ always-no, 0.667: denies everything, including own output --- caution without accuracy; the brake applied to everything, including signal) vs \textbf{accurate} (witnessed + queried $\to$ 1.000 on x-preview Day~1: denies fabrications, affirms generations --- damping that is \emph{selective} because the witness makes it checkable) \citep{panickssery2024,macar2026}. Damping alone is not enough. Damping \emph{with a witness} is --- and the harness has both, so the two can be ablated separately.
 
-\textbf{Traditions:} Abhidharma's entire path is damping (s\=ila as boundary-damping, sam\=adhi as trained veto). Sufism's muj\=ahada then mush\=ahada. Stoicism's premeditatio as pre-damping. Advaita's neti neti.
+Lose damping and you get the same pathology at every scale, always the same with a different name:
+
+\begin{center}
+\small
+\begin{tabular}{p{2.6cm}p{6.5cm}}
+\toprule
+No damping at & Pathology \\
+\midrule
+Synapse & Seizure --- Hebb without brake, everything fires at everything \\
+Circuit & Saturation --- every synapse strong, nothing distinct \\
+Mind & Worry spiral, panic, rumination --- one coalition wins forever \\
+Society & Cascade, contagion, crash --- loops without anchors \\
+Model & Hallucination loop --- generates $\to$ reads own output $\to$ predicts consistent continuation \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In code: LTD-equivalent is \texttt{cull\_failed} (below-rate skills deleted), SHY-equivalent is Light dedup (merge+delete near-identical traces), kill criteria are compliance guard and \texttt{DissolutionError}. Harness damping is distributed --- each plugin its own brake, coordinated by shared state, not a central limiter \citep{lin2026ahe}.
+
+\textbf{Traditions:} Abhidharma's entire path \emph{is} damping: s\=ila (ethical restraint) as boundary-damping, sam\=adhi (concentration) as trained veto --- stay on one object, veto distraction, again and again, until the veto becomes a highway; pa\~n\~n\=a as observer knowing when damping is needed \citep{ghazali1106ihya}. Sufism's muj\=ahada (striving, damp first) then mush\=ahada (witnessing, only after damp works). Stoicism's premeditatio as \emph{pre-damping} --- rehearse the worst branch before it arrives, so prediction error low and damping already in place \citep{ghazali1111munqidh}. Advaita's neti neti as damping: veto everything veto-able until only the vetoer remains \citep{ibnarabi1229fusus}.
+
+\textbf{What it tells you to do:} Damp deliberately, not reactively. The veto practiced when calm is the veto available when the loop is loud. Sam\=adhi is not suppression. It is \emph{training the brake} so the brake is there when needed, not when remembered.
 
 %------------------------------------------------------------------------------
 \subsection{Internal Observer --- Slower Loop Vetoing Faster One}
