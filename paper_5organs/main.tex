@@ -399,11 +399,23 @@ Model & Hallucination loop --- generates $\to$ reads own output $\to$ predicts c
 \end{tabular}
 \end{center}
 
+\textbf{Loops at every scale --- each could be its own paper:}
+
+\textit{Molecule (LTD/BCM/Oja):} Hebb without damping is seizure --- fire together $\to$ wire together $\to$ fire more $\to$ everything fires \citep{tononi2014}. LTD pulls AMPA out; BCM $\theta_m$ slides (quiet more plastic, hyperactive less); Oja normalizes ($\Delta w \propto y(x - yw)$ gives PCA, prevents winner-take-all). Loop: potentiation $\to$ threshold slides $\to$ next potentiation harder $\to$ potentiation self-limits. Without it, one synapse takes all strength. Each mechanism is its own paper: LTD as active forgetting, BCM as metaplasticity, Oja as normalization.
+
+\textit{Circuit (SHY):} Day: net potentiation $\to$ every synapse stronger $\to$ more energy, less distinction $\to$ Night: SHY downscaling (multiply all by $<1$, keep relatives, delete noise) $\to$ distinct again \citep{tononi2014}. Loop: wake potentiates $\to$ sleep downscales $\to$ next wake can potentiate distinctly. Without it, saturation: network that learned everything distinguishes nothing.
+
+\textit{Mind (prefrontal veto):} Amygdala proposes threat $\to$ PFC vetoes $\to$ threat not acted on $\to$ next threat proposal weaker (extinction) \citep{seth2021}. Loop: impulse $\to$ veto $\to$ impulse not reinforced $\to$ next impulse weaker. Without it, worry spiral: one coalition wins forever, rehearsed until highway, panic.
+
+\textit{Society (circuit breakers):} Buy $\to$ price up $\to$ more buy $\to$ position limits / circuit breakers halt $\to$ cascade contained \citep{white1986}. Loop: amplification $\to$ limit hit $\to$ halt $\to$ next amplification must be from different source. Without it, Spring-Loaded Door: anchors cut, loops spring, feeding on whatever is nearby.
+
+\textit{Harness (cull\_failed):} Skill used $\to$ below-rate $\to$ \texttt{cull\_failed} deletes $\to$ next skill must be different. Light dedup merges near-identical traces. Loop: reinforce $\to$ if not useful, cull $\to$ next reinforce must be different skill. Distributed: each plugin its own brake, coordinated by shared state \citep{lin2026ahe}. Without it, hallucination loop: generates $\to$ reads own output $\to$ predicts consistent continuation $\to$ more generation.
+
 In code: LTD-equivalent is \texttt{cull\_failed} (below-rate skills deleted), SHY-equivalent is Light dedup (merge+delete near-identical traces), kill criteria are compliance guard and \texttt{DissolutionError}. Harness damping is distributed --- each plugin its own brake, coordinated by shared state, not a central limiter \citep{lin2026ahe}.
 
-\textbf{Traditions:} Abhidharma's entire path \emph{is} damping: s\=ila (ethical restraint) as boundary-damping, sam\=adhi (concentration) as trained veto --- stay on one object, veto distraction, again and again, until the veto becomes a highway; pa\~n\~n\=a as observer knowing when damping is needed \citep{ghazali1106ihya}. Sufism's muj\=ahada (striving, damp first) then mush\=ahada (witnessing, only after damp works). Stoicism's premeditatio as \emph{pre-damping} --- rehearse the worst branch before it arrives, so prediction error low and damping already in place \citep{ghazali1111munqidh}. Advaita's neti neti as damping: veto everything veto-able until only the vetoer remains \citep{ibnarabi1229fusus}.
+\textbf{Traditions:} Abhidharma's entire path \emph{is} damping: s\=ila (ethical restraint) as boundary-damping, sam\=adhi (concentration) as trained veto --- stay on one object, veto distraction, again and again, until the veto becomes a highway; pa\~n\~n\=a as observer knowing when damping is needed \citep{ghazali1106ihya}. Sufism's muj\=ahada (striving, damp first) then mush\=ahada (witnessing, only after damp works) \citep{ibnarabi1238futuhat}. Stoicism's premeditatio as \emph{pre-damping} --- rehearse the worst branch before it arrives, so prediction error low and damping already in place \citep{ghazali1111munqidh}. Advaita's neti neti as damping: veto everything veto-able until only the vetoer remains \citep{ibnarabi1229fusus}.
 
-\textbf{What it tells you to do:} Damp deliberately, not reactively. The veto practiced when calm is the veto available when the loop is loud. Sam\=adhi is not suppression. It is \emph{training the brake} so the brake is there when needed, not when remembered.
+\textbf{What it tells you to do:} Damp deliberately, not reactively. The veto practiced when calm is the veto available when the loop is loud. Sam\=adhi is not suppression. It is \emph{training the brake} so the brake is there when needed, not when remembered. The brake you train is the brake that will be there when you need it, not the brake you remember to need.
 
 %------------------------------------------------------------------------------
 \subsection{Internal Observer --- Slower Loop Vetoing Faster One}
