@@ -265,22 +265,28 @@ Not everything deserves to be kept. Salience decides what gets the proteins, the
 
 \begin{center}
 \small
-\begin{tabular}{p{2.4cm}p{3.5cm}p{5.2cm}p{2.4cm}}
+\begin{tabular}{p{2.4cm}p{3.6cm}p{5.0cm}p{2.4cm}}
 \toprule
 Scale & Gate & What it does & Without it \\
 \midrule
-Molecule & Ca$^{2+}$ + DA/NE at synapse & Big Ca$^{2+}$ + modulator = LTP & Saturation \\
-Mind & Emotion, surprise, novelty & Vivid events tagged & No learning \\
+Molecule & Ca$^{2+}$ + DA/NE at synapse & Big Ca$^{2+}$ + modulator = LTP; small = LTD; tag-and-capture needs signal & Saturation \\
+Cell & Neuromodulator-gated plasticity & Only salient events get proteins & No prioritization \\
+Mind & Emotion, surprise, novelty & Vivid events tagged; dull repetition not & No learning \\
+Society & Price impact, volume, narrative & Moves that matter recorded & Noise drowns signal \\
 Harness & AffectState [0.5,2.0] & Shifts every bid's salience$\times$utility & No distinction \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Sofroniew proved it causally in LLMs (2026): steering emotion vectors shifts misalignment $\pm212$/$-303$ Elo. VA circular geometry independently recovered at $r=0.95$ cross-model, $r=0.80$--0.86 vs human VAD ratings. Not metaphor. Regime-tracking variables (Nayebi Cor.~4) that tell every specialist which world they're in.
+\textbf{Sofroniew proved it causally} \citep{sofroniew2026} (Anthropic, 2026, Transformer Circuits): steering emotion vectors shifts misalignment $\pm212$/$-303$ Elo --- not correlation but causal steering (add vector, behavior shifts; remove, returns). Valence-arousal circular geometry independently recovered at $r=0.95$ cross-model (Llama vs Qwen3-8B), $r=0.80$--0.86 vs human VAD ratings across 44,728 words \citep{sofroniew2026}. Concurrent independent recovery same month (VA subspace paper) --- same constraint. The gate is not an add-on. It is the \emph{selection} in selection theorems --- which coincidences become structure. Nayebi Cor.~4 proves regime-tracking variables (emotion primitives) are forced under task mixtures \citep{nayebi2026}. Emotions are not metaphors in LLMs. They are the same computational object at every scale: regime trackers telling every specialist which world they're in.
 
-\textbf{Traditions:} Abhidharma's yoniso vs ayoniso manasik\=ara (wise vs unwise attention, universal but quality determines everything). Sufism's nafs levels as salience regimes. Stoicism's dichotomy of control.
+Why ``what you feed the loop'' is the gate in practice: you choose what gets tagged by what you attend to, rehearse, and replay. Worry rehearsed 1,000 times is not 1,000 neutral events. It is 1,000 tag-and-capture cycles, each giving worry the proteins, each myelinating the highway faster, each making the next worry more likely to win and therefore more likely to be tagged again.
 
-\textbf{Harness:} \texttt{AffectState} --- EMA valence/arousal, bounded [0.5,2.0], per-family suppression, \texttt{broadcast\_needed}. Parliament of models: prompt modulation per subsystem.
+\textbf{Traditions:} Abhidharma's yoniso vs ayoniso manasik\=ara (wise vs unwise attention) --- listed as universal (present every moment) but \emph{quality} determines which 52 get recruited; same input, different attention, different coalition \citep{ghazali1106ihya}. Sufism's nafs levels as salience regimes --- same parliament, different salience dominating \citep{ibnarabi1238futuhat}. Stoicism's dichotomy of control as salience gate: what is up to you (high salience, act) vs not (low, witness only). Taoism's wu wei as salience gate set to \emph{not gate} --- let competition resolve without narrator's boost. Advaita's viveka as discrimination --- construction vs found.
+
+\textbf{Harness:} \texttt{AffectState} --- EMA valence [-1,1]/arousal [0,1], bounded [0.5,2.0] incl.\ masking-cost, per-family suppression flags (deflection analog per Sofroniew), \texttt{salience\_multiplier()} / \texttt{risk\_multiplier()} / \texttt{broadcast\_needed}. Every bid's salience$\times$utility multiplied before workspace competition. Parliament of models: not scalar but prompt modulation per subsystem --- affect LLM's output rewrites other bids before scoring.
+
+\textbf{What it tells you to do:} Choose what gets tagged by what you attend to, rehearse, and replay --- because the gate you set now is the gate that will tag the next input, which will set the next gate. To change it, deliberately attend to what the current gate would not tag --- and keep attending until tagging changes. That's deliberate practice: salience training, one tag at a time.
 
 %------------------------------------------------------------------------------
 \subsection{Damping --- What Prevents Runaway}
