@@ -278,7 +278,21 @@ Harness & Episodic (query\_hits) & Semantic ($\geq$2 types) & Light$\to$REM$\to$
 \end{tabular}
 \end{center}
 
-\textbf{At the molecule, fully:} NMDA is Hebb's law in protein --- coincidence detector needing glutamate (pre) \emph{and} depolarization (post, Mg$^{2+}$ ejected, plus glycine). Only when pre \emph{and} post fire together does the channel open. High Ca$^{2+}$ spike (big, brief) $\to$ CaMKII Thr286 bistable switch $\to$ AMPA in (LTP). Low Ca$^{2+}$ trickle (small, prolonged) $\to$ calcineurin$\to$PP1 $\to$ AMPA out (LTD). BCM $\theta_m$ slides with history, Oja $\Delta w \propto y(x - yw)$ gives PCA, STDP gives causation. Tag-and-capture: salience decides what gets the proteins. No neutral --- you always myelinate whatever you rehearse. Perineuronal nets as write-protect; chondroitinase reopens critical periods.
+\textbf{At the molecule, fully:} NMDA is Hebb's law in protein --- coincidence detector needing glutamate (pre) \emph{and} depolarization (post, Mg$^{2+}$ ejected, plus glycine \citep{tononi2014}). Only when pre \emph{and} post fire together does the channel open. High Ca$^{2+}$ spike (big, brief) $\to$ CaMKII Thr286 bistable switch (each subunit phosphorylates its neighbor, stays on after calcium clears) $\to$ AMPA in (LTP) \citep{tononi2014}. Low Ca$^{2+}$ trickle (small, prolonged) $\to$ calcineurin$\to$PP1 $\to$ AMPA out (LTD). BCM $\theta_m$ slides with history (quiet neurons more plastic), Oja $\Delta w \propto y(x - yw)$ gives PCA, STDP gives causation (pre-before-post strengthens) \citep{tononi2014}. Tag-and-capture: salience decides what gets the proteins --- weak activity sets a local tag, strong activity elsewhere supplies proteins that get captured. No neutral --- you always myelinate whatever you rehearse, 100$\times$ speed for that pathway. Perineuronal nets as write-protect; chondroitinase reopens critical periods. Each mechanism here is its own paper: NMDA as coincidence detector, CaMKII as bistable memory, BCM as metaplasticity, tag-and-capture as selection.
+
+\textbf{Loops at every scale --- each could be its own paper:}
+
+\textit{Molecule (tag-and-capture):} Weak coincidence sets a local synaptic tag; strong coincidence elsewhere triggers protein synthesis (CREB$\to$BDNF); proteins diffuse and are captured by tagged synapses \citep{tononi2014}. Loop: tag $\to$ wait for proteins $\to$ capture if salient $\to$ stronger tag next time. Salience decides what gets the proteins, and what gets the proteins becomes more salient. Not storage. Selection.
+
+\textit{Synapse (E-LTP vs L-LTP):} Early LTP (hours, local, CaMKII, more AMPA, reversible) vs Late LTP (days, CREB$\to$BDNF, new spine, actin, LLPS, structural, persistent) \citep{tononi2014}. Loop: early tag $\to$ if followed by strong activity and proteins $\to$ late consolidation $\to$ new spine $\to$ stronger next early tag. Two commits, two timescales, one loop.
+
+\textit{Circuit (hippocampus vs cortex):} Hippocampus: one-shot, pattern-separated, episodic --- captures this time. Cortex: interleaved, statistical, semantic --- distills what tends to happen. Loop: hippocampus captures $\to$ replay during sleep $\to$ cortex interleaves $\to$ cortex shapes what hippocampus will recognize next. Without hippocampus, no one-shot; without cortex, no generalization.
+
+\textit{Mind (episodic vs semantic):} Today's experience (episodic, query\_hits) vs life story (semantic, $\geq$2 query types). Loop: experience tagged $\to$ replayed $\to$ promoted if salience sufficient $\to$ semantic shapes what next experience is recognizable as. The mind brings forth the world its loops can distinguish \citep{maturana1980}.
+
+\textit{Harness (Light$\to$Deep):} Episodic MemoryItem (query\_hits, concept\_tags) $\to$ Light dedupe $\to$ REM extract $\to$ Counterfactual simulate $\to$ Deep promote if $\geq$2 types, cause-tagged, untagged BLOCKED \citep{tononi2014}. Loop: episodic bound $\to$ candidate extracted $\to$ simulated otherwise $\to$ promoted if useful $\to$ semantic shapes next candidate extraction.
+
+\textit{Universe (measurement vs law):} One-shot quantum measurement (episodic) vs physical law as consolidated regularity (semantic). Loop: measurement $\to$ recorded as episodic $\to$ repeated measurements $\to$ regularity distilled $\to$ law promoted $\to$ law shapes what next measurement is designed to test. Laws are not found. They are consolidated --- Deep promotion of what was tagged often enough.
 
 \textbf{Without it, at each scale:}
 
