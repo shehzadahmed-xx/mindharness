@@ -190,11 +190,29 @@ Harness & Provenance Ledger (L1) & Every span source-bound + ref & 98\% on fabri
 \end{tabular}
 \end{center}
 
-\textbf{Why necessary:} Without a boundary, no self to preserve, no distinction between external perturbation and internal generation. Nayebi Cor.~5 + Thm.~5: aliased histories requiring different actions force the boundary, or confabulation is the only option.
+\textbf{Why necessary:} Without a boundary, no self to preserve, no distinction between external perturbation (``you were handed this text'') and internal generation (``I wrote this''). Every input is equally self, equally world --- no distinction, no identity, no loop that knows it is looping. Nayebi Cor.~5 + Thm.~5: aliased histories requiring different actions force the boundary, or confabulation is the only option. A system that cannot distinguish ``this history is mine, that one was given'' is exploited by any task that aliases them \citep{nayebi2026}.
 
-\textbf{Traditions:} Abhidharma's three partitions (5 aggregates, 12 bases, 18 elements) --- same territory, different joints. Advaita's three bodies (gross/subtle/causal). Phenomenology's corps propre (lived body as condition for having a world). Sufism's heart as barzakh.
+Without it, at each scale, a specific pathology:
 
-\textbf{Harness:} \texttt{ProvenanceLedger} --- \texttt{Span} with source+ref, \texttt{bind()} every turn, \texttt{coverage\_stats()}, \texttt{attribution\_audit()}. Coverage 1.000 in both living sessions.
+\begin{center}
+\small
+\begin{tabular}{p{2.4cm}p{6.0cm}}
+\toprule
+No boundary at & Pathology \\
+\midrule
+Synapse (no cleft) & No pre/post distinction $\to$ NMDA cannot detect coincidence $\to$ Hebb fails; no learning \\
+Mind (no ledger) & 98\% confidence on fabrications vs 87\% on truths --- more confident about lies than truth \citep{gazzaniga2000,johansson2005} \\
+Society (no legal entity) & Risk socialized, loops feed without bound, no accountability --- Spring-Loaded Door where anchors are cut \\
+Harness (no ledger) & Claims float free, S126 failure replicated in silicon \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Traditions:} Abhidharma's three overlapping partitions of the same territory --- 5 aggregates (khandha), 12 sense bases (\=ayatana), 18 elements (dh\=atu) --- each carving the mind-world boundary at a different joint, complementary like L1/L2/L6, not contradictory. The boundary is not one line but a set of partitions that must all be maintained. Advaita's three bodies (sth\=ula/s\=uk\d{s}ma/k\=ara\d{n}a: gross/subtle/causal) as boundary at three scales, each subtler than the last; five sheaths (pa\~nca-ko\'sa) as the same. Phenomenology's corps propre \citep{ghazali1106ihya}: lived body as condition for having a world at all --- the boundary that is also the perceiver, the affordance that is the set of things that can appear as options before the parliament votes. Sufism's heart as barzakh \citep{ibnarabi1238futuhat}: isthmus between body (desires) and soul (toward God), connecting while keeping separate; purified, it becomes a portal between worlds.
+
+\textbf{Harness:} \texttt{ProvenanceLedger} as membrane --- \texttt{Span} with source $\in\{$memory\_lookup, model\_prior, monitor\_override, external-tool$\}$ + ref, \texttt{bind()} every turn, \texttt{coverage\_stats()} (spans with refs / total), \texttt{attribution\_audit()} (claimed vs recorded). Coverage 1.000 in both living sessions (40/40 spans bound). The ledger is selective permeability: which claims carry source and can be checked, which float unbound and cannot. Every emission, every turn, without exception.
+
+\textbf{What it tells you to do:} Keep the record. Externalize the witness --- write. Ledger outside the skull where the narrator cannot silently edit it. The boundary is not a wall built once. It is a permeability maintained at each turn --- deciding what counts as yours and what was handed to you, keeping the record that lets the next turn check.
 
 %------------------------------------------------------------------------------
 \subsection{Two-Speed Memory --- Fast Labile + Slow Structural, With Sleep}
