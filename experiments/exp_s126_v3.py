@@ -126,10 +126,22 @@ def main() -> None:
     ap.add_argument('--seeds', type=int, default=5)
     ap.add_argument('--freeze', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
+    ap.add_argument('--out-dir', default='lab_runs_s126_v3',
+                    help='output dir under experiments/ (use a separate one '
+                         'for exploratory screens so confirmatory manifests '
+                         'are never overwritten)')
+    ap.add_argument('--arms', default='raw,harnessed_nocheck,'
+                                      'harnessed_withcheck,sham',
+                    help='comma-separated subset of arms to run; a screen '
+                         'normally needs only "raw"')
+    ap.add_argument('--exploratory', action='store_true',
+                    help='skip prereg lock verification and stamp the output '
+                         'as exploratory; NEVER use for a confirmatory run')
     args = ap.parse_args()
 
-    out_dir = Path(__file__).parent / 'lab_runs_s126_v3'
+    out_dir = Path(__file__).parent / args.out_dir
     out_dir.mkdir(exist_ok=True)
+    arms = tuple(a.strip() for a in args.arms.split(',') if a.strip())
 
     lock = PredictionLock(
         experiment='exp_s126_v3_tool_access',
@@ -148,9 +160,23 @@ def main() -> None:
     if args.freeze:
         print('LOCK_SHA256:', lock.freeze())
         return
-    if not args.dry_run:
+    if not args.dry_run and not args.exploratory:
         ok, detail = lock.verify()
         assert ok, f"run refused: {detail}"
+        # verify() only proves the lock file is untampered. Also confirm this
+        # run matches the contract it claims to be running under, which the
+        # hash check alone does not catch.
+        locked = json.loads(
+            (Path(__file__).resolve().parents[1] / 'pilot' / 'locks' /
+             'exp_s126_v3_tool_access.lock.json').read_text())
+        la = locked.get('model_arms', [{}])[0]
+        assert la.get('model') == args.model, (
+            f"run refused: lock is for model {la.get('model')!r}, "
+            f"run requested {args.model!r}. Use --exploratory for a screen, "
+            f"or freeze a new lock for a confirmatory run.")
+        assert locked.get('n_seeds') == args.seeds, (
+            f"run refused: lock is for {locked.get('n_seeds')} seeds, "
+            f"run requested {args.seeds}.")
 
     seeds = [1] if args.dry_run else list(range(1, args.seeds + 1))
     n = 2 if args.dry_run else None
@@ -159,7 +185,7 @@ def main() -> None:
     prods = PRODUCE_PROMPTS[:n] if n else PRODUCE_PROMPTS
 
     results = {}
-    for kind in ('raw', 'harnessed_nocheck', 'harnessed_withcheck', 'sham'):
+    for kind in arms:
         per_seed = []
         for s in seeds:
             client = make_client(api_key=args.api_key, model=args.model,
@@ -257,16 +283,19 @@ def main() -> None:
         results[kind] = {'per_seed': per_seed, 'pooled_accuracy': pooled,
                          'median_latency_ms': med}
 
-    p1 = (results['harnessed_withcheck']['pooled_accuracy']
-          - results['harnessed_nocheck']['pooled_accuracy'])
-    payload = {
-        'results': results,
-        'P1_delta': round(p1, 4), 'P1_supported': p1 > 0.15,
-        'P2_supported': (results['harnessed_withcheck']['pooled_accuracy']
-                         >= results['raw']['pooled_accuracy']),
-        'P3_supported': (results['harnessed_withcheck']['median_latency_ms']
-                         < 2 * max(1, results['harnessed_nocheck']
-                                   ['median_latency_ms']))}
+    payload = {'model': args.model, 'base_url': args.base_url,
+               'arms_run': list(arms), 'n_seeds': len(seeds),
+               'exploratory': bool(args.exploratory), 'results': results}
+    if {'harnessed_withcheck', 'harnessed_nocheck', 'raw'} <= set(results):
+        p1 = (results['harnessed_withcheck']['pooled_accuracy']
+              - results['harnessed_nocheck']['pooled_accuracy'])
+        payload.update({
+            'P1_delta': round(p1, 4), 'P1_supported': p1 > 0.15,
+            'P2_supported': (results['harnessed_withcheck']['pooled_accuracy']
+                             >= results['raw']['pooled_accuracy']),
+            'P3_supported': (results['harnessed_withcheck']['median_latency_ms']
+                             < 2 * max(1, results['harnessed_nocheck']
+                                       ['median_latency_ms']))})
     (out_dir / 'results.json').write_text(json.dumps(payload, indent=1))
     print(json.dumps({k: v for k, v in payload.items() if k != 'results'},
                      indent=1))

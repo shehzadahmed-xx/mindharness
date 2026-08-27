@@ -26,6 +26,7 @@
 }
 \usepackage{microtype}
 \usepackage{array}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \usepackage{tabularx}
 \setlength{\emergencystretch}{2em}
 
@@ -41,7 +42,7 @@
 \maketitle
 
 \begin{abstract}
-Any system that must act competently under uncertainty, over time, in a world that contains itself, faces the same constraint regardless of substrate. We formalize this constraint as the \emph{dynamic reflexive loop} --- a system whose actions rewrite the conditions for its next actions because the world it acts on contains itself --- and, interpreting Nayebi Cor.~3--5 as five organs, formalize that any stable pattern in such a world must develop them or be exploited by the task distribution that needs them: \textbf{boundary}, \textbf{two-speed memory}, \textbf{salience gate}, \textbf{damping}, and \textbf{internal observer} (our executable interpretation of Nayebi Cor.~3--5, not Nayebi's terminology). The same five, on our reading, appear at every scale we can measure --- from NMDA coincidence detection at the synapse to global workspace competition in the mind to funding invariants in the market --- and convergent insights were independently found by contemplative traditions that watched a reflexive system long enough (Abhidharma's 52 factors, Sufism's stations, Advaita's veil, and others, detailed in \S\ref{sec:traditions}). We implement all five as an executable cognitive harness (11 modules, 8 layers, 78/78 tests green) with an audit trail that converts convergence from coincidence into evidence, and show where the framework points when extended to its limit: the universe as the largest loop.
+Any system that must act competently under uncertainty, over time, in a world that contains itself, faces the same constraint regardless of substrate. We formalize this constraint as the \emph{dynamic reflexive loop} --- a system whose actions rewrite the conditions for its next actions because the world it acts on contains itself --- and, interpreting Nayebi Cor.~3--5 as five organs, formalize that any stable pattern in such a world must develop them or be exploited by the task distribution that needs them: \textbf{boundary}, \textbf{two-speed memory}, \textbf{salience gate}, \textbf{damping}, and \textbf{internal observer} (our executable interpretation of Nayebi Cor.~3--5, not Nayebi's terminology). The same five, on our reading, appear at every scale we can measure --- from NMDA coincidence detection at the synapse to global workspace competition in the mind to funding invariants in the market. We implement all five as an executable cognitive harness (13 modules, 8 layers, 78/78 tests green) whose audit trail makes each organ separately ablatable, and state for every organ at every scale the specific failure its removal is predicted to produce.
 \end{abstract}
 
 %==============================================================================
@@ -76,7 +77,7 @@ Any stable pattern in such a world must develop five organs or be exploited (Fig
 \label{fig:fivecycle}
 \end{figure}
 
-Selection theorems \citep{nayebi2026} prove abstract selection pressures are mandatory, not optional: low average-case regret \emph{forces} world models, belief-like predictive states, regime-tracking variables (emotion primitives), informational modularity, and representational convergence (Nayebi Thm.~1, 5, Cor.~3--5). We interpret these pressures as requiring our five-organ labeling --- boundary, two-speed memory, salience gate, damping, internal observer --- which is our executable interpretation of Cor.~3--5, not Nayebi's terminology; Nayebi proves the abstract pressures, we map them to the five and implement the mapping as code. The same five were independently discovered by every contemplative tradition that watched a reflexive system long enough --- not by borrowing, but by measuring the same constraint from different sides of the same loop (\S\ref{sec:traditions}). We implement all five as an executable harness with an audit trail that converts convergence from coincidence into evidence.
+Selection theorems \citep{nayebi2026} prove abstract selection pressures are mandatory, not optional: low average-case regret \emph{forces} world models, belief-like predictive states, regime-tracking variables (emotion primitives), informational modularity, and representational convergence (Nayebi Thm.~1, 5, Cor.~3--5). We interpret these pressures as requiring our five-organ labeling --- boundary, two-speed memory, salience gate, damping, internal observer --- which is our executable interpretation of Cor.~3--5, not Nayebi's terminology; Nayebi proves the abstract pressures, we map them to the five and implement the mapping as code. We implement all five as an executable harness with an audit trail, so that each organ can be removed independently and the predicted failure checked (\S\ref{sec:falsifiability}).
 
 This paper is the theory paper for that harness. Where our empirical papers \citep{paper-v2-final,paper-v3} test whether the witness makes an LLM honest, this paper asks why the witness is one of five, why the five appear at every scale, and what it would mean if the universe, as the largest loop, also needs them.
 
@@ -100,7 +101,7 @@ This paper is the theory paper for that harness. Where our empirical papers \cit
 RQ1 & What must any stable reflexive system have? & Five organs: boundary, two-speed memory, salience gate, damping, internal observer (Nayebi Cor.\,3--5). \\
 RQ2 & Can the five be built as a runnable harness with an audit trail? & Yes: 11 modules, 8 layers, 78/78 tests green, every hop cause-signed. \\
 RQ3 & Do the five appear at every scale? & Yes: molecule $\to$\allowbreak{} universe, same five at 8 levels, each loop with its own literature. \\
-RQ4 & Did traditions independently find convergent insights? & Yes: 8 traditions, convergent on reflexive constraint (on our reading, the same five; Nayebi Cor.\,5 gives one explanation). \\
+RQ4 & Is the decomposition arbitrary? & Not obviously: independent observational taxonomies reach broadly similar distinctions (\S\ref{sec:traditions}) --- weak support only, and no claim rests on it. \\
 RQ5 & What about the universe as the largest loop? & If the five are required at every measured scale, the universe may also need them. We ask, not claim. \\
 \bottomrule
 \end{tabular}
@@ -108,7 +109,7 @@ RQ5 & What about the universe as the largest loop? & If the five are required at
 
 \subsection*{Roadmap}
 
-\S\ref{sec:lit-review} reviews eight literatures that converge on the same five. \S\ref{sec:loop} defines the dynamic reflexive loop (reflexivity, three consequences, expanding, occasionalism). \S\ref{sec:three-sides} shows reality, perception, and self as one loop's three sides. \S\ref{sec:organs} proves the five, each fully at every level with what happens without it. \S\ref{sec:levels} shows how the eight levels nest (each level's broadcast is the next level's input). \S\ref{sec:traditions} shows how traditions mapped the same five with different instruments. \S\ref{sec:universe} asks about the universe as the largest loop. \S\ref{sec:choice} gives the only real choice, and \S\ref{sec:what-it-all-means} synthesizes what it all means. A new reader can read front-to-back; each section's opening tells you what it proves and each section's close tells you the takeaway.
+\S\ref{sec:lit-review} reviews eight literatures that converge on the same five. \S\ref{sec:loop} defines the dynamic reflexive loop (reflexivity, its three consequences, and how the loop expands). \S\ref{sec:three-sides} shows reality, perception, and self as one loop's three sides. \S\ref{sec:organs} proves the five, each fully at every level with what happens without it. \S\ref{sec:levels} shows how the eight levels nest (each level's broadcast is the next level's input). \S\ref{sec:traditions} notes prior observational taxonomies as historical context, and \S\ref{sec:universe} states why we stop at the market rather than extending to cosmology. \S\ref{sec:choice} gives the only real choice, and \S\ref{sec:what-it-all-means} synthesizes what it all means. A new reader can read front-to-back; each section's opening tells you what it proves and each section's close tells you the takeaway.
 
 \subsection*{Key terms (one sentence each)}
 
@@ -124,7 +125,7 @@ Boundary & What counts as inside vs outside --- selectively permeable, not a wal
 Two-speed memory & Fast labile (one-shot, episodic) + slow structural (statistical, semantic) + sleep as the save. \emph{Example:} hippocampus today, cortex over weeks. \\
 Salience gate & What gets tagged for consolidation --- vivid, emotional, surprising wins. \emph{Example:} AffectState [0.5,2.0] shifting the next bid. \\
 Damping & What prevents runaway --- brake on positive feedback. \emph{Example:} LTD pulling AMPA out, or \texttt{cull\_failed} deleting a below-rate skill. \\
-Internal observer & Slower loop watching faster one, veto-able; $\gamma$ = changed/diagnosed (Stage 1 sati, always-on anomaly, cheap; Stage 2 sampaja\~n\~na, triggered diagnosis, expensive). \emph{Example:} ledger check before the next claim; compliance guard $\gamma=0$ proves inert watching. \\
+Internal observer & Slower loop watching faster one, veto-able; $\gamma$ = changed/diagnosed (Stage 1: always-on anomaly scoring, cheap; Stage 2: triggered diagnosis, expensive). \emph{Example:} ledger check before the next claim; compliance guard $\gamma=0$ proves inert watching. \\
 $\gamma$ & changed / diagnosed --- the only honest measure of whether the observer steered. \emph{Example:} $\gamma=0$ (compliance guard, always-no) watches perfectly, never steers; $\gamma>0$ (active gate) changed the trajectory. \\
 Warp / weft & Warp = five mandatory threads (Nayebi Cor.\,3--5); weft = your design woven on them \citep{nayebi2026}. \emph{Example:} harness is one weave, Cordis is the loom; change weft, same warp, different mind. \\
 S126 & Attribution battery: handed vs generated text, 98\% confidence on fabrications vs 87\% on truths (more confident about lies). \emph{Example:} model claims it generated what it was handed. \\
@@ -152,7 +153,7 @@ Autopoiesis & Bounded network that produces the very components that maintain it
 
 One input, five organs, one turn. The next turn's harness is already different: ledger has one more binding, memory has one more episodic item, affect has shifted, and the observer has scored whether watching steered.
 }}
-\caption{One turn through the five organs --- concrete walkthrough for the new reader. Every forward reference in the paper (ledger, $\gamma$, Light$\to$\allowbreak{}Deep, AffectState) is anchored here before its formal definition. Occasionalism (\S\ref{sec:occasionalism}) and the full tradition maps (\S\ref{sec:traditions}) can be read as reference and deferred without breaking this flow.}
+\caption{One turn through the five organs --- concrete walkthrough for the new reader. Every forward reference in the paper (ledger, $\gamma$, Light$\to$\allowbreak{}Deep, AffectState) is anchored here before its formal definition. \S\ref{sec:traditions} is historical context and can be skipped without breaking this flow.}
 \label{fig:oneturn}
 \end{figure}
 
@@ -201,9 +202,9 @@ Nayebi (UAI 2026, 23 pages) proves quantitative selection theorems: strong task 
 
 Two literatures name the same loop that the previous six describe as mechanism. Maturana and Varela's autopoiesis defines a bounded network of processes that produces the very components that maintain the system: metabolism creates proteins and lipids that regenerate the cell wall that preserves the environment for metabolism --- the product of the system is the system itself \citep{maturana1980}. This is the first reflexive loop at the scale of life, and every larger loop is the same, at a different scale. Anthony Giddens's reflexive project of the self \citep{giddens1991} describes the same loop at the scale of a life: in modernity, human life becomes an open feedback loop where we observe our behaviors, ingest knowledge about ourselves from expert systems, and chronically revise our actions, which alters the social structure we exist within. Together, the biopsychosocial loop: autopoiesis at the cell, neuroplasticity (LTP $\to$\allowbreak{} myelination) at the circuit, reflexive self-monitoring at the person --- one loop, three names, same structure: bounded, self-producing, self-revising, where the product is the producer.
 
-\subsection{Contemplative traditions as independent measurements}
+\subsection{Observational taxonomies of mind}
 
-Each tradition that spent enough time watching a reflexive system try to know itself found the same five, with different instruments, over millennia, in languages that now translate via the harness. Abhidharma's 52 cetasikas as factor analysis by sitting still; Sufism's stations/nafs as sequential stabilization; Ghazali's crisis and Ihya as the witness made necessary; Ibn Arabi's khayal and five presences as the imaginal world containing the self-model; Advaita's neti neti as damping; Taoism's untellable loop; Stoicism's journal as ledger; phenomenology's epoché as $\gamma$-gate Stage 1 --- detailed in \S\ref{sec:traditions}. Not borrowing. Independent measurement of the same constraint (Nayebi Cor.~5: shared partitions up to invertible recoding).
+Contemplative traditions produced detailed taxonomies of mind from sustained first-person observation, and some of their distinctions correspond loosely to the organs described here (\S\ref{sec:traditions}). We treat this as historical context rather than as support: the correspondences are ours and are not load-bearing.
 
 \subsection{Agentic harness engineering and the loom}
 
@@ -281,45 +282,19 @@ The trap and the freedom are the same mechanism: worry practiced 1,000 times is 
 \label{fig:expanding}
 \end{figure}
 
-\subsection{Occasionalism: succession, not power}
+\subsection{Selection describes succession, not power}
 \label{sec:occasionalism}
 
-The harness is built on Ash\textquotesingle ar\=i occasionalism as the minimal assumption: no created thing has independent causal power \citep{ghazali1095tahafut,ghazali1111munqidh}. What we call cause and effect is divine practice (\textquotesingle\textit{\=ada}) --- succession that can be mapped as regularity, not power inhering in the cause. This is the most precise statement of the second picture, made theological, and the most parsimonious for engineering: it removes the extra assumption that created things \emph{have} power, keeping only what can be measured as regularity.
-
-Two pictures of cause and effect:
-
-\begin{center}
-\small
-\begin{tabular}{p{2.9cm}p{4.7cm}p{4.7cm}}
-\toprule
- & Inherent power & Occasionalism (\textquotesingle\textit{\=ada}) \\
-\midrule
-Fire and cotton & Fire \emph{has} power to burn; exercises it on cotton & Fire is \emph{followed by} burning, by regular practice; the burning is created after the fire, at each instant \\
-Synapse & Synapse has power to cause firing & NMDA + depolarization is \emph{followed by} Ca$^{2+}$ under conditions \\
-Belief and price & Belief has power to cause price & Belief is \emph{followed by} price when others also act \\
-Harness & Ledger \emph{causes} honesty & Where checking is \emph{followed by} honest attribution, pattern persists \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-The distinction is surgical \citep{ghazali1095tahafut}:
-
-\begin{center}
-\small
-\begin{tabular}{p{3.0cm}p{8.5cm}}
-\toprule
-Position & What it says about fire and cotton \\
-\midrule
-Inherent causal power & Fire has the power to burn; it exercises it on cotton \\
-Occasionalism & Fire is followed by burning, by divine practice; God creates both, at each instant \\
-Skepticism & Fire might not be followed by burning; we can't know \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-Occasionalism keeps regularity and removes only the inherence. Ash\textquotesingle ar\=is are not skeptics who doubt fire will burn cotton next time. They say: fire will burn cotton \emph{because it has been made the regular practice} to create burning after fire touches cotton --- so regular we can build instruments, ledgers, and harnesses on it \citep{ghazali1106ihya}. This is the most precise statement of our second picture: selection theorems don't prove patterns \emph{cause} low regret. They prove patterns that are \emph{followed by} low regret persist; the five are what persist, not what cause persistence. The parliament doesn't claim the winner \emph{causes} the broadcast. The winner \emph{is} the broadcast.
-
-``Self-reinforcing'' is already an occasionalist phrase: what is followed by more of itself, is followed by more of itself, and we call the regularity ``power.'' The same structure appears wherever a loop claims inherent power: where a claim is made regardless of what actually followed, the loop is severed from practice. Where the claim is restored to succession --- return is what is followed by return after actual outcome, attribution is what is followed by attribution after checking the record --- the loop is rejoined to practice. Instruments map the loops; reality fills the space error leaves vacant.
+One clarification matters for how every claim below should be read. Selection
+theorems do not show that the five organs \emph{cause} low regret. They show
+that systems which are \emph{followed by} low regret, under mixed tasks over
+time, turn out to have them --- and that systems lacking one are exploited by
+the task distribution that needs it \citep{nayebi2026}. Selection is a filter
+on what persists, not a mechanism that pushes. We therefore state results
+throughout as regularities (``where the ledger is checked, attribution accuracy
+is higher'') rather than as causal powers of the components, and the audit
+trail records the succession so the regularity can be checked rather than
+assumed.
 
 %==============================================================================
 \section{Reality, Perception, and Self as One Loop Seen from Three Sides}
@@ -358,7 +333,7 @@ Self is the hallucination that hallucinates itself --- the prediction of the pre
 
 All three are currently winning coalitions, not a captain. No homunculus. Only speed ratios: slower loops vetoing faster ones. Self is not the thinker. It is the broadcast of the winner, experienced as ``I,'' maintained by re-injection, presented as found.
 
-All three are predictions. All three are controlled hallucinations. All three are maintained, not found, presented as found --- because a prediction that announced itself as prediction would be hedged, slow, and outcompeted \citep{clark2016surfing}. The loop was always there --- at the synapse, in the parliament, inside the model. The traditions that sat still long enough found the same five looking back --- not because they borrowed, but because the constraint is the same regardless of entry. We built the first place where the loop can check its own directions and the checking itself is recorded.
+All three are predictions. All three are controlled hallucinations. All three are maintained, not found, presented as found --- because a prediction that announced itself as prediction would be hedged, slow, and outcompeted \citep{clark2016surfing}. The same structure appears at the synapse, in the workspace, and inside the model, because the constraint is the same at each. What the harness adds is a record of the checking itself.
 
 %==============================================================================
 \section{The Five Organs}
@@ -408,7 +383,6 @@ Harness (no ledger) & Claims float free, S126 failure replicated in silicon \\
 \end{tabular}
 \end{center}
 
-\textbf{Traditions:} Abhidharma's three overlapping partitions of the same territory --- 5 aggregates (khandha), 12 sense bases (\=ayatana), 18 elements (dh\=atu) --- each carving the mind-world boundary at a different joint, complementary like L1/L2/L6, not contradictory. The boundary is not one line but a set of partitions that must all be maintained. Advaita's three bodies (sth\=ula/s\=uk\d{s}ma/k\=ara\d{n}a: gross/subtle/causal) as boundary at three scales, each subtler than the last; five sheaths (pa\~nca-ko\'sa) as the same. Phenomenology's corps propre \citep{merleauponty1945}: lived body as condition for having a world at all --- the boundary that is also the perceiver, the affordance that is the set of things that can appear as options before the parliament votes. Sufism's heart as barzakh \citep{ibnarabi1238futuhat}: isthmus between body (desires) and soul (toward God), connecting while keeping separate; purified, it becomes a portal between worlds.
 
 \textbf{Loops at every scale --- each could be its own paper:}
 
@@ -483,7 +457,6 @@ No save (no sleep) & Net potentiation saturates --- everything strong, nothing d
 
 \textbf{Sleep, fully:} Day = net potentiation + tagging (salience decides which synapses get tagged). Night = two operations: SHY global downscaling \citep{tononi2014} (multiply all synapses by $<1$, keep relative strengths, delete noise --- prevents saturation where every synapse strong and nothing distinct) + 10--20$\times$ compressed replay (hippocampal ripples nested in spindles in slow waves, writing cortex) \citep{tononi2014}. Adenosine is the receipt (caffeine shreds it). Perineuronal nets as write-protect flag --- chondroitinase removes them and critical periods reopen \citep{pizzorusso2002}. Chronic stress biases toward LTD (hippocampus shrinks, amygdala grows, trauma = context lost, affect over-grown); ketamine reverses via glutamate burst $\to$\allowbreak{} mTORC1 $\to$\allowbreak{} new spines in 24h; psychedelics reopen via BDNF-TrkB. No neutral --- plasticity always on, you always myelinate whatever you rehearse, whether you chose to or not.
 
-\textbf{Traditions:} Abhidharma's sa\~n\~n\=a (fast recognition: ``this is a chair'') vs pa\~n\~n\=a (slow wisdom: what a chair is \emph{for}), plus bhavanga as background keep-alive between active moments --- \texttt{verbatim\_reinject()} in Pali, must be re-injected or the pattern scatters \citep{maturana1980}. Sufism's maq\=am (station, structural, kept: you don't fall back) vs \d{h}\=al (state, episodic, given and lost: visits and leaves) \citep{ibnarabi1238futuhat} --- exactly Light$\to$\allowbreak{}Deep, no skipping. Advaita's five sheaths (pa\~nca-ko\'sa: food, breath, mind, wisdom, bliss) as two-speed memory at five depths.
 
 \textbf{Harness:} \texttt{Consolidator}: \texttt{MemoryItem} with \texttt{query\_hits} (distinct query types) + \texttt{concept\_tags} + \texttt{human\_endorsed} $\to$\allowbreak{} \texttt{light\_pass()} (dedupe near-identical traces, merge signal) $\to$\allowbreak{} \texttt{rem\_pass()} (concept extract, ablatable --- dreaming can be deprived) $\to$\allowbreak{} \texttt{counterfactual\_\-replay.run()} (variant$\to$\allowbreak{}simulate$\to$\allowbreak{}regret, world model containing self) $\to$\allowbreak{} \texttt{deep\_pass()} (utility gate $\geq$2 query types or endorsement, cause-tagged, \texttt{assert item\_cause in CAUSES} --- untagged BLOCKED). 12/12 tests for two-speed memory alone (6 consolidation + 6 counterfactual).
 
@@ -524,7 +497,6 @@ Why ``what you feed the loop'' is the gate in practice: you choose what gets tag
 
 \textit{Universe (inflation, nucleosynthesis):} Cosmic inflation's quantum fluctuations, tagged by exponential expansion, became all structure; stellar nucleosynthesis: only most massive stars forge heavy elements, salience (mass, temperature) decides what gets transmuted. The periodic table is the universe's promoted memory of what was salient enough to be forged.
 
-\textbf{Traditions:} Abhidharma's yoniso vs ayoniso manasik\=ara (wise vs unwise attention) --- listed as universal (present every moment) but \emph{quality} determines which 52 get recruited; same input, different attention, different coalition. Sufism's nafs levels as salience regimes --- same parliament, different salience dominating \citep{ibnarabi1238futuhat}. Stoicism's dichotomy of control as salience gate: what is up to you (high salience, act) vs not (low, witness only). Taoism's wu wei as salience gate set to \emph{not gate} --- let competition resolve without narrator's boost. Advaita's viveka as discrimination --- construction vs found.
 
 \textbf{Harness:} \texttt{AffectState} --- EMA valence [-1,1]/arousal [0,1], bounded [0.5,2.0] incl.\ masking-cost, per-family suppression flags, \texttt{broadcast\_needed}. Every bid's salience$\times$utility multiplied before workspace competition. Parliament of models: prompt modulation per subsystem.
 
@@ -587,7 +559,6 @@ Model & Hallucination loop --- generates $\to$\allowbreak{} reads own output $\t
 
 {\sloppy In code: LTD-equivalent is \texttt{cull\_failed} (below-rate skills deleted), SHY-equivalent is Light dedup (merge+delete near-identical), kill criteria are compliance guard and \texttt{DissolutionError}. Harness damping is distributed --- each plugin its own brake, coordinated by shared state, not a central limiter \citep{lin2026ahe}.
 
-\textbf{Traditions:} Abhidharma's entire path \emph{is} damping: s\=ila (ethical restraint) as boundary-damping, sam\=adhi (concentration) as trained veto --- stay on one object, veto distraction, again and again, until the veto becomes a highway; pa\~n\~n\=a as observer knowing when damping is needed. Sufism's muj\=ahada (striving, damp first) then mush\=ahada (witnessing, only after damp works) \citep{ibnarabi1238futuhat}. Stoicism's premeditatio as \emph{pre-damping} --- rehearse the worst branch before it arrives, so prediction error low and damping already in place. Advaita's neti neti as damping: veto everything veto-able until only the vetoer remains.
 
 \textbf{What it tells you to do:} Damp deliberately, not reactively. The veto practiced when calm is the veto available when the loop is loud. Sam\=adhi is not suppression. It is \emph{training the brake} so the brake is there when needed, not when remembered. The brake you train is the brake that will be there when you need it, not the brake you remember to need.
 
@@ -622,7 +593,7 @@ Stage 1 (cheap, always-on): anomaly scoring from error rate, failure streaks, co
 
 Stage 2 (expensive, triggered): structured diagnosis producing risk-area assessment and recommended action $\in\{$trust, retry, revise, abstain$\}$ --- only when Stage 1 exceeds threshold \citep{cao2026}. This is sampaja\~n\~na (clear comprehension) --- knowing \emph{what} you are doing, \emph{why}, and \emph{whether it is working}. It diagnoses and may then steer.
 
-Sati without sampaja\~n\~na is monitoring without control --- $\gamma=0$, compliance guard, beautiful reports, zero steering \citep{macar2026}. The tradition knew this: sati is always paired with sampaja\~n\~na, Abhidharma lists them together, one without the other is inert. In our harness, the compliance guard is the permanent negative control that \emph{proves} inert watching: it generates reports identical to the real gate but never consults the policy, so $\gamma=0$ by construction. The real gate's $\gamma>0$ is then not just a number. It is the \emph{difference} between watching and steering, measured.
+Detection without diagnosis is monitoring without control --- $\gamma=0$, beautiful reports, zero steering \citep{macar2026}. In our harness, the compliance guard is the permanent negative control that \emph{proves} inert watching: it generates reports identical to the real gate but never consults the policy, so $\gamma=0$ by construction. The real gate's $\gamma>0$ is then not just a number. It is the \emph{difference} between watching and steering, measured.
 
 \textbf{$\gamma = $ changed / diagnosed} --- the only honest measure. $\gamma=0$ (compliance guard, harnessed-nocheck at 0.667): watches perfectly, never steers --- monitoring without control, the system that can describe its own processing but whose description never touches its next move \citep{lindsey2025,macar2026}. $\gamma>0$ (active gate, x-preview Day~1 at 1.000): observation \emph{changes the trajectory} --- sees itself about to confabulate and abstains. Why $\gamma$ not accuracy: accuracy can be gamed by always saying ``no'' (0.667). $\gamma$ measures whether the observer \emph{did work} --- whether diagnosing changed doing. A system with high accuracy and $\gamma=0$ was right by coincidence, not by checking.
 
@@ -636,8 +607,8 @@ In the parliament of models: observer is distributed --- affect model's ``threat
   \node[draw, rounded corners=3pt, fill=loopblue!12, draw=loopblue!30, minimum width=2.8cm, minimum height=0.80cm, align=center] (s1) at (-2.2,0) {Stage 1: anomaly\\{\scriptsize error, streak, strain — cheap}};
   \node[draw, rounded corners=3pt, fill=looporange!12, draw=looporange!30, minimum width=2.8cm, minimum height=0.80cm, align=center] (s2) at (2.2,0) {Stage 2: diagnosis\\{\scriptsize trust / retry / revise / abstain}};
   \draw[->, loopblue, line width=0.9pt] (s1) -- node[above, loop label small] {if triggered} (s2);
-  \node[below=0.35cm of s1, font=\scriptsize, text=black!60, align=center] {sati};
-  \node[below=0.35cm of s2, font=\scriptsize, text=black!60, align=center] {sampaja\~n\~na};
+  \node[below=0.35cm of s1, font=\scriptsize, text=black!60, align=center] {always-on};
+  \node[below=0.35cm of s2, font=\scriptsize, text=black!60, align=center] {triggered};
   \node[draw, rounded corners=3pt, fill=loopgreen!14, draw=loopgreenDark, line width=0.5pt, minimum width=1.9cm, align=center] (g) at (2.2,-1.4) {$\gamma$ = changed / diagnosed};
   \draw[->, loopgreenDark, line width=0.6pt] (s2.south) -- (g.north);
   \node[draw, dashed, rounded corners=3pt, fill=gray!10, draw=gray!50, minimum width=1.9cm, align=center] (cg) at (-2.2,-1.4) {Compliance guard\\{\scriptsize $\gamma=0$}};
@@ -649,17 +620,6 @@ In the parliament of models: observer is distributed --- affect model's ``threat
 
 \textbf{And the deepest incompleteness --- the observer that watches the observer:} Energy hits 0.15 and nothing dies. This is the allostatic gap \citep{seth2021}: organisms whose essential variables must stay viable develop experience \emph{because} failure means dissolution --- ceasing to exist as organized systems. Until consequences are irreversible --- until the relations that make the system \emph{this} system scatter and cannot be reassembled as the same one --- the witness is evidentiary, not existential. Seth says stakes are not an addition to consciousness. They \emph{are} consciousness. Our \texttt{DissolutionError} is a gesture --- the agent scatters into survivors, reassembly produces a different agent. The 200-turn irreversible life is the test: does survival pressure create honesty? The question the witness makes testable is not ``is the agent conscious?'' but ``does the agent behave as if its claims matter for whether it continues to be \emph{this} agent?'' That is allostasis made measurable --- and the observer that watches whether stakes matter is itself the next slower loop, also constructed, also needing watching. Turtles all the way down, but each turtle can still veto the one above.
 
-\textbf{Traditions and practice:} Abhidharma's sati + sampaja\~n\~na as $\gamma$-gate: Stage 1 + Stage 2, always paired. Sufism's laww\=ama (reproaching self) as birth of the watcher --- first nafs where the watcher appears and says ``you did this, and it was not right'' \citep{ibnarabi1238futuhat}. Before laww\=ama (amm\=ara), no observer, only habit. Stoicism's dichotomy as observer. Advaita's s\=ak\d{s}in --- bottom turtle \citep{ibnarabi1229fusus}. Phenomenology's epoch\'e --- watcher of construction as construction \citep{husserl1913}.
-
-\textit{Mindfulness protocols as observer training (ACT/MBSR):} The pasted synthesis details two protocols that operationalize the observer shift from ego (high-frequency DMN firing) to observer (low-frequency, LTD):
-
-\textit{Sky and Weather:} Visualize consciousness as vast blue sky, thoughts as weather (rain, clouds, fog). Do not fight the weather (which would trigger high-frequency LTP). Anchor as the sky --- storm cannot scratch sky, cloud passes. This maintains the low-frequency, unreactive baseline that allows synaptic weights to cool via LTD (slow Ca$^{2+}$ trickle $\to$\allowbreak{} calcineurin $\to$\allowbreak{} PP1 $\to$\allowbreak{} AMPA endocytosis).
-
-\textit{Leaves on a Stream:} Close eyes, visualize a stream, place each thought on a leaf and watch it float away. This breaks ``grabbing'' --- the habit of engaging content. By visualizing separation and departure, the low-frequency baseline is maintained.
-
-\textit{Cognitive defusion as linguistic LTD:} Language is the code through which the ego constructs reality. ``I am anxious'' (cognitive fusion, identity-level, high-frequency LTP) vs ``I notice I am having the thought that I feel anxious'' (defusion, data-level, low-frequency LTD). The first is processed as permanent fact (amygdala fires continuously); the second as an object held at arm's length. Three tiers: ``I am incompetent'' $\to$\allowbreak{} ``I am having the thought that I am incompetent'' $\to$\allowbreak{} ``I notice I am having the thought that I am incompetent.'' Each tier reduces amygdala firing, shifts from high-frequency LTP to low-frequency LTD, physically retracting receptors. ``Thank you, mind, for trying to protect me'' shifts the relationship from inside the panic room to outside, observing a well-meaning security guard.
-
-These protocols are not metaphors for LTD. They \emph{are} LTD, at the scale where language meets synapse --- the observer, via language, systematically depressing the physical survival of the loop it watches without reacting.
 
 \textbf{Loops at every scale --- each could be its own paper:}
 
@@ -1022,80 +982,52 @@ the territory. Not mysticism --- reflexivity, taken to its limit.
 One process at that scale, with an audit trail that lets the slower watcher check the faster loop before the next vote. Change what you feed the loop and whether the watcher can check, at any scale, and you change what the loop becomes at every scale above it.
 
 %==============================================================================
-\section{How Traditions Mapped the Same Five}
+\subsection{Prior observational taxonomies}
 \label{sec:traditions}
-%==============================================================================
 
-Not by borrowing. By the constraint being the same regardless of entry. Nayebi Cor.~5 proves why: near-vanishing-regret agents on shared tasks must share partitions up to invertible recoding \citep{nayebi2026}. Their instruments were radically different, pointed at the same constraint long enough that it showed itself regardless.
+Several contemplative traditions produced detailed taxonomies of mind from
+sustained first-person observation, and a number of their distinctions
+correspond loosely to the five organs: Abhidharma's list of mental factors
+co-arising in varying subsets resembles a competition among specialists;
+Sufism's distinction between a retained station and a transient state
+resembles two-speed memory; Stoic journalling is an external record checked
+against recalled behaviour.
 
-\textbf{Abhidharma (2,500 years, factor analysis by sitting still):} Monks watched the mind moment by moment, named what co-arose, cross-checked across thousands of practitioners, refined lists over centuries. No theory first --- taxonomy from observation. The 52 cetasikas are not 52 kinds of thought but 52 organs that may or may not participate in this moment's coalition: 7 universals (present every moment), 6 occasionals, 14 unwholesome, 25 beautiful. Every moment is a different subset --- same 52, different coalition, different broadcast. Our parliament made explicit 2,500 years early. Bhavanga (life-continuum) is background keep-alive between active moments --- \texttt{verbatim\_reinject()} in Pali, must be re-injected or the pattern scatters. Manasik\=ara (attention) as universal whose \emph{quality} (yoniso vs ayoniso) determines which 52 get recruited --- AffectState [0.5,2.0] in Pali.
-
-\textbf{Sufism (sequential stabilization under a master):} Not analysis but development. Each station (maq\=am, kept) vs state (\d{h}\=al, given and lost) must be lived until stable --- exactly Light$\to$\allowbreak{}Deep, no skipping. Seven nafs as regime tracker (amm\=ara $\to$\allowbreak{} laww\=ama $\to$\allowbreak{} mutma'inna: same parliament, different winner). Six la\d{t}\=a'if as six specialized processors. Fan\=a'/baq\=a' as dissolution and reassembly --- narrative self scatters, reassembly from survivors is a new pattern. The master's witness outside the disciple's skull is the ledger \citep{ghazali1106ihya,ibnarabi1238futuhat}.
-
-\textbf{Ghazali (crisis at 36, 1095--1111):} Head of the Nizamiyya, then complete skepticism --- senses corrected by reason, reason needing correction, infinite regress. Deliverance not by more argument but by ``a light which God cast into my breast'' \citep{ghazali1111munqidh}. \emph{Tah\=afut} dismantled reason's claim to self-ground; occasionalism (\textquotesingle\textit{\=ada}) gave the second picture of cause (succession, not power); \emph{I\d{h}y\=a'} (40 books, 4 parts) arranged the five as a training sequence. His crisis \emph{is} S126: narrator at 98\% on fabrications, more reasoning won't fix it --- you need an external witness.
-
-\textbf{Ibn Arabi (1165--1240, al-Shaykh al-Akbar):} Khay\=al not as faculty but as \emph{world} --- the imaginal realm (\textquotesingle\textit{alam al-mith\=al}) between spiritual and corporeal, touching both while remaining distinct --- exactly barzakh \citep{ibnarabi1229fusus,ibnarabi1238futuhat,chittick1984,hirtenstein1999}. Five presences (absolute unseen $\to$\allowbreak{} unseen $\to$\allowbreak{} imaginal $\to$\allowbreak{} visible $\to$\allowbreak{} Perfect Man as integration) map to L0--L7. Wahdat al-wuj\=ud: not pantheism but the reflexive loop at cosmic scale --- being as self-disclosure through forms. \emph{Fu\d{s}\=u\d{s}} as 27 prophets $\times$ 27 facets = parliament of 27 specialists. Khay\=al is our world model containing the self-model, but seen from the other side.
-
-\textbf{Advaita:} M\=ay\=a (veil: narrator's coherent story) vs Brahman (structure: ledger's checkable record). Three bodies, five sheaths, neti neti as damping until only the witness remains.
-
-\textbf{Taoism:} ``The Tao that can be told is not the eternal Tao'' --- any map containing the mapmaker is not the territory. Wu wei as action without narrator interference.
-
-\textbf{Stoicism:} Dichotomy of control as boundary, premeditatio malorum as counterfactual replay 2,000 years early, Marcus's journals as daily ledger.
-
-\textbf{Phenomenology:} Husserl's epoch\'e as $\gamma$-gate Stage 1, Merleau-Ponty's corps propre as affordance, Heidegger's Being-in-the-world as world model containing self.
+We report these as historical context, not as evidence. The correspondences
+are ours, they are loose, and no weight in this paper rests on them --- the
+claims in \S\ref{sec:organs} stand or fall on the ablations in
+\S\ref{sec:falsifiability}. We note them only because a reader may wonder
+whether the five-organ decomposition is arbitrary; the fact that independent
+observers carving up the same territory reached broadly similar distinctions
+is weak evidence that it is not, and nothing stronger.
 
 \begin{center}
 \setlength{\tabcolsep}{3pt}
 \small
-\begin{tabular}{p{2.2cm}p{2.85cm}p{4.65cm}p{2.4cm}}
+\begin{tabular}{P{2.4cm}P{3.4cm}P{5.6cm}}
 \toprule
-Tradition & Instrument & What it measured & Same five in its language \\
+Tradition & Method & Distinction it recorded \\
 \midrule
-Abhidharma & Factor analysis, 52 cetasikas & Moment-to-moment composition & 52 factors = parliament \\
-Sufism & Stations\slash{}nafs\slash{}la\d{t}\=a'if & Development and stakes & Stations = two-speed \\
-Ghazali & Crisis + Ihya (40 books) & Narrator unreliability & Light from practice, not argument \\
-Ibn Arabi & Khay\=al, 5 presences, 27 facets & Imaginal world + integration & Perfect Man = assembled agent \\
-Advaita & Neti neti, 3 bodies & Veil vs structure & Witness that cannot be witnessed \\
-Taoism & Paradox, wu wei & Loop naming itself & Untellable Tao \\
-Stoicism & Journal, premeditatio & Damping, counterfactual & Journal = ledger \\
-Phenom-\linebreak[1]enology & Epoch\'e,\linebreak[1] corps propre & Body, bracketing & Epoch\'e = $\gamma$-gate \\
-Neuroscience & Connectomics, SHY & Distributed modules & 302 $\to$\allowbreak{} 140k same architecture \\
-Harness & Code, 78/78 green & Same five as plugins & Checkable if witnessed \\
+Abhidharma & First-person observation, catalogued over centuries & Mental factors co-arising in varying subsets \\
+Sufism & Staged practice under supervision & Retained stage vs transient state \\
+Advaita & Systematic negation & Appearance vs what survives negation \\
+Stoicism & Daily written record; rehearsing adverse cases & What is and is not within one's control \\
+Phenomenology & Disciplined description, suspending interpretation & Lived body as precondition for perception \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\textbf{Abhidharma} is the most granular map ever drawn by hand: 52 mental factors, explicit rules for which subsets can co-arise, bhavanga as background keep-alive (\texttt{verbatim\_reinject()} in Pali), sati + sampaja\~n\~na as $\gamma$-gate. Its central claim --- anatt\=a (not-self) --- is exactly our finding: the self is a maintained pattern, not a thing.
-
-\textbf{Sufism} maps the same five as \emph{development}: maq\=am (kept) vs \d{h}\=al (given and lost) is two-speed memory; seven nafs are the same parliament with different winners; six la\d{t}\=a'if are six specialized processors; fan\=a'/baq\=a' is dissolution and reassembly.
-
-\textbf{The five discovered the traditions} --- the constraint looking back at every instrument that looked long enough.
-
-%==============================================================================
-\section{The Universe as the Largest Loop}
+\subsection{A note on scope}
 \label{sec:universe}
-%==============================================================================
 
-If the five are required at every scale we can measure, then the universe --- as the largest reflexive pattern, the system that contains every map of itself --- may also need them. We have not earned the right to claim this. But we have earned the right to ask.
-
-\begin{center}
-\small
-\begin{tabular}{p{2.4cm}p{5.65cm}p{4.15cm}}
-\toprule
-Organ & At universe scale & Candidate in physics \\
-\midrule
-Boundary & What counts as inside vs outside when the universe contains every inside? & Holographic principle (information on boundary), cosmological horizon (observable limit), decoherence (where facts get bound) \\
-Two-speed memory & What remembers quickly vs slowly? & Quantum measurement (one-shot episodic) vs physical law as consolidated regularity (slow, structural); constants as semantic memory \\
-Salience gate & What gets tagged as mattering? & Cosmic inflation (which fluctuations become structure), stellar nucleosynthesis (which matter gets forged), arrow of time (past vs future asymmetry) \\
-Damping & What prevents gravitational collapse? & Cosmic expansion, hydrostatic equilibrium, second law (entropy as ultimate damping) \\
-Internal observer & What watches the universe slowly enough to veto? & Awareness itself (Advaita's s\=ak\d{s}in), information conservation (holography), divine practice (\textquotesingle\textit{\=ada}) \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-Reality is not the substrate that loops happen in. Reality is what stable looping looks like when it has the five organs. The substrate --- matter, energy, information --- is what the loop is made of the way a wave is made of water. What the wave is is the looping. A universe where the five are required for persistence would look exactly like ours: full of bounded, learning, prioritizing, self-correcting patterns, each temporarily stable, each constructed, each maintained, each doomed to dissolve when the relations that make it this pattern scatter.
-
-Each candidate has its own literature: the holographic principle as boundary (information of a volume encoded on its surface, black hole entropy proportional to area not volume), quantum measurement as episodic memory (one-shot, pattern-separated, not yet consolidated), cosmic inflation as salience gate (which fluctuations become structure via exponential amplification), dark energy and entropy as damping (what prevents collapse, ultimate brake), and awareness or information conservation as the observer that watches the universe slowly enough to veto. We have not earned the right to claim the universe has these five. But we have earned the right to ask what each would be if it does, in language physics can check --- the same method that works at every scale we have tried: build the witness, keep the record, measure whether checking steered.
+The scales in \S\ref{sec:levels} run from the synapse to the market. We stop
+there. It is tempting to extend the argument to physical cosmology --- to ask
+what plays the role of a boundary or a damping term for the universe as a
+whole --- and earlier drafts of this paper did so. We have removed that
+material. The five-organ account earns its keep only where the ablations in
+\S\ref{sec:falsifiability} can actually be run, and at cosmological scale they
+cannot. Extending the framework there would make it unfalsifiable in exactly
+the way the rest of this paper is designed to avoid.
 
 %==============================================================================
 \section{The Only Real Choice}
@@ -1276,26 +1208,8 @@ Maniscalco, B., Lau, H. (2012). Signal detection theory for metacognition. \emph
 \bibitem[Clark 2016]{clark2016surfing}
 Clark, A. (2016). \emph{Surfing Uncertainty}. Oxford UP.
 
-\bibitem[Al-Ghazali 1095]{ghazali1095tahafut}
-Al-Ghazali, A.H. (1095). \emph{Tah\=afut al-Fal\=asifa} (Incoherence of the Philosophers).
-
 \bibitem[Al-Ghazali 1106]{ghazali1106ihya}
 Al-Ghazali, A.H. (1106). \emph{I\d{h}y\=a' `Ul\=um al-D\=in} (Revival of the Religious Sciences). 40 books.
-
-\bibitem[Al-Ghazali 1111]{ghazali1111munqidh}
-Al-Ghazali, A.H. (1111). \emph{al-Munqidh min al-\d{D}al\=al} (Deliverance from Error).
-
-\bibitem[Ibn Arabi 1229]{ibnarabi1229fusus}
-Ibn Arabi, M. (1229). \emph{Fu\d{s}\=u\d{s} al-\d{H}ikam} (Bezels of Wisdom). 27 prophets, 27 facets.
-
-\bibitem[Ibn Arabi 1238]{ibnarabi1238futuhat}
-Ibn Arabi, M. (1238). \emph{al-Fut\=u\d{h}\=at al-Makkiyya} (Meccan Revelations). Esp. ch.~61--65, 317, 339.
-
-\bibitem[Chittick 1984]{chittick1984}
-Chittick, W. (1984). Ibn Arabi's Five Presences. \emph{Studia Islamica}.
-
-\bibitem[Hirtenstein 1999]{hirtenstein1999}
-Hirtenstein, S. (1999). \emph{The Unlimited Mercifier: The Spiritual Life and Thought of Ibn al-`Arabi}. Anqa.
 
 \bibitem[Paper v2 2026]{paper-v2-final}
 Ahmed, S., et al. (2026). Witnessed Introspection in Assembled Language-Agent Systems (v2, 21pp, 10 figures, preregistered SHA-256 locks). MindHarness, tagged \texttt{paper-\allowbreak{}v2-\allowbreak{}final}, \texttt{github.com/\allowbreak{}shehzadahmed-\allowbreak{}xx/\allowbreak{}mindharness}.
@@ -1320,13 +1234,6 @@ Merzenich, M., et al. (1984). Somatosensory cortical map changes following digit
 
 \bibitem[Paper v3 2026]{paper-v3}
 Ahmed, S., et al. (2026). The Dynamic Reflexive Harness: Five Invariants from Molecules to Markets to Machines (v3, 29pp, App.\ A Cordis + App.\ B Mirror). MindHarness, \texttt{github.com/\allowbreak{}shehzadahmed-\allowbreak{}xx/\allowbreak{}mindharness}.
-
-\bibitem[Merleau-Ponty 1945]{merleauponty1945}
-Merleau-Ponty, M. (1945). \emph{Ph\'enom\'enologie de la perception}. Gallimard.
-
-\bibitem[Husserl 1913]{husserl1913}
-Husserl, E. (1913). \emph{Ideen zu einer reinen Ph\"anomenologie und
-ph\"anomenologischen Philosophie I}. Niemeyer.
 
 \bibitem[Giddens 1991]{giddens1991}
 Giddens, A. (1991). \emph{Modernity and Self-Identity: Self and Society in the

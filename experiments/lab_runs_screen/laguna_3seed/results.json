@@ -1,0 +1,35 @@
+{
+ "model": "laguna-s-2.1-free",
+ "base_url": "https://opencode.ai/zen/v1",
+ "arms_run": [
+  "raw"
+ ],
+ "n_seeds": 3,
+ "exploratory": true,
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.8333,
+     "unparsed": 0,
+     "median_latency_ms": 3641
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 1.0,
+     "unparsed": 0,
+     "median_latency_ms": 5997
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.75,
+     "unparsed": 0,
+     "median_latency_ms": 4123
+    }
+   ],
+   "pooled_accuracy": 0.8611,
+   "median_latency_ms": 4123
+  }
+ }
+}

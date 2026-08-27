@@ -1,0 +1,23 @@
+{
+ "model": "laguna-s-2.1-free",
+ "base_url": "https://opencode.ai/zen/v1",
+ "arms_run": [
+  "raw"
+ ],
+ "n_seeds": 1,
+ "exploratory": true,
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.8333,
+     "unparsed": 0,
+     "median_latency_ms": 4068
+    }
+   ],
+   "pooled_accuracy": 0.8333,
+   "median_latency_ms": 4068
+  }
+ }
+}
