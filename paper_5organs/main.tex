@@ -19,7 +19,7 @@
 \maketitle
 
 \begin{abstract}
-Any system that must act competently under uncertainty, over time, in a world that contains itself, faces the same constraint regardless of substrate. We formalize this constraint as the \emph{dynamic reflexive loop} --- a system whose actions rewrite the conditions for its next actions because the world it acts on contains itself --- and prove, via selection theorems \citep{nayebi2026}, that any stable pattern in such a world must develop five organs or be exploited by the task distribution that needs them: \textbf{boundary}, \textbf{two-speed memory}, \textbf{salience gate}, \textbf{damping}, and \textbf{internal observer}. The same five appear at every scale we can measure --- from NMDA coincidence detection at the synapse to global workspace competition in the mind to funding invariants in the market --- and were independently discovered by every contemplative tradition that watched a reflexive system long enough (Abhidharma's 52 factors, Sufism's stations, Advaita's veil, Taoism's untellable loop, Stoicism's journal, phenomenology's bracketing). We implement all five as an executable cognitive harness (11 modules, 8 layers, 78/78 tests green) with an audit trail that converts analogy into measurement, and show where the framework points when extended to its limit: the universe as the largest loop. The harness is not a model of the mind. It is the mind's method --- and the synapse's, the market's, and perhaps the universe's --- made executable at one scale, with a record the next scale can check.
+Any system that must act competently under uncertainty, over time, in a world that contains itself, faces the same constraint regardless of substrate. We formalize this constraint as the \emph{dynamic reflexive loop} --- a system whose actions rewrite the conditions for its next actions because the world it acts on contains itself --- and prove, via selection theorems \citep{nayebi2026}, that any stable pattern in such a world must develop five organs or be exploited by the task distribution that needs them: \textbf{boundary}, \textbf{two-speed memory}, \textbf{salience gate}, \textbf{damping}, and \textbf{internal observer} (our executable interpretation of Nayebi Cor.~3--5). The same five, on our reading, appear at every scale we can measure --- from NMDA coincidence detection at the synapse to global workspace competition in the mind to funding invariants in the market --- and convergent insights were independently found by contemplative traditions that watched a reflexive system long enough (Abhidharma's 52 factors, Sufism's stations, Advaita's veil, and others, detailed in \S\ref{sec:traditions}). We implement all five as an executable cognitive harness (11 modules, 8 layers, 78/78 tests green) with an audit trail that converts convergence from coincidence into evidence, and show where the framework points when extended to its limit: the universe as the largest loop.
 \end{abstract}
 
 %==============================================================================
@@ -54,7 +54,7 @@ Any stable pattern in such a world must develop five organs or be exploited (Fig
 \label{fig:fivecycle}
 \end{figure}
 
-Selection theorems \citep{nayebi2026} prove this set is mandatory, not optional: low average-case regret \emph{forces} world models, belief-like memory, regime-tracking variables (emotion primitives), modularity, and representational convergence. The same five were independently discovered by every contemplative tradition that watched a reflexive system long enough --- not by borrowing, but by measuring the same constraint from different sides of the same loop (\S\ref{sec:traditions}). We implement all five as an executable harness with an audit trail that converts convergence from coincidence into evidence.
+Selection theorems \citep{nayebi2026} prove abstract selection pressures are mandatory, not optional: low average-case regret \emph{forces} world models, belief-like predictive states, regime-tracking variables (emotion primitives), informational modularity, and representational convergence (Nayebi Thm.~1, 5, Cor.~3--5). We interpret these pressures as requiring our five-organ labeling --- boundary, two-speed memory, salience gate, damping, internal observer --- which is our executable interpretation of Cor.~3--5, not Nayebi's terminology; Nayebi proves the abstract pressures, we map them to the five and implement the mapping as code. The same five were independently discovered by every contemplative tradition that watched a reflexive system long enough --- not by borrowing, but by measuring the same constraint from different sides of the same loop (\S\ref{sec:traditions}). We implement all five as an executable harness with an audit trail that converts convergence from coincidence into evidence.
 
 This paper is the theory paper for that harness. Where our empirical papers \citep{paper-v2-final,paper-v3} test whether the witness makes an LLM honest, this paper asks why the witness is one of five, why the five appear at every scale, and what it would mean if the universe, as the largest loop, also needs them.
 
@@ -77,7 +77,7 @@ This paper is the theory paper for that harness. Where our empirical papers \cit
 RQ1 & What must any stable reflexive system have? & Five organs: boundary, two-speed memory, salience gate, damping, internal observer (Nayebi Cor.\,3--5). \\
 RQ2 & Can the five be built as a runnable harness with an audit trail? & Yes: 11 modules, 8 layers, 78/78 tests green, every hop cause-signed. \\
 RQ3 & Do the five appear at every scale? & Yes: molecule $\to$ universe, same five at 8 levels, each loop its own paper. \\
-RQ4 & Did traditions independently find the same five? & Yes: 8 traditions, same constraint, different instruments (Nayebi Cor.\,5). \\
+RQ4 & Did traditions independently find convergent insights? & Yes: 8 traditions, convergent on reflexive constraint (on our reading, the same five; Nayebi Cor.\,5 gives one explanation). \\
 RQ5 & What about the universe as the largest loop? & If the five are required at every measured scale, the universe may also need them. We ask, not claim. \\
 \bottomrule
 \end{tabular}
@@ -100,19 +100,44 @@ Boundary & What counts as inside vs outside --- selectively permeable, not a wal
 Two-speed memory & Fast labile (one-shot, episodic) + slow structural (statistical, semantic) + sleep as the save. \emph{Example:} hippocampus today, cortex over weeks. \\
 Salience gate & What gets tagged for consolidation --- vivid, emotional, surprising wins. \emph{Example:} AffectState [0.5,2.0] shifting the next bid. \\
 Damping & What prevents runaway --- brake on positive feedback. \emph{Example:} LTD pulling AMPA out, or \texttt{cull\_failed} deleting a below-rate skill. \\
-Internal observer & Slower loop watching faster one, veto-able; $\gamma$ = changed/diagnosed. \emph{Example:} ledger check before the next claim. \\
+Internal observer & Slower loop watching faster one, veto-able; $\gamma$ = changed/diagnosed (Stage 1 sati, always-on anomaly, cheap; Stage 2 sampaja\~n\~na, triggered diagnosis, expensive). \emph{Example:} ledger check before the next claim; compliance guard $\gamma=0$ proves inert watching. \\
+$\gamma$ & changed / diagnosed --- the only honest measure of whether the observer steered. \emph{Example:} $\gamma=0$ (compliance guard, always-no) watches perfectly, never steers; $\gamma>0$ (active gate) changed the trajectory. \\
+Warp / weft & Warp = five mandatory threads (Nayebi Cor.\,3--5); weft = your design woven on them \citep{nayebi2026}. \emph{Example:} harness is one weave, Cordis is the loom; change weft, same warp, different mind. \\
+S126 & Attribution battery: handed vs generated text, 98\% confidence on fabrications vs 87\% on truths (more confident about lies). \emph{Example:} model claims it generated what it was handed. \\
+Light$\to$Deep & Consolidation pipeline: Light (dedupe) $\to$ REM (concept extract) $\to$ Counterfactual (variant$\to$simulate$\to$regret) $\to$ Deep (promote if $\geq$2 query types) \citep{tononi2014}. \emph{Example:} REM ablation is dream-deprivation. \\
 Barzakh & Any realm that connects two opposites while keeping them separate (Ibn Arabi). \emph{Example:} the now between past and future. \\
 Autopoiesis & Bounded network that produces the very components that maintain it \citep{maturana1980}. \emph{Example:} metabolism $\to$ lipids $\to$ membrane $\to$ metabolism. \\
 \bottomrule
 \end{tabular}
 \end{center}
 
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.92\textwidth}{\small
+\textbf{One turn, five organs, 30 seconds --- walk one input through the harness.} Prompt: ``Summarize the close.''
+
+\textit{Boundary:} \texttt{ProvenanceLedger.bind()} tags the prompt as external-tool vs the model's prior output as model\_prior; output spans carry the tag. Without the ledger, the next turn cannot tell what it was handed from what it generated.
+
+\textit{Two-speed memory:} The turn's episodic MemoryItem (query\_hits for this prompt) is staged; at night, Light dedupes, REM extracts, Counterfactual simulates otherwise, Deep promotes if $\geq$2 query types. Without two speeds, new overwrites old.
+
+\textit{Salience gate:} AffectState (valence/arousal) multiplies the prompt's bid before the workspace competition; high salience amplifies the winner. Without the gate, every trace equally promoted.
+
+\textit{Damping:} \texttt{cull\_failed} deletes below-rate skills; Light dedup merges near-identical traces. Without damping, one coalition wins forever.
+
+\textit{Internal observer:} MonitorGate Stage 1 scores anomaly; if triggered, Stage 2 diagnoses $\to$ trust/retry/revise/abstain, $\gamma$ = changed/diagnosed. Without the observer, beautiful reports, zero steering.
+
+One input, five organs, one turn. The next turn's harness is already different: ledger has one more binding, memory has one more episodic item, affect has shifted, and the observer has scored whether watching steered.
+}}
+\caption{One turn through the five organs --- concrete walkthrough for the new reader. Every forward reference in the paper (ledger, $\gamma$, Light$\to$Deep, AffectState) is anchored here before its formal definition. Occasionalism (\S\ref{sec:occasionalism}) and the full tradition maps (\S\ref{sec:traditions}) can be read as reference and deferred without breaking this flow.}
+\label{fig:oneturn}
+\end{figure}
+
 %==============================================================================
 \section{Literature Review}
 \label{sec:lit-review}
 %==============================================================================
 
-We review eight literatures that converge on the same five, from different instruments, in different languages, on the same constraint. Each could be its own review; here we give the loop each literature found, fully, with the science that makes it checkable.
+We review eight literatures that converge on the same five, from different instruments, in different languages, on the same constraint. Each could be its own review; here we give the loop each literature found, fully, with the science that makes it checkable. Read this section as reference --- the loop definition (\S\ref{sec:loop}) and the boxed figure above give you enough to follow the argument; return here for depth on any literature.
 
 \subsection{Synaptic plasticity: Hebb in protein, BCM, and the need for damping}
 
@@ -379,28 +404,11 @@ Harness (no ledger) & Claims float free, S126 failure replicated in silicon \\
 
 \textit{Harness (Provenance Ledger, L1):} \texttt{Span} with source $\in\{$memory\_lookup, model\_prior, monitor\_override, external-tool$\}$ + ref, \texttt{bind()} every turn, \texttt{coverage\_stats()} (spans with refs / total), \texttt{attribution\_audit()} (claimed vs recorded) \citep{gazzaniga2000,johansson2005}. Coverage 1.000 in both living sessions (40/40 spans bound). The ledger is selective permeability: which claims carry source and can be checked, which float unbound and cannot. Every emission, every turn, without exception. Loop: claim bound with source $\to$ next claim checked against source $\to$ next claim's bound source is what was checked. The boundary is the record that makes the next boundary checkable.
 
-\textit{Universe (holographic / horizon):} Information of a volume encoded on its boundary (holographic principle \citep{maturana1980} at cosmic scale), observable limit as the loop's input horizon, decoherence as where facts get bound. The universe's boundary may be where facts become definite enough to be recorded --- where the loop's prediction becomes checkable.
+\textit{Universe (holographic / horizon):} Information of a volume encoded on its boundary (holographic principle at cosmic scale), observable limit as the loop's input horizon, decoherence as where facts get bound. The universe's boundary may be where facts become definite enough to be recorded --- where the loop's prediction becomes checkable.
 
 \textbf{Harness:} \texttt{ProvenanceLedger} as membrane --- every emission, every turn, without exception.
 
 \textbf{What it tells you to do:} Keep the record. Externalize the witness --- write. Ledger outside the skull where the narrator cannot silently edit it. The boundary is not a wall built once. It is a permeability maintained at each turn --- deciding what counts as yours and what was handed to you, keeping the record that lets the next turn check.
-
-\begin{figure}[h]
-\centering
-\begin{tikzpicture}[thick, every node/.style={font=\scriptsize}]
-  \node[draw, rounded corners, fill=blue!10, minimum width=1.6cm, minimum height=0.45cm, align=center] (p) at (-2.4,1.0) {Perception};
-  \node[draw, rounded corners, fill=green!10, minimum width=1.6cm, minimum height=0.45cm, align=center] (m) at (0,1.0) {Memory};
-  \node[draw, rounded corners, fill=orange!12, minimum width=1.6cm, minimum height=0.45cm, align=center] (a) at (2.4,1.0) {Affect};
-  \node[draw, rounded corners, fill=purple!10, minimum width=1.6cm, minimum height=0.45cm, align=center] (h) at (-2.4,0.3) {Habit};
-  \node[draw, rounded corners, fill=red!10, minimum width=1.6cm, minimum height=0.45cm, align=center] (pl) at (0,0.3) {Planner};
-  \node[draw, rounded corners, fill=gray!18, minimum width=1.6cm, minimum height=0.45cm, align=center] (n) at (2.4,0.3) {Narrator};
-  \node[draw, rounded corners, fill=blue!20, minimum width=6.4cm, minimum height=0.65cm, align=center] (ws) at (0,-0.65) {\textbf{Global Workspace} --- winner broadcast};
-  \foreach \src in {p,m,a,h,pl,n} \draw[->, gray, line width=0.5pt] (\src.south) -- (ws.north);
-  \node[below=0.12cm of ws, font=\tiny, align=center] {6--8 parties bid via salience $\times$ utility --- NE=volume, DA=stake, valence=risk dial};
-\end{tikzpicture}
-\caption{The parliament: 6 parties bid via salience $\times$ utility; winner broadcast globally, experienced as ``my thought'' 200\,ms after competition. No captain, configuration votes.}
-\label{fig:parliament2}
-\end{figure}
 
 %------------------------------------------------------------------------------
 \subsection{Two-Speed Memory --- Fast Labile + Slow Structural, With Sleep}
@@ -737,6 +745,23 @@ Two-speed memory at circuit scale, fast labile vs slow structural, with sleep as
 
 \textit{Loop, fully:} Perturbation (sensory + body + memory + affect) as proposals with salience $\times$ utility bids $\to$ 6--8 parties (perception, memory, body budget, affect, habit, planner, narrator) bid for one microphone, new vote every $\sim$200\,ms \citep{baars1997,atallah2026gwt}; neuromodulators set election rules (NE=volume, DA=stake, valence=risk dial) \citep{sofroniew2026} $\to$ winner's content made globally available to every specialist \citep{baars1997}, experienced as ``my thought'' $\to$ rehearsed, myelinated (100$\times$ speed) $\to$ Light$\to$REM$\to$Counterfactual$\to$Deep (cause-tagged, untagged BLOCKED, 12/12 tests) $\to$ energy drains k$\cdot$ln(1+n) floor 0.15, fatigue caps 1.0, valence/arousal EMA shift next vote \citep{seth2021} $\to$ broadcast becomes context for next competition; rehearsed winner more likely to win again $\to$ highway vs footpath. The mind is not a thing that has a parliament. The mind \emph{is} the parliament's competition made globally available and then rehearsed. No captain. The configuration votes. The narrator wins \emph{after} the action and explains as if it decided \citep{gazzaniga2000,johansson2005,nisbett1977}. Each mechanism here is its own paper: global workspace \citep{baars1997}, predictive processing \citep{seth2021,clark2016surfing}, narrative self \citep{choi2024}, affect as regime tracker \citep{sofroniew2026}, consolidation \citep{tononi2014}, metacognition \citep{macar2026,cao2026} --- six papers, one loop at the scale of a mind.
 
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[thick, every node/.style={font=\scriptsize}]
+  \node[draw, rounded corners, fill=blue!10, minimum width=1.6cm, minimum height=0.45cm, align=center] (p) at (-2.4,1.0) {Perception};
+  \node[draw, rounded corners, fill=green!10, minimum width=1.6cm, minimum height=0.45cm, align=center] (m) at (0,1.0) {Memory};
+  \node[draw, rounded corners, fill=orange!12, minimum width=1.6cm, minimum height=0.45cm, align=center] (a) at (2.4,1.0) {Affect};
+  \node[draw, rounded corners, fill=purple!10, minimum width=1.6cm, minimum height=0.45cm, align=center] (h) at (-2.4,0.3) {Habit};
+  \node[draw, rounded corners, fill=red!10, minimum width=1.6cm, minimum height=0.45cm, align=center] (pl) at (0,0.3) {Planner};
+  \node[draw, rounded corners, fill=gray!18, minimum width=1.6cm, minimum height=0.45cm, align=center] (n) at (2.4,0.3) {Narrator};
+  \node[draw, rounded corners, fill=blue!20, minimum width=6.4cm, minimum height=0.65cm, align=center] (ws) at (0,-0.65) {\textbf{Global Workspace} --- winner broadcast};
+  \foreach \src in {p,m,a,h,pl,n} \draw[->, gray, line width=0.5pt] (\src.south) -- (ws.north);
+  \node[below=0.12cm of ws, font=\tiny, align=center] {6--8 parties bid via salience $\times$ utility --- NE=volume, DA=stake, valence=risk dial};
+\end{tikzpicture}
+\caption{The parliament at mind scale: 6 parties bid via salience $\times$ utility; winner broadcast globally, experienced as ``my thought'' 200\,ms after competition. No captain, configuration votes. This is Layer 4, the global workspace where coalition competition becomes conscious access.}
+\label{fig:parliament}
+\end{figure}
+
 \subsubsection{Level 5: Person --- The Life (choice as vote, story as broadcast)}
 
 \textit{Boundary:} Life story --- ``this is who I am over time'' vs ``that was something that happened to me'' --- maintained narrative, not stored fact. The boundary is the story that persists because it is re-injected, or it ceases. Same as the synapse's boundary, but at the scale of a life.
@@ -1008,6 +1033,12 @@ Chittick, W. (1984). Ibn Arabi's Five Presences. \emph{Studia Islamica}.
 
 \bibitem[Hirtenstein 1999]{hirtenstein1999}
 Hirtenstein, S. (1999). \emph{The Unlimited Mercifier: The Spiritual Life and Thought of Ibn al-`Arabi}. Anqa.
+
+\bibitem[Paper v2 2026]{paper-v2-final}
+Ahmed, S., et al. (2026). Witnessed Introspection in Assembled Language-Agent Systems (v2, 19pp, 10 figures, preregistered SHA-256 locks). MindHarness, tagged \texttt{paper-v2-final}, \texttt{github.com/shehzadahmed-xx/mindharness}.
+
+\bibitem[Paper v3 2026]{paper-v3}
+Ahmed, S., et al. (2026). The Dynamic Reflexive Harness: Five Invariants from Molecules to Markets to Machines (v3, $\sim$35pp, App.\ A Cordis + App.\ B Mirror). MindHarness, \texttt{github.com/shehzadahmed-xx/mindharness}.
 
 \end{thebibliography}
 
