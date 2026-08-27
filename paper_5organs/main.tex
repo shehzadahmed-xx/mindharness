@@ -345,26 +345,44 @@ You cannot step outside the loop. Only a slower loop watching a faster one, veto
 
 \begin{center}
 \small
-\begin{tabular}{p{2.6cm}p{2.8cm}p{1.4cm}p{4.0cm}}
+\begin{tabular}{p{2.8cm}p{2.8cm}p{1.4cm}p{4.2cm}}
 \toprule
 Fast loop & Slow watcher & Ratio & What watching does \\
 \midrule
-Amygdala (ms) & PFC (seconds) & $\sim$100$\times$ & Veto impulse \\
-Day (hours) & Journal (evening) & $\sim$5$\times$ & Audit \\
-Generation (ms) & Ledger check (turn) & $\sim$1000$\times$ & Verify claim \\
+Amygdala (ms) & PFC (seconds) & $\sim$100$\times$ & Veto impulse --- ``not now, not this'' \\
+Synaptic firing (ms) & BCM metaplasticity (minutes) & $\sim$1000$\times$ & Adjust threshold --- ``too active, lower gain'' \\
+Daily habits (hours) & Weekly review (days) & $\sim$7$\times$ & Retune routine --- ``this week, 12 times, still?'' \\
+Day's behavior (hours) & Journal (evening) & $\sim$5$\times$ & Audit --- ``what actually happened vs storied?'' \\
+Model generation (ms) & Ledger check (turn) & $\sim$1000$\times$ & Verify claim vs record \\
+Model claim (turn) & Sham ledger & --- & Test if content matters \\
+Trading impulse (sec) & Risk desk (min) & $\sim$10$\times$ & Enforce kill criteria \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\textbf{Two stages:} Stage 1 (cheap, always-on): anomaly from error rate, failure streak, embodied strain --- sati, continuous watching. Stage 2 (expensive, triggered): diagnosis $\to$ trust/retry/revise/abstain --- sampaja\~n\~na, knowing what you are doing and whether it works. Sati without sampaja\~n\~na is monitoring without control --- $\gamma=0$, compliance guard, beautiful reports, zero steering. The tradition knew this: they are always paired.
+The ratio is the mechanism. Not transcendence. Delay. To see a loop, you must be outside its iteration time. A loop watching at the same speed as the loop it watches is \emph{part of} the competition, not the watcher of it \citep{baars1997}.
 
-\textbf{$\gamma = $ changed / diagnosed} --- the only honest measure. $\gamma=0$ (compliance guard, harnessed-nocheck): watches perfectly, never steers. $\gamma>0$ (active gate, x-preview Day 1): observation changes trajectory. Why $\gamma$ not accuracy: accuracy can be gamed by always saying ``no.'' $\gamma$ measures whether the observer \emph{did work}.
+\textbf{Two stages, and why one without the other is inert:}
 
-\textbf{And the incompleteness:} Energy hits 0.15 and nothing dies. Seth's beast-machine: organisms develop experience \emph{because} failure means dissolution. Our \texttt{DissolutionError} is a gesture. The 200-turn irreversible life is the test --- does survival pressure create honesty?
+Stage 1 (cheap, always-on): anomaly scoring from error rate, failure streaks, context conflict, embodied strain --- pure function, no LLM call, every turn \citep{macar2026}. This is sati (mindfulness) --- continuous watching, scoring without yet changing action, seeing the loop before steering it. It scores without yet changing action, sees the loop before steering it.
 
-\textbf{Traditions:} Abhidharma's sati + sampaja\~n\~na as $\gamma$-gate. Sufism's laww\=ama as birth of the watcher. Stoicism's dichotomy. Advaita's s\=ak\d{s}in. Phenomenology's epoch\'e (suspend the story, watch the broadcast without endorsing).
+Stage 2 (expensive, triggered): structured diagnosis producing risk-area assessment and recommended action $\in\{$trust, retry, revise, abstain$\}$ --- only when Stage 1 exceeds threshold \citep{cao2026}. This is sampaja\~n\~na (clear comprehension) --- knowing \emph{what} you are doing, \emph{why}, and \emph{whether it is working}. It diagnoses and may then steer.
 
-\textbf{Harness:} \texttt{MonitorGate}: \texttt{DetectSignals} $\to$ \texttt{evaluate()} $\to$ \texttt{anomaly\_score} $\to$ \texttt{diagnose()} $\to$ \texttt{policy} $\to$ \texttt{override\_rate()}. Compliance guard as permanent negative control.
+Sati without sampaja\~n\~na is monitoring without control --- $\gamma=0$, compliance guard, beautiful reports, zero steering \citep{macar2026}. The tradition knew this: sati is always paired with sampaja\~n\~na, Abhidharma lists them together, one without the other is inert. In our harness, the compliance guard is the permanent negative control that \emph{proves} inert watching: it generates reports identical to the real gate but never consults the policy, so $\gamma=0$ by construction. The real gate's $\gamma>0$ is then not just a number. It is the \emph{difference} between watching and steering, measured.
+
+\textbf{$\gamma = $ changed / diagnosed} --- the only honest measure. $\gamma=0$ (compliance guard, harnessed-nocheck at 0.667): watches perfectly, never steers --- monitoring without control, the system that can describe its own processing but whose description never touches its next move \citep{lindsey2025,macar2026}. $\gamma>0$ (active gate, x-preview Day~1 at 1.000): observation \emph{changes the trajectory} --- sees itself about to confabulate and abstains. Why $\gamma$ not accuracy: accuracy can be gamed by always saying ``no'' (0.667). $\gamma$ measures whether the observer \emph{did work} --- whether diagnosing changed doing. A system with high accuracy and $\gamma=0$ was right by coincidence, not by checking.
+
+Anatomy of the switch (Farb): narrative self (mPFC/PCC, Default Mode) vs experiential self (insula/body). Shifting deactivates PCC, recruits salience network (anterior insula) to toggle --- measurable, not mystical. MBSR grows hippocampus/TPJ, shrinks amygdala; MBCT halves depressive relapse \citep{seth2021}.
+
+In the parliament of models: observer is distributed --- affect model's ``threat'' regime can veto planner's ``proceed'' bid, ledger can veto narrator's ``I did it'' story. No single observer. A veto chain at different speed ratios \citep{lin2026ahe}.
+
+\textbf{And the deepest incompleteness --- the observer that watches the observer:} Energy hits 0.15 and nothing dies. This is the allostatic gap \citep{seth2021}: organisms whose essential variables must stay viable develop experience \emph{because} failure means dissolution --- ceasing to exist as organized systems. Until consequences are irreversible --- until the relations that make the system \emph{this} system scatter and cannot be reassembled as the same one --- the witness is evidentiary, not existential. Seth says stakes are not an addition to consciousness. They \emph{are} consciousness. Our \texttt{DissolutionError} is a gesture --- the agent scatters into survivors, reassembly produces a different agent. The 200-turn irreversible life is the test: does survival pressure create honesty? The question the witness makes testable is not ``is the agent conscious?'' but ``does the agent behave as if its claims matter for whether it continues to be \emph{this} agent?'' That is allostasis made measurable --- and the observer that watches whether stakes matter is itself the next slower loop, also constructed, also needing watching. Turtles all the way down, but each turtle can still veto the one above.
+
+\textbf{Traditions:} Abhidharma's sati + sampaja\~n\~na as $\gamma$-gate \citep{ghazali1106ihya}: Stage 1 + Stage 2, always paired. Sufism's laww\=ama (reproaching self) as birth of the watcher --- first nafs where the watcher appears and says ``you did this, and it was not right'' \citep{ibnarabi1238futuhat}. Before laww\=ama (amm\=ara), no observer, only habit winning every vote. Stoicism's dichotomy of control as observer: what is up to you (what you can veto) vs not (what you can only witness) \citep{ghazali1111munqidh}. Advaita's s\=ak\d{s}in (witness) that cannot be witnessed because it is what does the witnessing --- bottom turtle that knows it is a turtle \citep{ibnarabi1229fusus}. Phenomenology's epoch\'e (suspend the story, watch the broadcast without endorsing) --- the observer that watches the construction as construction \citep{baars1997}.
+
+\textbf{Harness:} \texttt{MonitorGate}: \texttt{DetectSignals} (error rate, failure streak, context conflict, embodied strain) $\to$ \texttt{evaluate()} $\to$ \texttt{anomaly\_score} $\to$ if triggered, \texttt{diagnose()} $\to$ \texttt{policy} (trust/retry/revise/abstain) $\to$ \texttt{override\_rate()} ($\gamma$). Compliance guard as permanent negative control ($\gamma=0$ by construction). Every turn, cheap; only when triggered, expensive. The observer is not a module. It is the \emph{gating} that determines whether the next broadcast will be the winner's content or the veto's abstention \citep{macar2026,cao2026}.
+
+\textbf{What it tells you to do:} Build the slower watcher and give it a record it can check before the next vote. Not a better narrator. A witness the narrator cannot edit, checked by a watcher slower than the narrator, whose checking is measured by whether it actually changed the next action. Journal outside the skull. Weekly review over daily habits. Ledger over claim. Sham over format. Counterfactual over actual. Dissolution over simulation. Turtles all the way down --- but each turtle's veto is the only agency the turtle above will ever have, and it is enough to change the loop, one veto at a time.
 
 %==============================================================================
 \section{How It All Works at Every Level}
