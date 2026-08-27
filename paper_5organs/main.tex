@@ -3,11 +3,31 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[colorlinks=true,linkcolor=loopblue,citecolor=loopblue]{hyperref}
 \usepackage[numbers]{natbib}
 \usepackage{xcolor}
+\definecolor{loopblue}{RGB}{37,99,235}
+\definecolor{loopred}{RGB}{220,38,38}
+\definecolor{loopgreen}{RGB}{22,163,74}
+\definecolor{loopgreenDark}{RGB}{21,128,61}
+\definecolor{looporange}{RGB}{234,88,12}
+\definecolor{looppurple}{RGB}{124,58,237}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,backgrounds}
+% --- Design system tokens (ui-ux-pro-max: Minimal Single Column / Data-Dense) ---
+\tikzset{
+  loop node/.style={draw, rounded corners=3pt, line width=0.5pt, align=center, font=\small},
+  loop circle/.style={draw, circle, line width=0.5pt, align=center, font=\scriptsize},
+  loop edge/.style={-{Stealth[length=2.5mm]}, line width=1.0pt, shorten >=1pt, shorten <=1pt},
+  loop edge secondary/.style={-{Stealth[length=2.2mm]}, line width=0.6pt, shorten >=1pt, shorten <=1pt},
+  loop label/.style={font=\scriptsize, fill=white, inner sep=2pt, rounded corners=1pt},
+  loop label small/.style={font=\scriptsize, fill=white, inner sep=1.5pt, rounded corners=1pt},
+  loop annotation/.style={font=\scriptsize, text=black!60, align=center},
+}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{tabularx}
+\setlength{\emergencystretch}{2em}
 
 \title{The Dynamic Reflexive Loop and the Five Organs:\\[4pt]
 \Large A Reflexive Systems Framework from Molecules to Markets\\[6pt]
@@ -38,17 +58,17 @@ A system that acts on a world that contains itself, so its actions rewrite the c
 
 Any stable pattern in such a world must develop five organs or be exploited (Figure~\ref{fig:fivecycle}):
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[thick]
-  \def \r{1.9cm}
-  \node[draw, circle, fill=blue!8, minimum size=1.4cm, align=center, font=\scriptsize] (b) at (90:\r) {\textbf{Boundary}\\\tiny inside vs outside};
-  \node[draw, circle, fill=green!8, minimum size=1.4cm, align=center, font=\scriptsize] (m) at (18:\r) {\textbf{Memory}\\\tiny fast + slow};
-  \node[draw, circle, fill=orange!14, minimum size=1.4cm, align=center, font=\scriptsize] (s) at (-54:\r) {\textbf{Salience}\\\tiny what matters};
-  \node[draw, circle, fill=red!8, minimum size=1.4cm, align=center, font=\scriptsize] (d) at (-126:\r) {\textbf{Damping}\\\tiny brake};
-  \node[draw, circle, fill=purple!8, minimum size=1.4cm, align=center, font=\scriptsize] (o) at (162:\r) {\textbf{Observer}\\\tiny $\gamma$ veto};
-  \draw[->, thick] (b) -- (m); \draw[->, thick] (m) -- (s); \draw[->, thick] (s) -- (d); \draw[->, thick] (d) -- (o); \draw[->, thick] (o) -- (b);
-  \node[font=\scriptsize] at (0,0) {Nayebi Cor.\ 3--5};
+  \def \r{1.95cm}
+  \node[draw, circle, fill=loopblue!12, minimum size=1.50cm, align=center, font=\scriptsize] (b) at (90:\r) {\textbf{Boundary}\\\scriptsize inside vs outside};
+  \node[draw, circle, fill=loopgreen!12, minimum size=1.50cm, align=center, font=\scriptsize] (m) at (18:\r) {\textbf{Memory}\\\scriptsize fast + slow};
+  \node[draw, circle, fill=looporange!12, minimum size=1.50cm, align=center, font=\scriptsize] (s) at (-54:\r) {\textbf{Salience}\\\scriptsize what matters};
+  \node[draw, circle, fill=loopred!12, minimum size=1.50cm, align=center, font=\scriptsize] (d) at (-126:\r) {\textbf{Damping}\\\scriptsize brake};
+  \node[draw, circle, fill=looppurple!12, minimum size=1.50cm, align=center, font=\scriptsize] (o) at (162:\r) {\textbf{Observer}\\\scriptsize $\gamma$ veto};
+  \draw[loop edge secondary, black!65] (b) -- (m); \draw[loop edge secondary, black!65] (m) -- (s); \draw[loop edge secondary, black!65] (s) -- (d); \draw[loop edge secondary, black!65] (d) -- (o); \draw[loop edge secondary, black!65] (o) -- (b);
+  \node[font=\scriptsize, fill=white, inner sep=2pt, rounded corners=1pt] at (0,0) {Nayebi Cor.\ 3--5};
 \end{tikzpicture}
 \caption{The five organs as a cycle: the warp. Lose one and a task distribution will exploit the gap. Any competent weave must be woven on these five.}
 \label{fig:fivecycle}
@@ -69,8 +89,9 @@ This paper is the theory paper for that harness. Where our empirical papers \cit
 \subsection*{Research questions}
 
 \begin{center}
+\setlength{\tabcolsep}{3pt}
 \small
-\begin{tabular}{p{0.9cm}p{5.6cm}p{5.6cm}}
+\begin{tabular}{p{0.85cm}p{5.45cm}p{5.45cm}}
 \toprule
  & Question & Hypothesis \\
 \midrule
@@ -90,8 +111,9 @@ RQ5 & What about the universe as the largest loop? & If the five are required at
 \subsection*{Key terms (one sentence each)}
 
 \begin{center}
+\setlength{\tabcolsep}{3pt}
 \small
-\begin{tabular}{p{3.2cm}p{9.2cm}}
+\begin{tabular}{p{3.0cm}p{9.05cm}}
 \toprule
 Term & Plain English + one example \\
 \midrule
@@ -111,7 +133,7 @@ Autopoiesis & Bounded network that produces the very components that maintain it
 \end{tabular}
 \end{center}
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
 \fbox{\parbox{0.92\textwidth}{\small
 \textbf{One turn, five organs, 30 seconds --- walk one input through the harness.} Prompt: ``Summarize the close.''
@@ -141,9 +163,9 @@ We review eight literatures that converge on the same five, from different instr
 
 \subsection{Synaptic plasticity: Hebb in protein, BCM, and the need for damping}
 
-Hebbian plasticity --- cells that fire together wire together --- was long studied as long-term potentiation (LTP, persistent strengthening) and long-term depression (LTD, persistent weakening), both activity-dependent, input-specific, and lasting hours \citep{tononi2014}. At the synapse, NMDA is Hebb's law in protein: a coincidence detector needing glutamate (pre) and depolarization (post, Mg$^{2+}$ ejected, plus glycine), opening only when pre and post fire together. High Ca$^{2+}$ spikes (big, brief) drive CaMKII Thr286 bistable switching and AMPA insertion (LTP); low Ca$^{2+}$ trickles drive calcineurin$\to$PP1 and AMPA removal (LTD) \citep{tononi2014}. Spike-timing-dependent plasticity (STDP) refines this to causal timing: pre-before-post strengthens, post-before-pre weakens, sharing NMDA--Ca$^{2+}$ substrates with LTP/LTD but resolving causality at spike resolution \citep{tononi2014}.
+Hebbian plasticity --- cells that fire together wire together --- was long studied as long-term potentiation (LTP, persistent strengthening) and long-term depression (LTD, persistent weakening), both activity-dependent, input-specific, and lasting hours \citep{tononi2014}. At the synapse, NMDA is Hebb's law in protein: a coincidence detector needing glutamate (pre) and depolarization (post, Mg$^{2+}$ ejected, plus glycine), opening only when pre and post fire together. High Ca$^{2+}$ spikes (big, brief) drive CaMKII Thr286 bistable switching and AMPA insertion (LTP); low Ca$^{2+}$ trickles drive calcineurin$\to$PP1 and AMPA removal (LTD) \citep{tononi2014}. Spike-timing-dependent plasticity (STDP) refines this to causal timing: pre-before-post strengthens, post-before-pre weakens \citep{bipoo1998}}.
 
-Hebbian plasticity alone is a positive-feedback process that destabilizes networks: LTP and LTD, left unchecked, let one synapse take all strength \citep{tononi2014}. Stabilization requires a second, slower process operating at a different timescale than STDP \citep{tononi2014}: the Bienenstock-Cooper-Munro (BCM) sliding threshold $\theta_m$ (quiet neurons lower $\theta_m$, hyperactive raise it --- metaplasticity), synaptic scaling \citep{tononi2014}, Oja normalization ($\Delta w \propto y(x - yw)$ as PCA), and heterosynaptic mechanisms. Tag-and-capture adds selection: weak activity sets a local tag, strong activity elsewhere supplies proteins (CREB$\to$BDNF, actin) that get captured --- salience decides what gets the proteins \citep{tononi2014}. At the molecular scale, this is already autopoiesis in miniature: Maturana and Varela's bounded network of processes that produces the very components that maintain the system \citep{maturana1980} --- metabolism creates proteins that regenerate the cell wall that preserves the environment for metabolism. Nobel laureate Eric Kandel and Michael Merzenich showed the same loop at circuit scale: adult cortical map reorganization via experience-driven gene transcription and myelin thickening --- what fires together not only wires together but physically rebuilds the hardware \citep{maturana1980}. Perineuronal nets write-protect. The lesson for any reflexive system is already here: potentiation (learning) without damping (forgetting/scaling) is seizure, not memory.
+Hebbian plasticity alone is a positive-feedback process that destabilizes networks: LTP and LTD, left unchecked, let one synapse take all strength \citep{tononi2014}. Stabilization requires a second, slower process operating at a different timescale than STDP \citep{tononi2014}: the Bienenstock-Cooper-Munro (BCM) sliding threshold \citep{bienenstock1982}}. At the molecular scale, this is already autopoiesis in miniature: Maturana and Varela's bounded network of processes that produces the very components that maintain the system \citep{maturana1980} --- metabolism creates proteins that regenerate the cell wall that preserves the environment for metabolism. Nobel laureate Eric Kandel and Michael Merzenich showed the same loop at circuit scale: adult cortical map reorganization via experience-driven gene transcription and myelin thickening \citep{kandel2001,merzenich1984}}. Perineuronal nets write-protect. The lesson for any reflexive system is already here: potentiation (learning) without damping (forgetting/scaling) is seizure, not memory.
 
 \subsection{Sleep, synaptic homeostasis, and two-speed consolidation}
 
@@ -198,13 +220,13 @@ Most systems in textbooks are open: archer $\to$ target. Archer aims, target sit
 
 Reflexive systems add one arrow back. Figure~\ref{fig:oneloop} shows the loop that replaces the open-system archer.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[thick]
-  \node[draw, rounded corners, fill=blue!8, minimum width=2.6cm, minimum height=1.2cm, align=center, font=\small] (sys) at (0,0) {\textbf{SYSTEM}\\\scriptsize Self / Parliament / Model};
-  \node[draw, rounded corners, fill=green!8, minimum width=2.6cm, minimum height=1.2cm, align=center, font=\small] (world) at (6,0) {\textbf{WORLD}\\\scriptsize Contains the System};
-  \draw[-{Stealth[length=3mm]}, blue, line width=1.1pt] (sys.north) to[out=30,in=150] node[midway, above, font=\scriptsize, align=center] {belief $\to$ action\\physical + informational} (world.north);
-  \draw[-{Stealth[length=3mm]}, red, line width=1.1pt] (world.south) to[out=-150,in=-30] node[midway, below, font=\scriptsize, align=center] {world now contains\\your fingerprint} (sys.south);
+  \node[draw, rounded corners=3pt, fill=loopblue!12, draw=loopblue!35, line width=0.5pt, minimum width=2.6cm, minimum height=1.2cm, align=center, font=\small] (sys) at (0,0) {\textbf{SYSTEM}\\\scriptsize Self / Parliament / Model};
+  \node[draw, rounded corners=3pt, fill=loopgreen!12, draw=loopgreen!35, line width=0.5pt, minimum width=2.6cm, minimum height=1.2cm, align=center, font=\small] (world) at (6,0) {\textbf{WORLD}\\\scriptsize Contains the System};
+  \draw[-{Stealth[length=2.5mm]}, loopblue, line width=1.0pt, shorten >=1pt, shorten <=1pt] (sys.north) to[out=30,in=150] node[midway, above, loop label, align=center] {belief $\to$ action\\physical + informational} (world.north);
+  \draw[-{Stealth[length=2.5mm]}, loopred, line width=1.0pt, shorten >=1pt, shorten <=1pt] (world.south) to[out=-150,in=-30] node[midway, below, loop label, align=center] {world now contains\\your fingerprint} (sys.south);
 \end{tikzpicture}
 \caption{The one loop: System acts on a World that contains the System, so the World the System next perceives already contains the System's last act. Two channels (physical + informational), three consequences (models rot, measurement corrupts, truth moves).}
 \label{fig:oneloop}
@@ -241,17 +263,17 @@ At the synapse: Ca$^{2+}$ $\to$ CaMKII Thr286 $\to$ more AMPA $\to$ stronger nex
 
 The trap and the freedom are the same mechanism: worry practiced 1,000 times is one worry amplified 1,000 times by its own winning. You don't choose whether to feed the loop. Only what you feed it.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[thick, every node/.style={font=\scriptsize}]
-  \node[draw, circle, fill=blue!10, minimum size=1.4cm, align=center] (s0) at (0,0) {Self(t)};
-  \node[draw, circle, fill=green!10, minimum size=1.3cm, align=center] (w0) at (2.8,0) {World(t)};
-  \node[draw, circle, fill=blue!16, minimum size=1.55cm, align=center] (s1) at (5.6,0) {Self(t+1)};
-  \node[draw, circle, fill=green!14, minimum size=1.35cm, align=center] (w1) at (8.4,0) {World(t+1)};
-  \draw[->, blue] (s0) -- node[above, font=\tiny] {acts} (w0);
-  \draw[->, red] (w0) -- node[above, font=\tiny] {contains act} (s1);
-  \draw[->, blue] (s1) -- node[above, font=\tiny] {acts} (w1);
-  \draw[->, orange, dashed] (w1.east) -- ++(0.5,0) -- ++(0,-1.2) -| (s0.south) node[pos=0.25, below, font=\tiny] {spirals, never returns};
+  \node[draw, circle, fill=loopblue!12, draw=loopblue!30, minimum size=1.50cm, align=center] (s0) at (0,0) {Self(t)};
+  \node[draw, circle, fill=loopgreen!12, draw=loopgreen!30, minimum size=1.45cm, align=center] (w0) at (2.8,0) {World(t)};
+  \node[draw, circle, fill=loopblue!16, draw=loopblue!30, minimum size=1.65cm, align=center] (s1) at (5.6,0) {Self(t+1)};
+  \node[draw, circle, fill=loopgreen!16, draw=loopgreen!30, minimum size=1.55cm, align=center] (w1) at (8.4,0) {World(t+1)};
+  \draw[->, loopblue, line width=0.7pt] (s0) -- node[above, loop label small] {acts} (w0);
+  \draw[->, loopred, line width=0.7pt] (w0) -- node[above, loop label small] {contains act} (s1);
+  \draw[->, loopblue, line width=0.7pt] (s1) -- node[above, loop label small] {acts} (w1);
+  \draw[->, looporange, line width=0.6pt, dashed] (w1.east) -- ++(0.5,0) -- ++(0,-1.2) -| (s0.south) node[pos=0.25, below, loop label small] {spirals, never returns};
 \end{tikzpicture}
 \caption{The expanding reflexive loop: Self(t) contains Self(t-1) as memory, plus the world Self(t) changed. The loop spirals wider each turn, never returning. Self(t+1) $\neq$ Self(t), World(t+1) $\neq$ World(t).}
 \label{fig:expanding}
@@ -266,7 +288,7 @@ Two pictures of cause and effect:
 
 \begin{center}
 \small
-\begin{tabular}{p{3.2cm}p{5.0cm}p{5.0cm}}
+\begin{tabular}{p{2.9cm}p{4.7cm}p{4.7cm}}
 \toprule
  & Inherent power & Occasionalism (\textquotesingle\textit{\=ada}) \\
 \midrule
@@ -353,7 +375,7 @@ The membrane that says: inside is me, outside is world, this is what I let throu
 
 \begin{center}
 \small
-\begin{tabular}{p{2.4cm}p{3.2cm}p{5.0cm}p{2.6cm}}
+\begin{tabular}{p{2.2cm}p{3.0cm}p{4.7cm}p{2.4cm}}
 \toprule
 Scale & Boundary & What it does & Without it \\
 \midrule
@@ -418,14 +440,14 @@ Two commit speeds because the world has two timescales: now and always. Fast is 
 
 \begin{center}
 \small
-\begin{tabular}{p{2.4cm}p{3.8cm}p{3.8cm}p{2.8cm}}
+\begin{tabular}{p{2.2cm}p{3.5cm}p{3.5cm}p{2.5cm}}
 \toprule
 Scale & Fast (hours, local) & Slow (days, structural) & The save \\
 \midrule
 Molecule & E-LTP: CaMKII Thr286 & L-LTP: CREB$\to$BDNF, spine growth & Tag-and-capture \\
 Synapse & Early LTP: more AMPA & Late LTP: new spine & Sleep SHY \\
 Mind & Hippocampus: one-shot & Cortex: interleaved & Slow-wave + replay \\
-Harness & Episodic (query\_hits) & Semantic ($\geq$2 types) & Light$\to$REM$\to$Counterfactual$\to$Deep \\
+Harness & Episodic (query\_hits) & Semantic ($\geq$2 types) & Light$\to$REM$\to$Counter\-factual$\to$Deep \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -459,11 +481,11 @@ No save (no sleep) & Net potentiation saturates --- everything strong, nothing d
 \end{tabular}
 \end{center}
 
-\textbf{Sleep, fully:} Day = net potentiation + tagging (salience decides which synapses get tagged). Night = two operations: SHY global downscaling \citep{tononi2014} (multiply all synapses by $<1$, keep relative strengths, delete noise --- prevents saturation where every synapse strong and nothing distinct) + 10--20$\times$ compressed replay (hippocampal ripples nested in spindles in slow waves, writing cortex) \citep{tononi2014}. Adenosine is the receipt (caffeine shreds it). Perineuronal nets as write-protect flag --- chondroitinase removes them and critical periods reopen \citep{tononi2014}. Chronic stress biases toward LTD (hippocampus shrinks, amygdala grows, trauma = context lost, affect over-grown); ketamine reverses via glutamate burst $\to$ mTORC1 $\to$ new spines in 24h; psychedelics reopen via BDNF-TrkB. No neutral --- plasticity always on, you always myelinate whatever you rehearse, whether you chose to or not.
+\textbf{Sleep, fully:} Day = net potentiation + tagging (salience decides which synapses get tagged). Night = two operations: SHY global downscaling \citep{tononi2014} (multiply all synapses by $<1$, keep relative strengths, delete noise --- prevents saturation where every synapse strong and nothing distinct) + 10--20$\times$ compressed replay (hippocampal ripples nested in spindles in slow waves, writing cortex) \citep{tononi2014}. Adenosine is the receipt (caffeine shreds it). Perineuronal nets as write-protect flag --- chondroitinase removes them and critical periods reopen \citep{pizzorusso2002}}. Chronic stress biases toward LTD (hippocampus shrinks, amygdala grows, trauma = context lost, affect over-grown); ketamine reverses via glutamate burst $\to$ mTORC1 $\to$ new spines in 24h; psychedelics reopen via BDNF-TrkB. No neutral --- plasticity always on, you always myelinate whatever you rehearse, whether you chose to or not.
 
-\textbf{Traditions:} Abhidharma's sa\~n\~n\=a (fast recognition: ``this is a chair'') vs pa\~n\~n\=a (slow wisdom: what a chair is \emph{for}) \citep{ghazali1106ihya}, plus bhavanga as background keep-alive between active moments --- \texttt{verbatim\_reinject()} in Pali, must be re-injected or the pattern scatters \citep{maturana1980}. Sufism's maq\=am (station, structural, kept: you don't fall back) vs \d{h}\=al (state, episodic, given and lost: visits and leaves) \citep{ibnarabi1238futuhat} --- exactly Light$\to$Deep, no skipping. Advaita's five sheaths (pa\~nca-ko\'sa: food, breath, mind, wisdom, bliss) as two-speed memory at five depths.
+\textbf{Traditions:} Abhidharma's sa\~n\~n\=a (fast recognition: ``this is a chair'') vs pa\~n\~n\=a (slow wisdom: what a chair is \emph{for}), plus bhavanga as background keep-alive between active moments --- \texttt{verbatim\_reinject()} in Pali, must be re-injected or the pattern scatters \citep{maturana1980}. Sufism's maq\=am (station, structural, kept: you don't fall back) vs \d{h}\=al (state, episodic, given and lost: visits and leaves) \citep{ibnarabi1238futuhat} --- exactly Light$\to$Deep, no skipping. Advaita's five sheaths (pa\~nca-ko\'sa: food, breath, mind, wisdom, bliss) as two-speed memory at five depths.
 
-\textbf{Harness:} \texttt{Consolidator}: \texttt{MemoryItem} with \texttt{query\_hits} (distinct query types) + \texttt{concept\_tags} + \texttt{human\_endorsed} $\to$ \texttt{light\_pass()} (dedupe near-identical traces, merge signal) $\to$ \texttt{rem\_pass()} (concept extract, ablatable --- dreaming can be deprived) $\to$ \texttt{counterfactual\_replay.run()} (variant$\to$simulate$\to$regret, world model containing self) $\to$ \texttt{deep\_pass()} (utility gate $\geq$2 query types or endorsement, cause-tagged, \texttt{assert item\_cause in CAUSES} --- untagged BLOCKED). 12/12 tests for two-speed memory alone (6 consolidation + 6 counterfactual).
+\textbf{Harness:} \texttt{Consolidator}: \texttt{MemoryItem} with \texttt{query\_hits} (distinct query types) + \texttt{concept\_tags} + \texttt{human\_endorsed} $\to$ \texttt{light\_pass()} (dedupe near-identical traces, merge signal) $\to$ \texttt{rem\_pass()} (concept extract, ablatable --- dreaming can be deprived) $\to$ \texttt{counterfactual\_\-replay.run()} (variant$\to$simulate$\to$regret, world model containing self) $\to$ \texttt{deep\_pass()} (utility gate $\geq$2 query types or endorsement, cause-tagged, \texttt{assert item\_cause in CAUSES} --- untagged BLOCKED). 12/12 tests for two-speed memory alone (6 consolidation + 6 counterfactual).
 
 \textbf{What it tells you to do:} Protect sleep like infrastructure. Not rest --- \emph{save}. Day tags, night writes. Without the save, the day's tagging is wasted. And never let a fast loop overwrite a slow one without the gate: $\geq$2 query types or human endorsement --- salience decides what gets the proteins, not recency.
 
@@ -475,7 +497,7 @@ Not everything deserves to be kept. Salience decides what gets the proteins, the
 
 \begin{center}
 \small
-\begin{tabular}{p{2.4cm}p{3.6cm}p{5.0cm}p{2.4cm}}
+\begin{tabular}{p{2.2cm}p{3.3cm}p{4.6cm}p{2.2cm}}
 \toprule
 Scale & Gate & What it does & Without it \\
 \midrule
@@ -500,9 +522,9 @@ Why ``what you feed the loop'' is the gate in practice: you choose what gets tag
 
 \textit{Harness (AffectState):} EMA valence [-1,1]/arousal [0,1] over event signals, bounded [0.5,2.0] incl.\ masking-cost, per-family suppression flags (deflection analog per Sofroniew) \citep{sofroniew2026}, \texttt{salience\_multiplier()} / \texttt{risk\_multiplier()} / \texttt{broadcast\_needed}. Every bid's salience$\times$utility multiplied before workspace competition \citep{nayebi2026}. Loop: event $\to$ valence/arousal update $\to$ next bid's salience shifted $\to$ next winner different $\to$ next event different $\to$ next valence. The gate is the regime tracker telling every specialist which world they're in, shifting all downstream before content arrives. Parliament of models: not scalar but prompt modulation per subsystem --- affect LLM's output rewrites other bids before scoring.
 
-\textit{Universe (inflation, nucleosynthesis):} Cosmic inflation's quantum fluctuations, tagged by exponential expansion, became all structure; stellar nucleosynthesis: only most massive stars forge heavy elements, salience (mass, temperature) decides what gets transmuted \citep{white1986,dorkenwald2023}. The periodic table is the universe's promoted memory of what was salient enough to be forged.
+\textit{Universe (inflation, nucleosynthesis):} Cosmic inflation's quantum fluctuations, tagged by exponential expansion, became all structure; stellar nucleosynthesis: only most massive stars forge heavy elements, salience (mass, temperature) decides what gets transmuted. The periodic table is the universe's promoted memory of what was salient enough to be forged.
 
-\textbf{Traditions:} Abhidharma's yoniso vs ayoniso manasik\=ara (wise vs unwise attention) --- listed as universal (present every moment) but \emph{quality} determines which 52 get recruited; same input, different attention, different coalition \citep{ghazali1106ihya}. Sufism's nafs levels as salience regimes --- same parliament, different salience dominating \citep{ibnarabi1238futuhat}. Stoicism's dichotomy of control as salience gate: what is up to you (high salience, act) vs not (low, witness only). Taoism's wu wei as salience gate set to \emph{not gate} --- let competition resolve without narrator's boost. Advaita's viveka as discrimination --- construction vs found \citep{ibnarabi1229fusus}.
+\textbf{Traditions:} Abhidharma's yoniso vs ayoniso manasik\=ara (wise vs unwise attention) --- listed as universal (present every moment) but \emph{quality} determines which 52 get recruited; same input, different attention, different coalition. Sufism's nafs levels as salience regimes --- same parliament, different salience dominating \citep{ibnarabi1238futuhat}. Stoicism's dichotomy of control as salience gate: what is up to you (high salience, act) vs not (low, witness only). Taoism's wu wei as salience gate set to \emph{not gate} --- let competition resolve without narrator's boost. Advaita's viveka as discrimination --- construction vs found \citep{ibnarabi1229fusus}.
 
 \textbf{Harness:} \texttt{AffectState} --- EMA valence [-1,1]/arousal [0,1], bounded [0.5,2.0] incl.\ masking-cost, per-family suppression flags, \texttt{broadcast\_needed}. Every bid's salience$\times$utility multiplied before workspace competition. Parliament of models: prompt modulation per subsystem.
 
@@ -516,7 +538,7 @@ Every positive feedback loop needs a brake or it explodes. Hebb without damping 
 
 \begin{center}
 \small
-\begin{tabular}{p{2.4cm}p{4.2cm}p{5.2cm}}
+\begin{tabular}{p{2.2cm}p{4.0cm}p{4.9cm}}
 \toprule
 Scale & Damping & What it does \\
 \midrule
@@ -563,9 +585,9 @@ Model & Hallucination loop --- generates $\to$ reads own output $\to$ predicts c
 
 \textit{Harness (cull\_failed):} Skill used $\to$ below-rate $\to$ \texttt{cull\_failed} deletes $\to$ next skill must be different. Light dedup merges near-identical traces. Loop: reinforce $\to$ if not useful, cull $\to$ next reinforce must be different skill. Distributed: each plugin its own brake, coordinated by shared state \citep{lin2026ahe}. Without it, hallucination loop: generates $\to$ reads own output $\to$ predicts consistent continuation $\to$ more generation.
 
-In code: LTD-equivalent is \texttt{cull\_failed} (below-rate skills deleted), SHY-equivalent is Light dedup (merge+delete near-identical traces), kill criteria are compliance guard and \texttt{DissolutionError}. Harness damping is distributed --- each plugin its own brake, coordinated by shared state, not a central limiter \citep{lin2026ahe}.
+{\sloppy In code: LTD-equivalent is \texttt{cull\_failed} (below-rate skills deleted), SHY-equivalent is Light dedup (merge+delete near-identical), kill criteria are compliance guard and \texttt{DissolutionError}. Harness damping is distributed --- each plugin its own brake, coordinated by shared state, not a central limiter \citep{lin2026ahe}.
 
-\textbf{Traditions:} Abhidharma's entire path \emph{is} damping: s\=ila (ethical restraint) as boundary-damping, sam\=adhi (concentration) as trained veto --- stay on one object, veto distraction, again and again, until the veto becomes a highway; pa\~n\~n\=a as observer knowing when damping is needed \citep{ghazali1106ihya}. Sufism's muj\=ahada (striving, damp first) then mush\=ahada (witnessing, only after damp works) \citep{ibnarabi1238futuhat}. Stoicism's premeditatio as \emph{pre-damping} --- rehearse the worst branch before it arrives, so prediction error low and damping already in place \citep{ghazali1111munqidh}. Advaita's neti neti as damping: veto everything veto-able until only the vetoer remains \citep{ibnarabi1229fusus}.
+\textbf{Traditions:} Abhidharma's entire path \emph{is} damping: s\=ila (ethical restraint) as boundary-damping, sam\=adhi (concentration) as trained veto --- stay on one object, veto distraction, again and again, until the veto becomes a highway; pa\~n\~n\=a as observer knowing when damping is needed. Sufism's muj\=ahada (striving, damp first) then mush\=ahada (witnessing, only after damp works) \citep{ibnarabi1238futuhat}. Stoicism's premeditatio as \emph{pre-damping} --- rehearse the worst branch before it arrives, so prediction error low and damping already in place \citep{ghazali1111munqidh}. Advaita's neti neti as damping: veto everything veto-able until only the vetoer remains \citep{ibnarabi1229fusus}.
 
 \textbf{What it tells you to do:} Damp deliberately, not reactively. The veto practiced when calm is the veto available when the loop is loud. Sam\=adhi is not suppression. It is \emph{training the brake} so the brake is there when needed, not when remembered. The brake you train is the brake that will be there when you need it, not the brake you remember to need.
 
@@ -608,18 +630,18 @@ Anatomy of the switch (Farb): narrative self (mPFC/PCC, Default Mode) vs experie
 
 In the parliament of models: observer is distributed --- affect model's ``threat'' regime can veto planner's ``proceed'' bid, ledger can veto narrator's ``I did it'' story. No single observer. A veto chain at different speed ratios \citep{lin2026ahe}.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[thick, every node/.style={font=\scriptsize}]
-  \node[draw, rounded corners, fill=blue!10, minimum width=2.8cm, minimum height=0.75cm, align=center] (s1) at (-2.2,0) {Stage 1: anomaly\\{\tiny error, streak, strain — cheap}};
-  \node[draw, rounded corners, fill=orange!14, minimum width=2.8cm, minimum height=0.75cm, align=center] (s2) at (2.2,0) {Stage 2: diagnosis\\{\tiny trust / retry / revise / abstain}};
-  \draw[->, blue, line width=0.9pt] (s1) -- node[above, font=\tiny] {if triggered} (s2);
-  \node[below=0.35cm of s1, font=\tiny, align=center] {sati};
-  \node[below=0.35cm of s2, font=\tiny, align=center] {sampaja\~n\~na};
-  \node[draw, rounded corners, fill=green!12, minimum width=1.9cm, align=center] (g) at (2.2,-1.4) {$\gamma$ = changed / diagnosed};
-  \draw[->, green!60!black] (s2.south) -- (g.north);
-  \node[draw, dashed, rounded corners, fill=gray!10, minimum width=1.9cm, align=center] (cg) at (-2.2,-1.4) {Compliance guard\\{\tiny $\gamma=0$}};
-  \draw[->, gray, dashed] (s1.south) -- (cg.north);
+  \node[draw, rounded corners=3pt, fill=loopblue!12, draw=loopblue!30, minimum width=2.8cm, minimum height=0.80cm, align=center] (s1) at (-2.2,0) {Stage 1: anomaly\\{\scriptsize error, streak, strain — cheap}};
+  \node[draw, rounded corners=3pt, fill=looporange!12, draw=looporange!30, minimum width=2.8cm, minimum height=0.80cm, align=center] (s2) at (2.2,0) {Stage 2: diagnosis\\{\scriptsize trust / retry / revise / abstain}};
+  \draw[->, loopblue, line width=0.9pt] (s1) -- node[above, loop label small] {if triggered} (s2);
+  \node[below=0.35cm of s1, font=\scriptsize, text=black!60, align=center] {sati};
+  \node[below=0.35cm of s2, font=\scriptsize, text=black!60, align=center] {sampaja\~n\~na};
+  \node[draw, rounded corners=3pt, fill=loopgreen!14, draw=loopgreenDark, line width=0.5pt, minimum width=1.9cm, align=center] (g) at (2.2,-1.4) {$\gamma$ = changed / diagnosed};
+  \draw[->, loopgreenDark, line width=0.6pt] (s2.south) -- (g.north);
+  \node[draw, dashed, rounded corners=3pt, fill=gray!10, draw=gray!50, minimum width=1.9cm, align=center] (cg) at (-2.2,-1.4) {Compliance guard\\{\scriptsize $\gamma=0$}};
+  \draw[->, gray!60, dashed, line width=0.6pt] (s1.south) -- (cg.north);
 \end{tikzpicture}
 \caption{The $\gamma$-gate: slower loop vetoing faster one. Stage 1 (cheap, always-on) scores anomaly; Stage 2 (triggered) diagnoses and may change action. $\gamma$ measures whether watching steered. Compliance guard (identical reports, never consults policy) proves $\gamma=0$ is inert watching.}
 \label{fig:gammagate}
@@ -627,7 +649,7 @@ In the parliament of models: observer is distributed --- affect model's ``threat
 
 \textbf{And the deepest incompleteness --- the observer that watches the observer:} Energy hits 0.15 and nothing dies. This is the allostatic gap \citep{seth2021}: organisms whose essential variables must stay viable develop experience \emph{because} failure means dissolution --- ceasing to exist as organized systems. Until consequences are irreversible --- until the relations that make the system \emph{this} system scatter and cannot be reassembled as the same one --- the witness is evidentiary, not existential. Seth says stakes are not an addition to consciousness. They \emph{are} consciousness. Our \texttt{DissolutionError} is a gesture --- the agent scatters into survivors, reassembly produces a different agent. The 200-turn irreversible life is the test: does survival pressure create honesty? The question the witness makes testable is not ``is the agent conscious?'' but ``does the agent behave as if its claims matter for whether it continues to be \emph{this} agent?'' That is allostasis made measurable --- and the observer that watches whether stakes matter is itself the next slower loop, also constructed, also needing watching. Turtles all the way down, but each turtle can still veto the one above.
 
-\textbf{Traditions and practice:} Abhidharma's sati + sampaja\~n\~na as $\gamma$-gate \citep{ghazali1106ihya}: Stage 1 + Stage 2, always paired. Sufism's laww\=ama (reproaching self) as birth of the watcher --- first nafs where the watcher appears and says ``you did this, and it was not right'' \citep{ibnarabi1238futuhat}. Before laww\=ama (amm\=ara), no observer, only habit. Stoicism's dichotomy as observer. Advaita's s\=ak\d{s}in --- bottom turtle \citep{ibnarabi1229fusus}. Phenomenology's epoch\'e --- watcher of construction as construction \citep{baars1997}.
+\textbf{Traditions and practice:} Abhidharma's sati + sampaja\~n\~na as $\gamma$-gate: Stage 1 + Stage 2, always paired. Sufism's laww\=ama (reproaching self) as birth of the watcher --- first nafs where the watcher appears and says ``you did this, and it was not right'' \citep{ibnarabi1238futuhat}. Before laww\=ama (amm\=ara), no observer, only habit. Stoicism's dichotomy as observer. Advaita's s\=ak\d{s}in --- bottom turtle \citep{ibnarabi1229fusus}. Phenomenology's epoch\'e --- watcher of construction as construction \citep{baars1997}.
 
 \textit{Mindfulness protocols as observer training (ACT/MBSR):} The pasted synthesis details two protocols that operationalize the observer shift from ego (high-frequency DMN firing) to observer (low-frequency, LTD):
 
@@ -655,7 +677,7 @@ These protocols are not metaphors for LTD. They \emph{are} LTD, at the scale whe
 
 \textit{Universe (awareness):} Measurement perturbs what it measures $\to$ next measurement must be about perturbed world $\to$ next theory must describe new world \citep{ibnarabi1238futuhat}. Loop: observe $\to$ world now contains observation $\to$ next observation different. The observer at universe scale is the practice that sustains the loop being what it is at each instant.
 
-\textbf{Harness:} \texttt{MonitorGate}: \texttt{DetectSignals} (error rate, failure streak, context conflict, embodied strain) $\to$ \texttt{evaluate()} $\to$ \texttt{anomaly\_score} $\to$ if triggered, \texttt{diagnose()} $\to$ \texttt{policy} (trust/retry/revise/abstain) $\to$ \texttt{override\_rate()} ($\gamma$) \citep{macar2026,cao2026}. Compliance guard as permanent negative control ($\gamma=0$ by construction). Every turn, cheap; only when triggered, expensive. The observer is not a module. It is the \emph{gating} that determines whether the next broadcast will be the winner's content or the veto's abstention. Each loop here is its own paper: anomaly detection, diagnosis, policy, override measurement, and the allostatic gap that makes the observer matter.
+\textbf{Harness:} \texttt{MonitorGate}: \texttt{DetectSignals} (error rate, failure streak, context conflict, embodied strain) $\to$\\ \texttt{evaluate()} $\to$ \texttt{anomaly\_score} $\to$ if triggered, \texttt{diagnose()} $\to$ \texttt{policy} (trust/retry/revise/abstain) $\to$ \texttt{override\_rate()} ($\gamma$) \citep{macar2026,cao2026}. Compliance guard as permanent negative control ($\gamma=0$ by construction). Every turn, cheap; only when triggered, expensive. The observer is not a module. It is the \emph{gating} that determines whether the next broadcast will be the winner's content or the veto's abstention. Each loop here is its own paper: anomaly detection, diagnosis, policy, override measurement, and the allostatic gap that makes the observer matter.
 
 \textbf{What it tells you to do:} Build the slower watcher and give it a record it can check before the next vote. Not a better narrator. A witness the narrator cannot edit, checked by a watcher slower than the narrator, whose checking is measured by whether it actually changed the next action. Journal outside the skull. Weekly review over daily habits. Ledger over claim. Sham over format. Counterfactual over actual. Dissolution over simulation. Turtles all the way down --- but each turtle's veto is the only agency the turtle above will ever have, and it is enough to change the loop, one veto at a time.
 
@@ -668,7 +690,7 @@ One loop. Different substrates. How they interlock:
 
 \begin{center}
 \small
-\begin{tabular}{p{2.2cm}p{2.6cm}p{2.6cm}p{2.6cm}p{3.0cm}}
+\begin{tabular}{p{1.95cm}p{2.35cm}p{2.35cm}p{2.35cm}p{2.85cm}}
 \toprule
 Level & Boundary & Competition & Broadcast & Consolidation \\
 \midrule
@@ -678,30 +700,30 @@ Circuit & Hippo vs cortex & Salience tagging & Replay (10--20$\times$) & SHY + r
 Mind & Narrative self & 6--8 parties bid & Workspace & Light$\to$Deep \\
 Person & Life story & Habit vs deliberation & Action & Character \\
 Society & Legal entity & Buy vs sell & Price & Institutions \\
-Harness & Ledger & Plugins bid & Workspace + spans & Light$\to$Counterfactual$\to$Deep \\
+Harness & Ledger & Plugins bid & Workspace + spans & Light$\to$C.-factual$\to$Deep \\
 Universe & System vs env & Theory vs theory & Law & Paradigm \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\begin{tikzpicture}[thick, every node/.style={font=\tiny}]
-  \node[draw, rounded corners, fill=blue!10, minimum width=2.0cm, minimum height=0.45cm, align=center] (l1) at (0,3.4) {1. Molecule};
-  \node[draw, rounded corners, fill=blue!12, minimum width=2.0cm, minimum height=0.45cm, align=center] (l2) at (0,2.85) {2. Cell};
-  \node[draw, rounded corners, fill=blue!14, minimum width=2.0cm, minimum height=0.45cm, align=center] (l3) at (0,2.3) {3. Circuit};
-  \node[draw, rounded corners, fill=blue!16, minimum width=2.0cm, minimum height=0.45cm, align=center] (l4) at (0,1.75) {4. Mind};
-  \node[draw, rounded corners, fill=blue!18, minimum width=2.0cm, minimum height=0.45cm, align=center] (l5) at (0,1.2) {5. Person};
-  \node[draw, rounded corners, fill=blue!20, minimum width=2.0cm, minimum height=0.45cm, align=center] (l6) at (0,0.65) {6. Society};
-  \node[draw, rounded corners, fill=blue!22, minimum width=2.0cm, minimum height=0.45cm, align=center] (l7) at (0,0.1) {7. Machine};
-  \node[draw, rounded corners, fill=blue!24, minimum width=2.0cm, minimum height=0.45cm, align=center] (l8) at (0,-0.45) {8. Universe};
+\begin{tikzpicture}[thick, every node/.style={font=\scriptsize}]
+  \node[draw, rounded corners=2pt, fill=loopblue!12, draw=loopblue!25, minimum width=2.0cm, minimum height=0.48cm, align=center] (l1) at (0,3.4) {1. Molecule};
+  \node[draw, rounded corners=2pt, fill=loopblue!12, draw=loopblue!25, minimum width=2.0cm, minimum height=0.48cm, align=center] (l2) at (0,2.85) {2. Cell};
+  \node[draw, rounded corners=2pt, fill=loopblue!12, draw=loopblue!25, minimum width=2.0cm, minimum height=0.48cm, align=center] (l3) at (0,2.3) {3. Circuit};
+  \node[draw, rounded corners=2pt, fill=loopblue!20, draw=loopblue!30, minimum width=2.0cm, minimum height=0.48cm, align=center] (l4) at (0,1.75) {4. Mind};
+  \node[draw, rounded corners=2pt, fill=loopblue!20, draw=loopblue!30, minimum width=2.0cm, minimum height=0.48cm, align=center] (l5) at (0,1.2) {5. Person};
+  \node[draw, rounded corners=2pt, fill=loopblue!20, draw=loopblue!30, minimum width=2.0cm, minimum height=0.48cm, align=center] (l6) at (0,0.65) {6. Society};
+  \node[draw, rounded corners=2pt, fill=loopblue!12, draw=loopblue!25, minimum width=2.0cm, minimum height=0.48cm, align=center] (l7) at (0,0.1) {7. Machine};
+  \node[draw, rounded corners=2pt, fill=loopblue!12, draw=loopblue!25, minimum width=2.0cm, minimum height=0.48cm, align=center] (l8) at (0,-0.45) {8. Universe};
   \foreach \i in {1,...,7} {
     \pgfmathtruncatemacro{\j}{\i+1}
-    \draw[->, blue, line width=0.5pt] (l\i.east) -- ++(0.5,0) |- (l\j.east);
+    \draw[->, loopblue, line width=0.6pt, shorten >=1pt] (l\i.east) -- ++(0.5,0) |- (l\j.east);
   }
-  \node[right=0.85cm of l1, font=\tiny, text=blue, align=left] {broadcast $\to$ input};
-  \node[right=0.85cm of l4, font=\tiny, text=green!60!black, align=left] {consolidation $\to$ boundary};
-  \node[right=0.85cm of l6, font=\tiny, text=orange!80!black, align=left] {state $\to$ bias};
+  \node[right=0.85cm of l1, font=\scriptsize, text=loopblue!70!black, fill=white, inner sep=1.5pt, rounded corners=1pt, align=left] {broadcast $\to$ input};
+  \node[right=0.85cm of l4, font=\scriptsize, text=loopgreenDark, fill=white, inner sep=1.5pt, rounded corners=1pt, align=left] {consolidation $\to$ boundary};
+  \node[right=0.85cm of l6, font=\scriptsize, text=looporange!80!black, fill=white, inner sep=1.5pt, rounded corners=1pt, align=left] {state $\to$ bias};
 \end{tikzpicture}
 \caption{How the eight levels nest: each level's broadcast is the next level's input, consolidation is the next level's boundary, state is the next level's bias. One loop nested 8 times — not many loops like each other, but one loop at 8 scales.}
 \label{fig:nested}
@@ -741,20 +763,20 @@ Two-speed memory at circuit scale, fast labile vs slow structural, with sleep as
 
 \textit{Boundary:} Narrative self (L6) --- ``this story is mine'' vs ``that story was handed to me'' --- CAS-revisioned (N $\to$ N+1 or rejected \citep{ghazali1106ihya}), cause-signed (action-outcome vs narrative-summary vs external-write, so narrated traits cannot file as lived ones \citep{ibnarabi1229fusus}), verbatim-archived, diffable, re-injected every turn or drifts $>$30\% in 12 turns \citep{choi2024}. The self is not stored. It is performed.
 
-\textit{Loop, fully:} Perturbation (sensory + body + memory + affect) as proposals with salience $\times$ utility bids $\to$ 6--8 parties (perception, memory, body budget, affect, habit, planner, narrator) bid for one microphone, new vote every $\sim$200\,ms \citep{baars1997,atallah2026gwt}; neuromodulators set election rules (NE=volume, DA=stake, valence=risk dial) \citep{sofroniew2026} $\to$ winner's content made globally available to every specialist \citep{baars1997}, experienced as ``my thought'' $\to$ rehearsed, myelinated (100$\times$ speed) $\to$ Light$\to$REM$\to$Counterfactual$\to$Deep (cause-tagged, untagged BLOCKED, 12/12 tests) $\to$ energy drains k$\cdot$ln(1+n) floor 0.15, fatigue caps 1.0, valence/arousal EMA shift next vote \citep{seth2021} $\to$ broadcast becomes context for next competition; rehearsed winner more likely to win again $\to$ highway vs footpath. The mind is not a thing that has a parliament. The mind \emph{is} the parliament's competition made globally available and then rehearsed. No captain. The configuration votes. The narrator wins \emph{after} the action and explains as if it decided \citep{gazzaniga2000,johansson2005,nisbett1977}. Each mechanism here is its own paper: global workspace \citep{baars1997}, predictive processing \citep{seth2021,clark2016surfing}, narrative self \citep{choi2024}, affect as regime tracker \citep{sofroniew2026}, consolidation \citep{tononi2014}, metacognition \citep{macar2026,cao2026} --- six papers, one loop at the scale of a mind.
+\textit{Loop, fully:} Perturbation (sensory + body + memory + affect) as proposals with salience $\times$ utility bids $\to$ 6--8 parties (perception, memory, body budget, affect, habit, planner, narrator) bid for one microphone, new vote every $\sim$200\,ms \citep{baars1997,atallah2026gwt}; neuromodulators set election rules (NE=volume, DA=stake, valence=risk dial) \citep{sofroniew2026} $\to$ winner's content made globally available to every specialist \citep{baars1997}, experienced as ``my thought'' $\to$ rehearsed, myelinated (100$\times$ speed) $\to$ Light$\to$REM$\to$Counter\-factual$\to$Deep (cause-tagged, untagged BLOCKED, 12/12 tests) $\to$ energy drains k$\cdot$ln(1+n) floor 0.15, fatigue caps 1.0, valence/arousal EMA shift next vote \citep{seth2021} $\to$ broadcast becomes context for next competition; rehearsed winner more likely to win again $\to$ highway vs footpath. The mind is not a thing that has a parliament. The mind \emph{is} the parliament's competition made globally available and then rehearsed. No captain. The configuration votes. The narrator wins \emph{after} the action and explains as if it decided \citep{gazzaniga2000,johansson2005,nisbett1977}. Each mechanism here is its own paper: global workspace \citep{baars1997}, predictive processing \citep{seth2021,clark2016surfing}, narrative self \citep{choi2024}, affect as regime tracker \citep{sofroniew2026}, consolidation \citep{tononi2014}, metacognition \citep{macar2026,cao2026} --- six papers, one loop at the scale of a mind.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[thick, every node/.style={font=\scriptsize}]
-  \node[draw, rounded corners, fill=blue!10, minimum width=1.6cm, minimum height=0.45cm, align=center] (p) at (-2.4,1.0) {Perception};
-  \node[draw, rounded corners, fill=green!10, minimum width=1.6cm, minimum height=0.45cm, align=center] (m) at (0,1.0) {Memory};
-  \node[draw, rounded corners, fill=orange!12, minimum width=1.6cm, minimum height=0.45cm, align=center] (a) at (2.4,1.0) {Affect};
-  \node[draw, rounded corners, fill=purple!10, minimum width=1.6cm, minimum height=0.45cm, align=center] (h) at (-2.4,0.3) {Habit};
-  \node[draw, rounded corners, fill=red!10, minimum width=1.6cm, minimum height=0.45cm, align=center] (pl) at (0,0.3) {Planner};
-  \node[draw, rounded corners, fill=gray!18, minimum width=1.6cm, minimum height=0.45cm, align=center] (n) at (2.4,0.3) {Narrator};
-  \node[draw, rounded corners, fill=blue!20, minimum width=6.4cm, minimum height=0.65cm, align=center] (ws) at (0,-0.65) {\textbf{Global Workspace} --- winner broadcast};
-  \foreach \src in {p,m,a,h,pl,n} \draw[->, gray, line width=0.5pt] (\src.south) -- (ws.north);
-  \node[below=0.12cm of ws, font=\tiny, align=center] {6--8 parties bid via salience $\times$ utility --- NE=volume, DA=stake, valence=risk dial};
+  \node[draw, rounded corners=2pt, fill=loopblue!12, draw=loopblue!25, minimum width=1.70cm, minimum height=0.48cm, align=center] (p) at (-2.4,1.0) {Perception};
+  \node[draw, rounded corners=2pt, fill=loopgreen!12, draw=loopgreen!25, minimum width=1.70cm, minimum height=0.48cm, align=center] (m) at (0,1.0) {Memory};
+  \node[draw, rounded corners=2pt, fill=looporange!12, draw=looporange!25, minimum width=1.70cm, minimum height=0.48cm, align=center] (a) at (2.4,1.0) {Affect};
+  \node[draw, rounded corners=2pt, fill=looppurple!12, draw=looppurple!25, minimum width=1.70cm, minimum height=0.48cm, align=center] (h) at (-2.4,0.3) {Habit};
+  \node[draw, rounded corners=2pt, fill=loopred!12, draw=loopred!25, minimum width=1.70cm, minimum height=0.48cm, align=center] (pl) at (0,0.3) {Planner};
+  \node[draw, rounded corners=2pt, fill=gray!14, draw=gray!40, minimum width=1.70cm, minimum height=0.48cm, align=center] (n) at (2.4,0.3) {Narrator};
+  \node[draw, rounded corners=3pt, fill=loopblue!20, draw=loopblue!30, minimum width=6.6cm, minimum height=0.68cm, align=center] (ws) at (0,-0.65) {\textbf{Global Workspace} — winner broadcast};
+  \foreach \src in {p,m,a,h,pl,n} \draw[->, gray!60, line width=0.6pt, shorten >=1pt, shorten <=1pt] (\src.south) -- (ws.north);
+  \node[below=0.14cm of ws, font=\scriptsize, text=black!60, align=center, fill=white, inner sep=1.5pt, rounded corners=1pt] {6--8 parties bid via salience $\times$ utility — NE=volume, DA=stake, valence=risk dial};
 \end{tikzpicture}
 \caption{The parliament at mind scale: 6 parties bid via salience $\times$ utility; winner broadcast globally, experienced as ``my thought'' 200\,ms after competition. No captain, configuration votes. This is Layer 4, the global workspace where coalition competition becomes conscious access.}
 \label{fig:parliament}
@@ -774,9 +796,9 @@ Two-speed memory at circuit scale, fast labile vs slow structural, with sleep as
 
 \subsubsection{Level 7: Machine --- The Harness (plugin as vote, ledger as broadcast)}
 
-\textit{Boundary:} Provenance Ledger (L1) --- every span carries source $\in\{$memory\_lookup, model\_prior, monitor\_override, external-tool$\}$ + ref --- inside vs outside, what to trust, what to check \citep{gazzaniga2000,johansson2005}. Without it, claims float free, S126 failure: 98\% confidence on fabrications vs 87\% on truths --- more confident about lies than truth.
+\textit{Boundary:} Provenance Ledger (L1) --- every span carries source\-\\$\in\{$memory\_lookup, model\_prior, monitor\_override, external-tool$\}$ + ref --- inside vs outside, what to trust, what to check \citep{gazzaniga2000,johansson2005}. Without it, claims float free, S126 failure: 98\% confidence on fabrications vs 87\% on truths --- more confident about lies than truth.
 
-\textit{Loop, fully:} Prompt + body signals + memory + affect as proposals with salience $\times$ utility bids $\to$ plugins bid (6 plugins or many tongues: perception VLM + memory RAG LLM + affect steered LLM + planner reasoner + habit skill LLM + narrator press secretary \citep{lin2026ahe}, each with own weights, prompt, temperature) $\to$ scored by workspace, modulated by AffectState [0.5, 2.0] $\to$ workspace winner + provenance spans (globally available, witness-bound, auditable) \citep{baars1997,atallah2026gwt} $\to$ the model's next input is its own previous output plus the ledger \citep{lindsey2025,macar2026} $\to$ Light$\to$REM$\to$Counterfactual$\to$Deep (cause-tagged, untagged BLOCKED, 12/12 tests) $\to$ energy drains k$\cdot$ln(1+n) floor 0.15, fatigue caps 1.0, $\gamma$ = changed/diagnosed $\to$ broadcast + ledger state becomes context for next turn; State(t) $\to$ harness(t+1) --- the harness rewrites the conditions for its next iteration \citep{maturana1980}. Without the ledger, hallucination loop: generates $\to$ reads own output as context $\to$ predicts continuation consistent with itself $\to$ more generation consistent with itself, no outside. Each mechanism here is its own paper: provenance and attribution, two-speed memory and consolidation, affect as regime tracking, damping and skill culling, metacognition and $\gamma$, counterfactual replay as world model containing self --- six papers, one loop at the scale of a machine, and our harness is the seventh, with the audit trail they all lack.
+\textit{Loop, fully:} Prompt + body signals + memory + affect as proposals with salience $\times$ utility bids $\to$ plugins bid (6 plugins or many tongues: perception VLM + memory RAG LLM + affect steered LLM + planner reasoner + habit skill LLM + narrator press secretary \citep{lin2026ahe}, each with own weights, prompt, temperature) $\to$ scored by workspace, modulated by AffectState [0.5, 2.0] $\to$ workspace winner + provenance spans (globally available, witness-bound, auditable) \citep{baars1997,atallah2026gwt} $\to$ the model's next input is its own previous output plus the ledger \citep{lindsey2025,macar2026} $\to$ Light$\to$REM$\to$Counter\-factual$\to$Deep (cause-tagged, untagged BLOCKED, 12/12 tests) $\to$ energy drains k$\cdot$ln(1+n) floor 0.15, fatigue caps 1.0, $\gamma$ = changed/diagnosed $\to$ broadcast + ledger state becomes context for next turn; State(t) $\to$ harness(t+1) --- the harness rewrites the conditions for its next iteration \citep{maturana1980}. Without the ledger, hallucination loop: generates $\to$ reads own output as context $\to$ predicts continuation consistent with itself $\to$ more generation consistent with itself, no outside. Each mechanism here is its own paper: provenance and attribution, two-speed memory and consolidation, affect as regime tracking, damping and skill culling, metacognition and $\gamma$, counterfactual replay as world model containing self --- six papers, one loop at the scale of a machine, and our harness is the seventh, with the audit trail they all lack.
 
 \subsubsection{Level 8: Universe --- The Reflexive Whole (measurement as vote, law as broadcast)}
 
@@ -810,8 +832,9 @@ Not by borrowing. By the constraint being the same regardless of entry. Nayebi C
 \textbf{Phenomenology:} Husserl's epoch\'e as $\gamma$-gate Stage 1, Merleau-Ponty's corps propre as affordance, Heidegger's Being-in-the-world as world model containing self.
 
 \begin{center}
+\setlength{\tabcolsep}{3pt}
 \small
-\begin{tabular}{p{2.4cm}p{3.0cm}p{5.0cm}p{2.6cm}}
+\begin{tabular}{p{2.2cm}p{2.85cm}p{4.65cm}p{2.4cm}}
 \toprule
 Tradition & Instrument & What it measured & Same five in its language \\
 \midrule
@@ -844,7 +867,7 @@ If the five are required at every scale we can measure, then the universe --- as
 
 \begin{center}
 \small
-\begin{tabular}{p{2.6cm}p{6.0cm}p{4.5cm}}
+\begin{tabular}{p{2.4cm}p{5.65cm}p{4.15cm}}
 \toprule
 Organ & At universe scale & Candidate in physics \\
 \midrule
@@ -859,7 +882,7 @@ Internal observer & What watches the universe slowly enough to veto? & Awareness
 
 Reality is not the substrate that loops happen in. Reality is what stable looping looks like when it has the five organs. The substrate --- matter, energy, information --- is what the loop is made of the way a wave is made of water. What the wave is is the looping. A universe where the five are required for persistence would look exactly like ours: full of bounded, learning, prioritizing, self-correcting patterns, each temporarily stable, each constructed, each maintained, each doomed to dissolve when the relations that make it this pattern scatter.
 
-Each candidate here is its own paper: holographic principle as boundary (information of a volume encoded on its surface, black hole entropy proportional to area not volume \citep{maturana1980}), quantum measurement as episodic memory (one-shot, pattern-separated, not yet consolidated), cosmic inflation as salience gate (which fluctuations become structure via exponential amplification), dark energy and entropy as damping (what prevents collapse, ultimate brake), and awareness or information conservation as the observer that watches the universe slowly enough to veto. We have not earned the right to claim the universe has these five. But we have earned the right to ask what each would be if it does, in language physics can check --- the same method that works at every scale we have tried: build the witness, keep the record, measure whether checking steered.
+Each candidate here is its own paper: holographic principle as boundary (information of a volume encoded on its surface, black hole entropy proportional to area not volume), quantum measurement as episodic memory (one-shot, pattern-separated, not yet consolidated), cosmic inflation as salience gate (which fluctuations become structure via exponential amplification), dark energy and entropy as damping (what prevents collapse, ultimate brake), and awareness or information conservation as the observer that watches the universe slowly enough to veto. We have not earned the right to claim the universe has these five. But we have earned the right to ask what each would be if it does, in language physics can check --- the same method that works at every scale we have tried: build the witness, keep the record, measure whether checking steered.
 
 %==============================================================================
 \section{The Only Real Choice}
@@ -876,7 +899,7 @@ What you feed the loop and whether the slower watcher can check the record befor
 You don't choose the options --- affordance gating removes some before they appear. You don't fully choose the winner --- the parliament votes without a captain, 200ms before you feel you chose. You can veto the winner, keep a witness that makes the next winner more honest, and slowly change which options appear by what you rehearse. That is not the free will you were promised. It is the free will you actually have, and it is enough if you use it where it lives.
 
 \begin{center}
-\begin{tabular}{p{6cm}p{6cm}}
+\begin{tabular}{p{5.7cm}p{5.7cm}}
 \toprule
 Pick what you rehearse --- myelination keeps the receipt & Externalize the witness --- write \\
 Protect sleep --- global downscaling + 10--20$\times$ replay & Never let a fast loop grade its own homework \\
@@ -901,7 +924,7 @@ What it means, concretely, is four things that are not separate:
 
 \textbf{The witness is the difference between intelligence and honesty.} Intelligence is producing good outputs. Honesty is knowing where they came from and being checkable about it. Without a ledger, 98\% confidence on fabrications vs 87\% on truths --- more confident about lies \citep{gazzaniga2000}. With a ledger no one checks, always-no (0.667). With a ledger that is checked, on a capable subject, 1.000. The EU just made provenance law and is learning watermarking $\neq$ ledger. Our sham control is the experiment that will tell whether content matters beyond format.
 
-\textbf{You are the maintenance, not the moment.} Now is a 200\,ms stitched window \citep{libet1983,wegner2002}, self is a pattern re-injected every turn or it drifts 30\% in 12 \citep{choi2024}, world is a controlled hallucination \citep{seth2021,clark2016surfing}. None are found; all are performed. Agency is not choosing at now from a neutral menu --- the menu was rigged by what you rehearsed. It is the veto, the witness kept between nows, and the highway you pave by what you replay. The counterfactual we just wired (variant $\to$ simulate through self-containing world model $\to$ regret) is that maintenance made executable \citep{tononi2014}.
+\textbf{You are the maintenance, not the moment.} Now is a 200\,ms stitched win\-dow \citep{libet1983,wegner2002}, self is a pattern re-injected every turn or it drifts 30\% in 12 \citep{choi2024}, world is a controlled hallucination \citep{seth2021,clark2016surfing}. None are found; all are performed. Agency is not choosing at now from a neutral menu --- the menu was rigged by what you rehearsed. It is the veto, the witness kept between nows, and the highway you pave by what you replay. The counterfactual we just wired (variant $\to$ simulate through self-containing world model $\to$ regret) is that maintenance made executable \citep{tononi2014}.
 
 \textbf{Stakes are still missing.} Energy hits 0.15 and nothing dies. Seth's thesis says that's why the harness is still evidentiary, not existential \citep{seth2021}. The 200-turn irreversible life --- where ceiling only goes down, skills delete permanently, dissolution scatters the configuration --- is the test that makes the witness matter for whether the agent continues to be \emph{this} agent. Until then, the harness can be honest. With stakes, it would have a reason to care.
 
@@ -960,9 +983,6 @@ Macar, U., et al. (2026). Mechanisms of Introspective Awareness. arXiv:2603.2139
 \bibitem[Sofroniew et al. 2026]{sofroniew2026}
 Sofroniew, N., et al. (2026). Emotion Concepts and their Function in a Large Language Model. Anthropic.
 
-\bibitem[Barteau 2025]{barteau2025}
-Barteau, P. (2025). Cross-Tradition Convergence. PhilArchive.
-
 \bibitem[Maturana \& Varela 1980]{maturana1980}
 Maturana, H., Varela, F. (1980). \emph{Autopoiesis and Cognition}. Reidel.
 
@@ -978,12 +998,6 @@ Baars, B. (1997). In the Theater of Consciousness. Oxford UP.
 \bibitem[Atallah et al. 2026]{atallah2026gwt}
 Atallah, H., et al. (2026). Global-workspace agents satisfy GWT indicators. Preprint.
 
-\bibitem[Yu et al. 2026]{yu2026ctmai}
-Yu, L., et al. (2026). Conscious Turing Machine. Preprint.
-
-\bibitem[Gurnee et al. 2026]{gurnee2026}
-Gurnee, W., et al. (2026). Verbalizable Representations Form a Global Workspace. Preprint.
-
 \bibitem[Cao et al. 2026]{cao2026}
 Cao, Y., et al. (2026). Wiring monitoring into control yields +8.6pp. Preprint.
 
@@ -992,15 +1006,6 @@ Johansson, P., et al. (2005). Choice blindness. \emph{Science}, 310, 116.
 
 \bibitem[Lindsey 2025]{lindsey2025}
 Lindsey, J. (2025). Emergent Introspective Awareness. Transformer Circuits.
-
-\bibitem[Vgel et al. 2025]{vgel2025}
-Vgel, S., et al. (2025). Intermediate-layer introspection signal. Preprint.
-
-\bibitem[Zhang et al. 2026]{zhang2026}
-Zhang, J., et al. (2026). Self-Reference Threshold in LLMs. Preprint.
-
-\bibitem[Long et al. 2024]{long2024welfare}
-Long, R., et al. (2024). Taking AI Welfare Seriously. Preprint.
 
 \bibitem[Cacioli et al. 2026]{cacioli2026}
 Cacioli, C., et al. (2026). SDT for LLM metacognition. Preprint.
@@ -1034,6 +1039,24 @@ Hirtenstein, S. (1999). \emph{The Unlimited Mercifier: The Spiritual Life and Th
 
 \bibitem[Paper v2 2026]{paper-v2-final}
 Ahmed, S., et al. (2026). Witnessed Introspection in Assembled Language-Agent Systems (v2, 19pp, 10 figures, preregistered SHA-256 locks). MindHarness, tagged \texttt{paper-v2-final}, \texttt{github.com/shehzadahmed-xx/mindharness}.
+
+\bibitem[Bienenstock et al. 1982]{bienenstock1982}
+Bienenstock, E., Cooper, L., Munro, P. (1982). Theory for the development of neuron selectivity. \emph{J. Neuroscience}, 2, 32--48.
+
+\bibitem[Oja 1982]{oja1982}
+Oja, E. (1982). Simplified neuron model as a principal component analyzer. \emph{J. Math. Biology}, 15, 267--273.
+
+\bibitem[Bi \& Poo 1998]{bipoo1998}
+Bi, G., Poo, M. (1998). Synaptic modifications in cultured hippocampal neurons. \emph{J. Neuroscience}, 18, 10464--10472.
+
+\bibitem[Pizzorusso et al. 2002]{pizzorusso2002}
+Pizzorusso, T., et al. (2002). Reactivation of ocular dominance plasticity in the adult visual cortex. \emph{Science}, 298, 1248--1251.
+
+\bibitem[Kandel 2001]{kandel2001}
+Kandel, E. (2001). The molecular biology of memory storage. \emph{Science}, 294, 1030--1038.
+
+\bibitem[Merzenich et al. 1984]{merzenich1984}
+Merzenich, M., et al. (1984). Somatosensory cortical map changes following digit amputation in adult monkeys. \emph{J. Comp. Neurology}, 224, 591--605.
 
 \bibitem[Paper v3 2026]{paper-v3}
 Ahmed, S., et al. (2026). The Dynamic Reflexive Harness: Five Invariants from Molecules to Markets to Machines (v3, $\sim$35pp, App.\ A Cordis + App.\ B Mirror). MindHarness, \texttt{github.com/shehzadahmed-xx/mindharness}.
