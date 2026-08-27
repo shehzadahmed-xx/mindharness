@@ -38,7 +38,7 @@ echo ""
 
 # --- Harness tests ---
 echo "── HARNESS TESTS (offline, no API keys needed) ──"
-total_pass=0; total_fail=0
+total_pass=0; total_fail=0; assert_pass=0
 for f in tests/test_*.py; do
   if [ -f "$f" ]; then
     out=$(python3 "$f" 2>&1 || true)
@@ -47,6 +47,9 @@ for f in tests/test_*.py; do
       line=$(echo "$out" | grep -E "passed|PASS" | tail -1)
       ok "$f: $line"
       total_pass=$((total_pass+1))
+      # assertion count, e.g. "6/6 passed" -> 6 (for the doc-claims gate below)
+      n=$(echo "$line" | grep -o '[0-9]\{1,\}/[0-9]\{1,\}' | head -1 | cut -d/ -f1)
+      [ -n "$n" ] && assert_pass=$((assert_pass+n))
     else
       bad "$f: failed"
       total_fail=$((total_fail+1))
@@ -124,6 +127,86 @@ if [ -f model_registry.json ]; then
 else
   info "model_registry.json not in mindharness (check ~/Desktop/springfish/model_registry.json)"
 fi
+echo ""
+
+# --- Doc claims vs disk (added 2026-08-28) ---
+# The script used to verify the repo and then print "nothing lost, everything
+# tracked" without ever checking the numbers the docs assert ABOUT the repo.
+# It could pass 32/32 while HANDOFF.md and README.md were wrong, which is
+# exactly what was happening. These checks close that gap: every number a doc
+# claims is re-derived from disk here and must match.
+echo "── DOC CLAIMS vs DISK ──"
+
+claim_check() {  # name, actual, claimed_or_empty, file
+  local name="$1" actual="$2" claimed="$3" file="$4"
+  if [ -z "$claimed" ]; then
+    info "$name: no claim found in $file (actual: $actual)"
+  elif [ "$actual" = "$claimed" ]; then
+    ok "$name: $file says $claimed, disk says $actual"
+  else
+    bad "$name: $file says $claimed, disk says $actual"
+  fi
+}
+
+# commit count
+commits=$(git rev-list --count HEAD 2>/dev/null || echo "?")
+h_commits=$(grep -o '\*\*[0-9]\{1,\} commits\*\*' HANDOFF.md 2>/dev/null | head -1 | grep -o '[0-9]\{1,\}' || true)
+r_commits=$(grep -o '· [0-9]\{1,\} commits' README.md 2>/dev/null | head -1 | grep -o '[0-9]\{1,\}' || true)
+# A doc committed in commit N can only ever truthfully claim N-1, so allow a
+# drift of <=2 and fail beyond it. Silent unbounded drift is the actual bug.
+count_check() {  # file, claimed
+  local file="$1" claimed="$2" d
+  if [ -z "$claimed" ]; then info "commit count: no claim in $file (actual: $commits)"; return; fi
+  d=$((commits - claimed))
+  if [ "$d" -ge 0 ] && [ "$d" -le 2 ]; then
+    ok "commit count: $file says $claimed, disk says $commits (drift $d, within tolerance)"
+  else
+    bad "commit count: $file says $claimed, disk says $commits (drift $d)"
+  fi
+}
+count_check "HANDOFF.md" "$h_commits"
+count_check "README.md" "$r_commits"
+
+# HEAD sha
+head_sha=$(git rev-parse --short HEAD 2>/dev/null || echo "?")
+h_head=$(grep -o '\*\*HEAD:\*\* `[0-9a-f]\{7,\}`' HANDOFF.md 2>/dev/null | head -1 | grep -o '[0-9a-f]\{7,\}' || true)
+# HEAD: same self-reference problem. Require the claimed sha to be a real
+# ancestor of HEAD and no more than 2 commits back.
+if [ -z "$h_head" ]; then
+  info "HEAD sha: no claim in HANDOFF.md (actual: $head_sha)"
+elif ! git cat-file -e "$h_head" 2>/dev/null; then
+  bad "HEAD sha: HANDOFF.md says $h_head, which is not a commit in this repo"
+elif ! git merge-base --is-ancestor "$h_head" HEAD 2>/dev/null; then
+  bad "HEAD sha: HANDOFF.md says $h_head, which is not an ancestor of $head_sha"
+else
+  behind=$(git rev-list --count "$h_head"..HEAD 2>/dev/null || echo 99)
+  if [ "$behind" -le 2 ]; then
+    ok "HEAD sha: HANDOFF.md says $h_head, $behind commit(s) behind $head_sha"
+  else
+    bad "HEAD sha: HANDOFF.md says $h_head, $behind commits behind $head_sha"
+  fi
+fi
+
+# paper page counts
+if command -v pdfinfo >/dev/null 2>&1; then
+  for spec in "paper_v2:v2" "paper_v3:v3" "paper_5organs:5organs"; do
+    dir="${spec%%:*}"; label="${spec##*:}"
+    if [ -f "$dir/main.pdf" ]; then
+      pages=$(pdfinfo "$dir/main.pdf" 2>/dev/null | awk '/^Pages/{print $2}')
+      claimed=$(grep -o "$label [0-9]\{1,\}pp" HANDOFF.md 2>/dev/null | head -1 | sed "s/^$label //; s/pp$//" || true)
+      claim_check "$label pages" "$pages" "$claimed" "HANDOFF.md"
+    fi
+  done
+else
+  info "pdfinfo unavailable — page-count claims unverified"
+fi
+
+# test total
+tests_actual=$((assert_pass))
+for f in HANDOFF.md README.md; do
+  c=$(grep -o '[0-9]\{1,\}/[0-9]\{1,\} \(tests \)\?green' "$f" 2>/dev/null | head -1 | cut -d/ -f2 | grep -o '[0-9]\{1,\}' || true)
+  claim_check "tests green" "$tests_actual" "$c" "$f"
+done
 echo ""
 
 # --- Summary ---
