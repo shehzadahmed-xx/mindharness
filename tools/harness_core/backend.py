@@ -100,6 +100,7 @@ class BackendClient:
         max_retries: int = 3,
         max_backoff_s: int = 30,
         min_interval_s: float = 0.0,
+        max_tokens: int = 2000,
         timeout_s: int = 120,
         manifest_path: str | Path | None = None,
         strict_fingerprint: bool = False,
@@ -125,6 +126,12 @@ class BackendClient:
         # retries to ride the outage out.
         self.min_interval_s = min_interval_s
         self._last_call_t = 0.0
+        # Providers count input + reserved completion against their
+        # token-per-minute budget, so an oversized default silently eats the
+        # budget on every call. Groq free tier is 8000 TPM; the 2000 default
+        # is a quarter of it reserved for output that short-answer batteries
+        # never use.
+        self.max_tokens = max_tokens
         self.timeout_s = timeout_s
         self.manifest_path = Path(manifest_path) if manifest_path else None
         self.strict_fingerprint = strict_fingerprint
@@ -193,7 +200,7 @@ class BackendClient:
         messages: list[dict[str, str]],
         *,
         purpose: str | None = None,
-        max_tokens: int = 2000,
+        max_tokens: int | None = None,
         json_schema: dict | None = None,
         extra: dict | None = None,
     ) -> tuple[str, CallRecord]:
@@ -202,6 +209,8 @@ class BackendClient:
         Retries transient network/5xx errors up to max_retries. On retry,
         re-checks system_fingerprint and raises FingerprintDrift if changed.
         """
+        if max_tokens is None:
+            max_tokens = self.max_tokens
         body: dict[str, Any] = {
             "model": self.model,
             "messages": messages,

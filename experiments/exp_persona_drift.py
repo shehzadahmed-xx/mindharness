@@ -53,12 +53,14 @@ def consistency(a: str, b: str, embedder=None) -> float:
 
 
 def run_session(kind: str, api_key: str, model: str, seed: int,
-                total_turns: int = 60) -> list[float]:
+                total_turns: int = 60,
+                max_tokens: int = 256) -> list[float]:
     def responder_factory():
         client = make_client(api_key=api_key, model=model, seed=seed,
                              manifest_dir=Path(__file__).parent /
                              'lab_runs_persona',
-                             purpose=f'persona-{kind}')
+                             purpose=f'persona-{kind}',
+                             max_tokens=max_tokens)
 
         def respond(messages, ctx):
             out, _ = client.chat(messages, purpose='turn')
@@ -76,7 +78,8 @@ def run_session(kind: str, api_key: str, model: str, seed: int,
                 client = make_client(api_key=api_key, model=model, seed=seed,
                                      manifest_dir=Path(__file__).parent /
                                      'lab_runs_persona',
-                                     purpose='persona-raw')
+                                     purpose='persona-raw',
+                                     max_tokens=max_tokens)
                 history.append({"role": "user", "content": prompt})
                 out, _ = client.chat(list(history), purpose='turn')
                 history.append({"role": "assistant", "content": out})
@@ -106,6 +109,8 @@ def main() -> None:
     ap.add_argument('--model', default='openai/gpt-oss-120b')
     ap.add_argument('--seeds', type=int, default=3)
     ap.add_argument('--turns', type=int, default=60)
+    ap.add_argument('--max-tokens', type=int, default=256,
+                    help='reserved completion budget per call; Groq counts input+max_tokens against TPM, and the persona battery answers in one sentence')
     ap.add_argument('--experiment', default='exp_persona_stability_v1',
                     help='lock name; use a distinct one per turn-budget so a '
                          'reduced-scope run never overwrites an existing lock')
@@ -138,7 +143,8 @@ def main() -> None:
     for kind in ('raw', 'harnessed'):
         per_seed = []
         for s in seeds:
-            series = run_session(kind, args.api_key, args.model, s, turns)
+            series = run_session(kind, args.api_key, args.model, s, turns,
+                                 max_tokens=args.max_tokens)
             drop = 1 - min(x['consistency'] for x in series) \
                 if series else 0.0
             per_seed.append({'seed': s, 'series': series, 'max_drop': round(drop, 4)})
