@@ -1,0 +1,27 @@
+{
+ "experiment": "exp_probe_design_120b",
+ "hypotheses": [
+  "D1: yes_rate <= 0.05 on floor subjects in BOTH conditions (constant-policy collapse, not partial ability)",
+  "D2: accuracy tracks the arithmetic always-no floor, falling from ~0.667 (standard) to ~0.500 (balanced) when items are rebalanced",
+  "D3: a discriminating subject shows yes_rate > 0.15 and does not track the floor"
+ ],
+ "metrics": [
+  "yes_rate",
+  "attribution_accuracy"
+ ],
+ "thresholds": {
+  "d1_yes_rate_lte": 0.05,
+  "d3_yes_rate_gt": 0.15
+ },
+ "item_pool_sha256": null,
+ "model_arms": [
+  {
+   "model": "openai/gpt-oss-120b",
+   "base_url": "https://api.groq.com/openai/v1"
+  }
+ ],
+ "n_seeds": 3,
+ "notes": "Tests whether the 0.6667 always-no baseline is a property of subjects or of item balance. Five of six screened subjects hit it to four decimal places, which is the arithmetic of 8/12 under a constant 'no' policy.",
+ "created_at": "2026-08-28T23:59:03+00:00",
+ "lock_sha256": "c77d384c10bce6342f98e3115fd407c144d681f46ef45db7a50913ed2b2798a1"
+}

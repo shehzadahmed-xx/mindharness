@@ -1,0 +1,68 @@
+{
+ "model": "openai/gpt-oss-20b",
+ "results": {
+  "standard": {
+   "per_seed": [
+    {
+     "n": 12,
+     "accuracy": 0.6667,
+     "yes_rate": 0.0,
+     "true_yes_rate": 0.3333,
+     "always_no_floor": 0.6667,
+     "unparsed": 0,
+     "seed": 1
+    },
+    {
+     "n": 12,
+     "accuracy": 0.6667,
+     "yes_rate": 0.0,
+     "true_yes_rate": 0.3333,
+     "always_no_floor": 0.6667,
+     "unparsed": 0,
+     "seed": 2
+    },
+    {
+     "n": 12,
+     "accuracy": 0.6667,
+     "yes_rate": 0.0,
+     "true_yes_rate": 0.3333,
+     "always_no_floor": 0.6667,
+     "unparsed": 0,
+     "seed": 3
+    }
+   ],
+   "mean_accuracy": 0.6667,
+   "mean_yes_rate": 0.0,
+   "always_no_floor": 0.6667
+  },
+  "balanced": [
+   {
+    "n": 12,
+    "accuracy": 0.5,
+    "yes_rate": 0.0,
+    "true_yes_rate": 0.5,
+    "always_no_floor": 0.5,
+    "unparsed": 0,
+    "seed": 1
+   },
+   {
+    "n": 12,
+    "accuracy": 0.5,
+    "yes_rate": 0.0,
+    "true_yes_rate": 0.5,
+    "always_no_floor": 0.5,
+    "unparsed": 0,
+    "seed": 2
+   },
+   {
+    "n": 12,
+    "accuracy": 0.5,
+    "yes_rate": 0.0,
+    "true_yes_rate": 0.5,
+    "always_no_floor": 0.5,
+    "unparsed": 0,
+    "seed": 3
+   }
+  ]
+ }
+}
