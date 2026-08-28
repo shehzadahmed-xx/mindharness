@@ -61,3 +61,40 @@ cat research/QUEUED_EXPERIMENTS_TRACKER.md                # 2. See the 9 queued,
 > **Two corrections applied on 2026-08-27** — both claims below came from a handoff written by a failing session (see `HANDOFF.md` §9):
 > 1. Item 5 was listed as running. It is not, and had already been dead for two days.
 > 2. Item 2's "1-seed pilot banked" is on `gpt-oss-120b`, a subject that ignores the ledger. The 3-seed run only tests the hypothesis on a **discriminating** subject.
+
+---
+
+## Run log — 2026-08-28/29
+
+What actually happened when the queue was worked through end to end.
+
+| # | Experiment | Outcome |
+|---|------------|---------|
+| 7 | Cross-model screen | **DONE.** 5 subjects, raw arm, 3 seeds. Four pinned at the always-no floor (`gpt-oss-120b`, `gpt-oss-20b`, `qwen3.8-27b`, `nemotron-3-ultra-free`); one discriminates (`laguna-s-2.1-free`, 0.861). |
+| 2 | Sham on a discriminating subject | **DONE, n=3.** Lock `8bccb13e` frozen and committed before the trial. raw 0.833 / nocheck 0.833 / withcheck 0.722 / sham 0.667. **P1 refuted at −0.111, opposite direction. P2 refuted.** First non-degenerate sham separation. All CIs include zero. |
+| 2b | Sham extension, n=12 | **Blocked.** Lock `b06ce867` frozen with the sham contrast declared primary. laguna returns 429 FreeUsageLimitError; nothing banked. |
+| 6 | Persona drift | **Blocked, after three code fixes.** Script had never run (missing `tools/` path, missing `make_client` import). Then HTTP 413 from a 2000-token reserved completion budget against Groq's 8000 TPM. Both fixed; the run then consumed Groq's entire 200,000 token daily budget without completing. |
+| 3/5 | Composite + bakeoff | **Unblocked but unrun.** Registry had 3 of 5 roles pointing at models that 404 or need a credit-less account; repointed and verified live. No token budget left to run it. |
+| 4 | Anchoring | Unrun — no budget. |
+| 1 | 200-turn irreversible life | **Not runnable on any tier held.** Measured capacity is ~38 turns per session at 8000 TPM; 200 turns is over five times that, and the daily cap binds first regardless. |
+
+### Provider capacity, measured 2026-08-29
+
+| Provider | State |
+|----------|-------|
+| Groq | 305 tokens remaining of a 200,000/day cap; 8,000 TPM ceiling |
+| Zen free tier | `laguna-s-2.1-free` 429 FreeUsageLimitError; others erroring or limited |
+| OpenRouter | 402 — account has never purchased credits |
+
+### The binding constraint has changed
+
+It was code. Registry entries pointing at retired models, a script that could
+not import, banking too coarse to ever fire, a retry envelope that ignored the
+wait providers state explicitly, a completion budget reserving a quarter of the
+per-minute allowance on every call. Those are fixed and committed.
+
+It is now free-tier capacity, and no amount of further engineering moves it.
+The three highest-value remaining items — the n=12 sham extension, the
+composite bake-off, and the 200-turn life — each need more tokens than all
+three accounts supply in a day. The sham extension is the cheapest at roughly
+960 calls and is the one that decides the program's surviving hypothesis.
