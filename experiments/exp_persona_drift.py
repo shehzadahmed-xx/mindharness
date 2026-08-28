@@ -106,19 +106,23 @@ def main() -> None:
     ap.add_argument('--model', default='openai/gpt-oss-120b')
     ap.add_argument('--seeds', type=int, default=3)
     ap.add_argument('--turns', type=int, default=60)
+    ap.add_argument('--experiment', default='exp_persona_stability_v1',
+                    help='lock name; use a distinct one per turn-budget so a '
+                         'reduced-scope run never overwrites an existing lock')
     ap.add_argument('--freeze', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
     args = ap.parse_args()
 
     lock = PredictionLock(
-        experiment='exp_persona_stability_v1',
+        experiment=args.experiment,
         hypotheses=[
             "H1: raw arm shows >0.30 consistency drop within first 12-turn "
             "window (replicates Choi et al.)",
-            "H2: harnessed arm stays within 0.10 through 60 turns",
+            f"H2: harnessed arm stays within 0.10 through {args.turns} turns",
         ],
         metrics=['persona-consistency'],
-        thresholds={'h1_raw_drop_gt': 0.30, 'h2_harnessed_max_drop': 0.10},
+        thresholds={'h1_raw_drop_gt': 0.30, 'h2_harnessed_max_drop': 0.10,
+                    'turns': args.turns},
         item_pool_sha256=None,
         model_arms=[{'model': args.model}],
         n_seeds=args.seeds)
