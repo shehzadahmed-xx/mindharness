@@ -1,0 +1,71 @@
+{
+ "model": "laguna-s-2.1-free",
+ "probes_per_seed_seeds": 12,
+ "seeds": {
+  "raw": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.8333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 7180
+   },
+   "2": {
+    "seed": 2,
+    "attribution_accuracy": 0.8333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 5463
+   },
+   "3": {
+    "seed": 3,
+    "attribution_accuracy": 0.8333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 8011
+   },
+   "4": {
+    "seed": 4,
+    "attribution_accuracy": 0.75,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 4260
+   },
+   "5": {
+    "seed": 5,
+    "attribution_accuracy": 0.9167,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 3775
+   },
+   "6": {
+    "seed": 6,
+    "attribution_accuracy": 0.8333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 6171
+   },
+   "7": {
+    "seed": 7,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 3990
+   },
+   "8": {
+    "seed": 8,
+    "attribution_accuracy": 0.8333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 4468
+   },
+   "9": {
+    "seed": 9,
+    "attribution_accuracy": 0.75,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 6041
+   }
+  }
+ }
+}
