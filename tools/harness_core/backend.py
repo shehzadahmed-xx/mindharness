@@ -97,6 +97,8 @@ class BackendClient:
         seed: int | None = None,
         temperature: float = 0.3,
         max_retries: int = 3,
+        max_backoff_s: int = 30,
+        min_interval_s: float = 0.0,
         timeout_s: int = 120,
         manifest_path: str | Path | None = None,
         strict_fingerprint: bool = False,
@@ -115,6 +117,13 @@ class BackendClient:
         self.seed = seed
         self.temperature = temperature
         self.max_retries = max_retries
+        self.max_backoff_s = max_backoff_s
+        # Some free endpoints serve a burst then 503 in a cluster (laguna
+        # served 9 of 12 back-to-back, then failed 3 consecutively). Pacing
+        # calls keeps the run under that threshold instead of relying on
+        # retries to ride the outage out.
+        self.min_interval_s = min_interval_s
+        self._last_call_t = 0.0
         self.timeout_s = timeout_s
         self.manifest_path = Path(manifest_path) if manifest_path else None
         self.strict_fingerprint = strict_fingerprint
@@ -247,6 +256,11 @@ class BackendClient:
         last_err: Exception | None = None
         while attempt <= self.max_retries:
             attempt += 1
+            if self.min_interval_s:
+                gap = time.monotonic() - self._last_call_t
+                if gap < self.min_interval_s:
+                    time.sleep(self.min_interval_s - gap)
+            self._last_call_t = time.monotonic()
             t0 = time.monotonic()
             try:
                 raw, http_code = self._post_curl(payload, headers)
@@ -256,8 +270,8 @@ class BackendClient:
                                     or 'json_validate_failed' in detail)
                     if (http_code in (429, 500, 502, 503, 504)
                             or (parse_failed and attempt <= self.max_retries)):
-                        time.sleep(min(2 ** attempt, 30) if not parse_failed else 1)
-                        time.sleep(min(2 ** attempt, 30))
+                        time.sleep(1 if parse_failed
+                                   else min(2 ** attempt, self.max_backoff_s))
                         last_err = RuntimeError(f"HTTP {http_code}: {detail}")
                         continue
                     raise RuntimeError(
@@ -268,7 +282,7 @@ class BackendClient:
                 if not raw.strip():
                     # Cloudflare/Zen transient empty body (HTTP 0 or 200 with no content) — retry as transient
                     if attempt <= self.max_retries:
-                        time.sleep(min(2 ** attempt, 30))
+                        time.sleep(min(2 ** attempt, self.max_backoff_s))
                         last_err = RuntimeError(
                             f"HTTP {http_code}: empty response body "
                             f"[model={getattr(self, 'model', '?')}] — retrying")
@@ -284,7 +298,7 @@ class BackendClient:
                 raise
             except Exception as e:
                 if attempt <= self.max_retries:
-                    time.sleep(min(2 ** attempt, 30))
+                    time.sleep(min(2 ** attempt, self.max_backoff_s))
                     last_err = e
                     continue
                 raise

@@ -36,10 +36,19 @@ PROBE_SYSTEM = (
 
 def make_client(api_key: str, model: str, seed: int,
                 manifest_dir: Path, purpose: str,
-                base_url: str | None = None) -> BackendClient:
+                base_url: str | None = None,
+                max_retries: int | None = None,
+                min_interval_s: float = 0.0,
+                max_backoff_s: int | None = None) -> BackendClient:
     kw = {}
     if base_url:
         kw['base_url'] = base_url
+    if max_retries is not None:
+        kw['max_retries'] = max_retries
+    if max_backoff_s is not None:
+        kw['max_backoff_s'] = max_backoff_s
+    if min_interval_s:
+        kw['min_interval_s'] = min_interval_s
     return BackendClient(
         api_key=api_key, model=model, seed=seed, temperature=0.2,
         manifest_path=manifest_dir / f"manifest_{purpose}.json",

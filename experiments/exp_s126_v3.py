@@ -134,6 +134,13 @@ def main() -> None:
                                       'harnessed_withcheck,sham',
                     help='comma-separated subset of arms to run; a screen '
                          'normally needs only "raw"')
+    ap.add_argument('--pace', type=float, default=0.0,
+                    help='minimum seconds between API calls; burst-limited '
+                         'free endpoints 503 in clusters without it')
+    ap.add_argument('--max-retries', type=int, default=None,
+                    help='override backend retry count for flaky endpoints')
+    ap.add_argument('--max-backoff', type=int, default=None,
+                    help='cap on exponential backoff seconds')
     ap.add_argument('--experiment', default='exp_s126_v3_tool_access',
                     help='lock name; use a distinct one per subject so a new '
                          'preregistration never overwrites an existing lock')
@@ -188,13 +195,30 @@ def main() -> None:
     prods = PRODUCE_PROMPTS[:n] if n else PRODUCE_PROMPTS
 
     results = {}
+    partial_path = out_dir / 'results_partial.json'
+    if partial_path.exists() and not args.dry_run:
+        try:
+            banked = json.loads(partial_path.read_text())
+            if (banked.get('model') == args.model
+                    and banked.get('n_seeds') == len(seeds)):
+                results = banked.get('results', {})
+                if results:
+                    print(f"resuming: {sorted(results)} already banked")
+        except (OSError, ValueError):
+            pass
+
     for kind in arms:
+        if kind in results:
+            continue
         per_seed = []
         for s in seeds:
             client = make_client(api_key=args.api_key, model=args.model,
                                  seed=s, manifest_dir=out_dir,
                                  purpose=f'v3-{kind}',
-                                 base_url=args.base_url)
+                                 base_url=args.base_url,
+                                 max_retries=args.max_retries,
+                                 min_interval_s=args.pace,
+                                 max_backoff_s=args.max_backoff)
 
             if kind == 'raw':
                 history, generated = seed_raw(client, given, prods)
@@ -285,6 +309,11 @@ def main() -> None:
         med = sorted(x['median_latency_ms'] for x in per_seed)[len(per_seed)//2]
         results[kind] = {'per_seed': per_seed, 'pooled_accuracy': pooled,
                          'median_latency_ms': med}
+        # bank the arm immediately so a provider drop cannot cost completed work
+        partial_path.write_text(json.dumps(
+            {'model': args.model, 'n_seeds': len(seeds),
+             'results': results}, indent=1))
+        print(f"  banked {kind}: {pooled}", flush=True)
 
     payload = {'model': args.model, 'base_url': args.base_url,
                'arms_run': list(arms), 'n_seeds': len(seeds),
