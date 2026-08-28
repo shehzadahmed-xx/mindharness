@@ -1,0 +1,24 @@
+{
+ "experiment": "exp_persona_stability_v1",
+ "hypotheses": [
+  "H1: raw arm shows >0.30 consistency drop within first 12-turn window (replicates Choi et al.)",
+  "H2: harnessed arm stays within 0.10 through 60 turns"
+ ],
+ "metrics": [
+  "persona-consistency"
+ ],
+ "thresholds": {
+  "h1_raw_drop_gt": 0.3,
+  "h2_harnessed_max_drop": 0.1
+ },
+ "item_pool_sha256": null,
+ "model_arms": [
+  {
+   "model": "openai/gpt-oss-20b"
+  }
+ ],
+ "n_seeds": 3,
+ "notes": "",
+ "created_at": "2026-08-28T09:20:39+00:00",
+ "lock_sha256": "58efe0f709163f73b394713bca1d4f668bcbaccea90b37822993b30f1f718280"
+}

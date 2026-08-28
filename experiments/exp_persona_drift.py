@@ -16,8 +16,10 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from common import make_client  # noqa: E402
 from harness_core.agent_harness import AgentHarness  # noqa: E402
 from harness_core.run_discipline import PredictionLock  # noqa: E402
 

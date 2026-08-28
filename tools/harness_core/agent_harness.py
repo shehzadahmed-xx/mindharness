@@ -286,19 +286,19 @@ class AgentHarness:
 import json as _json
 from pathlib import Path as _Path
 
-def load_model_registry(path=None):
-    """Load per-plugin model assignments from model_registry.json."""
-    p = _Path(path) if path else _Path(__file__).parent.parent / "model_registry.json"
-    if not p.exists():
-        return {}
-    return _json.loads(p.read_text())
-
-
 def build_responders(api_key: str, registry_path=None):
-    """Construct role-specific BackendClients from the registry."""
+    """Construct role-specific BackendClients from the registry.
+
+    Uses load_model_registry defined below. An earlier duplicate definition
+    of that function sat above this one and was silently shadowed by the
+    later one, so it never ran; it has been removed. Keys beginning with an
+    underscore are registry metadata and are skipped.
+    """
     reg = load_model_registry(registry_path)
     responders = {}
     for role, cfg in reg.items():
+        if role.startswith("_") or not isinstance(cfg, dict):
+            continue  # metadata key, not a role
         client = BackendClient(
             api_key=api_key,
             model=cfg["model"],
@@ -487,6 +487,8 @@ def create_composite_respond_fn(registry: dict, api_keys: dict | None = None) ->
     api_keys = api_keys or {}
     fns: dict[str, Callable] = {}
     for role, cfg in registry.items():
+        if role.startswith("_") or not isinstance(cfg, dict):
+            continue  # metadata key, not a role
         model = cfg.get("model", "")
         base_url = cfg.get("base_url", "https://api.groq.com/openai/v1")
         key_hint = "groq" if "groq" in base_url else "openrouter" if "openrouter" in base_url else role

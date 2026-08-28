@@ -15,6 +15,7 @@ from __future__ import annotations
 import hashlib
 import json
 import subprocess
+import re
 import time
 import urllib.error
 import urllib.request
@@ -270,7 +271,19 @@ class BackendClient:
                                     or 'json_validate_failed' in detail)
                     if (http_code in (429, 500, 502, 503, 504)
                             or (parse_failed and attempt <= self.max_retries)):
+                        # Groq's TPM 429 carries the exact wait
+                        # ("Please try again in 5.7375s"); honour it rather
+                        # than guessing, and pad slightly.
+                        hinted = None
+                        m = re.search(r"try again in ([0-9.]+)s", detail)
+                        if m:
+                            try:
+                                hinted = min(float(m.group(1)) + 1.0,
+                                             self.max_backoff_s)
+                            except ValueError:
+                                hinted = None
                         time.sleep(1 if parse_failed
+                                   else hinted if hinted is not None
                                    else min(2 ** attempt, self.max_backoff_s))
                         last_err = RuntimeError(f"HTTP {http_code}: {detail}")
                         continue

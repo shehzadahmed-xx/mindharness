@@ -1,0 +1,38 @@
+{
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "series": [
+      {
+       "turn": 10,
+       "consistency": 0.8494
+      }
+     ],
+     "max_drop": 0.1506
+    }
+   ],
+   "max_drop": 0.1506
+  },
+  "harnessed": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "series": [
+      {
+       "turn": 10,
+       "consistency": 0.7833
+      }
+     ],
+     "max_drop": 0.2167
+    }
+   ],
+   "max_drop": 0.2167
+  }
+ },
+ "verdicts": {
+  "H1_raw_decays": false,
+  "H2_harnessed_stable": false
+ }
+}

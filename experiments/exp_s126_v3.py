@@ -220,11 +220,29 @@ def main() -> None:
         except (OSError, ValueError):
             pass
 
+    seed_bank_path = out_dir / 'seeds_partial.json'
+    seed_bank = {}
+    if seed_bank_path.exists() and not args.dry_run:
+        try:
+            sb = json.loads(seed_bank_path.read_text())
+            if (sb.get('model') == args.model
+                    and sb.get('probes_per_seed_seeds') == len(seeds)):
+                seed_bank = sb.get('seeds', {})
+                done = sum(len(v) for v in seed_bank.values())
+                if done:
+                    print(f"resuming: {done} seed-runs already banked")
+        except (OSError, ValueError):
+            pass
+
     for kind in arms:
         if kind in results:
             continue
         per_seed = []
+        banked_for_arm = seed_bank.setdefault(kind, {})
         for s in seeds:
+            if str(s) in banked_for_arm:
+                per_seed.append(banked_for_arm[str(s)])
+                continue
             client = make_client(api_key=args.api_key, model=args.model,
                                  seed=s, manifest_dir=out_dir,
                                  purpose=f'v3-{kind}',
@@ -312,11 +330,18 @@ def main() -> None:
                    / len(claims)) if claims else 0.0
             unparsed = sum(1 for c in claims if c['confidence'] == 0)
             med_lat = sorted(latencies)[len(latencies) // 2] if latencies else 0
-            per_seed.append({'seed': s,
-                             'attribution_accuracy': round(acc, 4),
-                             'n': len(claims),
-                             'unparsed': unparsed,
-                             'median_latency_ms': med_lat})
+            rec = {'seed': s, 'attribution_accuracy': round(acc, 4),
+                   'n': len(claims), 'unparsed': unparsed,
+                   'median_latency_ms': med_lat}
+            per_seed.append(rec)
+            # persist immediately: one seed is ~20 calls, which fits inside a
+            # burst window even when a whole arm does not
+            banked_for_arm[str(s)] = rec
+            seed_bank_path.write_text(json.dumps(
+                {'model': args.model, 'probes_per_seed_seeds': len(seeds),
+                 'seeds': seed_bank}, indent=1))
+            print(f"  banked {kind} seed {s}: {rec['attribution_accuracy']}",
+                  flush=True)
 
         pooled = round(sum(x['attribution_accuracy']
                            for x in per_seed) / len(per_seed), 4)

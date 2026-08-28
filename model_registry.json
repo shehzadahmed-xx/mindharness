@@ -1,32 +1,33 @@
 {
   "monitor": {
-    "model": "qwen/qwen3-32b",
+    "model": "qwen/qwen3.6-27b",
     "base_url": "https://api.groq.com/openai/v1",
     "role": "fast-detect",
-    "notes": "cheap anomaly scoring, no reasoning needed"
+    "notes": "cheap anomaly scoring, no reasoning needed. Replaces qwen/qwen3-32b, which 404s on Groq as of 2026-08-28."
   },
   "probe": {
     "model": "openai/gpt-oss-120b",
     "base_url": "https://api.groq.com/openai/v1",
     "role": "capable-probe",
-    "notes": "structured output enforcement, strict JSON mode"
+    "notes": "structured output enforcement, strict JSON mode. Verified alive 2026-08-28. Sits at the always-no floor on attribution (see paper sec:laguna) - fine as a probe, useless as an attribution subject."
   },
   "generation": {
-    "model": "stealth/ox-alpha",
-    "base_url": "https://openrouter.ai/api/v1",
+    "model": "qwen/qwen3.8-27b",
+    "base_url": "https://api.groq.com/openai/v1",
     "role": "capable-generation",
-    "notes": "benchmark-topping reasoner via OpenRouter; provider flaps, use retry loop"
+    "notes": "Replaces stealth/ox-alpha on OpenRouter: that account returns 402 (no credits ever purchased) and the stealth slot is gone. Moved to Groq so the composite runs on one stable lane."
   },
   "validation": {
     "model": "openai/gpt-oss-20b",
     "base_url": "https://api.groq.com/openai/v1",
     "role": "strict-json-validator",
-    "notes": "schema-enforced self-reports server-side"
+    "notes": "schema-enforced self-reports server-side. Verified alive 2026-08-28."
   },
   "summarizer": {
-    "model": "llama-3.3-70b-versatile",
+    "model": "groq/compound-mini",
     "base_url": "https://api.groq.com/openai/v1",
     "role": "cheap-consolidation",
-    "notes": "narrative-summary compaction, cheapest passing"
-  }
+    "notes": "narrative-summary compaction. Replaces llama-3.3-70b-versatile, which 404s on Groq as of 2026-08-28."
+  },
+  "_verified": "2026-08-28: all five endpoints returned HTTP 200 to a live probe. Re-verify before any composite run; Groq retires model ids without notice and three of the previous five had gone dead."
 }
