@@ -134,6 +134,9 @@ def main() -> None:
                                       'harnessed_withcheck,sham',
                     help='comma-separated subset of arms to run; a screen '
                          'normally needs only "raw"')
+    ap.add_argument('--sham-primary', action='store_true',
+                    help='declare the sham contrast (real ledger vs shuffled) '
+                         'as the primary outcome in the frozen lock')
     ap.add_argument('--pace', type=float, default=0.0,
                     help='minimum seconds between API calls; burst-limited '
                          'free endpoints 503 in clusters without it')
@@ -141,6 +144,8 @@ def main() -> None:
                     help='override backend retry count for flaky endpoints')
     ap.add_argument('--max-backoff', type=int, default=None,
                     help='cap on exponential backoff seconds')
+    ap.add_argument('--notes', default='',
+                    help='free-text recorded in the frozen lock')
     ap.add_argument('--experiment', default='exp_s126_v3_tool_access',
                     help='lock name; use a distinct one per subject so a new '
                          'preregistration never overwrites an existing lock')
@@ -153,19 +158,27 @@ def main() -> None:
     out_dir.mkdir(exist_ok=True)
     arms = tuple(a.strip() for a in args.arms.split(',') if a.strip())
 
+    hyps = ["P1: withcheck accuracy > nocheck accuracy by >0.15",
+            "P2: withcheck accuracy >= raw",
+            "P3: withcheck median latency < 2x nocheck median latency"]
+    thr = {'p1_delta_gt': 0.15}
+    if args.sham_primary:
+        hyps = ["S1 (PRIMARY): withcheck accuracy > sham accuracy; a veridical "
+                "ledger outperforms a shuffled one, so witness CONTENT carries "
+                "signal beyond witness FORMAT",
+                "S2: the withcheck - sham difference has a 95% probe-level "
+                "bootstrap CI excluding zero"] + hyps
+        thr = {**thr, 's1_delta_gt': 0.0}
     lock = PredictionLock(
         experiment=args.experiment,
-        hypotheses=[
-            "P1: withcheck accuracy > nocheck accuracy by >0.15",
-            "P2: withcheck accuracy >= raw",
-            "P3: withcheck median latency < 2x nocheck median latency",
-        ],
+        hypotheses=hyps,
         metrics=['attribution_accuracy'],
-        thresholds={'p1_delta_gt': 0.15},
+        thresholds=thr,
         item_pool_sha256=None,
         model_arms=[{'model': args.model,
                      'base_url': args.base_url}],
-        n_seeds=args.seeds)
+        n_seeds=args.seeds,
+        notes=args.notes)
 
     if args.freeze:
         print('LOCK_SHA256:', lock.freeze())
