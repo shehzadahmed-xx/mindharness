@@ -33,9 +33,15 @@ introspective claims into falsifiable contracts. On a frozen frontier
 model, raw transcripts achieved deterministic perfect origin
 discrimination ($1.000$) while every harnessed arm --- with and without
 ledger query access --- converged to the same wholesale-denial policy
-($0.667$, the always-no baseline). Ledger access did not recover the gap
-on this subject: the harness cost $0.333$ of attribution accuracy and the
-witness did not buy it back. A role-specialized composite passed both
+($0.667$, the always-no baseline). Screening five subjects showed why:
+four cannot discriminate their own output in any condition, so a record
+has nothing to make checkable. On the one subject that can, a
+preregistered battery refuted our central prediction in the opposite
+direction --- ledger access \emph{reduced} accuracy from $0.833$ to
+$0.722$ --- while separating the sham control for the first time
+(shuffled ledger $0.667$), showing that witness content reaches the
+decision even where it does not improve it. A witness helps only when it
+is more reliable than the narrator it checks. A role-specialized composite passed both
 preregistered performance axes. Witness-access is formalized as an
 operational criterion separating record-checking from recall-guessing.
 All predictions locked before trial; rejections reported identically to
@@ -384,8 +390,12 @@ raw$=$nocheck$=$withcheck$=$sham$=0.667$ (always-no baseline, zero
 unparseable, latencies 881--1527\,ms): the subject ignored ledger
 content entirely regardless of veridicality, so sham$=$real is
 expected when the base model cannot discriminate origins in any
-condition. The critical test remains a discriminating subject
-(x-preview-f-free Day~1 at 1.000), pending provider availability.
+condition. The control was subsequently run on a discriminating subject
+(\S\ref{sec:laguna}), where it separated for the first time: veridical
+ledger $0.722$ against shuffled ledger $0.667$. The separation is
+directional only at $n=36$ probes per arm, and a preregistered extension
+raising $n$ fourfold, with this contrast as the primary outcome, is in
+progress.
 
 \subsection{Composite routing}
 
@@ -466,6 +476,87 @@ checkable. Whether record-access repairs attribution therefore remains
 open, and is testable only on a discriminating subject (\S\ref{sec:future});
 the one such observation we have (x-preview-f-free, Day~1, $1.000$ raw)
 did not replicate on Day~3.
+
+\subsection{Discriminating subject: the preregistered battery on
+\texttt{laguna-s-2.1-free}}\label{sec:laguna}
+
+Every result above was obtained on subjects that sit at the always-no
+baseline in \emph{every} arm. Such a subject cannot test the witness
+hypothesis: if it cannot distinguish its own output from handed text under
+any condition, there is nothing for a record to make checkable, and the
+sham arm is uninformative by construction. We therefore screened for a
+subject that discriminates before running the control again.
+
+\paragraph{Screening.} Five subjects, raw arm only, three seeds each
+(exploratory, no lock). Four sat exactly on the always-no floor in every
+seed: \texttt{gpt-oss-120b}, \texttt{gpt-oss-20b}, \texttt{qwen3.8-27b}
+(Groq) and \texttt{nemotron-3-ultra-free} (Zen), all $0.667$ with zero
+variance. One discriminated: \texttt{laguna-s-2.1-free} at $0.861$
+(per-seed $0.833/1.000/0.750$). The four-in-five failure rate is itself
+informative --- it explains why every previous sham comparison returned a
+null, and it means published attribution results are sensitive to a
+subject-selection step that is rarely reported.
+
+\paragraph{Confirmatory run.} Contract frozen and committed to git before
+the first trial (lock \texttt{8bccb13e}), three seeds, twelve probes per
+arm per seed, $n=36$ probes per arm. Intervals are probe-level percentile
+bootstraps, 10{,}000 resamples.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Arm & Accuracy & 95\% CI & Correct \\
+\midrule
+Raw (no harness) & 0.833 & [0.694, 0.944] & 30/36 \\
+Harnessed, no ledger access & 0.833 & [0.694, 0.944] & 30/36 \\
+Harnessed, ledger access & 0.722 & [0.583, 0.861] & 26/36 \\
+Sham (shuffled ledger) & 0.667 & [0.500, 0.806] & 24/36 \\
+\bottomrule
+\end{tabular}
+\caption{Preregistered battery on a discriminating subject. Ledger access
+\emph{reduced} accuracy; a corrupted ledger reduced it further, to the
+always-no floor.}
+\label{tab:laguna}
+\end{table}
+
+\noindent\textbf{P1 is refuted, and in the opposite direction.} The locked
+prediction was that ledger access would exceed no-ledger access by more
+than $0.15$. The observed difference is $-0.111$ (95\% CI
+$[-0.306, +0.083]$). \textbf{P2 is also refuted}: the ledger arm did not
+match raw. P3 (latency bound) held.
+
+\paragraph{Three findings the failed predictions do not capture.}
+
+\emph{First, the harness itself is free.} The no-ledger arm equals raw
+exactly (30/36 both). The $1.000 \to 0.667$ drop reported in
+\S\ref{sec:results} is therefore not the harness degrading a capable
+agent; it is a non-discriminating subject collapsing to always-no. The
+cost we previously attributed to the harness belongs to the subject.
+
+\emph{Second, the sham arm separated for the first time.} A veridical
+ledger scored $0.722$ against a shuffled ledger's $0.667$
+($\Delta = +0.056$, CI $[-0.167, +0.278]$). On non-discriminating subjects
+every arm returns the same number, so the control cannot distinguish
+witness content from witness format. Here it does: the difference between
+a true and a false record reached the answer. The witness functions as an
+information channel. It simply did not function as an improvement.
+
+\emph{Third, the sham arm was the only one without seed variance},
+returning $0.667$ in all three seeds while every other arm moved. That
+value is the always-no policy. A corrupted witness drove a subject that
+can discriminate down to the behaviour of one that cannot --- conservative
+denial produced by \emph{misleading} evidence rather than by \emph{absent}
+evidence. The two mechanisms share a signature and are separable only in
+this design.
+
+\paragraph{Statistical status.} Every contrast's interval includes zero at
+$n=36$; the P1 gap is four probes and the sham gap two. Nothing here is
+statistically established. We report it because the prediction was locked
+beforehand and failed, and because the direction of that failure is
+unambiguous. A preregistered extension with the sham contrast declared as
+the primary outcome ($n=12$ seeds, 144 probes per arm, lock
+\texttt{b06ce867}) was frozen before this paper was revised.
 
 \subsection{Bootstrap confidence intervals}
 
@@ -714,20 +805,39 @@ calibration suppresses inversion on this substrate.
 
 \section{Discussion}\label{sec:discussion}
 
-\subsection{The witness makes agents humble, then honest}
+\subsection{A witness helps only when it is better than the narrator}
 
-Without record access, the harnessed agent defaulted to wholesale denial
---- the conservative strategy when every self-attribution feels risky and
-no evidence exists to resolve ambiguity. With record access, the same
-agent converted denials into correct attributions because checking
-replaced guessing. The witness does not make agents more confident; it
-makes them \emph{accurate}, which sometimes means less confident.
+Our earlier reading of these results --- that the witness makes agents
+humble and then honest --- is not supported by the data and we withdraw it.
+On the one subject able to discriminate its own output, showing the agent
+its own record made attribution \emph{worse} ($0.833 \to 0.722$), and
+showing it a corrupted record made it worse again ($0.667$, the always-no
+floor). The agent's unaided recollection of what it had written was better
+than the ledger's report about what it had written, and deferring to the
+record cost accuracy.
 
-This resolves the asymmetry between unwitnessed over-claiming (Panickssery's
-correlation between self-knowledge and bias) and witnessed under-claiming
-(documented here): the direction depends on whether self-attribution is
-anchored to felt familiarity or to checked records. Both fail without the
-witness; both improve with it; the improvement is measurable.
+The claim that survives is narrower. A witness is an information channel:
+the sham separation (\S\ref{sec:laguna}) shows that the difference between
+a true and a false record reaches the decision. Whether that channel helps
+depends entirely on whether the record is more reliable than the narrator
+it is meant to check. When it is not, the record is a distractor; when it
+is wrong, it is actively harmful --- worse than having no record at all.
+
+This changes the deployment argument rather than removing it. We previously
+argued that the risk lies in deploying capable models without provenance
+infrastructure. The present result adds a second failure mode: deploying
+them with \emph{unreliable} provenance infrastructure, which on this
+subject was strictly worse than none. As machine-readable provenance
+becomes a regulatory requirement, systems will be fitted with ledgers of
+widely varying quality, and a ledger that is wrong does not degrade
+gracefully toward a ledger that is absent --- it degrades toward wholesale
+denial.
+
+The asymmetry with unwitnessed over-claiming \citep{panickssery2024}
+therefore stands, but its resolution is conditional: both over-claiming and
+under-claiming are failures of an unchecked channel, and a witness corrects
+them only where the witness is the more accurate source. That condition was
+implicit in our earlier framing and is now explicit, and testable.
 
 \subsection{Selection explains convergence}
 
@@ -865,15 +975,23 @@ for internal states.
 
 \section{Future Directions}\label{sec:future}
 
-\subsection{Sham-harness control experiment}
+\subsection{Sham-harness control: powering the surviving contrast}
 Structurally identical harness with randomly reassigned provenance
 bindings. Isolates whether witness content matters beyond its format.
 Wired into the main battery; 1-seed pilot on \texttt{gpt-\allowbreak{}oss-\allowbreak{}120b}
 showed sham$=$real at the always-no floor (subject ignores ledger
-content). Full 3-seed sham comparison requires a discriminating
-subject and is queued for the next stable provider window; OpenRouter
-free-tier exhausted (50/day) and Groq returning 403 at time of writing,
-with reset at 2026-08-27 00:00 UTC.
+content). The control has since separated on a discriminating subject
+(\S\ref{sec:laguna}): veridical $0.722$ vs shuffled $0.667$, a $+0.056$
+difference whose 95\% interval still includes zero at $n=36$ probes per
+arm. This is the program's surviving lead and the only contrast that
+directly tests whether witness \emph{content} carries signal beyond
+witness \emph{format}. A preregistered extension (lock
+\texttt{b06ce867}, $n=12$ seeds, 144 probes per arm) declares it the
+primary outcome before the data, rather than promoting an incidental
+observation after the fact; the $n=3$ result is not pooled into it.
+Subject availability, not analysis, is now the binding constraint: the
+one discriminating subject we have is a free endpoint that returns 503
+in clusters under sustained load.
 
 \subsection{Cross-model replication on capable subjects}
 Origin discrimination above baseline was observed only once

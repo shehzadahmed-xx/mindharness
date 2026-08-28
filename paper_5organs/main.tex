@@ -526,7 +526,20 @@ Harness & \texttt{cull\_failed}, Light dedup, dissolution & Removes what doesn't
 \end{tabular}
 \end{center}
 
-Two kinds, and the distinction is the paper's sharpest: \textbf{conservative} (harnessed-nocheck $\to$\allowbreak{} always-no, 0.667: denies everything, including own output --- caution without accuracy; the brake applied to everything, including signal) vs \textbf{accurate} (witnessed + queried $\to$\allowbreak{} 1.000 on x-preview Day~1: denies fabrications, affirms generations --- damping that is \emph{selective} because the witness makes it checkable) \citep{panickssery2024,macar2026}. Damping alone is not enough. Damping \emph{with a witness} is --- and the harness has both, so the two can be ablated separately.
+Two kinds: \textbf{conservative} damping brakes everything, including
+signal --- a subject that cannot discriminate its own output denies all of
+it and lands on the always-no floor ($0.667$). \textbf{Selective} damping
+brakes only what should be braked. The obvious hypothesis is that a witness
+converts the first into the second, and our preregistered test of it failed:
+on the one subject able to discriminate, adding ledger access moved
+attribution from $0.833$ down to $0.722$, and a corrupted ledger moved it to
+$0.667$ --- conservative denial produced by misleading evidence rather than
+absent evidence \citep{panickssery2024,macar2026}. What the data support is
+weaker and conditional: a witness is an information channel whose content
+demonstrably reaches the decision (a shuffled ledger scores below a
+veridical one), and it damps selectively only where it is more reliable than
+the recall it is checking. Where it is not, it is a distractor; where it is
+wrong, it is worse than no witness at all.
 
 Lose damping and you get the same pathology at every scale, always the same with a different name:
 
