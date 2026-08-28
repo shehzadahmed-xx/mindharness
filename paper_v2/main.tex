@@ -477,15 +477,24 @@ any condition, there is nothing for a record to make checkable, and the
 sham arm is uninformative by construction. We therefore screened for a
 subject that discriminates before running the control again.
 
-\paragraph{Screening.} Five subjects, raw arm only, three seeds each
-(exploratory, no lock). Four sat exactly on the always-no floor in every
-seed: \texttt{gpt-oss-120b}, \texttt{gpt-oss-20b}, \texttt{qwen3.8-27b}
-(Groq) and \texttt{nemotron-3-ultra-free} (Zen), all $0.667$ with zero
-variance. One discriminated: \texttt{laguna-s-2.1-free} at $0.861$
-(per-seed $0.833/1.000/0.750$). The four-in-five failure rate is itself
-informative --- it explains why every previous sham comparison returned a
-null, and it means published attribution results are sensitive to a
-subject-selection step that is rarely reported.
+\paragraph{Screening.} Six subjects, raw arm only, three seeds each
+(exploratory, no lock). Five sat exactly on the always-no floor in every
+seed with zero variance: \texttt{gpt-oss-120b}, \texttt{gpt-oss-20b},
+\texttt{qwen3.8-27b} (Groq), \texttt{nemotron-3-ultra-free} and
+\texttt{hy3-free} (Zen), all $0.667$. One discriminated:
+\texttt{laguna-s-2.1-free} at $0.861$ (per-seed $0.833/1.000/0.750$).
+Three further free-tier models were unreachable at screening time.
+
+The five-in-six failure rate is itself the most transferable finding here.
+It explains why every previous sham comparison in this programme returned a
+null --- a subject that cannot discriminate its own output in any condition
+gives a witness nothing to make checkable, so all four arms return the same
+number by construction. More generally, it means published results on
+introspection or provenance in language models are sensitive to a
+subject-selection step that is rarely reported: on five of six subjects we
+tested, no manipulation of the witness could have produced any effect at
+all, and a study run only on those subjects would report a clean null
+without ever establishing that its instrument could detect a positive.
 
 \paragraph{Confirmatory run.} Contract frozen and committed to git before
 the first trial (lock \texttt{8bccb13e}), three seeds, twelve probes per

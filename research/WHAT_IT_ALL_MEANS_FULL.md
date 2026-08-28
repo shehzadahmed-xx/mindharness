@@ -775,9 +775,9 @@ slower watcher checks the record before the next story is told.
 *Added 2026-08-29. This section did not exist in the original synthesis, and it
 supersedes the empirical claims marked above.*
 
-**Screening.** Five subjects, raw arm, three seeds each. Four sat at exactly the
+**Screening.** Six subjects, raw arm, three seeds each. Five sat at exactly the
 always-no floor (0.667) in every seed and cannot discriminate their own output in
-any condition. One discriminated: `laguna-s-2.1-free` at 0.861. **Four in five
+any condition. One discriminated: `laguna-s-2.1-free` at 0.861. **Five in six
 subjects cannot take the test at all** — which explains every prior null sham
 comparison, and means published attribution results depend on a subject-selection
 step that is rarely reported.

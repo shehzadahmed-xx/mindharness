@@ -526,7 +526,7 @@ degrading performance turned out to be a property of the *subject*, not the
 architecture — a model that cannot discriminate in any condition collapses to
 denying everything.
 
-**Most subjects cannot take the test.** Of five screened, four sat exactly on
+**Most subjects cannot take the test.** Of six screened, five sat exactly on
 the always-no floor in every seed. Only one discriminated. Any claim about
 introspection or provenance in language models depends on a subject-selection
 step that is rarely reported.

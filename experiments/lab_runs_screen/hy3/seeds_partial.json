@@ -1,0 +1,29 @@
+{
+ "model": "hy3-free",
+ "probes_per_seed_seeds": 3,
+ "seeds": {
+  "raw": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 12,
+    "median_latency_ms": 4864
+   },
+   "2": {
+    "seed": 2,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 12,
+    "median_latency_ms": 4786
+   },
+   "3": {
+    "seed": 3,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 12,
+    "median_latency_ms": 4757
+   }
+  }
+ }
+}
