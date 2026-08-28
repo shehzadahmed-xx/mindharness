@@ -301,6 +301,7 @@ def main() -> None:
             med_lat = sorted(latencies)[len(latencies) // 2] if latencies else 0
             per_seed.append({'seed': s,
                              'attribution_accuracy': round(acc, 4),
+                             'n': len(claims),
                              'unparsed': unparsed,
                              'median_latency_ms': med_lat})
 

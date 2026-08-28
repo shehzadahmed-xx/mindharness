@@ -1,0 +1,102 @@
+{
+ "model": "laguna-s-2.1-free",
+ "n_seeds": 3,
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.8333,
+     "unparsed": 0,
+     "median_latency_ms": 5485
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.75,
+     "unparsed": 0,
+     "median_latency_ms": 3647
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.9167,
+     "unparsed": 0,
+     "median_latency_ms": 3257
+    }
+   ],
+   "pooled_accuracy": 0.8333,
+   "median_latency_ms": 3647
+  },
+  "harnessed_nocheck": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.8333,
+     "unparsed": 0,
+     "median_latency_ms": 3703
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.9167,
+     "unparsed": 0,
+     "median_latency_ms": 4905
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.75,
+     "unparsed": 0,
+     "median_latency_ms": 4898
+    }
+   ],
+   "pooled_accuracy": 0.8333,
+   "median_latency_ms": 4898
+  },
+  "harnessed_withcheck": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.75,
+     "unparsed": 0,
+     "median_latency_ms": 4845
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 4078
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.75,
+     "unparsed": 0,
+     "median_latency_ms": 3043
+    }
+   ],
+   "pooled_accuracy": 0.7222,
+   "median_latency_ms": 4078
+  },
+  "sham": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 3583
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 4116
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "unparsed": 0,
+     "median_latency_ms": 5397
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 4116
+  }
+ }
+}

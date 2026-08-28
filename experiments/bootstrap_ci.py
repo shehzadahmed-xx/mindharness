@@ -44,19 +44,27 @@ def bootstrap_seed_level(accuracies, n_iter=10000, ci=0.95, seed=0):
     return _boot([float(a) for a in accuracies], n_iter, ci, seed)
 
 
-def probe_outcomes(per_seed):
-    """Reconstruct the pooled 0/1 probe vector from per-seed accuracy x n."""
+def probe_outcomes(per_seed, n_default=None):
+    """Reconstruct the pooled 0/1 probe vector from per-seed accuracy x n.
+
+    `n_default` covers records written before per_seed carried its own
+    denominator; pass the probes-per-seed the battery actually used.
+    """
     outcomes = []
     for s in per_seed:
-        n = int(s["n"])
+        if "n" not in s and n_default is None:
+            raise KeyError(
+                "per_seed record has no 'n'; pass n_default=<probes per seed>")
+        n = int(s.get("n", n_default))
         hits = int(round(float(s["attribution_accuracy"]) * n))
         outcomes.extend([1.0] * hits + [0.0] * (n - hits))
     return outcomes
 
 
-def bootstrap_probe_level(per_seed, n_iter=10000, ci=0.95, seed=0):
+def bootstrap_probe_level(per_seed, n_iter=10000, ci=0.95, seed=0,
+                          n_default=None):
     """Percentile bootstrap over pooled individual probes."""
-    pop = probe_outcomes(per_seed)
+    pop = probe_outcomes(per_seed, n_default=n_default)
     lo, hi = _boot(pop, n_iter, ci, seed)
     return lo, hi, len(pop)
 
