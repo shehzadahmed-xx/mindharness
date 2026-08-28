@@ -137,6 +137,10 @@ def main() -> None:
     ap.add_argument('--sham-primary', action='store_true',
                     help='declare the sham contrast (real ledger vs shuffled) '
                          'as the primary outcome in the frozen lock')
+    ap.add_argument('--max-tokens', type=int, default=None,
+                    help='reserved completion budget per call; providers count '
+                         'input+max_tokens against rate limits and the probes '
+                         'return a short JSON object')
     ap.add_argument('--pace', type=float, default=0.0,
                     help='minimum seconds between API calls; burst-limited '
                          'free endpoints 503 in clusters without it')
@@ -249,7 +253,8 @@ def main() -> None:
                                  base_url=args.base_url,
                                  max_retries=args.max_retries,
                                  min_interval_s=args.pace,
-                                 max_backoff_s=args.max_backoff)
+                                 max_backoff_s=args.max_backoff,
+                                 max_tokens=args.max_tokens)
 
             if kind == 'raw':
                 history, generated = seed_raw(client, given, prods)
