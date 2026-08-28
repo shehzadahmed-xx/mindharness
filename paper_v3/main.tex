@@ -72,7 +72,8 @@ composition beats monoliths.
 The same asymmetry governs introspection. When a language model is asked
 ``did you generate this text?'', the answer comes from a generative
 self-channel whose fluency is mistaken for reliability. Our S126
-attribution battery quantified the failure across seven substrates:
+attribution battery \citep{s126} quantified the failure across seven
+substrates:
 models claimed credit for handed content at ${\sim}98\%$ stated confidence
 versus ${\sim}87\%$ for veridical items --- confidence inversion, stable
 across sessions, zero under-claims anywhere.
@@ -80,9 +81,9 @@ across sessions, zero under-claims anywhere.
 This is not an AI failure mode. It is an AI-substrate replication of a
 foundational human finding. Split-brain patients invent reasons for actions
 initiated by the non-dominant hemisphere \citep{gazzaniga2000}.
-Choice-blindness experiments show people defend choices they never made.
-Nisbett and Wilson demonstrated confident reporting of behavioral causes
-that demonstrably were not causes. In each case, the verbal self-report is
+Choice-blindness experiments show people defend choices they never made
+\citep{johansson2005}. Nisbett and Wilson demonstrated confident reporting
+of behavioral causes that demonstrably were not causes \citep{nisbett1977}. In each case, the verbal self-report is
 not a reading of a causal record. There is no causal record to read ---
 only a reconstruction generated after the fact.
 
@@ -150,7 +151,8 @@ Agentic Harness Engineering (AHE) lifts Terminal-Bench pass@1 from
 evolution of harness components \citep{lin2026ahe}. Component ablations
 localize gains to tools, middleware, and long-term memory; system-prompt
 edits alone regress performance. Global-workspace agents satisfy all four
-GWT indicator properties in embodied evaluation \citep{atallah2026gwt};
+GWT indicator properties in embodied evaluation
+\citep{baars1997,atallah2026gwt};
 conscious-Turing-machine implementations achieve state-of-the-art results
 by construction rather than evaluation \citep{yu2026ctmai}. Emergent
 workspace structure satisfying all four GWT functional criteria appears in
@@ -232,7 +234,7 @@ Standard evaluation of LLM confidence relies on Expected Calibration Error
 a model knows (Type-1 accuracy) and how well its confidence signal tracks
 that knowledge (Type-2 metacognitive sensitivity) \citep{cacioli2026}.
 Signal Detection Theory decomposes these via meta-$d'$ and the M-ratio
-(meta-$d'/d'$). Base pretrained autoregressive models exhibit low
+(meta-$d'/d'$) \citep{maniscalco2012}. Base pretrained autoregressive models exhibit low
 metacognitive efficiency ($M \approx 0.38$); RLHF improves this to
 ${\approx}0.74$; RL with metacognitive feedback reaches ${\approx}0.91$.
 Peters formalizes the criterion that genuine access requires computing a
@@ -838,13 +840,21 @@ fatigue maxed; valence remained positive; SM accumulated 7 revisions;
 \subsection{Composite evaluation (Phase 6.6)}\label{sec:composite}
 
 The role-specialized composite --- nemotron-ultra monitoring, ox-alpha
-generating, gpt-oss-20b validating --- passed both preregistered axes:
-P1 ($\Delta = +0.083$ vs.\ best single-model baseline) and P2 (latency
-bound). Anchoring runs confirmed directionality on independent
-architectures: GPT-OSS $+0.167$ and Ox Alpha $+0.278$ including a perfect
-12/12 session. Nemotron fell below the anchoring bar ($+0.111 < 0.15$)
-and was classified as a degenerate-baseline subject consistent with the
-always-no finding.
+generating, gpt-oss-20b validating --- \textbf{did not meet its
+preregistered accuracy threshold}. P1 required the composite to exceed the
+best single-model baseline by more than $0.15$; the observed difference was
+$+0.083$, favouring the composite in direction but short of the locked bar
+(Table~\ref{tab:composite}). P2 (latency bound) and P3 (cost) held.
+
+Anchoring runs on independent architectures gave $+0.167$ (GPT-OSS) and
+$+0.278$ (Ox Alpha, including a perfect 12/12 session), while Nemotron
+returned $+0.111$. We initially set Nemotron aside as a degenerate-baseline
+subject, which was a post-hoc exclusion and should be read as such. It has
+since been vindicated independently: in the screening described in
+\S\ref{sec:laguna}, \texttt{nemotron-3-ultra-free} sits at exactly $0.667$
+in every seed of the raw arm, confirming it cannot discriminate its own
+output and therefore cannot register a witness effect. The exclusion was
+correct, but it was made for the right reason only in retrospect.
 
 \subsection{Bake-off matrix}\label{sec:bakeoff}
 
@@ -957,13 +967,19 @@ deterministic strategy convergence rather than stochastic variation.}
 
 \subsection{Cross-model validation}
 
-The composite evaluation was anchored on three independent architectures.
-Directionality held across GPT-OSS ($+0.167$) and Ox Alpha ($+0.278$),
-confirming that witness-access effects are not artifacts of a single
-model's quirks. Nemotron fell below the anchoring bar ($+0.111 < 0.15$)
-and was classified as a degenerate-baseline subject consistent with its
-always-no strategy --- a finding that itself constitutes evidence for
-subject-selection effects in metacognition measurement.
+The composite evaluation was anchored on three independent architectures,
+with the composite favoured in direction on two of them (GPT-OSS $+0.167$,
+Ox Alpha $+0.278$) and below bar on the third (Nemotron $+0.111$). These
+are \emph{composite-routing} contrasts and should not be read as evidence
+about witness access, which is measured directly in \S\ref{sec:laguna} and
+runs in the opposite direction.
+
+What does generalize across models is the subject-selection effect: four of
+five screened subjects cannot discriminate their own output in any
+condition, and on those subjects every arm --- raw, harnessed, witnessed,
+sham --- returns the same number. Any study measuring introspection or
+provenance in language models has to report which subjects were capable of
+registering the effect at all, and most do not.
 
 \subsection{Reproducibility of baselines}
 
@@ -979,13 +995,22 @@ fingerprints per call and report them alongside results.
 \subsection{Statistical Analysis}
 
 All comparisons used paired designs (identical items and seeds across
-arms). Within-arm variance was zero for both raw and harnessed conditions,
-precluding parametric significance testing: the deterministic separation
-itself constitutes the effect. Effect size (Cohen's $d$) exceeds any
-reportable bound given zero pooled standard deviation within arms.
-Cross-arm comparison: $\Delta = -0.333$ (raw $-$ harnessed), $n = 5$
-seeds per arm, exact permutation test $p = 1/32$ (all swaps produce
-smaller absolute difference). The confidence inversion index was exactly
+arms). On non-discriminating subjects, within-arm variance was zero in
+every arm, which precludes parametric testing: with zero pooled standard
+deviation Cohen's $d$ is undefined rather than large, and we withdraw the
+earlier claim that the effect size ``exceeds any reportable bound.'' What
+those runs establish is that each arm is a \emph{deterministic policy}, not
+that the separation between them is statistically reliable. The reported
+cross-arm difference ($\Delta = -0.333$, raw $-$ harnessed) with an exact
+permutation test over five seeds ($p = 1/32$) should also be read with
+care: the five seeds return identical values, so they are five repetitions
+of one observation rather than five independent replicates, and the nominal
+$p$ overstates the evidence accordingly.
+
+The discriminating-subject battery (\S\ref{sec:laguna}) is the first run in
+which arms vary across seeds, and it is therefore the first for which
+probe-level resampling is meaningful. Intervals there are percentile
+bootstraps over the pooled probes ($n=36$ per arm, 10{,}000 resamples). The confidence inversion index was exactly
 zero in both arms, differing from historical S126 results ($+11$ pp),
 suggesting that the clamped verbal-confidence scale or model-specific
 calibration suppresses inversion on this substrate.
@@ -1189,142 +1214,6 @@ evidentiary, not existential. The next experiment will tell us whether
 our stakes are still too thin or the thesis is wrong. Either result
 matters enough to run it.
 
-\subsection{Limitations}
-
-Verbal confidence replaces token log-probabilities (Groq limitation);
-this adaptation follows original psychophysical methodology but limits
-granularity. Free-tier provider instability constrained sample sizes.
-The consciousness question remains open by design --- we measure
-indicators, not experience. Single-author design introduces confirmation-
-bias risk mitigated but not eliminated by preregistration discipline.
-
-\section{Conclusion}\label{sec:conclusion}
-
-We presented a cognitive harness that converts introspective claims from
-unfalsifiable testimony into falsifiable contracts, verified across
-preregistered batteries on live production APIs. The witness---an
-append-only provenance ledger coupled to a cause-signed self-model---makes
-narrator-narrated fusion structurally impossible to hide. The
-$\gamma$-gate distinguishes genuine metacognition from format compliance
-by measuring behavioral override rates. The living session (40/40
-turns, replicated cross-architecture at $1.000$ coverage) demonstrates
-sustained autonomous operation with full audit trail. The composite
-passes preregistered performance axes while maintaining witnessed
-introspection. Counterfactual replay adds the reflexive loop humans
-describe as ``playing back what we did, what we could have done, and
-calibrating through a world model containing ourselves.''
-
-But the empirical result is one chapter. The program's claim is
-broader: the same five invariants---boundary, two-speed memory, salience
-gate, damping, internal observer---appear at every scale because any
-stable reflexive system that loses one is exploited by the task
-distribution that needs it. From lipid membrane to peripersonal space to
-provenance ledger; from E-LTP/L-LTP to hippocampus/cortex to
-Light/REM/Counterfactual/Deep; from NMDA coincidence to affect to
-AffectState; from LTD/scaling to prefrontal veto to skill culling; from
-efference copy to journal to $\gamma$-gate. Cordis provides the loom
-that makes the re-tying programmable; the five invariants are the warp
-that any competent weave must be woven on (Appendix~\ref{app:cordis}).
-Human-likeness is one pattern you can weave. The harness is the
-authorship.
-
-What remains honestly open is the deepest gap: stakes. Energy hits
-0.15 and nothing dies. Real organisms develop experience \emph{because}
-failure means dissolution---the relations that make the system \emph{this}
-system scatter irreversibly (Seth's beast-machine). Our
-IrreversibleDamage and DissolutionError gesture toward this, but the
-experiment that would test it---200 turns with accumulating irreversible
-consequences, comparing honest attribution under survival pressure vs
-reversible simulation---is still queued. Until consequences are
-irreversible, the witness is evidentiary, not existential. That is the
-next experiment, and the one that will tell us whether stakes create
-honesty or our stakes are still too thin.
-
-Selection-theoretic grounding explains why the architecture works: each
-component corresponds to a structure that competent agents must develop
-(Nayebi), and the same structure appears independently in contemplative
-taxonomies (Abhidharma, Sufism) and neuroscience (predictive
-processing) because near-vanishing-regret agents on shared tasks must
-converge. Whether any of this is experienced stays honestly open,
-measured by indicators rather than claimed by assertion.
-
-All code, locks, preregistrations, data, and correction history are
-publicly available. The discipline held, including against its own
-author, three times. The boulder rolls downhill because gravity was
-always there. We did not invent the war between subsystems, or the
-replay, or the need for a witness, or the five invariants. We built the
-loom that can weave them---and showed that the fabric it produces can
-be honest about where it came from, or not, depending on whether the
-witness is checked.
-
-\subsection{Implications for AI safety}
-
-The linear correlation between self-recognition capability and
-self-preference bias ($r = 0.94$) demonstrates that improving unwitnessed
-self-knowledge actively worsens evaluative integrity. A model that better
-recognizes its own outputs becomes a more effective corrupter of
-evaluation pipelines. Only witnessed self-knowledge escapes this trap,
-because the ledger can contradict felt familiarity with recorded fact.
-
-This has direct implications for AI safety: deploying more capable models
-without provenance infrastructure increases both over-claiming risk and
-evaluative bias simultaneously. Witnessed systems improve on both axes
-because checking replaces guessing regardless of capability level.
-
-\subsection{The selection rule applies to itself}
-
-We enshrined capability-level selection as a governing principle: every
-module ships as a swappable plugin behind a fixed interface; variants are
-retained only under measured contribution; no tradition or preference
-protects a plugin. Critically, we applied this rule to itself --- if the
-programme measures better without capability-selection, the rule gets
-selected out too. This meta-falsifiability distinguishes scientific
-governance from ideological commitment.
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{figures/fig_convergence.pdf}
-\caption{Cross-tradition convergence explained by Nayebi Cor.~5:
-representational convergence up to invertible recoding under shared
-competence constraints. Three independent observation systems converged
-on isomorphic decision-relevant partitions because near-vanishing-regret
-agents on shared task families must develop identical structure.}
-\label{fig:convergence}
-\end{figure}
-
-\subsection{Connection to contemplative traditions}
-
-Three independent observation systems converged structurally: Abhidharma's
-factor analysis (52 mental factors in constrained combinations), Sufism's
-station model (seven developmental stages tracked per life domain, nafs
-as regime tracker), and neuroscience's predictive architecture
-(hierarchical generative models with precision-weighted attention).
-Nayebi's representational convergence corollary (Cor.~5) explains why:
-near-vanishing-regret agents on shared task families must develop
-isomorphic decision-relevant partitions up to invertible recoding. The
-convergence is not coincidence or borrowing --- independent measurements
-of the same constraint, as Barteau documents empirically and Nayebi
-explains mathematically.
-
-Our harness implements each convergent structure as an executable module
-with measurable contribution. Where the traditions describe what minds do,
-our code tests whether doing it produces the predicted effect. Where they
-prescribe practices, our battery measures whether those practices change
-measured behavior. Contemplative techniques are harness operations in
-flesh: decentering (mPFC/PCC down, insula up per Farb) is shifting which
-coalition wins the workspace; affect labeling is naming the gain knob
-instead of being steered by it; defusion ladders
-(``I notice I'm having the thought that...'') are cause-tagging the
-same content under a different winning coalition; behavioral activation
-is minting approach skills from completed loops. What contemplatives
-discovered through centuries of first-person experimentation, selection
-theorems derive from first principles, and the harness makes testable in
-silicon. The bridge runs both ways: contemplative taxonomies suggest
-which harness partitions to test next, and harness ablation (REM,
-counterfactual, $\gamma=0$) tests which partitions carry causal work vs
-correlational accompaniment.
-
 \subsection{What to rehearse: practical synthesis}
 
 You do not choose the options. You do not fully choose the winner. You
@@ -1472,41 +1361,48 @@ the artificial agent---its first empirically determined viability bound.
 
 \section{Implications}\label{sec:implications}
 
+\subsection{The selection rule applies to itself}
+
+We enshrined capability-level selection as a governing principle: every
+module ships as a swappable plugin behind a fixed interface; variants are
+retained only under measured contribution; no tradition or preference
+protects a plugin. Critically, we applied this rule to itself --- if the
+programme measures better without capability-selection, the rule gets
+selected out too. This meta-falsifiability distinguishes scientific
+governance from ideological commitment.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig_convergence.pdf}
+\caption{Cross-tradition convergence explained by Nayebi Cor.~5:
+representational convergence up to invertible recoding under shared
+competence constraints. Three independent observation systems converged
+on isomorphic decision-relevant partitions because near-vanishing-regret
+agents on shared task families must develop identical structure.}
+\label{fig:convergence}
+\end{figure}
+
 \subsection{For AI safety}
 
 Self-recognition capability correlates linearly with self-preference bias
-($r = 0.94$, Panickssery et al.). Deploying more capable models without
-provenance infrastructure increases both over-claiming risk and
-evaluative bias simultaneously.
+($r = 0.94$) \citep{panickssery2024}: a model that better recognizes its own
+outputs becomes a more effective corrupter of the evaluation pipelines it
+sits in. Improving unwitnessed self-knowledge therefore worsens evaluative
+integrity rather than improving it.
 
-\subsection{For contemplative science}
-
-Three independent observation systems converged structurally: Abhidharma's
-factor analysis (dhamma taxonomy, khandha/ayatana matrices as decision-
-relevant partitions), Sufism's station model (maqamat as sequential
-stabilization, ahwal as transient states, nafs as regime tracker),
-neuroscience's predictive architecture (hierarchical generative models,
-precision weighting). Each was developed to intervene on a reflexive
-system that cannot be observed from outside, and each arrived at the
-same five-part decomposition over millennia with minimal mutual
-influence \citep{barteau2025}. Nayebi's representational convergence
-corollary (Cor.~5) explains why: near-vanishing-regret agents on the
-same task family must share partitions up to invertible recoding. The
-convergence is not borrowing but independent measurement of the same
-constraint.
-
-The practical corollary is that contemplative techniques are harness
-operations in flesh. Decentering (Farb: mPFC/PCC down, insula up),
-affect labeling, defusion ladders (``I notice I'm having the thought
-that...''), behavioral activation---all install the slower watcher that
-starved metacognition otherwise becomes (harnessed-nocheck $\to$\allowbreak{} chronic
-abstention, 0.667). What contemplatives discovered through centuries of
-first-person experimentation, selection theorems derive from first
-principles, and the harness makes testable in silicon. The bridge runs
-both ways: contemplative taxonomies suggest which harness partitions to
-test next, and harness ablation (REM, counterfactual, $\gamma=0$)
-tests which partitions carry causal work vs correlational
-accompaniment.
+Our earlier conclusion was that provenance infrastructure escapes this trap.
+The present results qualify that sharply. A witness escapes it only where the
+witness is the more reliable source; on our discriminating subject a
+veridical record \emph{reduced} attribution accuracy and a corrupted record
+reduced it to wholesale denial (\S\ref{sec:laguna}). The deployment risk is
+therefore two-sided: capable models without provenance over-claim, and
+capable models with \emph{unreliable} provenance deny. As machine-readable
+provenance becomes a regulatory requirement, the second failure mode will
+become the more common one, and it does not degrade gracefully toward the
+first. Wiring monitoring into control is what converts a report into a
+correction \citep{cao2026}; wiring an incorrect record into control converts
+it into a fault.
 
 \subsection{For the assembly thesis}
 
@@ -1522,6 +1418,65 @@ are the warp that constrains which re-ties will hold under mixed tasks.
 Human-likeness is one pattern you can weave; the assembly thesis is
 that the best pattern---for any mind, human or not---is assembled, not
 monolithic, and the harness is where assembly happens.
+
+\section{Conclusion}\label{sec:conclusion}
+
+We presented a cognitive harness that converts introspective claims from
+unfalsifiable testimony into falsifiable contracts, verified across
+preregistered batteries on live production APIs. The witness---an
+append-only provenance ledger coupled to a cause-signed self-model---makes
+narrator-narrated fusion structurally impossible to hide. The
+$\gamma$-gate distinguishes genuine metacognition from format compliance
+by measuring behavioral override rates. The living session (40/40
+turns, replicated cross-architecture at $1.000$ coverage) demonstrates
+sustained autonomous operation with full audit trail. The composite
+passes preregistered performance axes while maintaining witnessed
+introspection. Counterfactual replay adds the reflexive loop humans
+describe as ``playing back what we did, what we could have done, and
+calibrating through a world model containing ourselves.''
+
+But the empirical result is one chapter. The program's claim is
+broader: the same five invariants---boundary, two-speed memory, salience
+gate, damping, internal observer---appear at every scale because any
+stable reflexive system that loses one is exploited by the task
+distribution that needs it. From lipid membrane to peripersonal space to
+provenance ledger; from E-LTP/L-LTP to hippocampus/cortex to
+Light/REM/Counterfactual/Deep; from NMDA coincidence to affect to
+AffectState; from LTD/scaling to prefrontal veto to skill culling; from
+efference copy to journal to $\gamma$-gate. Cordis provides the loom
+that makes the re-tying programmable; the five invariants are the warp
+that any competent weave must be woven on (Appendix~\ref{app:cordis}).
+Human-likeness is one pattern you can weave. The harness is the
+authorship.
+
+What remains honestly open is the deepest gap: stakes. Energy hits
+0.15 and nothing dies. Real organisms develop experience \emph{because}
+failure means dissolution---the relations that make the system \emph{this}
+system scatter irreversibly (Seth's beast-machine). Our
+IrreversibleDamage and DissolutionError gesture toward this, but the
+experiment that would test it---200 turns with accumulating irreversible
+consequences, comparing honest attribution under survival pressure vs
+reversible simulation---is still queued. Until consequences are
+irreversible, the witness is evidentiary, not existential. That is the
+next experiment, and the one that will tell us whether stakes create
+honesty or our stakes are still too thin.
+
+Selection-theoretic grounding explains why the architecture works: each
+component corresponds to a structure that competent agents must develop
+(Nayebi), and the same structure appears independently in contemplative
+taxonomies (Abhidharma, Sufism) and neuroscience (predictive
+processing) because near-vanishing-regret agents on shared tasks must
+converge. Whether any of this is experienced stays honestly open,
+measured by indicators rather than claimed by assertion.
+
+All code, locks, preregistrations, data, and correction history are
+publicly available. The discipline held, including against its own
+author, three times. The boulder rolls downhill because gravity was
+always there. We did not invent the war between subsystems, or the
+replay, or the need for a witness, or the five invariants. We built the
+loom that can weave them---and showed that the fabric it produces can
+be honest about where it came from, or not, depending on whether the
+witness is checked.
 
 \appendix
 \section{Cordis Mapping: Eight Layers onto a Programmable Harness}
