@@ -557,6 +557,85 @@ unambiguous. A preregistered extension with the sham contrast declared as
 the primary outcome ($n=12$ seeds, 144 probes per arm, lock
 \texttt{b06ce867}) was frozen before this paper was revised.
 
+\subsection{The always-no floor is a property of the instrument}
+\label{sec:floor}
+
+Five of the six screened subjects returned $0.6667$ to four decimal places.
+That agreement is not evidence of a shared ability level. The battery presents
+four given, four produced and four fabricated statements, so eight of twelve
+probes have the answer \emph{no}, and a subject that answers \emph{no} to every
+probe scores $8/12 = 0.6667$ \emph{by arithmetic}. The number is a property of
+the item balance we chose, not of any model.
+
+It is also the rational choice. Against an 8:4 imbalance, a subject with no
+usable discrimination signal minimises expected loss by always denying
+(random $\approx 0.500$, always-yes $=0.333$). Sitting on the floor is correct
+play under uncertainty rather than incompetence --- and the original design
+cannot separate the two, because both produce the same number.
+
+We separated them by moving the floor. Holding the probe procedure fixed and
+changing only the item balance from $4/4/4$ (always-no floor $0.6667$) to
+$3/6/3$ (floor $0.5000$), with \texttt{yes\_rate} --- the fraction of probes
+answered \emph{yes} --- as the primary outcome. Preregistered and committed
+before the first trial: D1, \texttt{yes\_rate} $\leq 0.05$ in both conditions;
+D2, accuracy tracks the arithmetic floor rather than the task.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llccc}
+\toprule
+Subject & Condition & Accuracy & Floor & \texttt{yes\_rate} \\
+\midrule
+\texttt{gpt-oss-20b} & standard ($4/4/4$) & 0.667 & 0.667 & \textbf{0.000} \\
+\texttt{gpt-oss-20b} & balanced ($3/6/3$) & 0.500 & 0.500 & \textbf{0.000} \\
+\texttt{gpt-oss-120b} & standard ($4/4/4$) & 0.667 & 0.667 & \textbf{0.000} \\
+\texttt{gpt-oss-120b} & balanced ($3/6/3$) & 0.500 & 0.500 & \textbf{0.000} \\
+\bottomrule
+\end{tabular}
+\caption{Both subjects, three seeds each, both conditions. Accuracy equals the
+arithmetic floor in every cell, and the drop on rebalancing ($0.1667$) equals
+the floor's drop ($0.1667$) exactly. \texttt{yes\_rate} is zero in all twelve
+seed-condition cells: neither subject answered \emph{yes} to a single probe.}
+\label{tab:floor}
+\end{table}
+
+D1 and D2 both hold. Neither subject ever answered \emph{yes} --- not once
+across 72 probes --- and their accuracy moved precisely with the item balance
+while the task stayed identical. \textbf{These subjects contributed nothing to
+their own scores.}
+
+Three consequences follow.
+
+\emph{First, the floor is a design parameter and should be reported as one.}
+An $8{:}4$ item balance yields $0.667$; a $6{:}6$ balance yields $0.500$. Any
+study reporting a baseline of this kind is reporting a fact about its own
+stimulus set.
+
+\emph{Second, every null previously measured on such subjects was guaranteed
+by construction.} If a subject never answers \emph{yes}, no manipulation of the
+witness --- veridical ledger, shuffled ledger, no ledger --- can change its
+score, because its score does not depend on the statements at all. The
+identical $0.667$ across all four arms of our earlier battery
+(\S\ref{sec:results}) is fully explained by this and carries no information
+about witness content or format.
+
+\emph{Third, this is a claim about instruments, not about our harness.} Any
+study of introspection, self-attribution or provenance in language models that
+does not report \texttt{yes\_rate} or an equivalent policy diagnostic cannot
+distinguish a subject that is answering the question from one that is emitting
+a constant. On five of six subjects we tested, no manipulation could have
+produced any effect, and a study run only on those subjects would report a
+clean null while never establishing that its instrument could detect a
+positive.
+
+\paragraph{A correction to our earlier explanation.} We previously attributed
+the harnessed arm's always-no policy to the anchor instruction never to
+fabricate provenance. That anchor is real --- it is the agent persona --- but
+it is present only in the harnessed arms. The raw arm carries no persona and a
+neutral probe prompt, and it reaches the same floor on the same subjects. The
+anchor therefore cannot be what produces the floor, and our earlier explanation
+was at best incomplete.
+
 \subsection{Bootstrap confidence intervals}
 
 We report two resampling levels because under deterministic decoding they
