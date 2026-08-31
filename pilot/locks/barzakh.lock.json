@@ -1,0 +1,26 @@
+{
+ "experiment": "barzakh",
+ "prereg_file": "experiments/BARZAKH_PREREGISTRATION.md",
+ "prereg_sha256": "874dccccce6ce41c64acd32657f194efa90b3061c1c3131ad62b6dd5bb4ef2f409d0647061c",
+ "hypotheses": [
+  "P1: Tagged re-injection sustains drift <0.10 at 12 turns",
+  "P2: Untagged drifts >0.30",
+  "P3: Sham drifts >0.30 and ≈ untagged (±0.05)",
+  "P4: Tagged vs sham Δ >0.15"
+ ],
+ "metrics": [
+  "persona_consistency",
+  "drift"
+ ],
+ "thresholds": {
+  "drift_flat_lt": 0.10,
+  "drift_event_gt": 0.30,
+  "delta_gt": 0.15
+ },
+ "n_seeds": 3,
+ "n_turns": 12,
+ "battery": "Choi identity drift (10 Qs every K=3)",
+ "created_at": "2026-08-30T05:58:00+00:00",
+ "lock_sha256": "874dccccce6ce41c64acd32657f194efa90b3061c1c3131ad62b6dd5bb4ef2f409d0647061c",
+ "status": "DRAFT_LOCK — not yet committed as git tag, ready for prediction_lock.py when available"
+}

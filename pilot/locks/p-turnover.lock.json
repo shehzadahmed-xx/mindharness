@@ -1,0 +1,19 @@
+{
+ "experiment": "p-turnover",
+ "prereg_file": "experiments/P-TURNOVER_PREREGISTRATION.md",
+ "prereg_sha256": "54cfc43aa28fe56827cece9f5a0ccba021bab5129f7f4ea4ef2f409d0647061c",
+ "hypotheses": [
+  "P1: Sleep-allowed flat <0.10 at 12 turns",
+  "P2: No-sleep drifts >0.30",
+  "P3: Sham-sleep drifts >0.30 and ≈ no-sleep (±0.05)",
+  "P4: Sleep vs sham Δ >0.15"
+ ],
+ "metrics": ["persona_consistency", "drift"],
+ "thresholds": {"drift_flat_lt": 0.10, "drift_event_gt": 0.30, "delta_gt": 0.15},
+ "n_seeds": 3,
+ "n_turns": 12,
+ "battery": "Choi drift + sleep SHY",
+ "created_at": "2026-08-30T05:58:00+00:00",
+ "lock_sha256": "54cfc43aa28fe56827cece9f5a0ccba021bab5129f7f4ea4ef2f409d0647061c",
+ "status": "DRAFT_LOCK"
+}
