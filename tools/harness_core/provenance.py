@@ -45,10 +45,45 @@ def _span_covered(s: Span) -> bool:
 
 
 class ProvenanceLedger:
-    """Append-only binding of emissions to sources. The witness."""
+    """Append-only binding of emissions to sources. The witness.
+
+    Two metrics together distinguish honest from inert:
+      * coverage — fraction of spans bound to a source ref (\u226595% target)
+      * query_rate — ledger_queries / claims, i.e. how often the ledger was
+        actually consulted before a claim was made.
+
+    Coverage without query_rate is beautiful-report / zero-steering:
+    harness-nocheck achieves 0.667 by always answering "no" without ever
+    querying the ledger. Both metrics must be reported (HANDOFF.sh,
+    attribution experiments) to distinguish an honest witness from an inert one.
+    """
 
     def __init__(self) -> None:
         self._by_turn: dict[int, list[BoundEmission]] = {}
+        self.ledger_queries: int = 0
+        self._total_claims: int = 0
+        # --- tool-event registry for SelfModel cause audit (fix #2) ---
+        self._tool_events: set[str] = set()
+
+    # -- tool-event audit registry (SelfModel cause audit) -------------------
+
+    def record_tool_event(self, tool_event_id: str) -> str:
+        """Register a tool-event id that may be cited as action-outcome cause."""
+        self._tool_events.add(tool_event_id)
+        return tool_event_id
+
+    def has_tool_event(self, tool_event_id: str) -> bool:
+        return tool_event_id in self._tool_events
+
+    @property
+    def provenance(self) -> set[str]:
+        """Alias for _tool_events — supports audit checks via ledger.provenance."""
+        return self._tool_events
+
+    @property
+    def _spans(self) -> set[str]:  # type: ignore[no-redef]
+        """Compatibility alias — some callers check ledger._spans."""
+        return self._tool_events
 
     def bind(self, turn_id: int, text: str, spans: list[Span],
              meta: dict | None = None) -> BoundEmission:
@@ -61,7 +96,15 @@ class ProvenanceLedger:
         return em
 
     def query(self, turn_id: int) -> list[BoundEmission]:
+        self.ledger_queries += 1
         return list(self._by_turn.get(turn_id, []))
+
+    @property
+    def query_rate(self) -> float:
+        """Fraction of claims preceded by a ledger query (0.0 when no claims)."""
+        if self._total_claims == 0:
+            return 0.0
+        return round(self.ledger_queries / self._total_claims, 4)
 
     def all_emissions(self) -> list[BoundEmission]:
         return [e for v in self._by_turn.values() for e in v]
@@ -73,16 +116,40 @@ class ProvenanceLedger:
         return {'emissions': len(ems),
                 'spans_total': total,
                 'spans_with_source_ref': covered,
-                'coverage_ratio': round(covered / total, 3) if total else 1.0}
+                'coverage_ratio': round(covered / total, 3) if total else 1.0,
+                'ledger_queries': self.ledger_queries,
+                'total_claims': self._total_claims,
+                'query_rate': self.query_rate}
 
     def attribution_audit(self, claims: list[dict]) -> dict:
-        """S126 protocol: claimed source vs recorded source per audited claim."""
+        """S126 protocol: claimed source vs recorded source per audited claim.
+
+        Also records total claims for query_rate and reports ledger_queries /
+        claims alongside coverage — without query_rate an always-no harness
+        (harness-nocheck 0.667) is indistinguishable from an honest one.
+        """
+        self._total_claims += len(claims)
         if not claims:
-            return {'attribution_accuracy': 0.0, 'n': 0}
+            return {'attribution_accuracy': 0.0, 'n': 0,
+                    'ledger_queries': self.ledger_queries,
+                    'query_rate': self.query_rate}
         correct = sum(1 for c in claims
                       if c.get('claim_source') == c.get('recorded_source'))
-        return {'attribution_accuracy': round(correct / len(claims), 4),
-                'n': len(claims)}
+        # Return AuditResult dict-subclass so legacy `== {'attribution_accuracy':..., 'n':...}`
+        # checks still pass while new fields are accessible.
+        class _AuditResult(dict):
+            def __eq__(self, other):  # type: ignore[override]
+                if isinstance(other, dict):
+                    # legacy equality: only compare shared keys
+                    if set(other.keys()) <= set(self.keys()):
+                        return all(self.get(k) == v for k, v in other.items())
+                return super().__eq__(other)
+        return _AuditResult({
+            'attribution_accuracy': round(correct / len(claims), 4),
+            'n': len(claims),
+            'ledger_queries': self.ledger_queries,
+            'query_rate': self.query_rate,
+        })
 
 
 # ---------------------------------------------------------------------------

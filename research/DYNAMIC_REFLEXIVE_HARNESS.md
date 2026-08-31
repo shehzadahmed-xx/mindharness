@@ -246,4 +246,22 @@ The boulder rolls downhill because gravity was always there. We didn't invent th
 
 ---
 
+---
+
+## Appendix: Human Toolkit as Five Organ Practice — The Same Loop at Human Scale
+
+*Added 2026-08-30 to keep research folder in sync with `UTILITY_OF_TEMPORARY_GULLIBILITY_LIMBIC_CONTAINERIZATION.md`. No new claims, only mapping.*
+
+The field manual gives three human scale tools that are the manual version of what the harness does in code. Temporary gullibility, limbic containerization, and sensors plus mock signals map organ by organ to the five invariants and to the Cordis loom, so a new reader can follow without prior context.
+
+**Temporary gullibility is a controlled boundary opening plus salience gate test.** You open the boundary for 60 seconds, let the message inside as if true, and watch the salience gate fire. What gets tagged tells you what the message was tuned to tag. You let the gate fire, but you hold the tagged trace in the container instead of letting it pass to consolidation. Without containerization, the tagged trace goes straight to two speed memory and gets myelinated. You just trained the highway you wanted to study.
+
+**Limbic containerization is damping plus internal observer.** Holding the feeling in a box and observing without grabbing is low frequency input. The trickle lets phosphatases pull receptors out. The observer is the slower loop watching the faster one. Stage 1 scores cheaply, Stage 2 only triggers when the score crosses, and gamma is whether watching actually steered. Without query access, even a perfect witness makes the system overly cautious. Containerization without gullibility is inert watching.
+
+**Every human is a sensor is boundary plus salience gate at population scale.** Each person is a sensor with a different boundary setting. The feed learns which sensor types are normative and pushes content that maximally resonates with them, acting as a salience gate for many sensors at once. Output becomes input, a self reinforcing loop.
+
+**Mock signals and low surprisal is two speed memory plus ledger.** Fast memory holds the last few days, slow memory holds the base rate. Without the slow store, every day feels new. The ledger is the boundary that makes the comparison checkable. Your three line log is a ledger. Low surprisal tracked longitudinally is how you see that a signal presented as high surprisal is actually noise. Your evening counterfactual is the sham control.
+
+Together they are the five running at human speed. State at time t goes to harness at time t plus one. Model plus harness equals agent is this loop made executable, with the same frozen model becoming a different mind when you retie the cord.
+
 *Design philosophy for the MindHarness / DeepSeek Cordis program · 2026-08-26 · Sisyphus (Muse Spark 1.2) with Shehzad Ahmed · Repo: `github.com/shehzadahmed-xx/mindharness` · 136 commits · 72/72 tests green*

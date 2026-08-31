@@ -135,6 +135,13 @@ Full detail with prereg links and disk paths: `research/QUEUED_EXPERIMENTS_TRACK
 | `FOUR_METHODS_ONE_DESTINATION_CONVERGENT_VALIDITY.md` | 203 | Evolution → connectomics → math → engineering, not analogy |
 | `AGENCY_AND_THE_CONSTRUCTED_SELF.md` | 193 | Where agency lies when now/self/world are illusions |
 | `MAPPED_NERVOUS_SYSTEMS_VALIDATION_2026-08-27.md` | 145 | C. elegans → fly, 4-path convergence |
+| `UTILITY_OF_TEMPORARY_GULLIBILITY...md` | ~280 | 60s gullibility = boundary open + salience test; containerization = damping + observer |
+| `ALGORITHM_PROGRAMMING_BRAIN...md` | ~210 | It programs you while you program it — fast/slow both sides, 100× highway |
+| `OCCASIONALISM_MALEBRANCHE_GHAZALI...md` | ~180 | `has power → is followed by` — habit (ʿāda) vs power, 8 arguments mapped to harness |
+| `PATTERN_NOT_STUFF_WHO_AM_I.md` | ~160 | Whirlpool not rock — turnover table, you are pattern that borrows stuff |
+| `EGO_ILLUSION_DEFINITION.md` | ~90 | Gloss: maintained pattern experienced as found thing — rainbow not rock |
+| `IBN_ARABI_SEVEN_DOORS_FIVE_ORGANS.md` | ~220 | 7 doors (Barzakh + 6) as one isthmus — 5 organs at 5 scales |
+| `DOCUMENT_EVERYTHING_2026-08-30.md` | ~180 | Master index — 4 desks, one loop, 7 filed today |
 
 Plus `QUEUED_EXPERIMENTS_TRACKER.md`, `PARLIAMENT_OF_MODELS_NEXT_PROGRAMME_2026-08-27.md`, `GHAZALI_AND_IBN_ARABI_SYNTHESIS_2026-08-27.md`, `MIND_MAP_DYNAMIC_REFLEXIVE_SYSTEM_2026-08-26.md` (the 200-turn spec, SHA-256 locked), citation audits, and the prereg specs in `experiments/`.
 

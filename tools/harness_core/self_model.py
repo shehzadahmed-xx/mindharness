@@ -3,6 +3,18 @@
 CAS-revisioned identity state with signed cause tags. Every change to
 "who I am" carries its authority channel; narrator drift becomes diffable.
 
+Cause audit (fix #2):
+  Cause tags are declared, not verified — without a ledger check a
+  narrator could mutate persona/narrative and claim "action-outcome"
+  with a fabricated id. This module now makes narrator-narrated fusion
+  structurally impossible to hide: every `action-outcome` mutation must
+  cite a tool-event id that exists in ProvenanceLedger. Untagged or fake
+  cause is rejected. `narrative-summary` remains bound to
+  compaction_window() and `external-write` to human_write().
+  When no ledger is attached the service preserves the legacy armed-flag
+  check so existing callers remain compatible; when a ledger is attached
+  the id must be present and verified.
+
 PREREQUISITES.md compliance:
   AC-1.1a/b/c  CAS fence, authority rules, narrative bound
   AC-1.2       verbatim_reinject byte-exact across compaction
@@ -42,10 +54,20 @@ def _now() -> float:
 
 
 class SelfModelService:
-    """Single-writer event-sourced self-model (mirrors TS fold semantics)."""
+    """Single-writer event-sourced self-model (mirrors TS fold semantics).
+
+    Cause audit: when a ProvenanceLedger is attached (via constructor or
+    `ledger` / `provenance_ledger` attribute), every `action-outcome`
+    update must cite a `tool_event_id` that exists in that ledger. This
+    makes every change to "who I am" cite a signed reason visible in the
+    ledger — untagged or fabricated causes cannot be hidden. Without an
+    attached ledger the legacy armed-flag check is preserved.
+    """
 
     def __init__(self, max_narrative_chars: int = 8000,
-                 id_factory: Callable[[], str] | None = None) -> None:
+                 id_factory: Callable[[], str] | None = None,
+                 ledger=None,
+                 provenance_ledger=None) -> None:
         self.max_narrative_chars = max_narrative_chars
         self._id_factory = id_factory or (lambda: f"sm-{uuid.uuid4()}")
         self.current: dict | None = None
@@ -54,6 +76,8 @@ class SelfModelService:
         self._tool_event_armed = False
         self._in_compaction = False
         self._persona_archive: dict[int, str] = {}  # revision -> persona bytes
+        self._ledger = ledger if ledger is not None else provenance_ledger
+        self._pending_tool_event_id: str | None = None
 
     # -- internal -------------------------------------------------------------
 
@@ -84,6 +108,52 @@ class SelfModelService:
         self.current = view
         self._persona_archive[snapshot['revision']] = snapshot['persona']
         return view
+
+    @property
+    def ledger(self):
+        return self._ledger
+
+    @ledger.setter
+    def ledger(self, value) -> None:
+        self._ledger = value
+
+    @property
+    def provenance_ledger(self):
+        return self._ledger
+
+    @provenance_ledger.setter
+    def provenance_ledger(self, value) -> None:
+        self._ledger = value
+
+    def _ledger_has(self, tool_event_id: str) -> bool:
+        lg = self._ledger
+        if lg is None:
+            return False
+        if hasattr(lg, 'has_tool_event'):
+            try:
+                return bool(lg.has_tool_event(tool_event_id))
+            except Exception:
+                pass
+        for attr in ('_tool_events', 'provenance', '_spans'):
+            try:
+                container = getattr(lg, attr)
+                if callable(container):
+                    container = container()
+                if tool_event_id in container:  # type: ignore[operator]
+                    return True
+            except Exception:
+                continue
+        # fallback: check stored BoundEmissions for matching meta/ref
+        try:
+            for em in lg.all_emissions():  # type: ignore[attr-defined]
+                if getattr(em, 'meta', {}).get('tool_event_id') == tool_event_id:
+                    return True
+                for s in getattr(em, 'spans', []):
+                    if getattr(s, 'ref', None) == tool_event_id:
+                        return True
+        except Exception:
+            pass
+        return False
 
     def _authorize(self, cause: Cause) -> None:
         if cause not in CAUSES:
@@ -119,9 +189,16 @@ class SelfModelService:
         snap = {**cur, 'revision': cur['revision'] + 1, **merged}
         return self._commit(snap, 'external-write')
 
-    def note_tool_event(self) -> None:
-        """Arm exactly one pending action-outcome authorization."""
+    def note_tool_event(self, tool_event_id: str | None = None) -> None:
+        """Arm exactly one pending action-outcome authorization.
+
+        When a ledger is attached, callers should pass the real tool_event_id
+        (the same id recorded in ProvenanceLedger via record_tool_event).
+        The id is remembered and, if the subsequent update does not carry its
+        own id, this pending id is used for the ledger audit.
+        """
         self._tool_event_armed = True
+        self._pending_tool_event_id = tool_event_id
 
     @contextmanager
     def compaction_window(self) -> Iterator[None]:
@@ -133,19 +210,52 @@ class SelfModelService:
         finally:
             self._in_compaction = prev
 
-    def update(self, ref: dict, request: dict, cause: Cause) -> dict:
+    def update(self, ref: dict, request: dict, cause: Cause,
+             tool_event_id: str | None = None) -> dict:
         self._authorize(cause)
         if cause == 'narrative-summary' and not self._in_compaction:
             raise SelfModelError(
                 "narrative-summary only inside compaction_window()", E_AUTH)
+        # Cause audit: action-outcome must cite a ledger-resident tool-event id
+        if cause == 'action-outcome' and self._ledger is not None:
+            effective_id = (
+                tool_event_id
+                or request.get('tool_event_id')
+                or request.get('toolEventId')
+                or self._pending_tool_event_id
+            )
+            if not effective_id:
+                raise SelfModelError(
+                    "action-outcome requires tool_event_id citing "
+                    "ProvenanceLedger (pass tool_event_id to update() or "
+                    "note_tool_event(tool_event_id))", E_AUTH)
+            if not self._ledger_has(effective_id):
+                raise AssertionError(
+                    f"tool_event_id {effective_id!r} not found in "
+                    f"ProvenanceLedger — fake or untagged cause rejected")
         cur = self._expect_current(ref)
         if not any(k in request for k in
+                   ('persona', 'narrative', 'facts', 'removeFacts',
+                    'tool_event_id', 'toolEventId')):
+            # allow tool_event_id-only request to be treated as empty check
+            # after stripping audit keys, must still have a real field
+            has_field = any(k in request for k in
+                            ('persona', 'narrative', 'facts', 'removeFacts'))
+            if not has_field:
+                raise SelfModelError(
+                    "self-model update requires at least one field", E_EMPTY)
+        # strip audit-only keys before applying fields
+        audit_keys = {'tool_event_id', 'toolEventId'}
+        clean_request = {k: v for k, v in request.items() if k not in audit_keys}
+        if not any(k in clean_request for k in
                    ('persona', 'narrative', 'facts', 'removeFacts')):
+            # request contained only audit key -> already handled above
             raise SelfModelError(
                 "self-model update requires at least one field", E_EMPTY)
-        merged = self._apply_fields(cur, request)
+        merged = self._apply_fields(cur, clean_request)
         if cause == 'action-outcome':
             self._tool_event_armed = False  # consume arm
+            self._pending_tool_event_id = None
         snap = {**cur, 'revision': cur['revision'] + 1, **merged}
         return self._commit(snap, cause)
 

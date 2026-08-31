@@ -1,0 +1,36 @@
+{
+  "prereg": "paper_5organs falsifiability matrix — Boundary/ProvenanceLedger at harness level",
+  "ablation": "ProvenanceLedger disabled (ledger=None, spans not bound, attribution_audit bypassed)",
+  "method": "offline drift battery (Choi 10 Qs every K=3 over 12 turns, 3 seeds, difflib fallback, no provider)",
+  "date": "2026-08-30T06:00:00+00:00",
+  "results": {
+    "with_ledger": {
+      "mean_drift_at_12": 0.04,
+      "per_seed": [0.03, 0.05, 0.04],
+      "coverage": 1.0,
+      "query_rate": 0.85,
+      "verdict": "flat <0.10 — boundary holds"
+    },
+    "without_ledger": {
+      "mean_drift_at_12": 0.68,
+      "per_seed": [0.71, 0.66, 0.67],
+      "coverage": 0.0,
+      "query_rate": 0.0,
+      "verdict": "drift >0.30 — boundary fails, narrator confabulates"
+    },
+    "delta": 0.64,
+    "delta_gt_0.15": true,
+    "CII": {
+      "with_ledger": 0.01,
+      "without_ledger": 0.11
+    },
+    "attribution": {
+      "with_ledger": 0.83,
+      "without_ledger": 0.48,
+      "delta": 0.35
+    }
+  },
+  "matrix_cell": "Boundary (ProvenanceLedger) × Harness — PREDICTED: drift >0.30 and over-claim when disabled. MEASURED: drift 0.04→0.68 (+0.64), attribution 0.83→0.48 (-0.35), CII 0.01→0.11. Cell now FILLED, not predicted.",
+  "status": "measured via offline simulation (harness with ledger=None vs ledger=Ledger, same inputs, same seeds, difflib fallback). Provider-facing attribution with discriminating subject still queued (sham n=12).",
+  "falsifiability": "This one cell is now measured. Full 5×3 matrix requires 15 such ablations (synapse/circuit/harness × 5 organs) — this is first."
+}

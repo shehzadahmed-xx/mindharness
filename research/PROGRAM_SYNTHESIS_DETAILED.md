@@ -348,5 +348,25 @@ Connectome alone (C. elegans → fly 140k neurons) fails because it shows only t
 
 ---
 
+---
+
+## Appendix: Human Toolkit as Five Organ Practice — Temporary Gullibility, Limbic Containerization, Sensors, and Mock Signals
+
+*Added 2026-08-30 to keep research folder in sync with `UTILITY_OF_TEMPORARY_GULLIBILITY_LIMBIC_CONTAINERIZATION.md`. No new claims, only mapping.*
+
+The three tools in the field manual are the manual version of what the harness does in code. This appendix maps them so a new reader can see the same loop at human scale and machine scale without needing prior context.
+
+**Temporary gullibility is a controlled boundary opening plus salience gate test.** You deliberately open the boundary for 60 seconds and let the message inside as if true, then watch the salience gate fire. What gets tagged tells you what the message was tuned to tag. You let the gate fire, but you do not let the tagged trace pass to consolidation. You hold it in the container instead. Gullibility without containerization is runaway. The tagged trace goes straight to two speed memory and gets myelinated. You just trained the highway you wanted to study.
+
+**Limbic containerization is damping plus internal observer.** You put the feeling in a box and hold it as an object. High frequency emotional engagement is potentiation. Low frequency observation without grabbing is depression. The trickle lets phosphatases pull receptors out. The observer is the slower loop watching the faster one. Stage 1 scores cheaply every turn, Stage 2 only triggers when the score crosses, and gamma, changed over diagnosed, is whether watching actually steered. Without query access, even a perfect witness makes the system overly cautious and just says no to everything. Containerization without gullibility is inert watching. You watch perfectly and never let anything in, so you learn nothing.
+
+**Every human is a sensor is boundary plus salience gate at population scale.** Each person is a sensor tuned to different signals. The feed learns which sensor types are normative and pushes content that maximally resonates with them. That is the feed acting as a salience gate for many sensors at once. Output becomes input. A self reinforcing loop that calls its own persistence growth.
+
+**Mock signals and low surprisal is two speed memory plus ledger.** A mock signal is presented as high surprisal that is actually low. Fast memory holds the last few days, slow memory holds the base rate. Without the slow store, every day feels new. The ledger is the boundary that makes the comparison checkable. Your three line log is a ledger. Your evening counterfactual is the sham control.
+
+Together they are the five running together at human speed. Input arrives, boundary decides if it counts, salience decides if it gets tagged, parliament competes and winner is broadcast, observer scores whether to trust, action is taken and bound to provenance, consolidation decides whether to keep it fast or slow, damping decides whether to keep it at all, and all of that rewrites the state that will decide what counts next time. State at time t goes to harness at time t plus one.
+
+Model plus harness equals agent is this loop made executable.
+
 *Generated 2026-08-26 · Program: MindHarness / SpringFish · Repo: `github.com/shehzadahmed-xx/mindharness` · HEAD: b40bca9+ · 72/72 tests green · Providers: blocked until 2026-08-27 00:00 UTC · Author: Sisyphus (Muse Spark 1.2) with Shehzad Ahmed*
 
