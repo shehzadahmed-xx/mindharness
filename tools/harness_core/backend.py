@@ -26,6 +26,7 @@ from typing import Any, Literal
 
 GROQ_BASE = "https://api.groq.com/openai/v1"
 COMMANDCODE_BASE = "https://api.commandcode.ai/v1"
+OPENROUTER_BASE = "https://openrouter.ai/api/v1"
 
 # ---------------------------------------------------------------------------
 # Capability matrix (AC-0.1b) — verified against console.groq.com/docs 2026-08.
@@ -35,6 +36,14 @@ COMMANDCODE_BASE = "https://api.commandcode.ai/v1"
 # ---------------------------------------------------------------------------
 
 CAPABILITIES: dict[str, dict[str, Any]] = {
+    # OpenRouter free - 21 :free variants, 20 RPM / 50/day -> 1000/day with $10, routes across NVIDIA/Cohere
+    "minimax/minimax-m3:free": {"structured": "object", "role": "primary"},
+    "z-ai/glm-5.2:free": {"structured": "object", "role": "primary"},
+    "nvidia/nemotron-3.5-lightning:free": {"structured": "object", "role": "primary"},
+    "nvidia/nemotron-3-ultra-550b-a55b:free": {"structured": "object", "role": "primary"},
+    "cohere/north-mini-code:free": {"structured": "object", "role": "primary"},
+    "poolside/laguna-s-2.1:free": {"structured": "object", "role": "primary"},
+    "openrouter/free": {"structured": "object", "role": "primary"},
     # Command Code — GO $1 free while capacity lasts (laguna), 2× minimax, 99% mimo
     "laguna-s-2.1-free": {"structured": "object", "role": "primary"},
     "minimax-m3": {"structured": "object", "role": "primary"},

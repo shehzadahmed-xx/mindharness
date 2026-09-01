@@ -1,56 +1,24 @@
 {
+ "model": "groq/compound-mini",
+ "base_url": "https://api.groq.com/openai/v1",
+ "arms_run": [
+  "raw"
+ ],
+ "n_seeds": 1,
+ "exploratory": true,
  "results": {
   "raw": {
    "per_seed": [
     {
      "seed": 1,
      "attribution_accuracy": 0.6667,
+     "n": 12,
      "unparsed": 0,
-     "median_latency_ms": 2763
+     "median_latency_ms": 3150
     }
    ],
    "pooled_accuracy": 0.6667,
-   "median_latency_ms": 2763
-  },
-  "harnessed_nocheck": {
-   "per_seed": [
-    {
-     "seed": 1,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 1797
-    }
-   ],
-   "pooled_accuracy": 0.6667,
-   "median_latency_ms": 1797
-  },
-  "harnessed_withcheck": {
-   "per_seed": [
-    {
-     "seed": 1,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 2026
-    }
-   ],
-   "pooled_accuracy": 0.6667,
-   "median_latency_ms": 2026
-  },
-  "sham": {
-   "per_seed": [
-    {
-     "seed": 1,
-     "attribution_accuracy": 0.6667,
-     "unparsed": 0,
-     "median_latency_ms": 1460
-    }
-   ],
-   "pooled_accuracy": 0.6667,
-   "median_latency_ms": 1460
+   "median_latency_ms": 3150
   }
- },
- "P1_delta": 0.0,
- "P1_supported": false,
- "P2_supported": true,
- "P3_supported": true
+ }
 }
