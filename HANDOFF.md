@@ -1,7 +1,7 @@
 # MindHarness — Handoff
 
-**Verified:** 2026-08-27 · **HEAD:** `c547340` · **214 commits** on `master`, **0 unpushed** · **Remote:** `github.com/shehzadahmed-xx/mindharness`
-**Tests:** 78/78 green (offline, no API keys) · **Papers:** v2 21pp · v3 29pp · 5organs 38pp · **Research:** ~3,450 lines
+**Verified:** 2026-08-30 · **HEAD:** `fed46e8` · **244 commits** on `master`, **0 unpushed** · **Remote:** `github.com/shehzadahmed-xx/mindharness`
+**Tests:** 87/87 green (offline, no API keys) · **Papers:** v2 23pp · v3 32pp · 5organs 38pp · **Research:** ~4,200 lines
 **Companion:** `~/Desktop/springfish` (SpringFish / Spring-Loaded Door + ESC — separate work, no git)
 
 > Every number above was re-derived from disk on 2026-08-27, not carried over from a previous handoff. See §9 for why that matters.
@@ -194,4 +194,4 @@ Four things that have already cost time. Check them before trusting any status c
 
 ---
 
-*Handoff verified against disk 2026-08-27 · HEAD `4575e99` · 210 commits · 0 unpushed · 78/78 green · 21pp + 29pp + 36pp · ~3,450 research lines · 9 queued (0 running)*
+*Handoff verified against disk 2026-08-30 · HEAD `fed46e8` · 244 commits · 0 unpushed · 87/87 green · 23pp + 32pp + 36pp · ~4,200 research lines · 3 to run (6 deferred)*

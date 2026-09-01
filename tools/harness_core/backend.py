@@ -25,6 +25,7 @@ from pathlib import Path
 from typing import Any, Literal
 
 GROQ_BASE = "https://api.groq.com/openai/v1"
+COMMANDCODE_BASE = "https://api.commandcode.ai/v1"
 
 # ---------------------------------------------------------------------------
 # Capability matrix (AC-0.1b) — verified against console.groq.com/docs 2026-08.
@@ -34,6 +35,12 @@ GROQ_BASE = "https://api.groq.com/openai/v1"
 # ---------------------------------------------------------------------------
 
 CAPABILITIES: dict[str, dict[str, Any]] = {
+    # Command Code — GO $1 free while capacity lasts (laguna), 2× minimax, 99% mimo
+    "laguna-s-2.1-free": {"structured": "object", "role": "primary"},
+    "minimax-m3": {"structured": "object", "role": "primary"},
+    "minimax-m2.7": {"structured": "object", "role": "primary"},
+    "mimo-v2.5": {"structured": "object", "role": "primary"},
+    "mimo-v2.5-pro": {"structured": "object", "role": "primary"},
     "openai/gpt-oss-120b": {"structured": "strict",
                             "reasoning_effort_default": "low",
                             "role": "primary"},

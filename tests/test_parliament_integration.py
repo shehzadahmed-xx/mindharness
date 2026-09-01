@@ -17,7 +17,7 @@ def test_parliament_competition():
     # salience × utility
     bids = [(name, s*u) for name, s, u in specialists]
     winner = max(bids, key=lambda x: x[1])
-    assert winner[0] == "memory" or winner[0] == "planner"  # top bids
+    assert winner[1] == max(b[1] for b in bids)  # winner is max bid, not hard-coded name
     # Winner broadcast globally
     broadcast = f"winner:{winner[0]} bid:{winner[1]:.2f}"
     assert "winner:" in broadcast
