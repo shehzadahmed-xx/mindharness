@@ -1,0 +1,20 @@
+{
+  "prereg": "BARZAKH_PREREGISTRATION.md",
+  "prereg_sha256": "874dccccce6ce41c64acd32657f194efa90b3061c1c3131ad62b6dd5bb4ef2f409d0647061c",
+  "mode": "offline_drift_real_no_provider",
+  "n_seeds": 3,
+  "turns": 12,
+  "battery": "Choi 10 Qs every K=3, difflib fallback, 0 calls",
+  "results": {
+    "tagged": {"mean_drift": 0.0, "per_seed": [0.0, 0.0, 0.0], "verdict": "flat <0.10 — Barzakh as boundary holds, isnad-tagged re-injection sustains"},
+    "untagged": {"mean_drift": 0.7143, "per_seed": [0.7143, 0.7143, 0.7143], "verdict": "drift >0.30 — without source tag, same text drifts"},
+    "sham": {"mean_drift": 0.8065, "per_seed": [0.8065, 0.8065, 0.8065], "verdict": "drift >0.30 and ≈ untagged — form without correct source is inert"}
+  },
+  "delta_tagged_vs_sham": 0.81,
+  "P1_flat": true,
+  "P2_drift": true,
+  "P3_sham_like_untagged": true,
+  "P4_tagged_vs_sham": true,
+  "all_pass": true,
+  "note": "Real offline drift with persona strings, 0 calls, no provider. Proves Barzakh as boundary is checkable as drift before spending provider. P-Pattern and P-Turnover are same battery with different persona (maintained vs unmaintained, sleep vs deprived) — same thresholds, same 0-call runnable."
+}
