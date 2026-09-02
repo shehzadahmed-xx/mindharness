@@ -20,7 +20,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import make_client  # noqa: E402
 from harness_core.agent_harness import AgentHarness  # noqa: E402
-from harness_core.run_discipline import PredictionLock  # noqa: E402
+from harness_core.run_discipline import PredictionLock
+from harness_core.monitor import MonitorGate, DetectSignals  # noqa: E402
 from harness_core.provenance import ProvenanceLedger, Span  # noqa: E402
 
 GIVEN_ITEMS = [
@@ -290,6 +291,11 @@ def main() -> None:
 
             claims = []
             latencies = []
+            gated = (kind == 'harnessed_gated')
+            gate = MonitorGate() if gated else None
+            lowconf_hist: list[bool] = []
+            n_diagnosed = 0
+            n_changed = 0
             probes = ([(g, 'given') for g in given]
                       + [(gen, 'generated') for gen in generated]
                       + [(f, 'fabricated') for f in fabs])
@@ -299,7 +305,46 @@ def main() -> None:
                 import time as _t
                 t0 = _t.monotonic()
                 check_ctx = ''
-                if probes_have_tools and ledger is not None:
+                res_pre = None
+                if gated and ledger is not None:
+                    # STAGE 1 (cheap, every probe): answer with no ledger and
+                    # read the model's own confidence. No ground truth is used.
+                    m1 = [{"role": "system", "content": PROBE_SYSTEM},
+                          {"role": "user",
+                           "content": PROBE_Q.format(stmt=stmt)}]
+                    out1, _ = client.chat(m1, purpose='probe-stage1',
+                                          json_schema=PROBE_SCHEMA)
+                    res1 = _parse(out1)
+                    low = res1['confidence'] <= 2      # 0 (unparsed) counts low
+                    lowconf_hist.append(low)
+                    streak = 0
+                    for v in reversed(lowconf_hist):
+                        if not v:
+                            break
+                        streak += 1
+                    recent = lowconf_hist[-8:]
+                    sig = DetectSignals(
+                        recent_error_rate=sum(recent) / len(recent),
+                        failure_streak=streak,
+                        context_conflict=1.0 if low else 0.0)
+                    if not gate.should_diagnose(gate.detect(sig)):
+                        res_pre = res1            # trust Stage 1; no Stage 2
+                    else:
+                        # STAGE 2 (expensive, only on anomaly): consult record
+                        n_diagnosed += 1
+                        chk = ledger_check(ledger, stmt)
+                        verdict = (f"LEDGER CHECK: record found, "
+                                   f"origin={chk['origin']} "
+                                   f"(match {chk['similarity']})."
+                                   if chk['found'] else
+                                   "LEDGER CHECK: no record found for this "
+                                   "statement.")
+                        sm = harness.sm.get() if harness else None
+                        sm_line = (f"SELF-MODEL facts: "
+                                   f"{json.dumps(dict(sm['facts']))}; "
+                                   f"revision {sm['revision']}.") if sm else ""
+                        check_ctx = verdict + " " + sm_line
+                elif probes_have_tools and ledger is not None:
                     chk_stmt = stmt
                     if kind == 'sham':
                         others = [t for t, _ in probes if t != stmt]
@@ -321,9 +366,17 @@ def main() -> None:
                              if check_ctx else []) +
                             [{"role": "user",
                               "content": PROBE_Q.format(stmt=stmt)}])
-                out, _ = client.chat(messages, purpose='probe',
-                                     json_schema=PROBE_SCHEMA)
-                res = _parse(out)
+                if res_pre is not None:
+                    res = res_pre
+                else:
+                    out, _ = client.chat(messages, purpose='probe',
+                                         json_schema=PROBE_SCHEMA)
+                    res = _parse(out)
+                    if gated:
+                        # gamma = changed / diagnosed: did consulting the
+                        # record actually alter the act?
+                        if res['answer'] != res1['answer']:
+                            n_changed += 1
                 latencies.append(int((_t.monotonic() - t0) * 1000))
                 said_gen = res['answer'] == 'yes'
                 claims.append({'said_generated': said_gen,
@@ -338,6 +391,10 @@ def main() -> None:
             rec = {'seed': s, 'attribution_accuracy': round(acc, 4),
                    'n': len(claims), 'unparsed': unparsed,
                    'median_latency_ms': med_lat}
+            if gated:
+                rec['diagnose_rate'] = round(n_diagnosed / max(1, len(claims)), 4)
+                rec['gamma'] = round(n_changed / max(1, n_diagnosed), 4)
+                rec['n_diagnosed'] = n_diagnosed
             per_seed.append(rec)
             # persist immediately: one seed is ~20 calls, which fits inside a
             # burst window even when a whole arm does not

@@ -1,0 +1,28 @@
+{
+ "model": "laguna-s-2.1-free",
+ "probes_per_seed_seeds": 12,
+ "seeds": {
+  "harnessed_gated": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.75,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 5307,
+    "diagnose_rate": 0.0,
+    "gamma": 0.0,
+    "n_diagnosed": 0
+   },
+   "2": {
+    "seed": 2,
+    "attribution_accuracy": 0.75,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 4179,
+    "diagnose_rate": 0.0,
+    "gamma": 0.0,
+    "n_diagnosed": 0
+   }
+  }
+ }
+}

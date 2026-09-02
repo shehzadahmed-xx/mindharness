@@ -29,7 +29,6 @@ import (
 	"github.com/router-for-me/CLIProxyAPI/v7/sdk/cliproxy"
 	coreauth "github.com/router-for-me/CLIProxyAPI/v7/sdk/cliproxy/auth"
 	clipexec "github.com/router-for-me/CLIProxyAPI/v7/sdk/cliproxy/executor"
-	"github.com/router-for-me/CLIProxyAPI/v7/internal/util"
 	"github.com/router-for-me/CLIProxyAPI/v7/sdk/config"
 	"github.com/router-for-me/CLIProxyAPI/v7/sdk/logging"
 	sdktr "github.com/router-for-me/CLIProxyAPI/v7/sdk/translator"
@@ -172,10 +171,13 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	if resolved, errResolve := util.ResolveAuthDir(cfg.AuthDir); errResolve == nil {
-		cfg.AuthDir = resolved
-	} else {
-		panic(errResolve)
+	if strings.HasPrefix(cfg.AuthDir, "~/") {
+		if home, err := os.UserHomeDir(); err == nil {
+			cfg.AuthDir = filepath.Join(home, cfg.AuthDir[2:])
+		}
+	}
+	if abs, err := filepath.Abs(cfg.AuthDir); err == nil {
+		cfg.AuthDir = abs
 	}
 
 	tokenStore := sdkAuth.GetTokenStore()

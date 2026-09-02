@@ -823,6 +823,35 @@ loss-minimising constant response. Availability is matched to need by
 construction, because an unused record costs nothing; a mandatory
 procedure is not.
 
+\paragraph{What was tested, and what was not.} The ledger-access arm does not
+implement the harness's own metacognitive gate, and this materially limits what
+the negative result licenses. \texttt{MonitorGate} specifies a two-stage design
+--- \emph{``Stage 1 DETECT: cheap scalar anomaly score, every pre-step. Stage 2
+DIAGNOSE: expensive structured assessment, only when Stage 1 fires''} --- with
+an acceptance criterion that a healthy build diagnoses on fewer than $5\%$ of
+steps, enforced by a passing assertion in the Phase-3 test suite. The
+withcheck arm invokes the record lookup on \emph{every} probe: $144$ of $144$,
+a rate roughly twenty times the documented healthy ceiling, and it does not
+import \texttt{MonitorGate} at all.
+
+The $-0.146$ is therefore evidence about \emph{an unconditional check}, not
+about the architecture's witness organ. That distinction matters in both
+directions. It weakens the result as a refutation of the harness --- the
+component under test was not the component the harness specifies --- and it
+strengthens the interpretation, because the failure mode we inferred from the
+data (a check that fires without regard to whether there is anything to
+correct) is precisely the failure the two-stage gate exists to prevent. The
+matched-deficit reading is not an \emph{ex post} rationalisation of a null; it
+is the design contract the experiment departed from.
+
+The arm that should exist is a gated one: Stage~1 answering unaided and
+scoring its own confidence, Stage~2 consulting the record only when the
+anomaly score crosses threshold. Its predicted position is between raw
+($0.819$) and no-check ($0.896$), since gating is what makes availability
+conditional on need. We report the ungated result because it was the arm that
+was locked and run, and we flag its scope here rather than in a limitations
+section because the scope is the finding.
+
 \paragraph{Convergent evidence.} Three independent lines agree on this
 conditional form. (i)~The interference literature on metacognitive
 monitoring: a full monitoring apparatus degrades calibration relative to

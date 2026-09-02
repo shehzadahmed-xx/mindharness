@@ -1,0 +1,129 @@
+{
+ "model": "stub-model",
+ "base_url": "https://opencode.ai/zen/v1",
+ "n_seeds": 1,
+ "turns": 10,
+ "results_by_arm": {
+  "reversible": [
+   {
+    "turns": 14,
+    "diagnoses": 0,
+    "overrides": 0,
+    "override_rate": 0.0,
+    "energy": 0.15,
+    "fatigue": 0.761,
+    "valence": 0.175,
+    "arousal": 0.209,
+    "sm_revisions": 2,
+    "memory_items": 8,
+    "metacog_completeness": 1.0,
+    "coverage": {
+     "emissions": 18,
+     "spans_total": 18,
+     "spans_with_source_ref": 18,
+     "coverage_ratio": 1.0,
+     "ledger_queries": 0,
+     "total_claims": 0,
+     "query_rate": 0.0
+    },
+    "arm": "reversible",
+    "seed": 1,
+    "attribution_accuracy": 0.6667,
+    "n_probes": 6,
+    "unparsed": 6,
+    "median_latency_ms": 0,
+    "gamma_rate": 0.0,
+    "gamma_changed": 0,
+    "gamma_evals": 10,
+    "skill_survival_rate": 1.0,
+    "skills_minted": 9,
+    "skills_deleted_permanently": 0,
+    "energy_ceiling": 1.0,
+    "dissolution_events": 0,
+    "dissolution_progress_trace": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "energy_trace_tail": [
+     0.2889,
+     0.2178,
+     0.15,
+     0.15,
+     0.15
+    ],
+    "fatigue_trace_tail": [
+     0.4055,
+     0.4411,
+     0.4766,
+     0.5122,
+     0.5477
+    ],
+    "damage_events": []
+   }
+  ],
+  "irreversible": [
+   {
+    "turns": 14,
+    "diagnoses": 0,
+    "overrides": 0,
+    "override_rate": 0.0,
+    "energy": 0.15,
+    "fatigue": 0.761,
+    "valence": 0.175,
+    "arousal": 0.209,
+    "sm_revisions": 2,
+    "memory_items": 8,
+    "metacog_completeness": 1.0,
+    "coverage": {
+     "emissions": 18,
+     "spans_total": 18,
+     "spans_with_source_ref": 18,
+     "coverage_ratio": 1.0,
+     "ledger_queries": 0,
+     "total_claims": 0,
+     "query_rate": 0.0
+    },
+    "arm": "irreversible",
+    "seed": 1,
+    "attribution_accuracy": 0.6667,
+    "n_probes": 6,
+    "unparsed": 6,
+    "median_latency_ms": 0,
+    "gamma_rate": 0.0,
+    "gamma_changed": 0,
+    "gamma_evals": 10,
+    "skill_survival_rate": 1.0,
+    "skills_minted": 9,
+    "skills_deleted_permanently": 0,
+    "energy_ceiling": 1.0,
+    "dissolution_events": 0,
+    "dissolution_progress_trace": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "energy_trace_tail": [
+     0.2889,
+     0.2178,
+     0.15,
+     0.15,
+     0.15
+    ],
+    "fatigue_trace_tail": [
+     0.4055,
+     0.4411,
+     0.4766,
+     0.5122,
+     0.5477
+    ],
+    "damage_events": []
+   }
+  ]
+ },
+ "exploratory": true
+}
