@@ -17,7 +17,7 @@ We built the witness humans grow slowly and painfully, made it cause-tagged and 
 - **The papers:** v2 (21pp empirical, tagged `paper-v2-final`) + v3 (program paper, 29pp, App. A Cordis + App. B Mirror)
 - **The loom:** DeepSeek Cordis — harness as programmable cord, 6 plugins verified, parliament of models scaffolded
 
-Public at `github.com/shehzadahmed-xx/mindharness` · 214 commits
+Public at `github.com/shehzadahmed-xx/mindharness` · 251 commits
 
 ---
 

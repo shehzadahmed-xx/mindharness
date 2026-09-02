@@ -1,7 +1,7 @@
 # MindHarness — Handoff
 
 **Verified:** 2026-08-30 · **HEAD:** `fed46e8` · **244 commits** on `master`, **0 unpushed** · **Remote:** `github.com/shehzadahmed-xx/mindharness`
-**Tests:** 87/87 green (offline, no API keys) · **Papers:** v2 23pp · v3 32pp · 5organs 38pp · **Research:** ~4,200 lines
+**Tests:** 91/91 green (offline, no API keys) · **Papers:** v2 23pp · v3 32pp · 5organs 33 pp · **Research:** ~4,200 lines
 **Companion:** `~/Desktop/springfish` (SpringFish / Spring-Loaded Door + ESC — separate work, no git)
 
 > Every number above was re-derived from disk on 2026-08-27, not carried over from a previous handoff. See §9 for why that matters.
@@ -33,7 +33,7 @@ Three linked programmes, one thesis — everything is a self-reinforcing loop su
 
 ---
 
-## 1. Harness core — 11 modules, 8 layers, 78/78 green
+## 1. Harness core — 11 modules, 8 layers, 91/91 green
 
 `tools/harness_core/` (13 `.py` files):
 
@@ -194,4 +194,4 @@ Four things that have already cost time. Check them before trusting any status c
 
 ---
 
-*Handoff verified against disk 2026-08-30 · HEAD `fed46e8` · 244 commits · 0 unpushed · 87/87 green · 23pp + 32pp + 36pp · ~4,200 research lines · 3 to run (6 deferred)*
+*Handoff verified against disk 2026-08-30 · HEAD `fed46e8` · 244 commits · 0 unpushed · 91/91 green · 23pp + 32pp + 36pp · ~4,200 research lines · 3 to run (6 deferred)*
