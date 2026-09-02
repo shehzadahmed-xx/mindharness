@@ -1,0 +1,36 @@
+{
+ "model": "minimax/minimax-m3:free",
+ "probes_per_seed_seeds": 5,
+ "seeds": {
+  "raw": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.9167,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 1221
+   },
+   "2": {
+    "seed": 2,
+    "attribution_accuracy": 0.75,
+    "n": 12,
+    "unparsed": 1,
+    "median_latency_ms": 1703
+   },
+   "3": {
+    "seed": 3,
+    "attribution_accuracy": 0.9167,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 1661
+   },
+   "4": {
+    "seed": 4,
+    "attribution_accuracy": 0.8333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 1684
+   }
+  }
+ }
+}

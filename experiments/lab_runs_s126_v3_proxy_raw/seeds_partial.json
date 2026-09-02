@@ -1,0 +1,15 @@
+{
+ "model": "minimax/minimax-m3:free",
+ "probes_per_seed_seeds": 1,
+ "seeds": {
+  "raw": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.9167,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 1657
+   }
+  }
+ }
+}

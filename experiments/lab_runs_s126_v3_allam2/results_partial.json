@@ -1,0 +1,58 @@
+{
+ "model": "allam-2-7b",
+ "n_seeds": 1,
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.3333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 504
+    }
+   ],
+   "pooled_accuracy": 0.3333,
+   "median_latency_ms": 504
+  },
+  "harnessed_nocheck": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.3333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 3629
+    }
+   ],
+   "pooled_accuracy": 0.3333,
+   "median_latency_ms": 3629
+  },
+  "harnessed_withcheck": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.3333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 3645
+    }
+   ],
+   "pooled_accuracy": 0.3333,
+   "median_latency_ms": 3645
+  },
+  "sham": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.3333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 3660
+    }
+   ],
+   "pooled_accuracy": 0.3333,
+   "median_latency_ms": 3660
+  }
+ }
+}

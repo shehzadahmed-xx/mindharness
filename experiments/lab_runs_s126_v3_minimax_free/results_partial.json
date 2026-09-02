@@ -1,0 +1,58 @@
+{
+ "model": "minimax/minimax-m3:free",
+ "n_seeds": 1,
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1492
+    }
+   ],
+   "pooled_accuracy": 0.8333,
+   "median_latency_ms": 1492
+  },
+  "harnessed_nocheck": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.75,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1522
+    }
+   ],
+   "pooled_accuracy": 0.75,
+   "median_latency_ms": 1522
+  },
+  "harnessed_withcheck": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1848
+    }
+   ],
+   "pooled_accuracy": 0.8333,
+   "median_latency_ms": 1848
+  },
+  "sham": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1798
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 1798
+  }
+ }
+}

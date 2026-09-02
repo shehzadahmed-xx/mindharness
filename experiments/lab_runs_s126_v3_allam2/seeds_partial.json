@@ -1,0 +1,42 @@
+{
+ "model": "allam-2-7b",
+ "probes_per_seed_seeds": 1,
+ "seeds": {
+  "raw": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.3333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 504
+   }
+  },
+  "harnessed_nocheck": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.3333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 3629
+   }
+  },
+  "harnessed_withcheck": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.3333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 3645
+   }
+  },
+  "sham": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.3333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 3660
+   }
+  }
+ }
+}
