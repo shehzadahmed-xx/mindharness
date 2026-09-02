@@ -142,6 +142,9 @@ def main() -> None:
                     help='reserved completion budget per call; providers count '
                          'input+max_tokens against rate limits and the probes '
                          'return a short JSON object')
+    ap.add_argument('--gate-threshold', type=float, default=None,
+                    help='MonitorGate detect threshold; None uses the '
+                         'documented default (0.6). Recorded in results.')
     ap.add_argument('--pace', type=float, default=0.0,
                     help='minimum seconds between API calls; burst-limited '
                          'free endpoints 503 in clusters without it')
