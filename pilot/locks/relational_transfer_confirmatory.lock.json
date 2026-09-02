@@ -1,0 +1,43 @@
+{
+ "lock_id": "cbedb522",
+ "experiment": "relational_transfer_confirmatory",
+ "status": "CONFIRMATORY REPLICATION",
+ "date_locked": "2026-09-02",
+ "frozen_before_first_trial": true,
+ "seed_range": [
+  500001,
+  520000
+ ],
+ "seeds_disjoint_from": "exploratory ranges 1..20000 (transfer), 1..5000 (scale), 1..2000 (ablation)",
+ "primary_outcome": "R2 \u2014 relational intact vs shuffled (win), grid 5",
+ "predictions": [
+  "R1 relational intact-wiped >= +0.020 and CI excludes 0",
+  "R2 PRIMARY relational intact-shuffled >= +0.010 and CI excludes 0",
+  "R3 coord intact-wiped <= 0.000",
+  "R4 coord intact-shuffled CI not entirely above 0",
+  "R5 relational hits/pattern >= 2x coord hits/pattern",
+  "R6 relational hits/pattern strictly increases and coord strictly decreases across grids 5,8,12",
+  "R7 relational intact-shuffled CI excludes 0 at all three grid sizes"
+ ],
+ "fixed_params": {
+  "train_cities": 4,
+  "bias": 0.2,
+  "wall_density": 0.15,
+  "steps": "4n",
+  "grids": [
+   5,
+   8,
+   12
+  ],
+  "n_seeds": 20000,
+  "bootstrap_iters": 5000,
+  "alpha": 0.05,
+  "paired": true
+ },
+ "stopping_rule": "one run at stated n; no peeking, no extension, no re-analysis",
+ "frozen_sha256": {
+  "preregs/RELATIONAL_TRANSFER_CONFIRMATORY.md": "0d4e300aedbbb66772a133a15911091cb244325f80f58792cf1b208d6c16f575",
+  "tools/run_confirmatory_transfer.py": "996dbb7c0240889d3705fea8846a35c23adbe21855c3643a39e9a1e96bfa541a",
+  "tools/run_scale_test.py": "8ebf8a80581aefc7fbbf598f960687b429df202d4dea629ad2aadb5e079ad26c"
+ }
+}
