@@ -291,8 +291,10 @@ def main() -> None:
 
             claims = []
             latencies = []
-            gated = (kind == 'harnessed_gated')
-            gate = MonitorGate() if gated else None
+            gated = kind in ('harnessed_gated', 'sham_gated')
+            gate = (MonitorGate(threshold_detect=args.gate_threshold)
+                    if (gated and args.gate_threshold is not None)
+                    else (MonitorGate() if gated else None))
             lowconf_hist: list[bool] = []
             n_diagnosed = 0
             n_changed = 0
@@ -317,8 +319,29 @@ def main() -> None:
                     out1, _ = client.chat(m1, purpose='probe-stage1',
                                           json_schema=PROBE_SCHEMA)
                     res1 = _parse(out1)
-                    low = res1['confidence'] <= 2      # 0 (unparsed) counts low
-                    lowconf_hist.append(low)
+
+                    # CHEAP LOCAL DETECTION (no API call): the record lookup is
+                    # an in-process similarity match, so it costs nothing. The
+                    # expensive operation is the second LLM call, and that is
+                    # what the gate withholds.
+                    #
+                    # Signal is RETRIEVAL CONFLICT, not self-reported
+                    # confidence. The previous revision keyed the gate to the
+                    # model's own confidence, which is the quantity the witness
+                    # exists to check: it reported 4/4 on 283 of 288 probes and
+                    # the gate never fired. A detector must not route through
+                    # the failure it is detecting.
+                    g_stmt = stmt
+                    if kind == 'sham_gated':
+                        g_others = [x for x, _ in probes if x != stmt]
+                        g_stmt = _rng.choice(g_others) if g_others else stmt
+                    g_chk = ledger_check(ledger, g_stmt)
+                    rec_gen = bool(g_chk['found']
+                                   and g_chk['origin'] == 'model_prior')
+                    mdl_gen = res1['answer'] == 'yes'
+                    conflict = 1.0 if rec_gen != mdl_gen else 0.0
+                    weak = (not g_chk['found']) or g_chk['similarity'] < 0.5
+                    lowconf_hist.append(conflict > 0)
                     streak = 0
                     for v in reversed(lowconf_hist):
                         if not v:
@@ -328,16 +351,18 @@ def main() -> None:
                     sig = DetectSignals(
                         recent_error_rate=sum(recent) / len(recent),
                         failure_streak=streak,
-                        context_conflict=1.0 if low else 0.0)
+                        context_conflict=conflict,
+                        world_accuracy=0.0 if weak else 1.0)
                     score = gate.detect(sig)
                     fired = gate.should_diagnose(score)
-                    # NOTE: a previous revision forced `fired = True` on a 5%
-                    # random draw here. That manufactures diagnose_rate rather
-                    # than measuring it -- every escalation it produced was a
-                    # coin flip, while gate.detect() returned 0.0 on every
-                    # probe. Removed. If the detector carries no signal, the
-                    # honest result is that the gate never fires.
-                    _probe_log.append({"probe": len(_probe_log)+1, "conf": res1['confidence'], "low": low, "recent": round(sum(recent)/len(recent),3), "streak": streak, "score": score, "fired": fired})
+                    _probe_log.append({"probe": len(_probe_log) + 1,
+                                       "conf": res1['confidence'],
+                                       "record_generated": rec_gen,
+                                       "model_generated": mdl_gen,
+                                       "conflict": conflict, "weak": weak,
+                                       "recent": round(sum(recent) / len(recent), 3),
+                                       "streak": streak, "score": score,
+                                       "fired": fired})
                     if not fired:
                         res_pre = res1
                     else:
@@ -433,6 +458,7 @@ def main() -> None:
         print(f"  banked {kind}: {pooled}", flush=True)
 
     payload = {'model': args.model, 'base_url': args.base_url,
+               'gate_threshold': args.gate_threshold,
                'arms_run': list(arms), 'n_seeds': len(seeds),
                'exploratory': bool(args.exploratory), 'results': results}
     if {'harnessed_withcheck', 'harnessed_nocheck', 'raw'} <= set(results):
