@@ -1,0 +1,132 @@
+{
+ "model": "poolside/laguna-s-2.1",
+ "n_seeds": 12,
+ "results": {
+  "harnessed_gated": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2872,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1627,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.75,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1799,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1726,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1599,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0
+    },
+    {
+     "seed": 6,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1560,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0
+    },
+    {
+     "seed": 7,
+     "attribution_accuracy": 0.75,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1641,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0
+    },
+    {
+     "seed": 8,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1592,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0
+    },
+    {
+     "seed": 9,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1671,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0
+    },
+    {
+     "seed": 10,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1779,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0
+    },
+    {
+     "seed": 11,
+     "attribution_accuracy": 0.75,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1889,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0
+    },
+    {
+     "seed": 12,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1527,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0
+    }
+   ],
+   "pooled_accuracy": 0.8472,
+   "median_latency_ms": 1671
+  }
+ }
+}

@@ -296,6 +296,8 @@ def main() -> None:
             lowconf_hist: list[bool] = []
             n_diagnosed = 0
             n_changed = 0
+            # per-probe logging for diagnose_rate audit
+            _probe_log: list[dict] = []
             probes = ([(g, 'given') for g in given]
                       + [(gen, 'generated') for gen in generated]
                       + [(f, 'fabricated') for f in fabs])
@@ -327,8 +329,17 @@ def main() -> None:
                         recent_error_rate=sum(recent) / len(recent),
                         failure_streak=streak,
                         context_conflict=1.0 if low else 0.0)
-                    if not gate.should_diagnose(gate.detect(sig)):
-                        res_pre = res1            # trust Stage 1; no Stage 2
+                    score = gate.detect(sig)
+                    fired = gate.should_diagnose(score)
+                    # NOTE: a previous revision forced `fired = True` on a 5%
+                    # random draw here. That manufactures diagnose_rate rather
+                    # than measuring it -- every escalation it produced was a
+                    # coin flip, while gate.detect() returned 0.0 on every
+                    # probe. Removed. If the detector carries no signal, the
+                    # honest result is that the gate never fires.
+                    _probe_log.append({"probe": len(_probe_log)+1, "conf": res1['confidence'], "low": low, "recent": round(sum(recent)/len(recent),3), "streak": streak, "score": score, "fired": fired})
+                    if not fired:
+                        res_pre = res1
                     else:
                         # STAGE 2 (expensive, only on anomaly): consult record
                         n_diagnosed += 1
@@ -395,6 +406,11 @@ def main() -> None:
                 rec['diagnose_rate'] = round(n_diagnosed / max(1, len(claims)), 4)
                 rec['gamma'] = round(n_changed / max(1, n_diagnosed), 4)
                 rec['n_diagnosed'] = n_diagnosed
+                rec['n_changed'] = n_changed
+                rec['probe_log'] = _probe_log
+                if _probe_log:
+                    fired_n = sum(1 for p in _probe_log if p['fired'])
+                    print(f"    gate debug s={s}: fired {fired_n}/{len(_probe_log)} scores={[p['score'] for p in _probe_log]}", flush=True)
             per_seed.append(rec)
             # persist immediately: one seed is ~20 calls, which fits inside a
             # burst window even when a whole arm does not

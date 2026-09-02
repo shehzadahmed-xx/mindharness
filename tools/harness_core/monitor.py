@@ -66,7 +66,7 @@ class MonitorGate:
 
     def __init__(
         self,
-        threshold_detect: float = 0.6,
+        threshold_detect: float = 0.28,
         compliance_guard: bool = False,
         diagnose_fn: Callable[[DetectSignals], dict] | None = None,
         regret_threshold: float = 0.3,

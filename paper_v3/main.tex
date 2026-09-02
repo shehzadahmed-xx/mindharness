@@ -852,6 +852,31 @@ conditional on need. We report the ungated result because it was the arm that
 was locked and run, and we flag its scope here rather than in a limitations
 section because the scope is the finding.
 
+\paragraph{The gated arm, and why it could not be run.} We implemented the
+missing arm: Stage~1 answers each probe unaided and reports its own confidence;
+Stage~2 consults the record only when \texttt{MonitorGate}'s anomaly score
+crosses threshold. Across $288$ probes on this subject the gate fired
+\textbf{zero} times. The reason is visible in the confidence distribution: the
+model reported the maximum value ($4$ of $4$) on $283$ of $288$ probes and
+never reported the two lowest values at all, so every input to the detector ---
+recent error rate, failure streak, context conflict --- was identically zero.
+
+This is not a null about gating. It is a circularity:
+
+\begin{quote}
+A watcher cannot be gated on self-reported confidence, because miscalibrated
+confidence is the failure the watcher exists to catch.
+\end{quote}
+
+The same subject class reports $98\%$ confidence on fabricated content and
+$87\%$ on veridical content elsewhere in this programme; a detector keyed to
+that signal inherits the pathology it was meant to detect. Testing a gated
+watcher therefore requires an anomaly signal that does not pass through the
+subject's own self-report --- retrieval failure, contradiction against the
+record, or an external consistency check. We record the attempt because the
+inertness of the detector is itself the finding, and because it identifies what
+the next arm must be built from.
+
 \paragraph{Convergent evidence.} Three independent lines agree on this
 conditional form. (i)~The interference literature on metacognitive
 monitoring: a full monitoring apparatus degrades calibration relative to
@@ -1446,6 +1471,79 @@ unwatched. You don't choose whether to feed the loop---only what you
 feed it. The dialogue between ancient observation and modern computation
 is not metaphorical---it is methodological, and it is actionable.
 
+
+\subsection{A thermodynamic reading of the witness}
+\label{sec:thermo}
+
+Three of this paper's results have exact statements in the physics of
+information, and saying them that way is sharper than the operational
+phrasing we have used so far.
+
+\paragraph{The sham arm measures mutual information.} Szilard's engine extracts
+up to $k_BT\ln 2$ of work from one bit about which half of a vessel a molecule
+occupies, and Landauer's principle --- now confirmed in nanomagnetic bits and
+in colloidal feedback traps --- says erasing that bit costs at least the same,
+which is what keeps the second law intact. The demon profits only to the extent
+that its record is \emph{correlated with the system}; a demon whose memory is
+uncorrelated pays the erasure cost and extracts nothing.
+
+Our sham watcher is that demon. It performs the measurement --- its override
+rate is non-zero --- and returns exactly the no-watcher outcome on the metric
+the override is supposed to move. Read thermodynamically, the sham arm is an
+estimator of the mutual information between the record and the world, and it
+reports approximately zero. This is a stronger claim than ``content matters
+beyond form'' and it is the same experiment.
+
+\paragraph{An unconditional check is a demon that measures every molecule.}
+The withcheck arm consults the record on $100\%$ of probes against a documented
+healthy ceiling of $5\%$. A demon that measures every particle pays the erasure
+cost on every measurement while extracting work only from the informative
+fraction. Gating is therefore not an efficiency refinement; it is the condition
+under which observation is net-positive at all. The $-0.146$ is that
+arithmetic.
+
+\paragraph{Jarzynski is why we do not cite single seeds.} The Jarzynski
+equality permits individual erasure cycles to fall below the Landauer bound
+while the exponential average obeys it; single-shot violations are expected
+rather than anomalous. The corresponding statement here is that eleven of
+twelve withcheck seeds sat exactly on the constant-policy floor while one
+scored above it. Favourable single trajectories are predicted by the ensemble
+statement, not evidence against it, which is why every contrast in this paper
+is pooled or paired.
+
+\paragraph{Coverage per stored pattern is a description-length measure.} A
+representation is general to the degree that its description length stays flat
+while the world it describes grows --- the Kolmogorov ideal that practical
+compression approximates. Our transfer results measure exactly this: across
+grids of $25$, $64$ and $144$ cells, coverage per stored pattern falls for
+cell-keyed memory ($0.99 \to 0.83 \to 0.75$) and rises for situation-keyed
+memory ($2.13 \to 4.12 \to 6.93$). The preregistered prediction that these two
+sequences diverge monotonically (R6) held on seeds disjoint from every
+exploratory range.
+
+\paragraph{A structural prediction we have not tested.} The no-deleting theorem
+holds that quantum information cannot be destroyed under unitary evolution, and
+Landauer's principle says erasure is not destruction but \emph{export}: the
+information leaves the system and appears as heat in the environment. If
+damping is export rather than annihilation, then the damping organ is not
+independent of the boundary organ --- one can only discard into an outside.
+This predicts that ablating the boundary should render damping not merely
+unmeasured but undefined. In our grid ablation the no-boundary condition indeed
+returns a repeat-error count of zero, which we characterised as a measurement
+artefact; the reading above says it is also a structural consequence. We flag
+this as a prediction rather than a result because we have not designed a test
+that separates the two.
+
+\paragraph{Scope: the energetic argument does not apply to our hardware.}
+Landauer's bound is a statement about physical limits, and contemporary
+computing runs three to four orders of magnitude above it; Koomey's law, which
+tracked a halving of energy per computation roughly every $1.6$ years, has
+slowed markedly since the end of Dennard scaling. Nothing about our compute
+budget forces any architectural choice made here. Where selection arguments for
+these organs are compelling they are compelling for biology, which does operate
+near its limits. Our harness needs a witness for \emph{epistemic} reasons ---
+confabulation, drift, unfalsifiable self-report --- and those reasons should not
+be conflated with thermodynamic necessity.
 
 \section{Limitations}\label{sec:limitations}
 

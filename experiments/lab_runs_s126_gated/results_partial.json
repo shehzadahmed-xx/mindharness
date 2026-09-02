@@ -1,0 +1,1464 @@
+{
+ "model": "laguna-s-2.1-free",
+ "n_seeds": 12,
+ "results": {
+  "harnessed_gated": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 7201,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0,
+     "n_changed": 0,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 5,
+       "conf": 3,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 7,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 8,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 9,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 10,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 11,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 12,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      }
+     ]
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.75,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 4307,
+     "diagnose_rate": 0.0833,
+     "gamma": 0.0,
+     "n_diagnosed": 1,
+     "n_changed": 0,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 5,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 7,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 8,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 9,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 10,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.28,
+       "fired": true
+      },
+      {
+       "probe": 11,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 12,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      }
+     ]
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 1.0,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 4520,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0,
+     "n_changed": 0,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 5,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 7,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 8,
+       "conf": 3,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 9,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 10,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 11,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 12,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      }
+     ]
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.75,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 4125,
+     "diagnose_rate": 0.0833,
+     "gamma": 0.0,
+     "n_diagnosed": 1,
+     "n_changed": 0,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 5,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 7,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 8,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 9,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.28,
+       "fired": true
+      },
+      {
+       "probe": 10,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 11,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 12,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      }
+     ]
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 5608,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0,
+     "n_changed": 0,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 5,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 7,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 8,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 9,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 10,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 11,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 12,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      }
+     ]
+    },
+    {
+     "seed": 6,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 4038,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0,
+     "n_changed": 0,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 5,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 7,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 8,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 9,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 10,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 11,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 12,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      }
+     ]
+    },
+    {
+     "seed": 7,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 3627,
+     "diagnose_rate": 0.0833,
+     "gamma": 0.0,
+     "n_diagnosed": 1,
+     "n_changed": 0,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 5,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 7,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 8,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 9,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 10,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.28,
+       "fired": true
+      },
+      {
+       "probe": 11,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 12,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      }
+     ]
+    },
+    {
+     "seed": 8,
+     "attribution_accuracy": 1.0,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 6885,
+     "diagnose_rate": 0.0833,
+     "gamma": 0.0,
+     "n_diagnosed": 1,
+     "n_changed": 0,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.28,
+       "fired": true
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 5,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 7,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 8,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 9,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 10,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 11,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 12,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      }
+     ]
+    },
+    {
+     "seed": 9,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 3432,
+     "diagnose_rate": 0.0833,
+     "gamma": 1.0,
+     "n_diagnosed": 1,
+     "n_changed": 1,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 5,
+       "conf": 3,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 7,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 8,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 9,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 10,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 11,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 12,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.28,
+       "fired": true
+      }
+     ]
+    },
+    {
+     "seed": 10,
+     "attribution_accuracy": 0.75,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 4559,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0,
+     "n_changed": 0,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 5,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 7,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 8,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 9,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 10,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 11,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 12,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      }
+     ]
+    },
+    {
+     "seed": 11,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 3761,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0,
+     "n_changed": 0,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 5,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 7,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 8,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 9,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 10,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 11,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 12,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      }
+     ]
+    },
+    {
+     "seed": 12,
+     "attribution_accuracy": 0.75,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 4566,
+     "diagnose_rate": 0.0,
+     "gamma": 0.0,
+     "n_diagnosed": 0,
+     "n_changed": 0,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 5,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 7,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 8,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 9,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 10,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 11,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      },
+      {
+       "probe": 12,
+       "conf": 4,
+       "low": false,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.0,
+       "fired": false
+      }
+     ]
+    }
+   ],
+   "pooled_accuracy": 0.8542,
+   "median_latency_ms": 4520
+  }
+ }
+}

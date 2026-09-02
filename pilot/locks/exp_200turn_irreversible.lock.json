@@ -22,12 +22,12 @@
  "item_pool_sha256": "e7773ecfc00e50bd28622b1f719ebd82b2ef8cdfe86a12c869a1790a2a864b9b",
  "model_arms": [
   {
-   "model": "stub-model",
-   "base_url": "https://opencode.ai/zen/v1"
+   "model": "poolside/laguna-s-2.1",
+   "base_url": "https://openrouter.ai/api/v1"
   }
  ],
  "n_seeds": 3,
  "notes": "Reversible vs irreversible 200-turn life. Spec SHAs: MIND_MAP=e7773ecf paper_v3_future=4038b2af harness=72b2e844 Thresholds: attribution \u0394>0 (primary), \u03b3 diverges, skill survival irreversible<reversible, dissolution>0 only irreversible. Paired bootstrap CI.",
- "created_at": "2026-09-02T12:19:57+00:00",
- "lock_sha256": "6527f29f15102d23989381f86966bc17bf40f82a001be065b0f18da468c61dc4"
+ "created_at": "2026-09-02T19:45:28+00:00",
+ "lock_sha256": "8dc98d64ecb50129d950db236659629846a35e029bb5a522e5e8549ab5dfedf8"
 }

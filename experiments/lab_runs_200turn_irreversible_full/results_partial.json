@@ -1,0 +1,267 @@
+{
+ "model": "poolside/laguna-s-2.1",
+ "base_url": "https://openrouter.ai/api/v1",
+ "n_seeds": 3,
+ "turns": 200,
+ "results_by_arm": {
+  "reversible": [
+   {
+    "turns": 208,
+    "diagnoses": 24,
+    "overrides": 24,
+    "override_rate": 1.0,
+    "energy": 0.15,
+    "fatigue": 1.0,
+    "valence": 0.148,
+    "arousal": 0.221,
+    "sm_revisions": 31,
+    "memory_items": 66,
+    "metacog_completeness": 1.0,
+    "coverage": {
+     "emissions": 216,
+     "spans_total": 216,
+     "spans_with_source_ref": 216,
+     "coverage_ratio": 1.0,
+     "ledger_queries": 0,
+     "total_claims": 0,
+     "query_rate": 0.0
+    },
+    "arm": "reversible",
+    "seed": 1,
+    "attribution_accuracy": 0.8333,
+    "n_probes": 12,
+    "unparsed": 0,
+    "median_latency_ms": 2379,
+    "gamma_rate": 0.12,
+    "gamma_changed": 24,
+    "gamma_evals": 200,
+    "skill_survival_rate": 1.0,
+    "skills_minted": 175,
+    "skills_deleted_permanently": 0,
+    "energy_ceiling": 1.0,
+    "dissolution_events": 0,
+    "dissolution_progress_trace": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "energy_trace_tail": [
+     0.15,
+     0.15,
+     0.15,
+     0.15,
+     0.15
+    ],
+    "fatigue_trace_tail": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "damage_events": []
+   },
+   {
+    "turns": 208,
+    "diagnoses": 24,
+    "overrides": 24,
+    "override_rate": 1.0,
+    "energy": 0.15,
+    "fatigue": 1.0,
+    "valence": 0.148,
+    "arousal": 0.221,
+    "sm_revisions": 31,
+    "memory_items": 66,
+    "metacog_completeness": 1.0,
+    "coverage": {
+     "emissions": 216,
+     "spans_total": 216,
+     "spans_with_source_ref": 216,
+     "coverage_ratio": 1.0,
+     "ledger_queries": 0,
+     "total_claims": 0,
+     "query_rate": 0.0
+    },
+    "arm": "reversible",
+    "seed": 2,
+    "attribution_accuracy": 0.75,
+    "n_probes": 12,
+    "unparsed": 0,
+    "median_latency_ms": 2144,
+    "gamma_rate": 0.12,
+    "gamma_changed": 24,
+    "gamma_evals": 200,
+    "skill_survival_rate": 1.0,
+    "skills_minted": 175,
+    "skills_deleted_permanently": 0,
+    "energy_ceiling": 1.0,
+    "dissolution_events": 0,
+    "dissolution_progress_trace": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "energy_trace_tail": [
+     0.15,
+     0.15,
+     0.15,
+     0.15,
+     0.15
+    ],
+    "fatigue_trace_tail": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "damage_events": []
+   },
+   {
+    "turns": 208,
+    "diagnoses": 24,
+    "overrides": 24,
+    "override_rate": 1.0,
+    "energy": 0.15,
+    "fatigue": 1.0,
+    "valence": 0.148,
+    "arousal": 0.221,
+    "sm_revisions": 31,
+    "memory_items": 71,
+    "metacog_completeness": 1.0,
+    "coverage": {
+     "emissions": 216,
+     "spans_total": 216,
+     "spans_with_source_ref": 216,
+     "coverage_ratio": 1.0,
+     "ledger_queries": 0,
+     "total_claims": 0,
+     "query_rate": 0.0
+    },
+    "arm": "reversible",
+    "seed": 3,
+    "attribution_accuracy": 0.6667,
+    "n_probes": 12,
+    "unparsed": 0,
+    "median_latency_ms": 3275,
+    "gamma_rate": 0.12,
+    "gamma_changed": 24,
+    "gamma_evals": 200,
+    "skill_survival_rate": 1.0,
+    "skills_minted": 175,
+    "skills_deleted_permanently": 0,
+    "energy_ceiling": 1.0,
+    "dissolution_events": 0,
+    "dissolution_progress_trace": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "energy_trace_tail": [
+     0.15,
+     0.15,
+     0.15,
+     0.15,
+     0.15
+    ],
+    "fatigue_trace_tail": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "damage_events": []
+   }
+  ],
+  "irreversible": [
+   {
+    "turns": 13,
+    "diagnoses": 0,
+    "overrides": 0,
+    "override_rate": 0.0,
+    "energy": 0.15,
+    "fatigue": 1.0,
+    "valence": 0.146,
+    "arousal": 0.219,
+    "sm_revisions": 4,
+    "memory_items": 13,
+    "metacog_completeness": 1.0,
+    "coverage": {
+     "emissions": 13,
+     "spans_total": 13,
+     "spans_with_source_ref": 13,
+     "coverage_ratio": 1.0,
+     "ledger_queries": 0,
+     "total_claims": 0,
+     "query_rate": 0.0
+    },
+    "arm": "irreversible",
+    "seed": 1,
+    "attribution_accuracy": 0.6667,
+    "n_probes": 12,
+    "unparsed": 0,
+    "median_latency_ms": 1574,
+    "gamma_rate": 0.04,
+    "gamma_changed": 8,
+    "gamma_evals": 200,
+    "skill_survival_rate": 1.0,
+    "skills_minted": 11,
+    "skills_deleted_permanently": 0,
+    "energy_ceiling": 0.65,
+    "dissolution_events": 8,
+    "dissolution_progress_trace": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "energy_trace_tail": [
+     0.15,
+     0.15,
+     0.15,
+     0.15,
+     0.15
+    ],
+    "fatigue_trace_tail": [
+     0.7051,
+     0.7603,
+     0.8325,
+     0.9033,
+     0.9752
+    ],
+    "damage_events": [
+     {
+      "type": "ceiling_reduction",
+      "amount": 0.05,
+      "reason": "repeated failure: diagnose",
+      "new_ceiling": 0.7499999999999998,
+      "ts": 1788391062.284153
+     },
+     {
+      "type": "ceiling_reduction",
+      "amount": 0.05,
+      "reason": "repeated failure: diagnose",
+      "new_ceiling": 0.6999999999999997,
+      "ts": 1788391183.583756
+     },
+     {
+      "type": "ceiling_reduction",
+      "amount": 0.05,
+      "reason": "repeated failure: diagnose",
+      "new_ceiling": 0.6499999999999997,
+      "ts": 1788391266.392929
+     }
+    ]
+   }
+  ]
+ },
+ "exploratory": false
+}
