@@ -340,6 +340,62 @@ it stays clearly positive with tight intervals at every size.
 
 ---
 
+## 5c. Confirmatory replication (lock `cbedb522`)
+
+Everything above is exploratory: the transfer result and the relational repair
+were produced by the same runs that measured them. A confirmatory design was
+therefore frozen before any of its data existed.
+
+**Discipline.** Seeds **500001–520000**, disjoint from every range drawn from
+previously (1..20000 transfer, 1..5000 scale, 1..2000 ablation). Seven numeric
+predictions with thresholds set *below* the exploratory point estimates. Two of
+them null predictions, so a positive relational result could not be an artefact
+of merely holding a store. Primary outcome declared in advance: **R2, the sham
+contrast.** Prereg and both runner files hashed into the lock; the runner
+verifies its own hashes at startup and aborts if anything changed. Lock
+committed at `10a5a42` with zero confirmatory seeds executed. One run, no
+peeking, no re-analysis.
+
+| grid | key | store | hits/ep | hits/pattern | intact − wiped | intact − shuffled |
+|---|---|---|---|---|---|---|
+| 5 | coord | 6.77 | 6.7 | **0.99** | −0.0108 [−0.0150, −0.0067] | −0.0126 [−0.0173, −0.0083] |
+| 5 | relational | 8.51 | 18.1 | **2.13** | **+0.0425** [+0.0367, +0.0487] | **+0.0309** [+0.0249, +0.0372] |
+| 8 | coord | 11.55 | 9.6 | **0.83** | −0.0040 [−0.0072, −0.0008] | −0.0042 [−0.0078, −0.0006] |
+| 8 | relational | 12.05 | 49.6 | **4.12** | **+0.0442** [+0.0387, +0.0495] | **+0.0352** [+0.0295, +0.0411] |
+| 12 | coord | 17.24 | 13.0 | **0.75** | −0.0043 [−0.0066, −0.0020] | −0.0029 [−0.0053, −0.0006] |
+| 12 | relational | 14.43 | 100.0 | **6.93** | **+0.0207** [+0.0170, +0.0244] | **+0.0159** [+0.0118, +0.0200] |
+
+**7/7 predictions held.**
+
+| | prediction | observed | |
+|---|---|---|---|
+| R1 | relational helps vs no memory ≥ +0.020 | +0.0425 | PASS |
+| **R2** | **PRIMARY — content, not mechanics, ≥ +0.010** | **+0.0309** | **PASS** |
+| R3 | coordinate does not help (≤ 0) | −0.0108 | PASS |
+| R4 | coordinate content does not help | CI upper −0.0083 | PASS |
+| R5 | coverage ≥ 2× | 2.13 vs 0.99 = **2.15×** | PASS |
+| R6 | coverage diverges with scale | rel 2.13→4.12→6.93, coord 0.99→0.83→0.75 | PASS |
+| R7 | transfer survives at all grid sizes | CI excludes 0 at 5, 8, 12 | PASS |
+
+Two things are worth noting beyond the pass count.
+
+**The coordinate result strengthened.** At the exploratory n=5000 it was null at
+grids 5 and 12; at n=20,000 it is negative at *all three* sizes with intervals
+excluding zero. Memory keyed by cell does not fail to transfer — it transfers
+**harm**, reliably.
+
+**The compression signature replicated to two decimals.** Exploratory coverage
+was 2.13 / 4.13 / 6.96; confirmatory is 2.13 / 4.12 / 6.93. That is the claim
+the whole demo was built to make, now measured twice on disjoint data:
+
+> As the world grows, a store of memorised **places** covers less per entry
+> (0.99 → 0.83 → 0.75) while a store of recognised **situations** covers more
+> (2.13 → 4.12 → 6.93).
+
+Results: `experiments/confirmatory_transfer_results.json`.
+
+---
+
 ## 6. What is and is not established
 
 **Established.** **All five organs separately necessary**, each with a named

@@ -1,0 +1,143 @@
+{
+ "seed_range": [
+  500001,
+  520000
+ ],
+ "n": 20000,
+ "cells": {
+  "5_coord": {
+   "store": 6.77205,
+   "hits": 6.7091,
+   "hpp": 0.9907044395714739,
+   "iw": [
+    -0.0108,
+    -0.015,
+    -0.0067
+   ],
+   "ish": [
+    -0.01265,
+    -0.0173,
+    -0.0083
+   ]
+  },
+  "5_relational": {
+   "store": 8.51335,
+   "hits": 18.1005,
+   "hpp": 2.1261313114109015,
+   "iw": [
+    0.0425,
+    0.0367,
+    0.0487
+   ],
+   "ish": [
+    0.03095,
+    0.02495,
+    0.03715
+   ]
+  },
+  "8_coord": {
+   "store": 11.5509,
+   "hits": 9.61155,
+   "hpp": 0.8321039918967352,
+   "iw": [
+    -0.00405,
+    -0.0072,
+    -0.00085
+   ],
+   "ish": [
+    -0.00415,
+    -0.0078,
+    -0.00065
+   ]
+  },
+  "8_relational": {
+   "store": 12.04625,
+   "hits": 49.5885,
+   "hpp": 4.116509287122549,
+   "iw": [
+    0.04415,
+    0.0387,
+    0.04955
+   ],
+   "ish": [
+    0.0352,
+    0.02955,
+    0.04115
+   ]
+  },
+  "12_coord": {
+   "store": 17.2363,
+   "hits": 12.95745,
+   "hpp": 0.7517535666007206,
+   "iw": [
+    -0.00435,
+    -0.00665,
+    -0.002
+   ],
+   "ish": [
+    -0.0029,
+    -0.00535,
+    -0.00055
+   ]
+  },
+  "12_relational": {
+   "store": 14.4262,
+   "hits": 100.03255,
+   "hpp": 6.9340886719995565,
+   "iw": [
+    0.0207,
+    0.01705,
+    0.0244
+   ],
+   "ish": [
+    0.01595,
+    0.0118,
+    0.02005
+   ]
+  }
+ },
+ "verdicts": [
+  {
+   "id": "R1",
+   "pass": true,
+   "detail": "+0.0425 [+0.0367,+0.0487]",
+   "text": "R1  relational intact-wiped >= +0.020, CI excl 0"
+  },
+  {
+   "id": "R2",
+   "pass": true,
+   "detail": "+0.0309 [+0.0249,+0.0372]",
+   "text": "R2  PRIMARY relational intact-shuffled >= +0.010, CI excl 0"
+  },
+  {
+   "id": "R3",
+   "pass": true,
+   "detail": "-0.0108",
+   "text": "R3  coord intact-wiped <= 0.000"
+  },
+  {
+   "id": "R4",
+   "pass": true,
+   "detail": "CI lower -0.0173",
+   "text": "R4  coord intact-shuffled CI not entirely above 0"
+  },
+  {
+   "id": "R5",
+   "pass": true,
+   "detail": "2.13 vs 0.99 = 2.15x",
+   "text": "R5  relational hits/pattern >= 2x coord"
+  },
+  {
+   "id": "R6",
+   "pass": true,
+   "detail": "rel [2.13, 4.12, 6.93] coord [0.99, 0.83, 0.75]",
+   "text": "R6  rel hits/pattern strictly up AND coord strictly down"
+  },
+  {
+   "id": "R7",
+   "pass": true,
+   "detail": "g5:+0.0249 g8:+0.0295 g12:+0.0118",
+   "text": "R7  relational intact-shuffled CI excl 0 at ALL grids"
+  }
+ ]
+}
