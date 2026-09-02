@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>MindHarness — The Dynamic Reflexive Harness</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -13,17 +13,26 @@
 tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1E293B",loop:"#2563EB",loop2:"#22C55E",amber:"#F59E0B",muted:"#64748B"},fontFamily:{serif:['Crimson Pro','serif'],sans:['Atkinson Hyperlegible','sans-serif'],mono:['JetBrains Mono','monospace']}}}}
 </script>
 <style>
-*{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100vw}*{scroll-behavior:smooth}
 ::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-thumb{background:#334155;border-radius:999px}
-.glass{background:rgba(15,23,42,.72);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.06)}
-.card-hover{transition:all .2s} .card-hover:hover{transform:translateY(-2px);border-color:rgba(37,99,235,.35);box-shadow:0 12px 32px rgba(2,6,23,.45)}
-.kbd{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em}
+.glass{background:rgba(15,23,42,.72);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.10);box-shadow:0 4px 24px rgba(2,6,23,.35)}
+.card-hover{transition:transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease} .card-hover:hover{transform:translateY(-2px);border-color:rgba(37,99,235,.35);box-shadow:0 12px 32px rgba(2,6,23,.45)}
+.kbd{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em}
 .timeline-line{background:linear-gradient(to bottom, #2563EB, #22C55E, transparent)}
+/* a11y: focus + reduce motion (ui-ux-pro-max checklist) */
+:focus-visible{outline:2px solid #22C55E;outline-offset:2px}
+a:focus-visible,button:focus-visible,[tabindex="0"]:focus-visible,[role="button"]:focus-visible{outline:2px solid #22C55E;outline-offset:2px;box-shadow:0 0 0 4px rgba(34,197,94,.25)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.animate-pulse{animation:none!important}.card-hover:hover{transform:none!important}canvas{animation:none!important}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+.skip-link{position:absolute;left:8px;top:-40px;z-index:9999;background:#F8FAFC;color:#020617;padding:8px 12px;border-radius:8px;font-size:12px;font-weight:700}
+.skip-link:focus{top:8px}
+#wheel g:focus-visible{outline:2px solid #22C55E;outline-offset:4px}
 </style>
 </head>
 <body class="bg-ink text-slate-100 font-sans antialiased selection:bg-loop selection:text-white">
+<a href="#main" class="skip-link">Skip to content</a>
 <!-- NAV -->
-<nav class="fixed top-0 inset-x-0 z-50 glass border-b border-white/5">
+<nav aria-label="Primary" class="fixed top-0 inset-x-0 z-50 glass border-b border-white/5">
   <div class="max-w-[1280px] mx-auto px-4 sm:px-6 h-[56px] flex items-center justify-between">
     <div class="flex items-center gap-3">
       <div class="w-8 h-8 rounded-lg bg-loop flex items-center justify-center font-serif font-bold text-white text-[13px]">MH</div>
@@ -34,22 +43,22 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
       <span class="hidden md:inline-flex items-center gap-1.5 text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full"><span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span> 78/78 green</span>
       <a href="#papers" class="hidden sm:inline-flex kbd px-3 py-1.5 rounded-lg hover:bg-white/5 text-slate-300 cursor-pointer">Papers</a>
       <a href="#architecture" class="hidden sm:inline-flex kbd px-3 py-1.5 rounded-lg hover:bg-white/5 text-slate-300 cursor-pointer">Architecture</a>
-      <a href="#results" class="kbd px-3 py-1.5 rounded-lg bg-loop text-white cursor-pointer">Results</a>
+      <a href="#results" class="kbd px-3 py-1.5 rounded-lg bg-loop2 text-white cursor-pointer transition-colors duration-200 hover:opacity-90">Results</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="pt-[72px] pb-8">
+<main id="main"><section class="pt-[72px] pb-8">
   <div class="max-w-[1280px] mx-auto px-4 sm:px-6">
-    <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-6 items-start">
+    <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-6 items-start min-w-0">
       <div>
         <div class="flex flex-wrap items-center gap-2 mb-3">
           <span class="kbd px-2 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Program Paper · 3 scopes</span>
           <span class="kbd px-2 py-1 rounded bg-white/5 text-slate-400 border border-white/10">Springer · SpringFish · Consciousness Bridge</span>
           <span class="kbd px-2 py-1 rounded bg-loop/15 text-blue-300 border border-loop/20">8 layers · 13 modules</span>
         </div>
-        <h1 class="font-serif font-bold leading-[0.95] tracking-tight text-[42px] sm:text-[54px]">
+        <h1 class="font-serif font-bold leading-[0.95] tracking-tight text-[32px] sm:text-[54px] break-words">
           The Dynamic<br>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-loop to-loop2">Reflexive Harness</span>
         </h1>
@@ -61,34 +70,34 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
           </div>
         </div>
         <div class="mt-4 flex flex-wrap gap-2">
-          <a href="#five" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-ink font-semibold text-sm cursor-pointer">Explore the 5 organs <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <a href="#five" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-loop2 text-white font-semibold text-sm cursor-pointer transition-colors duration-200 hover:opacity-90">Explore the 5 organs <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
           <a href="#results" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 text-white text-sm hover:bg-white/5 cursor-pointer"><i data-lucide="flask-conical" class="w-4 h-4"></i> See what was measured</a>
         </div>
       </div>
 
       <!-- KPI GRID -->
       <div class="grid grid-cols-2 gap-3">
-        <div class="glass rounded-2xl p-4 card-hover">
+        <div class="glass rounded-2xl p-4 card-hover cursor-pointer">
           <div class="flex items-center justify-between"><span class="kbd text-slate-400">Papers</span><i data-lucide="file-text" class="w-4 h-4 text-loop"></i></div>
           <div class="font-serif font-bold text-[28px] leading-none mt-2">3 <span class="text-sm font-sans font-normal text-slate-400">scopes</span></div>
-          <div class="kbd text-slate-500 mt-1">v2 19pp · v3 32pp · 5organs 38pp</div>
+          <div class="kbd text-slate-400 mt-1">v2 19pp · v3 32pp · 5organs 38pp</div>
           <div class="mt-3 flex gap-1.5"><span class="h-1.5 flex-1 rounded-full bg-loop"></span><span class="h-1.5 flex-1 rounded-full bg-loop/60"></span><span class="h-1.5 flex-1 rounded-full bg-loop/30"></span></div>
         </div>
-        <div class="glass rounded-2xl p-4 card-hover">
+        <div class="glass rounded-2xl p-4 card-hover cursor-pointer">
           <div class="flex items-center justify-between"><span class="kbd text-slate-400">Tests</span><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i></div>
           <div class="font-serif font-bold text-[28px] leading-none mt-2">78<span class="text-emerald-400">/78</span></div>
           <div class="kbd text-emerald-400 mt-1">offline · no API keys · green</div>
-          <div class="kbd text-slate-500 mt-1">11 modules · L0–L7</div>
+          <div class="kbd text-slate-400 mt-1">11 modules · L0–L7</div>
         </div>
-        <div class="glass rounded-2xl p-4 card-hover">
+        <div class="glass rounded-2xl p-4 card-hover cursor-pointer">
           <div class="flex items-center justify-between"><span class="kbd text-slate-400">Research</span><i data-lucide="library" class="w-4 h-4 text-amber-400"></i></div>
           <div class="font-serif font-bold text-[28px] leading-none mt-2">~4.2k <span class="text-sm font-sans font-normal text-slate-400">lines</span></div>
-          <div class="kbd text-slate-500 mt-1">45 docs · 12 frontiers · ~40 papers</div>
+          <div class="kbd text-slate-400 mt-1">45 docs · 12 frontiers · ~40 papers</div>
         </div>
-        <div class="glass rounded-2xl p-4 card-hover">
+        <div class="glass rounded-2xl p-4 card-hover cursor-pointer">
           <div class="flex items-center justify-between"><span class="kbd text-slate-400">Experiments</span><i data-lucide="beaker" class="w-4 h-4 text-violet-400"></i></div>
           <div class="font-serif font-bold text-[28px] leading-none mt-2">9 <span class="text-sm font-sans font-normal text-slate-400">queued</span></div>
-          <div class="kbd text-slate-500 mt-1">SHA-256 locks · paired design · sham</div>
+          <div class="kbd text-slate-400 mt-1">SHA-256 locks · paired design · sham</div>
         </div>
         <div class="col-span-2 glass rounded-2xl p-4 flex items-center justify-between">
           <div>
@@ -101,6 +110,8 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
     </div>
   </div>
 </section>
+
+
 
 <!-- FIVE ORGANS — interactive -->
 <section id="five" class="py-8 border-t border-white/5 bg-panel/50">
@@ -127,46 +138,46 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
           <text x="170" y="162" text-anchor="middle" font-size="9" fill="#94A3B8" font-family="JetBrains Mono">Nayebi</text>
           <text x="170" y="176" text-anchor="middle" font-size="9" fill="#94A3B8" font-family="JetBrains Mono">Cor. 3–5</text>
           <!-- nodes -->
-          <g id="wheel" class="cursor-pointer">
-            <g data-idx="0"><circle cx="170" cy="48" r="34" fill="#2563EB"/><text x="170" y="45" text-anchor="middle" font-size="10" font-weight="700" fill="white">Boundary</text><text x="170" y="58" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)">inside vs outside</text></g>
-            <g data-idx="1"><circle cx="276" cy="132" r="34" fill="#22C55E"/><text x="276" y="129" text-anchor="middle" font-size="10" font-weight="700" fill="white">Memory</text><text x="276" y="142" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)">fast + slow</text></g>
-            <g data-idx="2"><circle cx="232" cy="242" r="34" fill="#F59E0B"/><text x="232" y="239" text-anchor="middle" font-size="10" font-weight="700" fill="white">Salience</text><text x="232" y="252" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)">what matters</text></g>
-            <g data-idx="3"><circle cx="108" cy="242" r="34" fill="#EF4444"/><text x="108" y="239" text-anchor="middle" font-size="10" font-weight="700" fill="white">Damping</text><text x="108" y="252" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)">brake</text></g>
-            <g data-idx="4"><circle cx="64" cy="132" r="34" fill="#8B5CF6"/><text x="64" y="129" text-anchor="middle" font-size="10" font-weight="700" fill="white">Observer</text><text x="64" y="142" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)">γ veto</text></g>
+          <g id="wheel" class="cursor-pointer" role="list" aria-label="Five organs — hover or focus a node">
+            <g data-idx="0" tabindex="0" role="listitem" aria-label="Boundary — inside vs outside" class="cursor-pointer focus-visible:outline-none"><circle cx="170" cy="48" r="34" fill="#2563EB"/><text x="170" y="45" text-anchor="middle" font-size="10" font-weight="700" fill="white">Boundary</text><text x="170" y="58" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)">inside vs outside</text></g>
+            <g data-idx="1" tabindex="0" role="listitem" aria-label="Memory — fast + slow" class="cursor-pointer focus-visible:outline-none"><circle cx="276" cy="132" r="34" fill="#22C55E"/><text x="276" y="129" text-anchor="middle" font-size="10" font-weight="700" fill="white">Memory</text><text x="276" y="142" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)">fast + slow</text></g>
+            <g data-idx="2" tabindex="0" role="listitem" aria-label="Salience — what matters" class="cursor-pointer focus-visible:outline-none"><circle cx="232" cy="242" r="34" fill="#F59E0B"/><text x="232" y="239" text-anchor="middle" font-size="10" font-weight="700" fill="white">Salience</text><text x="232" y="252" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)">what matters</text></g>
+            <g data-idx="3" tabindex="0" role="listitem" aria-label="Damping — brake" class="cursor-pointer focus-visible:outline-none"><circle cx="108" cy="242" r="34" fill="#EF4444"/><text x="108" y="239" text-anchor="middle" font-size="10" font-weight="700" fill="white">Damping</text><text x="108" y="252" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)">brake</text></g>
+            <g data-idx="4" tabindex="0" role="listitem" aria-label="Observer — γ veto" class="cursor-pointer focus-visible:outline-none"><circle cx="64" cy="132" r="34" fill="#8B5CF6"/><text x="64" y="129" text-anchor="middle" font-size="10" font-weight="700" fill="white">Observer</text><text x="64" y="142" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)">γ veto</text></g>
           </g>
           <text x="170" y="332" text-anchor="middle" font-size="9" fill="#475569" font-family="JetBrains Mono">warp = mandatory · weft = your design · loom = Cordis</text>
         </svg>
         <div id="wheel-detail" class="mt-4 w-full glass rounded-xl p-4">
           <div class="flex items-center gap-2"><span id="wd-dot" class="w-2.5 h-2.5 rounded-full bg-blue-500"></span><span id="wd-title" class="font-serif font-semibold">Boundary — What counts as self</span></div>
           <p id="wd-body" class="text-sm text-slate-300 leading-relaxed mt-2">Lipid membrane / synaptic cleft / narrative self (L6 CAS-revisioned, cause-signed) / ProvenanceLedger (L1 every span source-bound + ref). Without it: 98% on fabrications vs 87% on truths.</p>
-          <div id="wd-meta" class="kbd text-slate-500 mt-2">Harness: ProvenanceLedger · Metric: coverage · Ablation: sham 0.667</div>
+          <div id="wd-meta" class="kbd text-slate-400 mt-2">Harness: ProvenanceLedger · Metric: coverage · Ablation: sham 0.667</div>
         </div>
       </div>
 
       <!-- five cards -->
       <div class="grid sm:grid-cols-2 gap-3">
         <div class="glass rounded-2xl p-4 card-hover border-l-4 border-l-blue-500">
-          <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-lg bg-blue-500 flex items-center justify-center"><i data-lucide="shield" class="w-3.5 h-3.5 text-white"></i></span><span class="font-serif font-semibold">Boundary</span><span class="ml-auto kbd text-slate-500">L1 · L6</span></div>
+          <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-lg bg-blue-500 flex items-center justify-center"><i data-lucide="shield" class="w-3.5 h-3.5 text-white"></i></span><span class="font-serif font-semibold">Boundary</span><span class="ml-auto kbd text-slate-400">L1 · L6</span></div>
           <p class="text-sm text-slate-400 mt-2 leading-relaxed">Selectively permeable, not a wall. Maintained every instant or claims float free. Coverage 1.000 in both living sessions.</p>
           <div class="mt-3 flex flex-wrap gap-1.5"><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">ProvenanceLedger</span><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">SelfModelService CAS</span></div>
         </div>
         <div class="glass rounded-2xl p-4 card-hover border-l-4 border-l-emerald-500">
-          <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-lg bg-emerald-500 flex items-center justify-center"><i data-lucide="layers" class="w-3.5 h-3.5 text-white"></i></span><span class="font-serif font-semibold">Two-speed memory</span><span class="ml-auto kbd text-slate-500">L3</span></div>
+          <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-lg bg-emerald-500 flex items-center justify-center"><i data-lucide="layers" class="w-3.5 h-3.5 text-white"></i></span><span class="font-serif font-semibold">Two-speed memory</span><span class="ml-auto kbd text-slate-400">L3</span></div>
           <p class="text-sm text-slate-400 mt-2 leading-relaxed">Fast labile (E-LTP, context) + slow structural (L-LTP, CREB→BDNF) + sleep. Light→REM→Counterfactual→Deep.</p>
           <div class="mt-3 flex flex-wrap gap-1.5"><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">Consolidator</span><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">12/12 tests</span></div>
         </div>
         <div class="glass rounded-2xl p-4 card-hover border-l-4 border-l-amber-500">
-          <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-lg bg-amber-500 flex items-center justify-center"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-white"></i></span><span class="font-serif font-semibold">Salience gate</span><span class="ml-auto kbd text-slate-500">L3</span></div>
+          <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-lg bg-amber-500 flex items-center justify-center"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-white"></i></span><span class="font-serif font-semibold">Salience gate</span><span class="ml-auto kbd text-slate-400">L3</span></div>
           <p class="text-sm text-slate-400 mt-2 leading-relaxed">What gets tagged. Sofroniew ±212/-303 Elo proved it causally. AffectState [0.5,2.0] multiplies every bid.</p>
           <div class="mt-3 flex flex-wrap gap-1.5"><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">AffectState EMA</span><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">Sofroniew 2026</span></div>
         </div>
         <div class="glass rounded-2xl p-4 card-hover border-l-4 border-l-red-500">
-          <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-lg bg-red-500 flex items-center justify-center"><i data-lucide="octagon" class="w-3.5 h-3.5 text-white"></i></span><span class="font-serif font-semibold">Damping</span><span class="ml-auto kbd text-slate-500">L2·L3</span></div>
+          <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-lg bg-red-500 flex items-center justify-center"><i data-lucide="octagon" class="w-3.5 h-3.5 text-white"></i></span><span class="font-serif font-semibold">Damping</span><span class="ml-auto kbd text-slate-400">L2·L3</span></div>
           <p class="text-sm text-slate-400 mt-2 leading-relaxed">What prevents runaway. LTD · SHY downscaling · skill culling · circuit breakers. Without it: seizure / panic / blowup.</p>
           <div class="mt-3 flex flex-wrap gap-1.5"><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">cull_failed</span><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">Light dedup</span></div>
         </div>
         <div class="glass rounded-2xl p-4 card-hover border-l-4 border-l-violet-500 sm:col-span-2">
-          <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-lg bg-violet-500 flex items-center justify-center"><i data-lucide="eye" class="w-3.5 h-3.5 text-white"></i></span><span class="font-serif font-semibold">Internal observer — γ = changed / diagnosed</span><span class="ml-auto kbd text-slate-500">L5</span></div>
+          <div class="flex items-center gap-2"><span class="w-7 h-7 rounded-lg bg-violet-500 flex items-center justify-center"><i data-lucide="eye" class="w-3.5 h-3.5 text-white"></i></span><span class="font-serif font-semibold">Internal observer — γ = changed / diagnosed</span><span class="ml-auto kbd text-slate-400">L5</span></div>
           <p class="text-sm text-slate-400 mt-2 leading-relaxed">Slower loop vetoing faster. Stage 1 cheap anomaly → Stage 2 diagnose → trust/retry/revise/abstain. Compliance guard γ=0 exactly (permanent negative control) proves inert watching.</p>
           <div class="mt-3 flex flex-wrap gap-1.5"><span class="kbd px-2 py-1 rounded bg-violet-500/15 text-violet-300 border border-violet-500/20">MonitorGate</span><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">Farb mPFC/PCC vs insula</span><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">Cao +8.6pp</span></div>
         </div>
@@ -175,17 +186,19 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
 
     <!-- scales strip -->
     <div class="mt-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2">
-      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-500">Molecule</div><div class="font-serif text-sm font-semibold mt-1">NMDA</div><div class="kbd text-[10px] text-slate-500">coincidence</div></div>
-      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-500">Cell</div><div class="font-serif text-sm font-semibold mt-1">Autopoiesis</div><div class="kbd text-[10px] text-slate-500">membrane</div></div>
-      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-500">Circuit</div><div class="font-serif text-sm font-semibold mt-1">SHY + replay</div><div class="kbd text-[10px] text-slate-500">sleep = save</div></div>
-      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-500">Mind</div><div class="font-serif text-sm font-semibold mt-1">Parliament</div><div class="kbd text-[10px] text-slate-500">GWT · γ</div></div>
-      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-500">Person</div><div class="font-serif text-sm font-semibold mt-1">Habit</div><div class="kbd text-[10px] text-slate-500">myelin 100×</div></div>
-      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-500">Society</div><div class="font-serif text-sm font-semibold mt-1">Price</div><div class="kbd text-[10px] text-slate-500">legal entity</div></div>
-      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-500">Machine</div><div class="font-serif text-sm font-semibold mt-1">Harness</div><div class="kbd text-[10px] text-slate-500">ledger · γ</div></div>
-      <div class="glass rounded-xl p-3 text-center border-amber-500/30"><div class="kbd text-amber-400">Universe</div><div class="font-serif text-sm font-semibold mt-1">Loop?</div><div class="kbd text-[10px] text-slate-500">asked, not claimed</div></div>
+      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-400">Molecule</div><div class="font-serif text-sm font-semibold mt-1">NMDA</div><div class="kbd text-xs text-slate-400">coincidence</div></div>
+      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-400">Cell</div><div class="font-serif text-sm font-semibold mt-1">Autopoiesis</div><div class="kbd text-xs text-slate-400">membrane</div></div>
+      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-400">Circuit</div><div class="font-serif text-sm font-semibold mt-1">SHY + replay</div><div class="kbd text-xs text-slate-400">sleep = save</div></div>
+      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-400">Mind</div><div class="font-serif text-sm font-semibold mt-1">Parliament</div><div class="kbd text-xs text-slate-400">GWT · γ</div></div>
+      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-400">Person</div><div class="font-serif text-sm font-semibold mt-1">Habit</div><div class="kbd text-xs text-slate-400">myelin 100×</div></div>
+      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-400">Society</div><div class="font-serif text-sm font-semibold mt-1">Price</div><div class="kbd text-xs text-slate-400">legal entity</div></div>
+      <div class="glass rounded-xl p-3 text-center"><div class="kbd text-slate-400">Machine</div><div class="font-serif text-sm font-semibold mt-1">Harness</div><div class="kbd text-xs text-slate-400">ledger · γ</div></div>
+      <div class="glass rounded-xl p-3 text-center border-amber-500/30"><div class="kbd text-amber-400">Universe</div><div class="font-serif text-sm font-semibold mt-1">Loop?</div><div class="kbd text-xs text-slate-400">asked, not claimed</div></div>
     </div>
   </div>
 </section>
+
+
 
 <!-- ARCHITECTURE -->
 <section id="architecture" class="py-8">
@@ -196,20 +209,20 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
         <h2 class="font-serif font-bold text-[30px] leading-none mt-1">Harness is the mind.</h2>
         <p class="text-slate-400 mt-2">Same frozen LLM, different harness = different agent. Cordis is the loom that re-ties the cord every turn: <span class="font-mono text-loop2">State(t) → harness(t+1)</span>.</p>
       </div>
-      <div class="kbd text-slate-500">Tongue + mind = agent</div>
+      <div class="kbd text-slate-400">Tongue + mind = agent</div>
     </div>
 
     <div class="grid lg:grid-cols-[520px_1fr] gap-6">
       <!-- layers -->
       <div class="space-y-2">
-        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-amber-500"><span class="kbd w-8 text-center">L7</span><span class="font-serif font-semibold text-sm">Constitution</span><span class="ml-auto kbd text-slate-500">Fiqh · evidence firewall</span></div>
-        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-violet-500"><span class="kbd w-8 text-center">L6</span><span class="font-serif font-semibold text-sm">Narrative Self</span><span class="ml-auto kbd text-slate-500">CAS · cause-signed · verbatim re-inject</span></div>
-        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-violet-400"><span class="kbd w-8 text-center">L5</span><span class="font-serif font-semibold text-sm">Metacognition</span><span class="ml-auto kbd text-slate-500">Stage1 cheap → Stage2 diagnose → γ</span></div>
-        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-blue-500"><span class="kbd w-8 text-center">L4</span><span class="font-serif font-semibold text-sm">Global Workspace</span><span class="ml-auto kbd text-slate-500">coalition → winner broadcast</span></div>
-        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-emerald-500"><span class="kbd w-8 text-center">L3</span><span class="font-serif font-semibold text-sm">Specialists</span><span class="ml-auto kbd text-slate-500">Embodied · Affect · Memory · Skills · KG · Counterfactual</span></div>
-        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-orange-500"><span class="kbd w-8 text-center">L2</span><span class="font-serif font-semibold text-sm">State Validation</span><span class="ml-auto kbd text-slate-500">cetasika · nafs · affordance filter</span></div>
-        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-sky-500"><span class="kbd w-8 text-center">L1</span><span class="font-serif font-semibold text-sm">Provenance Ledger</span><span class="ml-auto kbd text-slate-500">span binding · coverage ≥95%</span></div>
-        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-slate-500"><span class="kbd w-8 text-center">L0</span><span class="font-serif font-semibold text-sm">Frozen LLM</span><span class="ml-auto kbd text-slate-500">any OpenAI-compatible API · fingerprint</span></div>
+        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-amber-500"><span class="kbd w-8 text-center">L7</span><span class="font-serif font-semibold text-sm">Constitution</span><span class="ml-auto kbd text-slate-400">Fiqh · evidence firewall</span></div>
+        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-violet-500"><span class="kbd w-8 text-center">L6</span><span class="font-serif font-semibold text-sm">Narrative Self</span><span class="ml-auto kbd text-slate-400">CAS · cause-signed · verbatim re-inject</span></div>
+        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-violet-400"><span class="kbd w-8 text-center">L5</span><span class="font-serif font-semibold text-sm">Metacognition</span><span class="ml-auto kbd text-slate-400">Stage1 cheap → Stage2 diagnose → γ</span></div>
+        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-blue-500"><span class="kbd w-8 text-center">L4</span><span class="font-serif font-semibold text-sm">Global Workspace</span><span class="ml-auto kbd text-slate-400">coalition → winner broadcast</span></div>
+        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-emerald-500"><span class="kbd w-8 text-center">L3</span><span class="font-serif font-semibold text-sm">Specialists</span><span class="ml-auto kbd text-slate-400">Embodied · Affect · Memory · Skills · KG · Counterfactual</span></div>
+        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-orange-500"><span class="kbd w-8 text-center">L2</span><span class="font-serif font-semibold text-sm">State Validation</span><span class="ml-auto kbd text-slate-400">cetasika · nafs · affordance filter</span></div>
+        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-sky-500"><span class="kbd w-8 text-center">L1</span><span class="font-serif font-semibold text-sm">Provenance Ledger</span><span class="ml-auto kbd text-slate-400">span binding · coverage ≥95%</span></div>
+        <div class="glass rounded-xl p-3 flex items-center gap-3 border-l-4 border-l-slate-500"><span class="kbd w-8 text-center">L0</span><span class="font-serif font-semibold text-sm">Frozen LLM</span><span class="ml-auto kbd text-slate-400">any OpenAI-compatible API · fingerprint</span></div>
         <div class="glass rounded-xl p-3 flex items-center gap-3 bg-red-500/5 border border-red-500/20"><i data-lucide="alert-triangle" class="w-4 h-4 text-red-400"></i><span class="kbd text-red-300">Dissolution: energy ≤0.15 + fatigue ≥1.0 → DissolutionError → reassembly ≠ same agent</span></div>
       </div>
 
@@ -218,31 +231,33 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
         <div class="glass rounded-2xl p-4">
           <div class="flex items-center gap-2 mb-3"><i data-lucide="cpu" class="w-4 h-4 text-loop"></i><span class="font-serif font-semibold">Modules — what each does</span></div>
           <div class="grid sm:grid-cols-2 gap-2 text-xs">
-            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">BackendClient</span> <span class="text-slate-500">— curl past Cloudflare 1010, fingerprint drift aborts arm</span></div>
-            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">ProvenanceLedger</span> <span class="text-slate-500">— append-only, attribution_audit, proposal queue</span></div>
-            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">SelfModelService</span> <span class="text-slate-500">— CAS fence rev+1, 3 cause channels, verbatim archive</span></div>
-            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">MonitorGate</span> <span class="text-slate-500">— γ = changed/diagnosed, compliance guard γ=0</span></div>
-            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">EmbodiedState</span> <span class="text-slate-500">— energy floor 0.15, fatigue cap 1.0, affordance_space pre-filter</span></div>
-            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">AffectState</span> <span class="text-slate-500">— valence [-1,1] / arousal [0,1] EMA, [0.5,2.0] multipliers</span></div>
-            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">SkillLibrary + KG</span> <span class="text-slate-500">— cause-tagged, assert-blocked if untagged</span></div>
-            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">Consolidator</span> <span class="text-slate-500">— Light→REM→Counterfactual→Deep, untagged BLOCKED</span></div>
-            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">CounterfactualReplay</span> <span class="text-slate-500">— variant→simulate→regret, pluggable</span></div>
-            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">AgentHarness</span> <span class="text-slate-500">— integrates all, 40/40 livings, model_registry wiring</span></div>
+            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">BackendClient</span> <span class="text-slate-400">— curl past Cloudflare 1010, fingerprint drift aborts arm</span></div>
+            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">ProvenanceLedger</span> <span class="text-slate-400">— append-only, attribution_audit, proposal queue</span></div>
+            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">SelfModelService</span> <span class="text-slate-400">— CAS fence rev+1, 3 cause channels, verbatim archive</span></div>
+            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">MonitorGate</span> <span class="text-slate-400">— γ = changed/diagnosed, compliance guard γ=0</span></div>
+            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">EmbodiedState</span> <span class="text-slate-400">— energy floor 0.15, fatigue cap 1.0, affordance_space pre-filter</span></div>
+            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">AffectState</span> <span class="text-slate-400">— valence [-1,1] / arousal [0,1] EMA, [0.5,2.0] multipliers</span></div>
+            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">SkillLibrary + KG</span> <span class="text-slate-400">— cause-tagged, assert-blocked if untagged</span></div>
+            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">Consolidator</span> <span class="text-slate-400">— Light→REM→Counterfactual→Deep, untagged BLOCKED</span></div>
+            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">CounterfactualReplay</span> <span class="text-slate-400">— variant→simulate→regret, pluggable</span></div>
+            <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><span class="font-semibold text-slate-200">AgentHarness</span> <span class="text-slate-400">— integrates all, 40/40 livings, model_registry wiring</span></div>
           </div>
         </div>
         <div class="glass rounded-2xl p-4">
           <div class="flex items-center gap-2 mb-2"><i data-lucide="network" class="w-4 h-4 text-amber-400"></i><span class="font-serif font-semibold">Cordis — the loom</span><span class="ml-auto kbd px-2 py-1 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">bundles: dsh-base + dsh-mindharness</span></div>
           <p class="text-sm text-slate-400 leading-relaxed"><span class="text-slate-200 font-semibold">6 plugins</span> (provenance, narrative-self, body, metacog, consolidation, dissolution) verified via <span class="font-mono text-xs bg-white/5 px-1.5 py-0.5 rounded">dsh --dump-config</span>. <span class="text-slate-200 font-semibold">Parliament scaffold</span> (9 inserts, 7 packages: perception / memory / affect / planner / habit / narrator / workspace) — many tongues, one harness, witness as arbiter.</p>
           <div class="mt-3 grid grid-cols-3 gap-2">
-            <div class="rounded-lg bg-panel2 p-2 text-center"><div class="kbd text-[10px] text-slate-500">Warp</div><div class="font-serif text-sm font-semibold">5 invariants</div><div class="kbd text-[10px] text-slate-500">mandatory</div></div>
-            <div class="rounded-lg bg-panel2 p-2 text-center"><div class="kbd text-[10px] text-slate-500">Loom</div><div class="font-serif text-sm font-semibold">Cordis</div><div class="kbd text-[10px] text-slate-500">programmable</div></div>
-            <div class="rounded-lg bg-panel2 p-2 text-center"><div class="kbd text-[10px] text-slate-500">Weft</div><div class="font-serif text-sm font-semibold">Your design</div><div class="kbd text-[10px] text-slate-500">choice</div></div>
+            <div class="rounded-lg bg-panel2 p-2 text-center"><div class="kbd text-xs text-slate-400">Warp</div><div class="font-serif text-sm font-semibold">5 invariants</div><div class="kbd text-xs text-slate-400">mandatory</div></div>
+            <div class="rounded-lg bg-panel2 p-2 text-center"><div class="kbd text-xs text-slate-400">Loom</div><div class="font-serif text-sm font-semibold">Cordis</div><div class="kbd text-xs text-slate-400">programmable</div></div>
+            <div class="rounded-lg bg-panel2 p-2 text-center"><div class="kbd text-xs text-slate-400">Weft</div><div class="font-serif text-sm font-semibold">Your design</div><div class="kbd text-xs text-slate-400">choice</div></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <!-- RESULTS -->
 <section id="results" class="py-8 border-t border-white/5 bg-panel/50">
@@ -260,16 +275,17 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
       <div class="glass rounded-2xl p-5">
         <div class="flex items-center justify-between mb-3">
           <span class="font-serif font-semibold">Attribution battery — discriminating subject (laguna-s-2.1-free)</span>
-          <span class="kbd text-slate-500">n=36/arm · 3 seeds · 12 probes · 10k bootstrap</span>
+          <span class="kbd text-slate-400">n=36/arm · 3 seeds · 12 probes · 10k bootstrap</span>
         </div>
-        <div class="h-[260px]"><canvas id="attribChart"></canvas></div>
+        <div class="h-[260px]"><canvas id="attribChart" role="img" aria-label="Attribution battery chart: raw 0.833, nocheck 0.833, withcheck 0.722, sham 0.667" tabindex="0"></canvas></div>
+        <table class="sr-only"><caption>Attribution battery — 36 per arm, 3 seeds</caption><tr><th>Arm</th><th>Accuracy</th><th>CI</th></tr><tr><td>Raw</td><td>0.833</td><td>[0.694,0.944]</td></tr><tr><td>Nocheck</td><td>0.833</td><td>[0.694,0.944]</td></tr><tr><td>Withcheck</td><td>0.722</td><td>[0.583,0.861] — P1 refuted</td></tr><tr><td>Sham</td><td>0.667</td><td>[0.500,0.806]</td></tr></table>
         <div class="mt-3 grid grid-cols-4 gap-2 text-xs">
-          <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><div class="kbd text-slate-500">Raw</div><div class="font-mono font-semibold text-emerald-400">0.833 [0.694,0.944]</div><div class="text-slate-500">30/36</div></div>
-          <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><div class="kbd text-slate-500">Nocheck</div><div class="font-mono font-semibold">0.833 [0.694,0.944]</div><div class="text-emerald-400 text-[11px]">harness is free</div></div>
-          <div class="rounded-lg bg-amber-500/10 p-2.5 border border-amber-500/20"><div class="kbd text-amber-300">Withcheck</div><div class="font-mono font-semibold text-amber-400">0.722 [0.583,0.861]</div><div class="text-red-300 text-[11px]">P1 refuted Δ -0.111</div></div>
-          <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><div class="kbd text-slate-500">Sham</div><div class="font-mono font-semibold text-slate-300">0.667 [0.500,0.806]</div><div class="text-violet-300 text-[11px]">+0.056 channel, n.s.</div></div>
+          <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><div class="kbd text-slate-400">Raw</div><div class="font-mono font-semibold text-emerald-400">0.833 [0.694,0.944]</div><div class="text-slate-400">30/36</div></div>
+          <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><div class="kbd text-slate-400">Nocheck</div><div class="font-mono font-semibold">0.833 [0.694,0.944]</div><div class="text-emerald-400 text-xs">harness is free</div></div>
+          <div class="rounded-lg bg-amber-500/10 p-2.5 border border-amber-500/20"><div class="kbd text-amber-300">Withcheck</div><div class="font-mono font-semibold text-amber-400">0.722 [0.583,0.861]</div><div class="text-red-300 text-xs">P1 refuted Δ -0.111</div></div>
+          <div class="rounded-lg bg-white/5 p-2.5 border border-white/5"><div class="kbd text-slate-400">Sham</div><div class="font-mono font-semibold text-slate-300">0.667 [0.500,0.806]</div><div class="text-violet-300 text-xs">+0.056 channel, n.s.</div></div>
         </div>
-        <p class="text-xs text-slate-400 mt-3 leading-relaxed">Sham separated for first time (veridical vs shuffled): witness is a real channel, just not an improvement here. Prereg extension n=12 seeds / 144 probes per arm (lock <span class="font-mono text-loop2">b06ce867</span>) declares sham contrast primary.</p>
+        <p class="text-xs text-slate-400 mt-3 leading-relaxed">Sham separated for first time (veridical vs shuffled): witness is a real channel, just not an improvement here. Prereg extension n=12 seeds / 144 probes per arm — 960 calls (lock <span class="font-mono text-loop2">b06ce867</span>) declares sham contrast primary. <span class="kbd px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/20">STAGED 2026-09-02 — Groq network block + Zen 429 free-tier queued</span></p>
       </div>
 
       <!-- always-no + living -->
@@ -277,22 +293,22 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
         <div class="glass rounded-2xl p-4">
           <div class="font-serif font-semibold text-sm flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-amber-400"></i> Always-no floor is a property of the instrument</div>
           <div class="mt-3 grid grid-cols-2 gap-2">
-            <div class="rounded-xl bg-panel2 p-3 text-center border border-white/5"><div class="kbd text-slate-500">4/4/4 (8:4)</div><div class="font-mono font-bold text-[20px]">0.667</div><div class="kbd text-[10px] text-slate-500">8/12 by arithmetic</div><div class="font-mono text-xs text-red-300 mt-1">yes_rate 0.000 — 0/72 yes</div></div>
-            <div class="rounded-xl bg-panel2 p-3 text-center border border-white/5"><div class="kbd text-slate-500">3/6/3 (6:6)</div><div class="font-mono font-bold text-[20px]">0.500</div><div class="kbd text-[10px] text-slate-500">floor moved, score followed</div><div class="font-mono text-xs text-red-300 mt-1">yes_rate 0.000 — same</div></div>
+            <div class="rounded-xl bg-panel2 p-3 text-center border border-white/5"><div class="kbd text-slate-400">4/4/4 (8:4)</div><div class="font-mono font-bold text-[20px]">0.667</div><div class="kbd text-xs text-slate-400">8/12 by arithmetic</div><div class="font-mono text-xs text-red-300 mt-1">yes_rate 0.000 — 0/72 yes</div></div>
+            <div class="rounded-xl bg-panel2 p-3 text-center border border-white/5"><div class="kbd text-slate-400">3/6/3 (6:6)</div><div class="font-mono font-bold text-[20px]">0.500</div><div class="kbd text-xs text-slate-400">floor moved, score followed</div><div class="font-mono text-xs text-red-300 mt-1">yes_rate 0.000 — same</div></div>
           </div>
           <p class="text-xs text-slate-400 mt-2">5/6 subjects sat at floor; every null on them guaranteed by construction. Instrument, not harness.</p>
         </div>
         <div class="glass rounded-2xl p-4">
           <div class="font-serif font-semibold text-sm flex items-center gap-2"><i data-lucide="activity" class="w-4 h-4 text-loop2"></i> Living sessions — 40/40 replicated</div>
           <div class="mt-3 grid grid-cols-2 gap-2 text-xs">
-            <div class="rounded-lg bg-white/5 p-2.5"><div class="kbd text-slate-500">Coverage</div><div class="font-mono font-bold text-emerald-400">40/40 · 1.000</div></div>
-            <div class="rounded-lg bg-white/5 p-2.5"><div class="kbd text-slate-500">SM revisions</div><div class="font-mono font-bold">7 · cause-signed</div></div>
-            <div class="rounded-lg bg-white/5 p-2.5"><div class="kbd text-slate-500">Energy / Fatigue</div><div class="font-mono font-bold"><span class="text-amber-400">0.15</span> / <span class="text-red-400">1.00</span></div></div>
-            <div class="rounded-lg bg-white/5 p-2.5"><div class="kbd text-slate-500">Valence / Arousal</div><div class="font-mono font-bold">+0.148 / 0.221</div></div>
-            <div class="rounded-lg bg-white/5 p-2.5"><div class="kbd text-slate-500">Memories</div><div class="font-mono font-bold">31 → 29 (replicated)</div></div>
-            <div class="rounded-lg bg-emerald-500/10 p-2.5 border border-emerald-500/20"><div class="kbd text-emerald-300">γ</div><div class="font-mono font-bold text-emerald-400">0 · healthy silence</div><div class="kbd text-[10px] text-slate-500">monitor correctly silent</div></div>
+            <div class="rounded-lg bg-white/5 p-2.5"><div class="kbd text-slate-400">Coverage</div><div class="font-mono font-bold text-emerald-400">40/40 · 1.000</div></div>
+            <div class="rounded-lg bg-white/5 p-2.5"><div class="kbd text-slate-400">SM revisions</div><div class="font-mono font-bold">7 · cause-signed</div></div>
+            <div class="rounded-lg bg-white/5 p-2.5"><div class="kbd text-slate-400">Energy / Fatigue</div><div class="font-mono font-bold"><span class="text-amber-400">0.15</span> / <span class="text-red-400">1.00</span></div></div>
+            <div class="rounded-lg bg-white/5 p-2.5"><div class="kbd text-slate-400">Valence / Arousal</div><div class="font-mono font-bold">+0.148 / 0.221</div></div>
+            <div class="rounded-lg bg-white/5 p-2.5"><div class="kbd text-slate-400">Memories</div><div class="font-mono font-bold">31 → 29 (replicated)</div></div>
+            <div class="rounded-lg bg-emerald-500/10 p-2.5 border border-emerald-500/20"><div class="kbd text-emerald-300">γ</div><div class="font-mono font-bold text-emerald-400">0 · healthy silence</div><div class="kbd text-xs text-slate-400">monitor correctly silent</div></div>
           </div>
-          <div class="mt-2 kbd text-[11px] text-slate-500">nemotron-3-ultra-free (Zen) + gpt-oss-120b (Groq) — different arch, provider, decoding → same attractor. Not artifact.</div>
+          <div class="mt-2 kbd text-xs text-slate-400">nemotron-3-ultra-free (Zen) + gpt-oss-120b (Groq) — different arch, provider, decoding → same attractor. Not artifact.</div>
         </div>
       </div>
     </div>
@@ -307,17 +323,19 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
         <div class="flex-1 min-w-[260px] glass rounded-xl p-3">
           <div class="kbd text-slate-400">Four numbers that tell you if harness is working</div>
           <div class="mt-2 grid grid-cols-2 gap-2 text-xs">
-            <div class="rounded-lg bg-panel2 p-2"><div class="kbd text-slate-500">Coverage</div><div class="font-mono">spans with refs / total</div><div class="text-slate-500">Is witness bound?</div></div>
-            <div class="rounded-lg bg-panel2 p-2"><div class="kbd text-slate-500">γ</div><div class="font-mono">changed / diagnosed</div><div class="text-slate-500">Does watching steer?</div></div>
-            <div class="rounded-lg bg-panel2 p-2"><div class="kbd text-slate-500">Attribution Δ</div><div class="font-mono">withcheck − nocheck</div><div class="text-slate-500">Does content matter beyond format?</div></div>
-            <div class="rounded-lg bg-panel2 p-2"><div class="kbd text-slate-500">Regret</div><div class="font-mono">counterfactual − actual</div><div class="text-slate-500">Does otherwise calibrate?</div></div>
+            <div class="rounded-lg bg-panel2 p-2"><div class="kbd text-slate-400">Coverage</div><div class="font-mono">spans with refs / total</div><div class="text-slate-400">Is witness bound?</div></div>
+            <div class="rounded-lg bg-panel2 p-2"><div class="kbd text-slate-400">γ</div><div class="font-mono">changed / diagnosed</div><div class="text-slate-400">Does watching steer?</div></div>
+            <div class="rounded-lg bg-panel2 p-2"><div class="kbd text-slate-400">Attribution Δ</div><div class="font-mono">withcheck − nocheck</div><div class="text-slate-400">Does content matter beyond format?</div></div>
+            <div class="rounded-lg bg-panel2 p-2"><div class="kbd text-slate-400">Regret</div><div class="font-mono">counterfactual − actual</div><div class="text-slate-400">Does otherwise calibrate?</div></div>
           </div>
-          <div class="kbd text-[10px] text-slate-500 mt-2">Coverage without γ = ledger no one checks. γ without sham = steering that might be format compliance. All four together are minimal set for answerable, steerable, honest, mortal.</div>
+          <div class="kbd text-xs text-slate-400 mt-2">Coverage without γ = ledger no one checks. γ without sham = steering that might be format compliance. All four together are minimal set for answerable, steerable, honest, mortal.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <!-- PAPERS -->
 <section id="papers" class="py-8">
@@ -331,29 +349,31 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
     </div>
     <div class="grid md:grid-cols-3 gap-4">
       <article class="glass rounded-2xl p-5 card-hover flex flex-col">
-        <div class="flex items-center gap-2"><span class="kbd px-2 py-1 rounded bg-blue-500 text-white text-[11px]">v2 empirical</span><span class="kbd text-slate-500 ml-auto">21 pp · 23 bib</span></div>
+        <div class="flex items-center gap-2"><span class="kbd px-2 py-1 rounded bg-blue-500 text-white text-xs">v2 empirical</span><span class="kbd text-slate-400 ml-auto">21 pp · 23 bib</span></div>
         <h3 class="font-serif font-semibold leading-tight mt-3">Witnessed Introspection in Assembled Language-Agent Systems</h3>
         <p class="text-sm text-slate-400 mt-2 leading-relaxed flex-1">S126 battery (raw 1.000 vs harnessed 0.667), sham control, γ-gate, living 40/40 replicated, composite P1+P2. Tagged <span class="font-mono text-xs bg-white/5 px-1.5 py-0.5 rounded">paper-v2-final</span>.</p>
         <div class="mt-4 flex flex-wrap gap-1.5"><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">attribution Δ</span><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">CII 0.0</span><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">sham wired</span></div>
-        <div class="mt-4 kbd text-[11px] text-slate-500">paper_v2/main.pdf · 328K · R1/R2 addressed</div>
+        <div class="mt-4 kbd text-xs text-slate-400">paper_v2/main.pdf · 328K · R1/R2 addressed</div>
       </article>
       <article class="glass rounded-2xl p-5 card-hover flex flex-col border-loop/20">
-        <div class="flex items-center gap-2"><span class="kbd px-2 py-1 rounded bg-violet-500 text-white text-[11px]">v3 program</span><span class="kbd text-slate-500 ml-auto">32 pp · 25 bib</span></div>
+        <div class="flex items-center gap-2"><span class="kbd px-2 py-1 rounded bg-violet-500 text-white text-xs">v3 program</span><span class="kbd text-slate-400 ml-auto">32 pp · 25 bib</span></div>
         <h3 class="font-serif font-semibold leading-tight mt-3">The Dynamic Reflexive Harness: Five Invariants from Molecules to Markets to Machines</h3>
         <p class="text-sm text-slate-400 mt-2 leading-relaxed flex-1">Empirical core inside full program: unreliable narrator, reflexive dynamics, 5 invariants, Cordis loom (App. A), Research Mirror (App. B), agency.</p>
         <div class="mt-4 flex flex-wrap gap-1.5"><span class="kbd px-2 py-1 rounded bg-violet-500/15 text-violet-300 border border-violet-500/20">warp / weft / loom</span><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">State→harness</span></div>
-        <div class="mt-4 kbd text-[11px] text-slate-500">paper_v3/main.pdf · 388K · roadmap table Fig.1</div>
+        <div class="mt-4 kbd text-xs text-slate-400">paper_v3/main.pdf · 388K · roadmap table Fig.1</div>
       </article>
       <article class="glass rounded-2xl p-5 card-hover flex flex-col border-amber-500/20 bg-amber-500/[0.03]">
-        <div class="flex items-center gap-2"><span class="kbd px-2 py-1 rounded bg-amber-500 text-ink text-[11px]">5organs theory · LIVE</span><span class="kbd text-slate-500 ml-auto">38 pp · 38 bib</span></div>
+        <div class="flex items-center gap-2"><span class="kbd px-2 py-1 rounded bg-amber-500 text-ink text-xs">5organs theory · LIVE</span><span class="kbd text-slate-400 ml-auto">38 pp · 38 bib</span></div>
         <h3 class="font-serif font-semibold leading-tight mt-3">The Dynamic Reflexive Loop and the Five Organs: One Loop at Every Scale</h3>
         <p class="text-sm text-slate-400 mt-2 leading-relaxed flex-1">Why the five appear at every scale, falsifiability matrix 5×3 (synapse/circuit/harness × organs), universe as largest loop asked not claimed, 6 TikZ + 10-figure gallery.</p>
         <div class="mt-4 flex flex-wrap gap-1.5"><span class="kbd px-2 py-1 rounded bg-amber-500/15 text-amber-300 border border-amber-500/20">loopblue tokens</span><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10">Falsifiability §</span></div>
-        <div class="mt-4 kbd text-[11px] text-slate-500">paper_5organs/main.pdf · 404K · 0 errors · hedged</div>
+        <div class="mt-4 kbd text-xs text-slate-400">paper_5organs/main.pdf · 404K · 0 errors · hedged</div>
       </article>
     </div>
   </div>
 </section>
+
+
 
 <!-- RESEARCH — filterable -->
 <section class="py-8 border-t border-white/5 bg-panel/50">
@@ -364,12 +384,12 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
         <h2 class="font-serif font-bold text-[30px] leading-none mt-1">Research synthesis</h2>
       </div>
       <div class="flex gap-1.5 flex-wrap" id="research-filters">
-        <button data-f="all" class="rf kbd px-3 py-1.5 rounded-full bg-white text-ink cursor-pointer">All</button>
-        <button data-f="core" class="rf kbd px-3 py-1.5 rounded-full glass text-slate-300 cursor-pointer">Core 4</button>
-        <button data-f="scale" class="rf kbd px-3 py-1.5 rounded-full glass text-slate-300 cursor-pointer">Scale</button>
-        <button data-f="tradition" class="rf kbd px-3 py-1.5 rounded-full glass text-slate-300 cursor-pointer">Traditions</button>
-        <button data-f="clinical" class="rf kbd px-3 py-1.5 rounded-full glass text-slate-300 cursor-pointer">Clinical</button>
-        <button data-f="meta" class="rf kbd px-3 py-1.5 rounded-full glass text-slate-300 cursor-pointer">Meta</button>
+        <button data-f="all" aria-pressed="true" class="rf kbd px-3 py-1.5 rounded-full bg-white text-ink cursor-pointer">All</button>
+        <button data-f="core" aria-pressed="false" class="rf kbd px-3 py-1.5 rounded-full glass text-slate-300 cursor-pointer">Core 4</button>
+        <button data-f="scale" aria-pressed="false" class="rf kbd px-3 py-1.5 rounded-full glass text-slate-300 cursor-pointer">Scale</button>
+        <button data-f="tradition" aria-pressed="false" class="rf kbd px-3 py-1.5 rounded-full glass text-slate-300 cursor-pointer">Traditions</button>
+        <button data-f="clinical" aria-pressed="false" class="rf kbd px-3 py-1.5 rounded-full glass text-slate-300 cursor-pointer">Clinical</button>
+        <button data-f="meta" aria-pressed="false" class="rf kbd px-3 py-1.5 rounded-full glass text-slate-300 cursor-pointer">Meta</button>
       </div>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3" id="research-grid">
@@ -377,6 +397,8 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
     </div>
   </div>
 </section>
+
+
 
 <!-- PREREG QUEUE -->
 <section class="py-8">
@@ -395,13 +417,13 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
         <div class="glass rounded-2xl p-4">
           <div class="font-serif font-semibold text-sm">Priority for stable provider</div>
           <ol class="mt-3 space-y-2 text-sm">
-            <li class="flex gap-2"><span class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">1</span><span class="flex-1"><strong>P-Barzakh</strong> <span class="text-slate-500">— offline, 0 calls, lock tonight</span></span></li>
-            <li class="flex gap-2"><span class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">2</span><span class="flex-1"><strong>P-Pattern</strong> <span class="text-slate-500">— offline drift</span></span></li>
-            <li class="flex gap-2"><span class="w-6 h-6 rounded-full bg-amber-500 text-ink flex items-center justify-center text-xs font-bold">3</span><span class="flex-1"><strong>Sham n=12</strong> <span class="text-slate-500">— cheapest paid (960 calls)</span></span></li>
-            <li class="flex gap-2"><span class="w-6 h-6 rounded-full bg-loop text-white flex items-center justify-center text-xs font-bold">4</span><span class="flex-1"><strong>P-Ego / P-Habit</strong> <span class="text-slate-500">— 36 probes/arm</span></span></li>
-            <li class="flex gap-2"><span class="w-6 h-6 rounded-full bg-violet-500 text-white flex items-center justify-center text-xs font-bold">5</span><span class="flex-1"><strong>200-turn life</strong> <span class="text-slate-500">— most expensive, existential</span></span></li>
+            <li class="flex gap-2"><span class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">1</span><span class="flex-1"><strong>P-Barzakh</strong> <span class="text-slate-400">— offline, 0 calls, lock tonight</span></span></li>
+            <li class="flex gap-2"><span class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">2</span><span class="flex-1"><strong>P-Pattern</strong> <span class="text-slate-400">— offline drift</span></span></li>
+            <li class="flex gap-2"><span class="w-6 h-6 rounded-full bg-amber-500 text-ink flex items-center justify-center text-xs font-bold">3</span><span class="flex-1"><strong>Sham n=12</strong> <span class="text-slate-400">— staged 960 calls · b06ce867 · Groq block / Zen 429 queued</span> <span class="kbd ml-1 px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/20 text-xs">STAGED</span></span></li>
+            <li class="flex gap-2"><span class="w-6 h-6 rounded-full bg-loop text-white flex items-center justify-center text-xs font-bold">4</span><span class="flex-1"><strong>P-Ego / P-Habit</strong> <span class="text-slate-400">— 36 probes/arm</span></span></li>
+            <li class="flex gap-2"><span class="w-6 h-6 rounded-full bg-violet-500 text-white flex items-center justify-center text-xs font-bold">5</span><span class="flex-1"><strong>200-turn life</strong> <span class="text-slate-400">— most expensive, existential</span></span></li>
           </ol>
-          <div class="mt-3 p-2.5 rounded-lg bg-ink border border-white/5 font-mono text-xs text-slate-400"><span class="text-slate-500">$</span> python3 pilot/prediction_lock.py --prereg experiments/BARZAKH_PREREGISTRATION.md</div>
+          <div class="mt-3 p-2.5 rounded-lg bg-ink border border-white/5 font-mono text-xs text-slate-400"><span class="text-slate-400">$</span> python3 pilot/prediction_lock.py --prereg experiments/BARZAKH_PREREGISTRATION.md</div>
         </div>
         <div class="glass rounded-2xl p-4">
           <div class="font-serif font-semibold text-sm">Science suite — every claim → checkable test</div>
@@ -418,6 +440,8 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
   </div>
 </section>
 
+
+
 <!-- LANDSCAPE -->
 <section class="py-8 border-t border-white/5 bg-panel/50">
   <div class="max-w-[1280px] mx-auto px-4 sm:px-6">
@@ -431,6 +455,8 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
     <div class="grid md:grid-cols-3 gap-3" id="landscape-grid"></div>
   </div>
 </section>
+
+
 
 <!-- SYNTHESIS MAP -->
 <section class="py-8">
@@ -447,7 +473,7 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
         <div class="rounded-xl bg-white/5 border border-white/5 p-4">
           <div class="kbd text-slate-400">One loop at every scale</div>
           <div class="font-mono text-xs mt-2 text-slate-300">Ca²⁺ → synapse → parliament → price → hallucination</div>
-          <div class="text-xs text-slate-500 mt-2">Each level's <strong class="text-slate-300">broadcast → next input</strong>, <strong class="text-slate-300">consolidation → next boundary</strong>, <strong class="text-slate-300">state → next bias</strong>. Lose one organ → confabulation / forgetting / saturation / runaway / inert watching — same pathology, different name.</div>
+          <div class="text-xs text-slate-400 mt-2">Each level's <strong class="text-slate-300">broadcast → next input</strong>, <strong class="text-slate-300">consolidation → next boundary</strong>, <strong class="text-slate-300">state → next bias</strong>. Lose one organ → confabulation / forgetting / saturation / runaway / inert watching — same pathology, different name.</div>
         </div>
         <div class="rounded-xl bg-amber-500/5 border border-amber-500/20 p-4">
           <div class="kbd text-amber-300">Only real choice</div>
@@ -455,25 +481,24 @@ tailwind.config={theme:{extend:{colors:{ink:"#020617",panel:"#0F172A",panel2:"#1
           <div class="text-xs text-slate-400 mt-2">Not choosing at now from neutral menu (menu rigged by rehearsal, vote 200ms before "I decided"). Veto window (~150ms) · witness between nows · highway you pave by what you replay. Pick what you rehearse; protect sleep; buy BDNF; externalize witness; never let fast loop grade homework unwatched.</div>
         </div>
       </div>
-      <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-mono">
-        <span class="px-2 py-1 rounded bg-ink border border-white/5 text-slate-500">86B human ~1 exabyte EM to map — wiring ≠ behavior</span>
-        <span class="px-2 py-1 rounded bg-ink border border-white/5 text-slate-500">118 neuropeptides in 302 neurons = AffectState in code</span>
-        <span class="px-2 py-1 rounded bg-ink border border-white/5 text-slate-500">Energy 0.15 without dissolution = evidentiary, not existential — 200-turn irreversible queued</span>
+      <div class="mt-4 flex flex-wrap gap-2 text-xs font-mono">
+        <span class="px-2 py-1 rounded bg-ink border border-white/5 text-slate-400">86B human ~1 exabyte EM to map — wiring ≠ behavior</span>
+        <span class="px-2 py-1 rounded bg-ink border border-white/5 text-slate-400">118 neuropeptides in 302 neurons = AffectState in code</span>
+        <span class="px-2 py-1 rounded bg-ink border border-white/5 text-slate-400">Energy 0.15 without dissolution = evidentiary, not existential — 200-turn irreversible queued</span>
         <span class="px-2 py-1 rounded bg-amber-500/10 border border-amber-500/20 text-amber-300">Instruments map loops; reality fills space error leaves vacant.</span>
       </div>
     </div>
   </div>
 </section>
-
+</main>
 <footer class="py-8 border-t border-white/5">
   <div class="max-w-[1280px] mx-auto px-4 sm:px-6">
     <div class="flex flex-wrap items-center justify-between gap-3">
-      <div class="kbd text-slate-500">Built by Shehzad Ahmed with Sisyphus (Muse Spark 1.2) · 2026-08-27 · 78/78 green · EU AI Act Art.50 eff. Aug 2 2026 made provenance law — field learning watermarking ≠ ledger</div>
-      <div class="flex items-center gap-2"><span class="kbd px-2.5 py-1 rounded-full bg-white text-ink">Next: bash HANDOFF.sh</span><span class="kbd px-2.5 py-1 rounded-full glass text-slate-300">then sham 3-seed on discriminating subject</span></div>
+      <div class="kbd text-slate-400">Built by Shehzad Ahmed with Sisyphus (Muse Spark 1.2) · 2026-08-27 · 78/78 green · EU AI Act Art.50 eff. Aug 2 2026 made provenance law — field learning watermarking ≠ ledger</div>
+      <div class="flex items-center gap-2"><span class="kbd px-2.5 py-1 rounded-full bg-white text-ink">Next: bash HANDOFF.sh</span><span class="kbd px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20">Sham n=12 staged — wait paid window (Zen reachable but 8k cap)</span></div>
     </div>
   </div>
 </footer>
-
 <script>
 lucide.createIcons();
 
@@ -487,6 +512,8 @@ const wheelData=[
 ];
 const dot=document.getElementById('wd-dot'), title=document.getElementById('wd-title'), body=document.getElementById('wd-body'), meta=document.getElementById('wd-meta');
 document.querySelectorAll('#wheel g[data-idx]').forEach(g=>{
+  g.addEventListener('focus',()=>{const d=wheelData[+g.dataset.idx];dot.style.background=d.color;title.textContent=d.title;body.textContent=d.body;meta.textContent=d.meta;});
+  g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();g.dispatchEvent(new Event('mouseenter'));}});
   g.addEventListener('mouseenter',()=>{
     const d=wheelData[+g.dataset.idx];
     dot.style.background=d.color; title.textContent=d.title; body.textContent=d.body; meta.textContent=d.meta;
@@ -499,7 +526,7 @@ document.querySelectorAll('#wheel g[data-idx]').forEach(g=>{
 
 // attribution chart
 const ctx=document.getElementById('attribChart').getContext('2d');
-new Chart(ctx,{type:'bar',data:{labels:['Raw','Nocheck','Withcheck','Sham (shuffled)'],datasets:[{label:'Accuracy',data:[0.833,0.833,0.722,0.667],backgroundColor:['#22C55E','#334155','#F59E0B','#475569'],borderRadius:8,barPercentage:.62}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} ` + (c.dataIndex===2? '— P1 refuted Δ -0.111':'') } }},scales:{y:{min:0,max:1,grid:{color:'rgba(255,255,255,.06)'},ticks:{color:'#94A3B8',callback:v=>v.toFixed(2)}},x:{grid:{display:false},ticks:{color:'#CBD5E1',font:{family:'JetBrains Mono',size:11}}}}} });
+new Chart(ctx,{type:'bar',data:{labels:['Raw','Nocheck','Withcheck','Sham (shuffled)'],datasets:[{label:'Accuracy',data:[0.833,0.833,0.722,0.667],backgroundColor:['#22C55E','#334155','#F59E0B','#475569'],borderRadius:8,barPercentage:.62}]},options:{responsive:true,maintainAspectRatio:false,animation: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? false : {},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} ` + (c.dataIndex===2? '— P1 refuted Δ -0.111':'') } }},scales:{y:{min:0,max:1,grid:{color:'rgba(255,255,255,.06)'},ticks:{color:'#94A3B8',callback:v=>v.toFixed(2)}},x:{grid:{display:false},ticks:{color:'#CBD5E1',font:{family:'JetBrains Mono',size:11}}}}} });
 
 // research grid
 const research=[
@@ -525,20 +552,23 @@ const research=[
 const grid=document.getElementById('research-grid');
 function render(f){
   grid.innerHTML=research.filter(r=>f==='all'||r.f===f).map(r=>`
-    <div class="glass rounded-2xl p-4 card-hover">
-      <div class="flex items-center gap-2"><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10 text-[11px]">${r.f}</span><span class="ml-auto kbd text-slate-500">${r.k[0]} lines</span></div>
+    <div class="glass rounded-2xl p-4 card-hover cursor-pointer">
+      <div class="flex items-center gap-2"><span class="kbd px-2 py-1 rounded bg-white/5 border border-white/10 text-xs">${r.f}</span><span class="ml-auto kbd text-slate-400">${r.k[0]} lines</span></div>
       <div class="font-serif font-semibold text-sm leading-tight mt-2">${r.t}</div>
       <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">${r.d}</p>
-      <div class="mt-3 flex gap-1.5 flex-wrap">${r.k.slice(1).map(k=>`<span class="kbd px-2 py-1 rounded bg-panel2 border border-white/5 text-[11px]">${k}</span>`).join('')}</div>
+      <div class="mt-3 flex gap-1.5 flex-wrap">${r.k.slice(1).map(k=>`<span class="kbd px-2 py-1 rounded bg-panel2 border border-white/5 text-xs">${k}</span>`).join('')}</div>
     </div>
   `).join('');
+
+
   lucide.createIcons();
 }
 render('all');
 document.querySelectorAll('.rf').forEach(b=>{
   b.addEventListener('click',()=>{
-    document.querySelectorAll('.rf').forEach(x=>{x.className='rf kbd px-3 py-1.5 rounded-full glass text-slate-300 cursor-pointer'});
+    document.querySelectorAll('.rf').forEach(x=>{x.className='rf kbd px-3 py-1.5 rounded-full glass text-slate-400 cursor-pointer'; x.setAttribute('aria-pressed','false');});
     b.className='rf kbd px-3 py-1.5 rounded-full bg-white text-ink cursor-pointer';
+    b.setAttribute('aria-pressed','true');
     render(b.dataset.f);
   });
 });
@@ -553,18 +583,22 @@ const preregs=[
   {n:'6',t:'Persona drift battery',q:'Choi >30% in 12 turns — CAS + verbatim_reinject flat vs drift',p:'P1',c:'exp_persona_drift.py --seeds 3'},
   {n:'7',t:'Cross-model replication of x-preview 1.000',q:'Screen → 3-seed on discriminating subjects',p:'P1',c:'exp_s126_v3.py --model <candidate>'},
   {n:'8',t:'P-Barzakh — isnād-tagged re-injection',q:'Tagged vs untagged vs sham on Choi battery. OFFLINE, 0 calls.',p:'P0',c:'BARZAKH_PREREGISTRATION.md — ready to lock'},
-  {n:'9',t:'Science suite P-Ego / P-Habit / P-Coupled / P-Pattern / P-Turnover',q:'Ego illusion, habit vs power, perturbing, pattern-not-stuff, sleep is save',p:'P1',c:'SCIENCE_PREREG_SUITE 2026-08-30 — drafts ready'},
+  {n:'9a',t:'P-Pattern — Maintained highway vs unmaintained (turnover table)',q:'Pattern rebuilt with new stuff in same relations. OFFLINE, 0 calls, 12 turns × 3 seeds × 4 probes.',p:'LOCKED',c:'✓ a5a116ec459d8d423ea6c48679f88994d871d5e2ef2e31fefb1a1701f7acef50 — pilot/locks/p-pattern.lock.json'},
+  {n:'9b',t:'P-Turnover — Sleep is the save (gene-expression two-speed)',q:'Sleep-allowed vs deprived vs sham-sleep. OFFLINE, 0 calls, SHY + replay.',p:'LOCKED',c:'✓ 54cfc43aa28fe56827cece9f5a0ccba021bab5129f7f4ea4ef2f409d0647061c — pilot/locks/p-turnover.lock.json'},
+  {n:'9c',t:'Science suite remainder: P-Ego / P-Habit / P-Coupled',q:'Ego illusion, habit vs power, perturbing — drafts ready for next lock',p:'P1',c:'P-EGO / P-HABIT / P-COUPLED — DRAFT, not yet SHA-locked'},
 ];
 document.getElementById('prereg-list').innerHTML=preregs.map(r=>`
-  <div class="glass rounded-xl p-3 flex gap-3 items-start card-hover">
-    <span class="w-7 h-7 rounded-full ${r.p==='P0'?'bg-amber-500 text-ink':'bg-panel2 text-slate-300 border border-white/10'} flex items-center justify-center text-xs font-bold shrink-0">${r.n}</span>
+  <div class="glass rounded-xl p-3 flex gap-3 items-start card-hover cursor-pointer focus-visible:outline-none" tabindex="0" role="button" aria-label="${r.t} — ${r.p}">
+    <span class="w-7 h-7 rounded-full ${r.p==='LOCKED'?'bg-emerald-500 text-white':r.p==='P0'?'bg-amber-500 text-ink':'bg-panel2 text-slate-300 border border-white/10'} flex items-center justify-center text-xs font-bold shrink-0">${r.n}</span>
     <div class="flex-1 min-w-0">
-      <div class="font-serif font-semibold text-sm leading-tight">${r.t} <span class="kbd ml-1 px-1.5 py-0.5 rounded ${r.p==='P0'?'bg-amber-500/15 text-amber-300 border border-amber-500/20':'bg-white/5 text-slate-400 border border-white/10'}">${r.p}</span></div>
+      <div class="font-serif font-semibold text-sm leading-tight">${r.t} <span class="kbd ml-1 px-1.5 py-0.5 rounded ${r.p==='LOCKED'?'bg-emerald-500/15 text-emerald-300 border border-emerald-500/20':r.p==='P0'?'bg-amber-500/15 text-amber-300 border border-amber-500/20':'bg-white/5 text-slate-400 border border-white/10'}">${r.p}</span></div>
       <div class="text-xs text-slate-400 mt-1 leading-relaxed">${r.q}</div>
-      <div class="font-mono text-[11px] text-slate-500 mt-1.5 truncate">${r.c}</div>
+      <div class="font-mono text-xs ${r.p==='LOCKED'?'text-emerald-300':'text-slate-400'} mt-1.5 truncate">${r.c}</div>
     </div>
   </div>
 `).join('');
+document.querySelectorAll('#prereg-list [role="button"]').forEach(el=>{ el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault(); el.click();}}); });
+
 
 // landscape
 const landscape=[
@@ -579,12 +613,13 @@ const landscape=[
   {t:'Tononi SHY + OpenClaw Dreaming',d:'Sleep is price of plasticity: downscale + replay. OpenClaw Light→REM→Deep, audit UI.',k:'Temporal structure carries benefit'},
 ];
 document.getElementById('landscape-grid').innerHTML=landscape.map(l=>`
-  <div class="glass rounded-2xl p-4 card-hover">
+  <div class="glass rounded-2xl p-4 card-hover cursor-pointer">
     <div class="font-serif font-semibold text-sm leading-tight">${l.t}</div>
     <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">${l.d}</p>
-    <div class="mt-3 kbd text-[11px] px-2 py-1 rounded bg-white/5 border border-white/10 text-slate-400 inline-block">${l.k}</div>
+    <div class="mt-3 kbd text-xs px-2 py-1 rounded bg-white/5 border border-white/10 text-slate-400 inline-block">${l.k}</div>
   </div>
 `).join('');
+
 </script>
 </body>
 </html>
