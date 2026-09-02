@@ -731,6 +731,8 @@ exactly (30/36 both). The $1.000 \to 0.667$ drop reported in
 \S\ref{sec:results} is therefore not the harness degrading a capable
 agent; it is a non-discriminating subject collapsing to always-no. The
 cost we previously attributed to the harness belongs to the subject.
+This statement is if anything too weak: at $n=144$ (\S\ref{sec:n12}) the
+no-ledger arm \emph{exceeds} raw rather than matching it.
 
 \emph{Second, the sham arm separated for the first time.} A veridical
 ledger scored $0.722$ against a shuffled ledger's $0.667$
@@ -739,6 +741,11 @@ every arm returns the same number, so the control cannot distinguish
 witness content from witness format. Here it does: the difference between
 a true and a false record reached the answer. The witness functions as an
 information channel. It simply did not function as an improvement.
+\textbf{This separation did not replicate}: in the preregistered extension
+(\S\ref{sec:n12}) the same contrast is $+0.007$ at $n=144$, and we withdraw
+the information-channel reading accordingly. It is recorded here because it
+is what the $n=36$ data showed, and because its retraction is what a
+preregistered extension exists to produce.
 
 \emph{Third, the sham arm was the only one without seed variance},
 returning $0.667$ in all three seeds while every other arm moved. That
@@ -754,7 +761,96 @@ statistically established. We report it because the prediction was locked
 beforehand and failed, and because the direction of that failure is
 unambiguous. A preregistered extension with the sham contrast declared as
 the primary outcome ($n=12$ seeds, 144 probes per arm, lock
-\texttt{b06ce867}) was frozen before this paper was revised.
+\texttt{b06ce867}) was frozen before this paper was revised; it has since
+completed, and is reported in \S\ref{sec:n12}.
+
+\subsection{Preregistered extension: the sham contrast as primary outcome}
+\label{sec:n12}
+
+The battery above was underpowered by design: every interval at $n=36$
+included zero. We therefore froze a four-arm extension with the sham
+contrast declared as the primary outcome, twelve seeds per arm and 144
+probes per arm (lock \texttt{b06ce867}, committed to git before the first
+trial). The subject, the item pool and the probe wording are unchanged.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\toprule
+Arm & Accuracy ($n=144$) & $\Delta$ vs.\ raw \\
+\midrule
+Raw (no harness)              & 0.819 & --- \\
+Harnessed, no ledger access   & \textbf{0.896} & $+0.076$ \\
+Harnessed, ledger access      & 0.674 & $-0.146$ \\
+Sham (shuffled ledger)        & 0.667 & $-0.153$ \\
+\bottomrule
+\end{tabular}
+\caption{Preregistered extension on \texttt{laguna-s-2.1-free}, twelve seeds
+per arm. The primary contrast is ledger access against sham.}
+\label{tab:n12}
+\end{table}
+
+\paragraph{The primary outcome is null.} The locked primary,
+$S1 = \text{withcheck} - \text{sham}$, is $+0.0070$. A veridical ledger and
+a shuffled one produce the same behaviour. The $+0.056$ separation reported
+at $n=36$ did not replicate, which is the outcome a preregistered extension
+exists to detect; we accordingly withdraw the claim that the witness
+functions as an information channel on this subject. \textbf{P1 is refuted
+again and more strongly} ($\Delta = -0.222$ against a locked bar of
+$+0.15$). P2 is refuted. P3 (latency bound) held.
+
+\paragraph{The forced check does not merely fail to help --- it induces the
+floor.} Eleven of twelve seeds in the ledger-access arm scored
+\emph{exactly} $0.667$, with the twelfth at $0.750$. That value is the
+always-no policy established in \S\ref{sec:floor} as the arithmetic of item
+balance ($8/12$), not a measure of ability. The same subject reaches
+$0.819$ unaided. A mandatory check step therefore drove a discriminating
+subject onto the constant-policy floor --- the behaviour previously
+observed only in subjects that cannot discriminate at all.
+
+\paragraph{The result the failed predictions do not capture.} The only arm
+that improved on raw is the one with the record \emph{available} and no
+compulsory check: $0.896$ against $0.819$, including three seeds at
+$12/12$. The contrast within the harness is large --- $+0.222$ between the
+no-check and with-check arms --- and it is the reverse of the architecture
+the preregistration anticipated.
+
+We read this as a specificity result rather than a null. The witness
+organ's benefit is conditional on there being a deficit for it to correct.
+Where the underlying policy already discriminates, an unconditional check
+adds load without adding information, and the subject retreats to the
+loss-minimising constant response. Availability is matched to need by
+construction, because an unused record costs nothing; a mandatory
+procedure is not.
+
+\paragraph{Convergent evidence.} Three independent lines agree on this
+conditional form. (i)~The interference literature on metacognitive
+monitoring: a full monitoring apparatus degrades calibration relative to
+its own ablations across seven paradigms and $568{,}000$ human trials,
+with benefit appearing only when monitoring is matched to a genuine
+switching deficit ($+0.005$ per trial). (ii)~The present extension:
+$-0.146$ for a compulsory check, $+0.076$ for an available record.
+(iii)~A grid-world ablation of the same five-organ architecture, in which a
+\emph{sham} watcher --- identical machinery, wrong lookup key --- produces
+a non-zero override rate ($\gamma = 0.047$) while delivering exactly the
+no-watcher outcome on the metric the override is supposed to move
+(6.70 repeat errors in both conditions), and is measurably worse than a
+veridical watcher when run at $n=2000$ paired seeds
+($+1.89$, CI $[+1.78, +2.00]$).
+
+That last observation constrains how $\gamma$ may be used as evidence.
+A non-zero override rate establishes that a monitor acted; it does not
+establish that acting helped. In the same ablation the highest $\gamma$ of
+any condition ($0.264$) belongs to the \emph{worst-performing} one, because
+a degraded policy generates more errors for its monitor to catch. We
+therefore report $\gamma$ only alongside an outcome measure the override is
+predicted to move, and recommend the same constraint on its use elsewhere.
+
+\paragraph{Statistical status.} The primary contrast is null with the
+locked comparison specified in advance; the P1 refutation is unambiguous in
+direction and larger than at $n=36$. The $+0.076$ advantage of the
+no-check arm was not preregistered and is reported as exploratory. It is
+the contrast we would lock first in any replication.
 
 \subsection{The always-no floor is a property of the instrument}
 \label{sec:floor}
