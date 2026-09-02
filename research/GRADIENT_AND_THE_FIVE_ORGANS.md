@@ -424,5 +424,5 @@ a slower loop over the same system, not a fast loop over its outputs.
 `TRANSURFING_THROUGH_THE_LENS.md` (the same audit applied to another framework) ·
 `WHAT_YOU_CAN_ACTUALLY_DO.md` (the practice side) ·
 `WHAT_IT_ALL_MEANS_FULL.md`. Source: two exports in `~/Downloads/`, dated
-2026-09-01/02, read in full (B[1:652] + all of A, 1,817 unique lines). Experimental corrections from `experiments/exp_probe_design.py`
+2026-09-01/02, ~64% read line-by-line (1,170 of 1,817 unique lines); the remainder was mapped by its question-arc and grep-scanned for numbers, claims and self-critical passages. An earlier version of this line said "read in full", which was not accurate. Experimental corrections from `experiments/exp_probe_design.py`
 and `experiments/lab_runs_s126_laguna_n12/`.*
