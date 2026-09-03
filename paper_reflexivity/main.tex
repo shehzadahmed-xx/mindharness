@@ -1,0 +1,287 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{0.6em}{}
+\setlength{\parskip}{0.35em}
+
+\title{\bfseries The Instrument Is Inside:\\
+Reflexivity as a Methodological Constraint}
+\author{Shehzad Ahmed\\\small Independent University, Bangladesh}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Process accounts of nature---that what persists are patterns maintained by
+activity rather than substances that happen to change---are old and, taken
+alone, hard to test. This paper argues that such accounts have one consequence
+which is not merely interpretive: if a system acts on a world that contains it,
+then any instrument built to study that system is also inside it, and this
+predicts a specific, recurring pathology in measurement.
+
+The prediction is that quantities fixed by the \emph{construction} of an
+experiment will be read as properties of the \emph{system}, and that this will
+happen preferentially when the quantity agrees with the hypothesis under test.
+We document six instances from our own laboratory---an item-balance floor read
+as subject incapacity, an unreachable code branch read as an inert monitor, a
+randomised trigger reported as a diagnosis rate, and three others. Every one
+agreed with what we expected. None was audited until an external control forced
+it.
+
+We argue this is not a catalogue of carelessness but the expected signature of
+reflexive measurement, that it identifies a class of controls which are cheap
+and rarely run, and that it licenses a modest metaphysical conclusion and no
+more: the world is such that measurement of self-involving systems fails in a
+patterned way, and the pattern is informative about the measuring, not yet
+about the measured.
+\end{abstract}
+
+\section{There is no view from outside}
+
+The claim is narrow. Consider a system whose actions change the conditions of
+its own next action---a market whose prices are also predictions, a synapse
+whose strength determines which coincidences it can detect, a mind whose
+self-description recruits the evidence that confirms it. For such a system,
+acting and describing are not separable operations. The description enters the
+world described.
+
+This has been said many times: as autopoiesis, as reflexivity in economics, as
+enaction. What is usually drawn from it is interpretive---a recommendation
+about how to think, or a warning about the limits of objectivity.
+
+We want to draw something narrower and more demanding. If there is no outside
+for the system, there is also no outside for the \emph{instrument}. A device
+built to measure a self-involving system is itself a construction with
+parameters, defaults, denominators, and code paths, and those choices enter the
+measurement in the same way the system's actions enter its world. The
+instrument does not merely observe; it contributes structure, and that
+structure appears in the results wearing the same clothes as the findings.
+
+That is testable, because it predicts what the failures will look like.
+
+\section{The prediction}
+
+If instruments are inside, then a distinctive error should recur:
+
+\begin{quote}
+\textbf{Quantities determined by the construction of an experiment will be read
+as properties of the system under study.}
+\end{quote}
+
+And a second, less obvious claim follows, which is what makes the first more
+than a truism. Errors of this kind are not corrected at random. A number that
+\emph{contradicts} the hypothesis is investigated immediately---it is
+surprising, it demands explanation, it recruits attention. A number that
+\emph{agrees} is absorbed. It becomes background. It gets cited rather than
+checked.
+
+So the prediction sharpens:
+
+\begin{quote}
+\textbf{Construction artifacts will survive selectively when they confirm.}
+\end{quote}
+
+This is a claim about the dynamics of a research programme, and a research
+programme is itself a reflexive system: its findings change what it looks at
+next. The prediction is therefore an instance of the thesis, applied to the
+activity of testing the thesis.
+
+\section{Six instances}
+
+The following are from our own work on cognitive architecture, over roughly one
+year of experiments. We report them because they are ours; a catalogue of other
+people's errors would not test the claim that this happens \emph{from inside}.
+
+\paragraph{1. An item-balance floor read as subject incapacity.}
+A battery presented twelve statements---four given, four produced, four
+fabricated---and asked a subject which it had generated. The value $0.667$
+recurred and was read as evidence that subjects fail at self-attribution. It
+appeared in our internal synthesis documents \textbf{108 times}.
+
+It is $8/12$. Eight of the twelve statements have the answer ``no,'' so a
+constant ``no'' scores $0.667$ by arithmetic. Under a frozen contract, two
+subjects showed a ``yes'' rate of $0.000$ across 72 probes, and rebalancing the
+items moved accuracy exactly as the floor moved. Subjects sitting at the floor
+carried no information about the manipulation, and every null measured on them
+had been guaranteed before the run.
+
+The number was a property of our item counts. We read it as a property of
+minds.
+
+\paragraph{2. An unreachable branch read as an inert monitor.}
+A monitor's override required a record entry carrying a particular source tag.
+No code path in the system ever wrote that tag. Instrumented over a full run:
+221 diagnoses, zero qualifying entries, zero overrides. The override rate was
+$0.00$ in all seven experimental variants \emph{including the intact ones}.
+
+We had been reporting that rate as a finding---that monitoring without
+grounding is theatre. The finding was a dead branch. The ablation that
+supposedly demonstrated it removed a component that was already inert, and its
+signature described the full system equally.
+
+\paragraph{3. Ablations that did not share a random stream.}
+Variants shared one global seed, but each consumed a different number of random
+draws, so each faced a different effective environment. One ablation appeared
+to \emph{outperform} the intact system---a result we found interesting and
+theorised about. With streams matched, it underperforms, as predicted.
+
+\paragraph{4. A randomised trigger reported as a diagnosis rate.}
+A revision forced a monitor to fire on a five per cent random draw. The genuine
+detector returned zero on all 288 probes, so every recorded escalation was the
+coin flip, and the reported rate was a random generator tuned to land just
+under the architecture's own healthy ceiling. The number matched the target
+because it had been built to.
+
+\paragraph{5. An absent record read as an absent problem.}
+An ablation removing the system's record reported zero repeat errors---its best
+score on that metric. With no record there is nothing to count against. The
+zero was blindness, and we initially read it as competence.
+
+\paragraph{6. Hand-written strings read as measured drift.}
+A drift experiment computed the distance between two authored lists of text.
+One list had been written to stay similar, the other to degrade. The model's
+output was never used---the response function returned a constant. All seeds
+produced one value per condition, and all four preregistered predictions were
+determined by what had been typed into two lists.
+
+\section{The pattern}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+\toprule
+Artifact & Read as & Actually \\
+\midrule
+$0.667$ & subject incapacity & item balance, $8/12$ \\
+override rate $0.00$ & monitoring is theatre & unreachable branch \\
+ablation outperforms & surprising finding & unshared random stream \\
+diagnosis rate $0.035$ & healthy gating & a $5\%$ coin flip \\
+zero repeat errors & competence & no record to count \\
+drift $0.08$ vs $0.59$ & provenance holds identity & two typed lists \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+Five of six agreed with the hypothesis they were taken to support. The
+exception (3) is instructive: it \emph{disagreed}---an ablation should not
+outperform---and it was noticed quickly, though it was explained rather than
+diagnosed until the streams were checked.
+
+The selection mechanism is attention. Disconfirming numbers are salient and get
+scrutiny; confirming numbers are absorbed into the background and become
+infrastructure. \textbf{Infrastructure is what nobody audits.} And the
+quantities in the list above are all infrastructure: a denominator, a default,
+a source tag, a seed, a comparison list.
+
+We note, in the spirit of the thesis, that the author of this paper committed
+two of the six while working on the other four, and twice committed
+unreviewed changes to a shared threshold immediately after writing a note
+about that exact hazard. Knowing the failure mode does not confer immunity from
+it. Only the external controls caught anything: preregistration committed
+before data existed, seed ranges disjoint from exploratory ones, and sham arms
+holding a component's form while destroying its content.
+
+\section{What this licenses, and what it does not}
+
+We want to be exact about the size of the conclusion.
+
+\paragraph{What is established.} A pattern in the measurement of self-involving
+systems: construction artifacts occur, they are read as properties of the
+system, and they survive selectively when they confirm. This is a claim about
+epistemology and method, supported by instances, and it is the claim we defend.
+
+\paragraph{What is suggested but not established.} That the pattern follows
+from reflexivity as such rather than from ordinary human error. Our six cases
+are consistent with both. The reflexive account predicts something the error
+account does not---that the rate should be higher for systems that include the
+observer than for systems that do not---and we have not measured that
+comparison. It is the obvious next study and we have not done it.
+
+\paragraph{What is not established, and is not claimed.} Anything about what
+reality is made of. A process metaphysics motivated the prediction in \S2, and
+the prediction held. That is a reason to keep the metaphysics on the table as a
+generator of hypotheses. It is not evidence that reality is process rather than
+substance, and no experiment reported here could be. We have found a regularity
+in how measurement fails; the inference from that to the constitution of the
+world requires premises we do not have and would not know how to test.
+
+We state this because the temptation runs the other way. A framework that
+correctly predicts a failure in its own laboratory feels vindicated, and the
+feeling is not proportional to the evidence. The same asymmetry that made five
+confirming artifacts invisible would make a confirming metaphysics invisible
+too.
+
+\section{Objections}
+
+\paragraph{``This is just experimental error.''} Partly, and we do not resist
+the deflation. The contribution is not that mistakes occur but that they occur
+in a direction: five of six in agreement with the hypothesis. If they were
+undirected, disconfirming artifacts should be equally common, and they should
+survive as long. They do not, because they are investigated.
+
+\paragraph{``Preregistration already solves this.''} It does not. Four of the
+six instances occurred \emph{inside} preregistered studies. A lock fixes the
+prediction and the analysis; it does not check whether the instrument measures
+anything. One of our locks was written after the data it described, on the same
+seeds, with observed values recorded as predictions---an artifact of the
+control system itself.
+
+\paragraph{``The sham is standard.''} In clinical trials, yes. In cognitive
+architecture and interpretability, it is rare. Components are commonly defended
+by evidence that they operate---a monitor fires, a probe separates---and the
+control which would distinguish operating from contributing is usually absent.
+Our companion work reports five experiments in which the sham arm, not the
+treatment arm, carried the result.
+
+\paragraph{``Six is not many.''} It is not. The claim is about a mechanism, and
+six instances with a five-to-one directional skew is weak evidence for a rate
+and reasonable evidence for existence. We report the number we have.
+
+\section{Consequences}
+
+Three of them are cheap and immediate.
+
+\textbf{Audit the numbers that agree with you.} Disagreeing numbers already
+receive scrutiny; the discipline that is missing is the symmetric one. In
+practice: for any quantity that has become load-bearing, derive it from the
+experiment's construction and check whether the construction alone produces it.
+Two of our six would have been caught by dividing.
+
+\textbf{Sham the component, not just the outcome.} Preserve a mechanism's form
+and destroy its content. If nothing changes, the mechanism's activity was not
+its contribution. This is the instrument-level version of a placebo arm and it
+costs one extra condition.
+
+\textbf{Treat infrastructure as claims.} Denominators, defaults, seeds, and
+comparison sets are not neutral scaffolding. In every instance above the
+artifact lived in something nobody thought of as a finding.
+
+\section{Conclusion}
+
+The old claim is that a system acting on a world containing itself has no
+outside. The narrow consequence is that its instruments have no outside either,
+and that this shows up as a specific, directional failure: quantities fixed by
+construction read as properties of the system, surviving when they confirm.
+
+We have six instances from our own work, five of them confirming, none caught
+until an external control forced the issue---and two of them committed while
+documenting the others.
+
+What that tells us about reality is less than it feels like. It tells us the
+world is such that self-involving measurement fails in a patterned way, that
+the pattern is tractable, and that the controls which catch it are cheap and
+seldom used. The larger question---whether what there is are processes that
+look like things, or things that happen to process---is not settled by any of
+this, and we would rather leave it standing than close it with evidence that
+cannot bear the weight.
+
+\end{document}
