@@ -1,0 +1,68 @@
+{
+ "n_seeds": 400,
+ "seed_range": [
+  70001,
+  70400
+ ],
+ "cap": 10,
+ "req_evidence": 2,
+ "grid": 8,
+ "summary": {
+  "damped_with_record": {
+   "win": 0.185,
+   "dist": 4.915,
+   "hits": 46.865,
+   "store": 9.9875,
+   "dropped": 6.1925,
+   "reacquired": 0.51,
+   "net_forgotten": 5.6825,
+   "reacq_rate": 0.05908428997902682
+  },
+  "damped_no_record": {
+   "win": 0.1875,
+   "dist": 4.8425,
+   "hits": 46.465,
+   "store": 9.9875,
+   "dropped": 7.3275,
+   "reacquired": 1.65,
+   "net_forgotten": 5.6775,
+   "reacq_rate": 0.15896512430236265
+  },
+  "undamped": {
+   "win": 0.16,
+   "dist": 4.99,
+   "hits": 59.02,
+   "store": 15.3,
+   "dropped": 0,
+   "reacquired": 0,
+   "net_forgotten": 0,
+   "reacq_rate": 0.0
+  }
+ },
+ "verdicts": [
+  {
+   "id": "B1",
+   "pass": false,
+   "detail": "0.159",
+   "text": "B1  no-record re-acquisition rate > 0.50"
+  },
+  {
+   "id": "B2",
+   "pass": true,
+   "detail": "0.059",
+   "text": "B2  with-record re-acquisition rate < 0.10"
+  },
+  {
+   "id": "B3",
+   "pass": false,
+   "detail": "|5.68| / 7.33 = 0.775",
+   "text": "B3  no-record net forgetting ~ 0 (|net| < 10% of drops)"
+  },
+  {
+   "id": "B5",
+   "pass": false,
+   "detail": "-0.0025 [-0.0125,+0.0050]",
+   "text": "B5  PRIMARY with-record beats no-record on held-out win, CI excl 0"
+  }
+ ]
+}

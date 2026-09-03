@@ -95,7 +95,7 @@ def _key(state, mv, move_fn, n=GRID):
 
 
 def episode(walls, slow, rng, arm, learn=None, discarded=None, sightings=None,
-            stats=None, bias=0.2):
+            stats=None, bias=0.2, ever_dropped=None):
     move = _mover(walls)
     working = deque(maxlen=7)
     state, goal = (0, 0), (GRID - 1, GRID - 1)
@@ -126,9 +126,11 @@ def episode(walls, slow, rng, arm, learn=None, discarded=None, sightings=None,
                 if arm == "damped_with_record" and k in discarded:
                     bar = REQ_EVIDENCE
                 if k not in learn and sightings[k] >= bar:
-                    if k in discarded:
+                    # measured in EVERY arm; only with_record may act on it
+                    if k in ever_dropped:
                         stats["reacquired"] += 1
-                        discarded.discard(k)
+                        ever_dropped.discard(k)
+                    discarded.discard(k)
                     learn[k] = 0.1
                     stats["admitted"] += 1
                 elif k in learn:
@@ -138,8 +140,10 @@ def episode(walls, slow, rng, arm, learn=None, discarded=None, sightings=None,
                     victim = min(learn, key=lambda p: learn[p])
                     del learn[victim]
                     stats["dropped"] += 1
+                    sightings[victim] = 0       # discarding clears its evidence
+                    ever_dropped.add(victim)    # measurement, all arms
                     if arm == "damped_with_record":
-                        discarded.add(victim)   # export destination
+                        discarded.add(victim)   # export destination, this arm only
         state = move(state, final)
         if state == goal:
             break
@@ -149,12 +153,13 @@ def episode(walls, slow, rng, arm, learn=None, discarded=None, sightings=None,
 
 
 def run_seed(seed, arm):
-    slow, discarded, sightings = {}, set(), {}
+    slow, discarded, sightings, ever_dropped = {}, set(), {}, set()
     stats = defaultdict(int)
     trng = random.Random(seed)
     for c in range(TRAIN_CITIES):
         episode(make_world(seed * 1000 + c), slow, trng, arm,
-                learn=slow, discarded=discarded, sightings=sightings, stats=stats)
+                learn=slow, discarded=discarded, sightings=sightings,
+                stats=stats, ever_dropped=ever_dropped)
     holdout = make_world(seed * 1000 + 999)
     r = episode(holdout, dict(slow), random.Random(seed + 555), arm)
     net = stats["dropped"] - stats["reacquired"]
