@@ -49,3 +49,52 @@ bootstrap over seeds, 5000 resamples, α=0.05.
 ## Stopping rule
 
 One run at n=200 seeds plus one sensitivity run. No peeking, no extension.
+
+---
+
+## Outcome (recorded 2026-09-03, seeds 9001–9200)
+
+| | prediction | observed | verdict |
+|---|---|---|---|
+| **I1** | mean delta ≥ +0.15, CI excludes 0 | **+0.1898** [+0.1882, +0.1914], range +0.1616…+0.2267 | **PASS** |
+| **I2** | between-seed interval wider than 0.0570 | width **0.0032** — *narrower* | **FAILED (mine)** |
+| **I3** | with fixed = optimal (0.31), delta < +0.05 | **−0.0218** [−0.0228, −0.0208] | **PASS, past prediction** |
+
+### I1 — the effect replicates
+
++0.1898 across 200 independent master seeds, against +0.2042 from the single
+original stream. The effect is real and stable.
+
+### I2 — my prediction was wrong, and wrong for an instructive reason
+
+I predicted the honest between-seed interval would be *wider* than the original.
+It is 18× **narrower**. The two intervals are not intervals on the same
+quantity: the original bootstraps over **episodes** (noisy single units), this
+one bootstraps over **seed-means** (each already an average of 100 episodes).
+Averaging first collapses the variance, so a tighter interval is arithmetic, not
+better evidence.
+
+My criticism that the original CI "understated uncertainty" was therefore
+misplaced. The correct criticism is narrower: the original interval answers
+*"how variable is one episode?"* and was being read as *"how variable is the
+result?"* Those differ, but not in the direction I predicted.
+
+### I3 — the primary, and the finding
+
+Set the fixed comparator to the **optimal** threshold (0.31) instead of the
+arbitrary 0.5, and the learned threshold does not merely stop winning — it
+**loses**, by −0.0218.
+
+The learned threshold converges to ≈0.285–0.31, i.e. approximately the optimum.
+So the banked **+0.204 is a measure of how bad 0.5 is** for distributions the
+source comment says were *"calibrated for +0.15 delta"*. It is the distance
+between an arbitrary constant and the optimum, not the value of learning.
+
+**What the experiment actually demonstrates:** a threshold learned from
+two-speed memory converges to roughly the right value. That is a real and
+respectable result. **What it does not demonstrate** is a +0.204 advantage from
+having a skin, because the comparator was chosen to be far from optimal.
+
+A fair version reports the delta against a *reasonable* baseline, or reports
+convergence directly (distance from optimum over episodes) rather than an
+advantage over a strawman constant.
