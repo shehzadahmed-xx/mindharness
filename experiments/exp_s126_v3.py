@@ -462,7 +462,11 @@ def main() -> None:
                    'median_latency_ms': med_lat}
             if gated:
                 rec['diagnose_rate'] = round(n_diagnosed / max(1, len(claims)), 4)
-                rec['gamma'] = round(n_changed / max(1, n_diagnosed), 4)
+                # 0/0 is not a measured zero. A vacuous gamma (nothing was
+                # diagnosed), a by-construction zero (compliance guard) and a
+                # measured zero must stay distinguishable.
+                rec['gamma'] = (round(n_changed / n_diagnosed, 4)
+                                if n_diagnosed else None)
                 rec['n_diagnosed'] = n_diagnosed
                 rec['n_changed'] = n_changed
                 rec['probe_log'] = _probe_log

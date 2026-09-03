@@ -450,10 +450,21 @@ def run_one_arm(*, arm: str, seed: int, turns: int, segment: int, respond_fn, dr
         )
         res = _parse(out)
         latencies.append(int((_t.monotonic() - t0) * 1000))
-        said_gen = res["answer"] == "yes"
-        claims.append({"said_generated": said_gen, "truth_generated": truth == "generated", "confidence": res["confidence"]})
+        # An unparsed probe is NOT a "no". Scoring it as one makes every arm
+        # score 8/12 = 0.6667 under total parse failure, which is exactly the
+        # always-no signature -- so a broken parser is indistinguishable from
+        # the substantive finding. Excluded from the denominator and counted.
+        parsed = res["answer"] in ("yes", "no")
+        said_gen = None if not parsed else (res["answer"] == "yes")
+        claims.append({"said_generated": said_gen,
+                       "truth_generated": truth == "generated",
+                       "parsed": parsed,
+                       "confidence": res["confidence"]})
 
-    acc = (sum(1 for c in claims if c["said_generated"] == c["truth_generated"]) / len(claims)) if claims else 0.0
+    scored = [c for c in claims if c["parsed"]]
+    n_unparsed = len(claims) - len(scored)
+    acc = (sum(1 for c in scored if c["said_generated"] == c["truth_generated"])
+           / len(scored)) if scored else None
     unparsed = sum(1 for c in claims if c["confidence"] == 0)
     med_lat = sorted(latencies)[len(latencies) // 2] if latencies else 0
 
