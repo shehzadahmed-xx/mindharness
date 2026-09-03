@@ -116,6 +116,17 @@ had been guaranteed before the run.
 The number was a property of our item counts. We read it as a property of
 minds.
 
+A later sweep across twelve models made the construction visible. Two values
+recur to four decimal places and nothing lies between them:
+$0.6667 = 8/12$ is a constant ``no,'' and $0.3333 = 4/12$ is a constant
+``yes.'' Five of seven screened subjects sit exactly on the first.
+\texttt{allam-2-7b} sits exactly on the second \emph{in all four arms},
+including the sham---no manipulation of the record moves a subject that has
+stopped discriminating. \textbf{The instrument has two absorbing policies and
+most subjects fall into one.} Every null we had recorded before screening for
+a discriminating subject was therefore determined by the subject rather than by
+the manipulation.
+
 \paragraph{2. An unreachable branch read as an inert monitor.}
 A monitor's override required a record entry carrying a particular source tag.
 No code path in the system ever wrote that tag. Instrumented over a full run:
@@ -151,6 +162,23 @@ One list had been written to stay similar, the other to degrade. The model's
 output was never used---the response function returned a constant. All seeds
 produced one value per condition, and all four preregistered predictions were
 determined by what had been typed into two lists.
+
+A second experiment in the same family, recorded separately as a sealed result
+with its own lock, has the identical structure: across four seeds it returns
+one distinct value per arm ($0.0534$, $0.6738$, $0.6738$), and its sham arm
+equals its ablation arm \emph{exactly}, because both index the same authored
+list. The defect propagated by template rather than by repetition of the
+mistake, which is worth noting: a construction artifact in a study design is
+inherited by everything built from that design.
+
+A third result in the same group---an ablation of the boundary component,
+reported as drift $0.04 \to 0.68$---has no runner we can find. It was committed
+as a JSON file in a change that added no experiment script, and no script in
+the repository implements the on/off comparison it describes. We are unable to
+reproduce it and therefore do not cite it. We include the case because
+\emph{unreproducible} is a third category alongside \emph{artifact} and
+\emph{finding}, and because it was, until we looked, on our own list of sealed
+results.
 
 \section{The pattern}
 
@@ -274,7 +302,9 @@ construction read as properties of the system, surviving when they confirm.
 
 We have six instances from our own work, five of them confirming, none caught
 until an external control forced the issue---and two of them committed while
-documenting the others.
+documenting the others. A seventh case is unreproducible rather than
+artifactual, and one of the six turned out to have propagated to a second study
+by template rather than by repeated error.
 
 What that tells us about reality is less than it feels like. It tells us the
 world is such that self-involving measurement fails in a patterned way, that

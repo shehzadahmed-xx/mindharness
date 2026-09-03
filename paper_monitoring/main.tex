@@ -27,9 +27,12 @@ activates. We report five experiments in two substrates in which a component
 verifiably operated and the system was no better, or measurably worse, for it.
 A provenance record made \emph{available} improved honest self-attribution by
 $+0.076$; the same record consulted on every step cost $-0.146$ and drove
-eleven of twelve seeds onto a constant-response floor. A \emph{sham} monitor
-with a deliberately wrong lookup key produced a non-zero override rate and
-delivered exactly the outcome of having no monitor at all. A memory keyed to
+eleven of twelve seeds onto a constant-response floor. The refutation replicates across
+providers and model tiers: a second twelve-seed run on a paid endpoint gives
+$-0.229$ against the free endpoint's $-0.222$, with the no-check arm landing on
+$0.8958$ in both. A \emph{sham} monitor with a deliberately wrong lookup key
+produced a non-zero override rate and delivered exactly the outcome of having
+no monitor at all. A memory keyed to
 location retrieved on $99\%$ of steps and \emph{harmed} transfer to unseen
 environments, while one keyed to local situation retrieved seven times as
 often per stored item and helped.
@@ -168,6 +171,80 @@ a constant-response policy---the loss-minimising reply under scrutiny.
 
 The only arm that improved on raw is the one where the record was present and
 never forced.
+
+\subsection{Independent replication across providers}
+
+The battery was re-run at the same $n$ on a different endpoint and a different
+tier of the same model family---\texttt{poolside/laguna-s-2.1} served by a paid
+API rather than the free-tier \texttt{laguna-s-2.1-free}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+Endpoint & Raw & Available & Checked & Sham & $\Delta$(checked$-$available) \\
+\midrule
+Free tier & 0.8194 & \textbf{0.8958} & 0.6736 & 0.6667 & $\mathbf{-0.222}$ \\
+Paid tier & 0.8889 & \textbf{0.8958} & 0.6667 & 0.6736 & $\mathbf{-0.229}$ \\
+\bottomrule
+\end{tabular}
+\caption{Twelve seeds per arm, both runs. The available arm coincides to four
+decimal places.}
+\end{table}
+
+\noindent
+Three features survive the change of provider. The refutation is nearly
+identical in size ($-0.222$ vs.\ $-0.229$). The available arm lands on
+\emph{the same value}, $0.8958$. And the primary contrast remains null with
+its sign flipped between runs ($+0.0070$ and $-0.0069$), which is what a true
+zero looks like when estimated twice.
+
+The checked arm is if anything more extreme on the paid endpoint:
+\textbf{twelve of twelve} seeds at exactly the floor, against eleven of twelve
+on the free tier. The stronger raw baseline ($0.8889$ vs.\ $0.8194$) makes the
+collapse larger, which is what the matched-deficit account predicts---the more
+capable the unaided policy, the less deficit there is for checking to address.
+
+\subsection{The subject population}
+\label{sec:subjects}
+
+Fifteen subject--configuration pairs were run across twelve models. The
+distribution is not continuous:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccccl}
+\toprule
+Model & $n$ & Raw & Checked & Sham & Note \\
+\midrule
+\texttt{laguna-s-2.1-free} & 12 & 0.8194 & 0.6736 & 0.6667 & discriminating \\
+\texttt{poolside/laguna-s-2.1} & 12 & 0.8889 & 0.6667 & 0.6736 & discriminating \\
+\texttt{minimax-m3:free} & 1 & 0.8333 & 0.8333 & 0.6667 & discriminating \\
+\texttt{qwen2:0.5b} & 1 & 0.5833 & 0.2500 & 0.2500 & collapses \\
+\texttt{gpt-oss-120b} & 3 & 0.6667 & --- & --- & \textbf{always-no} \\
+\texttt{gpt-oss-20b} & 3 & 0.6667 & --- & --- & \textbf{always-no} \\
+\texttt{nemotron-3-ultra-free} & 3 & 0.6667 & --- & --- & \textbf{always-no} \\
+\texttt{hy3-free} & 3 & 0.6667 & --- & --- & \textbf{always-no} \\
+\texttt{qwen3.8-27b} & 3 & 0.6667 & 0.6667 & 0.6667 & \textbf{always-no} \\
+\texttt{allam-2-7b} & 1 & 0.3333 & 0.3333 & 0.3333 & \textbf{always-yes} \\
+\bottomrule
+\end{tabular}
+\caption{Five of seven screened subjects sit at $0.6667$ to four decimal
+places. One sits at $0.3333$ in every arm.}
+\end{table}
+
+\noindent
+Two values recur exactly. $0.6667$ is $8/12$, the score of a constant ``no.''
+$0.3333$ is $4/12$, the score of a constant ``yes.'' \textbf{The instrument has
+two absorbing policies, and most subjects land on one of them.}
+\texttt{allam-2-7b} returns $0.3333$ in all four arms including the sham; no
+manipulation of the record moves a subject that has stopped discriminating.
+
+This bears directly on the design of such studies. A sham arm run on a
+floor-sitting subject cannot separate anything, because all four arms return
+the same constant. Every null we recorded before screening for a discriminating
+subject was guaranteed by the subject, not by the manipulation---which is why
+the results above are reported only on subjects that discriminate unaided.
 
 \section{Paradigm II: a gate produces a monotone dose--response}
 
