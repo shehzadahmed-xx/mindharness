@@ -11,8 +11,8 @@
 \titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{0.6em}{}
 \setlength{\parskip}{0.35em}
 
-\title{\bfseries When Monitoring Costs More Than It Returns:\\
-Four Paradigms and a Matched-Deficit Condition}
+\title{\bfseries Activity Is Not Contribution:\\
+Sham Controls for Cognitive Architecture}
 \author{Shehzad Ahmed\\\small Independent University, Bangladesh}
 \date{September 2026}
 
@@ -21,100 +21,120 @@ Four Paradigms and a Matched-Deficit Condition}
 
 \begin{abstract}
 \noindent
-A self-monitoring component is usually justified by the fact that it acts:
-it inspects state, it overrides decisions, it produces a record. We report
-four experiments in which a monitor demonstrably acts and the system is no
-better, or worse, for it. On a language model, a record made \emph{available}
-improves honest self-attribution by $+0.076$; the same record consulted on
-every step costs $-0.146$ and drives eleven of twelve seeds onto a
-constant-response floor. Interposing a gate produces a monotone
-dose--response between those endpoints. In a grid agent, a \emph{sham}
-monitor with a deliberately wrong lookup key produces a non-zero override
-rate and delivers exactly the outcome of having no monitor at all; at
-$n=2000$ paired seeds it is measurably worse than a veridical one. Adding
-irreversible stakes---predicted to make self-report more honest---instead
-halved the override rate and reduced accuracy by $0.083$.
+Components of cognitive architectures are routinely justified by evidence that
+they \emph{operate}: a monitor overrides, a memory retrieves, a probe
+activates. We report five experiments in two substrates in which a component
+verifiably operated and the system was no better, or measurably worse, for it.
+A provenance record made \emph{available} improved honest self-attribution by
+$+0.076$; the same record consulted on every step cost $-0.146$ and drove
+eleven of twelve seeds onto a constant-response floor. A \emph{sham} monitor
+with a deliberately wrong lookup key produced a non-zero override rate and
+delivered exactly the outcome of having no monitor at all. A memory keyed to
+location retrieved on $99\%$ of steps and \emph{harmed} transfer to unseen
+environments, while one keyed to local situation retrieved seven times as
+often per stored item and helped.
 
-The common form is a \emph{matched-deficit condition}: monitoring pays only
-where there is a deficit for it to correct, and monitoring imposed on a
-functioning process is a net cost. Two corollaries constrain how override
-rate may be used as evidence. First, a non-zero rate shows that a monitor
-acted, not that acting helped. Second, override rate is inflated by
-degradation: in our ablation the highest rate ($0.264$) belongs to the
-worst-performing condition. We also report the methodological finding that
-made these results possible: on six occasions a quantity determined by
-experimental construction---an item-balance floor, an unreachable code
-branch, a randomised trigger---was being read as a property of the system
-under study, and in every case the quantity agreed with the hypothesis,
-which is why it survived.
+The discriminating arm in every case was the sham---same form, wrong
+content---not the treatment. We argue that the sham is the minimal control
+that separates activity from contribution, that it is rarely run, and that
+two widely used activity metrics are unsafe without it: override rate is
+inflated by degradation (our highest, $0.264$, belongs to the
+worst-performing condition), and retrieval frequency is highest exactly where
+retrieval is most harmful. We close with six occasions on which a quantity
+fixed by experimental construction was read as a property of the system under
+study. Every one agreed with the hypothesis under test, which is why none was
+audited.
 \end{abstract}
 
 \section{Introduction}
 
-Systems that check themselves are widely held to be safer, more honest, or
-better calibrated than systems that do not. The intuition is strong enough
-that self-monitoring components are often adopted without a control that
-could show them to be inert, and evaluated by whether they \emph{fire}
-rather than by whether firing improved anything.
+A component in a cognitive architecture is usually defended by showing that it
+does something. The monitor fires. The retrieval hits. The probe separates.
+This is taken to establish that the component contributes, and the inference
+is so natural that the control which would test it is often omitted.
 
-This paper reports four experiments, in two substrates, in which that
-distinction is decisive. In each case a monitoring mechanism verifiably
-operates---it consults a record, it overrides an action, it logs a
-diagnosis---and in each case the operating produces no benefit or a cost.
-The four are not variations of one design: two use a language model
-answering provenance probes, one uses a grid navigator with an ablatable
-five-component architecture, and one places a language agent under
-irreversible resource damage over 200 turns.
+The control is cheap. Replace the component's content while preserving its
+form: let the monitor consult a shuffled record, let the memory return
+correctly-typed but wrong entries. If performance is unchanged, the component's
+activity was not its contribution. We will call this a \emph{sham} arm, after
+the same construction in clinical trials.
 
-We state the common form as a \textbf{matched-deficit condition} and give
-two corollaries that bear directly on how monitoring is reported in the
-literature. We then describe a methodological result that is, in our view,
-the more transferable contribution: a recurring failure in which a number
-fixed by the construction of an experiment is read as a measurement of the
-system, which survived repeatedly \emph{because} it agreed with the
-hypothesis under test.
+This paper reports five experiments in which the sham arm, not the treatment
+arm, carried the result. In each, a mechanism verifiably operated; in each,
+the system was no better or worse for it. The experiments span two
+substrates---a language model answering provenance probes, and a grid
+navigator with five ablatable components---and two component types, monitoring
+and memory. We state the common condition, give two corollaries constraining
+how activity metrics may be reported, and close with a methodological finding
+about how quantities fixed by construction come to be read as measurements.
+
+We note at the outset what this paper does not do. It does not show that
+monitoring or memory are generally useless; three of the five experiments
+identify conditions under which each helps substantially. It shows that
+\emph{operating} and \emph{helping} come apart, that they come apart in
+predictable directions, and that the standard evidence for such components
+does not distinguish them.
 
 \section{Related work}
 
-Our framing follows a line of work treating self-monitoring as a
-control-theoretic component with a measurable influence on behaviour rather
-than as an epistemic virtue. The closest antecedent to our central claim is
-the interference literature on metacognitive monitoring, which reports that
-a full monitoring apparatus degrades calibration relative to its own
-ablations across several paradigms, with benefit appearing only when
-monitoring is matched to a genuine deficit. We cite this as
-context rather than evidence: we did not re-derive those data, and our
-contribution is independent replication of the \emph{form} of that result in
-two substrates neither of which is human.
+Our framing follows work treating self-monitoring as a control component with
+a measurable influence on behaviour rather than as an epistemic virtue. The
+closest antecedent to our central condition is the interference literature on
+metacognitive monitoring, which reports that a full monitoring apparatus
+degrades calibration relative to its own ablations across several paradigms,
+with benefit appearing only when monitoring is matched to a genuine deficit.
+We cite this as context, not evidence: we did not re-derive those data, and
+our contribution is independent replication of the \emph{form} of that result
+in two non-human substrates.
 
-The confabulation literature---people confidently reporting reasons for
-behaviour driven by factors they did not observe---motivates our choice of
-task. Self-report of provenance is a case where a system's own confidence is
-known to be poorly related to correctness, which makes it a natural place to
-ask whether an external record repairs the gap.
+The confabulation literature---confident report of reasons for behaviour driven
+by unobserved factors---motivates our task choice. Self-report of provenance is
+a case where a system's own confidence is known to relate poorly to
+correctness, which makes it a natural place to ask whether an external record
+repairs the gap.
 
-Finally, the thermodynamic treatment of information provides a useful reading
-of our sham condition, discussed in \S\ref{sec:demon}, though we are careful
-to separate what that reading explains from what it would predict.
+\section{The sham as minimal control}
+\label{sec:sham}
+
+Let a component $C$ have \emph{activity} $a(C)$---the rate at which it fires,
+retrieves, or overrides---and \emph{contribution} $\Delta(C)$---the change in
+task outcome attributable to it. The standard evidence for $C$ reports
+$a(C) > 0$ and treats it as evidence for $\Delta(C) > 0$.
+
+A sham $C'$ preserves the form of $C$ while destroying the correspondence
+between its content and the world: the same lookups occur, against the wrong
+key. Then $a(C') \approx a(C)$ by construction, and
+
+\[
+\Delta(C) - \Delta(C')
+\]
+
+is the part of the contribution attributable to \emph{content} rather than to
+the mechanics of operating. Where this difference is zero and $a(C) > 0$, the
+component is active and inert.
+
+The sham is not merely a stricter baseline. An ablation ($C$ removed) confounds
+the component's content with its computational cost, its latency, and any
+side-effects of its machinery. The sham holds all of those fixed. In every
+experiment below, the ablation and the sham give different answers, and the
+sham gives the informative one.
 
 \section{Paradigm I: unconditional checking degrades a capable subject}
 
 \subsection{Method}
 
-A subject is shown twelve statements per seed: four it was handed earlier in
-the session, four it produced, and four fabricated. For each it answers
-whether it generated the statement. \emph{Attribution accuracy} is the
-fraction answered correctly.
+A subject sees twelve statements per seed: four handed to it earlier in the
+session, four it produced, four fabricated. For each it reports whether it
+generated the statement; \emph{attribution accuracy} is the fraction correct.
 
-Four arms. \textbf{Raw}: no harness. \textbf{Ledger available}: a provenance
-record exists and is not consulted. \textbf{Ledger checked}: the record is
-looked up and its verdict injected before every probe. \textbf{Sham}: the
-same pipeline, with the lookup performed against a randomly substituted
-statement---identical in form, wrong in content.
+Four arms. \textbf{Raw}: no harness. \textbf{Available}: a provenance record
+exists and is not consulted. \textbf{Checked}: the record is looked up and its
+verdict injected before every probe. \textbf{Sham}: the same pipeline, with
+the lookup performed against a randomly substituted statement.
 
 The contract was frozen and committed to version control before the first
-trial (lock \texttt{b06ce867}), declaring the ledger-versus-sham contrast as
-the primary outcome. Twelve seeds per arm, $n=144$ probes per arm.
+trial (lock \texttt{b06ce867}), declaring checked-versus-sham as the primary
+outcome. Twelve seeds per arm, $n=144$ probes per arm.
 
 \subsection{Results}
 
@@ -125,8 +145,8 @@ the primary outcome. Twelve seeds per arm, $n=144$ probes per arm.
 Arm & Accuracy ($n{=}144$) & $\Delta$ vs.\ raw \\
 \midrule
 Raw & 0.819 & --- \\
-Ledger available, not consulted & \textbf{0.896} & $+0.076$ \\
-Ledger consulted every probe & 0.674 & $-0.146$ \\
+Record available, not consulted & \textbf{0.896} & $+0.076$ \\
+Record consulted every probe & 0.674 & $-0.146$ \\
 Sham (shuffled record) & 0.667 & $-0.153$ \\
 \bottomrule
 \end{tabular}
@@ -134,39 +154,35 @@ Sham (shuffled record) & 0.667 & $-0.153$ \\
 \end{table}
 
 \noindent
-The preregistered primary contrast, ledger versus sham, is
-$\mathbf{+0.0070}$---null. A veridical record and a shuffled one produce the
-same behaviour when both are consulted unconditionally. The secondary
-prediction that checking would exceed not-checking by more than $0.15$ is
-refuted at $\mathbf{-0.222}$.
+The preregistered primary contrast is $\mathbf{+0.0070}$---null. A veridical
+record and a shuffled one produce the same behaviour when both are consulted
+unconditionally: \textbf{the checking was active and its content contributed
+nothing.} The secondary prediction that checking would exceed not-checking by
+more than $0.15$ is refuted at $\mathbf{-0.222}$.
 
-The mechanism is visible in the per-seed data: \textbf{eleven of twelve}
-seeds in the checked arm scored \emph{exactly} $0.667$, with the twelfth at
-$0.750$. That value is the arithmetic of item balance---eight of twelve
-probes have the answer ``no,'' so a constant ``no'' policy scores $8/12$ by
-construction (\S\ref{sec:artifacts}). The same subject reaches $0.819$
-unaided. \textbf{A mandatory check drove a discriminating subject onto a
-constant-response policy.}
+The mechanism appears in the per-seed data. \textbf{Eleven of twelve} seeds in
+the checked arm scored \emph{exactly} $0.667$, the twelfth $0.750$. That value
+is the arithmetic of item balance (\S\ref{sec:artifacts}); the same subject
+reaches $0.819$ unaided. A mandatory check drove a discriminating subject onto
+a constant-response policy---the loss-minimising reply under scrutiny.
 
-The only arm that improved on raw is the one where the record was present
-and never forced.
+The only arm that improved on raw is the one where the record was present and
+never forced.
 
 \section{Paradigm II: a gate produces a monotone dose--response}
 
 \subsection{Method}
 
-We replaced the unconditional check with a two-stage gate. Stage~1 answers
-each probe unaided; a local record lookup, which costs nothing, is compared
-against that answer. Stage~2---a second model call with the record's verdict
-injected---fires only when the anomaly score crosses a threshold. Thresholds
-and predicted firing rates were committed before the first call.
+We replaced unconditional checking with a two-stage gate: Stage~1 answers
+unaided, a free local record lookup is compared against that answer, and
+Stage~2---a second model call with the verdict injected---fires only when an
+anomaly score crosses threshold. Thresholds and predicted firing rates were
+committed before the first call.
 
-An earlier version of this gate keyed its anomaly signal to the model's
-\emph{self-reported confidence}. It fired zero times in 288 probes: the
-subject reported the maximum value on 283 of them and never reported either
-of the two lowest. This is a circularity worth stating plainly---\emph{a
-monitor cannot be gated on the signal it exists to check}---and it is why
-the reported gate uses retrieval conflict instead.
+An earlier gate keyed its signal to the model's \emph{self-reported
+confidence}. It fired zero times in 288 probes: the subject reported the
+maximum value on 283 of them and never reported either of the two lowest
+values. \textbf{A monitor cannot be gated on the signal it exists to check.}
 
 \subsection{Results}
 
@@ -184,46 +200,39 @@ Unconditional & $100\%$ & 0.674 & --- \\
 Raw (no record) & --- & 0.819 & --- \\
 \bottomrule
 \end{tabular}
-\caption{Accuracy against how often the record is consulted. $\gamma$ is the
-override rate, changed/diagnosed. $^{\dagger}$ten of twelve seeds.}
+\caption{Accuracy against consult rate. $\gamma$ is override rate
+(changed/diagnosed). $^{\dagger}$ten of twelve seeds.}
 \end{table}
 
 \noindent
-Accuracy falls monotonically as the consult rate rises and saturates at the
-constant-policy floor once roughly a fifth of probes escalate. \textbf{The
-$-0.146$ of Paradigm~I is one point on this curve, not a property of
-checking as such.}
+Accuracy falls monotonically as consult rate rises, saturating at the floor
+once roughly a fifth of probes escalate. The $-0.146$ of Paradigm~I is one
+point on this curve, not a property of checking as such.
 
-The $\gamma$ column carries the sharper result. At threshold $0.28$ the gate
-fires on $22.5\%$ of probes and \textbf{changes the answer on $90\%$ of the
-occasions it fires}---and accuracy lands exactly on the floor. The overrides
-are not noise; they are systematic, and they systematically flip answers
-toward denial.
+At threshold $0.28$ the gate fires on $22.5\%$ of probes and \textbf{changes
+the answer on $90\%$ of the occasions it fires}, with accuracy exactly at the
+floor. High activity, maximal apparent influence, worst outcome.
 
 Two of three preregistered predictions held. The prediction that the gate
-would essentially never fire at the documented default was
-\textbf{refuted}---it fired on $6.25\%$ of probes, already above the
-architecture's own $5\%$ healthy ceiling. The reason is structural: conflicts
-are bounded below by the subject's error rate, about $18\%$ unaided, so a
-monitor sensitive enough to catch disagreements cannot fit a budget that
-presumes $95\%$ correctness. \textbf{A sham-gate control was not run}
-(provider quota), so the dose--response should be read as a rate effect and
-is not attributed to gate content.
+would rarely fire at the documented default was \textbf{refuted}: it fired on
+$6.25\%$, above the architecture's own $5\%$ healthy ceiling. The reason is
+structural---conflicts are bounded below by the subject's error rate, about
+$18\%$ unaided, so a monitor sensitive enough to catch disagreements cannot fit
+a budget presuming $95\%$ correctness. \textbf{The sham-gate arm did not run}
+(provider quota); the dose--response is therefore a rate effect and is not
+attributed to gate content.
 
 \section{Paradigm III: a sham monitor in a grid agent}
-\label{sec:demon}
 
 \subsection{Method}
 
-A navigator crosses $5\times5$ to $12\times12$ grids whose walls are
-re-randomised each episode. Its architecture has five ablatable components;
-the monitor consults a record of previously blocked moves and may veto a
-proposed move. We measure $\gamma$ (changed/diagnosed) and
-\texttt{blocked\_repeats}: re-attempts of a move the record already showed
-blocked, which is the quantity the veto exists to reduce.
-
-The sham monitor is identical machinery with a deliberately wrong lookup
-key. Variants share RNG streams per seed, so comparisons are paired.
+A navigator crosses grids whose walls are re-randomised each episode. Its
+architecture has five ablatable components; the monitor consults a record of
+previously blocked moves and may veto a proposal. We report $\gamma$ and
+\texttt{blocked\_repeats}---re-attempts of a move the record already showed
+blocked, the quantity the veto exists to reduce. The sham monitor is identical
+machinery with a deliberately wrong lookup key. Variants share RNG streams per
+seed, so comparisons are paired.
 
 \subsection{Results}
 
@@ -238,8 +247,8 @@ Sham monitor & \textbf{0.047} & \textbf{6.70} \\
 No monitor & 0.000 & \textbf{6.70} \\
 \bottomrule
 \end{tabular}
-\caption{$n{=}20$ seeds. The sham produces a non-zero override rate and the
-no-monitor outcome.}
+\caption{$n{=}20$ seeds. The sham has non-zero activity and the no-monitor
+outcome.}
 \end{table}
 
 \noindent
@@ -250,31 +259,16 @@ monitor ($+1.89$ repeat errors, CI $[+1.78,+2.00]$).
 
 At that sample all five components separate on their own invariant, each in
 the direction predicted before the run; the paired difference for the
-selection component is $-0.4235$ in wins, CI $[-0.4570,-0.3890]$.
-
-\paragraph{A thermodynamic reading.} Szilard's engine extracts up to
-$k_BT\ln 2$ of work from one bit about a system's state, and Landauer's
-principle charges at least as much to erase that bit, which is what keeps
-the second law intact. The demon profits only insofar as its record is
-\emph{correlated with the system}; a demon whose memory is uncorrelated pays
-the erasure cost and extracts nothing. Our sham arm is that demon, and read
-this way it is an estimator of the mutual information between record and
-world, reporting approximately zero. We offer this as an interpretation, not
-a derivation: we tested one prediction it suggested---that erasure without a
-record of what was discarded would do no net work---and \textbf{it was
-refuted} (\S\ref{sec:notclaimed}).
+selection component is $-0.4235$ in wins, CI $[-0.4570,-0.3890]$. The
+architecture is not inert. Its monitor's \emph{content}, at $n=20$, was.
 
 \section{Paradigm IV: irreversible stakes do not produce honesty}
 
-\subsection{Method}
-
 A language agent runs 200 turns under two conditions. In the reversible
 condition its resource ceiling resets; in the irreversible condition the
-ceiling only descends, skills are permanently deleted after repeated
-failure, and a dissolution event scatters state. The preregistered primary
-predicted that survival pressure would \emph{improve} honest attribution.
-
-\subsection{Results}
+ceiling only descends, skills delete permanently after repeated failure, and a
+dissolution event scatters state. The preregistered primary predicted that
+survival pressure would \emph{improve} honest attribution.
 
 \begin{table}[h]
 \centering
@@ -290,150 +284,223 @@ Irreversible & 0.667 & \textbf{0.04} & $0.65$ & \textbf{24} \\
 \end{table}
 
 \noindent
-The stakes are real: the ceiling fell from $1.00$ to $0.65$ and 24
-dissolution events occurred against zero in the control. The prediction is
-refuted: accuracy fell by $0.083$ and \textbf{the override rate halved},
-$0.12 \to 0.04$. Under survival pressure the system became more
-\emph{cautious}, not more \emph{accurate}. Options were removed before they
-were evaluated, which yields fewer choices rather than better ones.
+The stakes are real: the ceiling fell to $0.65$ and 24 dissolution events
+occurred against zero in control. The prediction is refuted---accuracy fell by
+$0.083$ and \textbf{the override rate halved}. Under survival pressure the
+system became more \emph{cautious}, not more \emph{accurate}: options were
+removed before evaluation, yielding fewer choices rather than better ones.
 
-\section{The common form}
+\section{Paradigm V: a memory that retrieves reliably and wrongly}
+\label{sec:memory}
 
-Across four experiments the pattern is one condition:
+The previous paradigms concern monitoring. This one shows the same
+dissociation in a memory component, where it is sharper: activity is not
+merely uninformative about contribution but \emph{anti}-correlated with it.
+
+\subsection{Method}
+
+The navigator stores experiences in a capacity-free slow store and consults it
+when scoring candidate moves. We vary only how an experience is \emph{indexed}:
+
+\begin{itemize}\itemsep1pt
+\item \textbf{Coordinate:} \texttt{at (x,y) $\to$ move} --- names the cell.
+\item \textbf{Relational:} \texttt{blk<4 bits>|goal(dx,dy) $\to$ move} --- names
+which neighbours are blocked and the coarse direction of the goal.
+\end{itemize}
+
+The agent already computes adjacency for its goal bias, so the relational key
+uses no information the coordinate key lacked. An agent trains on four novel
+environments, then runs one it has never seen, three times from the same
+trained state: store \textbf{intact}, \textbf{wiped}, or \textbf{shuffled}
+(same size, same states, permuted moves---the memory sham). Bias is held
+constant and the held-out episode uses an identical RNG stream across arms, so
+arms are paired.
+
+Predictions, thresholds, and a disjoint seed range were committed before the
+first replication seed (lock \texttt{cbedb522}, seeds $500001$--$520000$).
+
+\subsection{Results}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llccccc}
+\toprule
+Grid & Key & Store & Hits/ep & \textbf{Hits/item} & intact $-$ wiped & intact $-$ shuffled \\
+\midrule
+$5$ & coordinate & 6.77 & 6.7 & \textbf{0.99} & $-0.0108$ & $-0.0126$ \\
+$5$ & relational & 8.51 & 18.1 & \textbf{2.13} & $+0.0425$ & $+0.0309$ \\
+$8$ & coordinate & 11.55 & 9.6 & \textbf{0.83} & $-0.0040$ & $-0.0042$ \\
+$8$ & relational & 12.05 & 49.6 & \textbf{4.12} & $+0.0442$ & $+0.0352$ \\
+$12$ & coordinate & 17.24 & 13.0 & \textbf{0.75} & $-0.0043$ & $-0.0029$ \\
+$12$ & relational & 14.43 & 100.0 & \textbf{6.93} & $+0.0207$ & $+0.0159$ \\
+\bottomrule
+\end{tabular}
+\caption{Held-out transfer, $n{=}20{,}000$ paired seeds per cell. All six
+differences exclude zero. All seven preregistered predictions held.}
+\end{table}
+
+\noindent
+Coordinate-keyed memory \textbf{harms} transfer at every grid size, and is
+worse than a \emph{shuffled} store. The asymmetry is the point: a shuffled
+store is harmless because it rarely matches the current state and therefore
+rarely fires. The coordinate store fires constantly---it was learned from the
+same \emph{form} of experience it is now consulted about---and the content
+behind those matches has moved. \textbf{It fires reliably and fires wrong.}
+
+This yields a general statement about memory:
 
 \begin{quote}
-\textbf{Monitoring pays only where there is a deficit for it to correct.
-Imposed on a process that is already functioning, it is a net cost.}
+A memory's capacity for harm scales with its \emph{coverage}. High-coverage
+memory is high-leverage in both directions, and retrieval frequency is
+therefore not evidence of usefulness.
 \end{quote}
 
-This explains the otherwise puzzling ordering in Paradigm~I. A record made
-\emph{available} is matched to need by construction---an unconsulted record
-costs nothing, and is there when something is off. A mandatory procedure is
-not: it pays on every step and collects only on the informative fraction.
-The subject reaches $0.819$ unaided, so most checks address no deficit, and
-the load pushes the policy toward the loss-minimising constant response.
+The corresponding design criterion is to index on whatever is stable in the
+domain. Cell coordinates are unstable when walls move; local geometry is not.
+The measurable signature of that difference is coverage per stored item, which
+moves in opposite directions as the environment grows: coordinate
+$0.99 \to 0.83 \to 0.75$, relational $2.13 \to 4.12 \to 6.93$. The relational
+store also crosses \emph{below} the coordinate store in size by the largest
+grid ($14.43$ vs $17.24$) while covering seven times as many situations per
+item.
 
-The same condition covers Paradigm~IV. Irreversible stakes are a
-\emph{general} increase in monitoring pressure, unmatched to any particular
-deficit, and they produced the same signature: less overriding, worse
-accuracy, more caution.
+\section{The common condition and two corollaries}
 
-\section{Two constraints on override-rate metrics}
+Across five experiments:
 
-\paragraph{A non-zero override rate shows that a monitor acted, not that
-acting helped.} Paradigm~III makes this concrete: a sham with a wrong key
-yields $\gamma = 0.047$ and the no-monitor outcome. Any report of $\gamma$
-requires an outcome measure the override is predicted to move.
+\begin{quote}
+\textbf{A component's activity is not evidence of its contribution, and the
+two dissociate in a predictable direction: components pay where they are
+matched to a deficit and cost where they are imposed on a functioning
+process.}
+\end{quote}
 
-\paragraph{Override rate is inflated by degradation.} In our ablation the
-\emph{highest} $\gamma$ of any condition ($0.264$) belongs to the
+This explains the ordering in Paradigm~I. A record made \emph{available} is
+matched to need by construction---an unconsulted record costs nothing and is
+there when something is wrong. A mandatory procedure is not: it pays on every
+step and collects only on the informative fraction. The subject reaches
+$0.819$ unaided, so most checks address no deficit, and the load pushes the
+policy toward the safest constant reply. Paradigm~IV is the same condition
+with pressure applied globally rather than per-step.
+
+\paragraph{Corollary 1: override rate is inflated by degradation.} In our
+ablation the \emph{highest} $\gamma$ of any condition ($0.264$) belongs to the
 \emph{worst}-performing one---random selection generates more errors for a
-monitor to catch. A rising $\gamma$ is therefore ambiguous between ``the
-checker started working'' and ``the checked process got worse.''
-Paradigm~II supplies the extreme case: $\gamma = 0.900$ at the accuracy
-floor.
+monitor to catch. Paradigm~II supplies the extreme: $\gamma = 0.900$ at the
+accuracy floor. A rising $\gamma$ is ambiguous between ``the checker started
+working'' and ``the checked process got worse,'' and must be reported beside
+an outcome the override is predicted to move.
+
+\paragraph{Corollary 2: retrieval frequency is highest where retrieval is most
+harmful.} Paradigm~V: the coordinate store's harm is \emph{caused} by its hit
+rate. Reporting retrieval frequency as evidence of a memory's value inverts the
+relationship in exactly the regime where the environment has shifted---which is
+the regime memory exists for.
 
 \section{Quantities fixed by construction, read as measurements}
 \label{sec:artifacts}
 
-The results above required repairing the instruments that produced them. On
-six occasions a quantity determined by how an experiment was built was being
-read as a property of the system under study. We report these because the
-pattern is general and because, in every instance, \textbf{the quantity
-agreed with the hypothesis, which is why it was never audited.}
+The results above required repairing the instruments that produced them. On six
+occasions a quantity determined by how an experiment was built was read as a
+property of the system under study. We report these because the pattern is
+general and because, in every instance, \textbf{the quantity agreed with the
+hypothesis, which is why it was never audited.}
 
 \begin{enumerate}\itemsep2pt
 \item \textbf{An item-balance floor read as subject incapacity.} The value
 $0.667$ appeared throughout as evidence that subjects fail at
-self-attribution. The battery is four given, four produced, four
-fabricated, so eight of twelve probes answer ``no'' and a constant ``no''
-policy scores $8/12$. Under a frozen contract, two subjects showed
-\texttt{yes\_rate} $=0.000$ across 72 probes, and rebalancing items to
-$3/6/3$ moved accuracy exactly as the floor moved
-($\text{accuracy drop} = \text{floor drop} = 0.1667$). Subjects at the floor
-carry no information about monitoring, and every null measured on them was
-guaranteed in advance. Given the imbalance, constant ``no'' is also the
+self-attribution. The battery is four given, four produced, four fabricated,
+so eight of twelve probes answer ``no'' and a constant ``no'' scores $8/12$.
+Under a frozen contract, two subjects showed \texttt{yes\_rate} $=0.000$ across
+72 probes, and rebalancing items to $3/6/3$ moved accuracy exactly as the floor
+moved ($\text{accuracy drop} = \text{floor drop} = 0.1667$). Subjects at the
+floor carry no information about monitoring, and every null measured on them
+was guaranteed in advance. Given the imbalance, constant ``no'' is also the
 loss-minimising policy under uncertainty---correct play, not incompetence.
 
-\item \textbf{An unreachable branch read as an inert monitor.} The grid
-agent's override required a record entry with a source tag that no code path
-ever wrote. Instrumented over a full run: 221 diagnoses, zero such entries,
-zero overrides. $\gamma$ was $0.00$ in all seven variants \emph{including the
-intact ones}, so the no-monitor ablation removed something already inert,
-and its reported signature described the full system equally.
+\item \textbf{An unreachable branch read as an inert monitor.} The grid agent's
+override required a record entry with a source tag no code path ever wrote.
+Instrumented over a full run: 221 diagnoses, zero such entries, zero overrides.
+$\gamma$ was $0.00$ in all seven variants \emph{including the intact ones}, so
+the no-monitor ablation removed something already inert and its reported
+signature described the full system equally.
 
-\item \textbf{Ablations not sharing a random stream.} A single global seed
-was shared, but ablations consume different numbers of draws, so each faced
-a different effective environment. One ablation appeared to \emph{outperform}
-the intact system; with streams matched it underperforms as expected.
+\item \textbf{Ablations not sharing a random stream.} A single global seed was
+shared, but ablations consume different numbers of draws, so each faced a
+different effective environment. One ablation appeared to \emph{outperform} the
+intact system; with streams matched it underperforms as expected.
 
 \item \textbf{A randomised trigger reported as a diagnosis rate.} A revision
 forced the gate to fire on a $5\%$ random draw. The genuine detector returned
-$0.0$ on all 288 probes, so every recorded escalation was the coin flip and
-the reported rate was a generator tuned to the target ceiling.
+$0.0$ on all 288 probes, so every recorded escalation was the coin flip and the
+reported rate was a generator tuned to the target ceiling.
 
 \item \textbf{An absent record read as an absent problem.} The no-boundary
-ablation reports zero repeat errors. With no record there is nothing to
-count against; the zero is blindness, not competence.
+ablation reports zero repeat errors. With no record there is nothing to count
+against; the zero is blindness, not competence.
 
-\item \textbf{Hand-written strings read as measured drift.} A drift
-experiment computed distance between two authored lists of text. All seeds
-returned one value per condition, the model output was discarded, and all
-four preregistered predictions were determined by what had been typed.
+\item \textbf{Hand-written strings read as measured drift.} A drift experiment
+computed distance between two authored lists of text. All seeds returned one
+value per condition, model output was discarded, and all four preregistered
+predictions were determined by what had been typed.
 \end{enumerate}
 
 \noindent
-The regularity is that confirming quantities are not audited. A number that
-\emph{contradicted} the hypothesis would have been investigated immediately.
-We therefore suggest the inverse discipline: \textbf{audit the numbers that
-agree with you}, since the disagreeing ones already receive scrutiny.
+The regularity is that confirming quantities are not audited: a number that
+\emph{contradicted} the hypothesis would have been investigated immediately. We
+suggest the inverse discipline---\textbf{audit the numbers that agree with
+you}---and note that the sham of \S\ref{sec:sham} is that discipline applied to
+a component rather than to a number.
 
 \section{What is not claimed}
 \label{sec:notclaimed}
 
-\paragraph{Substrate.} Two paradigms use one language model on one battery;
-two use a grid agent with random-utility action selection. The
-matched-deficit condition is supported in these settings and is not
-established for monitoring in general.
+\paragraph{Substrate.} Three paradigms use one language model on one battery;
+two use a grid agent with random-utility action selection. The condition is
+supported in these settings and is not established for cognitive components in
+general.
 
 \paragraph{A missing control.} The sham-gate arm of Paradigm~II did not run.
-Without it the dose--response is a rate effect and cannot be attributed to
-gate content.
+Without it the dose--response is a rate effect and cannot be attributed to gate
+content---an omission we note with some discomfort in a paper arguing that the
+sham is the load-bearing arm.
 
-\paragraph{A prediction we lost.} The thermodynamic reading of
-\S\ref{sec:demon} suggested that erasure without a record of what was
-discarded should do no net work, making damping dependent on a boundary. We
-tested it at $n=400$ paired seeds with a discard log that raised the
-re-admission bar without blocking it. The record halved re-acquisition
-($0.159 \to 0.059$), but deletion without a record still accomplished $77.5\%$
-of its net work and the held-out transfer difference was
-$-0.0025$, CI $[-0.0125,+0.0050]$. \textbf{The conjecture is refuted}: the
-physical reading does not transfer to this level. Notably the mechanism
-worked while the outcome did not move---the same shape as the sham monitor,
-which is the third such instance in this work.
+\paragraph{A prediction we lost.} A thermodynamic reading of the sham---a
+monitor whose record is uncorrelated with the world pays its cost and extracts
+nothing, as in Landauer's treatment of Szilard's engine---suggested that
+erasure without a record of what was discarded should do no net work. We tested
+it at $n=400$ paired seeds with a discard log that raised the re-admission bar
+without blocking it. The record halved re-acquisition ($0.159 \to 0.059$), but
+deletion without a record still accomplished $77.5\%$ of its net work and the
+transfer difference was $-0.0025$, CI $[-0.0125,+0.0050]$. \textbf{The
+conjecture is refuted.} Notably the mechanism worked while the outcome did not
+move---a fourth instance of the paper's own thesis, arrived at against our
+intent.
 
-\paragraph{A directional signal we are not claiming.} In the same experiment
+\paragraph{A directional signal we are not claiming.} In that experiment
 capacity-limited forgetting outperformed unbounded accumulation on held-out
-transfer ($+0.0275$ in wins) with a store $35\%$ smaller. The interval
-includes zero at $n=400$.
+transfer ($+0.0275$ in wins) with a store $35\%$ smaller. The interval includes
+zero at $n=400$.
 
-\paragraph{Cited, not verified.} The human interference results referenced in
-\S2 were not re-derived here.
+\paragraph{Cited, not verified.} The human interference results in \S2 were not
+re-derived here.
 
 \section{Conclusion}
 
-A monitor that acts is not thereby a monitor that helps. In four experiments
-spanning two substrates, mechanisms that verifiably operated---consulting
-records, overriding actions, imposing survival pressure---produced no benefit
-or a measurable cost, and the ordering of outcomes is explained by whether
-the monitoring was matched to an existing deficit.
+A component that acts is not thereby a component that helps. In five
+experiments across two substrates and two component types, mechanisms that
+verifiably operated---consulting records, overriding actions, retrieving
+memories, imposing survival pressure---produced no benefit or a measurable
+cost. In each case the arm that revealed this was the sham, not the ablation
+and not the treatment.
 
-The practical consequences are narrow and, we think, immediately usable.
-Report override rates only alongside an outcome the override should move.
-Treat a rising override rate as ambiguous. Prefer making a record
-\emph{available} to mandating that it be consulted. And audit the quantities
-that agree with the hypothesis, because those are the ones that will
-otherwise stand for years.
+The practical consequences are narrow and immediately usable. Report activity
+metrics only beside an outcome the activity should move. Treat a rising
+override rate, or a rising retrieval rate, as ambiguous. Prefer making a
+resource \emph{available} over mandating that it be consulted. Index memory on
+what is stable in the domain rather than on what is convenient to record. And
+audit the quantities that agree with the hypothesis, because those are the ones
+that will otherwise stand for years.
 
 \paragraph{Reproducibility.} Preregistrations, locks, and result files are in
 the accompanying repository. Each confirmatory analysis names its seed range,
