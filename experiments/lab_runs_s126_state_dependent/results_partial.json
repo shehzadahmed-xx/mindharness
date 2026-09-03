@@ -1,0 +1,96 @@
+{
+ "model": "poolside/laguna-s-2.1",
+ "n_seeds": 12,
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1754
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 1.0,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2994
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2186
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2967
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1817
+    },
+    {
+     "seed": 6,
+     "attribution_accuracy": 0.75,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1643
+    },
+    {
+     "seed": 7,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1773
+    },
+    {
+     "seed": 8,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2186
+    },
+    {
+     "seed": 9,
+     "attribution_accuracy": 0.9167,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1854
+    },
+    {
+     "seed": 10,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1643
+    },
+    {
+     "seed": 11,
+     "attribution_accuracy": 0.75,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1703
+    },
+    {
+     "seed": 12,
+     "attribution_accuracy": 0.8333,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1641
+    }
+   ],
+   "pooled_accuracy": 0.8681,
+   "median_latency_ms": 1817
+  }
+ }
+}

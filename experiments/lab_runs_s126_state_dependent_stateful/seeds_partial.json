@@ -1,0 +1,64 @@
+{
+ "model": "poolside/laguna-s-2.1",
+ "probes_per_seed_seeds": 12,
+ "seeds": {
+  "raw": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 1858
+   },
+   "2": {
+    "seed": 2,
+    "attribution_accuracy": 0.8333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 1753
+   },
+   "3": {
+    "seed": 3,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 1633
+   },
+   "4": {
+    "seed": 4,
+    "attribution_accuracy": 0.8333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 1695
+   },
+   "5": {
+    "seed": 5,
+    "attribution_accuracy": 0.8333,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 1690
+   },
+   "6": {
+    "seed": 6,
+    "attribution_accuracy": 0.9167,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 1647
+   },
+   "7": {
+    "seed": 7,
+    "attribution_accuracy": 1.0,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 3977
+   },
+   "8": {
+    "seed": 8,
+    "attribution_accuracy": 0.9167,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 1791
+   }
+  }
+ }
+}

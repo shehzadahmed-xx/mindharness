@@ -116,7 +116,7 @@ class BackendClient:
         max_retries: int = 3,
         max_backoff_s: int = 30,
         min_interval_s: float = 0.0,
-        max_tokens: int = 2000,
+        max_tokens: int = 800,
         timeout_s: int = 120,
         manifest_path: str | Path | None = None,
         strict_fingerprint: bool = False,

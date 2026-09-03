@@ -44,3 +44,27 @@ benefit — the demon that measures the wrong molecule.
 P-A fails if the gate fires above 2% at 0.6. P-B fails if the rate is under
 0.05 at 0.28. P-C fails if some threshold yields both firing and <5%. P-D fails
 if sham gating helps as much as real gating.
+
+---
+
+## Outcome (recorded 2026-09-03)
+
+| prediction | predicted | observed | verdict |
+|---|---|---|---|
+| **P-A** gate rarely fires at 0.60 | < 0.02 | **0.0625** | **REFUTED** |
+| **P-B** rate at 0.28 | 0.10–0.25 | 0.225 | held |
+| **P-C** no threshold both fires and stays < 5% | — | 0.0625 at the documented default | held, more strongly |
+| **P-D** sham gating fires at a similar rate with no benefit | — | **not run** | **pending** |
+
+P-A was wrong: the gate fires more readily at the documented default than
+predicted, and already exceeds the architecture's own 5% healthy ceiling.
+
+P-C's mechanism is structural. Conflicts are bounded below by the subject's
+error rate (~18% at raw), so a monitor sensitive enough to catch disagreements
+cannot fit a budget that presumes ~95% correctness.
+
+**P-D is the outstanding control.** The provider returned
+`429 FreeUsageLimitError` after thirty retries. Until it runs, the
+dose–response in `paper_v3` §5.5 is a **rate** effect and cannot be attributed
+to the gate's *content*. A patient runner retries every 15 minutes for 24h and
+banks per seed, so the arm resumes rather than restarts.
