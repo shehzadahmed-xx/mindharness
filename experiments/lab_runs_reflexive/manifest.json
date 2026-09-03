@@ -1,0 +1,7 @@
+{
+ "experiment": "exp_reflexive_cost",
+ "runs": 20,
+ "turns": 12,
+ "seed": 42,
+ "h1": true
+}

@@ -1,0 +1,11 @@
+{
+ "experiment": "exp_iqra_skin",
+ "n": 100,
+ "seed": 42,
+ "delta": 0.2042,
+ "ci": [
+  0.1758,
+  0.2325
+ ],
+ "supported": true
+}

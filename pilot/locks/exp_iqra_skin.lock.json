@@ -1,0 +1,29 @@
+{
+ "experiment": "exp_iqra_skin",
+ "hypotheses": [
+  "H1 PRIMARY: skin-learned (two_memories) attribution_accuracy \u2212 fixed(0.5V) > 0.15 pooled over n=100 episodes (paired).",
+  "H2: learned threshold converges toward optimal (~0.30-0.34) from 0.50, distance to optimal shrinks.",
+  "H3: slow patterns stay small (\u22648) while attribution improves \u2014 compression, not memorization."
+ ],
+ "metrics": [
+  "attribution_accuracy",
+  "threshold_distance_to_optimal",
+  "slow_pattern_count"
+ ],
+ "thresholds": {
+  "h1_delta_gt": 0.15,
+  "h2_converges": true
+ },
+ "item_pool_sha256": "eea4d2b3c52852d2",
+ "model_arms": [
+  {
+   "model": "tiny_agent_iqra",
+   "mode": "paired",
+   "threshold": "fixed_vs_learned"
+  }
+ ],
+ "n_seeds": 100,
+ "notes": "Blind spot A Iqra: skin threshold via two_memories (working 7 + slow consolidation >=2 cities) vs fixed 0.5V. Paired n=100 episodes 5x5 grid, 12 probes/episode. Primary delta >0.15.",
+ "created_at": "2026-09-03T00:23:49+00:00",
+ "lock_sha256": "15daca0fd6eb31e52c1ec3d2b640dac57e305bf1bb948d684b09508bfdc52e67"
+}

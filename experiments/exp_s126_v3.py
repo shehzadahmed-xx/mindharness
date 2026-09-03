@@ -144,7 +144,13 @@ def main() -> None:
                          'return a short JSON object')
     ap.add_argument('--gate-threshold', type=float, default=None,
                     help='MonitorGate detect threshold; None uses the '
-                         'documented default (0.6). Recorded in results.')
+                         'documented default (0.28 after Phase B). Recorded in results.')
+    ap.add_argument('--gate', type=str, default=None,
+                    choices=['state_dependent', 'ritual_random', 'ritual', 'threshold'],
+                    help='Phase B when-to-check wisdom: state_dependent (threshold-gated, 0.28) '
+                         'replaces ritual random()<0.05 stochastic audit. If set, forces '
+                         'threshold 0.28 unless --gate-threshold overrides. '
+                         'Equivalent to --gate-threshold 0.28 with state-dependent detection.')
     ap.add_argument('--pace', type=float, default=0.0,
                     help='minimum seconds between API calls; burst-limited '
                          'free endpoints 503 in clusters without it')
@@ -162,9 +168,33 @@ def main() -> None:
                          'as exploratory; NEVER use for a confirmatory run')
     args = ap.parse_args()
 
+    # Phase B gate handling: --gate state_dependent forces threshold 0.28 and state-dependent detection
+    if args.gate == 'state_dependent' and args.gate_threshold is None:
+        args.gate_threshold = 0.28
+    elif args.gate in ('ritual_random', 'ritual') and args.gate_threshold is None:
+        # ritual path kept for comparison; deterministic threshold still used but arms switch to always-check
+        args.gate_threshold = 0.28
     out_dir = Path(__file__).parent / args.out_dir
     out_dir.mkdir(exist_ok=True)
     arms = tuple(a.strip() for a in args.arms.split(',') if a.strip())
+    # Auto-expand arms when --gate state_dependent is used with default minimal arms
+    # so the single-flag invocation from the $1 GO paid command actually runs the
+    # full Phase B comparison (raw / available / state_dependent / ritual / sham).
+    if args.gate == 'state_dependent':
+        # ensure state_dependent and its sham control are present
+        needed = []
+        if 'harnessed_gated' not in arms:
+            needed.append('harnessed_gated')
+        if 'sham_gated' not in arms and 'sham' in arms:
+            # keep original sham (always-check shuffled) for legacy S1,
+            # but also add sham_gated for gate-matched control
+            needed.append('sham_gated')
+        elif 'sham_gated' not in arms and 'sham' not in arms:
+            needed.append('sham_gated')
+        if needed:
+            arms = tuple(list(arms) + needed)
+            print(f"--gate state_dependent: expanded arms to {arms}", flush=True)
+        print(f"--gate state_dependent: threshold_detect={args.gate_threshold} (state-dependent, no ritual random)", flush=True)
 
     hyps = ["P1: withcheck accuracy > nocheck accuracy by >0.15",
             "P2: withcheck accuracy >= raw",

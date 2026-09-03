@@ -877,6 +877,64 @@ record, or an external consistency check. We record the attempt because the
 inertness of the detector is itself the finding, and because it identifies what
 the next arm must be built from.
 
+\paragraph{A retrieval-conflict gate, and a dose--response.} We rebuilt the
+detector so that its signal does not pass through the subject's self-report.
+Each probe now triggers a \emph{local} record lookup, which is free --- the
+expensive operation is the second model call, and that is what the gate
+withholds. The signal is \emph{retrieval conflict}: disagreement between the
+record and the Stage-1 answer about whether the statement was generated.
+Thresholds were declared before the run, along with predicted firing rates.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Arm & Consult rate & Accuracy & $\gamma$ \\
+\midrule
+Record available, never forced & $0\%$      & \textbf{0.896} & --- \\
+Gated, threshold $0.60$        & $6.25\%$   & 0.813 & 0.500 \\
+Gated, threshold $0.28$\,$^\dagger$ & $22.5\%$ & 0.667 & \textbf{0.900} \\
+Unconditional check            & $100\%$    & 0.674 & --- \\
+\midrule
+Raw (no record) & --- & 0.819 & --- \\
+\bottomrule
+\end{tabular}
+\caption{Accuracy against how often the record is consulted. $^\dagger$ten of
+twelve seeds. The always-no floor is $0.667$.}
+\label{tab:dose}
+\end{table}
+
+Accuracy falls monotonically as the consult rate rises, and saturates at the
+constant-policy floor once roughly a fifth of probes are escalated. The earlier
+$-0.146$ was not a property of checking as such; it was one point on this
+curve, at its far end.
+
+The $\gamma$ column carries the sharper result. At threshold $0.28$ the gate
+fires on $22.5\%$ of probes and \textbf{changes the answer on $90\%$ of the
+occasions it fires} --- and accuracy lands exactly on the floor. This is the
+third independent demonstration in this programme that a high override rate is
+not evidence of a working monitor: in the grid ablation the highest $\gamma$
+belonged to the worst-performing condition, and here the highest $\gamma$
+belongs to the arm that collapsed. What the overrides do is flip answers toward
+denial, which is the conservative-denial pathology arriving by a new route ---
+produced by \emph{acting on} evidence rather than by lacking it.
+
+\paragraph{Preregistered verdicts, including a failure of our own.} Four
+predictions were written and committed before the first call. \textbf{P-A ---
+that at threshold $0.60$ the gate would essentially never fire ($<2\%$) --- is
+refuted}: it fired on $6.25\%$ of probes, already above the architecture's
+own $5\%$ healthy ceiling. P-B (a rate of $0.10$--$0.25$ at threshold $0.28$)
+held at $0.225$. P-C --- that no threshold both fires and respects the $5\%$
+budget --- held, and more strongly than predicted, since even the documented
+default exceeds it. The reason is structural: conflicts are bounded below by
+the subject's error rate, which is about $18\%$ at raw, so a monitor sensitive
+enough to catch disagreements cannot fit inside a budget that presumes $95\%$
+correctness. \textbf{P-D, the sham-gate control, could not be run}: the
+provider exhausted its quota after thirty retries. Without it we cannot claim
+that the gate's \emph{content} rather than its \emph{rate} produced these
+numbers, and the dose--response above should be read as a rate effect until
+that control exists.
+
 \paragraph{Convergent evidence.} Three independent lines agree on this
 conditional form. (i)~The interference literature on metacognitive
 monitoring: a full monitoring apparatus degrades calibration relative to

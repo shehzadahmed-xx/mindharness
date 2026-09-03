@@ -1,0 +1,33 @@
+{
+ "experiment": "exp_reflexive_cost",
+ "hypotheses": [
+  "H1 PRIMARY: moving P mean drift per turn \u0394 = H(P(t+1),Q)-H(P(t),Q) > 0 and exceeds frozen P drift (paired, 95% CI excludes 0).",
+  "H2: cumulative drift over 12 turns moving >> frozen (moving accumulates, frozen \u22480).",
+  "H3 VARIANT: counterfactual-phrased P drifts faster than narrative-phrased P under moving (\u0394_cf > \u0394_narr)."
+ ],
+ "metrics": [
+  "drift_per_turn",
+  "cumulative_drift",
+  "variant_delta"
+ ],
+ "thresholds": {
+  "h1_drift_gt": 0.0,
+  "h2_cumulative_gt": 0.1,
+  "h3_cf_gt_narr": true
+ },
+ "item_pool_sha256": "44b938015ea1c6d7",
+ "model_arms": [
+  {
+   "model": "reflexive_cost",
+   "mode": "paired_frozen_vs_moving",
+   "variants": [
+    "counterfactual",
+    "narrative"
+   ]
+  }
+ ],
+ "n_seeds": 20,
+ "notes": "Blind spot C moving P reflexivity cost: n=20 runs x 12 turns paired frozen vs moving, + counterfactual vs narrative variant. Drift H(P(t+1),Q)-H(P(t),Q).",
+ "created_at": "2026-09-03T00:18:37+00:00",
+ "lock_sha256": "a66fef395fd94aefd2a970e8e6008efa3488dafcc808bc7bedda3e3937e2d410"
+}

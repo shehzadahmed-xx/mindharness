@@ -1,0 +1,67 @@
+{
+ "experiment": "exp_iqra_skin",
+ "n_episodes": 100,
+ "probes_per_episode": 12,
+ "grid": "5x5",
+ "cities": 5,
+ "seed": 42,
+ "distributions": {
+  "external": "Normal(0.16,0.12) clipped",
+  "self": "Normal(0.46,0.12) clipped",
+  "optimal_thr": 0.31,
+  "fixed_thr": 0.5
+ },
+ "pooled_fixed_accuracy": 0.6725,
+ "pooled_learned_accuracy": 0.8767,
+ "delta_learned_minus_fixed": 0.2042,
+ "paired_bootstrap_CI95": [
+  0.1758,
+  0.2325
+ ],
+ "h1_supported": true,
+ "h1_delta_gt_0.15": true,
+ "learned_thr_final": 0.2852,
+ "learned_thr_trace_last5": [
+  0.2917,
+  0.2917,
+  0.2887,
+  0.2854,
+  0.2854
+ ],
+ "threshold_distance_start": 0.19,
+ "threshold_distance_end": 0.0248,
+ "h2_converged": true,
+ "slow_patterns_final": 3,
+ "slow_patterns_trace_last5": [
+  3,
+  3,
+  3,
+  3,
+  3
+ ],
+ "slow_patterns_stays_small": true,
+ "h3_supported": true,
+ "per_episode_fixed": [
+  0.5833,
+  0.6667,
+  0.75,
+  0.6667,
+  0.75
+ ],
+ "per_episode_learned": [
+  0.5833,
+  0.6667,
+  0.8333,
+  0.75,
+  0.75
+ ],
+ "hypotheses": [
+  "H1 PRIMARY: skin-learned (two_memories) attribution_accuracy \u2212 fixed(0.5V) > 0.15 pooled over n=100 episodes (paired).",
+  "H2: learned threshold converges toward optimal (~0.30-0.34) from 0.50, distance to optimal shrinks.",
+  "H3: slow patterns stay small (\u22648) while attribution improves \u2014 compression, not memorization."
+ ],
+ "thresholds": {
+  "h1_delta_gt": 0.15,
+  "h2_converges": true
+ }
+}

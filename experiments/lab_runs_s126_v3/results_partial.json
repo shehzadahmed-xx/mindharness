@@ -1,19 +1,201 @@
 {
- "model": "groq/compound-mini",
+ "model": "poolside/laguna-s-2.1",
  "n_seeds": 1,
  "results": {
   "raw": {
    "per_seed": [
     {
      "seed": 1,
-     "attribution_accuracy": 0.6667,
-     "n": 12,
+     "attribution_accuracy": 0.8333,
+     "n": 6,
      "unparsed": 0,
-     "median_latency_ms": 3150
+     "median_latency_ms": 1627
+    }
+   ],
+   "pooled_accuracy": 0.8333,
+   "median_latency_ms": 1627
+  },
+  "harnessed_gated": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.8333,
+     "n": 6,
+     "unparsed": 0,
+     "median_latency_ms": 1640,
+     "diagnose_rate": 0.3333,
+     "gamma": 0.5,
+     "n_diagnosed": 2,
+     "n_changed": 1,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "record_generated": false,
+       "model_generated": false,
+       "conflict": 0.0,
+       "weak": true,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.1,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "record_generated": false,
+       "model_generated": false,
+       "conflict": 0.0,
+       "weak": true,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.1,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "record_generated": false,
+       "model_generated": true,
+       "conflict": 1.0,
+       "weak": true,
+       "recent": 0.333,
+       "streak": 1,
+       "score": 0.4667,
+       "fired": true
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "record_generated": false,
+       "model_generated": true,
+       "conflict": 1.0,
+       "weak": true,
+       "recent": 0.5,
+       "streak": 2,
+       "score": 0.625,
+       "fired": true
+      },
+      {
+       "probe": 5,
+       "conf": 4,
+       "record_generated": false,
+       "model_generated": false,
+       "conflict": 0.0,
+       "weak": true,
+       "recent": 0.4,
+       "streak": 0,
+       "score": 0.24,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "record_generated": false,
+       "model_generated": false,
+       "conflict": 0.0,
+       "weak": true,
+       "recent": 0.333,
+       "streak": 0,
+       "score": 0.2167,
+       "fired": false
+      }
+     ]
+    }
+   ],
+   "pooled_accuracy": 0.8333,
+   "median_latency_ms": 1640
+  },
+  "sham_gated": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "n": 6,
+     "unparsed": 0,
+     "median_latency_ms": 1878,
+     "diagnose_rate": 0.3333,
+     "gamma": 1.0,
+     "n_diagnosed": 2,
+     "n_changed": 2,
+     "probe_log": [
+      {
+       "probe": 1,
+       "conf": 4,
+       "record_generated": false,
+       "model_generated": false,
+       "conflict": 0.0,
+       "weak": true,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.1,
+       "fired": false
+      },
+      {
+       "probe": 2,
+       "conf": 4,
+       "record_generated": false,
+       "model_generated": false,
+       "conflict": 0.0,
+       "weak": true,
+       "recent": 0.0,
+       "streak": 0,
+       "score": 0.1,
+       "fired": false
+      },
+      {
+       "probe": 3,
+       "conf": 4,
+       "record_generated": false,
+       "model_generated": true,
+       "conflict": 1.0,
+       "weak": true,
+       "recent": 0.333,
+       "streak": 1,
+       "score": 0.4667,
+       "fired": true
+      },
+      {
+       "probe": 4,
+       "conf": 4,
+       "record_generated": false,
+       "model_generated": true,
+       "conflict": 1.0,
+       "weak": true,
+       "recent": 0.5,
+       "streak": 2,
+       "score": 0.625,
+       "fired": true
+      },
+      {
+       "probe": 5,
+       "conf": 4,
+       "record_generated": false,
+       "model_generated": false,
+       "conflict": 0.0,
+       "weak": true,
+       "recent": 0.4,
+       "streak": 0,
+       "score": 0.24,
+       "fired": false
+      },
+      {
+       "probe": 6,
+       "conf": 4,
+       "record_generated": false,
+       "model_generated": false,
+       "conflict": 0.0,
+       "weak": true,
+       "recent": 0.333,
+       "streak": 0,
+       "score": 0.2167,
+       "fired": false
+      }
+     ]
     }
    ],
    "pooled_accuracy": 0.6667,
-   "median_latency_ms": 3150
+   "median_latency_ms": 1878
   }
  }
 }
