@@ -1,0 +1,39 @@
+{
+ "experiment": "exp_iqra_independent_seeds",
+ "status": "CONFIRMATORY REPLICATION",
+ "date_locked": "2026-09-03",
+ "frozen_before_first_trial": true,
+ "seed_range": [
+  9001,
+  9200
+ ],
+ "seeds_disjoint_from": "original master seed 42",
+ "primary_outcome": "I3 \u2014 sensitivity: delta collapses to <0.05 when fixed threshold = optimal 0.31",
+ "predictions": [
+  "I1 mean delta over 200 independent seeds >= +0.15, 95% CI excludes 0",
+  "I2 between-seed 95% interval WIDER than original within-seed [0.1758,0.2325] (width 0.057)",
+  "I3 PRIMARY: with FIXED_THR set to OPTIMAL_THR=0.31, delta < +0.05"
+ ],
+ "fixed_params": {
+  "probes_per_episode": 12,
+  "cities": 5,
+  "grid": 5,
+  "ext": [
+   0.16,
+   0.12
+  ],
+  "self": [
+   0.46,
+   0.12
+  ],
+  "n_seeds": 200,
+  "bootstrap_iters": 5000,
+  "alpha": 0.05
+ },
+ "stopping_rule": "one run at n=200 seeds plus one sensitivity run; no peeking",
+ "frozen_sha256": {
+  "preregs/IQRA_INDEPENDENT_SEEDS_REPLICATION.md": "63e2823a0920e5198d696f79d6f176a1300519d215f03a82454422867fd72bf6",
+  "tools/tiny_agent_iqra.py": "29315172c25f9bc28e3e5c8527b3ebe99e1298498fbe3aaaa8028b779c1d7403"
+ },
+ "lock_id": "fc3d9cad"
+}
