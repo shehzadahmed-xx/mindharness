@@ -330,14 +330,46 @@ outcome.}
 
 \noindent
 The sham performs the checking motion---$\gamma$ is genuinely non-zero---and
-produces \emph{exactly} the no-monitor outcome, $6.70$ against $6.70$. At
-$n=2000$ paired seeds the sham is measurably \emph{worse} than the veridical
-monitor ($+1.89$ repeat errors, CI $[+1.78,+2.00]$).
+produces the no-monitor outcome, $6.70$ against $6.70$.
+
+At $n = 2000$ paired seeds the coincidence at two decimal places does not
+survive, but the substantive claim strengthens. Relative to the intact monitor:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Condition & $\gamma$ & $\Delta$\,repeat errors vs.\ intact & 95\% CI \\
+\midrule
+Intact monitor & 0.0882 & --- & --- \\
+Sham monitor & 0.0437 & $+1.891$ & $[+1.779, +2.003]$ \\
+No monitor & 0.0000 & $+1.861$ & $[+1.757, +1.965]$ \\
+\bottomrule
+\end{tabular}
+\caption{$n = 2000$ paired seeds. The sham and the absent monitor are
+statistically indistinguishable from each other and both clearly worse than
+the veridical one.}
+\end{table}
+
+\noindent
+\textbf{A monitor with a non-zero override rate is indistinguishable from no
+monitor at all}, with intervals tight enough at this sample to exclude a
+meaningful difference between them. That is a stronger statement than the
+$n=20$ coincidence it replaced.
+
+A second result at this sample is worth recording because it cuts against the
+architecture. Removing the \emph{brake} improves wins by $+1.147$, CI
+$[+1.098, +1.199]$---the largest effect of any ablation, and positive. On a
+horizon of twenty steps the damping component is pure cost; whatever it buys is
+not measurable here. We report it rather than reframing the metric.
 
 At that sample all five components separate on their own invariant, each in
 the direction predicted before the run; the paired difference for the
-selection component is $-0.4235$ in wins, CI $[-0.4570,-0.3890]$. The
-architecture is not inert. Its monitor's \emph{content}, at $n=20$, was.
+selection component is $-0.4235$ in wins, CI $[-0.4570,-0.3890]$, and removing
+the boundary changes repeat errors by $-4.593$---an improvement that is
+blindness, since with no record there is nothing to count against
+(\S\ref{sec:artifacts}). The architecture is not inert. Its monitor's
+\emph{content} was.
 
 \section{Paradigm IV: irreversible stakes do not produce honesty}
 
