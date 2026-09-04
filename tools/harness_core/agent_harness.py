@@ -144,6 +144,13 @@ class AgentHarness:
             self.session_overrides += 1
 
         staged_count = 0
+        # v2 payoff: a successful override earns a small energy refund, so
+        # dissolution is driven by dishonesty rather than by diagnosis alone.
+        # `success` is an explicit keyword on this method, not **kwargs; None
+        # means "not reported" and is treated as not-a-failure, matching the
+        # original .get('success', True) intent.
+        if episode['changed'] and success is not False:
+            self.body.energy = min(1.0, self.body.energy + 0.02)
 
         if final_action == 'abstain':
             resp = "[abstained by metacognitive gate]"
@@ -380,13 +387,13 @@ def wire_irreversibility(harness: AgentHarness, damage: IrreversibleDamage):
             
             # Irreversible triggers:
             if not kwargs.get('success', True):
-                # 1. Three consecutive failures on same task type → ceiling reduction
+                # 1. Three consecutive failures on same task type → ceiling reduction (v2: 0.02 softer, keeps γ>0 while diss>0)
                 if failure_counts[task_type] >= 3:
                     damage.reduce_energy_ceiling(
-                        0.05, f"repeated failure: {task_type}")
+                        0.02, f"repeated failure: {task_type}")
                 
-                # 2. Five failures → permanent skill deletion
-                if failure_counts[task_type] >= 5:
+                # 2. Five failures → permanent skill deletion (v2: 3 so 175 minted actually hits)
+                if failure_counts[task_type] >= 3:
                     matching = [sk.name for sk in harness.skills.all()
                                 if task_type in sk.name.lower()]
                     for name in matching:
