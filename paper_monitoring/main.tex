@@ -240,9 +240,29 @@ two absorbing policies, and most subjects land on one of them.}
 \texttt{allam-2-7b} returns $0.3333$ in all four arms including the sham; no
 manipulation of the record moves a subject that has stopped discriminating.
 
-This bears directly on the design of such studies. A sham arm run on a
-floor-sitting subject cannot separate anything, because all four arms return
-the same constant. Every null we recorded before screening for a discriminating
+\paragraph{Three reasons a control returns ``no effect.''} The distinction this
+forces is not usually drawn. An \textbf{ablation} removes the component. A
+\textbf{sham} keeps its form and destroys its content. A \textbf{floor-sitting
+subject} cannot express the manipulation at all. Only the first two are
+routinely separated, and the third is not a milder version of anything:
+
+\begin{itemize}\itemsep1pt
+\item A \emph{censored cell} is a ceiling effect on an otherwise responsive
+subject. It costs the upper bound on an effect size, and the design stays
+interpretable. A sibling programme reports one such cell---a subject whose
+response rate spans $0.410$--$0.972$ across arms, so it moves with the
+manipulation, with a single arm saturated at $0.972$. Its effect share on that
+arm is a lower bound, not a point estimate.
+\item A \emph{floor-sitter} has no response function on the instrument at all.
+It costs the \emph{existence} claim, and it voids the arm. \texttt{allam-2-7b}
+returns $0.3333$ in all four arms including the sham.
+\end{itemize}
+
+\noindent
+A reader who has met only ceiling effects will assume the second is the first
+and merely inconvenient. It is not: a sham arm run on a floor-sitter returns
+the treatment value \emph{exactly}, so the control reports ``content does not
+matter'' when the correct reading is ``this subject cannot show us.'' Every null we recorded before screening for a discriminating
 subject was guaranteed by the subject, not by the manipulation---which is why
 the results above are reported only on subjects that discriminate unaided.
 
@@ -328,6 +348,37 @@ mean the monitor steered strongly; it means the monitor implemented a constant
 policy. \textbf{An override rate approaching one is a signature of a component
 that has stopped conditioning on its input}, and is evidence against the
 monitor rather than for it---the reverse of the natural reading.
+
+\paragraph{The general form.} A sibling programme measuring confidence in
+self-report independently hit the same shape from the other direction: an
+over-claim rate of $1.000$, which reads as maximal corruption of the report and
+is in fact a constant response. Two different metrics, two programmes, one
+failure mode:
+
+\begin{quote}
+On a bounded measure, an extreme reading can indicate that the mechanism
+producing it has \textbf{stopped conditioning on its input}, rather than that
+the effect is maximal. In both known instances the natural reading of the
+extreme value is the opposite of the correct one. An extreme reading should be
+treated as a hypothesis about degeneracy until the response distribution rules
+it out.
+\end{quote}
+
+\noindent
+Neither instance alone supports this. A metric approaching its bound reads as a
+strong effect in most settings, and it took two unrelated metrics failing
+identically to make visible that the extreme is where a mechanism goes dead.
+
+\paragraph{Logging the stage that is easy rather than the stage that carries the
+measure.} Our first attempt to test whether this arm was pinned appeared to
+exonerate it. The instrumentation records the \emph{Stage-1} answer, whose
+``yes'' rate is $0.2250$---genuinely off the floor, and real at that stage. Had
+we stopped there we would have reported coincidence with evidence in hand. What
+caught the artifact was reconstructing the \emph{final} distribution, which the
+logs do not store, from the fired and changed counts. The lesson generalises
+past this experiment: a log that captures the stage most convenient to
+instrument, rather than the stage the outcome measure is computed from, will
+answer the wrong question convincingly.
 
 Two of three preregistered predictions held. The prediction that the gate
 would rarely fire at the documented default was \textbf{refuted}: it fired on
