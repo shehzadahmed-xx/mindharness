@@ -191,8 +191,23 @@ list. The defect propagated by template rather than by repetition of the
 mistake, which is worth noting: a construction artifact in a study design is
 inherited by everything built from that design.
 
-A third result in the same group---an ablation of the boundary component,
-reported as drift $0.04 \to 0.68$---has no runner we can find. It was committed
+A third case is a preregistration with a valid lock, an intact SHA-256 over its
+own document, a \texttt{status} field reading \texttt{LOCKED}, and a verification
+timestamp---and no runner, no data, and no result file anywhere in the
+repository. It appears in status summaries alongside experiments that were
+actually executed. \textbf{The presence of a lock was being read as the presence
+of a result.} That is a failure the lock discipline invites rather than
+prevents: freezing a contract is cheap and visible, running the experiment is
+neither, and a directory of locks looks like a directory of findings. We suggest
+locks carry an explicit \texttt{executed} field that no freezing step can set.
+
+We also checked, and were wrong about, a related suspicion: two lock files share
+a long hash suffix, which we took as evidence the digests were generated rather
+than computed. They are genuine---all three verify against their preregistration
+documents byte-for-byte. The suffix coincidence was ours to misread.
+
+A fourth case---an ablation of the boundary component, reported as drift
+$0.04 \to 0.68$---has no runner we can find. It was committed
 as a JSON file in a change that added no experiment script, and no script in
 the repository implements the on/off comparison it describes. We are unable to
 reproduce it and therefore do not cite it. We include the case because
