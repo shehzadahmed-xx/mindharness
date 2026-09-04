@@ -30,7 +30,7 @@ predicts a specific, recurring pathology in measurement.
 The prediction is that quantities fixed by the \emph{construction} of an
 experiment will be read as properties of the \emph{system}, and that this will
 happen preferentially when the quantity agrees with the hypothesis under test.
-We document seven instances from our own laboratory---an item-balance floor read
+We document eight instances from our own laboratory---an item-balance floor read
 as subject incapacity, an unreachable code branch read as an inert monitor, a
 randomised trigger reported as a diagnosis rate, and three others. Every one
 agreed with what we expected. None was audited until an external control forced
@@ -94,7 +94,7 @@ programme is itself a reflexive system: its findings change what it looks at
 next. The prediction is therefore an instance of the thesis, applied to the
 activity of testing the thesis.
 
-\section{Seven instances}
+\section{Eight instances}
 
 The following are from our own work on cognitive architecture, over roughly one
 year of experiments. We report them because they are ours; a catalogue of other
@@ -214,6 +214,37 @@ reproduce it and therefore do not cite it. We include the case because
 \emph{unreproducible} is a third category alongside \emph{artifact} and
 \emph{finding}, and because it was, until we looked, on our own list of sealed
 results.
+
+\paragraph{8. A number with no referent, cited as a measurement.} The figure
+``$+0.571$ versus $+0.005$'' is the most-repeated quantitative claim in our
+synthesis documents and the stated anchor for the programme's central
+thesis---that compression, not breadth, is what a capable system has. We
+attempted to verify it and could not, in a way that differs from the seven
+above.
+
+It is not computed anywhere. Across every Python file in five repositories it
+occurs exactly once outside comments: as a hardcoded literal inside a
+\texttt{print} statement, in the results block of an analysis script, beside a
+second hardcoded figure purporting to be an information-theoretic quantity the
+script never calculates. No result file in either repository that would hold
+the underlying work contains it.
+
+Worse, it is cited for mutually incompatible things. In one document it is a
+thermodynamic recovery over 200 turns; in another the outcome of removing a
+damping component from a grid agent; in a third the effect of a
+containerisation technique on rehearsal. These are unrelated experiments. A
+number attached to three incompatible referents has no referent.
+
+This is a different failure from the others in this list. Those are
+\emph{construction artifacts}: real quantities produced by the structure of an
+experiment and misread as properties of a system. This one was never a quantity
+at all. It entered as an illustrative literal in output formatting and acquired
+the authority of a measurement by repetition---which is the same selection
+mechanism, operating on something with no measurement underneath it.
+
+We record it because it is the load-bearing citation for the thesis the
+programme is named after, and because it survived a year in a body of work that
+was, throughout, sincerely trying to be careful.
 
 \section{The pattern}
 
@@ -335,7 +366,7 @@ outside. The narrow consequence is that its instruments have no outside either,
 and that this shows up as a specific, directional failure: quantities fixed by
 construction read as properties of the system, surviving when they confirm.
 
-We have seven instances from our own work, six of them confirming, none caught
+We have eight instances from our own work, seven of them confirming, none caught
 until an external control forced the issue---and two of them committed while
 documenting the others. A seventh case is unreproducible rather than
 artifactual, and one of the six turned out to have propagated to a second study
