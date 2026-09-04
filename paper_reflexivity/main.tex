@@ -30,7 +30,7 @@ predicts a specific, recurring pathology in measurement.
 The prediction is that quantities fixed by the \emph{construction} of an
 experiment will be read as properties of the \emph{system}, and that this will
 happen preferentially when the quantity agrees with the hypothesis under test.
-We document six instances from our own laboratory---an item-balance floor read
+We document seven instances from our own laboratory---an item-balance floor read
 as subject incapacity, an unreachable code branch read as an inert monitor, a
 randomised trigger reported as a diagnosis rate, and three others. Every one
 agreed with what we expected. None was audited until an external control forced
@@ -94,7 +94,7 @@ programme is itself a reflexive system: its findings change what it looks at
 next. The prediction is therefore an instance of the thesis, applied to the
 activity of testing the thesis.
 
-\section{Six instances}
+\section{Seven instances}
 
 The following are from our own work on cognitive architecture, over roughly one
 year of experiments. We report them because they are ours; a catalogue of other
@@ -156,7 +156,27 @@ An ablation removing the system's record reported zero repeat errors---its best
 score on that metric. With no record there is nothing to count against. The
 zero was blindness, and we initially read it as competence.
 
-\paragraph{6. Hand-written strings read as measured drift.}
+\paragraph{6. A gate that cannot help firing, read as a monitor that steers.}
+A two-stage monitor escalated when the record disagreed with the system's first
+answer. For a battery in which eight of twelve items are genuinely
+not-generated, the record correctly says ``no'' to all eight, so the gate fired
+on \emph{exactly} the probes where the first answer was ``yes''---and overrode
+every one. Final ``yes'' rate: $0.000$. Its override rate of $0.900$ was read
+as strong steering; it was a constant-response policy wearing a monitor's
+instrumentation.
+
+We were within one message of publishing the inference that a \emph{wrong}
+record is less harmful than a right one, on the strength of a sham arm scoring
+$0.6945$ against this arm's $0.6667$. A colleague reading only those two
+numbers observed that the comparison could not distinguish ``consulting is what
+damages'' from ``the reference arm is pinned at an absorbing value,'' and asked
+us to check the answer distribution before concluding. The second reading was
+correct: the sham's entire advantage was three probes it failed to flip. This
+is the only artifact in the list caught \emph{before} it reached a paper, and it
+was caught by someone outside the experiment reasoning from two summary
+statistics.
+
+\paragraph{7. Hand-written strings read as measured drift.}
 A drift experiment computed the distance between two authored lists of text.
 One list had been written to stay similar, the other to degrade. The model's
 output was never used---the response function returned a constant. All seeds
@@ -300,7 +320,7 @@ outside. The narrow consequence is that its instruments have no outside either,
 and that this shows up as a specific, directional failure: quantities fixed by
 construction read as properties of the system, surviving when they confirm.
 
-We have six instances from our own work, five of them confirming, none caught
+We have seven instances from our own work, six of them confirming, none caught
 until an external control forced the issue---and two of them committed while
 documenting the others. A seventh case is unreproducible rather than
 artifactual, and one of the six turned out to have propagated to a second study

@@ -290,6 +290,45 @@ At threshold $0.28$ the gate fires on $22.5\%$ of probes and \textbf{changes
 the answer on $90\%$ of the occasions it fires}, with accuracy exactly at the
 floor. High activity, maximal apparent influence, worst outcome.
 
+\paragraph{The gate at $0.28$ is a constant-response machine by construction.}
+A partial sham-gate run (nine of twelve seeds) prompted us to reconstruct the
+final answer distribution, and the reconstruction changes what this arm means.
+The anomaly signal is disagreement between the record and the Stage~1 answer.
+For this battery the record correctly reports ``not generated'' for eight of
+twelve items, so the gate fires on \emph{precisely} the probes where Stage~1
+said ``yes.'' Stage~2 then overrides all of them:
+
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+Arm & Stage-1 ``yes'' & Fired & Changed & Final ``yes'' rate \\
+\midrule
+Real gate & 27/120 & 27 & 27 & \textbf{0.000} \\
+Sham gate & 28/108 & 28 & 25 & 0.028 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Every ``yes'' is flipped, so the arm's final policy is constant ``no'' and its
+$0.6667$ is the absorbing value of \S\ref{sec:subjects}, not a coincidence.
+The sham's small advantage ($0.6945$ vs.\ $0.6667$) is \emph{three probes it
+failed to flip}---it escaped the absorbing policy slightly, which is not
+evidence that a wrong record helps.
+
+We had begun to draw that inference and a colleague reviewing these numbers
+pointed out that the two readings---``consulting is what damages'' and ``the
+reference arm is pinned''---fit the same two summary statistics and have
+opposite implications. They do, and the second is correct. \textbf{This arm
+cannot be used to attribute the dose--response to gate content}, and the
+comparison is withdrawn.
+
+What survives is sharper than what we lost. A $\gamma$ of $0.900$ here does not
+mean the monitor steered strongly; it means the monitor implemented a constant
+policy. \textbf{An override rate approaching one is a signature of a component
+that has stopped conditioning on its input}, and is evidence against the
+monitor rather than for it---the reverse of the natural reading.
+
 Two of three preregistered predictions held. The prediction that the gate
 would rarely fire at the documented default was \textbf{refuted}: it fired on
 $6.25\%$, above the architecture's own $5\%$ healthy ceiling. The reason is
