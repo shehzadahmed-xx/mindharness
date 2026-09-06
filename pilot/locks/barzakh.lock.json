@@ -17,7 +17,7 @@
  "n_turns": 12,
  "prereg_file": "experiments/BARZAKH_PREREGISTRATION.md",
  "prereg_sha256": "874dccccce6ce41c64acd32657f194efa90b3061c1c3131ad62b6dd5bb4efcb0",
- "status": "DRAFT_LOCK \u2014 not yet committed as git tag, ready for prediction_lock.py when available",
+ "status": "FROZEN 2026-09-06 — committed before first real AgentHarness run, 0-call drift primary, cheapest re-injection while Go plan 0 credits",
  "thresholds": {
   "delta_gt": 0.15,
   "drift_event_gt": 0.3,
