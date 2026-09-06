@@ -1,7 +1,7 @@
 # MindHarness — Handoff
 
-**Verified:** 2026-08-30 · **HEAD:** `fed46e8` · **244 commits** on `master`, **0 unpushed** · **Remote:** `github.com/shehzadahmed-xx/mindharness`
-**Tests:** 91/91 green (offline, no API keys) · **Papers:** v2 23pp · v3 32pp · 5organs 33 pp · **Research:** ~4,200 lines
+**Verified:** 2026-09-06 · **HEAD:** `691d998` · **283 commits** on `master`, **0 unpushed** · **Remote:** `github.com/shehzadahmed-xx/mindharness`
+**Tests:** 91/91 green (offline, no API keys) · **Papers:** v2 23pp · v3 36pp · 5organs 33pp · **Research:** ~17,520 lines
 **Companion:** `~/Desktop/springfish` (SpringFish / Spring-Loaded Door + ESC — separate work, no git)
 
 > Every number above was re-derived from disk on 2026-08-27, not carried over from a previous handoff. See §9 for why that matters.

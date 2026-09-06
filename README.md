@@ -2,7 +2,7 @@
 
 > *LLM = tongue. Harness = mind. Tongue + mind = agent.*
 
-A provenance-bounded cognitive harness that makes any frozen LLM honest about what it did — witness ledger, cause-signed self-model, γ-gated metacognition, embodied state, counterfactual replay, dissolution stakes. 78/78 tests green.
+A provenance-bounded cognitive harness that makes any frozen LLM honest about what it did — witness ledger, cause-signed self-model, γ-gated metacognition, embodied state, counterfactual replay, dissolution stakes. 91/91 tests green.
 
 **Companion project:** [SpringFish / Spring-Loaded Door](~/Desktop/springfish) — crises, contracts, and institutional anchors. Separate work, same thesis: self-reinforcing loops and the witnesses that keep them honest.
 
@@ -13,11 +13,11 @@ A provenance-bounded cognitive harness that makes any frozen LLM honest about wh
 We built the witness humans grow slowly and painfully, made it cause-tagged and measurable, and are proving whether checking the record makes a machine — and a mind — honest.
 
 - **The question:** Can a language model know what it did — or does it just confabulate?
-- **The harness:** 11 modules, 8 layers L0–L7, Light→REM→Counterfactual→Deep, 78/78 green
-- **The papers:** v2 (21pp empirical, tagged `paper-v2-final`) + v3 (program paper, 29pp, App. A Cordis + App. B Mirror)
+- **The harness:** 11 modules, 8 layers L0–L7, Light→REM→Counterfactual→Deep, 91/91 green
+- **The papers:** v2 (23pp empirical, tagged `paper-v2-final`) + v3 (36pp program paper, App. A Cordis + App. B Mirror)
 - **The loom:** DeepSeek Cordis — harness as programmable cord, 6 plugins verified, parliament of models scaffolded
 
-Public at `github.com/shehzadahmed-xx/mindharness` · 251 commits
+Public at `github.com/shehzadahmed-xx/mindharness` · 283 commits
 
 ---
 
@@ -25,7 +25,7 @@ Public at `github.com/shehzadahmed-xx/mindharness` · 251 commits
 
 ```bash
 # Run tests (no API keys needed)
-for f in tests/test_*.py; do python3 "$f"; done  # 78/78
+for f in tests/test_*.py; do python3 "$f"; done  # 91/91
 
 # Run living session (needs Groq or OpenRouter key)
 python3 experiments/living_session.py --api-key $GROQ_KEY --model openai/gpt-oss-120b --base-url https://api.groq.com/openai/v1 --turns 40
@@ -93,4 +93,4 @@ You don't choose the options. You don't fully choose the winner. You can veto th
 
 ---
 
-*Built by Shehzad Ahmed with Sisyphus (Muse Spark 1.2) · 2026-08-27 · 78/78 green · Providers queued for midnight UTC (sham 3-seed, 200-turn life)*
+*Built by Shehzad Ahmed with Sisyphus (Muse Spark 1.2) · 2026-09-06 · 91/91 green · Five NESS gates wired, sham sham-controlled, 200-turn irreversible queued*
