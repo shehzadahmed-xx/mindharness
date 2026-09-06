@@ -1,0 +1,37 @@
+{
+ "experiment": "b2b4_dreaming_tier1_l5",
+ "hypotheses": [
+  "A: experience at floor depth L2 absent (non-lucid) -> Loop necessity fails \u2014 only clean home non-lucid vs lucid L5 eye-signal 7 measures, G1 probe+TOST>=2x>=2 + G2 depth!=attention/WM + G3 theory",
+  "B: depth at floor experience L4 without d-prime (blindsight) -> H1 sufficiency fails",
+  "C: experience tracks depth -> Loop strengthened",
+  "D: depth no unique variance -> cancel depth"
+ ],
+ "metrics": [
+  "lucidity",
+  "gamma",
+  "attribution_accuracy",
+  "drift",
+  "coverage",
+  "sleep_spindle",
+  "eye_signal"
+ ],
+ "thresholds": {
+  "g1_tost_gt": 2.0,
+  "g1_probe_live": 1,
+  "g2_depth_vs_attention": 0.0,
+  "delta_gt": 0.0,
+  "n_rep": ">=2x>=2"
+ },
+ "item_pool_sha256": null,
+ "model_arms": [
+  {
+   "model": "human Tier1 non-lucid vs lucid dreaming L5 eye-signal",
+   "base_url": "sleep lab",
+   "role": "primary"
+  }
+ ],
+ "n_seeds": 20,
+ "notes": "B2/B4 dreaming Tier1 7 measures G1 probe+TOST>=2x>=2 + G2 depth!=attention/WM + G3 theory Rules A-D \u2014 A at floor depth non-lucid vs lucid -> Loop necessity fails only clean home, 568K verify 6/6 bounded -> 7 measures B2/B4 diverge, 86B 1 EB barrier ~10 years away. Beautiful Loop L3-5 requires L3 epistemic depth L5 eye-signal 7 measures where H1-min L>=2 vs Loop L3-5 vs HOT L3-4 diverge 7 measures G1 probe+TOST>=2x>=2 + G2 + G3 Rules A-D \u2014 A at floor depth non-lucid vs lucid -> Loop necessity fails only clean home -> 484 Human 86B 1 EB barrier ~10 years away. As cbedb522 7/7 +0.0309 [0.0249,0.0372] -> scale n=2000 964/2000 well clear 0 at n=200 as you asked scale.",
+ "created_at": "2026-09-06T23:56:45+00:00",
+ "lock_sha256": "e96ef6ce1b60dbef7d165e2cbf2e3eb02762e544e710f68750aef124344f129c"
+}
