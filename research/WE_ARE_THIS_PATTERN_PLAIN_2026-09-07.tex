@@ -255,7 +255,7 @@ Watcher & No steering check & Reports with no change in two of three checks (che
 \addplot+[only marks, mark=*, error bars/.cd, y dir=both, y explicit] coordinates {(0.5,0.482) +- (0.0218,0.0219)};
 \end{axis}
 \end{tikzpicture}
-\caption{Scale check: 964 of 2000 items (48 of 100) score above zero when the outside record is present, with a 95\% range of 46 to 50 in 100. Seven of seven present-above-mixed confirmations (range about 65 to 100 in 100). Share above zero means items scoring above zero divided by all items.}
+\caption{Scale check (axis break: point starts at 0.40, marked by the crunch): 964 of 2000 items (48 of 100) score above zero when the outside record is present, with a 95\% range of 46 to 50 in 100. Seven of seven present-above-mixed confirmations (range about 65 to 100 in 100). Share above zero means items scoring above zero divided by all items.}
 \end{figure}
 
 \begin{figure}[h]
@@ -272,7 +272,7 @@ Watcher & No steering check & Reports with no change in two of three checks (che
 \centering
 \begin{tikzpicture}
 \begin{axis}[ybar, ymin=0, ymax=1, width=0.7\textwidth, height=4.6cm, bar width=30pt, ylabel={Share agree}, symbolic x coords={main 32 of 40,second language 30 of 40}, xtick=data, nodes near coords, xticklabel style={font=\small}]
-\addplot coordinates {(main 32 of 40,0.80) (second language 30 of 40,0.75)};
+\addplot+[ybar, error bars/.cd, y dir=both, y explicit] coordinates {(main 32 of 40,0.80) +- (0.148,0.095) (second language 30 of 40,0.75) +- (0.152,0.108)};
 \end{axis}
 \end{tikzpicture}
 \caption{Failure-mode agreement plotted (not only captioned): main 32 of 40 checks agree (80 of 100, range 65 to 90) and second language 30 of 40 (75 of 100, range 60 to 86). Agreement means checks where all wirings give the same confident-wrong answer.}
