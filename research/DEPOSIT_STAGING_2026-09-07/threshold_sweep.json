@@ -1,0 +1,27 @@
+{
+ "transfer_diff": 0.0409,
+ "kept_gap": 0.007000000000000006,
+ "sweep": {
+  "T1_K0.5": true,
+  "T1_K1.0": false,
+  "T1_K1.5": false,
+  "T1_K2.0": false,
+  "T2_K0.5": true,
+  "T2_K1.0": false,
+  "T2_K1.5": false,
+  "T2_K2.0": false,
+  "T3_K0.5": true,
+  "T3_K1.0": false,
+  "T3_K1.5": false,
+  "T3_K2.0": false,
+  "T4_K0.5": true,
+  "T4_K1.0": false,
+  "T4_K1.5": false,
+  "T4_K2.0": false,
+  "T5_K0.5": false,
+  "T5_K1.0": false,
+  "T5_K1.5": false,
+  "T5_K2.0": false
+ },
+ "note": "S126 arm meets transfer rule up to 4%, kept rule only at 0.5%; decisive gaps are scale (964/2000) and replication (37x). Honest sensitivity: rule bites on this arm."
+}
