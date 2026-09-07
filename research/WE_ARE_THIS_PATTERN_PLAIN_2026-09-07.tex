@@ -222,24 +222,30 @@ Watcher & Did spending earn (changed/checked) & Theater, or always-no \\
 \section{Figures From Our Checks}
 All bars below are working-threshold summaries from our batteries (see Methods). Intervals are 95\% Wilson where counts exist; the deposit staging manifest (19 locks with SHAs) is in \texttt{research/DEPOSIT\_STAGING\_2026-09-07/} pending minting of a public DOI.
 
-\begin{figure}[h]
+\begin{table}[h]
 \centering
-\begin{tikzpicture}
-\begin{axis}[ybar, ymin=0, ymax=110, width=0.92\textwidth, height=5.2cm, bar width=22pt, ylabel={Share in its own units (\%)}, symbolic x coords={Skin invent,Two-mem drift,Spotlight unread,Brake drawdown,Watcher theater}, xtick=data, nodes near coords, nodes near coords align={vertical}, xticklabel style={font=\small}]
-\addplot coordinates {(Skin invent,98) (Two-mem drift,30) (Spotlight unread,100) (Brake drawdown,43) (Watcher theater,66.7)};
-\end{axis}
-\end{tikzpicture}
-\caption{Named death when each job is blank. Each bar has its own unit, not one shared scale: Skin 98 of 100 claims invented; Two-mem more than 30 of 100 items drift in twelve turns; Spotlight tens of thousands unread; Brake drawdown from 43 to 15; Watcher theater at two of three. Working thresholds; per-measure counts in Methods.}
-\end{figure}
+\caption{Named death when each job is blank. Each row has its own unit (not one shared scale).}
+\begin{tabular}{lll}
+\toprule
+Job & Blank means & What we see (working threshold) \\
+\midrule
+Skin & No outside record & 98 of 100 claims invented \\
+Two memories & No night move & More than 30 of 100 items drift in twelve turns \\
+Spotlight & Knob fixed & Tens of thousands unread, or 0 of 16 learn backward \\
+Brake & No floor & Drawdown from 43 to 15 \\
+Watcher & No steering check & Theater at two of three \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
-\begin{axis}[ybar, ymin=0, ymax=1, width=0.7\textwidth, height=5cm, bar width=30pt, ylabel={Share correct}, symbolic x coords={mixed record,kept record,full loop}, xtick=data, nodes near coords, xticklabel style={font=\small}]
+\begin{axis}[ybar, ymin=0.6, ymax=0.95, width=0.7\textwidth, height=5cm, bar width=30pt, ylabel={Share correct}, symbolic x coords={mixed record,kept record,full loop}, xtick=data, nodes near coords, xticklabel style={font=\small}]
 \addplot coordinates {(mixed record,0.667) (kept record,0.674) (full loop,0.903)};
 \end{axis}
 \end{tikzpicture}
-\caption{Record present beats record mixed: mixed record (same size, content broken) two thirds correct and kept record (present) just above it, both below the full loop at 0.903. The rule requires present above mixed by at least three percent on new tasks and one percent on the same task with a positive checked gap.}
+\caption{Record present beats record mixed (zoomed axis starts at 0.60 so the small gap is visible): mixed record (same size, content broken) two thirds correct and kept record (present) just above it, both below the full loop at 0.903. The rule requires present above mixed by at least three percent on new tasks and one percent on the same task with a positive checked gap. Small gap here is expected in this arm; the decisive gaps are the scale and replication checks (Figs.~3--4).}
 \end{figure}
 
 \begin{figure}[h]
