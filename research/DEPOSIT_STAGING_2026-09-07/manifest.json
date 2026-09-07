@@ -1,0 +1,26 @@
+{
+ "created": "2026-09-07",
+ "n_locks": 19,
+ "files": [
+  "b2b4_dreaming_tier1_l5.lock.json",
+  "barzakh.lock.json",
+  "exp_200turn_irreversible.lock.json",
+  "exp_200turn_irreversible_v2.lock.json",
+  "exp_iqra_independent_seeds.lock.json",
+  "exp_iqra_skin.lock.json",
+  "exp_persona_stability_t36.lock.json",
+  "exp_persona_stability_v1.lock.json",
+  "exp_probe_design_120b.lock.json",
+  "exp_probe_design_v1.lock.json",
+  "exp_reflexive_cost.lock.json",
+  "exp_s126_v3_laguna.lock.json",
+  "exp_s126_v3_laguna_n12.lock.json",
+  "exp_s126_v3_minimax_n12.lock.json",
+  "exp_s126_v3_state_dependent.lock.json",
+  "exp_s126_v3_tool_access.lock.json",
+  "p-pattern.lock.json",
+  "p-turnover.lock.json",
+  "relational_transfer_confirmatory.lock.json"
+ ],
+ "note": "Staging manifest for Zenodo/OSF deposit. Mint DOI on upload; replace placeholder in paper Data availability."
+}

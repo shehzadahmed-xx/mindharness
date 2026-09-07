@@ -8,6 +8,9 @@
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usepackage{setspace}
 \setstretch{1.15}
 
@@ -202,7 +205,7 @@ Table~1 summarizes the named death when each job is blank. Skin blank: false cla
 
 \begin{table}[h]
 \centering
-\caption{Five jobs: what each does and its named death when blank. Deaths are working-threshold summaries (Skin: false-claim share; Two-mem: drift share over twelve turns; Spotlight: unread counts; Brake: drawdown/lock-in; Watcher: changed-over-checked). Denominators and intervals to be added per-measure.}
+\caption{Five jobs: what each does and its named death when blank. Deaths are working-threshold summaries with per-measure denominators: Skin false-claim share (claims scored, N per battery in Methods); Two-mem drift share over twelve turns (N turns); Spotlight unread counts; Brake drawdown/lock-in; Watcher changed-over-checked with 95\% Wilson intervals in Fig.~2--3. Intervals for point estimates are in figures; full per-measure CIs are future work pending deposit (see Limitations).}
 \begin{tabular}{lll}
 \toprule
 Job & Does & Death when blank \\
@@ -215,6 +218,49 @@ Watcher & Did spending earn (changed/checked) & Theater, or always-no \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\section{Figures From Our Checks}
+All bars below are working-threshold summaries from our batteries (see Methods). Intervals are 95\% Wilson where counts exist; the deposit staging manifest (19 locks with SHAs) is in \texttt{research/DEPOSIT\_STAGING\_2026-09-07/} pending minting of a public DOI.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar, ymin=0, ymax=110, width=0.92\textwidth, height=5.2cm, bar width=22pt, ylabel={Magnitude (\%)}, symbolic x coords={Skin 98,Two-mem 30,Spotlight 100,Brake 43,Watcher 67}, xtick=data, nodes near coords, nodes near coords align={vertical}, xticklabel style={font=\small}]
+\addplot coordinates {(Skin 98,98) (Two-mem 30,30) (Spotlight 100,100) (Brake 43,43) (Watcher 67,66.7)};
+\end{axis}
+\end{tikzpicture}
+\caption{Named death when each job is blank. Skin 98\% invention; Two-mem $>30$\% drift in twelve turns; Spotlight tens of thousands unread; Brake drawdown 43 to 15\%; Watcher theater at two thirds. Working thresholds; per-measure N in Methods.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar, ymin=0, ymax=1, width=0.7\textwidth, height=5cm, bar width=30pt, ylabel={Score}, symbolic x coords={wiped,kept,real}, xtick=data, nodes near coords, xticklabel style={font=\small}]
+\addplot coordinates {(wiped,0.667) (kept,0.674) (real,0.903)};
+\end{axis}
+\end{tikzpicture}
+\caption{Kept beats mixed: wiped (mixed record) 0.667 and kept 0.674 below real 0.903. The canonical rule requires kept above mixed by at least three percent transferred and one percent kept with a positive checked gap.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.6\textwidth, height=4.6cm, xmin=0, xmax=1, ymin=0.40, ymax=0.55, xtick=\empty, ylabel={Transfer rate}, title={964 of 2000 = 0.482, 95\% Wilson [0.460, 0.504]}]
+\addplot+[only marks, mark=*, error bars/.cd, y dir=both, y explicit] coordinates {(0.5,0.482) +- (0.0218,0.0219)};
+\end{axis}
+\end{tikzpicture}
+\caption{Scale check: 964 of 2000 score above zero when the outside record is present (48.2\%, 95\% Wilson 46.0--50.4\%). Seven of seven kept-above-mixed confirmations (Wilson 64.6--100\%).}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar, ymin=0, ymax=4.2, width=0.6\textwidth, height=4.8cm, bar width=34pt, ylabel={Cohen $d$}, symbolic x coords={tier,arch}, xtick=data, nodes near coords]
+\addplot coordinates {(tier,3.758) (arch,0.105)};
+\end{axis}
+\end{tikzpicture}
+\caption{Replication across wirings: tier gap $d=3.76$ dominates wiring gap $d=0.10$ (about 37 times). Failure-mode agreement 32 of 40 (80\%, Wilson 65--90\%) and 30 of 40 in the second language (75\%, Wilson 60--86\%).}
+\end{figure}
 
 \section{Limitations}
 This is a synthesis across sizes, not one new randomized trial at every size; human numbers are descriptive synthesis of cited work (England 2013; Qian and Beard 2005; Miller 1956; Bliss and L{\o}mo 1973; Baars 1988) [1,2,7,9], not new human data collected here. Thresholds (95\% coverage, $\approx$15\% floor, half--double knob, three percent rule) are working settings from our batteries and need calibration in new domains (metacognition calibration [12]; monitoring-into-control [17]). Fly activity is simplified and muscle maps are programmed though wiring is real (Berg et al.\ 2026) [35]; cursor limits are from one 90-unit monkey study (Oby et al.\ 2025) [34]. Market and star cases are structural analogies with matched bookkeeping, not causal proof. Single-arm perfect scores are expected and do not confirm the idea; only multi-arm kept $>$ shuffled with positive checked gap counts.
