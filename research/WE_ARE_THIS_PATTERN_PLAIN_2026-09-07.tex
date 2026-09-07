@@ -229,11 +229,11 @@ All bars below are working-threshold summaries from our batteries (see Methods).
 \toprule
 Job & Blank means & What we see (working threshold) \\
 \midrule
-Skin & No outside record & 98 of 100 claims invented \\
-Two memories & No night move & More than 30 of 100 items drift in twelve turns \\
-Spotlight & Knob fixed & Tens of thousands unread, or 0 of 16 learn backward \\
-Brake & No floor & Drawdown from 43 to 15 \\
-Watcher & No steering check & Theater at two of three \\
+Skin & No outside record & 98 of 100 claims invented (claims scored) \\
+Two memories & No night move & More than 30 of 100 items drift in twelve turns (items $\times$ turns) \\
+Spotlight & Knob fixed & Tens of thousands of papers unread; backward task 0 of 16 correct \\
+Brake & No floor & Account drawdown from 43 to 15 (same money units) \\
+Watcher & No steering check & Reports with no change in two of three checks (checks scored) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -241,17 +241,17 @@ Watcher & No steering check & Theater at two of three \\
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
-\begin{axis}[ybar, ymin=0.6, ymax=0.95, width=0.7\textwidth, height=5cm, bar width=30pt, ylabel={Share correct}, symbolic x coords={mixed record,kept record,full loop}, xtick=data, nodes near coords, xticklabel style={font=\small}]
+\begin{axis}[ybar, ymin=0.6, ymax=0.95, width=0.7\textwidth, height=5cm, bar width=30pt, ylabel={Share correct}, axis y discontinuity=crunch, symbolic x coords={mixed record,kept record,full loop}, xtick=data, nodes near coords, xticklabel style={font=\small}]
 \addplot coordinates {(mixed record,0.667) (kept record,0.674) (full loop,0.903)};
 \end{axis}
 \end{tikzpicture}
-\caption{Record present beats record mixed (zoomed axis starts at 0.60 so the small gap is visible): mixed record (same size, content broken) two thirds correct and kept record (present) just above it, both below the full loop at 0.903. The rule requires present above mixed by at least three percent on new tasks and one percent on the same task with a positive checked gap. Small gap here is expected in this arm; the decisive gaps are the scale and replication checks (Figs.~3--4).}
+\caption{Record present beats record mixed (axis break: bars start at 0.60, marked by the crunch; full 0--1 scale would hide the small gap): mixed record (same size, content broken) two thirds correct and kept record (present) just above it, both below the full loop at 0.903. The rule requires present above mixed by at least three percent on new tasks and one percent on the same task with a positive checked gap. Small gap here is expected in this arm; the decisive gaps are the scale and replication checks (Figs.~3--4).}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
-\begin{axis}[width=0.6\textwidth, height=4.6cm, xmin=0, xmax=1, ymin=0.40, ymax=0.55, xtick=\empty, ylabel={Share above zero}, xlabel={Scale check (one count)}, title={964 of 2000 = 0.482, 95\% range [0.460, 0.504]}]
+\begin{axis}[width=0.6\textwidth, height=4.6cm, xmin=0, xmax=1, ymin=0.40, ymax=0.55, xtick=\empty, ylabel={Share above zero}, xlabel={Scale check (one count)}, axis y discontinuity=crunch, title={964 of 2000 = 0.482, 95\% range [0.460, 0.504]}]
 \addplot+[only marks, mark=*, error bars/.cd, y dir=both, y explicit] coordinates {(0.5,0.482) +- (0.0218,0.0219)};
 \end{axis}
 \end{tikzpicture}
@@ -265,7 +265,17 @@ Watcher & No steering check & Theater at two of three \\
 \addplot coordinates {(model size gap,3.758) (wiring gap,0.105)};
 \end{axis}
 \end{tikzpicture}
-\caption{Replication across wirings: the gap between strong and weak models (standardized gap 3.76) dominates the gap between wiring types (0.10), about 37 times larger. Standardized gap means mean difference divided by spread. Failure-mode agreement 32 of 40 (80 of 100, range 65 to 90) and 30 of 40 in the second language (75 of 100, range 60 to 86).}
+\caption{Replication across wirings: the gap between strong and weak models (standardized gap 3.76) dominates the gap between wiring types (0.10), about 37 times larger. Standardized gap means mean difference divided by spread. Failure-mode agreement is plotted in the next figure.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar, ymin=0, ymax=1, width=0.7\textwidth, height=4.6cm, bar width=30pt, ylabel={Share agree}, symbolic x coords={main 32 of 40,second language 30 of 40}, xtick=data, nodes near coords, xticklabel style={font=\small}]
+\addplot coordinates {(main 32 of 40,0.80) (second language 30 of 40,0.75)};
+\end{axis}
+\end{tikzpicture}
+\caption{Failure-mode agreement plotted (not only captioned): main 32 of 40 checks agree (80 of 100, range 65 to 90) and second language 30 of 40 (75 of 100, range 60 to 86). Agreement means checks where all wirings give the same confident-wrong answer.}
 \end{figure}
 
 \section{Limitations}
