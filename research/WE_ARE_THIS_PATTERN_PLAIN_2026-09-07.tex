@@ -194,7 +194,7 @@ What we add beyond our own pipeline. EMMS showed memory can carry identity; diss
 Terms that must appear are defined once here and then used in that sense. \textbf{Loop} means state, experience, action, consequence, next state. \textbf{Loan} means the spread from one compact high-energy packet to about twenty spread packets that must go somewhere. \textbf{Storyteller} means the part that explains what happened. \textbf{Pinned log (49ea02)} means a written record opened before the test that the storyteller can read but not rewrite. \textbf{Kept} means the record was present. \textbf{Removed (wiped)} means the record was emptied. \textbf{Shuffled (sham)} means the record was randomly mixed at the same size, so content is broken but size is matched. \textbf{Coverage} means claims with a record pointer divided by all claims. \textbf{Lock} means a frozen prediction with a timestamp made before the run. \textbf{Readiness} means locks divided by drafts. \textbf{Changed-over-checked} means changed divided by checked. \textbf{Transferred} means score gain that survives to a new task; \textbf{kept} means score gain on the same task. \textbf{Mind-harness} means the small artificial mind plus its outside record and checking steps, run as one setup.
 
 \section{Methods}
-\paragraph{Design.} Five jobs were tested by removal at three sizes: simulated swimmer, human-scale review of 568,235 trials, and a small artificial mind (91 settings, 19 locked predictions). Each job had three conditions: kept, removed, shuffled record at matched throughput, pre-registered before the run. The kept--removed--shuffled logic follows confabulation controls (Nisbett and Wilson 1977; Johansson et al.\ 2005) [12] and persona-drift batteries (Choi et al.\ 2024; Shanahan et al.\ 2023) [14,13].
+\paragraph{Design.} Five jobs were tested by removal at two experimental sizes: simulated swimmer and a small artificial mind (91 settings, 19 locked predictions). A third strand is a cited-synthesis review of about 568,235 trials from published work (not a new experiment here; see Limitations). Each experimental job had three conditions: record present, record emptied, record mixed at matched size, pre-registered before the run. The kept--removed--shuffled logic follows confabulation controls (Nisbett and Wilson 1977; Johansson et al.\ 2005) [12] and persona-drift batteries (Choi et al.\ 2024; Shanahan et al.\ 2023) [14,13].
 \paragraph{Artifact control.} A written record was opened before each test and the storyteller could not edit it. Coverage means claims with a record pointer divided by all claims; target $\ge 95$\% scored by a single rater with a second-rater audit on a 10\% subsample (kappa to be reported on deposit; current status: single-rater plus audit, kappa pending). Claims were scored kept vs removed vs shuffled. Falsification rule (canonical): kept must beat shuffled by at least three percent transferred and at least one percent kept, with a positive gap when checked (sham $<$ real required). Thresholds are working priors from our batteries, not calibrated findings.
 \paragraph{Measures.} Leak rate = false claims divided by all claims. Drift = changed items divided by twelve turns. Changed-over-checked = changed divided by checked. Sham-controlled loss requires sham $<$ real. Human results are reported as descriptive synthesis of cited trials, not new human experiments by the authors. Small-mind estimates are point values with working thresholds and 95\% Wilson intervals where counts exist (Figs.~2--3: 964/2000 [0.460, 0.504]; 7/7 [0.646, 1.000]; 91/91 [0.960, 1.000] with rule-of-three upper bound 3/91 for zero fails). Power: with kept-vs-mixed gaps near three percent, the 2000-count scale check has width about four points; the 91-setting panel detects only large gaps and is reported as consistency, not proof (see Limitations). Pre-registration: locks and timestamps are versioned with the paper repository (19 locks with SHAs in \texttt{research/DEPOSIT\_STAGING\_2026-09-07/}); public registry DOI to be minted on upload (staging manifest ready; mint command and checksum list included).
 \paragraph{Hypotheses.} H1 Skin: removing the outside record raises false claims. H2 Two-memory: removing save raises drift. H3 Spotlight: fixing the knob floods or mislearns. H4 Brake: removing the floor runs away. H5 Watcher: without steering, reports detach from change. Each is tested kept vs removed vs shuffled with the canonical rule above.
@@ -225,41 +225,41 @@ All bars below are working-threshold summaries from our batteries (see Methods).
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
-\begin{axis}[ybar, ymin=0, ymax=110, width=0.92\textwidth, height=5.2cm, bar width=22pt, ylabel={Magnitude (\%)}, symbolic x coords={Skin 98,Two-mem 30,Spotlight 100,Brake 43,Watcher 67}, xtick=data, nodes near coords, nodes near coords align={vertical}, xticklabel style={font=\small}]
-\addplot coordinates {(Skin 98,98) (Two-mem 30,30) (Spotlight 100,100) (Brake 43,43) (Watcher 67,66.7)};
+\begin{axis}[ybar, ymin=0, ymax=110, width=0.92\textwidth, height=5.2cm, bar width=22pt, ylabel={Share in its own units (\%)}, symbolic x coords={Skin invent,Two-mem drift,Spotlight unread,Brake drawdown,Watcher theater}, xtick=data, nodes near coords, nodes near coords align={vertical}, xticklabel style={font=\small}]
+\addplot coordinates {(Skin invent,98) (Two-mem drift,30) (Spotlight unread,100) (Brake drawdown,43) (Watcher theater,66.7)};
 \end{axis}
 \end{tikzpicture}
-\caption{Named death when each job is blank. Skin 98\% invention; Two-mem $>30$\% drift in twelve turns; Spotlight tens of thousands unread; Brake drawdown 43 to 15\%; Watcher theater at two thirds. Working thresholds; per-measure N in Methods.}
+\caption{Named death when each job is blank. Each bar has its own unit, not one shared scale: Skin 98 of 100 claims invented; Two-mem more than 30 of 100 items drift in twelve turns; Spotlight tens of thousands unread; Brake drawdown from 43 to 15; Watcher theater at two of three. Working thresholds; per-measure counts in Methods.}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
-\begin{axis}[ybar, ymin=0, ymax=1, width=0.7\textwidth, height=5cm, bar width=30pt, ylabel={Score}, symbolic x coords={wiped,kept,real}, xtick=data, nodes near coords, xticklabel style={font=\small}]
-\addplot coordinates {(wiped,0.667) (kept,0.674) (real,0.903)};
+\begin{axis}[ybar, ymin=0, ymax=1, width=0.7\textwidth, height=5cm, bar width=30pt, ylabel={Share correct}, symbolic x coords={mixed record,kept record,full loop}, xtick=data, nodes near coords, xticklabel style={font=\small}]
+\addplot coordinates {(mixed record,0.667) (kept record,0.674) (full loop,0.903)};
 \end{axis}
 \end{tikzpicture}
-\caption{Kept beats mixed: wiped (mixed record) 0.667 and kept 0.674 below real 0.903. The canonical rule requires kept above mixed by at least three percent transferred and one percent kept with a positive checked gap.}
+\caption{Record present beats record mixed: mixed record (same size, content broken) two thirds correct and kept record (present) just above it, both below the full loop at 0.903. The rule requires present above mixed by at least three percent on new tasks and one percent on the same task with a positive checked gap.}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
-\begin{axis}[width=0.6\textwidth, height=4.6cm, xmin=0, xmax=1, ymin=0.40, ymax=0.55, xtick=\empty, ylabel={Transfer rate}, title={964 of 2000 = 0.482, 95\% Wilson [0.460, 0.504]}]
+\begin{axis}[width=0.6\textwidth, height=4.6cm, xmin=0, xmax=1, ymin=0.40, ymax=0.55, xtick=\empty, ylabel={Share above zero}, xlabel={Scale check (one count)}, title={964 of 2000 = 0.482, 95\% range [0.460, 0.504]}]
 \addplot+[only marks, mark=*, error bars/.cd, y dir=both, y explicit] coordinates {(0.5,0.482) +- (0.0218,0.0219)};
 \end{axis}
 \end{tikzpicture}
-\caption{Scale check: 964 of 2000 score above zero when the outside record is present (48.2\%, 95\% Wilson 46.0--50.4\%). Seven of seven kept-above-mixed confirmations (Wilson 64.6--100\%).}
+\caption{Scale check: 964 of 2000 items (48 of 100) score above zero when the outside record is present, with a 95\% range of 46 to 50 in 100. Seven of seven present-above-mixed confirmations (range about 65 to 100 in 100). Share above zero means items scoring above zero divided by all items.}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
-\begin{axis}[ybar, ymin=0, ymax=4.2, width=0.6\textwidth, height=4.8cm, bar width=34pt, ylabel={Cohen $d$}, symbolic x coords={tier,arch}, xtick=data, nodes near coords]
-\addplot coordinates {(tier,3.758) (arch,0.105)};
+\begin{axis}[ybar, ymin=0, ymax=4.2, width=0.6\textwidth, height=4.8cm, bar width=34pt, ylabel={Standardized gap}, symbolic x coords={model size gap,wiring gap}, xtick=data, nodes near coords]
+\addplot coordinates {(model size gap,3.758) (wiring gap,0.105)};
 \end{axis}
 \end{tikzpicture}
-\caption{Replication across wirings: tier gap $d=3.76$ dominates wiring gap $d=0.10$ (about 37 times). Failure-mode agreement 32 of 40 (80\%, Wilson 65--90\%) and 30 of 40 in the second language (75\%, Wilson 60--86\%).}
+\caption{Replication across wirings: the gap between strong and weak models (standardized gap 3.76) dominates the gap between wiring types (0.10), about 37 times larger. Standardized gap means mean difference divided by spread. Failure-mode agreement 32 of 40 (80 of 100, range 65 to 90) and 30 of 40 in the second language (75 of 100, range 60 to 86).}
 \end{figure}
 
 \section{Limitations}
