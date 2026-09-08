@@ -132,6 +132,24 @@
 
 ---
 
+## Part E — Methods Statistics + Whole-Brain Emulation Timeline (added 2026-09-08)
+
+Methods numbers added in Q1 passes need their own sources. Each row below is cited in the paper Methods/Results.
+
+| Paper | What it says (plain) | Where used | Link |
+|---|---|---|---|
+| **Wilson 1927** Probable inference, the law of succession. *JASA* 22, 209--212. | The honest range for a share (e.g. 964 of 2000): center shifts inward and widens at small N, unlike the schoolbook plus-minus. | 95\% ranges for 964/2000, 7/7, 32/40, 30/40, 91/91. | https://doi.org/10.1080/01621459.1927.10502953 |
+| **Cohen 1960** A coefficient of agreement for nominal scales. *Educ. Psychol. Meas.* 20, 37--46. | Agreement beyond chance between two raters: kappa. Needed before claiming the outside record is scored reliably. | Kappa worksheet (18 arm-seeds, second rater pending). | https://doi.org/10.1177/001316446002000104 |
+| **Hanley & Lippman-Hand 1983** If nothing goes wrong, is everything all right? *JAMA* 249, 1743--1745. | With zero fails in N tries, the true fail rate could still be up to about 3/N (rule of three). | 91/91 zero-fail bound 3/91. | https://doi.org/10.1001/jama.1983.03330370053031 |
+| **Page et al. 2021** PRISMA 2020 statement. *BMJ* 372, n71. | A review of many trials must state search, inclusion, and extraction-or it is a narrative review, not a systematic one. | Framing the ~568k-trial strand as cited synthesis, not a new experiment. | https://doi.org/10.1136/bmj.n71 |
+| **Freeman 2026** From Worm to Human: Scaling Brain Emulation. MIT Media Arts and Sciences, March 2026 (Master's thesis; supervisor Boyden; readers Esvelt, Church). | Line-item engineering map from 302-neuron worm to 86-billion-neuron human: proofreading dominates cost (fly neuron ~$214 by 2025, mammalian $500--1,000; human connectome at $1B needs ~$0.01/neuron); compute near at hand (pessimistic ~6e20 FLOP/s, memory/interconnect the wall); wiring without receptor/channel/novel-modulator data is not emulation (strong sense open). Viral 50,000-H100 and $100/neuron and data-only-blocker versions are wrong: thesis says ~600,000 accelerators at dense FP16 under pessimistic assumptions and molecular data plus proofreading as major gaps. | Upload timeline in paper (fly-to-human path, 1 EB barrier, why wiring alone is not enough). Full PDF exceeds fetch limits; facts verified via thesis page + independent review 2026-04-22. | https://pdf.isaak.net/scaling-emulations · https://pdf.isaak.net/thesis |
+| **Zanichelli, Schons, Freeman, Shiu & Arkhipov 2025** State of Brain Emulation Report 2025. arXiv:2510.15745. | Collaborative companion growing from the thesis: embodiment plus closed-loop benchmarks (activity prediction, behavior indistinguishability, perturbation) required; H100-class hardware simulates ~1M neurons with memory as bottleneck; worm/fly feasible on one GPU, mouse needs small clusters, human needs frontier-AI-scale clusters. | Same upload-timeline use; embodiment requirement matches our Skin/Watcher argument. | https://arxiv.org/abs/2510.15745 |
+| **Sandberg & Bostrom 2008** Whole Brain Emulation: A Roadmap. Future of Humanity Institute TR #2008-3. | Original roadmap: scanning, translation, simulation plus embodiment; paths by capability level. | Historical anchor for emulation roadmap claims. | https://www.fhi.ox.ac.uk/brain-emulation-roadmap.pdf |
+| **Dorkenwald et al. 2024** Adult fruit fly connectome. *Nature* 637. (139,255 neurons, >33 person-years proofreading.) | Proofreading cost anchor: one fly took 33 person-years; a cubic millimeter of human cortex holds ~3x the synapses of the whole fly brain. | Why proofreading dominates Freeman's cost curve. | https://www.nature.com/articles/s41586-024-07558-y |
+| **Lu et al. 2024** 86-billion-neuron simulation on 14,012 GPUs, 60--120x slower than real time. | Largest human-scale run so far is simulation (no ground-truth connectome, simplified models), not emulation. | Why we call current 86B runs simulation: wiring without dynamics is not the loop holding. | (via Freeman thesis review 2026-04-22) |
+
+---
+
 *Literature review built 2026-09-07 23:53 → 2026-09-08 03:20 by Sisyphus · disk first (refs.bib + md where cited) then web (live websearch + webfetch 2026-09-08) → merged plain review `LITERATURE_REVIEW_2026-09-07.md` · keep desktop clean D → research/ holds 7 shores · every link re-derived, see DIAGNOSTIC_FRAMEWORK_NESS_FIVE_ORGANS_FORMAL.md 142 lines, verify_artifacts.py:201-252, HANDOFF.sh 49/49.*
 *How to cite this file: Shehzad Ahmed (2026). We Are This Pattern: What Stays Alive When Everything Changes — Literature Review. mindharness/research/LITERATURE_REVIEW_2026-09-07.md · 7 shores → One Loop → whirlpool not rock · 5906021 · 91/91 · 19 locks.*
 
