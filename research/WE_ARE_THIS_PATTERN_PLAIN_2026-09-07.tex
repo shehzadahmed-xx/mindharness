@@ -196,7 +196,7 @@ Terms that must appear are defined once here and then used in that sense. \textb
 \section{Methods}
 \paragraph{Design.} Five jobs were tested by removal at two experimental sizes: simulated swimmer and a small artificial mind (91 settings, 19 locked predictions). A third strand is a cited-synthesis review of about 568,235 trials from published work (not a new experiment here; narrative review per PRISMA 2020 (Page et al.\ 2021) [39], see Limitations). Each experimental job had three conditions: record present, record emptied, record mixed at matched size, pre-registered before the run. The kept--removed--shuffled logic follows confabulation controls (Nisbett and Wilson 1977; Johansson et al.\ 2005) [12] and persona-drift batteries (Choi et al.\ 2024; Shanahan et al.\ 2023) [14,13].
 \paragraph{Artifact control.} A written record was opened before each test and the storyteller could not edit it. Coverage means claims with a record pointer divided by all claims; target $\ge 95$\% scored by a single rater with a second-rater audit on a 10\% subsample (agreement beyond chance by kappa (Cohen 1960) [37], to be reported on deposit; current status: single-rater plus audit, kappa pending). Claims were scored kept vs removed vs shuffled. Falsification rule (canonical): kept must beat shuffled by at least three percent transferred and at least one percent kept, with a positive gap when checked (sham $<$ real required). Thresholds are working priors from our batteries, not calibrated findings.
-\paragraph{Measures.} Leak rate = false claims divided by all claims. Drift = changed items divided by twelve turns. Changed-over-checked = changed divided by checked. Sham-controlled loss requires sham $<$ real. Human results are reported as descriptive synthesis of cited trials, not new human experiments by the authors. Small-mind estimates are point values with working thresholds and 95\% ranges where counts exist (ranges by Wilson (1927) [36]; Figs.~2--3: 964/2000 [0.460, 0.504]; 7/7 [0.646, 1.000]; 91/91 [0.960, 1.000] with rule-of-three upper bound 3/91 for zero fails (Hanley and Lippman-Hand 1983) [38]). Sensitivity on the S126 arm (sweep 1--5\% transferred, 0.5--2\% kept; staged in \texttt{threshold\_sweep.json}): transfer holds to 4\% but the kept gap is 0.7 points and meets only the 0.5\% level, so this arm alone does not pass the joint rule---the verdict rests on the scale and replication checks (Figs.~3--5). Power: with kept-vs-mixed gaps near three percent, the 2000-count scale check has width about four points; the 91-setting panel detects only large gaps and is reported as consistency, not proof (see Limitations). Pre-registration: locks and timestamps are versioned with the paper repository (19 locks with SHAs in \texttt{research/DEPOSIT\_STAGING\_2026-09-07/}); public registry DOI to be minted on upload (staging manifest ready; mint command and checksum list included).
+\paragraph{Measures.} Leak rate = false claims divided by all claims. Drift = changed items divided by twelve turns. Changed-over-checked = changed divided by checked. Sham-controlled loss requires sham $<$ real. Human results are reported as descriptive synthesis of cited trials, not new human experiments by the authors. Small-mind estimates are point values with working thresholds and 95\% ranges where counts exist (ranges by Wilson (1927) [36]; Figs.~1--2: 964/2000 [0.460, 0.504]; 7/7 [0.646, 1.000]; 91/91 [0.960, 1.000] with rule-of-three upper bound 3/91 for zero fails (Hanley and Lippman-Hand 1983) [38]). Sensitivity on the S126 arm (sweep 1--5\% transferred, 0.5--2\% kept; staged in \texttt{threshold\_sweep.json}): transfer holds to 4\% but the kept gap is 0.7 points and meets only the 0.5\% level, so this arm alone does not pass the joint rule---the verdict rests on the scale and replication checks (Figs.~2--4). Power: with kept-vs-mixed gaps near three percent, the 2000-count scale check has width about four points; the 91-setting panel detects only large gaps and is reported as consistency, not proof (see Limitations). Pre-registration: locks and timestamps are versioned with the paper repository (19 locks with SHAs in \texttt{research/DEPOSIT\_STAGING\_2026-09-07/}); public registry DOI to be minted on upload (staging manifest ready; mint command and checksum list included).
 \paragraph{Hypotheses.} H1 Skin: removing the outside record raises false claims. H2 Two-memory: removing save raises drift. H3 Spotlight: fixing the knob floods or mislearns. H4 Brake: removing the floor runs away. H5 Watcher: without steering, reports detach from change. Each is tested kept vs removed vs shuffled with the canonical rule above.
 \paragraph{Reproducibility.} Mind-harness checks (the small mind plus its outside record and checking steps) run offline with frozen locks; fly demo runs locally in a browser with real wiring (Berg et al.\ 2026) [35]; cursor study follows Oby et al.\ 2025 [34].
 
@@ -205,26 +205,7 @@ Table~1 summarizes the named death when each job is blank. Skin blank: false cla
 
 \begin{table}[h]
 \centering
-\caption{Five jobs: what each does and its named death when blank. Deaths are working-threshold summaries with per-measure denominators: Skin false-claim share (claims scored, N per battery in Methods); Two-mem drift share over twelve turns (N turns); Spotlight unread counts; Brake drawdown/lock-in; Watcher changed-over-checked with 95\% Wilson intervals in Fig.~2--3. Intervals for point estimates are in figures; full per-measure CIs are future work pending deposit (see Limitations).}
-\begin{tabular}{lll}
-\toprule
-Job & Does & Death when blank \\
-\midrule
-Skin & Whose loan counts & 98\% invention, two-thirds guessing \\
-Two memories + save & Fast now, slow later, move at night & $>30$\% drift or frozen \\
-Spotlight & What to notice (knob half--double) & Unread flood or wrong learning \\
-Brake & When to stop (floor $\approx$15\%) & Runaway, bubble, lock-in \\
-Watcher & Did spending earn (changed/checked) & Theater, or always-no \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\section{Figures From Our Checks}
-All bars below are working-threshold summaries from our batteries (see Methods). Intervals are 95\% Wilson where counts exist; the deposit staging manifest (19 locks with SHAs) is in \texttt{research/DEPOSIT\_STAGING\_2026-09-07/} pending minting of a public DOI.
-
-\begin{table}[h]
-\centering
-\caption{Named death when each job is blank. Each row has its own unit (not one shared scale).}
+\caption{Five jobs: what each does and its named death when blank. Each row has its own unit (not one shared scale). Intervals for point estimates are in Figs.~1--4; full per-measure CIs are future work pending deposit (see Limitations).}
 \begin{tabular}{lll}
 \toprule
 Job & Blank means & What we see (working threshold) \\
@@ -238,6 +219,9 @@ Watcher & No steering check & Reports with no change in two of three checks (che
 \end{tabular}
 \end{table}
 
+\section{Figures From Our Checks}
+All figures below are working-threshold summaries from our batteries (see Methods and Table~1 for units). Intervals are 95\% ranges where counts exist; the deposit staging manifest (19 locks with SHAs) is in \texttt{research/DEPOSIT\_STAGING\_2026-09-07/} pending minting of a public DOI.
+
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
@@ -245,7 +229,7 @@ Watcher & No steering check & Reports with no change in two of three checks (che
 \addplot coordinates {(mixed record,0.667) (kept record,0.674) (full loop,0.903)};
 \end{axis}
 \end{tikzpicture}
-\caption{Record present beats record mixed (axis break: bars start at 0.60, marked by the crunch; full 0--1 scale would hide the small gap): mixed record (same size, content broken) two thirds correct and kept record (present) just above it, both below the full loop at 0.903. The rule requires present above mixed by at least three percent on new tasks and one percent on the same task with a positive checked gap. Small gap here is expected in this arm; the decisive gaps are the scale and replication checks (Figs.~3--4).}
+\caption{Record present beats record mixed (axis break: bars start at 0.60, marked by the crunch; full 0--1 scale would hide the small gap): mixed record (same size, content broken) two thirds correct and kept record (present) just above it, both below the full loop at 0.903. The rule requires present above mixed by at least three percent on new tasks and one percent on the same task with a positive checked gap. Small gap here is expected in this arm; the decisive gaps are the scale and replication checks (Figs.~2--4).}
 \end{figure}
 
 \begin{figure}[h]
