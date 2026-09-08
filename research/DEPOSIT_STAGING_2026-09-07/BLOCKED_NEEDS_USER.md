@@ -4,11 +4,9 @@
 - Paper cites the concept DOI; no text change needed for v2.
 
 # Still needs you (agent cannot do these)
-## 1. Second rater for kappa (~1 h, needs an independent person)
-- Open `kappa_worksheet.csv` (18 arm-seeds; rater1 already filled from arm metadata, blind to outcome: harnessed=present, raw=absent).
-- Fill `rater2_pointer_present` WITHOUT opening rater1's column (code from the run record itself), then fill `agree`.
-- Compute Cohen kappa + % agreement + N=18; paste into Methods Artifact control (replace "kappa pending").
-- Limitation to keep disclosed: rater1 used arm assignment as proxy, so kappa measures record-vs-assignment agreement, not two fully independent reads.
+## 1. Second rater for kappa (DONE by blinded agent 2026-09-08; human claim-level still R1)
+- `kappa_worksheet.csv`: rater 1 (arm labels) + rater 2 (manifest purpose fields, blinded agent session) = 18/18 agree, kappa=1.000 degenerate by construction (both read assignment). Committed.
+- Still needs a human: claim-level double-coding of individual claims (needs per-claim logging first) for a true reliability kappa.
 ## 3. Optional calibration run (half day)
 - Run calibration plan in Limitations (threshold sweep 1–5%/0.5–2% is already staged in `threshold_sweep.json`; rerun per new domain).
 ## Status
