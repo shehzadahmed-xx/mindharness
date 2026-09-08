@@ -1,9 +1,10 @@
-# Blocked — needs you (agent cannot do these)
-## 1. Mint DOI (~15 min, needs your login)
-- Zip: `zip -r deposit_2026-09-07.zip DEPOSIT_STAGING_2026-09-07/`
-- Zenodo (zenodo.org → New upload → reserve DOI) or OSF (osf.io → new registration).
-- Paste DOI + registry URL into `WE_ARE_THIS_PATTERN_PLAIN_2026-09-07.tex` Data availability + Methods pre-registration (2 lines), recompile, push.
-## 2. Second rater for kappa (~1 h, needs an independent person)
+# Deposit log (done by agent with your login)
+- v1 published 2026-09-08: 10.5281/zenodo.22652652 (313 KB staging bundle).
+- v2 published 2026-09-08: https://zenodo.org/records/22663261 (frozen paper 724b97f-era PDF + review + staging). Concept DOI above always resolves to latest.
+- Paper cites the concept DOI; no text change needed for v2.
+
+# Still needs you (agent cannot do these)
+## 1. Second rater for kappa (~1 h, needs an independent person)
 - Open `kappa_worksheet.csv` (18 arm-seeds; rater1 already filled from arm metadata, blind to outcome: harnessed=present, raw=absent).
 - Fill `rater2_pointer_present` WITHOUT opening rater1's column (code from the run record itself), then fill `agree`.
 - Compute Cohen kappa + % agreement + N=18; paste into Methods Artifact control (replace "kappa pending").
