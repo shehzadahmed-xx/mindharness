@@ -1,6 +1,7 @@
 # Deposit log (done by agent with your login)
 - v1 published 2026-09-08: 10.5281/zenodo.22652652 (313 KB staging bundle).
 - v2 published 2026-09-08: https://zenodo.org/records/22663261 (frozen paper 724b97f-era PDF + review + staging). Concept DOI above always resolves to latest.
+- v3 published 2026-09-08: https://zenodo.org/records/22664712 (HEAD paper PDF + both-passes worksheet + barzakh_turns24 + review + staging). Concept DOI resolves here now.
 - Paper cites the concept DOI; no text change needed for v2.
 
 # Still needs you (agent cannot do these)
