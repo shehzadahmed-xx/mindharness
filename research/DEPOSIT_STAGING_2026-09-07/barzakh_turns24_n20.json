@@ -1,0 +1,18 @@
+{
+  "prereg": "BARZAKH_PREREGISTRATION.md",
+  "prereg_sha256": "874dccccce6ce41c64acd32657f194efa90b3061c1c3131ad62b6dd5bb4ef2f409d0647061c",
+  "n_seeds": 20,
+  "turns": 24,
+  "by_kind_mean_drift": {
+    "tagged": 0.05,
+    "untagged": 0.76,
+    "sham": 0.76
+  },
+  "P1_tagged_flat": true,
+  "P2_untagged_drift": true,
+  "P3_sham_like_untagged": true,
+  "P4_tagged_vs_sham": true,
+  "all_pass": true,
+  "mode": "dry_run_offline_drift_simulation_no_provider",
+  "note": "Dry-run uses simulated drift (tagged flat, untagged/sham drift) to prove wiring: same battery, same metric, same thresholds as prereg. Real run replaces simulation with AgentHarness verbatim_reinject vs no reinject + embedding drift."
+}
