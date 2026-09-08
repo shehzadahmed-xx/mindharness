@@ -150,6 +150,20 @@ Methods numbers added in Q1 passes need their own sources. Each row below is cit
 
 ---
 
+## Part F — Table 2 Person/Bacterium Sources (added 2026-09-08)
+
+Table 2's person column restates Sections 5--7 with their existing citations. Its bacterium column rests on five chemotaxis/collective-behavior sources below, each wired into the table cells.
+
+| Paper | What it says (plain) | Table 2 cell | Link |
+|---|---|---|---|
+| **Berg & Brown 1972** Chemotaxis in *Escherichia coli*. *Nature* 239, 500--504. | Bacteria swim in runs and tumbles: run up the gradient, tumble to reorient. The biased walk with a lag of seconds is the brake. | Brake/bacterium. | https://doi.org/10.1038/239500a0 |
+| **Segall, Block & Berg 1986** Temporal comparisons in bacterial chemotaxis. *PNAS* 83, 8987--8991. | Cells compare now vs seconds ago (temporal comparison), not here vs there: gain turned down when already adjusted. | Spotlight/bacterium. | https://doi.org/10.1073/pnas.83.23.8987 |
+| **Barkai & Leibler 1997** Robustness in simple biochemical networks. *Nature* 387, 913--917. | Perfect adaptation returns to baseline regardless of input size and survives protein-level changes: fast response plus slow adaptation that daughters inherit already tuned. | Two-mem/bacterium. | https://doi.org/10.1038/43199 |
+| **Prindle et al. 2015** Ion channels enable electrical communication in bacterial communities. *Nature* 527, 59--63. | Biofilm cells share potassium waves millimeter-scale: the same ion wave is signal or noise depending on whether it connects to community steering. | Boundary+Watcher/bacterium. | https://doi.org/10.1038/nature15709 |
+| **Balaban et al. 2004** Bacterial persistence as a phenotypic switch. *Science* 305, 1622--1625. | A small persister fraction hedges catastrophe (diauxie ranking back to Monod): slow integrators vs fast growers. | Brake/person hedge analogy; Two-mem slow pole. | https://doi.org/10.1126/science.1099390 |
+
+---
+
 *Literature review built 2026-09-07 23:53 → 2026-09-08 03:20 by Sisyphus · disk first (refs.bib + md where cited) then web (live websearch + webfetch 2026-09-08) → merged plain review `LITERATURE_REVIEW_2026-09-07.md` · keep desktop clean D → research/ holds 7 shores · every link re-derived, see DIAGNOSTIC_FRAMEWORK_NESS_FIVE_ORGANS_FORMAL.md 142 lines, verify_artifacts.py:201-252, HANDOFF.sh 49/49.*
 *How to cite this file: Shehzad Ahmed (2026). We Are This Pattern: What Stays Alive When Everything Changes — Literature Review. mindharness/research/LITERATURE_REVIEW_2026-09-07.md · 7 shores → One Loop → whirlpool not rock · 5906021 · 91/91 · 19 locks.*
 
