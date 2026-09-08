@@ -1,5 +1,2 @@
-id,arm,seed,acc,n,rater1_pointer_present,rater2_pointer_present,agree
-1,raw,1,0.3333,6,,,
-2,harnessed_nocheck,1,0.1667,6,,,
-3,harnessed_withcheck,1,0.1667,6,,,
-4,sham,1,0.1667,6,,,
+id,file,arm,seed,acc,n,rater1_pointer_present,rater2_pointer_present,agree
+1,lab_runs_s126,raw,1,1.0,12,,,
