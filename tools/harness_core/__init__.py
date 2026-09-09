@@ -29,6 +29,9 @@ from .agent_harness import AgentHarness, TurnResult
 from .trainer import (apply_calibration, calibrate_monitor, ledger_health,
                       reliance_report)
 from .keeper import Heartbeat, Keeper, run_keeper
+from .world import World
+from .successor import (mutate_threshold, record_birth, snapshot_parent,
+                        spawn_successor)
 
 __all__ += [
     "SelfModelService", "SelfModelError", "MirroringDetector",
@@ -41,4 +44,6 @@ __all__ += [
     "AgentHarness", "TurnResult",
     "ledger_health", "calibrate_monitor", "apply_calibration",
     "reliance_report", "Heartbeat", "Keeper", "run_keeper",
+    "World", "mutate_threshold", "record_birth", "snapshot_parent",
+    "spawn_successor",
 ]
