@@ -187,7 +187,8 @@ def call_llama(prompt: str, system: str, base_url: str = "http://127.0.0.1:18555
                                  data=body, method='POST',
                                  headers={'Content-Type':'application/json','Authorization':'Bearer local'})
     d = json.loads(urllib.request.urlopen(req, timeout=180).read())
-    return (d['choices'][0].get('message') or {}).get('content', '')
+    msg = (d['choices'][0].get('message') or {})
+    return (msg.get('content') or msg.get('reasoning_content') or '')
 
 
 # ============================================================
