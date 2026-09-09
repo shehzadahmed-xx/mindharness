@@ -26,6 +26,8 @@ from .consolidation import Consolidator, MemoryItem
 from .counterfactual import (CounterfactualReplay, CounterfactualReport,
                               CounterfactualTrace)
 from .agent_harness import AgentHarness, TurnResult
+from .trainer import (apply_calibration, calibrate_monitor, ledger_health,
+                      reliance_report)
 
 __all__ += [
     "SelfModelService", "SelfModelError", "MirroringDetector",
@@ -36,4 +38,6 @@ __all__ += [
     "Consolidator", "MemoryItem",
     "CounterfactualReplay", "CounterfactualReport", "CounterfactualTrace",
     "AgentHarness", "TurnResult",
+    "ledger_health", "calibrate_monitor", "apply_calibration",
+    "reliance_report",
 ]
