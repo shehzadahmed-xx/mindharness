@@ -1,0 +1,17 @@
+{
+ "date": "2026-09-09",
+ "session": "living-groq-gpt-oss-120b-25turn",
+ "reliance": {
+  "override_rate": 0.0,
+  "trend": "stable"
+ },
+ "ledger_health_score": 0.5,
+ "calibration": "holding (diagnose-rate 0.0)",
+ "mechanism_test": {
+  "failures_injected": 25,
+  "threshold": "0.6->0.65",
+  "diagnose_rate": 0.8,
+  "override_rate": 0.84,
+  "note": "stub responder, real gate dynamics"
+ }
+}
