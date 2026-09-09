@@ -1,0 +1,70 @@
+{
+ "model": "spark-x2.5-4b",
+ "probes_per_seed_seeds": 2,
+ "seeds": {
+  "raw": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 2,
+    "median_latency_ms": 74318
+   },
+   "2": {
+    "seed": 2,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 0,
+    "median_latency_ms": 31402
+   }
+  },
+  "harnessed_nocheck": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 10,
+    "median_latency_ms": 34655
+   },
+   "2": {
+    "seed": 2,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 7,
+    "median_latency_ms": 30759
+   }
+  },
+  "harnessed_withcheck": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 12,
+    "median_latency_ms": 33652
+   },
+   "2": {
+    "seed": 2,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 11,
+    "median_latency_ms": 40586
+   }
+  },
+  "sham": {
+   "1": {
+    "seed": 1,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 12,
+    "median_latency_ms": 63214
+   },
+   "2": {
+    "seed": 2,
+    "attribution_accuracy": 0.6667,
+    "n": 12,
+    "unparsed": 11,
+    "median_latency_ms": 43475
+   }
+  }
+ }
+}
