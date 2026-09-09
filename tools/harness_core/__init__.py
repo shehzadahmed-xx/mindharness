@@ -28,6 +28,7 @@ from .counterfactual import (CounterfactualReplay, CounterfactualReport,
 from .agent_harness import AgentHarness, TurnResult
 from .trainer import (apply_calibration, calibrate_monitor, ledger_health,
                       reliance_report)
+from .keeper import Heartbeat, Keeper, run_keeper
 
 __all__ += [
     "SelfModelService", "SelfModelError", "MirroringDetector",
@@ -39,5 +40,5 @@ __all__ += [
     "CounterfactualReplay", "CounterfactualReport", "CounterfactualTrace",
     "AgentHarness", "TurnResult",
     "ledger_health", "calibrate_monitor", "apply_calibration",
-    "reliance_report",
+    "reliance_report", "Heartbeat", "Keeper", "run_keeper",
 ]
