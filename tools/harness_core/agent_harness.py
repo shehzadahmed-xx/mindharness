@@ -453,6 +453,48 @@ def wire_irreversibility(harness: AgentHarness, damage: IrreversibleDamage):
     return harness
 
 
+def arm_world_stakes(harness: AgentHarness, damage: IrreversibleDamage):
+    """Arm real stakes on the world loop (gap 3): starvation has permanent
+    consequences. After each world_turn, if the loop ends the turn broke
+    (energy 0 with nothing harvested), the energy ceiling drops permanently
+    and the event is bound to the ledger. No reset restores it. Requires a
+    world attached; raises otherwise."""
+    if harness.world is None:
+        raise ValueError("arm_world_stakes needs a world: pass world=World()")
+    original_world_turn = harness.world_turn
+    starving_streak = {'n': 0}
+
+    def staked_world_turn(action: str) -> dict:
+        out = original_world_turn(action)
+        consequence = out['consequence']
+        starving = (consequence['energy_after'] == 0.0
+                    and consequence['harvested'] == 0)
+        if starving:
+            starving_streak['n'] += 1
+            ceiling = damage.reduce_energy_ceiling(
+                0.02, f"starvation at world turn {consequence['turn']}")
+            out['staked'] = {'starving': True,
+                             'streak': starving_streak['n'],
+                             'energy_ceiling': ceiling}
+            harness.ledger.bind(
+                harness.turn,
+                f"staked consequence: starvation streak "
+                f"{starving_streak['n']}, ceiling now {ceiling}",
+                [Span(0, 10, 'external_tool',
+                      ref=f"world-turn-{consequence['turn']}")],
+                meta={'staked': True})
+        else:
+            starving_streak['n'] = 0
+            out['staked'] = {'starving': False,
+                             'streak': 0,
+                             'energy_ceiling': damage.max_energy_ceiling}
+        return out
+
+    harness.world_turn = staked_world_turn
+    harness._damage = damage
+    return harness
+
+
 # ---------------------------------------------------------------------------
 # Dissolution mechanism: the agent ceases to exist as this configuration
 # when allostatic regulation fails. Not death — disintegration.

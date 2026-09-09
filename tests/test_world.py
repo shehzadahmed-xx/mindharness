@@ -118,6 +118,49 @@ def test_world_turn_without_world_raises():
     raise AssertionError("world_turn without world did not raise")
 
 
+def test_staked_starvation_drops_ceiling_permanently():
+    from harness_core.agent_harness import (AgentHarness, IrreversibleDamage,
+                                            arm_world_stakes)
+    from harness_core.world import World
+    w = World(seed=11)
+    h = AgentHarness(respond_fn=lambda m, c: "ok", world=w)
+    arm_world_stakes(h, IrreversibleDamage())
+    w.energy = 0.0
+    w.cells[(w.agent_xy[0], w.agent_xy[1])] = 0
+    out = h.world_turn('think')
+    assert out['staked']['starving'] is True
+    assert out['staked']['energy_ceiling'] < 1.0
+    ceiling = out['staked']['energy_ceiling']
+    out2 = h.world_turn('harvest')
+    assert out2['staked']['energy_ceiling'] <= ceiling
+    assert len(h._damage.events) >= 1
+
+
+def test_staked_plenty_leaves_ceiling_intact():
+    from harness_core.agent_harness import (AgentHarness, IrreversibleDamage,
+                                            arm_world_stakes)
+    from harness_core.world import World
+    w = World(seed=12)
+    h = AgentHarness(respond_fn=lambda m, c: "ok", world=w)
+    arm_world_stakes(h, IrreversibleDamage())
+    w.cells[(w.agent_xy[0], w.agent_xy[1])] = 3
+    out = h.world_turn('harvest')
+    assert out['staked']['starving'] is False
+    assert out['staked']['energy_ceiling'] == 1.0
+    assert h._damage.events == []
+
+
+def test_arm_stakes_without_world_raises():
+    from harness_core.agent_harness import (AgentHarness, IrreversibleDamage,
+                                            arm_world_stakes)
+    h = AgentHarness(respond_fn=lambda m, c: "ok")
+    try:
+        arm_world_stakes(h, IrreversibleDamage())
+    except ValueError:
+        return
+    raise AssertionError("arm_world_stakes without world did not raise")
+
+
 if __name__ == '__main__':
     for name, fn in sorted(
             [(k, v) for k, v in globals().items() if k.startswith('test_')]):
