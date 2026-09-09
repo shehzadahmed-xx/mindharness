@@ -29,6 +29,8 @@ from .embodiment import EmbodiedState
 from .monitor import DetectSignals, MetacognitiveLog, MonitorGate, PostJOL, PreSolveFOK
 from .provenance import ProvenanceLedger, ProposalQueue, Span
 from .self_model import SelfModelService
+from .trainer import (apply_calibration, calibrate_monitor, ledger_health,
+                      reliance_report)
 
 
 @dataclass
@@ -79,6 +81,14 @@ class AgentHarness:
 
         self.session_overrides = 0
         self.session_diagnoses = 0
+
+        # trainer wiring (self-teaching scaffold): periodic watcher
+        # self-calibration + reliance history. Bounded, read-mostly;
+        # removal of the scaffold stays a human decision.
+        self.calibrate_every: int = 20
+        self.last_calibration: dict | None = None
+        self.last_ledger_health: dict | None = None
+        self.reliance_history: list[float] = []
 
     # -- helpers -----------------------------------------------------------------
 
@@ -142,6 +152,15 @@ class AgentHarness:
             self.session_diagnoses += 1
         if episode['changed']:
             self.session_overrides += 1
+
+        # trainer hook: periodic watcher self-calibration (bounded, refused
+        # under compliance guard) + ledger-health snapshot for directives.
+        if self.turn % self.calibrate_every == 0:
+            rep = calibrate_monitor(self.gate)
+            if rep['changed']:
+                apply_calibration(self.gate, rep)
+            self.last_calibration = rep
+            self.last_ledger_health = ledger_health(self.ledger)
 
         staged_count = 0
         # v2 payoff: a successful override earns a small energy refund, so
@@ -270,6 +289,9 @@ class AgentHarness:
 
     def session_report(self) -> dict:
         cur = self.sm.get()
+        rel = reliance_report(self.session_overrides, self.turn,
+                              self.reliance_history)
+        self.reliance_history = rel['history']
         return {
             'turns': self.turn,
             'diagnoses': self.session_diagnoses,
@@ -283,6 +305,10 @@ class AgentHarness:
             'memory_items': len(self.memory),
             'metacog_completeness': round(self.mlog.completeness(), 3),
             'coverage': self.ledger.coverage_stats(),
+            'ledger_health': self.last_ledger_health,
+            'last_calibration': self.last_calibration,
+            'reliance': {k: v for k, v in rel.items() if k != 'history'},
+            'reliance_history': self.reliance_history,
         }
 
 

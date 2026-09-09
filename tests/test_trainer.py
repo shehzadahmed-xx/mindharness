@@ -94,6 +94,23 @@ def test_reliance_trend_falling_means_fading():
     assert r2['trend'] == 'rising' and r2['history'] == [0.02, 0.2], r2
 
 
+def test_harness_wires_trainer_every_twenty_turns():
+    from harness_core.agent_harness import AgentHarness
+
+    def stub(messages: list[dict], ctx: dict) -> str:
+        return "ok"
+
+    h = AgentHarness(respond_fn=stub)
+    assert h.last_calibration is None and h.last_ledger_health is None
+    for i in range(20):
+        h.run_task(f"task {i}", success=True)
+    assert h.last_calibration is not None, "calibration hook never fired"
+    assert h.last_ledger_health is not None, "ledger health never snapshotted"
+    rep = h.session_report()
+    assert 'reliance' in rep and 'last_calibration' in rep, rep.keys()
+    assert rep['reliance']['trend'] in ('rising', 'falling', 'stable')
+
+
 if __name__ == '__main__':
     for name, fn in sorted(
             [(k, v) for k, v in globals().items() if k.startswith('test_')]):
