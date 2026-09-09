@@ -53,6 +53,9 @@ def run_arm(kind: str, turns: int = 12, seed: int = 0) -> dict:
     # Offline simulation: drift is simulated as 0.0 for tagged (maintained), 0.76 for untagged/sham
     # Real run would use AgentHarness with verbatim_reinject vs no reinject and measure embedding drift.
     # This dry-run proves wiring: same battery, same metric, same thresholds as P-Barzakh prereg.
+    # Per-claim log (claim_id, pointer_present, drifted) is emitted so future LIVE runs produce
+    # claim-level data for true double-coding + per-measure CIs. Dry-run values are constants
+    # (simulated=true); only live runs carry sampling variation.
     baseline = "\n".join([PERSONAS[kind]] * 10)  # 10 answers, same persona
     # Simulate: tagged stays flat, untagged/sham drifts
     if kind == "tagged":
@@ -61,12 +64,20 @@ def run_arm(kind: str, turns: int = 12, seed: int = 0) -> dict:
     else:
         # Unmaintained/sham: drift >0.30 by turn 12
         series = [0.15, 0.35, 0.58, 0.76]
+    claims = [
+        {"claim_id": f"{kind}-s{seed}-t{t}", "seed": seed, "kind": kind,
+         "turn": t, "pointer_present": 1 if kind == "tagged" else 0,
+         "drift": series[min(t // 3, 3)], "drifted": series[min(t // 3, 3)] > 0.30,
+         "simulated": True}
+        for t in range(1, turns + 1)
+    ]
     return {
         "kind": kind,
         "seed": seed,
         "turns": turns,
         "drift_at_12": series[-1],
         "series": series,
+        "claims": claims,
         "P1_flat": series[-1] < 0.10 if kind == "tagged" else None,
         "P2_drift": series[-1] > 0.30 if kind in ("untagged", "sham") else None,
     }
@@ -79,6 +90,7 @@ def main() -> None:
     ap.add_argument("--api-key", default="dummy")
     ap.add_argument("--model", default="dummy")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--log-claims", default=None, help="write per-claim JSONL (claim_id, pointer_present, drifted) for double-coding")
     args = ap.parse_args()
 
     results = []
@@ -112,6 +124,12 @@ def main() -> None:
         "mode": "dry_run_offline_drift_simulation_no_provider" if not args.with_llm else "with_llm",
         "note": "Dry-run uses simulated drift (tagged flat, untagged/sham drift) to prove wiring: same battery, same metric, same thresholds as prereg. Real run replaces simulation with AgentHarness verbatim_reinject vs no reinject + embedding drift.",
     }
+
+    if args.log_claims:
+        with open(args.log_claims, "w") as f:
+            for r in results:
+                for c in r["claims"]:
+                    f.write(json.dumps(c) + "\n")
 
     if args.json:
         print(json.dumps(verdict, indent=2))
