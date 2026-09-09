@@ -161,6 +161,41 @@ def test_arm_stakes_without_world_raises():
     raise AssertionError("arm_world_stakes without world did not raise")
 
 
+def test_run_task_carries_own_witness_directives():
+    from harness_core.agent_harness import AgentHarness
+    seen: list[str] = []
+
+    def stub(messages: list[dict], ctx: dict) -> str:
+        seen.append(messages[0]['content'])
+        return "ok"
+
+    h = AgentHarness(respond_fn=stub)
+    h.run_task("hello", success=True)
+    assert len(seen) == 1
+    assert 'own witness' in seen[0], seen[0][:200]
+    assert 'no emissions yet' in seen[0]
+    assert h.last_ledger_health is not None
+    assert h.last_ledger_health['healthy'] is False
+
+
+def test_run_task_marks_healthy_ledger():
+    from harness_core.agent_harness import AgentHarness
+    from harness_core.provenance import Span
+    seen: list[str] = []
+
+    def stub(messages: list[dict], ctx: dict) -> str:
+        seen.append(messages[0]['content'])
+        return "ok"
+
+    h = AgentHarness(respond_fn=stub)
+    h.ledger.bind(1, "cited claim", [Span(0, 5, 'model_prior', ref='r1')])
+    h.ledger.query(1)
+    h.ledger.attribution_audit([{'claim': 'cited claim'}])
+    h.run_task("hello", success=True)
+    assert 'ledger healthy' in seen[0], seen[0][:300]
+    assert h.last_ledger_health['healthy'] is True
+
+
 if __name__ == '__main__':
     for name, fn in sorted(
             [(k, v) for k, v in globals().items() if k.startswith('test_')]):

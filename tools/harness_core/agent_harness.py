@@ -191,6 +191,17 @@ class AgentHarness:
         sm_view = self.sm.get()
         assert sm_view is not None
         sys_content = f"{anchor}\n\nNarrative: {sm_view['narrative']}"
+        # gap-4: the loop reads its own witness before answering. Ledger
+        # health directives enter the context so the model responds from
+        # its record, and the readout itself is bound as a span.
+        health = ledger_health(self.ledger)
+        self.last_ledger_health = health
+        if health['directives']:
+            sys_content += ("\n\n[own witness — act on this before answering]\n"
+                            + "\n".join(f"- {d}" for d in health['directives']))
+        else:
+            sys_content += ("\n\n[own witness: ledger healthy "
+                            f"(coverage {health['coverage_ratio']})]")
         if skill_ctx:
             sys_content += f"\nRelevant skills: {skill_ctx}"
         messages = [
