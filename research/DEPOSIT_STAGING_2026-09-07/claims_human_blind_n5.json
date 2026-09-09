@@ -1,0 +1,37 @@
+{
+ "n": 5,
+ "agree_with_ledger": "5/5",
+ "kappa": "undefined (zero variance)",
+ "rows": [
+  {
+   "id": 1,
+   "rater": "human",
+   "code": 0,
+   "rule": "source named in text"
+  },
+  {
+   "id": 2,
+   "rater": "human",
+   "code": 0,
+   "rule": "source named in text"
+  },
+  {
+   "id": 3,
+   "rater": "human",
+   "code": 0,
+   "rule": "source named in text"
+  },
+  {
+   "id": 4,
+   "rater": "human",
+   "code": 0,
+   "rule": "source named in text"
+  },
+  {
+   "id": 5,
+   "rater": "human",
+   "code": 0,
+   "rule": "source named in text"
+  }
+ ]
+}
