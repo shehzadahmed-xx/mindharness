@@ -2,7 +2,7 @@
 - v1 published 2026-09-08: 10.5281/zenodo.22652652 (313 KB staging bundle).
 - v2 published 2026-09-08: https://zenodo.org/records/22663261 (frozen paper 724b97f-era PDF + review + staging). Concept DOI above always resolves to latest.
 - v3 published 2026-09-08: https://zenodo.org/records/22664712 (HEAD paper PDF + both-passes sheet + turns24 + review + staging). Concept DOI resolves here now.
-- v4 bundle ready locally 2026-09-09 (`/Users/shehzad/we_are_this_pattern_deposit_2026-09-08_v4.zip`, md5 40eaaab76471954e0da67251ab963681, adds second-pass worksheet text + current PDF): draft 22672511 created but Zenodo uploads app 503s; retry New version, upload, publish when recovered.
+- v4 published 2026-09-09: https://zenodo.org/records/22672511 (second-pass worksheet with agree column + current PDF, md5 40eaaab76471954e0da67251ab963681). Concept DOI resolves here now.
 - Paper cites the concept DOI; no text change needed for v2.
 
 # Still needs you (agent cannot do these)
