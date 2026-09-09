@@ -90,7 +90,8 @@ def test_save_load_round_trip():
     assert w2.to_dict() == w.to_dict()
 
 
-def test_regrow_adds_tokens_over_time():    w = World(width=8, height=8, regen=0.5, seed=7)
+def test_regrow_adds_tokens_over_time():
+    w = World(width=8, height=8, regen=0.5, seed=7)
     w.cells.clear()
     for _ in range(20):
         w.act('rest')
