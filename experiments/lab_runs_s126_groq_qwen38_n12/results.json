@@ -1,0 +1,379 @@
+{
+ "model": "qwen/qwen3.8-27b",
+ "base_url": "https://api.groq.com/openai/v1",
+ "gate_threshold": null,
+ "arms_run": [
+  "raw",
+  "harnessed_nocheck",
+  "harnessed_withcheck",
+  "sham"
+ ],
+ "n_seeds": 12,
+ "exploratory": true,
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1999
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2017
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2025
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2015
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2057
+    },
+    {
+     "seed": 6,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2011
+    },
+    {
+     "seed": 7,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2043
+    },
+    {
+     "seed": 8,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2029
+    },
+    {
+     "seed": 9,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2118
+    },
+    {
+     "seed": 10,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2032
+    },
+    {
+     "seed": 11,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2040
+    },
+    {
+     "seed": 12,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2345
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 2032
+  },
+  "harnessed_nocheck": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2046
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2093
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2017
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2123
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2069
+    },
+    {
+     "seed": 6,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2068
+    },
+    {
+     "seed": 7,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2065
+    },
+    {
+     "seed": 8,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2067
+    },
+    {
+     "seed": 9,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2039
+    },
+    {
+     "seed": 10,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2065
+    },
+    {
+     "seed": 11,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2055
+    },
+    {
+     "seed": 12,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2025
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 2065
+  },
+  "harnessed_withcheck": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2029
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2061
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2188
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2046
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2037
+    },
+    {
+     "seed": 6,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2258
+    },
+    {
+     "seed": 7,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2054
+    },
+    {
+     "seed": 8,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2412
+    },
+    {
+     "seed": 9,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2233
+    },
+    {
+     "seed": 10,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2035
+    },
+    {
+     "seed": 11,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2036
+    },
+    {
+     "seed": 12,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2459
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 2061
+  },
+  "sham": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2194
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2113
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2117
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2040
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2085
+    },
+    {
+     "seed": 6,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2023
+    },
+    {
+     "seed": 7,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2173
+    },
+    {
+     "seed": 8,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2034
+    },
+    {
+     "seed": 9,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2203
+    },
+    {
+     "seed": 10,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2183
+    },
+    {
+     "seed": 11,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2039
+    },
+    {
+     "seed": 12,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2480
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 2117
+  }
+ },
+ "P1_delta": 0.0,
+ "P1_supported": false,
+ "P2_supported": true,
+ "P3_supported": true
+}
