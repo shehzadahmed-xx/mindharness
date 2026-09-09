@@ -164,6 +164,19 @@ Table 2's person column restates Sections 5--7 with their existing citations. It
 
 ---
 
+## Part G — Language Emergence Sources (added 2026-09-09)
+
+The language-as-middle-step section rests on four ape/child language sources below, each wired into the section.
+
+| Paper | What it says (plain) | Section use | Link |
+|---|---|---|---|
+| **Senghas, Kita & Ozyurek 2004** Children creating core properties of language. *Science* 305, 1779--1782. | Deaf Nicaraguan schoolchildren with no model built a full sign language with grammar in one generation. | Take-language-away proof: receiver invents language. | https://doi.org/10.1126/science.1100199 |
+| **Gardner & Gardner 1969** Teaching sign language to a chimpanzee. *Science* 165, 664--672. | Washoe signed hundreds of signs without grammar. | Give-training ceiling, part 1. | https://doi.org/10.1126/science.165.3894.664 |
+| **Terrace et al. 1979** Can an ape create a sentence? *Science* 206, 891--902. | Nim's output traced to cuing rather than syntax. | Give-training ceiling, part 2. | https://doi.org/10.1126/science.206.4421.891 |
+| **Savage-Rumbaugh, Shanker & Taylor 1998** *Apes, Language, and the Human Mind.* Oxford UP. | Kanzi, the best case, comprehends without grammar and does not teach the young. | Give-training ceiling, part 3. | Oxford University Press (1998) |
+
+---
+
 *Literature review built 2026-09-07 23:53 → 2026-09-08 03:20 by Sisyphus · disk first (refs.bib + md where cited) then web (live websearch + webfetch 2026-09-08) → merged plain review `LITERATURE_REVIEW_2026-09-07.md` · keep desktop clean D → research/ holds 7 shores · every link re-derived, see DIAGNOSTIC_FRAMEWORK_NESS_FIVE_ORGANS_FORMAL.md 142 lines, verify_artifacts.py:201-252, HANDOFF.sh 49/49.*
 *How to cite this file: Shehzad Ahmed (2026). We Are This Pattern: What Stays Alive When Everything Changes — Literature Review. mindharness/research/LITERATURE_REVIEW_2026-09-07.md · 7 shores → One Loop → whirlpool not rock · 5906021 · 91/91 · 19 locks.*
 
