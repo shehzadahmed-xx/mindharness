@@ -90,12 +90,31 @@ def test_save_load_round_trip():
     assert w2.to_dict() == w.to_dict()
 
 
-def test_regrow_adds_tokens_over_time():
-    w = World(width=8, height=8, regen=0.5, seed=7)
+def test_regrow_adds_tokens_over_time():    w = World(width=8, height=8, regen=0.5, seed=7)
     w.cells.clear()
     for _ in range(20):
         w.act('rest')
     assert sum(w.cells.values()) > 0, "regrow never added a token"
+
+
+def test_closed_loop_next_input_contains_last_action():
+    from harness_core.agent_harness import AgentHarness
+    w = World(seed=9)
+    h = AgentHarness(respond_fn=lambda m, c: "ok", world=w)
+    r1 = h.world_turn('harvest')
+    r2 = h.world_turn('right')
+    assert r2['sensed']['turn'] == r1['consequence']['turn']
+    assert r2['sensed']['energy'] == r1['consequence']['energy_after']
+
+
+def test_world_turn_without_world_raises():
+    from harness_core.agent_harness import AgentHarness
+    h = AgentHarness(respond_fn=lambda m, c: "ok")
+    try:
+        h.world_turn('harvest')
+    except ValueError:
+        return
+    raise AssertionError("world_turn without world did not raise")
 
 
 if __name__ == '__main__':

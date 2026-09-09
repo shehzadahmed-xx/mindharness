@@ -59,6 +59,7 @@ class AgentHarness:
         narrative: str = "Session start.",
         compliance_guard: bool = False,
         rem_ablation: bool = False,
+        world=None,
     ) -> None:
         self.respond_fn = respond_fn
         self.body = EmbodiedState()
@@ -74,6 +75,7 @@ class AgentHarness:
         self.counterfactual_replay = None
         self.skills = SkillLibrary()
         self.graph = KnowledgeGraph()
+        self.world = world  # gap-2: environment that acts back (None = oracle mode)
 
         self.turn = 0
         self._recent_user_context: list[str] = []
@@ -248,6 +250,25 @@ class AgentHarness:
                           round(self.affect.arousal, 4),
                           staged_count,
                           int((time.monotonic() - t0) * 1000))
+
+    def world_turn(self, action: str) -> dict:
+        """One closed-loop turn: sense world, think with state in context,
+        write the consequence back. The next turn's input already contains
+        this turn's action. Raises if no world is attached."""
+        if self.world is None:
+            raise ValueError("world_turn needs a world: pass world=World()")
+        sensed = self.world.sense()
+        state_line = (f"[world turn {sensed['turn']}] pos={sensed['xy']} "
+                      f"energy={sensed['energy']:.1f} here={sensed['here']} "
+                      f"nearby={sensed['nearby']}")
+        result = self.run_task(state_line, success=True)
+        consequence = self.world.act(action)
+        self.ledger.bind(
+            self.turn, f"world consequence: {consequence}",
+            [Span(0, 10, 'external_tool', ref=f"world-turn-{consequence['turn']}")],
+            meta={'world_turn': True})
+        return {'sensed': sensed, 'result': result,
+                'consequence': consequence}
 
     def respond_through_model(self, prompt: str, *,
                               system: str | None = None,
