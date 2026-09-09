@@ -6,7 +6,8 @@
 - Paper cites the concept DOI; no text change needed for v2.
 
 # Still needs you (agent cannot do these)
-## 1. Second rater for kappa (DONE by blinded agent 2026-09-08; human claim-level still R1)
+- v5 published 2026-09-09: https://zenodo.org/records/22673420 (human-rater Methods text + current PDF + both-passes sheet + turns24, md5 c53cec7eb65cdeb4a48091b7197617f8). Concept DOI resolves here now.
+## 1. Second rater for kappa (DONE by you as human rater 2 2026-09-08; human claim-level still R1)
 - `kappa_worksheet.csv`: rater 1 (arm labels) + rater 2 (manifest purpose fields, blinded agent session) = 18/18 agree, kappa=1.000 degenerate by construction (both read assignment). Committed.
 - Still needs a human: claim-level double-coding of individual claims (needs per-claim logging first) for a true reliability kappa.
 ## 3. Optional calibration run (half day)
