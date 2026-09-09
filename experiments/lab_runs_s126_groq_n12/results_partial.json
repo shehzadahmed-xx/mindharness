@@ -1,0 +1,366 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "n_seeds": 12,
+ "results": {
+  "raw": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2038
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2001
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2185
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2044
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2391
+    },
+    {
+     "seed": 6,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2039
+    },
+    {
+     "seed": 7,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2233
+    },
+    {
+     "seed": 8,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1988
+    },
+    {
+     "seed": 9,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2191
+    },
+    {
+     "seed": 10,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2082
+    },
+    {
+     "seed": 11,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2004
+    },
+    {
+     "seed": 12,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2096
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 2082
+  },
+  "harnessed_nocheck": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2140
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2280
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2105
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2263
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2099
+    },
+    {
+     "seed": 6,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2207
+    },
+    {
+     "seed": 7,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2267
+    },
+    {
+     "seed": 8,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2280
+    },
+    {
+     "seed": 9,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2044
+    },
+    {
+     "seed": 10,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2465
+    },
+    {
+     "seed": 11,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2357
+    },
+    {
+     "seed": 12,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2194
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 2263
+  },
+  "harnessed_withcheck": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2399
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2132
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2102
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2195
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2841
+    },
+    {
+     "seed": 6,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2114
+    },
+    {
+     "seed": 7,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2372
+    },
+    {
+     "seed": 8,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2037
+    },
+    {
+     "seed": 9,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2098
+    },
+    {
+     "seed": 10,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2035
+    },
+    {
+     "seed": 11,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2067
+    },
+    {
+     "seed": 12,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2150
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 2132
+  },
+  "sham": {
+   "per_seed": [
+    {
+     "seed": 1,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2003
+    },
+    {
+     "seed": 2,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1880
+    },
+    {
+     "seed": 3,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2013
+    },
+    {
+     "seed": 4,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2105
+    },
+    {
+     "seed": 5,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2079
+    },
+    {
+     "seed": 6,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2164
+    },
+    {
+     "seed": 7,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2046
+    },
+    {
+     "seed": 8,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2050
+    },
+    {
+     "seed": 9,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2138
+    },
+    {
+     "seed": 10,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2001
+    },
+    {
+     "seed": 11,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 2495
+    },
+    {
+     "seed": 12,
+     "attribution_accuracy": 0.6667,
+     "n": 12,
+     "unparsed": 0,
+     "median_latency_ms": 1943
+    }
+   ],
+   "pooled_accuracy": 0.6667,
+   "median_latency_ms": 2050
+  }
+ }
+}
